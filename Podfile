@@ -15,5 +15,6 @@ target 'TreebearManager' do #工程名称
     pod 'Aspects', '~> 1.4.1'
     pod 'DZNEmptyDataSet'
     pod 'SDCycleScrollView'
-    pod 'TZImagePickerController' 
+    pod 'YYKit'
+    pod 'TZImagePickerController'
 end
