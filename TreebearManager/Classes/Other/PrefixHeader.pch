@@ -1,0 +1,35 @@
+//
+//  PrefixHeader.pch
+//  TreebearManager
+//
+//  Created by treebear on 2019/1/22.
+//  Copyright © 2019 treebear. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <UIKit/UIKit.h>
+
+/** 主题头文件 */
+#import "SXHeader.h"
+#import "SXConst.h"
+#import "SXThemeDefine.h"
+
+/** pod三方 */
+#import <Masonry/Masonry.h>
+#import <MJExtension/MJExtension.h>
+#import <SDWebImage/UIImage+GIF.h>
+#import <SDWebImage/UIButton+WebCache.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+
+/** 工具类 */
+#import "MBProgressHUD+CL.h"
+
+/** 扩展分类 */
+#import "UIView+Extension.h"
+#import "UIView+Frame.h"
+#import "UIButton+Extension.h"
+#import "UIBarButtonItem+Extention.h"
+
+#endif /* PrefixHeader_pch */
