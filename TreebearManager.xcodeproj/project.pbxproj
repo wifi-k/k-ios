@@ -11,6 +11,10 @@
 		092D6CE12200504100538AC8 /* SXRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CE02200504100538AC8 /* SXRefreshFooter.m */; };
 		092D6CE422005A0C00538AC8 /* SXEmptyDataEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CE322005A0C00538AC8 /* SXEmptyDataEventView.m */; };
 		092D6CE622005A1A00538AC8 /* SXEmptyDataEventView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092D6CE522005A1A00538AC8 /* SXEmptyDataEventView.xib */; };
+		092D6CE92200625700538AC8 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CE82200625700538AC8 /* Foundation+Log.m */; };
+		092D6CF5220062C700538AC8 /* MyBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CEF220062C700538AC8 /* MyBase64.m */; };
+		092D6CF6220062C700538AC8 /* DES3EncryptUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CF0220062C700538AC8 /* DES3EncryptUtil.m */; };
+		092D6CF7220062C700538AC8 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CF3220062C700538AC8 /* NSString+Hash.m */; };
 		327EE8E44A5A7DE11581C0F1 /* libPods-TreebearManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D77B77B9D44D60B532DDE9D2 /* libPods-TreebearManager.a */; };
 		B348F93C21F6C2C10000F194 /* TreebearManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F93B21F6C2C10000F194 /* TreebearManagerTests.m */; };
 		B348F94721F6C2C10000F194 /* TreebearManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F94621F6C2C10000F194 /* TreebearManagerUITests.m */; };
@@ -91,6 +95,14 @@
 		092D6CE222005A0C00538AC8 /* SXEmptyDataEventView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXEmptyDataEventView.h; sourceTree = "<group>"; };
 		092D6CE322005A0C00538AC8 /* SXEmptyDataEventView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXEmptyDataEventView.m; sourceTree = "<group>"; };
 		092D6CE522005A1A00538AC8 /* SXEmptyDataEventView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXEmptyDataEventView.xib; sourceTree = "<group>"; };
+		092D6CE82200625700538AC8 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		092D6CEB2200628900538AC8 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		092D6CEE220062C700538AC8 /* DES3EncryptUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DES3EncryptUtil.h; sourceTree = "<group>"; };
+		092D6CEF220062C700538AC8 /* MyBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBase64.m; sourceTree = "<group>"; };
+		092D6CF0220062C700538AC8 /* DES3EncryptUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DES3EncryptUtil.m; sourceTree = "<group>"; };
+		092D6CF1220062C700538AC8 /* MyBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBase64.h; sourceTree = "<group>"; };
+		092D6CF3220062C700538AC8 /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
+		092D6CF4220062C700538AC8 /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
 		0BF17A1BEC7F76DCAB17507A /* Pods-TreebearManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreebearManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TreebearManager/Pods-TreebearManager.debug.xcconfig"; sourceTree = "<group>"; };
 		B348F91F21F6C2BE0000F194 /* TreebearManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreebearManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B348F93721F6C2C10000F194 /* TreebearManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreebearManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,6 +249,51 @@
 				092D6CE02200504100538AC8 /* SXRefreshFooter.m */,
 			);
 			path = MJRefresh;
+			sourceTree = "<group>";
+		};
+		092D6CE72200624100538AC8 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				092D6CE82200625700538AC8 /* Foundation+Log.m */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		092D6CEA2200627000538AC8 /* Single */ = {
+			isa = PBXGroup;
+			children = (
+				092D6CEB2200628900538AC8 /* Singleton.h */,
+			);
+			path = Single;
+			sourceTree = "<group>";
+		};
+		092D6CEC220062C700538AC8 /* Encrypt */ = {
+			isa = PBXGroup;
+			children = (
+				092D6CED220062C700538AC8 /* 3DES */,
+				092D6CF2220062C700538AC8 /* Hash */,
+			);
+			path = Encrypt;
+			sourceTree = "<group>";
+		};
+		092D6CED220062C700538AC8 /* 3DES */ = {
+			isa = PBXGroup;
+			children = (
+				092D6CEE220062C700538AC8 /* DES3EncryptUtil.h */,
+				092D6CEF220062C700538AC8 /* MyBase64.m */,
+				092D6CF0220062C700538AC8 /* DES3EncryptUtil.m */,
+				092D6CF1220062C700538AC8 /* MyBase64.h */,
+			);
+			path = 3DES;
+			sourceTree = "<group>";
+		};
+		092D6CF2220062C700538AC8 /* Hash */ = {
+			isa = PBXGroup;
+			children = (
+				092D6CF3220062C700538AC8 /* NSString+Hash.m */,
+				092D6CF4220062C700538AC8 /* NSString+Hash.h */,
+			);
+			path = Hash;
 			sourceTree = "<group>";
 		};
 		5C5F2F98843302620E46BD97 /* Frameworks */ = {
@@ -397,6 +454,9 @@
 		B348F95D21F6C4E10000F194 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				092D6CEC220062C700538AC8 /* Encrypt */,
+				092D6CEA2200627000538AC8 /* Single */,
+				092D6CE72200624100538AC8 /* Log */,
 				B348F9AD21F71DEC0000F194 /* Http */,
 				B348F95E21F6C4E10000F194 /* Jump */,
 			);
@@ -987,12 +1047,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3AF2FEA21FAFF10001E4E67 /* SXLoginMainController.m in Sources */,
+				092D6CE92200625700538AC8 /* Foundation+Log.m in Sources */,
 				B3AF301521FB0A92001E4E67 /* SXBaseSectionHeaderCollectionView.m in Sources */,
 				B348F9A821F71A680000F194 /* UIView+Frame.m in Sources */,
 				B348F9B021F71E180000F194 /* SXHttpTool.m in Sources */,
 				B348F96121F6C50C0000F194 /* SXRootTool.m in Sources */,
 				B3AF300521FB092F001E4E67 /* SXBasePageParam.m in Sources */,
 				B3AF2FF321FAFF45001E4E67 /* SXRegistController.m in Sources */,
+				092D6CF7220062C700538AC8 /* NSString+Hash.m in Sources */,
 				B3AF2FF021FAFF34001E4E67 /* SXForgetController.m in Sources */,
 				B3AF302121FE90DA001E4E67 /* SXBaseTableViewGroupController.m in Sources */,
 				B348F98921F713A80000F194 /* AppDelegate.m in Sources */,
@@ -1007,6 +1069,7 @@
 				B348F97821F6EB170000F194 /* SXPhotoController.m in Sources */,
 				B348F97D21F711450000F194 /* SXConst.m in Sources */,
 				B3AF302421FE9113001E4E67 /* SXBaseTablePlainRrfreshController.m in Sources */,
+				092D6CF6220062C700538AC8 /* DES3EncryptUtil.m in Sources */,
 				092D6CE12200504100538AC8 /* SXRefreshFooter.m in Sources */,
 				B348F98821F713A80000F194 /* main.m in Sources */,
 				B3AF300221FB08D1001E4E67 /* SXUtil.m in Sources */,
@@ -1015,6 +1078,7 @@
 				B348F9AB21F71A680000F194 /* UIButton+Extension.m in Sources */,
 				B3AF2FFE21FB085C001E4E67 /* SXBaseParam.m in Sources */,
 				B3AF2FD621F9C8A3001E4E67 /* MBProgressHUD+CL.m in Sources */,
+				092D6CF5220062C700538AC8 /* MyBase64.m in Sources */,
 				B348F9A921F71A680000F194 /* UIButton+EnlargeArea.m in Sources */,
 				B348F99721F716C60000F194 /* SXTabBarController.m in Sources */,
 				B348F99D21F719850000F194 /* UIImage+Extension.m in Sources */,
