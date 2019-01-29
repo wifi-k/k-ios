@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXBaseEmptyDataView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXBaseTableViewGroupController : UITableViewController
-
+@property (nonatomic, strong) SXBaseEmptyDataView *emptyDataView;
 @end
 
 NS_ASSUME_NONNULL_END
