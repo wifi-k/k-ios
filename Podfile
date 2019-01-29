@@ -11,10 +11,10 @@ target 'TreebearManager' do #工程名称
     pod 'MBProgressHUD', '~> 1.0.0'
     pod 'SVProgressHUD','2.0.3'
     pod 'MarqueeLabel', '~> 2.2.0'
-    pod 'CocoaAsyncSocket'
     pod 'Aspects', '~> 1.4.1'
     pod 'DZNEmptyDataSet'
     pod 'SDCycleScrollView'
     pod 'YYKit'
     pod 'TZImagePickerController'
-end
+    pod 'CocoaAsyncSocket'
+enllkoid
