@@ -15,6 +15,10 @@
 		092D6CF5220062C700538AC8 /* MyBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CEF220062C700538AC8 /* MyBase64.m */; };
 		092D6CF6220062C700538AC8 /* DES3EncryptUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CF0220062C700538AC8 /* DES3EncryptUtil.m */; };
 		092D6CF7220062C700538AC8 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CF3220062C700538AC8 /* NSString+Hash.m */; };
+		092D6CFB2200731300538AC8 /* SXNotificationCenterTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CFA2200731300538AC8 /* SXNotificationCenterTool.m */; };
+		092D6CFF220073A600538AC8 /* SXUserDefaultsTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CFE220073A600538AC8 /* SXUserDefaultsTool.m */; };
+		092D6D022200745500538AC8 /* SXUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6D012200745500538AC8 /* SXUserModel.m */; };
+		092D6D052200748F00538AC8 /* SXUserArchiveTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6D042200748F00538AC8 /* SXUserArchiveTool.m */; };
 		327EE8E44A5A7DE11581C0F1 /* libPods-TreebearManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D77B77B9D44D60B532DDE9D2 /* libPods-TreebearManager.a */; };
 		B348F93C21F6C2C10000F194 /* TreebearManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F93B21F6C2C10000F194 /* TreebearManagerTests.m */; };
 		B348F94721F6C2C10000F194 /* TreebearManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F94621F6C2C10000F194 /* TreebearManagerUITests.m */; };
@@ -103,6 +107,14 @@
 		092D6CF1220062C700538AC8 /* MyBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBase64.h; sourceTree = "<group>"; };
 		092D6CF3220062C700538AC8 /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
 		092D6CF4220062C700538AC8 /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
+		092D6CF92200731300538AC8 /* SXNotificationCenterTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXNotificationCenterTool.h; sourceTree = "<group>"; };
+		092D6CFA2200731300538AC8 /* SXNotificationCenterTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXNotificationCenterTool.m; sourceTree = "<group>"; };
+		092D6CFD220073A600538AC8 /* SXUserDefaultsTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXUserDefaultsTool.h; sourceTree = "<group>"; };
+		092D6CFE220073A600538AC8 /* SXUserDefaultsTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXUserDefaultsTool.m; sourceTree = "<group>"; };
+		092D6D002200745500538AC8 /* SXUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXUserModel.h; sourceTree = "<group>"; };
+		092D6D012200745500538AC8 /* SXUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXUserModel.m; sourceTree = "<group>"; };
+		092D6D032200748F00538AC8 /* SXUserArchiveTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXUserArchiveTool.h; sourceTree = "<group>"; };
+		092D6D042200748F00538AC8 /* SXUserArchiveTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXUserArchiveTool.m; sourceTree = "<group>"; };
 		0BF17A1BEC7F76DCAB17507A /* Pods-TreebearManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreebearManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TreebearManager/Pods-TreebearManager.debug.xcconfig"; sourceTree = "<group>"; };
 		B348F91F21F6C2BE0000F194 /* TreebearManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreebearManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B348F93721F6C2C10000F194 /* TreebearManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreebearManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -296,6 +308,28 @@
 			path = Hash;
 			sourceTree = "<group>";
 		};
+		092D6CF8220072FD00538AC8 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				092D6CF92200731300538AC8 /* SXNotificationCenterTool.h */,
+				092D6CFA2200731300538AC8 /* SXNotificationCenterTool.m */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		092D6CFC2200739800538AC8 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				092D6CFD220073A600538AC8 /* SXUserDefaultsTool.h */,
+				092D6CFE220073A600538AC8 /* SXUserDefaultsTool.m */,
+				092D6D002200745500538AC8 /* SXUserModel.h */,
+				092D6D012200745500538AC8 /* SXUserModel.m */,
+				092D6D032200748F00538AC8 /* SXUserArchiveTool.h */,
+				092D6D042200748F00538AC8 /* SXUserArchiveTool.m */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		5C5F2F98843302620E46BD97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,6 +488,8 @@
 		B348F95D21F6C4E10000F194 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				092D6CFC2200739800538AC8 /* Persistence */,
+				092D6CF8220072FD00538AC8 /* Notification */,
 				092D6CEC220062C700538AC8 /* Encrypt */,
 				092D6CEA2200627000538AC8 /* Single */,
 				092D6CE72200624100538AC8 /* Log */,
@@ -1063,6 +1099,7 @@
 				B348F9AA21F71A680000F194 /* UIBarButtonItem+Extention.m in Sources */,
 				B3AF303C21FE96A4001E4E67 /* SXBaseCustomTableGroupRefreshController.m in Sources */,
 				092D6CDE22004FB400538AC8 /* SXRefreshHeader.m in Sources */,
+				092D6D052200748F00538AC8 /* SXUserArchiveTool.m in Sources */,
 				B3AF304221FE9BF3001E4E67 /* SXBaseEmptyDataView.m in Sources */,
 				B3AF303F21FE97B1001E4E67 /* SXBaseJSWebController.m in Sources */,
 				B348F98121F711B90000F194 /* UIColor+BFKit.m in Sources */,
@@ -1070,15 +1107,18 @@
 				B348F97D21F711450000F194 /* SXConst.m in Sources */,
 				B3AF302421FE9113001E4E67 /* SXBaseTablePlainRrfreshController.m in Sources */,
 				092D6CF6220062C700538AC8 /* DES3EncryptUtil.m in Sources */,
+				092D6CFB2200731300538AC8 /* SXNotificationCenterTool.m in Sources */,
 				092D6CE12200504100538AC8 /* SXRefreshFooter.m in Sources */,
 				B348F98821F713A80000F194 /* main.m in Sources */,
 				B3AF300221FB08D1001E4E67 /* SXUtil.m in Sources */,
 				B3AF303321FE92CC001E4E67 /* SXBaseCustomTableViewGroupController.m in Sources */,
+				092D6CFF220073A600538AC8 /* SXUserDefaultsTool.m in Sources */,
 				B3AF302721FE914E001E4E67 /* SXBaseTableGroupRefreshController.m in Sources */,
 				B348F9AB21F71A680000F194 /* UIButton+Extension.m in Sources */,
 				B3AF2FFE21FB085C001E4E67 /* SXBaseParam.m in Sources */,
 				B3AF2FD621F9C8A3001E4E67 /* MBProgressHUD+CL.m in Sources */,
 				092D6CF5220062C700538AC8 /* MyBase64.m in Sources */,
+				092D6D022200745500538AC8 /* SXUserModel.m in Sources */,
 				B348F9A921F71A680000F194 /* UIButton+EnlargeArea.m in Sources */,
 				B348F99721F716C60000F194 /* SXTabBarController.m in Sources */,
 				B348F99D21F719850000F194 /* UIImage+Extension.m in Sources */,
