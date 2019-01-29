@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		092D6CDE22004FB400538AC8 /* SXRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CDD22004FB400538AC8 /* SXRefreshHeader.m */; };
 		092D6CE12200504100538AC8 /* SXRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CE02200504100538AC8 /* SXRefreshFooter.m */; };
+		092D6CE422005A0C00538AC8 /* SXEmptyDataEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CE322005A0C00538AC8 /* SXEmptyDataEventView.m */; };
+		092D6CE622005A1A00538AC8 /* SXEmptyDataEventView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092D6CE522005A1A00538AC8 /* SXEmptyDataEventView.xib */; };
 		327EE8E44A5A7DE11581C0F1 /* libPods-TreebearManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D77B77B9D44D60B532DDE9D2 /* libPods-TreebearManager.a */; };
 		B348F93C21F6C2C10000F194 /* TreebearManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F93B21F6C2C10000F194 /* TreebearManagerTests.m */; };
 		B348F94721F6C2C10000F194 /* TreebearManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F94621F6C2C10000F194 /* TreebearManagerUITests.m */; };
@@ -86,6 +88,9 @@
 		092D6CDD22004FB400538AC8 /* SXRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXRefreshHeader.m; sourceTree = "<group>"; };
 		092D6CDF2200504100538AC8 /* SXRefreshFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXRefreshFooter.h; sourceTree = "<group>"; };
 		092D6CE02200504100538AC8 /* SXRefreshFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXRefreshFooter.m; sourceTree = "<group>"; };
+		092D6CE222005A0C00538AC8 /* SXEmptyDataEventView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXEmptyDataEventView.h; sourceTree = "<group>"; };
+		092D6CE322005A0C00538AC8 /* SXEmptyDataEventView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXEmptyDataEventView.m; sourceTree = "<group>"; };
+		092D6CE522005A1A00538AC8 /* SXEmptyDataEventView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXEmptyDataEventView.xib; sourceTree = "<group>"; };
 		0BF17A1BEC7F76DCAB17507A /* Pods-TreebearManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreebearManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TreebearManager/Pods-TreebearManager.debug.xcconfig"; sourceTree = "<group>"; };
 		B348F91F21F6C2BE0000F194 /* TreebearManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreebearManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B348F93721F6C2C10000F194 /* TreebearManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreebearManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -750,6 +755,9 @@
 			children = (
 				B3AF304021FE9BF3001E4E67 /* SXBaseEmptyDataView.h */,
 				B3AF304121FE9BF3001E4E67 /* SXBaseEmptyDataView.m */,
+				092D6CE222005A0C00538AC8 /* SXEmptyDataEventView.h */,
+				092D6CE322005A0C00538AC8 /* SXEmptyDataEventView.m */,
+				092D6CE522005A1A00538AC8 /* SXEmptyDataEventView.xib */,
 			);
 			path = BaseEmptyDataView;
 			sourceTree = "<group>";
@@ -900,6 +908,7 @@
 				B348F99121F7143A0000F194 /* Assets.xcassets in Resources */,
 				B3AF2FD521F9C8A3001E4E67 /* MBProgressHUD.bundle in Resources */,
 				B3AF2FF821FB0180001E4E67 /* SXLoginMainHeaderView.xib in Resources */,
+				092D6CE622005A1A00538AC8 /* SXEmptyDataEventView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1015,6 +1024,7 @@
 				B348F9AC21F71A680000F194 /* UIView+Extension.m in Sources */,
 				B3AF301821FB0C2E001E4E67 /* SXBaseWebController.m in Sources */,
 				B3AF300821FB0956001E4E67 /* SXBaseModel.m in Sources */,
+				092D6CE422005A0C00538AC8 /* SXEmptyDataEventView.m in Sources */,
 				B3AF300F21FB0A20001E4E67 /* SXBaseTableViewCell.m in Sources */,
 				B348F9B921F721D60000F194 /* SXNetReachablityTool.m in Sources */,
 				B3AF301221FB0A5D001E4E67 /* SXBaseCollectionViewCell.m in Sources */,

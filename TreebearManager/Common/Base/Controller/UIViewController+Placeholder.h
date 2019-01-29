@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
-NS_ASSUME_NONNULL_BEGIN
+#import "SXEmptyDataEventView.h"
 
 @interface UIViewController (Placeholder)
 
+- (void)showTipsViewWithTopImageName:(NSString *)imageName content:(NSString *)content  btnText:(NSString *)btnText btnBlock:(void (^)(void))btnBlock;
+    
+- (void)hideTipsView;
+    
 @end
 
-NS_ASSUME_NONNULL_END

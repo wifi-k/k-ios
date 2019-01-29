@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SXEmptyDataEventView">
+            <rect key="frame" x="0.0" y="0.0" width="385" height="327"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbl-BB-QFN">
+                    <rect key="frame" x="155.5" y="265.5" width="74" height="35"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="j6W-wa-RJH"/>
+                    </constraints>
+                    <state key="normal" title="刷新数据"/>
+                    <connections>
+                        <action selector="clickConfirmBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="PYK-WX-dt9"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前没有可使用的签署服务，请购买套餐来进行签署合同" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sJ-vR-Pol">
+                    <rect key="frame" x="60" y="192" width="265" height="33.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gjq-SW-J1a">
+                    <rect key="frame" x="92.5" y="30" width="200" height="132"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="F23-ug-6f0"/>
+                        <constraint firstAttribute="height" constant="132" id="aYz-go-QuN"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="5sJ-vR-Pol" firstAttribute="top" secondItem="gjq-SW-J1a" secondAttribute="bottom" constant="30" id="6fO-pQ-bDQ"/>
+                <constraint firstItem="5sJ-vR-Pol" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="60" id="8CW-wo-0eU"/>
+                <constraint firstItem="Vbl-BB-QFN" firstAttribute="top" secondItem="5sJ-vR-Pol" secondAttribute="bottom" constant="40" id="8P4-KW-fds"/>
+                <constraint firstItem="gjq-SW-J1a" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="S2F-nz-z9s"/>
+                <constraint firstItem="gjq-SW-J1a" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="ssc-aR-j5g"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5sJ-vR-Pol" secondAttribute="trailing" constant="60" id="ufJ-KL-uje"/>
+                <constraint firstItem="Vbl-BB-QFN" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="zTi-i2-BjO"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="confirmBtn" destination="Vbl-BB-QFN" id="qAJ-oX-4oA"/>
+                <outlet property="imgHeight" destination="aYz-go-QuN" id="5QW-4c-ZUn"/>
+                <outlet property="imgWidth" destination="F23-ug-6f0" id="20w-nO-Ncq"/>
+                <outlet property="titleL" destination="5sJ-vR-Pol" id="pWY-pR-kRe"/>
+                <outlet property="topImageV" destination="gjq-SW-J1a" id="X5U-9w-Zy0"/>
+            </connections>
+            <point key="canvasLocation" x="61.600000000000001" y="-57.121439280359823"/>
+        </view>
+    </objects>
+</document>
