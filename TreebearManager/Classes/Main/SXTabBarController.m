@@ -11,6 +11,7 @@
 #import "SXHomeController.h"
 #import "SXPhotoController.h"
 #import "SXMineController.h"
+#import "SXHomeConnectedController.h"
 
 #import "UIImage+Extension.h"
 
@@ -50,6 +51,21 @@
     SXNavigationController *navi = [[SXNavigationController alloc] initWithRootViewController:vc];
     
     [self addChildViewController:navi];
+}
+
+- (void)changeHomeVC{
+    //创建首页
+    SXHomeConnectedController *mineVC = [[SXHomeConnectedController alloc] init];
+    mineVC.tabBarItem.title = @"首页";
+    mineVC.tabBarItem.image = [UIImage imageNamed:@"tab_home_normal"];
+    mineVC.tabBarItem.badgeValue = nil;
+    mineVC.tabBarItem.selectedImage = [UIImage imageWithOriginalName:@"tab_home_selected"];
+    SXNavigationController *navi = [[SXNavigationController alloc] initWithRootViewController:mineVC];
+    
+    NSArray *child = self.childViewControllers;
+    NSMutableArray *fdfd = [NSMutableArray arrayWithArray:child];
+    [fdfd replaceObjectAtIndex:0 withObject:navi];
+    self.viewControllers = fdfd;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,6 +7,10 @@
 //
 
 #import "SXHomeController.h"
+#import "SXRootTool.h"
+#import "SXTabBarController.h"
+#import "SXNavigationController.h"
+#import "SXMineController.h"
 
 @interface SXHomeController ()
 
@@ -21,6 +25,10 @@
     
     self.navigationItem.title = @"首页";
 }
-
+    
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    [SXRootTool change];
+}
 
 @end

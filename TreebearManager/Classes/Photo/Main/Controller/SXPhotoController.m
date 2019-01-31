@@ -20,6 +20,8 @@
     self.view.backgroundColor = SXColorRandom;
     
     self.navigationItem.title = @"相册";
+    
+    DLog(@"-SXPhotoController-");
 }
 
 

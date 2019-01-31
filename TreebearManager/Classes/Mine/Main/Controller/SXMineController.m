@@ -17,10 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = SXColorRandom;
+    self.view.backgroundColor = UIColor.redColor;
     
     self.navigationItem.title = @"我的";
+    
+     DLog(@"-SXMineController-");
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    SXMineController *homeVC = [[SXMineController alloc] init];
+    [self.navigationController pushViewController:homeVC animated:YES];
+}
 
 @end

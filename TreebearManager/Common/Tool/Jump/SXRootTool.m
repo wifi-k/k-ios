@@ -40,5 +40,18 @@
     }
     return topVC;
 }
+    
++ (UIViewController *)rootViewController{
+    UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+    return rootVC;
+}
+    
++ (void)change{
+    UIViewController *rootVC = self.rootViewController;
+    if ([rootVC isKindOfClass:[SXTabBarController class]]) {
+        SXTabBarController *tabBarVC = (SXTabBarController *)rootVC;
+        [tabBarVC changeHomeVC];
+    }
+}
 
 @end

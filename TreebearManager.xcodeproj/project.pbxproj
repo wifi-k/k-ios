@@ -19,6 +19,7 @@
 		092D6CFF220073A600538AC8 /* SXUserDefaultsTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CFE220073A600538AC8 /* SXUserDefaultsTool.m */; };
 		092D6D022200745500538AC8 /* SXUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6D012200745500538AC8 /* SXUserModel.m */; };
 		092D6D052200748F00538AC8 /* SXUserArchiveTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6D042200748F00538AC8 /* SXUserArchiveTool.m */; };
+		092D6D082202AC3200538AC8 /* SXHomeConnectedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6D072202AC3200538AC8 /* SXHomeConnectedController.m */; };
 		327EE8E44A5A7DE11581C0F1 /* libPods-TreebearManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D77B77B9D44D60B532DDE9D2 /* libPods-TreebearManager.a */; };
 		B348F93C21F6C2C10000F194 /* TreebearManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F93B21F6C2C10000F194 /* TreebearManagerTests.m */; };
 		B348F94721F6C2C10000F194 /* TreebearManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F94621F6C2C10000F194 /* TreebearManagerUITests.m */; };
@@ -115,6 +116,8 @@
 		092D6D012200745500538AC8 /* SXUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXUserModel.m; sourceTree = "<group>"; };
 		092D6D032200748F00538AC8 /* SXUserArchiveTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXUserArchiveTool.h; sourceTree = "<group>"; };
 		092D6D042200748F00538AC8 /* SXUserArchiveTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXUserArchiveTool.m; sourceTree = "<group>"; };
+		092D6D062202AC3200538AC8 /* SXHomeConnectedController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeConnectedController.h; sourceTree = "<group>"; };
+		092D6D072202AC3200538AC8 /* SXHomeConnectedController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeConnectedController.m; sourceTree = "<group>"; };
 		0BF17A1BEC7F76DCAB17507A /* Pods-TreebearManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreebearManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TreebearManager/Pods-TreebearManager.debug.xcconfig"; sourceTree = "<group>"; };
 		B348F91F21F6C2BE0000F194 /* TreebearManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreebearManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B348F93721F6C2C10000F194 /* TreebearManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreebearManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -618,6 +621,8 @@
 			children = (
 				B348F97021F6EAF40000F194 /* SXHomeController.h */,
 				B348F97121F6EAF40000F194 /* SXHomeController.m */,
+				092D6D062202AC3200538AC8 /* SXHomeConnectedController.h */,
+				092D6D072202AC3200538AC8 /* SXHomeConnectedController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1085,6 +1090,7 @@
 				B3AF2FEA21FAFF10001E4E67 /* SXLoginMainController.m in Sources */,
 				092D6CE92200625700538AC8 /* Foundation+Log.m in Sources */,
 				B3AF301521FB0A92001E4E67 /* SXBaseSectionHeaderCollectionView.m in Sources */,
+				092D6D082202AC3200538AC8 /* SXHomeConnectedController.m in Sources */,
 				B348F9A821F71A680000F194 /* UIView+Frame.m in Sources */,
 				B348F9B021F71E180000F194 /* SXHttpTool.m in Sources */,
 				B348F96121F6C50C0000F194 /* SXRootTool.m in Sources */,

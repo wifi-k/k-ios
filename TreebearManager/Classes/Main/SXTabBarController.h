@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface SXTabBarController : UITabBarController
 
+///登录成功之后替换掉首页
+- (void)changeHomeVC;
+    
 @end
-
-NS_ASSUME_NONNULL_END
