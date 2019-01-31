@@ -28,7 +28,7 @@
 
 - (void)setUpUI{
     
-    self.navigationItem.title = @"登录";
+    //self.navigationItem.title = @"登录";
     
     self.view.backgroundColor = SXColorRandom;
     

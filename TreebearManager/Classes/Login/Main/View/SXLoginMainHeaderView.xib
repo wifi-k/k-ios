@@ -16,31 +16,57 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJn-cl-YZv">
-                    <rect key="frame" x="165" y="123" width="31" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="登录"/>
-                    <connections>
-                        <action selector="clickLoginBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Qdi-hj-2vU"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nls-eS-QBM">
-                    <rect key="frame" x="165" y="204" width="31" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0ce-Hm-tKt">
+                    <rect key="frame" x="147.5" y="160" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="jnZ-WG-6xo"/>
+                        <constraint firstAttribute="height" constant="80" id="pDM-zl-sEg"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nls-eS-QBM">
+                    <rect key="frame" x="60" y="365" width="255" height="45"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="XXk-Tb-M7A"/>
+                    </constraints>
                     <state key="normal" title="注册"/>
                     <connections>
                         <action selector="clickForgetBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="U4D-Py-jVu"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJn-cl-YZv">
+                    <rect key="frame" x="60" y="300" width="255" height="45"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="S1Y-Lq-UF1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="登录"/>
+                    <connections>
+                        <action selector="clickLoginBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Qdi-hj-2vU"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0ce-Hm-tKt" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="AZb-uZ-t28"/>
+                <constraint firstItem="CJn-cl-YZv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="60" id="LzL-cH-YYd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nls-eS-QBM" secondAttribute="trailing" constant="60" id="ZbL-bD-KBM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="CJn-cl-YZv" secondAttribute="trailing" constant="60" id="adE-wb-9zl"/>
+                <constraint firstItem="nls-eS-QBM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="60" id="ib1-QB-v9u"/>
+                <constraint firstItem="nls-eS-QBM" firstAttribute="top" secondItem="CJn-cl-YZv" secondAttribute="bottom" constant="20" id="mfN-Ct-Jqx"/>
+                <constraint firstItem="CJn-cl-YZv" firstAttribute="top" secondItem="0ce-Hm-tKt" secondAttribute="bottom" constant="60" id="njo-Ip-9fe"/>
+                <constraint firstItem="0ce-Hm-tKt" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="140" id="ybI-WK-YnJ"/>
+            </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="iconImageV" destination="0ce-Hm-tKt" id="ZyU-T3-PNw"/>
                 <outlet property="loginBtn" destination="CJn-cl-YZv" id="gJI-q1-6kP"/>
                 <outlet property="registBtn" destination="nls-eS-QBM" id="IEp-nV-WOw"/>
             </connections>
+            <point key="canvasLocation" x="132" y="152.47376311844079"/>
         </view>
     </objects>
 </document>

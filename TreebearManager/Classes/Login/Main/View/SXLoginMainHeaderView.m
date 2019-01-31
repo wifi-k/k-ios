@@ -9,6 +9,7 @@
 #import "SXLoginMainHeaderView.h"
 
 @interface SXLoginMainHeaderView ()
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageV;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 @property (weak, nonatomic) IBOutlet UIButton *registBtn;
 @end
@@ -29,6 +30,9 @@
 }
 
 - (void)setUpUI{
+    
+    self.iconImageV.backgroundColor = SXColorBtnHighlight;
+    [self.iconImageV roundViewWithRadius:40.0f];
     
     [self.loginBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
     [self.loginBtn setBackgroundColor:SXColorOrange forState:UIControlStateNormal];
