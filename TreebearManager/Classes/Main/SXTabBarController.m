@@ -11,7 +11,7 @@
 #import "SXHomeController.h"
 #import "SXPhotoController.h"
 #import "SXMineController.h"
-#import "SXHomeConnectedController.h"
+#import "SXHomeMainController.h"
 
 #import "UIImage+Extension.h"
 
@@ -53,14 +53,23 @@
     [self addChildViewController:navi];
 }
 
-- (void)changeHomeVC{
+- (void)changeToMainHomeVC{
+    SXHomeMainController *homeVC = [[SXHomeMainController alloc] init];
+    [self changeWithHomeVC:homeVC];
+}
+    
+- (void)changeToHomeVC{
+    SXHomeController *homeVC = [[SXHomeController alloc] init];
+    [self changeWithHomeVC:homeVC];
+}
+
+- (void)changeWithHomeVC:(UIViewController *)homeVC{
     //创建首页
-    SXHomeConnectedController *mineVC = [[SXHomeConnectedController alloc] init];
-    mineVC.tabBarItem.title = @"首页";
-    mineVC.tabBarItem.image = [UIImage imageNamed:@"tab_home_normal"];
-    mineVC.tabBarItem.badgeValue = nil;
-    mineVC.tabBarItem.selectedImage = [UIImage imageWithOriginalName:@"tab_home_selected"];
-    SXNavigationController *navi = [[SXNavigationController alloc] initWithRootViewController:mineVC];
+    homeVC.tabBarItem.title = @"首页";
+    homeVC.tabBarItem.image = [UIImage imageNamed:@"tab_home_normal"];
+    homeVC.tabBarItem.badgeValue = nil;
+    homeVC.tabBarItem.selectedImage = [UIImage imageWithOriginalName:@"tab_home_selected"];
+    SXNavigationController *navi = [[SXNavigationController alloc] initWithRootViewController:homeVC];
     
     NSArray *child = self.childViewControllers;
     NSMutableArray *fdfd = [NSMutableArray arrayWithArray:child];

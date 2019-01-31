@@ -18,6 +18,21 @@
 
 @implementation SXHomeController
 
+#pragma mark -控制器生命周期方法-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    //设置当前导航条背景色
+    //self.navigationController.navigationBar.barTintColor = [UIColor hex:@"444652"];
+    self.navigationController.navigationBar.hidden = YES;
+}
+    
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    //设置当前导航条背景色
+    //self.navigationController.navigationBar.barTintColor = UIColor.blueColor;
+    self.navigationController.navigationBar.hidden = NO;
+}
+    
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -28,7 +43,7 @@
     
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-    [SXRootTool change];
+    [SXRootTool changeToMainHomeVC];
 }
 
 @end

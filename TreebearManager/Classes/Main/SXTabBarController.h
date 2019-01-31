@@ -10,7 +10,9 @@
 
 @interface SXTabBarController : UITabBarController
 
-///登录成功之后替换掉首页
-- (void)changeHomeVC;
+///连接成功
+- (void)changeToMainHomeVC;
+///连接失败
+- (void)changeToHomeVC;
     
 @end

@@ -19,8 +19,11 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIViewController *)topViewController;
     
 + (UIViewController *)rootViewController;
-    
-+ (void)change;
+
+///连接成功
++ (void)changeToMainHomeVC;
+///连接失败
++ (void)changeToHomeVC;
 
 @end
 

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SXHomeConnectedController : UIViewController
+@interface SXHomeMainController : UIViewController
 
 @end
 

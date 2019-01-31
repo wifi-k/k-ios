@@ -46,12 +46,21 @@
     return rootVC;
 }
     
-+ (void)change{
+    
++ (void)changeToMainHomeVC{
     UIViewController *rootVC = self.rootViewController;
     if ([rootVC isKindOfClass:[SXTabBarController class]]) {
         SXTabBarController *tabBarVC = (SXTabBarController *)rootVC;
-        [tabBarVC changeHomeVC];
+        [tabBarVC changeToMainHomeVC];
     }
 }
-
+    
++ (void)changeToHomeVC{
+    UIViewController *rootVC = self.rootViewController;
+    if ([rootVC isKindOfClass:[SXTabBarController class]]) {
+        SXTabBarController *tabBarVC = (SXTabBarController *)rootVC;
+        [tabBarVC changeToHomeVC];
+    }
+}
+    
 @end
