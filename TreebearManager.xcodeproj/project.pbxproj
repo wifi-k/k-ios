@@ -30,6 +30,8 @@
 		092D6D1D2202E6EC00538AC8 /* SXForgetConfirmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6D1C2202E6EC00538AC8 /* SXForgetConfirmController.m */; };
 		092D6D202202E70300538AC8 /* SXForgetConfirmHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6D1F2202E70300538AC8 /* SXForgetConfirmHeaderView.m */; };
 		092D6D222202E71A00538AC8 /* SXForgetConfirmHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092D6D212202E71A00538AC8 /* SXForgetConfirmHeaderView.xib */; };
+		092D6D2B2203011800538AC8 /* SXHomeNetworkingDeviceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6D292203011800538AC8 /* SXHomeNetworkingDeviceCell.m */; };
+		092D6D2C2203011800538AC8 /* SXHomeNetworkingDeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092D6D2A2203011800538AC8 /* SXHomeNetworkingDeviceCell.xib */; };
 		327EE8E44A5A7DE11581C0F1 /* libPods-TreebearManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D77B77B9D44D60B532DDE9D2 /* libPods-TreebearManager.a */; };
 		B348F93C21F6C2C10000F194 /* TreebearManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F93B21F6C2C10000F194 /* TreebearManagerTests.m */; };
 		B348F94721F6C2C10000F194 /* TreebearManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F94621F6C2C10000F194 /* TreebearManagerUITests.m */; };
@@ -144,6 +146,9 @@
 		092D6D1E2202E70300538AC8 /* SXForgetConfirmHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForgetConfirmHeaderView.h; sourceTree = "<group>"; };
 		092D6D1F2202E70300538AC8 /* SXForgetConfirmHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForgetConfirmHeaderView.m; sourceTree = "<group>"; };
 		092D6D212202E71A00538AC8 /* SXForgetConfirmHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXForgetConfirmHeaderView.xib; sourceTree = "<group>"; };
+		092D6D282203011800538AC8 /* SXHomeNetworkingDeviceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeNetworkingDeviceCell.h; sourceTree = "<group>"; };
+		092D6D292203011800538AC8 /* SXHomeNetworkingDeviceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeNetworkingDeviceCell.m; sourceTree = "<group>"; };
+		092D6D2A2203011800538AC8 /* SXHomeNetworkingDeviceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXHomeNetworkingDeviceCell.xib; sourceTree = "<group>"; };
 		0BF17A1BEC7F76DCAB17507A /* Pods-TreebearManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreebearManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TreebearManager/Pods-TreebearManager.debug.xcconfig"; sourceTree = "<group>"; };
 		B348F91F21F6C2BE0000F194 /* TreebearManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreebearManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B348F93721F6C2C10000F194 /* TreebearManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreebearManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -663,6 +668,9 @@
 		B348F96F21F6EAD30000F194 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				092D6D282203011800538AC8 /* SXHomeNetworkingDeviceCell.h */,
+				092D6D292203011800538AC8 /* SXHomeNetworkingDeviceCell.m */,
+				092D6D2A2203011800538AC8 /* SXHomeNetworkingDeviceCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1048,6 +1056,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				092D6D122202DD9B00538AC8 /* SXLoginHeaderView.xib in Resources */,
+				092D6D2C2203011800538AC8 /* SXHomeNetworkingDeviceCell.xib in Resources */,
 				092D6D0D2202D78300538AC8 /* SXRegistHeaderView.xib in Resources */,
 				B348F99421F714CC0000F194 /* LaunchScreen.storyboard in Resources */,
 				B348F99121F7143A0000F194 /* Assets.xcassets in Resources */,
@@ -1181,6 +1190,7 @@
 				B348F9B321F71E2D0000F194 /* SXUploadParam.m in Sources */,
 				B3AF301E21FE90AF001E4E67 /* SXBaseTableViewPlainController.m in Sources */,
 				B3AF302A21FE91B8001E4E67 /* UIViewController+Placeholder.m in Sources */,
+				092D6D2B2203011800538AC8 /* SXHomeNetworkingDeviceCell.m in Sources */,
 				092D6D182202E4FD00538AC8 /* SXForgetHeaderView.m in Sources */,
 				B348F9AC21F71A680000F194 /* UIView+Extension.m in Sources */,
 				B3AF301821FB0C2E001E4E67 /* SXBaseWebController.m in Sources */,
