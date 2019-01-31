@@ -19,12 +19,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
  
-    self.view.backgroundColor = SXColorRandom;
-    
     [self setUpUI];
 }
     
 - (void)setUpUI{
+    
+    self.view.backgroundColor = SXColorRandom;
+    
     SXRegistHeaderView *headerView = [SXRegistHeaderView headerView];
     [self.view addSubview:headerView];
     self.headerView = headerView;

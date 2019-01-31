@@ -25,6 +25,11 @@
 		092D6D102202DD9400538AC8 /* SXLoginHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6D0F2202DD9400538AC8 /* SXLoginHeaderView.m */; };
 		092D6D122202DD9B00538AC8 /* SXLoginHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092D6D112202DD9B00538AC8 /* SXLoginHeaderView.xib */; };
 		092D6D152202E35000538AC8 /* SXCodeLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6D142202E35000538AC8 /* SXCodeLoginController.m */; };
+		092D6D182202E4FD00538AC8 /* SXForgetHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6D172202E4FD00538AC8 /* SXForgetHeaderView.m */; };
+		092D6D1A2202E51C00538AC8 /* SXForgetHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092D6D192202E51C00538AC8 /* SXForgetHeaderView.xib */; };
+		092D6D1D2202E6EC00538AC8 /* SXForgetConfirmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6D1C2202E6EC00538AC8 /* SXForgetConfirmController.m */; };
+		092D6D202202E70300538AC8 /* SXForgetConfirmHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6D1F2202E70300538AC8 /* SXForgetConfirmHeaderView.m */; };
+		092D6D222202E71A00538AC8 /* SXForgetConfirmHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092D6D212202E71A00538AC8 /* SXForgetConfirmHeaderView.xib */; };
 		327EE8E44A5A7DE11581C0F1 /* libPods-TreebearManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D77B77B9D44D60B532DDE9D2 /* libPods-TreebearManager.a */; };
 		B348F93C21F6C2C10000F194 /* TreebearManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F93B21F6C2C10000F194 /* TreebearManagerTests.m */; };
 		B348F94721F6C2C10000F194 /* TreebearManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F94621F6C2C10000F194 /* TreebearManagerUITests.m */; };
@@ -131,6 +136,14 @@
 		092D6D112202DD9B00538AC8 /* SXLoginHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXLoginHeaderView.xib; sourceTree = "<group>"; };
 		092D6D132202E35000538AC8 /* SXCodeLoginController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXCodeLoginController.h; sourceTree = "<group>"; };
 		092D6D142202E35000538AC8 /* SXCodeLoginController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXCodeLoginController.m; sourceTree = "<group>"; };
+		092D6D162202E4FD00538AC8 /* SXForgetHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForgetHeaderView.h; sourceTree = "<group>"; };
+		092D6D172202E4FD00538AC8 /* SXForgetHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForgetHeaderView.m; sourceTree = "<group>"; };
+		092D6D192202E51C00538AC8 /* SXForgetHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXForgetHeaderView.xib; sourceTree = "<group>"; };
+		092D6D1B2202E6EC00538AC8 /* SXForgetConfirmController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForgetConfirmController.h; sourceTree = "<group>"; };
+		092D6D1C2202E6EC00538AC8 /* SXForgetConfirmController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForgetConfirmController.m; sourceTree = "<group>"; };
+		092D6D1E2202E70300538AC8 /* SXForgetConfirmHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForgetConfirmHeaderView.h; sourceTree = "<group>"; };
+		092D6D1F2202E70300538AC8 /* SXForgetConfirmHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForgetConfirmHeaderView.m; sourceTree = "<group>"; };
+		092D6D212202E71A00538AC8 /* SXForgetConfirmHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXForgetConfirmHeaderView.xib; sourceTree = "<group>"; };
 		0BF17A1BEC7F76DCAB17507A /* Pods-TreebearManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreebearManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TreebearManager/Pods-TreebearManager.debug.xcconfig"; sourceTree = "<group>"; };
 		B348F91F21F6C2BE0000F194 /* TreebearManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreebearManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B348F93721F6C2C10000F194 /* TreebearManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreebearManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -713,6 +726,8 @@
 			children = (
 				B3AF2FEE21FAFF34001E4E67 /* SXForgetController.h */,
 				B3AF2FEF21FAFF34001E4E67 /* SXForgetController.m */,
+				092D6D1B2202E6EC00538AC8 /* SXForgetConfirmController.h */,
+				092D6D1C2202E6EC00538AC8 /* SXForgetConfirmController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -727,6 +742,12 @@
 		B3AF2FDF21FAFEC6001E4E67 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				092D6D162202E4FD00538AC8 /* SXForgetHeaderView.h */,
+				092D6D172202E4FD00538AC8 /* SXForgetHeaderView.m */,
+				092D6D192202E51C00538AC8 /* SXForgetHeaderView.xib */,
+				092D6D1E2202E70300538AC8 /* SXForgetConfirmHeaderView.h */,
+				092D6D1F2202E70300538AC8 /* SXForgetConfirmHeaderView.m */,
+				092D6D212202E71A00538AC8 /* SXForgetConfirmHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1030,7 +1051,9 @@
 				092D6D0D2202D78300538AC8 /* SXRegistHeaderView.xib in Resources */,
 				B348F99421F714CC0000F194 /* LaunchScreen.storyboard in Resources */,
 				B348F99121F7143A0000F194 /* Assets.xcassets in Resources */,
+				092D6D222202E71A00538AC8 /* SXForgetConfirmHeaderView.xib in Resources */,
 				B3AF2FD521F9C8A3001E4E67 /* MBProgressHUD.bundle in Resources */,
+				092D6D1A2202E51C00538AC8 /* SXForgetHeaderView.xib in Resources */,
 				B3AF2FF821FB0180001E4E67 /* SXLoginMainHeaderView.xib in Resources */,
 				092D6CE622005A1A00538AC8 /* SXEmptyDataEventView.xib in Resources */,
 			);
@@ -1146,6 +1169,7 @@
 				092D6CFF220073A600538AC8 /* SXUserDefaultsTool.m in Sources */,
 				B3AF302721FE914E001E4E67 /* SXBaseTableGroupRefreshController.m in Sources */,
 				092D6D102202DD9400538AC8 /* SXLoginHeaderView.m in Sources */,
+				092D6D1D2202E6EC00538AC8 /* SXForgetConfirmController.m in Sources */,
 				B348F9AB21F71A680000F194 /* UIButton+Extension.m in Sources */,
 				B3AF2FFE21FB085C001E4E67 /* SXBaseParam.m in Sources */,
 				B3AF2FD621F9C8A3001E4E67 /* MBProgressHUD+CL.m in Sources */,
@@ -1157,6 +1181,7 @@
 				B348F9B321F71E2D0000F194 /* SXUploadParam.m in Sources */,
 				B3AF301E21FE90AF001E4E67 /* SXBaseTableViewPlainController.m in Sources */,
 				B3AF302A21FE91B8001E4E67 /* UIViewController+Placeholder.m in Sources */,
+				092D6D182202E4FD00538AC8 /* SXForgetHeaderView.m in Sources */,
 				B348F9AC21F71A680000F194 /* UIView+Extension.m in Sources */,
 				B3AF301821FB0C2E001E4E67 /* SXBaseWebController.m in Sources */,
 				B3AF300821FB0956001E4E67 /* SXBaseModel.m in Sources */,
@@ -1166,6 +1191,7 @@
 				B3AF301221FB0A5D001E4E67 /* SXBaseCollectionViewCell.m in Sources */,
 				B3AF2FDA21F9C8BD001E4E67 /* UIView+AutoLayout.m in Sources */,
 				B3AF2FF621FB0173001E4E67 /* SXLoginMainHeaderView.m in Sources */,
+				092D6D202202E70300538AC8 /* SXForgetConfirmHeaderView.m in Sources */,
 				B3AF303921FE9657001E4E67 /* SXBaseCustomTablePlainRrfreshController.m in Sources */,
 				B348F9B621F71E960000F194 /* SXNetRequestTool.m in Sources */,
 				B3AF2FED21FAFF24001E4E67 /* SXLoginController.m in Sources */,
