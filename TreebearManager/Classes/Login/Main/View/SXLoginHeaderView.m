@@ -16,8 +16,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *pwdTextFeild;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView2;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLine2H;
+
+@property (weak, nonatomic) IBOutlet UIButton *codeLoginBtn;
+@property (weak, nonatomic) IBOutlet UIButton *forgetBtn;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
-    
 @end
 
 @implementation SXLoginHeaderView
@@ -39,6 +41,18 @@
     
 }
 
+#pragma mark -按钮点击事件-
+- (IBAction)clickCodeLoginBtn:(UIButton *)sender {
+    if (self.clickCodeLoginBtnBlock) {
+        self.clickCodeLoginBtnBlock();
+    }
+}
+    
+- (IBAction)clickForgetBtn:(UIButton *)sender {
+    if (self.clickForgetBtnBlock) {
+        self.clickForgetBtnBlock();
+    }
+}
     
 - (IBAction)clickLoginBtn:(UIButton *)sender {
     if (self.clickLoginBtnBlock) {

@@ -39,6 +39,7 @@
     [self.loginBtn setBackgroundColor:SXColorGray5 forState:UIControlStateDisabled];
 }
 
+#pragma mark -按钮点击事件-
 - (IBAction)clickLoginBtn:(UIButton *)sender {
     if (self.clickLoginBtnBlock) {
         self.clickLoginBtnBlock();

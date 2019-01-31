@@ -24,6 +24,7 @@
 		092D6D0D2202D78300538AC8 /* SXRegistHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092D6D0C2202D78300538AC8 /* SXRegistHeaderView.xib */; };
 		092D6D102202DD9400538AC8 /* SXLoginHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6D0F2202DD9400538AC8 /* SXLoginHeaderView.m */; };
 		092D6D122202DD9B00538AC8 /* SXLoginHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092D6D112202DD9B00538AC8 /* SXLoginHeaderView.xib */; };
+		092D6D152202E35000538AC8 /* SXCodeLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6D142202E35000538AC8 /* SXCodeLoginController.m */; };
 		327EE8E44A5A7DE11581C0F1 /* libPods-TreebearManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D77B77B9D44D60B532DDE9D2 /* libPods-TreebearManager.a */; };
 		B348F93C21F6C2C10000F194 /* TreebearManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F93B21F6C2C10000F194 /* TreebearManagerTests.m */; };
 		B348F94721F6C2C10000F194 /* TreebearManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F94621F6C2C10000F194 /* TreebearManagerUITests.m */; };
@@ -128,6 +129,8 @@
 		092D6D0E2202DD9400538AC8 /* SXLoginHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXLoginHeaderView.h; sourceTree = "<group>"; };
 		092D6D0F2202DD9400538AC8 /* SXLoginHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXLoginHeaderView.m; sourceTree = "<group>"; };
 		092D6D112202DD9B00538AC8 /* SXLoginHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXLoginHeaderView.xib; sourceTree = "<group>"; };
+		092D6D132202E35000538AC8 /* SXCodeLoginController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXCodeLoginController.h; sourceTree = "<group>"; };
+		092D6D142202E35000538AC8 /* SXCodeLoginController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXCodeLoginController.m; sourceTree = "<group>"; };
 		0BF17A1BEC7F76DCAB17507A /* Pods-TreebearManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreebearManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TreebearManager/Pods-TreebearManager.debug.xcconfig"; sourceTree = "<group>"; };
 		B348F91F21F6C2BE0000F194 /* TreebearManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreebearManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B348F93721F6C2C10000F194 /* TreebearManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreebearManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -781,6 +784,8 @@
 				B3AF2FE921FAFF10001E4E67 /* SXLoginMainController.m */,
 				B3AF2FEB21FAFF24001E4E67 /* SXLoginController.h */,
 				B3AF2FEC21FAFF24001E4E67 /* SXLoginController.m */,
+				092D6D132202E35000538AC8 /* SXCodeLoginController.h */,
+				092D6D142202E35000538AC8 /* SXCodeLoginController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1131,6 +1136,7 @@
 				B348F97D21F711450000F194 /* SXConst.m in Sources */,
 				B3AF302421FE9113001E4E67 /* SXBaseTablePlainRrfreshController.m in Sources */,
 				092D6CF6220062C700538AC8 /* DES3EncryptUtil.m in Sources */,
+				092D6D152202E35000538AC8 /* SXCodeLoginController.m in Sources */,
 				092D6CFB2200731300538AC8 /* SXNotificationCenterTool.m in Sources */,
 				092D6CE12200504100538AC8 /* SXRefreshFooter.m in Sources */,
 				B348F98821F713A80000F194 /* main.m in Sources */,

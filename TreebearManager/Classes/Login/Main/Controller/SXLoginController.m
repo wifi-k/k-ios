@@ -7,6 +7,8 @@
 //
 
 #import "SXLoginController.h"
+#import "SXForgetController.h"
+#import "SXCodeLoginController.h"
 #import "SXLoginHeaderView.h"
 #import "SXRootTool.h"
 
@@ -40,12 +42,28 @@
     headerView.clickLoginBtnBlock = ^{
         [weakSelf jumpToMainVC];
     };
+    headerView.clickCodeLoginBtnBlock = ^{
+        [weakSelf jumpToCodeLoginVC];
+    };
+    headerView.clickForgetBtnBlock = ^{
+        [weakSelf jumpToForgetVC];
+    };
     [self.view addSubview:headerView];
-    self.headerView = headerView;   
+    self.headerView = headerView;
 }
-    
+
 - (void)jumpToMainVC{
     [SXRootTool chooseRootWithTabBarVC:SXKeyWindow];
+}
+    
+- (void)jumpToForgetVC{
+    SXForgetController *forgetVC = [[SXForgetController alloc] init];
+    [self.navigationController pushViewController:forgetVC animated:YES];
+}
+    
+- (void)jumpToCodeLoginVC{
+    SXCodeLoginController *codeLoginVC = [[SXCodeLoginController alloc] init];
+    [self.navigationController pushViewController:codeLoginVC animated:YES];
 }
 
 @end
