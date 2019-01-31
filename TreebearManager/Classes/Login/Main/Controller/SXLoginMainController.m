@@ -12,7 +12,6 @@
 #import "SXRegistController.h"
 
 @interface SXLoginMainController ()
-
 ///头部视图
 @property (nonatomic, weak) SXLoginMainHeaderView *headerView;
 @end

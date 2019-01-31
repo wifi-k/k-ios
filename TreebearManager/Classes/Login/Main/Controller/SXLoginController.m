@@ -7,10 +7,12 @@
 //
 
 #import "SXLoginController.h"
+#import "SXLoginHeaderView.h"
 #import "SXRootTool.h"
 
 @interface SXLoginController ()
-
+///头部视图
+@property (nonatomic, weak) SXLoginHeaderView *headerView;
 @end
 
 @implementation SXLoginController
@@ -18,11 +20,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = SXColorRandom;
+    //1.初始化UI
+    [self setUpUI];
 }
-
-#pragma mark -跳转Main页面-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    self.headerView.frame = self.view.bounds;
+}
+    
+- (void)setUpUI{
+    self.navigationItem.title = @"登录小K管家";
+    
+    self.view.backgroundColor = SXColorRandom;
+    
+    WS(weakSelf);
+    SXLoginHeaderView *headerView = [SXLoginHeaderView headerView];
+    headerView.clickLoginBtnBlock = ^{
+        [weakSelf jumpToMainVC];
+    };
+    [self.view addSubview:headerView];
+    self.headerView = headerView;   
+}
+    
+- (void)jumpToMainVC{
     [SXRootTool chooseRootWithTabBarVC:SXKeyWindow];
 }
 
