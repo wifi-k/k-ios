@@ -32,7 +32,7 @@
     
 }
 
-    
+#pragma mark -按钮点击事件-
 - (IBAction)clickNextBtn:(UIButton *)sender {
     if (self.clickNextBtnBlock) {
         self.clickNextBtnBlock();

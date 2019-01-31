@@ -8,6 +8,18 @@
 
 #import "SXForgetConfirmHeaderView.h"
 
+@interface SXForgetConfirmHeaderView ()
+@property (weak, nonatomic) IBOutlet UITextField *pwdTextField;
+@property (weak, nonatomic) IBOutlet UIView *bottomLineView;
+    
+@property (weak, nonatomic) IBOutlet UITextField *pwd2TextFeild;
+@property (weak, nonatomic) IBOutlet UIView *bottomLineView2;
+    
+@property (weak, nonatomic) IBOutlet UIButton *confirmBtn;
+@property (weak, nonatomic) IBOutlet UIButton *agreeBtn;
+@property (weak, nonatomic) IBOutlet UIButton *licence;
+@end
+
 @implementation SXForgetConfirmHeaderView
 
 + (instancetype)headerView{
@@ -27,4 +39,23 @@
     
 }
 
+#pragma mark -按钮点击事件-
+- (IBAction)clickConfirmBtn:(UIButton *)sender {
+    if (self.clickConfirmBtnBlock) {
+        self.clickConfirmBtnBlock();
+    }
+}
+ 
+- (IBAction)clickAgreeBtn:(UIButton *)sender {
+    if (self.clickAgreeBtnBlock) {
+        self.clickAgreeBtnBlock();
+    }
+}
+ 
+- (IBAction)clickLicenceBtn:(UIButton *)sender {
+    if (self.clickLicenceBtnBlock) {
+        self.clickLicenceBtnBlock();
+    }
+}
+    
 @end
