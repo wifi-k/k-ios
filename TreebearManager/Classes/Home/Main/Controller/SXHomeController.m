@@ -11,9 +11,12 @@
 #import "SXTabBarController.h"
 #import "SXNavigationController.h"
 #import "SXMineController.h"
+#import "SXHomeHeaderView.h"
 
 @interface SXHomeController ()
-
+///头部视图
+@property (nonatomic, weak) SXHomeHeaderView *headerView;
+    
 @end
 
 @implementation SXHomeController
@@ -39,11 +42,19 @@
     self.view.backgroundColor = SXColorRandom;
     
     self.navigationItem.title = @"首页";
+    
+    SXHomeHeaderView *headerView = [SXHomeHeaderView headerView];
+    headerView.clickBindingBtnBlock = ^{
+        [SXRootTool changeToMainHomeVC];
+    };
+    [self.view addSubview:headerView];
+    self.headerView = headerView;
 }
+ 
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
     
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
-    [SXRootTool changeToMainHomeVC];
+    self.headerView.frame = self.view.bounds;
 }
 
 @end

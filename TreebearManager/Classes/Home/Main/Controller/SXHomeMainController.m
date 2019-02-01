@@ -41,10 +41,10 @@
     tableView.showsHorizontalScrollIndicator = NO;
     [self.view addSubview:tableView];
     self.tableView = tableView;
+    self.tableView.bounces = NO;
     
     //2.头部视图
     SXHomeMainHeaderView *headerView = [SXHomeMainHeaderView headerView];
-//    headerView.height = 250;
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
     
@@ -101,12 +101,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    [SXRootTool changeToHomeVC];
 }
-    
-//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-//    DLog(@"SXHomeConnectedController");
-//
-//    [SXRootTool changeToHomeVC];
-//}
     
 @end

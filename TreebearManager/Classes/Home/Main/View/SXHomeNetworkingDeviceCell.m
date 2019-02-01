@@ -8,6 +8,11 @@
 
 #import "SXHomeNetworkingDeviceCell.h"
 
+@interface SXHomeNetworkingDeviceCell ()
+    
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageV;
+@end
+
 @implementation SXHomeNetworkingDeviceCell
 
 static NSString *ID = @"SXHomeNetworkingDeviceCellID";
@@ -32,6 +37,8 @@ static NSString *ID = @"SXHomeNetworkingDeviceCellID";
     //初始化UI
 - (void)setUpUI{
     
+    self.iconImageV.backgroundColor = SXColorRandom;
+    [self.iconImageV roundViewWithRadius:30.0f];
 }
     
 @end
