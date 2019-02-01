@@ -7,11 +7,14 @@
 //
 
 #import "SXHomeMainController.h"
+#import "SXHomeMainHeaderView.h"
+#import "SXHomeMainSectionHeaderView.h"
 #import "SXHomeNetworkingDeviceCell.h"
 #import "SXRootTool.h"
 
 @interface SXHomeMainController ()<UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic, weak) UITableView *tableView;
+@property (nonatomic, weak) SXHomeMainHeaderView *headerView;//头部视图
+@property (nonatomic, weak) UITableView *tableView;//列表视图
 @end
 
 @implementation SXHomeMainController
@@ -28,8 +31,8 @@
     
     self.navigationItem.title = @"小K管家";
     
-    //创建tableView
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    //1.创建tableView
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.backgroundColor = SXColorBgViewGray;
@@ -38,16 +41,23 @@
     tableView.showsHorizontalScrollIndicator = NO;
     [self.view addSubview:tableView];
     self.tableView = tableView;
+    
+    //2.头部视图
+    SXHomeMainHeaderView *headerView = [SXHomeMainHeaderView headerView];
+//    headerView.height = 250;
+    self.tableView.tableHeaderView = headerView;
+    self.headerView = headerView;
+    
+    //3.注册头部视图
+    [self.tableView registerClass:SXHomeMainSectionHeaderView.class forHeaderFooterViewReuseIdentifier:SXHomeMainSectionHeaderViewID];
 }
 
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    
-    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.mas_equalTo(self.view);
-        make.right.mas_equalTo(self.view.mas_right);
-        make.bottom.mas_equalTo(self.view.mas_bottom);
-    }];
+
+    self.tableView.frame = self.view.bounds;
+
+    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 266);
 }
     
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
@@ -70,6 +80,24 @@
     return 100.0f;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 50.0f;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    SXHomeMainSectionHeaderView *headerView = [SXHomeMainSectionHeaderView headerViewWithTableView:tableView];
+    headerView.title = [NSString stringWithFormat:@"标题-%ld",section];
+    return headerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.01;
+}
+    
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    return [[UIView alloc] initWithFrame:CGRectZero];
+}
+    
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     

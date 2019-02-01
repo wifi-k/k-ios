@@ -24,7 +24,7 @@ static NSString *ID = @"SXHomeNetworkingDeviceCellID";
     [super awakeFromNib];
     
     //设置背样式
-    self.contentView.backgroundColor = SXColorRandom;
+    self.contentView.backgroundColor = SXColorWhite;
     
     [self setUpUI];
 }
