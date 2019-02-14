@@ -10,6 +10,12 @@
 		091186E822151B5500938D9F /* SXTCPSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 091186E722151B5500938D9F /* SXTCPSocketManager.m */; };
 		091186EE22151D5F00938D9F /* SGSocketConfigM.m in Sources */ = {isa = PBXBuildFile; fileRef = 091186EB22151D5F00938D9F /* SGSocketConfigM.m */; };
 		091186EF22151D5F00938D9F /* SGSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 091186ED22151D5F00938D9F /* SGSocketManager.m */; };
+		09118701221522BF00938D9F /* GCDAsyncSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 091186F3221522BF00938D9F /* GCDAsyncSocketManager.m */; };
+		09118702221522BF00938D9F /* GCDAsyncSocketCommunicationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 091186F4221522BF00938D9F /* GCDAsyncSocketCommunicationManager.m */; };
+		09118703221522BF00938D9F /* GACSocketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 091186F9221522BF00938D9F /* GACSocketModel.m */; };
+		09118704221522BF00938D9F /* GACConnectConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 091186FA221522BF00938D9F /* GACConnectConfig.m */; };
+		09118705221522BF00938D9F /* GCKeyChainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 091186FD221522BF00938D9F /* GCKeyChainManager.m */; };
+		09118706221522BF00938D9F /* GACErrorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09118700221522BF00938D9F /* GACErrorManager.m */; };
 		092D6CDE22004FB400538AC8 /* SXRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CDD22004FB400538AC8 /* SXRefreshHeader.m */; };
 		092D6CE12200504100538AC8 /* SXRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CE02200504100538AC8 /* SXRefreshFooter.m */; };
 		092D6CE422005A0C00538AC8 /* SXEmptyDataEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CE322005A0C00538AC8 /* SXEmptyDataEventView.m */; };
@@ -119,6 +125,18 @@
 		091186EB22151D5F00938D9F /* SGSocketConfigM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSocketConfigM.m; sourceTree = "<group>"; };
 		091186EC22151D5F00938D9F /* SGSocketConfigM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSocketConfigM.h; sourceTree = "<group>"; };
 		091186ED22151D5F00938D9F /* SGSocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSocketManager.m; sourceTree = "<group>"; };
+		091186F2221522BF00938D9F /* GCDAsyncSocketCommunicationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocketCommunicationManager.h; sourceTree = "<group>"; };
+		091186F3221522BF00938D9F /* GCDAsyncSocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocketManager.m; sourceTree = "<group>"; };
+		091186F4221522BF00938D9F /* GCDAsyncSocketCommunicationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocketCommunicationManager.m; sourceTree = "<group>"; };
+		091186F5221522BF00938D9F /* GCDAsyncSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocketManager.h; sourceTree = "<group>"; };
+		091186F7221522BF00938D9F /* GACSocketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GACSocketModel.h; sourceTree = "<group>"; };
+		091186F8221522BF00938D9F /* GACConnectConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GACConnectConfig.h; sourceTree = "<group>"; };
+		091186F9221522BF00938D9F /* GACSocketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GACSocketModel.m; sourceTree = "<group>"; };
+		091186FA221522BF00938D9F /* GACConnectConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GACConnectConfig.m; sourceTree = "<group>"; };
+		091186FC221522BF00938D9F /* GCKeyChainManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCKeyChainManager.h; sourceTree = "<group>"; };
+		091186FD221522BF00938D9F /* GCKeyChainManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCKeyChainManager.m; sourceTree = "<group>"; };
+		091186FF221522BF00938D9F /* GACErrorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GACErrorManager.h; sourceTree = "<group>"; };
+		09118700221522BF00938D9F /* GACErrorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GACErrorManager.m; sourceTree = "<group>"; };
 		092D6CDC22004FB400538AC8 /* SXRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXRefreshHeader.h; sourceTree = "<group>"; };
 		092D6CDD22004FB400538AC8 /* SXRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXRefreshHeader.m; sourceTree = "<group>"; };
 		092D6CDF2200504100538AC8 /* SXRefreshFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXRefreshFooter.h; sourceTree = "<group>"; };
@@ -333,8 +351,52 @@
 		091186F022151ECA00938D9F /* Yuzeyang */ = {
 			isa = PBXGroup;
 			children = (
+				091186FB221522BF00938D9F /* Keychain */,
+				091186F1221522BF00938D9F /* Manager */,
+				091186F6221522BF00938D9F /* Model */,
+				091186FE221522BF00938D9F /* Universal */,
 			);
 			path = Yuzeyang;
+			sourceTree = "<group>";
+		};
+		091186F1221522BF00938D9F /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				091186F2221522BF00938D9F /* GCDAsyncSocketCommunicationManager.h */,
+				091186F3221522BF00938D9F /* GCDAsyncSocketManager.m */,
+				091186F4221522BF00938D9F /* GCDAsyncSocketCommunicationManager.m */,
+				091186F5221522BF00938D9F /* GCDAsyncSocketManager.h */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		091186F6221522BF00938D9F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				091186F7221522BF00938D9F /* GACSocketModel.h */,
+				091186F8221522BF00938D9F /* GACConnectConfig.h */,
+				091186F9221522BF00938D9F /* GACSocketModel.m */,
+				091186FA221522BF00938D9F /* GACConnectConfig.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		091186FB221522BF00938D9F /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				091186FC221522BF00938D9F /* GCKeyChainManager.h */,
+				091186FD221522BF00938D9F /* GCKeyChainManager.m */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
+		091186FE221522BF00938D9F /* Universal */ = {
+			isa = PBXGroup;
+			children = (
+				091186FF221522BF00938D9F /* GACErrorManager.h */,
+				09118700221522BF00938D9F /* GACErrorManager.m */,
+			);
+			path = Universal;
 			sourceTree = "<group>";
 		};
 		092D6CDB22004F3800538AC8 /* MJRefresh */ = {
@@ -1210,13 +1272,16 @@
 				092D6D082202AC3200538AC8 /* SXHomeMainController.m in Sources */,
 				B348F9A821F71A680000F194 /* UIView+Frame.m in Sources */,
 				B348F9B021F71E180000F194 /* SXHttpTool.m in Sources */,
+				09118702221522BF00938D9F /* GCDAsyncSocketCommunicationManager.m in Sources */,
 				B348F96121F6C50C0000F194 /* SXRootTool.m in Sources */,
+				09118704221522BF00938D9F /* GACConnectConfig.m in Sources */,
 				B3AF300521FB092F001E4E67 /* SXBasePageParam.m in Sources */,
 				B3AF2FF321FAFF45001E4E67 /* SXRegistController.m in Sources */,
 				092D6CF7220062C700538AC8 /* NSString+Hash.m in Sources */,
 				B3AF2FF021FAFF34001E4E67 /* SXForgetController.m in Sources */,
 				B3AF302121FE90DA001E4E67 /* SXBaseTableViewGroupController.m in Sources */,
 				B348F98921F713A80000F194 /* AppDelegate.m in Sources */,
+				09118705221522BF00938D9F /* GCKeyChainManager.m in Sources */,
 				B348F97221F6EAF40000F194 /* SXHomeController.m in Sources */,
 				092D6D342203F9F300538AC8 /* SXHomeMainSectionHeaderView.m in Sources */,
 				B348F99A21F716E40000F194 /* SXNavigationController.m in Sources */,
@@ -1231,6 +1296,7 @@
 				B348F97D21F711450000F194 /* SXConst.m in Sources */,
 				B3AF302421FE9113001E4E67 /* SXBaseTablePlainRrfreshController.m in Sources */,
 				092D6CF6220062C700538AC8 /* DES3EncryptUtil.m in Sources */,
+				09118703221522BF00938D9F /* GACSocketModel.m in Sources */,
 				092D6D152202E35000538AC8 /* SXCodeLoginController.m in Sources */,
 				092D6CFB2200731300538AC8 /* SXNotificationCenterTool.m in Sources */,
 				092D6CE12200504100538AC8 /* SXRefreshFooter.m in Sources */,
@@ -1262,11 +1328,13 @@
 				092D6D182202E4FD00538AC8 /* SXForgetHeaderView.m in Sources */,
 				B348F9AC21F71A680000F194 /* UIView+Extension.m in Sources */,
 				B3AF301821FB0C2E001E4E67 /* SXBaseWebController.m in Sources */,
+				09118701221522BF00938D9F /* GCDAsyncSocketManager.m in Sources */,
 				B3AF300821FB0956001E4E67 /* SXBaseModel.m in Sources */,
 				092D6CE422005A0C00538AC8 /* SXEmptyDataEventView.m in Sources */,
 				B3AF300F21FB0A20001E4E67 /* SXBaseTableViewCell.m in Sources */,
 				B348F9B921F721D60000F194 /* SXNetReachablityTool.m in Sources */,
 				B3AF301221FB0A5D001E4E67 /* SXBaseCollectionViewCell.m in Sources */,
+				09118706221522BF00938D9F /* GACErrorManager.m in Sources */,
 				B3AF2FDA21F9C8BD001E4E67 /* UIView+AutoLayout.m in Sources */,
 				B3AF2FF621FB0173001E4E67 /* SXLoginMainHeaderView.m in Sources */,
 				092D6D202202E70300538AC8 /* SXForgetConfirmHeaderView.m in Sources */,

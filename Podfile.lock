@@ -20,6 +20,7 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
+  - JSONModel (1.8.0)
   - MarqueeLabel (2.2.5)
   - Masonry (1.1.0)
   - MBProgressHUD (1.0.0)
@@ -43,6 +44,7 @@ DEPENDENCIES:
   - CocoaAsyncSocket
   - DZNEmptyDataSet
   - FMDB (~> 2.7.2)
+  - JSONModel
   - MarqueeLabel (~> 2.2.0)
   - Masonry
   - MBProgressHUD (~> 1.0.0)
@@ -62,6 +64,7 @@ SPEC REPOS:
     - CocoaAsyncSocket
     - DZNEmptyDataSet
     - FMDB
+    - JSONModel
     - MarqueeLabel
     - Masonry
     - MBProgressHUD
@@ -80,6 +83,7 @@ SPEC CHECKSUMS:
   CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   MarqueeLabel: 65ca60ee9ba554be34f35339004c6c9fe6366a31
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
@@ -92,6 +96,6 @@ SPEC CHECKSUMS:
   TZImagePickerController: c3f7c505d23281e21e98df6dbeae372946caa28f
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 0faadd24d3d7491b4befc62a525ec41afb33069c
+PODFILE CHECKSUM: b1e167f8ae64874070b1fdb8928ed0145db4de2b
 
 COCOAPODS: 1.5.3
