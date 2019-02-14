@@ -11,6 +11,8 @@
 #import "SXCodeLoginController.h"
 #import "SXLoginHeaderView.h"
 #import "SXRootTool.h"
+#import "SXTitleAlertView.h"
+#import "SXCodeInputAlertView.h"
 
 @interface SXLoginController ()
 ///头部视图
@@ -53,7 +55,13 @@
 }
 
 - (void)jumpToMainVC{
-    [SXRootTool chooseRootWithTabBarVC:SXKeyWindow];
+    //[SXRootTool chooseRootWithTabBarVC:SXKeyWindow];
+    
+//    SXTitleAlertView *fdfdf = [SXTitleAlertView alertWithTitle:@"标题" confirmStr:@"确定" cancelStr:@"取消"];
+//    [fdfdf alert];
+    
+    SXCodeInputAlertView *input = [SXCodeInputAlertView alertWithTitle:@"输入家庭码加入家庭" confirmStr:@"确定" cancelStr:@"取消"];
+    [input alert];
 }
     
 - (void)jumpToForgetVC{
