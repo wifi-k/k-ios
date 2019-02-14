@@ -9,6 +9,7 @@
 #import "SXHomeHeaderView.h"
 
 @interface SXHomeHeaderView ()
+@property (weak, nonatomic) IBOutlet UILabel *titleL;
 @property (weak, nonatomic) IBOutlet UIImageView *topImageV;
     
 @property (weak, nonatomic) IBOutlet UIButton *bindingDeviceBtn;
@@ -34,7 +35,9 @@
     
     self.backgroundColor = SXColorRandom;
     
+    self.titleL.font = SXFontBold20;
     self.topImageV.backgroundColor = SXColorRandom;
+    [self.bindingDeviceBtn roundViewWithRadius:20.0f];
 }
     
 - (IBAction)clickBindingBtn:(UIButton *)sender {

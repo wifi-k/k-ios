@@ -53,6 +53,12 @@
     }
 }
 
+//设置状态栏样式
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    UIViewController *topVC = self.topViewController;
+    return [topVC preferredStatusBarStyle];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     //清空之前记住代理先

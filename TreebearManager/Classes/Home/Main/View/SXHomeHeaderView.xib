@@ -23,13 +23,13 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小K管家" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEZ-md-J3f">
-                    <rect key="frame" x="114.5" y="60" width="63" height="21"/>
+                    <rect key="frame" x="114.5" y="40" width="63" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIp-om-REx">
-                    <rect key="frame" x="126" y="101" width="40" height="40"/>
+                    <rect key="frame" x="126" y="81" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="6wf-lj-uA8"/>
                         <constraint firstAttribute="width" constant="40" id="dG6-qi-BMj"/>
@@ -37,12 +37,15 @@
                     <state key="normal" title="+"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdV-XT-L82">
-                    <rect key="frame" x="76" y="146" width="140" height="40"/>
+                    <rect key="frame" x="76" y="126" width="140" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="140" id="AZs-xK-OY5"/>
                         <constraint firstAttribute="height" constant="40" id="cfM-mB-41J"/>
                     </constraints>
-                    <state key="normal" title="绑定小K管家"/>
+                    <state key="normal" title="绑定小K管家">
+                        <color key="titleColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
                     <connections>
                         <action selector="clickBindingBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="NW9-SQ-7Bk"/>
                     </connections>
@@ -60,7 +63,7 @@
                 <constraint firstItem="RDD-o3-ppr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0oo-mT-KYu"/>
                 <constraint firstItem="QEZ-md-J3f" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="6Wp-bS-gpu"/>
                 <constraint firstItem="RDD-o3-ppr" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Adl-Xe-56L"/>
-                <constraint firstItem="QEZ-md-J3f" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="40" id="EQN-x2-u9j"/>
+                <constraint firstItem="QEZ-md-J3f" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="EQN-x2-u9j"/>
                 <constraint firstItem="2xs-Nk-c3k" firstAttribute="bottom" secondItem="RDD-o3-ppr" secondAttribute="bottom" constant="100" id="IZ0-N4-cmj"/>
                 <constraint firstItem="uIp-om-REx" firstAttribute="top" secondItem="QEZ-md-J3f" secondAttribute="bottom" constant="20" id="LPk-39-xVM"/>
                 <constraint firstItem="RDD-o3-ppr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="LdT-3E-gDD"/>
@@ -76,6 +79,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="bindingDeviceBtn" destination="cdV-XT-L82" id="RQ2-Z2-HTT"/>
+                <outlet property="titleL" destination="QEZ-md-J3f" id="Vgq-hg-hMa"/>
                 <outlet property="topImageV" destination="RDD-o3-ppr" id="m6T-YV-tIG"/>
             </connections>
             <point key="canvasLocation" x="65.599999999999994" y="66.566716641679164"/>
