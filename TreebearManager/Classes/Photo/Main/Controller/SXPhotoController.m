@@ -34,11 +34,11 @@
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     layout.sectionHeadersPinToVisibleBounds = YES;//头视图悬浮
-    float collectionWidth = (SCREEN_WIDTH - 4 * 10)/3;
+    float collectionWidth = (SCREEN_WIDTH - 5 * 10)/4;
     layout.itemSize = CGSizeMake(collectionWidth, collectionWidth);
     
     //设置每一行之间的间距
-    CGFloat inset = (SCREEN_WIDTH - 3 * layout.itemSize.width) / (3 + 1) - 1;
+    CGFloat inset = (SCREEN_WIDTH - 4 * layout.itemSize.width) / (4 + 1) - 1;
     layout.sectionInset = UIEdgeInsetsMake(inset, inset, inset, inset);
     layout.minimumLineSpacing = inset;
     
