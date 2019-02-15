@@ -13,6 +13,7 @@
 #import "SXRootTool.h"
 #import "SXTitleAlertView.h"
 #import "SXCodeInputAlertView.h"
+#import "SXLoginRegistAlertView.h"
 
 @interface SXLoginController ()
 ///头部视图
@@ -60,8 +61,11 @@
 //    SXTitleAlertView *fdfdf = [SXTitleAlertView alertWithTitle:@"标题" confirmStr:@"确定" cancelStr:@"取消"];
 //    [fdfdf alert];
     
-    SXCodeInputAlertView *input = [SXCodeInputAlertView alertWithTitle:@"输入家庭码加入家庭" confirmStr:@"确定" cancelStr:@"取消"];
-    [input alert];
+//    SXCodeInputAlertView *input = [SXCodeInputAlertView alertWithTitle:@"输入家庭码加入家庭" confirmStr:@"确定" cancelStr:@"取消"];
+//    [input alert];
+    
+    SXLoginRegistAlertView *alert = [SXLoginRegistAlertView alertWithTitle:@"提示" content:@"该手机号已注册，请立即登录" confirmStr:@"确定" cancelStr:@"取消"];
+    [alert alert];
 }
     
 - (void)jumpToForgetVC{
