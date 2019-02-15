@@ -6,13 +6,13 @@
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXPhotoListCollectionViewCell.h"
+#import "SXPhotoListCell.h"
 
-@interface SXPhotoListCollectionViewCell ()
+@interface SXPhotoListCell ()
 
 @end
 
-@implementation SXPhotoListCollectionViewCell
+@implementation SXPhotoListCell
 
 + (instancetype)cellWithCollectionView:(UICollectionView *)collectionView atIndexPath:(NSIndexPath *)indexPath{
     return [collectionView dequeueReusableCellWithReuseIdentifier:SXPhotoListCollectionViewCellID forIndexPath:indexPath];
@@ -26,7 +26,7 @@
 
 - (void)setUpUI{
     
-    
+    self.contentView.backgroundColor = SXColorBlue;
 }
 
 @end

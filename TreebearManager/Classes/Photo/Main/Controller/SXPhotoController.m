@@ -7,7 +7,8 @@
 //
 
 #import "SXPhotoController.h"
-#import "SXPhotoListCollectionViewCell.h"
+#import "SXPhotoSectionHeaderView.h"
+#import "SXPhotoListCell.h"
 
 @interface SXPhotoController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic, weak) UICollectionView *collectionView;
@@ -32,6 +33,7 @@
     //流水布局
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    layout.sectionHeadersPinToVisibleBounds = YES;//头视图悬浮
     float collectionWidth = (SCREEN_WIDTH - 4 * 10)/3;
     layout.itemSize = CGSizeMake(collectionWidth, collectionWidth);
     
@@ -51,8 +53,11 @@
     [self.view addSubview:collectV];
     self.collectionView = collectV;
     
+    //注册区头
+//    [_collectionView registerClass:[SXPhotoSectionHeaderView class] forSupplementaryViewOfKind: UICollectionElementKindSectionHeader withReuseIdentifier:@"sectionHeaderView"];
+    
     //注册Cell
-    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass(SXPhotoListCollectionViewCell.class) bundle:nil] forCellWithReuseIdentifier:SXPhotoListCollectionViewCellID];
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass(SXPhotoListCell.class) bundle:nil] forCellWithReuseIdentifier:SXPhotoListCollectionViewCellID];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -69,13 +74,41 @@
 }
 
 #pragma mark -UICollectionViewDelegate/UICollectionViewDataSource-
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 2;//这里很关键，分两组，把banner放在第一组的footer，把分类按钮放在第二组的header
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 10;
+    return 20;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    SXPhotoListCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SXPhotoListCollectionViewCellID forIndexPath:indexPath];
+    SXPhotoListCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SXPhotoListCollectionViewCellID forIndexPath:indexPath];
     return cell;
+}
+
+//设置区头高度
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    return CGSizeMake(SCREEN_WIDTH,50);
+}
+
+//设置区尾高度
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
+    return CGSizeZero;
+}
+
+//配置区头
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(nonnull NSString *)kind atIndexPath:(nonnull NSIndexPath *)indexPath{
+    if (kind == UICollectionElementKindSectionHeader) {
+        
+//        SXPhotoSectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"sectionHeaderView" forIndexPath:indexPath];
+        SXPhotoSectionHeaderView *headerView = [SXPhotoSectionHeaderView sectionHeaderAwakeFromClass:collectionView atIndexPath:indexPath];
+//        headerView.backgroundColor = [UIColor redColor];
+        headerView.title = [NSString stringWithFormat:@"标题-%ld",indexPath.section];
+        return headerView;
+        
+    }
+    return nil;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath

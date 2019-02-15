@@ -12,7 +12,7 @@ static NSString *const SXPhotoListCollectionViewCellID = @"SXPhotoListCollection
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SXPhotoListCollectionViewCell : UICollectionViewCell
+@interface SXPhotoListCell : UICollectionViewCell
 
 + (instancetype)cellWithCollectionView:(UICollectionView *)collectionView atIndexPath:(NSIndexPath *)indexPath;
 
