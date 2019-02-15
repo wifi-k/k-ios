@@ -104,7 +104,7 @@ const CGFloat SXFamilyCodeSuccessAlertViewHeightRatio = 0.206; //高度系统
     [confirmButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
     [confirmButton setBackgroundColor:SXColorBlue];
     [confirmButton setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
-    [confirmButton.titleLabel setFont:[UIFont systemFontOfSize:15]];
+    [confirmButton.titleLabel setFont:SXFontBold16];
     [confirmButton addTarget:self action:@selector(confirmButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     [self.bottomView addSubview:confirmButton];
     self.confirmButton = confirmButton;
@@ -150,7 +150,7 @@ const CGFloat SXFamilyCodeSuccessAlertViewHeightRatio = 0.206; //高度系统
         make.left.mas_equalTo(self.bgImageView);
         make.bottom.mas_equalTo(self.bgImageView.mas_bottom);
         make.right.mas_equalTo(self.bgImageView);
-        make.height.mas_equalTo(46);
+        make.height.mas_equalTo(45);
     }];
     
     [self.confirmButton mas_makeConstraints:^(MASConstraintMaker *make) {

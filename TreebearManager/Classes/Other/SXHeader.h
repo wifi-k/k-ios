@@ -13,6 +13,7 @@
 #define SXNotificationCenter [NSNotificationCenter defaultCenter]
 //主窗口
 #define SXKeyWindow [UIApplication sharedApplication].keyWindow
+#define SXDelegateWindow UIApplication.sharedApplication.delegate.window
 //weak修饰
 #define WS(weakSelf) __weak __typeof(&*self)weakSelf = self;
 //非空字符串

@@ -58,7 +58,7 @@
 }
 
 - (void)jumpToMainVC{
-    //[SXRootTool chooseRootWithTabBarVC:SXKeyWindow];
+    [SXRootTool chooseRootWithTabBarVC:SXKeyWindow];
     
 //    SXTitleAlertView *fdfdf = [SXTitleAlertView alertWithTitle:@"标题" confirmStr:@"确定" cancelStr:@"取消"];
 //    [fdfdf alert];
@@ -69,8 +69,8 @@
 //    SXLoginRegistAlertView *alert = [SXLoginRegistAlertView alertWithTitle:@"提示" content:@"该手机号已注册，请立即登录" confirmStr:@"确定" cancelStr:@"取消"];
 //    [alert alert];
     
-    SXFamilyCodeSuccessAlertView *alert = [SXFamilyCodeSuccessAlertView alertWithTopImageName:@"home_familycode_success" title:@"家庭码正确" content:nil confirmStr:@"确定"];
-    [alert alert];
+//    SXFamilyCodeSuccessAlertView *alert = [SXFamilyCodeSuccessAlertView alertWithTopImageName:@"home_familycode_success" title:@"家庭码正确" content:nil confirmStr:@"确定"];
+//    [alert alert];
     
 //    SXFamilyCodeFailureAlertView *alert = [SXFamilyCodeFailureAlertView alertWithTopImageName:@"home_familycode_failure" title:@"家庭码错误" content:@"请输入正确的家庭码" confirmStr:@"再次输入"];
 //    [alert alert];
