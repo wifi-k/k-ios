@@ -14,6 +14,8 @@
 #import "SXTitleAlertView.h"
 #import "SXCodeInputAlertView.h"
 #import "SXLoginRegistAlertView.h"
+#import "SXFamilyCodeSuccessAlertView.h"
+#import "SXFamilyCodeFailureAlertView.h"
 
 @interface SXLoginController ()
 ///头部视图
@@ -64,8 +66,14 @@
 //    SXCodeInputAlertView *input = [SXCodeInputAlertView alertWithTitle:@"输入家庭码加入家庭" confirmStr:@"确定" cancelStr:@"取消"];
 //    [input alert];
     
-    SXLoginRegistAlertView *alert = [SXLoginRegistAlertView alertWithTitle:@"提示" content:@"该手机号已注册，请立即登录" confirmStr:@"确定" cancelStr:@"取消"];
+//    SXLoginRegistAlertView *alert = [SXLoginRegistAlertView alertWithTitle:@"提示" content:@"该手机号已注册，请立即登录" confirmStr:@"确定" cancelStr:@"取消"];
+//    [alert alert];
+    
+    SXFamilyCodeSuccessAlertView *alert = [SXFamilyCodeSuccessAlertView alertWithTopImageName:@"home_familycode_success" title:@"家庭码正确" content:nil confirmStr:@"确定"];
     [alert alert];
+    
+//    SXFamilyCodeFailureAlertView *alert = [SXFamilyCodeFailureAlertView alertWithTopImageName:@"home_familycode_failure" title:@"家庭码错误" content:@"请输入正确的家庭码" confirmStr:@"再次输入"];
+//    [alert alert];
 }
     
 - (void)jumpToForgetVC{

@@ -48,6 +48,8 @@
 		092D6D3722041C4900538AC8 /* SXHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6D3622041C4900538AC8 /* SXHomeHeaderView.m */; };
 		092D6D3922041C5200538AC8 /* SXHomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092D6D3822041C5200538AC8 /* SXHomeHeaderView.xib */; };
 		098BA2E7221654E900F58639 /* SXLoginRegistAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2E6221654E900F58639 /* SXLoginRegistAlertView.m */; };
+		098BA2ED221660A400F58639 /* SXFamilyCodeSuccessAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2EC221660A400F58639 /* SXFamilyCodeSuccessAlertView.m */; };
+		098BA2F0221660BD00F58639 /* SXFamilyCodeFailureAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2EF221660BD00F58639 /* SXFamilyCodeFailureAlertView.m */; };
 		327EE8E44A5A7DE11581C0F1 /* libPods-TreebearManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D77B77B9D44D60B532DDE9D2 /* libPods-TreebearManager.a */; };
 		B348F93C21F6C2C10000F194 /* TreebearManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F93B21F6C2C10000F194 /* TreebearManagerTests.m */; };
 		B348F94721F6C2C10000F194 /* TreebearManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F94621F6C2C10000F194 /* TreebearManagerUITests.m */; };
@@ -195,6 +197,10 @@
 		092D6D3822041C5200538AC8 /* SXHomeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXHomeHeaderView.xib; sourceTree = "<group>"; };
 		098BA2E5221654E900F58639 /* SXLoginRegistAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXLoginRegistAlertView.h; sourceTree = "<group>"; };
 		098BA2E6221654E900F58639 /* SXLoginRegistAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXLoginRegistAlertView.m; sourceTree = "<group>"; };
+		098BA2EB221660A400F58639 /* SXFamilyCodeSuccessAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXFamilyCodeSuccessAlertView.h; sourceTree = "<group>"; };
+		098BA2EC221660A400F58639 /* SXFamilyCodeSuccessAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXFamilyCodeSuccessAlertView.m; sourceTree = "<group>"; };
+		098BA2EE221660BD00F58639 /* SXFamilyCodeFailureAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXFamilyCodeFailureAlertView.h; sourceTree = "<group>"; };
+		098BA2EF221660BD00F58639 /* SXFamilyCodeFailureAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXFamilyCodeFailureAlertView.m; sourceTree = "<group>"; };
 		0BF17A1BEC7F76DCAB17507A /* Pods-TreebearManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreebearManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TreebearManager/Pods-TreebearManager.debug.xcconfig"; sourceTree = "<group>"; };
 		B348F91F21F6C2BE0000F194 /* TreebearManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreebearManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B348F93721F6C2C10000F194 /* TreebearManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreebearManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -811,6 +817,10 @@
 				092D6D302203F6EA00538AC8 /* SXHomeMainHeaderView.xib */,
 				092D6D322203F9F300538AC8 /* SXHomeMainSectionHeaderView.h */,
 				092D6D332203F9F300538AC8 /* SXHomeMainSectionHeaderView.m */,
+				098BA2EB221660A400F58639 /* SXFamilyCodeSuccessAlertView.h */,
+				098BA2EC221660A400F58639 /* SXFamilyCodeSuccessAlertView.m */,
+				098BA2EE221660BD00F58639 /* SXFamilyCodeFailureAlertView.h */,
+				098BA2EF221660BD00F58639 /* SXFamilyCodeFailureAlertView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1334,6 +1344,7 @@
 				092D6D2F2203F6E100538AC8 /* SXHomeMainHeaderView.m in Sources */,
 				B3AF2FFE21FB085C001E4E67 /* SXBaseParam.m in Sources */,
 				B3AF2FD621F9C8A3001E4E67 /* MBProgressHUD+CL.m in Sources */,
+				098BA2F0221660BD00F58639 /* SXFamilyCodeFailureAlertView.m in Sources */,
 				092D6CF5220062C700538AC8 /* MyBase64.m in Sources */,
 				091186EE22151D5F00938D9F /* SGSocketConfigM.m in Sources */,
 				092D6D022200745500538AC8 /* SXUserModel.m in Sources */,
@@ -1363,6 +1374,7 @@
 				B3AF2FED21FAFF24001E4E67 /* SXLoginController.m in Sources */,
 				B348F97521F6EB070000F194 /* SXMineController.m in Sources */,
 				B3AF302D21FE9249001E4E67 /* SXBaseCustomTableViewPlainController.m in Sources */,
+				098BA2ED221660A400F58639 /* SXFamilyCodeSuccessAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

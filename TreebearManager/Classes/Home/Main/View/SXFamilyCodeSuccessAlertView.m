@@ -1,39 +1,39 @@
 //
-//  SXLoginRegistAlertView.m
+//  SXFamilyCodeSuccessAlertView.m
 //  TreebearManager
 //
 //  Created by bear on 2019/2/15.
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXLoginRegistAlertView.h"
+#import "SXFamilyCodeSuccessAlertView.h"
 
-const CGFloat SXLoginRegistAlertViewWidthRatio = 0.655;  //宽度系数
-const CGFloat SXLoginRegistAlertViewHeightRatio = 0.206; //高度系统
+const CGFloat SXFamilyCodeSuccessAlertViewWidthRatio = 0.655;  //宽度系数
+const CGFloat SXFamilyCodeSuccessAlertViewHeightRatio = 0.206; //高度系统
 
-@interface SXLoginRegistAlertView ()
+@interface SXFamilyCodeSuccessAlertView ()
 @property (nonatomic, weak) UIView *bgView;
 @property (nonatomic, weak) UIImageView *bgImageView;
+@property (nonatomic, weak) UIImageView *topImageView;//头部ImagView
 @property (nonatomic, weak) UILabel *titleL;//标题
 @property (nonatomic, weak) UILabel *contentL;//内容
 @property (nonatomic, weak) UIView *bottomView;//底部视图
 @property (nonatomic, weak) UIButton *confirmButton;//确认按钮
-@property (nonatomic, weak) UIButton *cancleButton;//取消按钮
 
+@property (nonatomic, copy) NSString *topImageName;//头部ImageName
 @property (nonatomic, copy) NSString *title;//标题
 @property (nonatomic, copy) NSString *content;//内容
 @property (nonatomic, copy) NSString *confirmStr;//确认按钮
-@property (nonatomic, copy) NSString *cancelStr;//取消按钮
 @end
 
-@implementation SXLoginRegistAlertView
+@implementation SXFamilyCodeSuccessAlertView
 
-+ (instancetype)alertWithTitle:(NSString *)title content:(NSString *)content confirmStr:(NSString *)confirmStr cancelStr:(NSString *)cancelStr{
-    SXLoginRegistAlertView *alert = [[self alloc] initWithFrame:UIApplication.sharedApplication.delegate.window.bounds];
++ (instancetype)alertWithTopImageName:(NSString *)imageName title:(NSString *)title content:(NSString *)content confirmStr:(NSString *)confirmStr{
+    SXFamilyCodeSuccessAlertView *alert = [[self alloc] initWithFrame:UIApplication.sharedApplication.delegate.window.bounds];
+    alert.topImageName = imageName;
     alert.title = title;
     alert.content = content;
     alert.confirmStr = confirmStr;
-    alert.cancelStr = cancelStr;
     return alert;
 }
 
@@ -67,6 +67,11 @@ const CGFloat SXLoginRegistAlertViewHeightRatio = 0.206; //高度系统
     [bgImageView roundViewWithRadius:6];
     [self addSubview:bgImageView];
     self.bgImageView = bgImageView;
+    
+    //头部视图ImageView
+    UIImageView *topImageView = [[UIImageView alloc] init];
+    [self.bgImageView addSubview:topImageView];
+    self.topImageView = topImageView;
     
     //标题
     UILabel *titleL = [[UILabel alloc] init];
@@ -104,18 +109,6 @@ const CGFloat SXLoginRegistAlertViewHeightRatio = 0.206; //高度系统
     [self.bottomView addSubview:confirmButton];
     self.confirmButton = confirmButton;
     
-    //取消按钮
-    UIButton *cancleButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [cancleButton setTitle:@"取消" forState:UIControlStateNormal];
-    [cancleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [cancleButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
-    [cancleButton setBackgroundColor:SXColorGray7];
-    [cancleButton setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
-    [cancleButton.titleLabel setFont:[UIFont systemFontOfSize:15]];
-    [cancleButton addTarget:self action:@selector(cancleButtonTapped) forControlEvents:UIControlEventTouchUpInside];
-    [self.bottomView addSubview:cancleButton];
-    self.cancleButton = cancleButton;
-    
     self.bgView.alpha = 1;
     
     self.closeUserInteractionEnabled = YES;
@@ -125,18 +118,24 @@ const CGFloat SXLoginRegistAlertViewHeightRatio = 0.206; //高度系统
     [super layoutSubviews];
     
     //内容宽高
-    //    CGFloat contentW = [UIScreen mainScreen].bounds.size.width * SXLoginRegistAlertViewWidthRatio;
-    //    CGFloat contentH = [UIScreen mainScreen].bounds.size.height * SXLoginRegistAlertViewHeightRatio;
+    //    CGFloat contentW = [UIScreen mainScreen].bounds.size.width * SXFamilyCodeSuccessAlertViewWidthRatio;
+    //    CGFloat contentH = [UIScreen mainScreen].bounds.size.height * SXFamilyCodeSuccessAlertViewHeightRatio;
     CGFloat contentW = [UIScreen mainScreen].bounds.size.width - 30 * 2;
-    CGFloat contentH = 180;
+    CGFloat contentH = 230;
     
     [self.bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(contentW, contentH));
         make.center.mas_equalTo(self);
     }];
     
-    [self.titleL mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.topImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(60, 60));
         make.top.mas_equalTo(self.bgImageView.mas_top).mas_offset(30);
+        make.centerX.mas_equalTo(self.bgImageView);
+    }];
+    
+    [self.titleL mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.topImageView.mas_bottom).mas_offset(30);
         make.left.mas_equalTo(self.bgImageView).mas_offset(20);
         make.right.mas_equalTo(self.bgImageView.mas_right).mas_offset(-20);
     }];
@@ -154,16 +153,11 @@ const CGFloat SXLoginRegistAlertViewHeightRatio = 0.206; //高度系统
         make.height.mas_equalTo(46);
     }];
     
-    [self.cancleButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.bottomView);
-        make.bottom.mas_equalTo(self.bottomView.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(contentW/2 - 0.5, 45));
-    }];
-
     [self.confirmButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.bottomView);
         make.right.mas_equalTo(self.bottomView.mas_right);
         make.bottom.mas_equalTo(self.bottomView.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(contentW/2 - 0.5, 45));
+        make.height.mas_equalTo(45);
     }];
 }
 
@@ -182,15 +176,17 @@ const CGFloat SXLoginRegistAlertViewHeightRatio = 0.206; //高度系统
 }
 
 - (void)cancleButtonTapped{
-    if (self.cancelButtonBlock) {
-        self.cancelButtonBlock();
-    }
-    
     [self performSelector:@selector(removeSelf) withObject:nil afterDelay:0.12];
 }
 
 - (void)removeSelf{
     [self removeFromSuperview];
+}
+
+- (void)setTopImageName:(NSString *)topImageName{
+    _topImageName = topImageName;
+    
+    self.topImageView.image = [UIImage imageNamed:topImageName];
 }
 
 - (void)setTitle:(NSString *)title{
@@ -207,13 +203,6 @@ const CGFloat SXLoginRegistAlertViewHeightRatio = 0.206; //高度系统
     _confirmStr = confirmStr;
     if (confirmStr) {
         [self.confirmButton setTitle:confirmStr forState:UIControlStateNormal];
-    }
-}
-
-- (void)setCancelStr:(NSString *)cancelStr{
-    _cancelStr = cancelStr;
-    if (cancelStr) {
-        [self.cancleButton setTitle:cancelStr forState:UIControlStateNormal];
     }
 }
 
