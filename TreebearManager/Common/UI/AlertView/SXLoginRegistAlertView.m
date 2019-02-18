@@ -64,7 +64,7 @@ const CGFloat SXLoginRegistAlertViewHeightRatio = 0.206; //高度系统
     UIImageView *bgImageView = [[UIImageView alloc] init];
     bgImageView.backgroundColor = [UIColor whiteColor];
     [bgImageView setUserInteractionEnabled:YES];
-    [bgImageView roundViewWithRadius:6];
+    [bgImageView roundViewWithRadius:10];
     [self addSubview:bgImageView];
     self.bgImageView = bgImageView;
     
@@ -151,19 +151,19 @@ const CGFloat SXLoginRegistAlertViewHeightRatio = 0.206; //高度系统
         make.left.mas_equalTo(self.bgImageView);
         make.bottom.mas_equalTo(self.bgImageView.mas_bottom);
         make.right.mas_equalTo(self.bgImageView);
-        make.height.mas_equalTo(46);
+        make.height.mas_equalTo(45);
     }];
     
     [self.cancleButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.bottomView);
         make.bottom.mas_equalTo(self.bottomView.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(contentW/2 - 0.5, 45));
+        make.size.mas_equalTo(CGSizeMake(contentW/2 - 0.1, 45));
     }];
 
     [self.confirmButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(self.bottomView.mas_right);
         make.bottom.mas_equalTo(self.bottomView.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(contentW/2 - 0.5, 45));
+        make.size.mas_equalTo(CGSizeMake(contentW/2 - 0.1, 45));
     }];
 }
 

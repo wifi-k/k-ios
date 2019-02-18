@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView1;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLine1H;
     
-@property (weak, nonatomic) IBOutlet UITextField *pwdTextFeild;
+@property (weak, nonatomic) IBOutlet UITextField *pwdTextField;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView2;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLine2H;
 
@@ -42,6 +42,11 @@
 }
 
 #pragma mark -按钮点击事件-
+- (IBAction)clickVisibleBtn:(UIButton *)sender {
+    sender.selected = !sender.isSelected;
+    self.pwdTextField.secureTextEntry = !sender.isSelected;
+}
+
 - (IBAction)clickCodeLoginBtn:(UIButton *)sender {
     if (self.clickCodeLoginBtnBlock) {
         self.clickCodeLoginBtnBlock();

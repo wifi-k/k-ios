@@ -61,7 +61,7 @@ const CGFloat SXCodeInputAlertViewHeightRatio = 0.216; //高度系统
     UIImageView *bgImageView = [[UIImageView alloc] init];
     bgImageView.backgroundColor = [UIColor whiteColor];
     [bgImageView setUserInteractionEnabled:YES];
-    [bgImageView roundViewWithRadius:6];
+    [bgImageView roundViewWithRadius:10];
     [self addSubview:bgImageView];
     self.bgImageView = bgImageView;
     

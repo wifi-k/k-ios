@@ -40,6 +40,16 @@
 }
 
 #pragma mark -按钮点击事件-
+- (IBAction)clickVisibleBtn1:(UIButton *)sender {
+    sender.selected = !sender.isSelected;
+    self.pwdTextField.secureTextEntry = !sender.isSelected;
+}
+
+- (IBAction)clickVisibleBtn2:(UIButton *)sender {
+    sender.selected = !sender.isSelected;
+    self.pwd2TextFeild.secureTextEntry = !sender.isSelected;
+}
+
 - (IBAction)clickConfirmBtn:(UIButton *)sender {
     if (self.clickConfirmBtnBlock) {
         self.clickConfirmBtnBlock();
