@@ -53,6 +53,10 @@
 		098BA2F72216ADDF00F58639 /* SXPhotoListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2F52216ADDF00F58639 /* SXPhotoListCell.m */; };
 		098BA2F82216ADDF00F58639 /* SXPhotoListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 098BA2F62216ADDF00F58639 /* SXPhotoListCell.xib */; };
 		098BA2FB2216B54100F58639 /* SXPhotoSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2FA2216B54100F58639 /* SXPhotoSectionHeaderView.m */; };
+		098BA2FF221A559200F58639 /* SXMineListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2FD221A559200F58639 /* SXMineListCell.m */; };
+		098BA300221A559200F58639 /* SXMineListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 098BA2FE221A559200F58639 /* SXMineListCell.xib */; };
+		098BA303221A579D00F58639 /* SXMineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA302221A579D00F58639 /* SXMineHeaderView.m */; };
+		098BA305221A57A700F58639 /* SXMineHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 098BA304221A57A700F58639 /* SXMineHeaderView.xib */; };
 		327EE8E44A5A7DE11581C0F1 /* libPods-TreebearManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D77B77B9D44D60B532DDE9D2 /* libPods-TreebearManager.a */; };
 		B348F93C21F6C2C10000F194 /* TreebearManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F93B21F6C2C10000F194 /* TreebearManagerTests.m */; };
 		B348F94721F6C2C10000F194 /* TreebearManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F94621F6C2C10000F194 /* TreebearManagerUITests.m */; };
@@ -209,6 +213,12 @@
 		098BA2F62216ADDF00F58639 /* SXPhotoListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXPhotoListCell.xib; sourceTree = "<group>"; };
 		098BA2F92216B54100F58639 /* SXPhotoSectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPhotoSectionHeaderView.h; sourceTree = "<group>"; };
 		098BA2FA2216B54100F58639 /* SXPhotoSectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoSectionHeaderView.m; sourceTree = "<group>"; };
+		098BA2FC221A559200F58639 /* SXMineListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMineListCell.h; sourceTree = "<group>"; };
+		098BA2FD221A559200F58639 /* SXMineListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMineListCell.m; sourceTree = "<group>"; };
+		098BA2FE221A559200F58639 /* SXMineListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXMineListCell.xib; sourceTree = "<group>"; };
+		098BA301221A579D00F58639 /* SXMineHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMineHeaderView.h; sourceTree = "<group>"; };
+		098BA302221A579D00F58639 /* SXMineHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMineHeaderView.m; sourceTree = "<group>"; };
+		098BA304221A57A700F58639 /* SXMineHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXMineHeaderView.xib; sourceTree = "<group>"; };
 		0BF17A1BEC7F76DCAB17507A /* Pods-TreebearManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreebearManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TreebearManager/Pods-TreebearManager.debug.xcconfig"; sourceTree = "<group>"; };
 		B348F91F21F6C2BE0000F194 /* TreebearManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreebearManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B348F93721F6C2C10000F194 /* TreebearManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreebearManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -784,6 +794,12 @@
 		B348F96B21F6EACC0000F194 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				098BA301221A579D00F58639 /* SXMineHeaderView.h */,
+				098BA302221A579D00F58639 /* SXMineHeaderView.m */,
+				098BA304221A57A700F58639 /* SXMineHeaderView.xib */,
+				098BA2FC221A559200F58639 /* SXMineListCell.h */,
+				098BA2FD221A559200F58639 /* SXMineListCell.m */,
+				098BA2FE221A559200F58639 /* SXMineListCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1227,6 +1243,8 @@
 				092D6D3922041C5200538AC8 /* SXHomeHeaderView.xib in Resources */,
 				092D6D222202E71A00538AC8 /* SXForgetConfirmHeaderView.xib in Resources */,
 				B3AF2FD521F9C8A3001E4E67 /* MBProgressHUD.bundle in Resources */,
+				098BA305221A57A700F58639 /* SXMineHeaderView.xib in Resources */,
+				098BA300221A559200F58639 /* SXMineListCell.xib in Resources */,
 				092D6D1A2202E51C00538AC8 /* SXForgetHeaderView.xib in Resources */,
 				092D6D312203F6EA00538AC8 /* SXHomeMainHeaderView.xib in Resources */,
 				B3AF2FF821FB0180001E4E67 /* SXLoginMainHeaderView.xib in Resources */,
@@ -1321,6 +1339,7 @@
 				B3AF300521FB092F001E4E67 /* SXBasePageParam.m in Sources */,
 				B3AF2FF321FAFF45001E4E67 /* SXRegistController.m in Sources */,
 				092D6CF7220062C700538AC8 /* NSString+Hash.m in Sources */,
+				098BA303221A579D00F58639 /* SXMineHeaderView.m in Sources */,
 				B3AF2FF021FAFF34001E4E67 /* SXForgetController.m in Sources */,
 				B3AF302121FE90DA001E4E67 /* SXBaseTableViewGroupController.m in Sources */,
 				B348F98921F713A80000F194 /* AppDelegate.m in Sources */,
@@ -1379,6 +1398,7 @@
 				B3AF300821FB0956001E4E67 /* SXBaseModel.m in Sources */,
 				092D6CE422005A0C00538AC8 /* SXEmptyDataEventView.m in Sources */,
 				B3AF300F21FB0A20001E4E67 /* SXBaseTableViewCell.m in Sources */,
+				098BA2FF221A559200F58639 /* SXMineListCell.m in Sources */,
 				B348F9B921F721D60000F194 /* SXNetReachablityTool.m in Sources */,
 				B3AF301221FB0A5D001E4E67 /* SXBaseCollectionViewCell.m in Sources */,
 				09118706221522BF00938D9F /* GACErrorManager.m in Sources */,
