@@ -10,6 +10,7 @@
 #import "SXMineListCell.h"
 #import "SXRootTool.h"
 #import "SXMineHeaderView.h"
+#import <TZImagePickerController/TZImagePickerController.h>
 
 @interface SXMineController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak) SXMineHeaderView *headerView;//头部视图
@@ -45,8 +46,7 @@
     WS(weakSelf);
     SXMineHeaderView *headerView = [SXMineHeaderView headerView];
     headerView.clickBindingBtnBlock = ^{
-        SXMineController *homeVC = [[SXMineController alloc] init];
-        [weakSelf.navigationController pushViewController:homeVC animated:YES];
+        [weakSelf jumpToImagePickerVC];
     };
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
@@ -58,6 +58,20 @@
     self.tableView.frame = self.view.bounds;
     
      self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 150);
+}
+
+- (void)jumpToImagePickerVC{
+    
+    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:9 delegate:self];
+    
+    // You can get the photos by block, the same as by delegate.
+    // 你可以通过block或者代理，来得到用户选择的照片.
+    [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
+        DLog(@"photos:%@,",photos);
+        DLog(@"assets:%@,",assets);
+        DLog(@"isSelectOriginalPhoto:%d,",isSelectOriginalPhoto);
+    }];
+    [self presentViewController:imagePickerVc animated:YES completion:nil];
 }
 
 #pragma mark -UITableViewDelegate/UITableViewDataSource-

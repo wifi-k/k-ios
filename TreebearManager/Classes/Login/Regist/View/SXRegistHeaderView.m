@@ -16,7 +16,7 @@
     
 @property (weak, nonatomic) IBOutlet UITextField *codeTextField;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineV2;
-    @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLineV2H;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLineV2H;
 @property (weak, nonatomic) IBOutlet UIButton *registBtn;
 @end
 
@@ -43,5 +43,26 @@
 - (IBAction)clickRegistBtn:(UIButton *)sender {
     [MBProgressHUD showMessageToWindow:@"注册成功!"];
 }
-    
+
+
+- (IBAction)editingPhoneTextField:(UITextField *)sender {
+    DLog(@"editingPhoneTextField:%@",sender.text);
+    self.bottomLineV.backgroundColor = SXColorBlue;
+}
+
+- (IBAction)endPhoneTextField:(UITextField *)sender {
+    DLog(@"endPhoneTextField:%@",sender.text);
+    self.bottomLineV.backgroundColor = UIColor.lightGrayColor;
+}
+
+- (IBAction)editingCodeTextField:(UITextField *)sender {
+    DLog(@"editingCodeTextField:%@",sender.text);
+    self.bottomLineV2.backgroundColor = SXColorBlue;
+}
+
+- (IBAction)endCodeTextField:(UITextField *)sender {
+    DLog(@"endCodeTextField:%@",sender.text);
+    self.bottomLineV2.backgroundColor = UIColor.lightGrayColor;
+}
+
 @end

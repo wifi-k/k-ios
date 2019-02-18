@@ -28,7 +28,7 @@ static NSString *SXMineListCellID = @"SXMineListCellID";
     [super awakeFromNib];
     
     //设置背样式
-    self.contentView.backgroundColor = SXColorRandom;
+    self.contentView.backgroundColor = SXColorWhite;
     
     [self setUpUI];
 }

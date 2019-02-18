@@ -22,14 +22,20 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fqp-QN-rsU">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Fqp-QN-rsU">
                     <rect key="frame" x="30" y="134" width="222" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="IIu-39-UgY"/>
                     </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                    <connections>
+                        <action selector="editingPhoneTextField:" destination="iN0-l3-epB" eventType="editingDidBegin" id="9Gc-rM-vbN"/>
+                        <action selector="editingPhoneTextField:" destination="iN0-l3-epB" eventType="editingChanged" id="BBa-gf-Xah"/>
+                        <action selector="editingPhoneTextField:" destination="iN0-l3-epB" eventType="editingDidEnd" id="je3-V6-Zcn"/>
+                        <action selector="endPhoneTextField:" destination="iN0-l3-epB" eventType="editingDidEnd" id="zaK-ob-mK3"/>
+                    </connections>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7I3-wR-pMP">
                     <rect key="frame" x="30" y="172" width="222" height="1"/>
@@ -46,6 +52,11 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="editingCodeTextField:" destination="iN0-l3-epB" eventType="editingDidBegin" id="RgB-kp-dBc"/>
+                        <action selector="editingCodeTextField:" destination="iN0-l3-epB" eventType="editingChanged" id="gHY-6e-JLa"/>
+                        <action selector="endCodeTextField:" destination="iN0-l3-epB" eventType="editingDidEnd" id="IaL-TB-fXE"/>
+                    </connections>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C14-s5-Sjk">
                     <rect key="frame" x="30" y="231" width="222" height="1"/>

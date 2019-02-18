@@ -31,7 +31,7 @@
 
 - (void)setUpUI{
     
-    self.backgroundColor = SXColorRandom;
+    self.backgroundColor = SXColorWhite;
     
     [self.iconBtn roundViewWithRadius:30.0f];
 }
