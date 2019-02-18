@@ -1,24 +1,19 @@
 //
-//  SXForgetHeaderView.m
+//  SXCodeLoginHeaderView.m
 //  TreebearManager
 //
-//  Created by bear on 2019/1/31.
+//  Created by bear on 2019/2/18.
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXForgetHeaderView.h"
+#import "SXCodeLoginHeaderView.h"
 
-@interface SXForgetHeaderView ()
-    
-@property (weak, nonatomic) IBOutlet UIButton *clickNextBtn;
-@end
-
-@implementation SXForgetHeaderView
+@implementation SXCodeLoginHeaderView
 
 + (instancetype)headerView{
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
 }
-    
+
 - (void)awakeFromNib{
     [super awakeFromNib];
     
@@ -27,20 +22,21 @@
     
     [self setUpUI];
 }
-    
+
 - (void)setUpUI{
+    
     
 }
 
-#pragma mark -按钮点击事件-
-- (IBAction)clickNextBtn:(UIButton *)sender {
-    if (self.clickNextBtnBlock) {
-        self.clickNextBtnBlock();
+- (IBAction)clickLoginBtnBlock:(UIButton *)sender {
+    if (self.clickLoginBtnBlock) {
+        self.clickLoginBtnBlock();
     }
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self endEditing:YES];
 }
-    
+
 @end
+

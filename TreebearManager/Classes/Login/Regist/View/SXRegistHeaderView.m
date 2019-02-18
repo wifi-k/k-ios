@@ -44,7 +44,7 @@
     [MBProgressHUD showMessageToWindow:@"注册成功!"];
 }
 
-
+#pragma mark -文本输入框编辑-
 - (IBAction)editingPhoneTextField:(UITextField *)sender {
     DLog(@"editingPhoneTextField:%@",sender.text);
     self.bottomLineV.backgroundColor = SXColorBlue;
@@ -63,6 +63,10 @@
 - (IBAction)endCodeTextField:(UITextField *)sender {
     DLog(@"endCodeTextField:%@",sender.text);
     self.bottomLineV2.backgroundColor = UIColor.lightGrayColor;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self endEditing:YES];
 }
 
 @end

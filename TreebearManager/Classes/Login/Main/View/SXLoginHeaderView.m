@@ -59,5 +59,9 @@
         self.clickLoginBtnBlock();
     }
 }
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self endEditing:YES];
+}
     
 @end

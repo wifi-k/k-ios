@@ -57,6 +57,8 @@
 		098BA300221A559200F58639 /* SXMineListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 098BA2FE221A559200F58639 /* SXMineListCell.xib */; };
 		098BA303221A579D00F58639 /* SXMineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA302221A579D00F58639 /* SXMineHeaderView.m */; };
 		098BA305221A57A700F58639 /* SXMineHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 098BA304221A57A700F58639 /* SXMineHeaderView.xib */; };
+		098BA308221AB1B200F58639 /* SXCodeLoginHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA307221AB1B200F58639 /* SXCodeLoginHeaderView.m */; };
+		098BA30A221AB1C200F58639 /* SXCodeLoginHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 098BA309221AB1C200F58639 /* SXCodeLoginHeaderView.xib */; };
 		327EE8E44A5A7DE11581C0F1 /* libPods-TreebearManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D77B77B9D44D60B532DDE9D2 /* libPods-TreebearManager.a */; };
 		B348F93C21F6C2C10000F194 /* TreebearManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F93B21F6C2C10000F194 /* TreebearManagerTests.m */; };
 		B348F94721F6C2C10000F194 /* TreebearManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F94621F6C2C10000F194 /* TreebearManagerUITests.m */; };
@@ -219,6 +221,9 @@
 		098BA301221A579D00F58639 /* SXMineHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMineHeaderView.h; sourceTree = "<group>"; };
 		098BA302221A579D00F58639 /* SXMineHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMineHeaderView.m; sourceTree = "<group>"; };
 		098BA304221A57A700F58639 /* SXMineHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXMineHeaderView.xib; sourceTree = "<group>"; };
+		098BA306221AB1B200F58639 /* SXCodeLoginHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXCodeLoginHeaderView.h; sourceTree = "<group>"; };
+		098BA307221AB1B200F58639 /* SXCodeLoginHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXCodeLoginHeaderView.m; sourceTree = "<group>"; };
+		098BA309221AB1C200F58639 /* SXCodeLoginHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXCodeLoginHeaderView.xib; sourceTree = "<group>"; };
 		0BF17A1BEC7F76DCAB17507A /* Pods-TreebearManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreebearManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TreebearManager/Pods-TreebearManager.debug.xcconfig"; sourceTree = "<group>"; };
 		B348F91F21F6C2BE0000F194 /* TreebearManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreebearManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B348F93721F6C2C10000F194 /* TreebearManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreebearManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1014,6 +1019,9 @@
 				092D6D0E2202DD9400538AC8 /* SXLoginHeaderView.h */,
 				092D6D0F2202DD9400538AC8 /* SXLoginHeaderView.m */,
 				092D6D112202DD9B00538AC8 /* SXLoginHeaderView.xib */,
+				098BA306221AB1B200F58639 /* SXCodeLoginHeaderView.h */,
+				098BA307221AB1B200F58639 /* SXCodeLoginHeaderView.m */,
+				098BA309221AB1C200F58639 /* SXCodeLoginHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1247,6 +1255,7 @@
 				098BA300221A559200F58639 /* SXMineListCell.xib in Resources */,
 				092D6D1A2202E51C00538AC8 /* SXForgetHeaderView.xib in Resources */,
 				092D6D312203F6EA00538AC8 /* SXHomeMainHeaderView.xib in Resources */,
+				098BA30A221AB1C200F58639 /* SXCodeLoginHeaderView.xib in Resources */,
 				B3AF2FF821FB0180001E4E67 /* SXLoginMainHeaderView.xib in Resources */,
 				092D6CE622005A1A00538AC8 /* SXEmptyDataEventView.xib in Resources */,
 			);
@@ -1355,6 +1364,7 @@
 				098BA2E7221654E900F58639 /* SXLoginRegistAlertView.m in Sources */,
 				B3AF304221FE9BF3001E4E67 /* SXBaseEmptyDataView.m in Sources */,
 				B3AF303F21FE97B1001E4E67 /* SXBaseJSWebController.m in Sources */,
+				098BA308221AB1B200F58639 /* SXCodeLoginHeaderView.m in Sources */,
 				B348F98121F711B90000F194 /* UIColor+BFKit.m in Sources */,
 				B348F97821F6EB170000F194 /* SXPhotoController.m in Sources */,
 				B348F97D21F711450000F194 /* SXConst.m in Sources */,
