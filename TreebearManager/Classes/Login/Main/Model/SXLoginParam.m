@@ -1,5 +1,5 @@
 //
-//  SXRegistParam.h
+//  SXLoginParam.m
 //  TreebearManager
 //
 //  Created by bear on 2019/2/19.
@@ -8,10 +8,6 @@
 
 #import "SXLoginParam.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface SXRegistParam : SXLoginParam
+@implementation SXLoginParam
 
 @end
-
-NS_ASSUME_NONNULL_END

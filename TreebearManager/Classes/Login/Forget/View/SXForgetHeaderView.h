@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXRegistParam.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///点击忘记密码按钮回调
 @property (nonatomic, copy) void (^clickNextBtnBlock)(void);
+
+@property (nonatomic, strong) SXRegistParam *param;
     
 @end
 

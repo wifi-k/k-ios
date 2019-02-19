@@ -24,6 +24,11 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                    <connections>
+                        <action selector="editingPhoneTextField:" destination="iN0-l3-epB" eventType="editingChanged" id="144-F8-EFN"/>
+                        <action selector="editingPhoneTextField:" destination="iN0-l3-epB" eventType="editingDidBegin" id="PJz-Hl-tj6"/>
+                        <action selector="endPhoneTextField:" destination="iN0-l3-epB" eventType="editingDidEnd" id="KF1-TA-Ly6"/>
+                    </connections>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3sR-FI-8hN">
                     <rect key="frame" x="30" y="128" width="242" height="1"/>
@@ -33,19 +38,38 @@
                     </constraints>
                 </view>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入验证码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mFb-d4-phS">
-                    <rect key="frame" x="30" y="149" width="242" height="30"/>
+                    <rect key="frame" x="30" y="149" width="132" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="Zia-V3-pTj"/>
+                        <constraint firstAttribute="height" constant="30" id="g9e-Z7-D9G"/>
                     </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="editingCodeTextField:" destination="iN0-l3-epB" eventType="editingChanged" id="WgX-pd-s0J"/>
+                        <action selector="editingCodeTextField:" destination="iN0-l3-epB" eventType="editingDidBegin" id="q2p-tl-UVV"/>
+                        <action selector="endCodeTextField:" destination="iN0-l3-epB" eventType="editingDidEnd" id="EmB-Je-Vuj"/>
+                    </connections>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBg-X9-NyI" customClass="SXLoginCertifyCodeButton">
+                    <rect key="frame" x="172" y="149" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="b5s-ur-ar9"/>
+                        <constraint firstAttribute="width" constant="100" id="pb8-xI-WAg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="获取验证码">
+                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="clickCodeBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Yw5-Qz-m68"/>
+                    </connections>
+                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QDA-E3-leg">
                     <rect key="frame" x="30" y="187" width="242" height="1"/>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="1" id="KdL-st-1pD"/>
+                        <constraint firstAttribute="height" constant="1" id="ijl-RL-SX9"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsr-qC-KNZ">
@@ -63,33 +87,38 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="QDA-E3-leg" secondAttribute="trailing" constant="30" id="4D5-fu-3dF"/>
                 <constraint firstItem="rqR-Jm-xHh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="4ki-GJ-8S2"/>
                 <constraint firstItem="3sR-FI-8hN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="9fC-F8-vdQ"/>
                 <constraint firstItem="nsr-qC-KNZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="Awg-Vf-iei"/>
-                <constraint firstItem="QDA-E3-leg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="Eep-eG-RbE"/>
-                <constraint firstItem="mFb-d4-phS" firstAttribute="top" secondItem="3sR-FI-8hN" secondAttribute="bottom" constant="20" id="GZ3-Lj-tvy"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nsr-qC-KNZ" secondAttribute="trailing" constant="30" id="J42-nA-Gcq"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mFb-d4-phS" secondAttribute="trailing" constant="30" id="JOA-z5-Yod"/>
-                <constraint firstAttribute="trailing" secondItem="QDA-E3-leg" secondAttribute="trailing" constant="30" id="KVw-qE-uB9"/>
                 <constraint firstAttribute="trailing" secondItem="3sR-FI-8hN" secondAttribute="trailing" constant="30" id="LO6-3Y-VRu"/>
-                <constraint firstItem="QDA-E3-leg" firstAttribute="top" secondItem="mFb-d4-phS" secondAttribute="bottom" constant="8" id="MjZ-D5-Ufo"/>
-                <constraint firstItem="QDA-E3-leg" firstAttribute="leading" secondItem="mFb-d4-phS" secondAttribute="leading" id="Mof-Go-QFU"/>
-                <constraint firstItem="QDA-E3-leg" firstAttribute="trailing" secondItem="mFb-d4-phS" secondAttribute="trailing" id="N5B-9q-Ijv"/>
+                <constraint firstItem="OBg-X9-NyI" firstAttribute="leading" secondItem="mFb-d4-phS" secondAttribute="trailing" constant="10" id="Qq9-0V-NYb"/>
+                <constraint firstItem="OBg-X9-NyI" firstAttribute="centerY" secondItem="mFb-d4-phS" secondAttribute="centerY" id="QqN-lM-p4i"/>
+                <constraint firstItem="nsr-qC-KNZ" firstAttribute="top" secondItem="QDA-E3-leg" secondAttribute="bottom" constant="70" id="Rcw-Su-rgh"/>
                 <constraint firstItem="3sR-FI-8hN" firstAttribute="top" secondItem="rqR-Jm-xHh" secondAttribute="bottom" constant="8" id="SGW-FT-vEZ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="rqR-Jm-xHh" secondAttribute="trailing" constant="30" id="Yau-1g-CzO"/>
-                <constraint firstItem="nsr-qC-KNZ" firstAttribute="top" secondItem="QDA-E3-leg" secondAttribute="bottom" constant="70" id="aE7-bu-fxE"/>
-                <constraint firstItem="mFb-d4-phS" firstAttribute="top" secondItem="3sR-FI-8hN" secondAttribute="bottom" constant="20" id="ikN-mu-caL"/>
+                <constraint firstItem="QDA-E3-leg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="Z5t-Ah-wHe"/>
+                <constraint firstItem="mFb-d4-phS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="aBi-ZI-8vx"/>
                 <constraint firstItem="rqR-Jm-xHh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="90" id="jzY-ML-Kud"/>
-                <constraint firstItem="QDA-E3-leg" firstAttribute="top" secondItem="mFb-d4-phS" secondAttribute="bottom" constant="8" id="l5V-RZ-cPS"/>
+                <constraint firstItem="mFb-d4-phS" firstAttribute="top" secondItem="3sR-FI-8hN" secondAttribute="bottom" constant="20" id="luJ-bh-fmM"/>
                 <constraint firstItem="3sR-FI-8hN" firstAttribute="top" secondItem="rqR-Jm-xHh" secondAttribute="bottom" constant="8" id="mJR-2p-kqv"/>
-                <constraint firstItem="mFb-d4-phS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="qpR-uP-C5f"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="OBg-X9-NyI" secondAttribute="trailing" constant="30" id="rgy-Kb-6Oo"/>
+                <constraint firstItem="QDA-E3-leg" firstAttribute="top" secondItem="mFb-d4-phS" secondAttribute="bottom" constant="8" id="xCn-xe-zHi"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="bottomLineV" destination="3sR-FI-8hN" id="UD8-lu-fWZ"/>
+                <outlet property="bottomLineV2" destination="QDA-E3-leg" id="4AR-e4-aeb"/>
+                <outlet property="bottomLineV2H" destination="ijl-RL-SX9" id="oxu-o6-CaM"/>
+                <outlet property="bottomLineVH" destination="vQ2-4o-fHm" id="1MS-go-Bi2"/>
                 <outlet property="clickNextBtn" destination="nsr-qC-KNZ" id="5rX-7E-VVw"/>
+                <outlet property="codeBtn" destination="OBg-X9-NyI" id="R76-P0-MBV"/>
+                <outlet property="codeTextField" destination="mFb-d4-phS" id="GIt-qx-KCC"/>
+                <outlet property="phoneTextField" destination="rqR-Jm-xHh" id="SXD-5W-CQQ"/>
             </connections>
             <point key="canvasLocation" x="73.599999999999994" y="33.283358320839582"/>
         </view>

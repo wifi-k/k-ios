@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXLoginParam.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///点击登录按钮回调
 @property (nonatomic, copy) void (^clickLoginBtnBlock)(void);
+
+///登录参数
+@property (nonatomic, strong) SXLoginParam *param;
 
 @end
 
