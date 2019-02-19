@@ -16,6 +16,7 @@
     
     SXLoginParam *param = [SXLoginParam param];
     param.mobile = mobile;
+    param.type = @4;
     [SXNetRequestTool POST:@"user/vcode/get" parameters:param.mj_keyValues success:^(id response) {
         
         if (success){

@@ -9,6 +9,7 @@
 #import "SXHttpTool.h"
 #import <AFNetworking/AFNetworking.h>
 #import "SXUploadParam.h"
+#import "SXUserArchiveTool.h"
 
 @implementation SXHttpTool
 
@@ -20,11 +21,9 @@
     
     // 创建请求管理者
     AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
-    mgr.requestSerializer.timeoutInterval = 30;
-    mgr.requestSerializer = [AFJSONRequestSerializer serializer];
     
-    //清除头部赋值
-    [mgr.requestSerializer clearAuthorizationHeader];
+    //设置请求参数
+    [self setSessionManager:mgr];
     
     mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/plain",@"application/octet-stream",nil];
     
@@ -55,14 +54,9 @@
     
     //创建请求管理者
     AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
-    //设置超时时间
-    mgr.requestSerializer.timeoutInterval = 30;
-    mgr.requestSerializer = [AFJSONRequestSerializer serializer];
-    //清除头部赋值
-    [mgr.requestSerializer clearAuthorizationHeader];
     
-    //#warning mark -TODO:"测试VIP数据用"。
-    //    [mgr.requestSerializer setValue:@"111" forHTTPHeaderField:kAccessToken];
+    //设置请求参数
+    [self setSessionManager:mgr];
     
     mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/plain",@"application/octet-stream",nil];
     
@@ -91,11 +85,10 @@
     //注意：以后如果一个方法，要传很多参数，就把参数包装成一个模型
     // 创建请求管理者
     AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
-    mgr.requestSerializer.timeoutInterval = 30;
-    mgr.requestSerializer = [AFJSONRequestSerializer serializer];
     
-    //清除头部赋值
-    [mgr.requestSerializer clearAuthorizationHeader];
+    //设置请求参数
+    [self setSessionManager:mgr];
+    
     mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/plain",@"application/octet-stream",nil];
     
     //修改block的线程
@@ -126,16 +119,11 @@
     parameters:(id)parameters
         photos:(NSArray<SXUploadParam *> *)photos success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure{
     
-    
     // 创建请求管理者
     AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
-    mgr.requestSerializer.timeoutInterval = 30;
-    mgr.requestSerializer = [AFJSONRequestSerializer serializer];
     
-    //清除头部赋值
-    [mgr.requestSerializer clearAuthorizationHeader];
-    
-    [mgr.requestSerializer setValue:@"0" forHTTPHeaderField:@"platform"];
+    //设置请求参数
+    [self setSessionManager:mgr];
     
     mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/plain",@"application/octet-stream",nil];
     
@@ -159,6 +147,25 @@
             failure(error);
         }
     }];
+}
+
++ (void)setSessionManager:(AFHTTPSessionManager *)manager{
+    //设置超时时间
+    manager.requestSerializer.timeoutInterval = 30;
+    //请求的序列化
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    //mgr.requestSerializer = [AFJSONRequestSerializer serializer];
+    //清除头部赋值
+    [manager.requestSerializer clearAuthorizationHeader];
+    //设置请求基本参数
+    [manager.requestSerializer setValue:APP_VERSION forHTTPHeaderField:@"Api-Version"];
+    NSString *tokenStr = SXUserArchiveTool.user.token;
+    if ([NSString isNotEmpty:tokenStr]) {
+        [manager.requestSerializer setValue:tokenStr forHTTPHeaderField:@"Api-Token"];
+    }
+    manager.securityPolicy = [AFSecurityPolicy defaultPolicy];
+    //设置缓存网络请求缓存策略
+    manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringCacheData;
 }
 
 @end
