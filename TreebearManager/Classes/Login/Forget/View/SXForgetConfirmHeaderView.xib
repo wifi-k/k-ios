@@ -24,6 +24,11 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <connections>
+                        <action selector="editingPasswordTextField:" destination="iN0-l3-epB" eventType="editingChanged" id="24G-TP-vUF"/>
+                        <action selector="editingPasswordTextField:" destination="iN0-l3-epB" eventType="editingDidBegin" id="gKL-to-9yb"/>
+                        <action selector="endPasswordTextField:" destination="iN0-l3-epB" eventType="editingDidEnd" id="chp-gD-3Ar"/>
+                    </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anQ-18-jCX">
                     <rect key="frame" x="232" y="90" width="30" height="30"/>
@@ -55,6 +60,11 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <connections>
+                        <action selector="editingPassword2TextField:" destination="iN0-l3-epB" eventType="editingDidBegin" id="SA9-Qp-2PU"/>
+                        <action selector="editingPassword2TextField:" destination="iN0-l3-epB" eventType="editingChanged" id="sSN-Z2-F0H"/>
+                        <action selector="endPassword2TextField:" destination="iN0-l3-epB" eventType="editingDidEnd" id="JS6-g7-tFB"/>
+                    </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0o-7N-l7z">
                     <rect key="frame" x="232" y="149" width="30" height="30"/>
@@ -154,7 +164,7 @@
                 <outlet property="bottomLineView2" destination="fe4-fs-ZVc" id="UZm-AK-iX5"/>
                 <outlet property="confirmBtn" destination="brt-CZ-0ih" id="jNb-bV-9jH"/>
                 <outlet property="licence" destination="UH4-42-Hx7" id="pZH-97-AY8"/>
-                <outlet property="pwd2TextFeild" destination="fYe-Hh-j5M" id="qGK-UY-oqG"/>
+                <outlet property="pwd2TextField" destination="fYe-Hh-j5M" id="irc-Qz-Eam"/>
                 <outlet property="pwdTextField" destination="bjD-c3-zXL" id="X2L-01-1dT"/>
             </connections>
             <point key="canvasLocation" x="65.599999999999994" y="37.781109445277366"/>

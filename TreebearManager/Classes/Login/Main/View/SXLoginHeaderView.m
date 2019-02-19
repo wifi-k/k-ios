@@ -102,7 +102,6 @@
     self.loginBtn.enabled = self.phoneTextField.text.trim.length && self.pwdTextField.text.trim.length;
 }
 
-
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self endEditing:YES];
 }
