@@ -18,6 +18,21 @@
 
 @implementation SXLoginMainController
 
+#pragma mark -控制器生命周期方法-
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    //设置当前导航条背景色
+    //self.navigationController.navigationBar.barTintColor = [UIColor hex:@"444652"];
+    self.navigationController.navigationBar.hidden = YES;
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    //设置当前导航条背景色
+    //self.navigationController.navigationBar.barTintColor = UIColor.blueColor;
+    self.navigationController.navigationBar.hidden = NO;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -46,7 +61,7 @@
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     
-    self.headerView.frame = self.view.bounds;
+    self.headerView.frame = CGRectMake(0, -SafeAreaTopHeight, SCREEN_WIDTH, SCREEN_HEIGHT + iPhoneX_Add_Bottom);
 }
 
 

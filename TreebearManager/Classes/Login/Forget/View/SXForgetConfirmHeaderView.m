@@ -7,6 +7,7 @@
 //
 
 #import "SXForgetConfirmHeaderView.h"
+#import "NSString+Hash.h"
 
 @interface SXForgetConfirmHeaderView ()
 @property (weak, nonatomic) IBOutlet UITextField *pwdTextField;

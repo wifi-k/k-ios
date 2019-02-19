@@ -41,6 +41,7 @@
 #define SXColorGray5  [UIColor hex:@"CCCCCC"]
 #define SXColorGray6  [UIColor hex:@"D8D8D8"]
 #define SXColorGray7  [UIColor hex:@"F0F0F0"]
+#define SXColorGray8  [UIColor hex:@"FFFFFF"]
 
 //文本灰色
 #define SXColorB2B2B2  [UIColor hex:@"B2B2B2"]

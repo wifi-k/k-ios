@@ -7,6 +7,7 @@
 //
 
 #import "SXLoginHeaderView.h"
+#import "NSString+Hash.h"
 
 @interface SXLoginHeaderView ()
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;

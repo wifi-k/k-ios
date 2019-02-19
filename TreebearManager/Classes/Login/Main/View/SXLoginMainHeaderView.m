@@ -34,9 +34,14 @@
     self.iconImageV.backgroundColor = SXColorBtnHighlight;
     [self.iconImageV roundViewWithRadius:40.0f];
     
+    [self.loginBtn setTitleColor:SXColorGray5 forState:UIControlStateNormal];
+    [self.loginBtn setBackgroundColor:SXColorGray8 forState:UIControlStateNormal];
     [self.loginBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
-    [self.loginBtn setBackgroundColor:SXColorOrange forState:UIControlStateNormal];
-    [self.loginBtn setBackgroundColor:SXColorGray5 forState:UIControlStateDisabled];
+    [self.loginBtn roundViewWithRadius:22.5];
+    
+    [self.registBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
+    [self.registBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
+    [self.registBtn roundViewWithRadius:22.5];
 }
 
 #pragma mark -按钮点击事件-

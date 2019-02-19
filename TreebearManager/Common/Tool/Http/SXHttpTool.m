@@ -58,7 +58,9 @@
     //设置请求参数
     [self setSessionManager:mgr];
     
-    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/plain",@"application/octet-stream",nil];
+    mgr.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+//    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/plain",@"application/octet-stream",nil];
     
     //修改block的线程
     mgr.completionQueue = dispatch_get_global_queue(0, 0);
@@ -153,13 +155,14 @@
     //设置超时时间
     manager.requestSerializer.timeoutInterval = 30;
     //请求的序列化
-    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-    //mgr.requestSerializer = [AFJSONRequestSerializer serializer];
+//    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
     //清除头部赋值
     [manager.requestSerializer clearAuthorizationHeader];
     //设置请求基本参数
     [manager.requestSerializer setValue:APP_VERSION forHTTPHeaderField:@"Api-Version"];
-    NSString *tokenStr = SXUserArchiveTool.user.token;
+//    NSString *tokenStr = SXUserArchiveTool.user.token;
+    NSString *tokenStr = @"1234545";
     if ([NSString isNotEmpty:tokenStr]) {
         [manager.requestSerializer setValue:tokenStr forHTTPHeaderField:@"Api-Token"];
     }

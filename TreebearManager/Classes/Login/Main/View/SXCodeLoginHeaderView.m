@@ -50,11 +50,11 @@
 
 #pragma mark -按钮点击事件-
 - (IBAction)clickCodeBtn:(SXLoginCertifyCodeButton *)sender {
-    [sender start];
     
     NSString *mobile = self.phoneTextField.text.filterSpace;
     [SXLoginNetTool getCodeDataWithMobile:mobile Success:^{
         DLog(@"成功");
+        [sender start];
     } failure:^(NSError * _Nonnull error) {
         DLog(@"失败");
     }];
