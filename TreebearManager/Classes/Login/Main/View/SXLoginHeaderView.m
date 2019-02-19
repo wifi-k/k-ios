@@ -77,7 +77,7 @@
 - (IBAction)editingPhoneTextField:(UITextField *)sender {
     DLog(@"editingPhoneTextField:%@",sender.text);
     self.bottomLineView1.backgroundColor = SXColorBlue;
-    self.param.phone = sender.text.trim.filterSpace;
+    self.param.mobile = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];
 }
 

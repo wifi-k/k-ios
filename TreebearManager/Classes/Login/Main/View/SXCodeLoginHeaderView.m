@@ -8,6 +8,7 @@
 
 #import "SXCodeLoginHeaderView.h"
 #import "SXLoginCertifyCodeButton.h"
+#import "SXLoginNetTool.h"
 
 @interface SXCodeLoginHeaderView ()
 @property (weak, nonatomic) IBOutlet SXLoginCertifyCodeButton *codeBtn;
@@ -45,12 +46,18 @@
 
 - (void)setUpUI{
     
-    
 }
 
 #pragma mark -按钮点击事件-
 - (IBAction)clickCodeBtn:(SXLoginCertifyCodeButton *)sender {
     [sender start];
+    
+    NSString *mobile = self.phoneTextField.text.filterSpace;
+    [SXLoginNetTool getCodeDataWithMobile:mobile Success:^{
+        DLog(@"成功");
+    } failure:^(NSError * _Nonnull error) {
+        DLog(@"失败");
+    }];
 }
 
 - (IBAction)clickLoginBtnBlock:(UIButton *)sender {
@@ -63,10 +70,10 @@
 - (IBAction)editingPhoneTextField:(UITextField *)sender {
     DLog(@"editingPhoneTextField:%@",sender.text);
     self.bottomLineV.backgroundColor = SXColorBlue;
-    self.param.phone = sender.text.trim.filterSpace;
+    self.param.mobile = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];
     if (!self.codeBtn.isCounting) {//非计时状态，改变按钮状态
-        self.codeBtn.enabled = self.param.phone.isPhoneNumber;
+        self.codeBtn.enabled = self.param.mobile.isPhoneNumber;
     }
 }
 

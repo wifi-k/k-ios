@@ -64,10 +64,10 @@
 - (IBAction)editingPhoneTextField:(UITextField *)sender {
     DLog(@"editingPhoneTextField:%@",sender.text);
     self.bottomLineV.backgroundColor = SXColorBlue;
-    self.param.phone = sender.text.trim.filterSpace;
+    self.param.mobile = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];
     if (!self.codeBtn.isCounting) {//非计时状态，改变按钮状态
-        self.codeBtn.enabled = self.param.phone.isPhoneNumber;
+        self.codeBtn.enabled = self.param.mobile.isPhoneNumber;
     }
 }
 

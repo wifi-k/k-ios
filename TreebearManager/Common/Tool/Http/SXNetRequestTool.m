@@ -10,9 +10,9 @@
 #import "SXNetRequestTool.h"
 
 #ifdef DEBUG
-#define API_HOST @"https://testpay.hongnaga.com/app" //主测试环境
+#define API_HOST @"http://test.user.famwifi.com/api" //主测试环境
 #else
-#define API_HOST @"https://testpay.hongnaga.com/app" //主线上环境
+#define API_HOST @"https://testpay.hongnaga.com/api" //主线上环境
 #endif
 
 /** 接收消息提示(0,成功) **/
@@ -31,6 +31,8 @@ static NSString * const kResultCode = @"code";
     failure:(void (^)(NSError *error))failure{
     
     NSString *requestPath = [NSString stringWithFormat:@"%@/%@",API_HOST,path];
+    
+    DLog(@"requestPath:%@",requestPath);
     
     [SXHttpTool GET:requestPath parameters:parameters success:^(id responseObject) {
         
@@ -67,6 +69,8 @@ static NSString * const kResultCode = @"code";
      failure:(void (^)(NSError *error))failure{
     
     NSString *requestPath = [NSString stringWithFormat:@"%@/%@",API_HOST,path];
+    
+    DLog(@"requestPath:%@",requestPath);
     
     [SXHttpTool POST:requestPath parameters:parameters success:^(id responseObject) {
         
@@ -105,6 +109,8 @@ static NSString * const kResultCode = @"code";
     
     NSString *requestPath = [NSString stringWithFormat:@"%@/%@",API_HOST,path];
     
+    DLog(@"requestPath:%@",requestPath);
+    
     [SXHttpTool UPLOAD:requestPath parameters:parameters upload:uploadParam success:^(id responseObject) {
         
         NSNumber *code = [responseObject objectForKey:kResultCode];
@@ -141,6 +147,8 @@ static NSString * const kResultCode = @"code";
        failure:(void (^)(NSError *error))failure{
     
     NSString *requestPath = [NSString stringWithFormat:@"%@/%@",API_HOST,path];
+    
+    DLog(@"requestPath:%@",requestPath);
     
     [SXHttpTool UPLOAD:requestPath parameters:parameters photos:photos success:^(id responseObject) {
         

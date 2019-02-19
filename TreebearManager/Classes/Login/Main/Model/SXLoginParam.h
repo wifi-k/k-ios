@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  手机号
  */
-@property (nonatomic, copy) NSString *phone;
+@property (nonatomic, copy) NSString *mobile;
 /**
  验证码
  */

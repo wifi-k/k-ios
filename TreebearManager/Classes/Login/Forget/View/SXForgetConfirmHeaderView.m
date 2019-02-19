@@ -80,7 +80,7 @@
 - (IBAction)editingPasswordTextField:(UITextField *)sender {
     DLog(@"editingPasswordTextField:%@",sender.text);
     self.bottomLineView.backgroundColor = SXColorBlue;
-    self.param.phone = sender.text.trim.filterSpace;
+    self.param.mobile = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];
 }
 

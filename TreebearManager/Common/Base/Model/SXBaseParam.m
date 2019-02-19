@@ -14,6 +14,7 @@
 + (instancetype)param{
     SXBaseParam *param = [[self alloc] init];
     param.device_id = SXUtil.deviceId;
+    param.version = @(100);
     return param;
 }
 
