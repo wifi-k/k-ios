@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXLoginParam.h"
 
 @interface SXLoginHeaderView : UIView
 
@@ -16,5 +17,8 @@
 @property (nonatomic, copy) void (^clickLoginBtnBlock)(void);
 @property (nonatomic, copy) void (^clickCodeLoginBtnBlock)(void);
 @property (nonatomic, copy) void (^clickForgetBtnBlock)(void);
+
+///登录参数
+@property (nonatomic, strong) SXLoginParam *param;
     
 @end

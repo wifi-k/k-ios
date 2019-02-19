@@ -24,6 +24,14 @@
 
 @implementation SXLoginHeaderView
 
+#pragma mark -getter-
+- (SXLoginParam *)param{
+    if (_param == nil) {
+        _param = [[SXLoginParam alloc] init];
+    }
+    return _param;
+}
+
 + (instancetype)headerView{
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
 }
@@ -64,6 +72,36 @@
         self.clickLoginBtnBlock();
     }
 }
+
+#pragma mark -文本输入框编辑-
+- (IBAction)editingPhoneTextField:(UITextField *)sender {
+    DLog(@"editingPhoneTextField:%@",sender.text);
+    self.bottomLineView1.backgroundColor = SXColorBlue;
+    self.param.phone = sender.text.trim.filterSpace;
+    [self changeConfirmBtnEnabled];
+}
+
+- (IBAction)endPhoneTextField:(UITextField *)sender {
+    DLog(@"endPhoneTextField:%@",sender.text);
+    self.bottomLineView1.backgroundColor = UIColor.lightGrayColor;
+}
+
+- (IBAction)editingPasswordTextField:(UITextField *)sender {
+    DLog(@"editingPasswordTextField:%@",sender.text);
+    self.bottomLineView2.backgroundColor = SXColorBlue;
+    self.param.code = sender.text.trim.filterSpace;
+    [self changeConfirmBtnEnabled];
+}
+
+- (IBAction)endPasswordTextField:(UITextField *)sender {
+    DLog(@"endPasswordTextField:%@",sender.text);
+    self.bottomLineView2.backgroundColor = UIColor.lightGrayColor;
+}
+
+- (void)changeConfirmBtnEnabled{
+    self.loginBtn.enabled = self.phoneTextField.text.trim.length && self.pwdTextField.text.trim.length;
+}
+
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self endEditing:YES];

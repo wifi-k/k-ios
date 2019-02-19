@@ -24,6 +24,11 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                    <connections>
+                        <action selector="editingPhoneTextField:" destination="iN0-l3-epB" eventType="editingChanged" id="Lf9-VO-Rq6"/>
+                        <action selector="editingPhoneTextField:" destination="iN0-l3-epB" eventType="editingDidBegin" id="ZXW-bZ-VLg"/>
+                        <action selector="endPhoneTextField:" destination="iN0-l3-epB" eventType="editingDidEnd" id="ug5-zs-91m"/>
+                    </connections>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2i-N7-7ld">
                     <rect key="frame" x="30" y="128" width="241" height="1"/>
@@ -32,7 +37,7 @@
                         <constraint firstAttribute="height" constant="1" id="sqZ-4r-Nwz"/>
                     </constraints>
                 </view>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I09-4M-7uU">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="I09-4M-7uU">
                     <rect key="frame" x="30" y="149" width="201" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="U5c-Zv-yGg"/>
@@ -40,6 +45,11 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <connections>
+                        <action selector="editingPasswordTextField:" destination="iN0-l3-epB" eventType="editingChanged" id="EcX-OP-aUk"/>
+                        <action selector="editingPasswordTextField:" destination="iN0-l3-epB" eventType="editingDidBegin" id="kf7-vt-9cg"/>
+                        <action selector="endPasswordTextField:" destination="iN0-l3-epB" eventType="editingDidEnd" id="7gH-zG-RLB"/>
+                    </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsB-K8-VjV">
                     <rect key="frame" x="241" y="149" width="30" height="30"/>
