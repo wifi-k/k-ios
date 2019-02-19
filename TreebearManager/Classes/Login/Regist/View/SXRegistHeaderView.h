@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXRegistParam.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXRegistHeaderView : UIView
+
 + (instancetype)headerView;
+
+@property (nonatomic, strong) SXRegistParam *param;
+
 @end
 
 NS_ASSUME_NONNULL_END

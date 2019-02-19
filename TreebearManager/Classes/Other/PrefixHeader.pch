@@ -27,6 +27,7 @@
 #import "MBProgressHUD+CL.h"
 
 /** 扩展分类 */
+#import "NSString+Extension.h"
 #import "UIView+Extension.h"
 #import "UIView+Frame.h"
 #import "UIButton+Extension.h"

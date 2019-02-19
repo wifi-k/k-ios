@@ -59,6 +59,9 @@
 		098BA305221A57A700F58639 /* SXMineHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 098BA304221A57A700F58639 /* SXMineHeaderView.xib */; };
 		098BA308221AB1B200F58639 /* SXCodeLoginHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA307221AB1B200F58639 /* SXCodeLoginHeaderView.m */; };
 		098BA30A221AB1C200F58639 /* SXCodeLoginHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 098BA309221AB1C200F58639 /* SXCodeLoginHeaderView.xib */; };
+		098BA30D221AD98400F58639 /* SXLoginCertifyCodeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA30C221AD98400F58639 /* SXLoginCertifyCodeButton.m */; };
+		098BA310221B98E200F58639 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA30E221B98E200F58639 /* NSString+Extension.m */; };
+		098BA313221B997000F58639 /* SXRegistParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA312221B997000F58639 /* SXRegistParam.m */; };
 		327EE8E44A5A7DE11581C0F1 /* libPods-TreebearManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D77B77B9D44D60B532DDE9D2 /* libPods-TreebearManager.a */; };
 		B348F93C21F6C2C10000F194 /* TreebearManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F93B21F6C2C10000F194 /* TreebearManagerTests.m */; };
 		B348F94721F6C2C10000F194 /* TreebearManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F94621F6C2C10000F194 /* TreebearManagerUITests.m */; };
@@ -224,6 +227,12 @@
 		098BA306221AB1B200F58639 /* SXCodeLoginHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXCodeLoginHeaderView.h; sourceTree = "<group>"; };
 		098BA307221AB1B200F58639 /* SXCodeLoginHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXCodeLoginHeaderView.m; sourceTree = "<group>"; };
 		098BA309221AB1C200F58639 /* SXCodeLoginHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXCodeLoginHeaderView.xib; sourceTree = "<group>"; };
+		098BA30B221AD98400F58639 /* SXLoginCertifyCodeButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXLoginCertifyCodeButton.h; sourceTree = "<group>"; };
+		098BA30C221AD98400F58639 /* SXLoginCertifyCodeButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXLoginCertifyCodeButton.m; sourceTree = "<group>"; };
+		098BA30E221B98E200F58639 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		098BA30F221B98E200F58639 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		098BA311221B997000F58639 /* SXRegistParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXRegistParam.h; sourceTree = "<group>"; };
+		098BA312221B997000F58639 /* SXRegistParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXRegistParam.m; sourceTree = "<group>"; };
 		0BF17A1BEC7F76DCAB17507A /* Pods-TreebearManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreebearManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TreebearManager/Pods-TreebearManager.debug.xcconfig"; sourceTree = "<group>"; };
 		B348F91F21F6C2BE0000F194 /* TreebearManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreebearManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B348F93721F6C2C10000F194 /* TreebearManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreebearManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -641,6 +650,8 @@
 		B348F95A21F6C4E10000F194 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				098BA30F221B98E200F58639 /* NSString+Extension.h */,
+				098BA30E221B98E200F58639 /* NSString+Extension.m */,
 				B348F97F21F711B90000F194 /* UIColor+BFKit.h */,
 				B348F98021F711B90000F194 /* UIColor+BFKit.m */,
 				B348F99B21F719850000F194 /* UIImage+Extension.h */,
@@ -966,6 +977,8 @@
 		B3AF2FE221FAFEC6001E4E67 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				098BA311221B997000F58639 /* SXRegistParam.h */,
+				098BA312221B997000F58639 /* SXRegistParam.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1022,6 +1035,8 @@
 				098BA306221AB1B200F58639 /* SXCodeLoginHeaderView.h */,
 				098BA307221AB1B200F58639 /* SXCodeLoginHeaderView.m */,
 				098BA309221AB1C200F58639 /* SXCodeLoginHeaderView.xib */,
+				098BA30B221AD98400F58639 /* SXLoginCertifyCodeButton.h */,
+				098BA30C221AD98400F58639 /* SXLoginCertifyCodeButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1378,6 +1393,7 @@
 				092D6D0B2202D76000538AC8 /* SXRegistHeaderView.m in Sources */,
 				B3AF300221FB08D1001E4E67 /* SXUtil.m in Sources */,
 				B3AF303321FE92CC001E4E67 /* SXBaseCustomTableViewGroupController.m in Sources */,
+				098BA30D221AD98400F58639 /* SXLoginCertifyCodeButton.m in Sources */,
 				091186EF22151D5F00938D9F /* SGSocketManager.m in Sources */,
 				092D6CFF220073A600538AC8 /* SXUserDefaultsTool.m in Sources */,
 				B3AF302721FE914E001E4E67 /* SXBaseTableGroupRefreshController.m in Sources */,
@@ -1398,6 +1414,7 @@
 				B348F99721F716C60000F194 /* SXTabBarController.m in Sources */,
 				B348F99D21F719850000F194 /* UIImage+Extension.m in Sources */,
 				B348F9B321F71E2D0000F194 /* SXUploadParam.m in Sources */,
+				098BA313221B997000F58639 /* SXRegistParam.m in Sources */,
 				B3AF301E21FE90AF001E4E67 /* SXBaseTableViewPlainController.m in Sources */,
 				B3AF302A21FE91B8001E4E67 /* UIViewController+Placeholder.m in Sources */,
 				092D6D2B2203011800538AC8 /* SXHomeNetworkingDeviceCell.m in Sources */,
@@ -1405,6 +1422,7 @@
 				B348F9AC21F71A680000F194 /* UIView+Extension.m in Sources */,
 				B3AF301821FB0C2E001E4E67 /* SXBaseWebController.m in Sources */,
 				09118701221522BF00938D9F /* GCDAsyncSocketManager.m in Sources */,
+				098BA310221B98E200F58639 /* NSString+Extension.m in Sources */,
 				B3AF300821FB0956001E4E67 /* SXBaseModel.m in Sources */,
 				092D6CE422005A0C00538AC8 /* SXEmptyDataEventView.m in Sources */,
 				B3AF300F21FB0A20001E4E67 /* SXBaseTableViewCell.m in Sources */,

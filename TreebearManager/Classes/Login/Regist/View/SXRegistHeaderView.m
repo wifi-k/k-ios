@@ -7,6 +7,7 @@
 //
 
 #import "SXRegistHeaderView.h"
+#import "SXLoginCertifyCodeButton.h"
 
 @interface SXRegistHeaderView ()
 @property (weak, nonatomic) IBOutlet UILabel *titleL;
@@ -15,12 +16,21 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLineVH;
     
 @property (weak, nonatomic) IBOutlet UITextField *codeTextField;
+@property (weak, nonatomic) IBOutlet SXLoginCertifyCodeButton *codeBtn;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineV2;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLineV2H;
 @property (weak, nonatomic) IBOutlet UIButton *registBtn;
 @end
 
 @implementation SXRegistHeaderView
+
+#pragma mark -getter-
+- (SXRegistParam *)param{
+    if (_param == nil) {
+        _param = [[SXRegistParam alloc] init];
+    }
+    return _param;
+}
 
 + (instancetype)headerView{
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
@@ -37,9 +47,16 @@
     
 - (void)setUpUI{
     self.titleL.font = SXFontBold20;
+    
+    self.codeBtn.enabled = NO;
 }
 
 #pragma mark -按钮点击事件-
+- (IBAction)clickCodeBtn:(SXLoginCertifyCodeButton *)sender {
+    //开始计时
+    [self.codeBtn start];
+}
+
 - (IBAction)clickRegistBtn:(UIButton *)sender {
     [MBProgressHUD showMessageToWindow:@"注册成功!"];
 }
@@ -48,6 +65,11 @@
 - (IBAction)editingPhoneTextField:(UITextField *)sender {
     DLog(@"editingPhoneTextField:%@",sender.text);
     self.bottomLineV.backgroundColor = SXColorBlue;
+    self.param.phone = sender.text.trim.filterSpace;
+    [self changeConfirmBtnEnabled];
+    if (!self.codeBtn.isCounting) {//非计时状态，改变按钮状态
+        self.codeBtn.enabled = self.param.phone.isPhoneNumber;
+    }
 }
 
 - (IBAction)endPhoneTextField:(UITextField *)sender {
@@ -58,6 +80,8 @@
 - (IBAction)editingCodeTextField:(UITextField *)sender {
     DLog(@"editingCodeTextField:%@",sender.text);
     self.bottomLineV2.backgroundColor = SXColorBlue;
+    self.param.code = sender.text.trim.filterSpace;
+    [self changeConfirmBtnEnabled];
 }
 
 - (IBAction)endCodeTextField:(UITextField *)sender {
@@ -67,6 +91,10 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self endEditing:YES];
+}
+
+- (void)changeConfirmBtnEnabled{
+    self.registBtn.enabled = self.phoneTextField.text.trim.length && self.codeTextField.text.trim.length;
 }
 
 @end
