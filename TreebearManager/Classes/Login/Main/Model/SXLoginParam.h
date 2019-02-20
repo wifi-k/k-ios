@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  密码
  */
-@property (nonatomic, copy) NSString *password;
+@property (nonatomic, copy) NSString *passwd;
 
 @end
 

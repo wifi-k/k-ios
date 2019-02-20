@@ -14,13 +14,16 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SXLoginNetTool : NSObject
 
 ///获取手机验证码
-+ (void)getCodeDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
++ (void)getCodeDataWithParams:(NSDictionary *)params Success:(void (^)(NSString *code))success failure:(void (^)(NSError *error))failure;
 
 ///用户名手机验证码注册
 + (void)registUserInfoDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
 ///手机验证码登录
 + (void)loginWithVCodeDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
+
+///忘记密码重置
++ (void)resetPasswdDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
 @end
 

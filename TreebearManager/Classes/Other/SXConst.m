@@ -18,5 +18,7 @@ NSString *const SXHomeMessageName = @"SXHomeMessageName";
 NSString *const user_vcode_getv2 = @"user/vcode/getv2";
 NSString *const user_signup_vcode = @"user/signup/vcode";
 NSString *const user_signin_vcode = @"user/signin/vcode";
+NSString *const user_passwd_forget = @"user/passwd/forget";
+NSString *const user_passwd_reset = @"user/passwd/reset";
 
 @end

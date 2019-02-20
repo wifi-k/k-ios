@@ -11,6 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXRegistParam : SXLoginParam
+/**
+ 再次输入密码
+ */
+@property (nonatomic, copy) NSString *passwd2;
 
 @end
 

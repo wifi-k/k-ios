@@ -23,14 +23,6 @@
 
 @implementation SXForgetConfirmHeaderView
 
-#pragma mark -getter-
-- (SXRegistParam *)param{
-    if (_param == nil) {
-        _param = [[SXRegistParam alloc] init];
-    }
-    return _param;
-}
-
 + (instancetype)headerView{
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
 }
@@ -65,6 +57,17 @@
 }
 
 - (IBAction)clickConfirmBtn:(UIButton *)sender {
+    
+    if (![self.param.passwd2 isEqualToString:self.param.passwd]) {
+        [MBProgressHUD showWarningWithMessage:@"两次密码输入不一致,请重输!" toView:SXKeyWindow];
+        return;
+    }
+    
+    if (!self.agreeBtn.selected) {
+        [MBProgressHUD showWarningWithMessage:@"请选择同意用户协议!" toView:SXKeyWindow];
+        return;
+    }
+    
     if (self.clickConfirmBtnBlock) {
         self.clickConfirmBtnBlock();
     }
@@ -87,7 +90,7 @@
 - (IBAction)editingPasswordTextField:(UITextField *)sender {
     DLog(@"editingPasswordTextField:%@",sender.text);
     self.bottomLineView.backgroundColor = SXColorBlue;
-    self.param.mobile = sender.text.trim.filterSpace;
+    self.param.passwd = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];
 }
 
@@ -99,7 +102,7 @@
 - (IBAction)editingPassword2TextField:(UITextField *)sender {
     DLog(@"editingPassword2TextField:%@",sender.text);
     self.bottomLineView2.backgroundColor = SXColorBlue;
-    self.param.vcode = sender.text.trim.filterSpace;
+    self.param.passwd2 = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];
 }
 

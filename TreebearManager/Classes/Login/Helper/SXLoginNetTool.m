@@ -12,10 +12,13 @@
 
 @implementation SXLoginNetTool
 
-+ (void)getCodeDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure{
++ (void)getCodeDataWithParams:(NSDictionary *)params Success:(void (^)(NSString *code))success failure:(void (^)(NSError *error))failure{
     [SXNetRequestTool POST:user_vcode_getv2 parameters:params success:^(id response) {
+        
+        if (![response isKindOfClass:NSString.class]) return;
+        
         if (success){
-            success();
+            success(response);
         }
     } failure:^(NSError *error) {
         if (failure) {
@@ -54,6 +57,19 @@
         SXUserArchiveTool.user.token = token;
         [SXUserArchiveTool saveUser];
         
+        if (success){
+            success();
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
++ (void)resetPasswdDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure{
+    
+    [SXNetRequestTool POST:user_passwd_reset parameters:params success:^(id response) {
         if (success){
             success();
         }

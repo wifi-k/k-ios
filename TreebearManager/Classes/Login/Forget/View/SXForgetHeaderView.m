@@ -8,6 +8,7 @@
 
 #import "SXForgetHeaderView.h"
 #import "SXLoginCertifyCodeButton.h"
+#import "SXLoginNetTool.h"
 
 @interface SXForgetHeaderView ()
 
@@ -20,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIView *bottomLineV2;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLineV2H;
 @property (weak, nonatomic) IBOutlet UIButton *clickNextBtn;
+
+@property (copy, nonatomic) NSString *vcode;//网络验证码
 @end
 
 @implementation SXForgetHeaderView
@@ -56,10 +59,37 @@
 
 #pragma mark -按钮点击事件-
 - (IBAction)clickCodeBtn:(SXLoginCertifyCodeButton *)sender {
-    [sender start];
+    WS(weakSelf);
+    NSString *mobile = self.phoneTextField.text.filterSpace;
+    SXLoginParam *param = [SXLoginParam param];
+    param.mobile = mobile;
+    param.type = @2;
+    [SXLoginNetTool getCodeDataWithParams:param.mj_keyValues Success:^(NSString * _Nonnull code) {
+        [MBProgressHUD showSuccessWithMessage:@"发送成功!" toView:SXKeyWindow];
+        //开始计时
+        [sender start];
+        //赋值验证码
+        weakSelf.vcode = code;
+    } failure:^(NSError * _Nonnull error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
 
 - (IBAction)clickNextBtn:(UIButton *)sender {
+    if ([NSString isEmpty:self.vcode]) {
+        [MBProgressHUD showWarningWithMessage:@"请点击获取验证码!" toView:SXKeyWindow];
+        return;
+    }
+    
+    if (![self.vcode isEqualToString:self.param.vcode]) {
+        [MBProgressHUD showWarningWithMessage:@"您输入的验证码不对,请重输!" toView:SXKeyWindow];
+        return;
+    }
+    
+    //赋值，保证验证码正确
+    self.param.vcode = self.vcode;
+    
     if (self.clickNextBtnBlock) {
         self.clickNextBtnBlock();
     }

@@ -64,7 +64,7 @@
     SXLoginParam *param = [SXLoginParam param];
     param.mobile = mobile;
     param.type = @1;
-    [SXLoginNetTool getCodeDataWithParams:param.mj_keyValues Success:^{
+    [SXLoginNetTool getCodeDataWithParams:param.mj_keyValues Success:^(NSString * _Nonnull code) {
         [MBProgressHUD showSuccessWithMessage:@"发送成功!" toView:SXKeyWindow];
         //开始计时
         [sender start];

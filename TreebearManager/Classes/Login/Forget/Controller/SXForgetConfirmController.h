@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXRegistParam.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXForgetConfirmController : UIViewController
-
+@property (nonatomic, strong) SXRegistParam *param;
 @end
 
 NS_ASSUME_NONNULL_END

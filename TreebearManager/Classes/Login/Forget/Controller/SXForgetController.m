@@ -46,6 +46,7 @@
     
 - (void)jumpToConfirmVC{
     SXForgetConfirmController *confirmVC = [[SXForgetConfirmController alloc] init];
+    confirmVC.param = self.headerView.param;
     [self.navigationController pushViewController:confirmVC animated:YES];
 }
     

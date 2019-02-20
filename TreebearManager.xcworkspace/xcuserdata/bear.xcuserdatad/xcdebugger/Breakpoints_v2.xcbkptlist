@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TreebearManager/Classes/Login/Forget/View/SXForgetConfirmHeaderView.m"
-            timestampString = "572340597.1421061"
+            filePath = "TreebearManager/Classes/Login/Forget/Controller/SXForgetConfirmController.m"
+            timestampString = "572346482.100708"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "-clickConfirmBtn:"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "-resetPasswordData"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
