@@ -55,8 +55,9 @@
     [self.loginBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
     [self.loginBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
     [self.loginBtn roundViewWithRadius:6.0f];
-    
     self.loginBtn.enabled = NO;
+    
+    self.codeBtn.enabled = NO;
 }
 
 #pragma mark -按钮点击事件-

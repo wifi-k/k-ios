@@ -28,7 +28,17 @@
     [self setTitleColor:SXColor99999 forState:UIControlStateHighlighted];
     [self setTitleColor:SXColor99999 forState:UIControlStateDisabled];
     
-    [self roundViewWithRadius:4.0f borderColor:SXColor99999 borderWidth:1.0f];
+    [self roundViewWithRadius:4.0f borderColor:SXColor99999 borderWidth:0.5f];
+}
+
+- (void)setEnabled:(BOOL)enabled{
+    [super setEnabled:enabled];
+    
+    if (enabled) {
+        [self borderColor:SXColorBlue2 borderWidth:1.0f];
+    } else{
+        [self borderColor:SXColor99999 borderWidth:0.5f];
+    }
 }
 
 - (instancetype)init{
@@ -41,7 +51,7 @@
         [self setTitleColor:SXColor99999 forState:UIControlStateHighlighted];
         [self setTitleColor:SXColor99999 forState:UIControlStateDisabled];
         
-        [self roundViewWithRadius:4.0f borderColor:SXColor99999 borderWidth:1.0f];
+        [self roundViewWithRadius:4.0f borderColor:SXColor99999 borderWidth:0.5f];
     }
     return self;
 }
@@ -61,7 +71,6 @@
                 [weakSelf setTitle:@"获取验证码" forState:UIControlStateNormal];
                 weakSelf.enabled = YES;
                 weakSelf.isCounting = NO;
-                [weakSelf borderColor:SXColorBlue2 borderWidth:1.0f];
             });
         }else{
             int seconds = timeout % 60;
@@ -71,7 +80,6 @@
                 [weakSelf setTitle:[NSString stringWithFormat:@"%@S后重新获取",strTime] forState:UIControlStateNormal];
                 weakSelf.enabled = NO;
                 weakSelf.isCounting = YES;
-                [weakSelf borderColor:SXColor99999 borderWidth:1.0f];
             });
             timeout--;
         }

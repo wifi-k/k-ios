@@ -61,6 +61,8 @@
     [self.clickNextBtn roundViewWithRadius:6.0f];
     
     self.clickNextBtn.enabled = NO;
+    
+    self.codeBtn.enabled = NO;
 }
 
 #pragma mark -按钮点击事件-
