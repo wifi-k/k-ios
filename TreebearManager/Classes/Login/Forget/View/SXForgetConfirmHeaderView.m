@@ -99,7 +99,7 @@
 - (IBAction)editingPassword2TextField:(UITextField *)sender {
     DLog(@"editingPassword2TextField:%@",sender.text);
     self.bottomLineView2.backgroundColor = SXColorBlue;
-    self.param.code = sender.text.trim.filterSpace;
+    self.param.vcode = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];
 }
 

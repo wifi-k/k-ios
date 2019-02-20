@@ -95,7 +95,7 @@
 - (IBAction)editingPasswordTextField:(UITextField *)sender {
     DLog(@"editingPasswordTextField:%@",sender.text);
     self.bottomLineView2.backgroundColor = SXColorBlue;
-    self.param.code = sender.text.trim.filterSpace;
+    self.param.vcode = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];
 }
 

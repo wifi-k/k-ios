@@ -84,7 +84,7 @@
 - (IBAction)editingCodeTextField:(UITextField *)sender {
     DLog(@"editingCodeTextField:%@",sender.text);
     self.bottomLineV2.backgroundColor = SXColorBlue;
-    self.param.code = sender.text.trim.filterSpace;
+    self.param.vcode = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];
 }
 

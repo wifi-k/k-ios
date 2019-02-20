@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  验证码
  */
-@property (nonatomic, copy) NSString *code;
+@property (nonatomic, copy) NSString *vcode;
 /**
  密码
  */

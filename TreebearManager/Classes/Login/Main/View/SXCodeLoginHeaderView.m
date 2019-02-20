@@ -56,8 +56,13 @@
 #pragma mark -按钮点击事件-
 - (IBAction)clickCodeBtn:(SXLoginCertifyCodeButton *)sender {
     NSString *mobile = self.phoneTextField.text.filterSpace;
-    [SXLoginNetTool getCodeDataWithMobile:mobile Success:^{
+    NSString *vcode = self.codeTextField.text.filterSpace;
+    SXLoginParam *param = [SXLoginParam param];
+    param.mobile = mobile;
+    param.type = @4;
+    [SXLoginNetTool getCodeDataWithParams:param.mj_keyValues Success:^{
         [MBProgressHUD showSuccessWithMessage:@"发送成功!" toView:SXKeyWindow];
+        //开始计时
         [sender start];
     } failure:^(NSError * _Nonnull error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
@@ -90,7 +95,7 @@
 - (IBAction)editingCodeTextField:(UITextField *)sender {
     DLog(@"editingCodeTextField:%@",sender.text);
     self.bottomLineV2.backgroundColor = SXColorBlue;
-    self.param.code = sender.text.trim.filterSpace;
+    self.param.vcode = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];
 }
 

@@ -8,6 +8,7 @@
 
 #import "SXRegistHeaderView.h"
 #import "SXLoginCertifyCodeButton.h"
+#import "SXLoginNetTool.h"
 
 @interface SXRegistHeaderView ()
 @property (weak, nonatomic) IBOutlet UILabel *titleL;
@@ -59,12 +60,33 @@
 
 #pragma mark -按钮点击事件-
 - (IBAction)clickCodeBtn:(SXLoginCertifyCodeButton *)sender {
-    //开始计时
-    [self.codeBtn start];
+    NSString *mobile = self.phoneTextField.text.filterSpace;
+    SXLoginParam *param = [SXLoginParam param];
+    param.mobile = mobile;
+    param.type = @1;
+    [SXLoginNetTool getCodeDataWithParams:param.mj_keyValues Success:^{
+        [MBProgressHUD showSuccessWithMessage:@"发送成功!" toView:SXKeyWindow];
+        //开始计时
+        [sender start];
+    } failure:^(NSError * _Nonnull error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
 
 - (IBAction)clickRegistBtn:(UIButton *)sender {
-    [MBProgressHUD showMessageToWindow:@"注册成功!"];
+    
+    NSString *mobile = self.phoneTextField.text.filterSpace;
+    NSString *vcode = self.codeTextField.text.filterSpace;
+    SXLoginParam *param = [SXLoginParam param];
+    param.mobile = mobile;
+    param.vcode = vcode;
+    [SXLoginNetTool registUserInfoDataWithParams:param.mj_keyValues Success:^{
+        [MBProgressHUD showSuccessWithMessage:@"注册成功!" toView:SXKeyWindow];
+    } failure:^(NSError * _Nonnull error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
 
 #pragma mark -文本输入框编辑-
@@ -86,7 +108,7 @@
 - (IBAction)editingCodeTextField:(UITextField *)sender {
     DLog(@"editingCodeTextField:%@",sender.text);
     self.bottomLineV2.backgroundColor = SXColorBlue;
-    self.param.code = sender.text.trim.filterSpace;
+    self.param.vcode = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];
 }
 
