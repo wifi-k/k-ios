@@ -47,7 +47,14 @@
 }
     
 - (void)setUpUI{
+    self.titleL.textColor = SXColor33333;
     self.titleL.font = SXFontBold20;
+    
+    self.bottomLineV.backgroundColor = SXColorDivideLine;
+    self.bottomLineV2.backgroundColor = SXColorDivideLine;
+    
+    self.bottomLineV.height = 0.5;
+    self.bottomLineV2.height = 0.5;
     
     self.codeBtn.enabled = NO;
     
@@ -93,6 +100,7 @@
 - (IBAction)editingPhoneTextField:(UITextField *)sender {
     DLog(@"editingPhoneTextField:%@",sender.text);
     self.bottomLineV.backgroundColor = SXColorBlue;
+    self.bottomLineV.height = 1;
     self.param.mobile = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];
     if (!self.codeBtn.isCounting) {//非计时状态，改变按钮状态
@@ -103,11 +111,13 @@
 - (IBAction)endPhoneTextField:(UITextField *)sender {
     DLog(@"endPhoneTextField:%@",sender.text);
     self.bottomLineV.backgroundColor = UIColor.lightGrayColor;
+    self.bottomLineV.height = 0.5;
 }
 
 - (IBAction)editingCodeTextField:(UITextField *)sender {
     DLog(@"editingCodeTextField:%@",sender.text);
     self.bottomLineV2.backgroundColor = SXColorBlue;
+    self.bottomLineV2.height = 1;
     self.param.vcode = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];
 }
@@ -115,6 +125,7 @@
 - (IBAction)endCodeTextField:(UITextField *)sender {
     DLog(@"endCodeTextField:%@",sender.text);
     self.bottomLineV2.backgroundColor = UIColor.lightGrayColor;
+    self.bottomLineV2.height = 0.5;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

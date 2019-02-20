@@ -7,6 +7,7 @@
 //
 
 #import "SXLoginHeaderView.h"
+#import "SXLoginParam.h"
 #import "NSString+Hash.h"
 
 @interface SXLoginHeaderView ()
@@ -48,6 +49,12 @@
     
 - (void)setUpUI{
     
+    self.bottomLineView1.backgroundColor = SXColorDivideLine;
+    self.bottomLineView2.backgroundColor = SXColorDivideLine;
+    
+    self.bottomLineView1.height = 0.5;
+    self.bottomLineView2.height = 0.5;
+    
     [self.loginBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
     [self.loginBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
     [self.loginBtn roundViewWithRadius:6.0f];
@@ -83,6 +90,7 @@
 - (IBAction)editingPhoneTextField:(UITextField *)sender {
     DLog(@"editingPhoneTextField:%@",sender.text);
     self.bottomLineView1.backgroundColor = SXColorBlue;
+    self.bottomLineView1.height = 1;
     self.param.mobile = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];
 }
@@ -90,11 +98,13 @@
 - (IBAction)endPhoneTextField:(UITextField *)sender {
     DLog(@"endPhoneTextField:%@",sender.text);
     self.bottomLineView1.backgroundColor = UIColor.lightGrayColor;
+    self.bottomLineView1.height = 0.5;
 }
 
 - (IBAction)editingPasswordTextField:(UITextField *)sender {
     DLog(@"editingPasswordTextField:%@",sender.text);
     self.bottomLineView2.backgroundColor = SXColorBlue;
+    self.bottomLineView2.height = 1;
     self.param.vcode = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];
 }
@@ -102,6 +112,7 @@
 - (IBAction)endPasswordTextField:(UITextField *)sender {
     DLog(@"endPasswordTextField:%@",sender.text);
     self.bottomLineView2.backgroundColor = UIColor.lightGrayColor;
+    self.bottomLineView2.height = 0.5;
 }
 
 - (void)changeConfirmBtnEnabled{

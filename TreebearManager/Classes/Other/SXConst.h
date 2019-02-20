@@ -22,6 +22,8 @@ extern NSString *const user_signin_vcode;
 extern NSString *const user_passwd_forget;
 extern NSString *const user_passwd_reset;
 
+extern NSString *const user_signin_passwd;
+
 @end
 
 NS_ASSUME_NONNULL_END

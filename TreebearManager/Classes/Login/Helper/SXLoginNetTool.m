@@ -80,4 +80,20 @@
     }];
 }
 
++ (void)loginWithPasswordDataWithParams:(NSDictionary *)params Success:(void (^)(NSString *code))success failure:(void (^)(NSError *error))failure{
+    [SXNetRequestTool POST:user_signin_passwd parameters:params success:^(id response) {
+        
+        if (![response isKindOfClass:NSDictionary.class]) return;
+        
+        NSString *token = [response objectForKey:@"token"];
+        if (success){
+            success(token);
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
 @end

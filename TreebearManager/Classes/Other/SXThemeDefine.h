@@ -70,14 +70,17 @@
 #define SXColorCCCCC UIColorFromRGB(0xCCCCCC) // 深灰色
 #define SXColorWhite UIColorFromRGB(0xffffff) // 白色
 #define SXColorBlue UIColorFromRGB(0x1AD0CE) // 主题蓝色
+#define SXColorBlue2 UIColorFromRGB(0x26DCBC) // 中等蓝色
 #define SXColorBlueLight UIColorFromRGB(0x37EDA3) // 浅蓝色(辅色)
 #define SXColor33333 UIColorFromRGB(0x333333) // 用于标题 重要文字等_黑色
 #define SXColor66666 UIColorFromRGB(0x666666) // 用于小标题 正文等_半度灰
 #define SXColor99999 UIColorFromRGB(0x999999) // 半度灰
+#define SXColor3B3B3B UIColorFromRGB(0x3B3B3B) // 重灰
+#define SXColor6B6B6B UIColorFromRGB(0x6B6B6B) // 浅灰
+#define SXColorC5C5C5 UIColorFromRGB(0xC5C5C5) // 浅灰
 #define SXColorOrange UIColorFromRGB(0xff9900) // 辅色(橙色)
 #define SXColorPlaceholder UIColorFromRGB(0xc9c9cf) // 用于表单 输入框等提示文字
 #define SXColorRed   UIColorFromRGB(0xe64340) // 红色
-
 
 #pragma mark -字体大小-
 //文本字体大小

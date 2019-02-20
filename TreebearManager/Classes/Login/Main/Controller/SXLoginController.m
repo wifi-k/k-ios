@@ -11,11 +11,8 @@
 #import "SXCodeLoginController.h"
 #import "SXLoginHeaderView.h"
 #import "SXRootTool.h"
-#import "SXTitleAlertView.h"
-#import "SXCodeInputAlertView.h"
-#import "SXLoginRegistAlertView.h"
-#import "SXFamilyCodeSuccessAlertView.h"
-#import "SXFamilyCodeFailureAlertView.h"
+#import "SXLoginNetTool.h"
+#import "NSString+Hash.h"
 
 @interface SXLoginController ()
 ///头部视图
@@ -45,7 +42,7 @@
     WS(weakSelf);
     SXLoginHeaderView *headerView = [SXLoginHeaderView headerView];
     headerView.clickLoginBtnBlock = ^{
-        [weakSelf jumpToMainVC];
+        [weakSelf loginWithPasswordData];
     };
     headerView.clickCodeLoginBtnBlock = ^{
         [weakSelf jumpToCodeLoginVC];
@@ -57,23 +54,27 @@
     self.headerView = headerView;
 }
 
-- (void)jumpToMainVC{
-    [SXRootTool chooseRootWithTabBarVC:SXKeyWindow];
-    
-//    SXTitleAlertView *fdfdf = [SXTitleAlertView alertWithTitle:@"标题" confirmStr:@"确定" cancelStr:@"取消"];
-//    [fdfdf alert];
-    
-//    SXCodeInputAlertView *input = [SXCodeInputAlertView alertWithTitle:@"输入家庭码加入家庭" confirmStr:@"确定" cancelStr:@"取消"];
-//    [input alert];
-    
-//    SXLoginRegistAlertView *alert = [SXLoginRegistAlertView alertWithTitle:@"提示" content:@"该手机号已注册，请立即登录" confirmStr:@"确定" cancelStr:@"取消"];
-//    [alert alert];
-    
-//    SXFamilyCodeSuccessAlertView *alert = [SXFamilyCodeSuccessAlertView alertWithTopImageName:@"home_familycode_success" title:@"家庭码正确" content:nil confirmStr:@"确定"];
-//    [alert alert];
-    
-//    SXFamilyCodeFailureAlertView *alert = [SXFamilyCodeFailureAlertView alertWithTopImageName:@"home_familycode_failure" title:@"家庭码错误" content:@"请输入正确的家庭码" confirmStr:@"再次输入"];
-//    [alert alert];
+- (void)loginWithPasswordData{
+    WS(weakSelf);
+    SXLoginParam *param = [SXLoginParam param];
+    param.mobile = self.headerView.param.mobile;
+    param.passwd = self.headerView.param.passwd.md5String;
+    [SXLoginNetTool loginWithPasswordDataWithParams:param.mj_keyValues Success:^(NSString * _Nonnull code) {
+        [weakSelf changeRootVC];
+    } failure:^(NSError * _Nonnull error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
+//切换根控制器
+- (void)changeRootVC{
+    [MBProgressHUD showWhiteLoadingWithMessage:@"即将登录..." toView:SXKeyWindow];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideHUDForView:SXKeyWindow];
+        
+        [SXRootTool chooseRootWithTabBarVC:SXDelegateWindow];
+    });
 }
     
 - (void)jumpToForgetVC{

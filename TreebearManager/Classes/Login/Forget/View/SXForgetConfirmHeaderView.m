@@ -38,6 +38,12 @@
     
 - (void)setUpUI{
     
+    self.bottomLineView.backgroundColor = SXColorDivideLine;
+    self.bottomLineView2.backgroundColor = SXColorDivideLine;
+    
+    self.bottomLineView.height = 0.5;
+    self.bottomLineView2.height = 0.5;
+    
     [self.confirmBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
     [self.confirmBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
     [self.confirmBtn roundViewWithRadius:6.0f];
@@ -90,6 +96,7 @@
 - (IBAction)editingPasswordTextField:(UITextField *)sender {
     DLog(@"editingPasswordTextField:%@",sender.text);
     self.bottomLineView.backgroundColor = SXColorBlue;
+    self.bottomLineView.height = 1;
     self.param.passwd = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];
 }
@@ -97,11 +104,13 @@
 - (IBAction)endPasswordTextField:(UITextField *)sender {
     DLog(@"endPasswordTextField:%@",sender.text);
     self.bottomLineView.backgroundColor = UIColor.lightGrayColor;
+    self.bottomLineView.height = 0.5;
 }
 
 - (IBAction)editingPassword2TextField:(UITextField *)sender {
     DLog(@"editingPassword2TextField:%@",sender.text);
     self.bottomLineView2.backgroundColor = SXColorBlue;
+    self.bottomLineView2.height = 1;
     self.param.passwd2 = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];
 }
@@ -109,6 +118,7 @@
 - (IBAction)endPassword2TextField:(UITextField *)sender {
     DLog(@"endPassword2TextField:%@",sender.text);
     self.bottomLineView2.backgroundColor = UIColor.lightGrayColor;
+    self.bottomLineView2.height = 0.5;
 }
 
 - (void)changeConfirmBtnEnabled{

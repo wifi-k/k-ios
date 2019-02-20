@@ -32,6 +32,9 @@
 /** 圆角图片（默认样式） */
 - (void)roundViewWithRadius:(float)rd;
 
+/** 边框颜色和宽度 */
+- (void)borderColor:(UIColor *)color borderWidth:(float)borderWidth;
+
 /** 圆角图片 */
 - (void)roundViewWithRadius:(float)rd borderColor:(UIColor *)color borderWidth:(float)borderWidth;
 

@@ -157,6 +157,11 @@
     self.layer.masksToBounds = YES;
 }
 
+- (void)borderColor:(UIColor *)color borderWidth:(float)borderWidth{
+    self.layer.borderColor = [color CGColor];
+    self.layer.borderWidth = borderWidth;
+}
+
 - (void)roundViewWithRadius:(float)rd borderColor:(UIColor *)color borderWidth:(float)borderWidth{
     self.layer.cornerRadius = rd;
     self.layer.masksToBounds = YES;

@@ -19,13 +19,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TreebearManager/Classes/Login/Forget/Controller/SXForgetConfirmController.m"
-            timestampString = "572346482.100708"
+            filePath = "TreebearManager/Classes/Login/Main/Controller/SXLoginController.m"
+            timestampString = "572351351.479704"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "-resetPasswordData"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "-loginWithPasswordData"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TreebearManager/Classes/Login/Main/Controller/SXLoginController.m"
+            timestampString = "572351351.479762"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "-loginWithPasswordData"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

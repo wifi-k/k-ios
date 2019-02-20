@@ -24,9 +24,11 @@
     self.timeOut = 59;
     [self setTitle:@"获取验证码" forState:UIControlStateNormal];
     self.titleLabel.font = SXFont14;
-    [self setTitleColor:SXColorBlue forState:UIControlStateNormal];
+    [self setTitleColor:SXColorBlue2 forState:UIControlStateNormal];
     [self setTitleColor:SXColor99999 forState:UIControlStateHighlighted];
     [self setTitleColor:SXColor99999 forState:UIControlStateDisabled];
+    
+    [self roundViewWithRadius:4.0f borderColor:SXColor99999 borderWidth:1.0f];
 }
 
 - (instancetype)init{
@@ -35,9 +37,11 @@
         self.timeOut = 59;
         [self setTitle:@"获取验证码" forState:UIControlStateNormal];
         self.titleLabel.font = [UIFont boldSystemFontOfSize:14];
-        [self setTitleColor:SXColorBlue forState:UIControlStateNormal];
+        [self setTitleColor:SXColorBlue2 forState:UIControlStateNormal];
         [self setTitleColor:SXColor99999 forState:UIControlStateHighlighted];
         [self setTitleColor:SXColor99999 forState:UIControlStateDisabled];
+        
+        [self roundViewWithRadius:4.0f borderColor:SXColor99999 borderWidth:1.0f];
     }
     return self;
 }
@@ -57,6 +61,7 @@
                 [weakSelf setTitle:@"获取验证码" forState:UIControlStateNormal];
                 weakSelf.enabled = YES;
                 weakSelf.isCounting = NO;
+                [weakSelf borderColor:SXColorBlue2 borderWidth:1.0f];
             });
         }else{
             int seconds = timeout % 60;
@@ -66,6 +71,7 @@
                 [weakSelf setTitle:[NSString stringWithFormat:@"%@S后重新获取",strTime] forState:UIControlStateNormal];
                 weakSelf.enabled = NO;
                 weakSelf.isCounting = YES;
+                [weakSelf borderColor:SXColor99999 borderWidth:1.0f];
             });
             timeout--;
         }
