@@ -52,6 +52,7 @@
     
     [self.registBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
     [self.registBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
+    [self.registBtn roundViewWithRadius:6.0f];
 }
 
 #pragma mark -按钮点击事件-

@@ -48,6 +48,7 @@
     
     [self.confirmBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
     [self.confirmBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
+    [self.confirmBtn roundViewWithRadius:6.0f];
 }
 
 #pragma mark -按钮点击事件-
