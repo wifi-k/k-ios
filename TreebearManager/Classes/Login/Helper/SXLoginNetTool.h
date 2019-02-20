@@ -19,6 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///用户名手机验证码注册
 + (void)registUserInfoDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
+///手机验证码登录
++ (void)loginWithVCodeDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
+
 @end
 
 NS_ASSUME_NONNULL_END

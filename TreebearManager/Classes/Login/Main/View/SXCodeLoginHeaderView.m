@@ -56,7 +56,6 @@
 #pragma mark -按钮点击事件-
 - (IBAction)clickCodeBtn:(SXLoginCertifyCodeButton *)sender {
     NSString *mobile = self.phoneTextField.text.filterSpace;
-    NSString *vcode = self.codeTextField.text.filterSpace;
     SXLoginParam *param = [SXLoginParam param];
     param.mobile = mobile;
     param.type = @4;

@@ -17,6 +17,8 @@ extern NSString *const SXHomeMessageName;
 
 //URL统一资源定位符
 extern NSString *const user_vcode_getv2;
+extern NSString *const user_signup_vcode;
+extern NSString *const user_signin_vcode;
 
 @end
 
