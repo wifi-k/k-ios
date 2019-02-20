@@ -49,6 +49,8 @@
     [self.confirmBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
     [self.confirmBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
     [self.confirmBtn roundViewWithRadius:6.0f];
+    
+    self.confirmBtn.enabled = NO;
 }
 
 #pragma mark -按钮点击事件-
@@ -69,6 +71,7 @@
 }
  
 - (IBAction)clickAgreeBtn:(UIButton *)sender {
+    sender.selected = !sender.isSelected;
     if (self.clickAgreeBtnBlock) {
         self.clickAgreeBtnBlock();
     }

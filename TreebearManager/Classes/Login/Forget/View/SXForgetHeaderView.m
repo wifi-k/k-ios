@@ -46,9 +46,12 @@
 }
     
 - (void)setUpUI{
+    
     [self.clickNextBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
     [self.clickNextBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
     [self.clickNextBtn roundViewWithRadius:6.0f];
+    
+    self.clickNextBtn.enabled = NO;
 }
 
 #pragma mark -按钮点击事件-

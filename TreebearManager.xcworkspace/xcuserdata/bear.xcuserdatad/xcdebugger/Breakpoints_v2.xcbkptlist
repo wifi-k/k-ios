@@ -100,7 +100,7 @@
                   moduleName = "TreebearManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/bear/Documents/WorkSpace/TreebearManager/TreebearManager/Common/Tool/Http/SXNetRequestTool.m"
-                  timestampString = "572323844.320344"
+                  timestampString = "572327822.751778"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "96"
@@ -115,7 +115,7 @@
                   moduleName = "TreebearManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/bear/Documents/WorkSpace/TreebearManager/TreebearManager/Common/Tool/Http/SXNetRequestTool.m"
-                  timestampString = "572323844.323413"
+                  timestampString = "572327822.7534519"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "96"
@@ -130,7 +130,7 @@
                   moduleName = "TreebearManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/bear/Documents/WorkSpace/TreebearManager/TreebearManager/Common/Tool/Http/SXNetRequestTool.m"
-                  timestampString = "572323844.32511"
+                  timestampString = "572327822.755078"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "96"
@@ -138,6 +138,22 @@
                   offsetFromSymbolStart = "16">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TreebearManager/Classes/Login/Forget/View/SXForgetConfirmHeaderView.m"
+            timestampString = "572327822.6403019"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "SXForgetConfirmHeaderView"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
