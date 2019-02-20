@@ -49,6 +49,9 @@
     self.titleL.font = SXFontBold20;
     
     self.codeBtn.enabled = NO;
+    
+    [self.registBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
+    [self.registBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
 }
 
 #pragma mark -按钮点击事件-

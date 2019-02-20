@@ -80,7 +80,7 @@
                         <constraint firstAttribute="height" constant="45" id="Ak7-aS-NFX"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <state key="normal" title="登录"/>
+                    <state key="normal" title="登录" backgroundImage="img_button_bg"/>
                     <connections>
                         <action selector="clickLoginBtnBlock:" destination="iN0-l3-epB" eventType="touchUpInside" id="z7T-Nb-aZY"/>
                     </connections>
@@ -122,4 +122,7 @@
             <point key="canvasLocation" x="60" y="15.742128935532236"/>
         </view>
     </objects>
+    <resources>
+        <image name="img_button_bg" width="375" height="45"/>
+    </resources>
 </document>

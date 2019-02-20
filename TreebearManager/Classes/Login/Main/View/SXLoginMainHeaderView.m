@@ -40,7 +40,7 @@
     [self.loginBtn roundViewWithRadius:22.5];
     
     [self.registBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
-    [self.registBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
+    [self.registBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
     [self.registBtn roundViewWithRadius:22.5];
 }
 

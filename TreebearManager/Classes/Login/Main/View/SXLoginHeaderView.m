@@ -48,6 +48,8 @@
     
 - (void)setUpUI{
     
+    [self.loginBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
+    [self.loginBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
 }
 
 #pragma mark -按钮点击事件-

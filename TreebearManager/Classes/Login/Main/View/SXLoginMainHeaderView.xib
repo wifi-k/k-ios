@@ -19,7 +19,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="XLb-zX-2EM">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0ce-Hm-tKt">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_login_icon" translatesAutoresizingMaskIntoConstraints="NO" id="0ce-Hm-tKt">
                     <rect key="frame" x="147.5" y="190" width="80" height="80"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="jnZ-WG-6xo"/>
@@ -79,5 +79,6 @@
     <resources>
         <image name="img_button_bg" width="375" height="45"/>
         <image name="img_login_bg" width="375" height="667"/>
+        <image name="img_login_icon" width="81" height="81"/>
     </resources>
 </document>

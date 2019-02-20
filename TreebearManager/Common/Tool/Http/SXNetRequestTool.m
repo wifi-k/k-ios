@@ -12,11 +12,11 @@
 #ifdef DEBUG
 #define API_HOST @"http://test.user.famwifi.com/api" //主测试环境
 #else
-#define API_HOST @"https://testpay.hongnaga.com/api" //主线上环境
+#define API_HOST @"http://test.user.famwifi.com/api" //主线上环境
 #endif
 
 /** 接收消息提示(0,成功) **/
-static NSString * const kResultMessage = @"message";
+static NSString * const kResultMessage = @"msg";
 /** 接收数据体(获取成功) **/
 static NSString * const kResultContent = @"data";
 /** 状态码{"pageindex": 1,"pagesize": 2,} **/
@@ -181,7 +181,7 @@ static NSString * const kResultCode = @"code";
 
 #pragma mark -验证状态码-
 + (BOOL)validateWithStr:(NSString *)str{
-    return [str isEqualToString:@"0"] || [str isEqualToString:@"1"];
+    return [str isEqualToString:@"0"];
 }
 
 @end

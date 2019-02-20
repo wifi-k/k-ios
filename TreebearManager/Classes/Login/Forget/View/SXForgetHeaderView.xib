@@ -79,7 +79,7 @@
                         <constraint firstAttribute="height" constant="45" id="ReO-rz-RLl"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <state key="normal" title="下一步"/>
+                    <state key="normal" title="下一步" backgroundImage="img_button_bg"/>
                     <connections>
                         <action selector="clickNextBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="apt-8z-0gi"/>
                     </connections>
@@ -123,4 +123,7 @@
             <point key="canvasLocation" x="73.599999999999994" y="33.283358320839582"/>
         </view>
     </objects>
+    <resources>
+        <image name="img_button_bg" width="375" height="45"/>
+    </resources>
 </document>

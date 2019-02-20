@@ -86,7 +86,7 @@
                         <constraint firstAttribute="height" constant="45" id="5lO-AR-v0R"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <state key="normal" title="注册"/>
+                    <state key="normal" title="注册" backgroundImage="img_button_bg"/>
                     <connections>
                         <action selector="clickRegistBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="z0e-oS-SfA"/>
                     </connections>
@@ -132,4 +132,7 @@
             <point key="canvasLocation" x="116" y="50.824587706146929"/>
         </view>
     </objects>
+    <resources>
+        <image name="img_button_bg" width="375" height="45"/>
+    </resources>
 </document>

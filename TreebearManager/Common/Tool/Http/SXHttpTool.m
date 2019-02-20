@@ -55,12 +55,10 @@
     //创建请求管理者
     AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
     
-    //设置请求参数
     [self setSessionManager:mgr];
     
-    mgr.responseSerializer = [AFJSONResponseSerializer serializer];
-    
-//    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/plain",@"application/octet-stream",nil];
+    //设置请求基本参数
+    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/plain",@"application/octet-stream",nil];
     
     //修改block的线程
     mgr.completionQueue = dispatch_get_global_queue(0, 0);
@@ -91,7 +89,7 @@
     //设置请求参数
     [self setSessionManager:mgr];
     
-    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/plain",@"application/octet-stream",nil];
+//    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/plain",@"application/octet-stream",nil];
     
     //修改block的线程
     mgr.completionQueue = dispatch_get_global_queue(0, 0);
@@ -155,14 +153,18 @@
     //设置超时时间
     manager.requestSerializer.timeoutInterval = 30;
     //请求的序列化
-//    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
+//    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+//    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
     //清除头部赋值
     [manager.requestSerializer clearAuthorizationHeader];
+    
     //设置请求基本参数
+    [manager.requestSerializer  setValue:@"application/json"  forHTTPHeaderField:@"Content－Type"];
+    
     [manager.requestSerializer setValue:APP_VERSION forHTTPHeaderField:@"Api-Version"];
-//    NSString *tokenStr = SXUserArchiveTool.user.token;
-    NSString *tokenStr = @"1234545";
+    NSString *tokenStr = SXUserArchiveTool.user.token;
     if ([NSString isNotEmpty:tokenStr]) {
         [manager.requestSerializer setValue:tokenStr forHTTPHeaderField:@"Api-Token"];
     }
