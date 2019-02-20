@@ -19,18 +19,19 @@
 @implementation SXLoginMainController
 
 #pragma mark -控制器生命周期方法-
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
     //设置当前导航条背景色
-    //self.navigationController.navigationBar.barTintColor = [UIColor hex:@"444652"];
-    self.navigationController.navigationBar.hidden = YES;
+//    self.navigationController.navigationBar.barTintColor = SXColorBlue2;
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     //设置当前导航条背景色
-    //self.navigationController.navigationBar.barTintColor = UIColor.blueColor;
-    self.navigationController.navigationBar.hidden = NO;
+//    self.navigationController.navigationBar.barTintColor = UIColor.whiteColor;
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (void)viewDidLoad {
@@ -44,7 +45,7 @@
     
     //self.navigationItem.title = @"登录";
     
-    self.view.backgroundColor = SXColorRandom;
+    self.view.backgroundColor = SXColorWhite;
     
     WS(weakSelf);
     SXLoginMainHeaderView *headerView = [SXLoginMainHeaderView headerView];
@@ -58,12 +59,11 @@
     self.headerView = headerView;
 }
 
-- (void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
+- (void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
     
-    self.headerView.frame = CGRectMake(0, -SafeAreaTopHeight, SCREEN_WIDTH, SCREEN_HEIGHT + iPhoneX_Add_Bottom);
+    self.headerView.frame  = SXKeyWindow.bounds;
 }
-
 
 #pragma mark -跳转登录页面-
 - (void)jumpToLoginVC{

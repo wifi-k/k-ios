@@ -53,16 +53,16 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="0ce-Hm-tKt" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="AZb-uZ-t28"/>
-                <constraint firstItem="XLb-zX-2EM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="IeL-Hf-vhL"/>
+                <constraint firstItem="XLb-zX-2EM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="B3n-pK-7oJ"/>
+                <constraint firstItem="XLb-zX-2EM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ile-qR-H30"/>
                 <constraint firstItem="CJn-cl-YZv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="60" id="LzL-cH-YYd"/>
-                <constraint firstItem="XLb-zX-2EM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Yn8-JK-qBM"/>
+                <constraint firstAttribute="trailing" secondItem="XLb-zX-2EM" secondAttribute="trailing" id="Wp9-7S-nWw"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nls-eS-QBM" secondAttribute="trailing" constant="60" id="ZbL-bD-KBM"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="CJn-cl-YZv" secondAttribute="trailing" constant="60" id="adE-wb-9zl"/>
-                <constraint firstItem="XLb-zX-2EM" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="fO5-2C-j7F"/>
+                <constraint firstAttribute="bottom" secondItem="XLb-zX-2EM" secondAttribute="bottom" id="dnf-zo-BpM"/>
                 <constraint firstItem="nls-eS-QBM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="60" id="ib1-QB-v9u"/>
                 <constraint firstItem="nls-eS-QBM" firstAttribute="top" secondItem="CJn-cl-YZv" secondAttribute="bottom" constant="20" id="mfN-Ct-Jqx"/>
                 <constraint firstItem="CJn-cl-YZv" firstAttribute="top" secondItem="0ce-Hm-tKt" secondAttribute="bottom" constant="60" id="njo-Ip-9fe"/>
-                <constraint firstItem="XLb-zX-2EM" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="o1l-4m-y5V"/>
                 <constraint firstItem="0ce-Hm-tKt" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="170" id="ybI-WK-YnJ"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
