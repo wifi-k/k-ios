@@ -26,7 +26,11 @@
     
     self.view.backgroundColor = SXColorRandom;
     
+    WS(weakSelf);
     SXRegistHeaderView *headerView = [SXRegistHeaderView headerView];
+    headerView.clickRegistBlock = ^{
+        [weakSelf.navigationController popToRootViewControllerAnimated:YES];
+    };
     [self.view addSubview:headerView];
     self.headerView = headerView;
 }

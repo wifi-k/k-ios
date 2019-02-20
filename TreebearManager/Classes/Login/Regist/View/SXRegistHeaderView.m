@@ -83,7 +83,7 @@
 }
 
 - (IBAction)clickRegistBtn:(UIButton *)sender {
-    
+    WS(weakSelf);
     NSString *mobile = self.phoneTextField.text.filterSpace;
     NSString *vcode = self.codeTextField.text.filterSpace;
     SXLoginParam *param = [SXLoginParam param];
@@ -91,6 +91,10 @@
     param.vcode = vcode;
     [SXLoginNetTool registUserInfoDataWithParams:param.mj_keyValues Success:^{
         [MBProgressHUD showSuccessWithMessage:@"注册成功!" toView:SXKeyWindow];
+        
+        if (weakSelf.clickRegistBlock) {
+            weakSelf.clickRegistBlock();
+        }
     } failure:^(NSError * _Nonnull error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
