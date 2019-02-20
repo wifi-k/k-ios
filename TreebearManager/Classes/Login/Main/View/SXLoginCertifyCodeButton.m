@@ -54,7 +54,7 @@
             dispatch_source_cancel(_timer);
             dispatch_async(dispatch_get_main_queue(), ^{
                 //设置界面的按钮显示根据自己需求设置
-                [weakSelf setTitle:@"重新获取验证码" forState:UIControlStateNormal];
+                [weakSelf setTitle:@"获取验证码" forState:UIControlStateNormal];
                 weakSelf.enabled = YES;
                 weakSelf.isCounting = NO;
             });

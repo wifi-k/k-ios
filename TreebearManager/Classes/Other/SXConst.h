@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 //首页消息通知
 extern NSString *const SXHomeMessageName;
 
+//URL统一资源定位符
+extern NSString *const user_vcode_getv2;
+
 @end
 
 NS_ASSUME_NONNULL_END
