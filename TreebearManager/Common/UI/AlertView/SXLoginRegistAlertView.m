@@ -97,7 +97,7 @@ const CGFloat SXLoginRegistAlertViewHeightRatio = 0.206; //高度系统
     [confirmButton setTitle:@"确定" forState:UIControlStateNormal];
     [confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [confirmButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
-    [confirmButton setBackgroundColor:SXColorBlue];
+    [confirmButton setBackgroundImage:[UIImage imageNamed:@"img_button_bg_small"] forState:UIControlStateNormal];
     [confirmButton setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
     [confirmButton.titleLabel setFont:[UIFont systemFontOfSize:15]];
     [confirmButton addTarget:self action:@selector(confirmButtonTapped) forControlEvents:UIControlEventTouchUpInside];

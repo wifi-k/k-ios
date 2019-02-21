@@ -34,11 +34,13 @@
     self.iconImageV.backgroundColor = SXColorBtnHighlight;
     [self.iconImageV roundViewWithRadius:40.0f];
     
-    [self.loginBtn setTitleColor:SXColorGray5 forState:UIControlStateNormal];
+    //登录按钮
+    [self.loginBtn setTitleColor:SXColorC5C5C5 forState:UIControlStateNormal];
     [self.loginBtn setBackgroundColor:SXColorGray8 forState:UIControlStateNormal];
     [self.loginBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
     [self.loginBtn roundViewWithRadius:22.5];
     
+    //注册按钮
     [self.registBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
     [self.registBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
     [self.registBtn roundViewWithRadius:22.5];

@@ -45,6 +45,8 @@
 
 //文本灰色
 #define SXColorB2B2B2  [UIColor hex:@"B2B2B2"]
+#define SXColor2F2F2F  [UIColor hex:@"2F2F2F"]
+#define SXColorC5C5C5  UIColorFromRGB(0xC5C5C5) // 浅灰
 
 //按钮状态颜色
 #define SXColorBtnNormal [UIColor hex:@"F5F5F5"]
@@ -77,7 +79,6 @@
 #define SXColor99999 UIColorFromRGB(0x999999) // 半度灰
 #define SXColor3B3B3B UIColorFromRGB(0x3B3B3B) // 重灰
 #define SXColor6B6B6B UIColorFromRGB(0x6B6B6B) // 浅灰
-#define SXColorC5C5C5 UIColorFromRGB(0xC5C5C5) // 浅灰
 #define SXColorOrange UIColorFromRGB(0xff9900) // 辅色(橙色)
 #define SXColorPlaceholder UIColorFromRGB(0xc9c9cf) // 用于表单 输入框等提示文字
 #define SXColorRed   UIColorFromRGB(0xe64340) // 红色

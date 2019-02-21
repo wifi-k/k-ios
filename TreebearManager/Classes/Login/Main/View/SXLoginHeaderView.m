@@ -55,11 +55,16 @@
     self.bottomLineView1.height = 0.5;
     self.bottomLineView2.height = 0.5;
     
+    //密码登录按钮
     [self.loginBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
     [self.loginBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
     [self.loginBtn roundViewWithRadius:6.0f];
-    
     self.loginBtn.enabled = NO;
+    
+    //快捷登录按钮
+    [self.codeLoginBtn setTitleColor:SXColor2F2F2F forState:UIControlStateNormal];
+    //忘记密码按钮
+    [self.forgetBtn setTitleColor:SXColor2F2F2F forState:UIControlStateNormal];
 }
 
 #pragma mark -按钮点击事件-

@@ -92,12 +92,18 @@
     [SXLoginNetTool registUserInfoDataWithParams:param.mj_keyValues Success:^{
         [MBProgressHUD showSuccessWithMessage:@"注册成功!" toView:SXKeyWindow];
         
-        if (weakSelf.clickRegistBlock) {
-            weakSelf.clickRegistBlock();
+        if (weakSelf.clickRegistBtnBlock) {
+            weakSelf.clickRegistBtnBlock();
         }
     } failure:^(NSError * _Nonnull error) {
-        NSString *message = [error.userInfo objectForKey:@"msg"];
-        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        if (error.code == 9) {//该手机号已注册，请立即登录
+            if (weakSelf.clickLoginBtnBlock) {
+                weakSelf.clickLoginBtnBlock();
+            }
+        } else{
+            NSString *message = [error.userInfo objectForKey:@"msg"];
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        }
     }];
 }
 
