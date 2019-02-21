@@ -37,7 +37,6 @@
     //登录按钮
     [self.loginBtn setTitleColor:SXColorC5C5C5 forState:UIControlStateNormal];
     [self.loginBtn setBackgroundColor:SXColorGray8 forState:UIControlStateNormal];
-    [self.loginBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
     [self.loginBtn roundViewWithRadius:22.5];
     
     //注册按钮

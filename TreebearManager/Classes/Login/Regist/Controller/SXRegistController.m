@@ -8,6 +8,7 @@
 
 #import "SXRegistController.h"
 #import "SXLoginController.h"
+#import "SXRegistSetPwdController.h"
 #import "SXRegistHeaderView.h"
 #import "SXLoginRegistAlertView.h"
 
@@ -31,7 +32,7 @@
     WS(weakSelf);
     SXRegistHeaderView *headerView = [SXRegistHeaderView headerView];
     headerView.clickRegistBtnBlock = ^{
-        [weakSelf.navigationController popToRootViewControllerAnimated:YES];
+        [weakSelf jumpToSetPwdVC];
     };
     headerView.clickLoginBtnBlock = ^{
         [weakSelf alertLoginTips];
@@ -59,6 +60,11 @@
 #pragma mark -跳转登录页面-
 - (void)jumpToLoginVC{
     SXLoginController *forgetVC = [[SXLoginController alloc] init];
+    [self.navigationController pushViewController:forgetVC animated:YES];
+}
+
+- (void)jumpToSetPwdVC{
+    SXRegistSetPwdController *forgetVC = [[SXRegistSetPwdController alloc] init];
     [self.navigationController pushViewController:forgetVC animated:YES];
 }
 

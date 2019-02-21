@@ -110,7 +110,7 @@
     DLog(@"editingPasswordTextField:%@",sender.text);
     self.bottomLineView2.backgroundColor = SXColorBlue;
     self.bottomLineView2.height = 1;
-    self.param.vcode = sender.text.trim.filterSpace;
+    self.param.passwd = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];
 }
 

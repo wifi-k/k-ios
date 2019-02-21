@@ -83,6 +83,12 @@
 }
 
 - (IBAction)clickRegistBtn:(UIButton *)sender {
+    if (self.clickRegistBtnBlock) {
+        self.clickRegistBtnBlock();
+    }
+    return;
+    
+    
     WS(weakSelf);
     NSString *mobile = self.phoneTextField.text.filterSpace;
     NSString *vcode = self.codeTextField.text.filterSpace;

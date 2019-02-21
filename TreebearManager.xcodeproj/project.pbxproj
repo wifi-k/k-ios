@@ -49,6 +49,9 @@
 		092D6D3922041C5200538AC8 /* SXHomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092D6D3822041C5200538AC8 /* SXHomeHeaderView.xib */; };
 		095540AC221D073D005A5485 /* SXTitleImageCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540AB221D073D005A5485 /* SXTitleImageCustomButton.m */; };
 		095540AF221D076C005A5485 /* SXTitleImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540AE221D076C005A5485 /* SXTitleImageButton.m */; };
+		095540B5221E4B9A005A5485 /* SXRegistSetPwdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540B4221E4B9A005A5485 /* SXRegistSetPwdController.m */; };
+		095540B8221E4DC6005A5485 /* SXRegistSetPwdHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540B7221E4DC6005A5485 /* SXRegistSetPwdHeaderView.m */; };
+		095540BA221E4DCE005A5485 /* SXRegistSetPwdHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 095540B9221E4DCE005A5485 /* SXRegistSetPwdHeaderView.xib */; };
 		098BA2E7221654E900F58639 /* SXLoginRegistAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2E6221654E900F58639 /* SXLoginRegistAlertView.m */; };
 		098BA2ED221660A400F58639 /* SXFamilyCodeSuccessAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2EC221660A400F58639 /* SXFamilyCodeSuccessAlertView.m */; };
 		098BA2F0221660BD00F58639 /* SXFamilyCodeFailureAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2EF221660BD00F58639 /* SXFamilyCodeFailureAlertView.m */; };
@@ -215,6 +218,11 @@
 		095540AB221D073D005A5485 /* SXTitleImageCustomButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXTitleImageCustomButton.m; sourceTree = "<group>"; };
 		095540AD221D076C005A5485 /* SXTitleImageButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTitleImageButton.h; sourceTree = "<group>"; };
 		095540AE221D076C005A5485 /* SXTitleImageButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXTitleImageButton.m; sourceTree = "<group>"; };
+		095540B3221E4B9A005A5485 /* SXRegistSetPwdController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXRegistSetPwdController.h; sourceTree = "<group>"; };
+		095540B4221E4B9A005A5485 /* SXRegistSetPwdController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXRegistSetPwdController.m; sourceTree = "<group>"; };
+		095540B6221E4DC6005A5485 /* SXRegistSetPwdHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXRegistSetPwdHeaderView.h; sourceTree = "<group>"; };
+		095540B7221E4DC6005A5485 /* SXRegistSetPwdHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXRegistSetPwdHeaderView.m; sourceTree = "<group>"; };
+		095540B9221E4DCE005A5485 /* SXRegistSetPwdHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXRegistSetPwdHeaderView.xib; sourceTree = "<group>"; };
 		098BA2E5221654E900F58639 /* SXLoginRegistAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXLoginRegistAlertView.h; sourceTree = "<group>"; };
 		098BA2E6221654E900F58639 /* SXLoginRegistAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXLoginRegistAlertView.m; sourceTree = "<group>"; };
 		098BA2EB221660A400F58639 /* SXFamilyCodeSuccessAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXFamilyCodeSuccessAlertView.h; sourceTree = "<group>"; };
@@ -1004,6 +1012,8 @@
 			children = (
 				B3AF2FF121FAFF45001E4E67 /* SXRegistController.h */,
 				B3AF2FF221FAFF45001E4E67 /* SXRegistController.m */,
+				095540B3221E4B9A005A5485 /* SXRegistSetPwdController.h */,
+				095540B4221E4B9A005A5485 /* SXRegistSetPwdController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1023,6 +1033,9 @@
 				092D6D092202D76000538AC8 /* SXRegistHeaderView.h */,
 				092D6D0A2202D76000538AC8 /* SXRegistHeaderView.m */,
 				092D6D0C2202D78300538AC8 /* SXRegistHeaderView.xib */,
+				095540B6221E4DC6005A5485 /* SXRegistSetPwdHeaderView.h */,
+				095540B7221E4DC6005A5485 /* SXRegistSetPwdHeaderView.m */,
+				095540B9221E4DCE005A5485 /* SXRegistSetPwdHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1295,6 +1308,7 @@
 			files = (
 				092D6D122202DD9B00538AC8 /* SXLoginHeaderView.xib in Resources */,
 				092D6D2C2203011800538AC8 /* SXHomeNetworkingDeviceCell.xib in Resources */,
+				095540BA221E4DCE005A5485 /* SXRegistSetPwdHeaderView.xib in Resources */,
 				092D6D0D2202D78300538AC8 /* SXRegistHeaderView.xib in Resources */,
 				098BA2F82216ADDF00F58639 /* SXPhotoListCell.xib in Resources */,
 				B348F99421F714CC0000F194 /* LaunchScreen.storyboard in Resources */,
@@ -1447,6 +1461,7 @@
 				092D6CF5220062C700538AC8 /* MyBase64.m in Sources */,
 				091186EE22151D5F00938D9F /* SGSocketConfigM.m in Sources */,
 				092D6D022200745500538AC8 /* SXUserModel.m in Sources */,
+				095540B8221E4DC6005A5485 /* SXRegistSetPwdHeaderView.m in Sources */,
 				B348F9A921F71A680000F194 /* UIButton+EnlargeArea.m in Sources */,
 				092D6D3722041C4900538AC8 /* SXHomeHeaderView.m in Sources */,
 				098BA2FB2216B54100F58639 /* SXPhotoSectionHeaderView.m in Sources */,
@@ -1466,6 +1481,7 @@
 				095540AC221D073D005A5485 /* SXTitleImageCustomButton.m in Sources */,
 				092D6CE422005A0C00538AC8 /* SXEmptyDataEventView.m in Sources */,
 				B3AF300F21FB0A20001E4E67 /* SXBaseTableViewCell.m in Sources */,
+				095540B5221E4B9A005A5485 /* SXRegistSetPwdController.m in Sources */,
 				098BA2FF221A559200F58639 /* SXMineListCell.m in Sources */,
 				B348F9B921F721D60000F194 /* SXNetReachablityTool.m in Sources */,
 				B3AF301221FB0A5D001E4E67 /* SXBaseCollectionViewCell.m in Sources */,

@@ -110,7 +110,7 @@ const CGFloat SXLoginRegistAlertViewHeightRatio = 0.206; //高度系统
     [cancleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [cancleButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
     [cancleButton setBackgroundColor:SXColorGray7];
-    [cancleButton setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
+    //[cancleButton setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
     [cancleButton.titleLabel setFont:[UIFont systemFontOfSize:15]];
     [cancleButton addTarget:self action:@selector(cancleButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     [self.bottomView addSubview:cancleButton];
