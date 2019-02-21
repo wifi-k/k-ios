@@ -27,7 +27,7 @@
 
 - (void)setUpUI{
     
-    self.view.backgroundColor = SXColorRandom;
+    self.view.backgroundColor = SXColorWhite;
     
     self.navigationItem.title = @"找回密码";
     
@@ -49,7 +49,7 @@
     param.passwd = self.param.passwd.md5String;
     [SXLoginNetTool resetPasswdDataWithParams:param.mj_keyValues Success:^{
         [MBProgressHUD showSuccessWithMessage:@"密码重置成功!" toView:SXKeyWindow];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [weakSelf popToLoginVC];
         });
     } failure:^(NSError * _Nonnull error) {

@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SXForgetHeaderView : UIView
 + (instancetype)headerView;
 
-///点击忘记密码按钮回调
+///点击下一步按钮回调
 @property (nonatomic, copy) void (^clickNextBtnBlock)(void);
 
 @property (nonatomic, strong) SXRegistParam *param;

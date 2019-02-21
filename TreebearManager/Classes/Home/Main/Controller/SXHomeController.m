@@ -39,7 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = SXColorRandom;
+    self.view.backgroundColor = SXColorWhite;
     
     self.navigationItem.title = @"首页";
     

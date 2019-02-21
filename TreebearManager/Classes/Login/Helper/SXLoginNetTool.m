@@ -92,14 +92,18 @@
     }];
 }
 
-+ (void)loginWithPasswordDataWithParams:(NSDictionary *)params Success:(void (^)(NSString *code))success failure:(void (^)(NSError *error))failure{
++ (void)loginWithPasswordDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure{
     [SXNetRequestTool POST:user_signin_passwd parameters:params success:^(id response) {
         
         if (![response isKindOfClass:NSDictionary.class]) return;
         
+        //获取token，保存本地
         NSString *token = [response objectForKey:@"token"];
+        SXUserArchiveTool.user.token = token;
+        [SXUserArchiveTool saveUser];
+        
         if (success){
-            success(token);
+            success();
         }
     } failure:^(NSError *error) {
         if (failure) {

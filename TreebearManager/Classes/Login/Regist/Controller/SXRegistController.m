@@ -27,14 +27,16 @@
     
 - (void)setUpUI{
     
-    self.view.backgroundColor = SXColorRandom;
+    self.view.backgroundColor = SXColorWhite;
     
     WS(weakSelf);
     SXRegistHeaderView *headerView = [SXRegistHeaderView headerView];
-    headerView.clickRegistBtnBlock = ^{
-        [weakSelf jumpToSetPwdVC];
+    headerView.registSuccessBlock = ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf jumpToSetPwdVC];
+        });
     };
-    headerView.clickLoginBtnBlock = ^{
+    headerView.alertLoginTipsBlock = ^{
         [weakSelf alertLoginTips];
     };
     [self.view addSubview:headerView];

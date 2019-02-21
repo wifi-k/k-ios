@@ -25,7 +25,7 @@
     
 - (void)setUpUI{
     
-    self.view.backgroundColor = SXColorRandom;
+    self.view.backgroundColor = SXColorWhite;
     
     self.navigationItem.title = @"找回密码";
     

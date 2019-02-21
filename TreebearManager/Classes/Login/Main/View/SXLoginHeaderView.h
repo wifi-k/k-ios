@@ -15,7 +15,9 @@
 
 ///点击登录按钮回调
 @property (nonatomic, copy) void (^clickLoginBtnBlock)(void);
+///点击快捷登录按钮回调
 @property (nonatomic, copy) void (^clickCodeLoginBtnBlock)(void);
+///点击忘记密码按钮回调
 @property (nonatomic, copy) void (^clickForgetBtnBlock)(void);
 
 ///登录参数

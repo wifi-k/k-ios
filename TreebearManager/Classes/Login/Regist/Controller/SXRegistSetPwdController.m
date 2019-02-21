@@ -27,7 +27,7 @@
 
 - (void)setUpUI{
     
-    self.view.backgroundColor = SXColorRandom;
+    self.view.backgroundColor = SXColorWhite;
     
     WS(weakSelf);
     SXRegistSetPwdHeaderView *headerView = [SXRegistSetPwdHeaderView headerView];
@@ -63,7 +63,7 @@
 //切换根控制器
 - (void)changeRootVC{
     [MBProgressHUD showWhiteLoadingWithMessage:@"即将登录..." toView:SXKeyWindow];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [MBProgressHUD hideHUDForView:SXKeyWindow];
         
         [SXRootTool chooseRootWithTabBarVC:SXDelegateWindow];

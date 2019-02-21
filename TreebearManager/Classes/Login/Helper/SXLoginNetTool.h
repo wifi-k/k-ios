@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)resetPasswdDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
 ///密码登录
-+ (void)loginWithPasswordDataWithParams:(NSDictionary *)params Success:(void (^)(NSString *code))success failure:(void (^)(NSError *error))failure;
++ (void)loginWithPasswordDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
 @end
 

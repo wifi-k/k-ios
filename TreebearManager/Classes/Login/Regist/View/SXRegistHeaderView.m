@@ -92,13 +92,13 @@
     [SXLoginNetTool registUserInfoDataWithParams:param.mj_keyValues Success:^{
         [MBProgressHUD showMessageToWindow:@"请继续完成密码设置!"];
         
-        if (weakSelf.clickRegistBtnBlock) {
-            weakSelf.clickRegistBtnBlock();
+        if (weakSelf.registSuccessBlock) {
+            weakSelf.registSuccessBlock();
         }
     } failure:^(NSError * _Nonnull error) {
         if (error.code == 9) {//该手机号已注册，请立即登录
-            if (weakSelf.clickLoginBtnBlock) {
-                weakSelf.clickLoginBtnBlock();
+            if (weakSelf.alertLoginTipsBlock) {
+                weakSelf.alertLoginTipsBlock();
             }
         } else{
             NSString *message = [error.userInfo objectForKey:@"msg"];

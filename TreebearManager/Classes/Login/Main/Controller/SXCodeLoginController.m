@@ -83,7 +83,7 @@
 - (void)changeRootVC{
     WS(weakSelf);
     [MBProgressHUD showWhiteLoadingWithMessage:@"即将登录..." toView:self.view];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [MBProgressHUD hideHUDForView:weakSelf.view];
         
         [SXRootTool chooseRootWithTabBarVC:SXKeyWindow];

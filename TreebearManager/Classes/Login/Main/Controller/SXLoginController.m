@@ -37,7 +37,7 @@
 - (void)setUpUI{
     self.navigationItem.title = @"登录小K管家";
     
-    self.view.backgroundColor = SXColorRandom;
+    self.view.backgroundColor = SXColorWhite;
     
     WS(weakSelf);
     SXLoginHeaderView *headerView = [SXLoginHeaderView headerView];
@@ -59,7 +59,7 @@
     SXLoginParam *param = [SXLoginParam param];
     param.mobile = self.headerView.param.mobile;
     param.passwd = self.headerView.param.passwd.md5String;
-    [SXLoginNetTool loginWithPasswordDataWithParams:param.mj_keyValues Success:^(NSString * _Nonnull code) {
+    [SXLoginNetTool loginWithPasswordDataWithParams:param.mj_keyValues Success:^{
         [weakSelf changeRootVC];
     } failure:^(NSError * _Nonnull error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
@@ -70,7 +70,7 @@
 //切换根控制器
 - (void)changeRootVC{
     [MBProgressHUD showWhiteLoadingWithMessage:@"即将登录..." toView:SXKeyWindow];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [MBProgressHUD hideHUDForView:SXKeyWindow];
         
         [SXRootTool chooseRootWithTabBarVC:SXDelegateWindow];
