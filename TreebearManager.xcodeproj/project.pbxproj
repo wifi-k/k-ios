@@ -52,6 +52,8 @@
 		095540B5221E4B9A005A5485 /* SXRegistSetPwdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540B4221E4B9A005A5485 /* SXRegistSetPwdController.m */; };
 		095540B8221E4DC6005A5485 /* SXRegistSetPwdHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540B7221E4DC6005A5485 /* SXRegistSetPwdHeaderView.m */; };
 		095540BA221E4DCE005A5485 /* SXRegistSetPwdHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 095540B9221E4DCE005A5485 /* SXRegistSetPwdHeaderView.xib */; };
+		095540BF221EA492005A5485 /* SXShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540BE221EA492005A5485 /* SXShadowView.m */; };
+		095540C2221EC059005A5485 /* SXHomeFamilyCodeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540C1221EC059005A5485 /* SXHomeFamilyCodeButton.m */; };
 		098BA2E7221654E900F58639 /* SXLoginRegistAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2E6221654E900F58639 /* SXLoginRegistAlertView.m */; };
 		098BA2ED221660A400F58639 /* SXFamilyCodeSuccessAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2EC221660A400F58639 /* SXFamilyCodeSuccessAlertView.m */; };
 		098BA2F0221660BD00F58639 /* SXFamilyCodeFailureAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2EF221660BD00F58639 /* SXFamilyCodeFailureAlertView.m */; };
@@ -224,6 +226,10 @@
 		095540B7221E4DC6005A5485 /* SXRegistSetPwdHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXRegistSetPwdHeaderView.m; sourceTree = "<group>"; };
 		095540B9221E4DCE005A5485 /* SXRegistSetPwdHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXRegistSetPwdHeaderView.xib; sourceTree = "<group>"; };
 		095540BB221E90E2005A5485 /* ApiCode.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ApiCode.md; sourceTree = "<group>"; };
+		095540BD221EA492005A5485 /* SXShadowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXShadowView.h; sourceTree = "<group>"; };
+		095540BE221EA492005A5485 /* SXShadowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXShadowView.m; sourceTree = "<group>"; };
+		095540C0221EC059005A5485 /* SXHomeFamilyCodeButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeFamilyCodeButton.h; sourceTree = "<group>"; };
+		095540C1221EC059005A5485 /* SXHomeFamilyCodeButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeFamilyCodeButton.m; sourceTree = "<group>"; };
 		098BA2E5221654E900F58639 /* SXLoginRegistAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXLoginRegistAlertView.h; sourceTree = "<group>"; };
 		098BA2E6221654E900F58639 /* SXLoginRegistAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXLoginRegistAlertView.m; sourceTree = "<group>"; };
 		098BA2EB221660A400F58639 /* SXFamilyCodeSuccessAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXFamilyCodeSuccessAlertView.h; sourceTree = "<group>"; };
@@ -564,6 +570,15 @@
 			path = Button;
 			sourceTree = "<group>";
 		};
+		095540BC221EA483005A5485 /* ShadowView */ = {
+			isa = PBXGroup;
+			children = (
+				095540BD221EA492005A5485 /* SXShadowView.h */,
+				095540BE221EA492005A5485 /* SXShadowView.m */,
+			);
+			path = ShadowView;
+			sourceTree = "<group>";
+		};
 		098BA317221BAF2700F58639 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -683,6 +698,7 @@
 		B348F95921F6C4E10000F194 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				095540BC221EA483005A5485 /* ShadowView */,
 				095540A9221D070D005A5485 /* Button */,
 				091187332215688600938D9F /* AlertView */,
 			);
@@ -897,6 +913,8 @@
 				092D6D3522041C4900538AC8 /* SXHomeHeaderView.h */,
 				092D6D3622041C4900538AC8 /* SXHomeHeaderView.m */,
 				092D6D3822041C5200538AC8 /* SXHomeHeaderView.xib */,
+				095540C0221EC059005A5485 /* SXHomeFamilyCodeButton.h */,
+				095540C1221EC059005A5485 /* SXHomeFamilyCodeButton.m */,
 				092D6D282203011800538AC8 /* SXHomeNetworkingDeviceCell.h */,
 				092D6D292203011800538AC8 /* SXHomeNetworkingDeviceCell.m */,
 				092D6D2A2203011800538AC8 /* SXHomeNetworkingDeviceCell.xib */,
@@ -1423,6 +1441,7 @@
 				B348F98921F713A80000F194 /* AppDelegate.m in Sources */,
 				09118705221522BF00938D9F /* GCKeyChainManager.m in Sources */,
 				B348F97221F6EAF40000F194 /* SXHomeController.m in Sources */,
+				095540BF221EA492005A5485 /* SXShadowView.m in Sources */,
 				092D6D342203F9F300538AC8 /* SXHomeMainSectionHeaderView.m in Sources */,
 				B348F99A21F716E40000F194 /* SXNavigationController.m in Sources */,
 				B348F9AA21F71A680000F194 /* UIBarButtonItem+Extention.m in Sources */,
@@ -1492,6 +1511,7 @@
 				B3AF2FF621FB0173001E4E67 /* SXLoginMainHeaderView.m in Sources */,
 				092D6D202202E70300538AC8 /* SXForgetConfirmHeaderView.m in Sources */,
 				B3AF303921FE9657001E4E67 /* SXBaseCustomTablePlainRrfreshController.m in Sources */,
+				095540C2221EC059005A5485 /* SXHomeFamilyCodeButton.m in Sources */,
 				B348F9B621F71E960000F194 /* SXNetRequestTool.m in Sources */,
 				B3AF2FED21FAFF24001E4E67 /* SXLoginController.m in Sources */,
 				B348F97521F6EB070000F194 /* SXMineController.m in Sources */,

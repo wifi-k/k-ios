@@ -13,31 +13,31 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SXHomeHeaderView">
-            <rect key="frame" x="0.0" y="0.0" width="292" height="494"/>
+            <rect key="frame" x="0.0" y="0.0" width="355" height="610"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RDD-o3-ppr">
-                    <rect key="frame" x="0.0" y="0.0" width="292" height="300"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_button_bg" translatesAutoresizingMaskIntoConstraints="NO" id="RDD-o3-ppr">
+                    <rect key="frame" x="0.0" y="0.0" width="355" height="250"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="300" id="ihT-h1-bLD"/>
+                        <constraint firstAttribute="height" constant="250" id="ihT-h1-bLD"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小K管家" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEZ-md-J3f">
-                    <rect key="frame" x="114.5" y="40" width="63" height="21"/>
+                    <rect key="frame" x="146" y="40" width="63" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIp-om-REx">
-                    <rect key="frame" x="126" y="81" width="40" height="40"/>
+                    <rect key="frame" x="157.5" y="81" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="6wf-lj-uA8"/>
                         <constraint firstAttribute="width" constant="40" id="dG6-qi-BMj"/>
                     </constraints>
-                    <state key="normal" title="+"/>
+                    <state key="normal" backgroundImage="home_bingding_add"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdV-XT-L82">
-                    <rect key="frame" x="76" y="126" width="140" height="40"/>
+                    <rect key="frame" x="107.5" y="141" width="140" height="40"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="140" id="AZs-xK-OY5"/>
@@ -51,38 +51,106 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2xs-Nk-c3k">
-                    <rect key="frame" x="20" y="270" width="252" height="130"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <rect key="frame" x="20" y="220" width="315" height="130"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="加入家庭码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDj-L1-uek">
+                            <rect key="frame" x="15" y="15" width="97" height="23"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登录家庭码，立即加入某个家庭" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3z-rs-mmG">
+                            <rect key="frame" x="15" y="43" width="200" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNX-XB-gnm" customClass="SXHomeFamilyCodeButton">
+                            <rect key="frame" x="15" y="85" width="120" height="30"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="9ap-Ll-lPh"/>
+                                <constraint firstAttribute="height" constant="30" id="Lib-Q0-rzV"/>
+                            </constraints>
+                            <state key="normal" title="输入家庭码" image="home_arrow_right"/>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_route_wifi" translatesAutoresizingMaskIntoConstraints="NO" id="oDf-aN-WSR">
+                            <rect key="frame" x="220" y="26.5" width="80" height="77"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="DsH-Gk-Kwe"/>
+                                <constraint firstAttribute="height" constant="77" id="igi-3Y-SDn"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstItem="RDj-L1-uek" firstAttribute="top" secondItem="2xs-Nk-c3k" secondAttribute="top" constant="15" id="Bpb-QC-HVd"/>
+                        <constraint firstItem="H3z-rs-mmG" firstAttribute="leading" secondItem="2xs-Nk-c3k" secondAttribute="leading" constant="15" id="E3o-Rv-hgg"/>
+                        <constraint firstItem="oDf-aN-WSR" firstAttribute="centerY" secondItem="2xs-Nk-c3k" secondAttribute="centerY" id="G7x-H3-J6F"/>
+                        <constraint firstItem="oDf-aN-WSR" firstAttribute="leading" secondItem="H3z-rs-mmG" secondAttribute="trailing" constant="5" id="Nsd-7I-gJO"/>
                         <constraint firstAttribute="height" constant="130" id="cQ9-wU-pnr"/>
+                        <constraint firstItem="RDj-L1-uek" firstAttribute="leading" secondItem="2xs-Nk-c3k" secondAttribute="leading" constant="15" id="cfI-m7-9F5"/>
+                        <constraint firstAttribute="trailing" secondItem="oDf-aN-WSR" secondAttribute="trailing" constant="15" id="jPm-lH-gcW"/>
+                        <constraint firstAttribute="bottom" secondItem="DNX-XB-gnm" secondAttribute="bottom" constant="15" id="n70-92-15q"/>
+                        <constraint firstItem="H3z-rs-mmG" firstAttribute="top" secondItem="RDj-L1-uek" secondAttribute="bottom" constant="5" id="pdn-DJ-MQH"/>
+                        <constraint firstItem="DNX-XB-gnm" firstAttribute="leading" secondItem="2xs-Nk-c3k" secondAttribute="leading" constant="15" id="sKk-Me-3Km"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="产品介绍" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ER-QV-Qz5">
+                    <rect key="frame" x="30" y="380" width="78" height="23"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Wa-ky-4pp">
+                    <rect key="frame" x="57.5" y="443" width="240" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="GhT-bx-Gc6"/>
+                        <constraint firstAttribute="height" constant="120" id="IU2-Aj-oFY"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="home_treebear_route"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="RDD-o3-ppr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0oo-mT-KYu"/>
+                <constraint firstItem="9Wa-ky-4pp" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="3KO-xS-Xqt"/>
                 <constraint firstItem="QEZ-md-J3f" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="6Wp-bS-gpu"/>
                 <constraint firstItem="RDD-o3-ppr" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Adl-Xe-56L"/>
                 <constraint firstItem="QEZ-md-J3f" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="EQN-x2-u9j"/>
+                <constraint firstItem="4ER-QV-Qz5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="HVV-eE-6Nh"/>
                 <constraint firstItem="2xs-Nk-c3k" firstAttribute="bottom" secondItem="RDD-o3-ppr" secondAttribute="bottom" constant="100" id="IZ0-N4-cmj"/>
                 <constraint firstItem="uIp-om-REx" firstAttribute="top" secondItem="QEZ-md-J3f" secondAttribute="bottom" constant="20" id="LPk-39-xVM"/>
                 <constraint firstItem="RDD-o3-ppr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="LdT-3E-gDD"/>
                 <constraint firstItem="uIp-om-REx" firstAttribute="centerX" secondItem="QEZ-md-J3f" secondAttribute="centerX" id="QMI-z7-Coq"/>
                 <constraint firstItem="2xs-Nk-c3k" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="XJM-jj-gBf"/>
+                <constraint firstItem="4ER-QV-Qz5" firstAttribute="top" secondItem="2xs-Nk-c3k" secondAttribute="bottom" constant="30" id="f3Z-Mu-1aZ"/>
                 <constraint firstItem="cdV-XT-L82" firstAttribute="centerX" secondItem="QEZ-md-J3f" secondAttribute="centerX" id="kz4-te-23H"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="2xs-Nk-c3k" secondAttribute="trailing" constant="20" id="lhS-hW-fpm"/>
-                <constraint firstItem="cdV-XT-L82" firstAttribute="top" secondItem="uIp-om-REx" secondAttribute="bottom" constant="5" id="vy6-KD-Axz"/>
+                <constraint firstItem="9Wa-ky-4pp" firstAttribute="top" secondItem="4ER-QV-Qz5" secondAttribute="bottom" constant="40" id="r48-uo-yQ0"/>
+                <constraint firstItem="cdV-XT-L82" firstAttribute="top" secondItem="uIp-om-REx" secondAttribute="bottom" constant="20" id="vy6-KD-Axz"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="addContentL" destination="H3z-rs-mmG" id="sis-r6-id8"/>
+                <outlet property="addFamilyCodeL" destination="RDj-L1-uek" id="hz3-yC-d4b"/>
                 <outlet property="bindingDeviceBtn" destination="cdV-XT-L82" id="RQ2-Z2-HTT"/>
+                <outlet property="familyCodeBgView" destination="2xs-Nk-c3k" id="Tbd-Xs-Ib9"/>
+                <outlet property="productL" destination="4ER-QV-Qz5" id="z9Z-q7-KnG"/>
                 <outlet property="titleL" destination="QEZ-md-J3f" id="Vgq-hg-hMa"/>
                 <outlet property="topImageV" destination="RDD-o3-ppr" id="m6T-YV-tIG"/>
             </connections>
-            <point key="canvasLocation" x="65.599999999999994" y="66.566716641679164"/>
+            <point key="canvasLocation" x="116" y="117.84107946026987"/>
         </view>
     </objects>
+    <resources>
+        <image name="home_arrow_right" width="9" height="17"/>
+        <image name="home_bingding_add" width="40" height="39"/>
+        <image name="home_route_wifi" width="80" height="77"/>
+        <image name="home_treebear_route" width="235" height="109"/>
+        <image name="img_button_bg" width="375" height="45"/>
+    </resources>
 </document>

@@ -25,10 +25,10 @@
     [self setTitle:@"获取验证码" forState:UIControlStateNormal];
     self.titleLabel.font = SXFont14;
     [self setTitleColor:SXColorBlue2 forState:UIControlStateNormal];
-    [self setTitleColor:SXColor99999 forState:UIControlStateHighlighted];
-    [self setTitleColor:SXColor99999 forState:UIControlStateDisabled];
+    [self setTitleColor:SXColor999999 forState:UIControlStateHighlighted];
+    [self setTitleColor:SXColor999999 forState:UIControlStateDisabled];
     
-    [self roundViewWithRadius:4.0f borderColor:SXColor99999 borderWidth:0.5f];
+    [self roundViewWithRadius:4.0f borderColor:SXColor999999 borderWidth:0.5f];
 }
 
 - (void)setEnabled:(BOOL)enabled{
@@ -37,7 +37,7 @@
     if (enabled) {
         [self borderColor:SXColorBlue2 borderWidth:1.0f];
     } else{
-        [self borderColor:SXColor99999 borderWidth:0.5f];
+        [self borderColor:SXColor999999 borderWidth:0.5f];
     }
 }
 
@@ -48,10 +48,10 @@
         [self setTitle:@"获取验证码" forState:UIControlStateNormal];
         self.titleLabel.font = [UIFont boldSystemFontOfSize:14];
         [self setTitleColor:SXColorBlue2 forState:UIControlStateNormal];
-        [self setTitleColor:SXColor99999 forState:UIControlStateHighlighted];
-        [self setTitleColor:SXColor99999 forState:UIControlStateDisabled];
+        [self setTitleColor:SXColor999999 forState:UIControlStateHighlighted];
+        [self setTitleColor:SXColor999999 forState:UIControlStateDisabled];
         
-        [self roundViewWithRadius:4.0f borderColor:SXColor99999 borderWidth:0.5f];
+        [self roundViewWithRadius:4.0f borderColor:SXColor999999 borderWidth:0.5f];
     }
     return self;
 }

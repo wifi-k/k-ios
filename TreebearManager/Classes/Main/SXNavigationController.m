@@ -34,7 +34,9 @@
         //        titleAttr[NSFontAttributeName] = [UIFont systemFontOfSize:20.0];
         //        [item setTitleTextAttributes:titleAttr forState:UIControlStateNormal];
         
-        UINavigationBar *bar = [UINavigationBar appearanceWhenContainedIn:[SXNavigationController class], nil];
+        
+        UINavigationBar *bar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[SXNavigationController.class]];
+        //UINavigationBar *bar = [UINavigationBar appearanceWhenContainedIn:[SXNavigationController class], nil];
         //设置导航条的透明度
         bar.translucent = NO;
         //设置背景图片
