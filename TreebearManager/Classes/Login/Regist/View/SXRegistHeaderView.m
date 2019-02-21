@@ -68,6 +68,7 @@
 
 #pragma mark -按钮点击事件-
 - (IBAction)clickCodeBtn:(SXLoginCertifyCodeButton *)sender {
+    WS(weakSelf);
     NSString *mobile = self.phoneTextField.text.filterSpace;
     SXLoginParam *param = [SXLoginParam param];
     param.mobile = mobile;
@@ -76,6 +77,8 @@
         [MBProgressHUD showSuccessWithMessage:@"发送成功!" toView:SXKeyWindow];
         //开始计时
         [sender start];
+        //成为第一响应
+        [weakSelf.codeTextField becomeFirstResponder];
     } failure:^(NSError * _Nonnull error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
@@ -97,6 +100,7 @@
         }
     } failure:^(NSError * _Nonnull error) {
         if (error.code == 9) {//该手机号已注册，请立即登录
+            [self endEditing:YES];
             if (weakSelf.alertLoginTipsBlock) {
                 weakSelf.alertLoginTipsBlock();
             }

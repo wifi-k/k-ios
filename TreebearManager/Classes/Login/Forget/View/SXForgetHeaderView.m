@@ -76,6 +76,8 @@
         [MBProgressHUD showSuccessWithMessage:@"发送成功!" toView:SXKeyWindow];
         //开始计时
         [sender start];
+        //成为第一响应
+        [weakSelf.codeTextField becomeFirstResponder];
         //赋值验证码
         weakSelf.vcode = code;
     } failure:^(NSError * _Nonnull error) {

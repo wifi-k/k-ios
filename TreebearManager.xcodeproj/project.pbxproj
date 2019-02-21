@@ -223,6 +223,7 @@
 		095540B6221E4DC6005A5485 /* SXRegistSetPwdHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXRegistSetPwdHeaderView.h; sourceTree = "<group>"; };
 		095540B7221E4DC6005A5485 /* SXRegistSetPwdHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXRegistSetPwdHeaderView.m; sourceTree = "<group>"; };
 		095540B9221E4DCE005A5485 /* SXRegistSetPwdHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXRegistSetPwdHeaderView.xib; sourceTree = "<group>"; };
+		095540BB221E90E2005A5485 /* ApiCode.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ApiCode.md; sourceTree = "<group>"; };
 		098BA2E5221654E900F58639 /* SXLoginRegistAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXLoginRegistAlertView.h; sourceTree = "<group>"; };
 		098BA2E6221654E900F58639 /* SXLoginRegistAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXLoginRegistAlertView.m; sourceTree = "<group>"; };
 		098BA2EB221660A400F58639 /* SXFamilyCodeSuccessAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXFamilyCodeSuccessAlertView.h; sourceTree = "<group>"; };
@@ -780,6 +781,7 @@
 				B348F99621F716C60000F194 /* SXTabBarController.m */,
 				B348F99821F716E40000F194 /* SXNavigationController.h */,
 				B348F99921F716E40000F194 /* SXNavigationController.m */,
+				095540BB221E90E2005A5485 /* ApiCode.md */,
 			);
 			path = Main;
 			sourceTree = "<group>";
