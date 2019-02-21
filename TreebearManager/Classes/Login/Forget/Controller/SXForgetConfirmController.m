@@ -44,8 +44,8 @@
 - (void)resetPasswordData{
     WS(weakSelf);
     SXRegistParam *param = [SXRegistParam param];
-//    param.mobile = self.param.mobile;
-//    param.vcode = self.param.vcode;
+    param.mobile = self.param.mobile;
+    param.vcode = self.param.vcode;
     param.passwd = self.param.passwd.md5String;
     [SXLoginNetTool resetPasswdDataWithParams:param.mj_keyValues Success:^{
         [MBProgressHUD showSuccessWithMessage:@"发送成功!" toView:SXKeyWindow];

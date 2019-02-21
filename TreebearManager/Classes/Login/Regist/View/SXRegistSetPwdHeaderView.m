@@ -23,6 +23,14 @@
 
 @implementation SXRegistSetPwdHeaderView
 
+#pragma mark -getter-
+- (SXRegistParam *)param{
+    if (_param == nil) {
+        _param = [[SXRegistParam alloc] init];
+    }
+    return _param;
+}
+
 + (instancetype)headerView{
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
 }

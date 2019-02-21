@@ -67,9 +67,21 @@
     }];
 }
 
++ (void)setPasswdDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure{
+    [SXNetRequestTool POST:user_passwd_reset parameters:params success:^(id response) {
+        if (success){
+            success();
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
 + (void)resetPasswdDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure{
     
-    [SXNetRequestTool POST:user_passwd_reset parameters:params success:^(id response) {
+    [SXNetRequestTool POST:user_passwd_forget parameters:params success:^(id response) {
         if (success){
             success();
         }

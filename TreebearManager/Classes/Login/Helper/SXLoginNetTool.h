@@ -22,6 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///手机验证码登录
 + (void)loginWithVCodeDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
+///修改用户密码
++ (void)setPasswdDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
+
 ///忘记密码重置
 + (void)resetPasswdDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
