@@ -26,16 +26,14 @@
     [super viewWillAppear:animated];
     //设置当前导航条背景色
     //self.navigationController.navigationBar.barTintColor = [UIColor hex:@"444652"];
-    //self.navigationController.navigationBar.hidden = YES;
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    self.navigationController.navigationBar.hidden = YES;
 }
     
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     //设置当前导航条背景色
     //self.navigationController.navigationBar.barTintColor = UIColor.blueColor;
-    //self.navigationController.navigationBar.hidden = NO;
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    self.navigationController.navigationBar.hidden = NO;
 }
     
 - (void)viewDidLoad {

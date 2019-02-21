@@ -90,7 +90,7 @@
     param.mobile = mobile;
     param.vcode = vcode;
     [SXLoginNetTool registUserInfoDataWithParams:param.mj_keyValues Success:^{
-        [MBProgressHUD showSuccessWithMessage:@"注册成功!" toView:SXKeyWindow];
+        [MBProgressHUD showMessageToWindow:@"请继续完成密码设置!"];
         
         if (weakSelf.clickRegistBtnBlock) {
             weakSelf.clickRegistBtnBlock();

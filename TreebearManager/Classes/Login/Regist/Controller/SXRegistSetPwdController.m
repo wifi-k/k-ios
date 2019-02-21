@@ -9,6 +9,7 @@
 #import "SXRegistSetPwdController.h"
 #import "SXRegistSetPwdHeaderView.h"
 #import "SXLoginNetTool.h"
+#import "SXRootTool.h"
 #import "NSString+Hash.h"
 
 @interface SXRegistSetPwdController ()
@@ -44,16 +45,29 @@
 }
 
 - (void)resetPasswordData{
-//    WS(weakSelf);
+    WS(weakSelf);
     SXRegistParam *param = [SXRegistParam param];
     param.passwd = self.headerView.param.passwd.md5String;
     [SXLoginNetTool setPasswdDataWithParams:param.mj_keyValues Success:^{
         [MBProgressHUD showSuccessWithMessage:@"设置成功!" toView:SXKeyWindow];
         
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf changeRootVC];
+        });
     } failure:^(NSError * _Nonnull error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
     }];
+}
+
+//切换根控制器
+- (void)changeRootVC{
+    [MBProgressHUD showWhiteLoadingWithMessage:@"即将登录..." toView:SXKeyWindow];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideHUDForView:SXKeyWindow];
+        
+        [SXRootTool chooseRootWithTabBarVC:SXDelegateWindow];
+    });
 }
 
 @end
