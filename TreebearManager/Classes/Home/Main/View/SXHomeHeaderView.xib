@@ -35,19 +35,8 @@
                         <constraint firstAttribute="width" constant="40" id="dG6-qi-BMj"/>
                     </constraints>
                     <state key="normal" backgroundImage="home_bingding_add"/>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdV-XT-L82">
-                    <rect key="frame" x="107.5" y="141" width="140" height="40"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="140" id="AZs-xK-OY5"/>
-                        <constraint firstAttribute="height" constant="40" id="cfM-mB-41J"/>
-                    </constraints>
-                    <state key="normal" title="绑定小K管家">
-                        <color key="titleColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
                     <connections>
-                        <action selector="clickBindingBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="NW9-SQ-7Bk"/>
+                        <action selector="clickBindingBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="FRU-XE-cOU"/>
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2xs-Nk-c3k">
@@ -66,10 +55,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNX-XB-gnm" customClass="SXHomeFamilyCodeButton">
-                            <rect key="frame" x="15" y="85" width="120" height="30"/>
+                            <rect key="frame" x="15" y="85" width="110" height="30"/>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="120" id="9ap-Ll-lPh"/>
+                                <constraint firstAttribute="width" constant="110" id="9ap-Ll-lPh"/>
                                 <constraint firstAttribute="height" constant="30" id="Lib-Q0-rzV"/>
                             </constraints>
                             <state key="normal" title="输入家庭码" image="home_arrow_right"/>
@@ -82,7 +71,7 @@
                             </constraints>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="RDj-L1-uek" firstAttribute="top" secondItem="2xs-Nk-c3k" secondAttribute="top" constant="15" id="Bpb-QC-HVd"/>
                         <constraint firstItem="H3z-rs-mmG" firstAttribute="leading" secondItem="2xs-Nk-c3k" secondAttribute="leading" constant="15" id="E3o-Rv-hgg"/>
@@ -97,7 +86,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="产品介绍" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ER-QV-Qz5">
-                    <rect key="frame" x="30" y="380" width="78" height="23"/>
+                    <rect key="frame" x="20" y="380" width="78" height="23"/>
                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -110,6 +99,12 @@
                     </constraints>
                     <state key="normal" backgroundImage="home_treebear_route"/>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="绑定小K管家" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cto-R2-vHh">
+                    <rect key="frame" x="120" y="146" width="115" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -118,17 +113,17 @@
                 <constraint firstItem="QEZ-md-J3f" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="6Wp-bS-gpu"/>
                 <constraint firstItem="RDD-o3-ppr" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Adl-Xe-56L"/>
                 <constraint firstItem="QEZ-md-J3f" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="EQN-x2-u9j"/>
-                <constraint firstItem="4ER-QV-Qz5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="HVV-eE-6Nh"/>
+                <constraint firstItem="cto-R2-vHh" firstAttribute="top" secondItem="uIp-om-REx" secondAttribute="bottom" constant="25" id="EeN-pZ-wJD"/>
+                <constraint firstItem="4ER-QV-Qz5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="HVV-eE-6Nh"/>
                 <constraint firstItem="2xs-Nk-c3k" firstAttribute="bottom" secondItem="RDD-o3-ppr" secondAttribute="bottom" constant="100" id="IZ0-N4-cmj"/>
                 <constraint firstItem="uIp-om-REx" firstAttribute="top" secondItem="QEZ-md-J3f" secondAttribute="bottom" constant="20" id="LPk-39-xVM"/>
                 <constraint firstItem="RDD-o3-ppr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="LdT-3E-gDD"/>
                 <constraint firstItem="uIp-om-REx" firstAttribute="centerX" secondItem="QEZ-md-J3f" secondAttribute="centerX" id="QMI-z7-Coq"/>
                 <constraint firstItem="2xs-Nk-c3k" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="XJM-jj-gBf"/>
+                <constraint firstItem="cto-R2-vHh" firstAttribute="centerX" secondItem="uIp-om-REx" secondAttribute="centerX" id="ZcS-VR-haN"/>
                 <constraint firstItem="4ER-QV-Qz5" firstAttribute="top" secondItem="2xs-Nk-c3k" secondAttribute="bottom" constant="30" id="f3Z-Mu-1aZ"/>
-                <constraint firstItem="cdV-XT-L82" firstAttribute="centerX" secondItem="QEZ-md-J3f" secondAttribute="centerX" id="kz4-te-23H"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="2xs-Nk-c3k" secondAttribute="trailing" constant="20" id="lhS-hW-fpm"/>
                 <constraint firstItem="9Wa-ky-4pp" firstAttribute="top" secondItem="4ER-QV-Qz5" secondAttribute="bottom" constant="40" id="r48-uo-yQ0"/>
-                <constraint firstItem="cdV-XT-L82" firstAttribute="top" secondItem="uIp-om-REx" secondAttribute="bottom" constant="20" id="vy6-KD-Axz"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
@@ -137,7 +132,7 @@
             <connections>
                 <outlet property="addContentL" destination="H3z-rs-mmG" id="sis-r6-id8"/>
                 <outlet property="addFamilyCodeL" destination="RDj-L1-uek" id="hz3-yC-d4b"/>
-                <outlet property="bindingDeviceBtn" destination="cdV-XT-L82" id="RQ2-Z2-HTT"/>
+                <outlet property="bindingDeviceL" destination="cto-R2-vHh" id="F0f-qj-X6F"/>
                 <outlet property="familyCodeBgView" destination="2xs-Nk-c3k" id="Tbd-Xs-Ib9"/>
                 <outlet property="productL" destination="4ER-QV-Qz5" id="z9Z-q7-KnG"/>
                 <outlet property="titleL" destination="QEZ-md-J3f" id="Vgq-hg-hMa"/>
@@ -147,7 +142,7 @@
         </view>
     </objects>
     <resources>
-        <image name="home_arrow_right" width="9" height="17"/>
+        <image name="home_arrow_right" width="6" height="9"/>
         <image name="home_bingding_add" width="40" height="40"/>
         <image name="home_route_wifi" width="80" height="77"/>
         <image name="home_top_bg" width="375" height="249"/>

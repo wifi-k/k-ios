@@ -11,8 +11,7 @@
 @interface SXHomeHeaderView ()
 @property (weak, nonatomic) IBOutlet UILabel *titleL;
 @property (weak, nonatomic) IBOutlet UIImageView *topImageV;
-
-@property (weak, nonatomic) IBOutlet UIButton *bindingDeviceBtn;
+@property (weak, nonatomic) IBOutlet UILabel *bindingDeviceL;
 
 @property (weak, nonatomic) IBOutlet UILabel *addFamilyCodeL;
 @property (weak, nonatomic) IBOutlet UILabel *addContentL;
@@ -45,17 +44,15 @@
     self.familyCodeBgView.backgroundColor = [UIColor whiteColor];
     self.familyCodeBgView.layer.cornerRadius = 6;
     self.familyCodeBgView.layer.shadowColor = UIColor.blackColor.CGColor;
-    self.familyCodeBgView.layer.shadowOffset = CGSizeMake(1, 5);
+    self.familyCodeBgView.layer.shadowOffset = CGSizeMake(0, 5);
     self.familyCodeBgView.layer.shadowOpacity = 0.5;
     self.familyCodeBgView.layer.shadowRadius = 5;
     
     self.titleL.font = SXFontBold20;
     self.topImageV.backgroundColor = SXColorRandom;
     
-    [self.bindingDeviceBtn setTitleColor:SXColorBlue2 forState:UIControlStateNormal];
-    [self.bindingDeviceBtn setTitleColor:SXColor999999 forState:UIControlStateHighlighted];
-    [self.bindingDeviceBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
-    [self.bindingDeviceBtn roundViewWithRadius:20.0f];
+    self.bindingDeviceL.textColor = UIColor.whiteColor;
+    self.bindingDeviceL.font = SXFontBold20;
     
     self.productL.font = SXFontBold18;
     self.productL.textColor = SXColor333333;

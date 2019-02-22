@@ -31,7 +31,7 @@
     
 - (void)setUpUI{
     
-    self.backgroundColor = SXColorRandom;
+    self.backgroundColor = SXColorWhite;
     
     self.topBgView.backgroundColor = [UIColor whiteColor];
     self.topBgView.layer.cornerRadius = 6;

@@ -43,9 +43,9 @@
     [super setHighlighted:highlighted];
     
     if (highlighted) {
-        [self borderColor:SXColor999999 borderWidth:1.5f];
+        [self borderColor:SXColor999999 borderWidth:1.0f];
     } else{
-        [self borderColor:SXColor666666 borderWidth:1.5f];
+        [self borderColor:SXColor666666 borderWidth:1.0f];
     }
 }
 

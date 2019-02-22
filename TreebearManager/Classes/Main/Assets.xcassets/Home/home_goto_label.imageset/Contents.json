@@ -6,12 +6,12 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "tab_message_normal@2x.png",
+      "filename" : "home_goto_label@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "tab_message_normal@3x.png",
+      "filename" : "home_goto_label@3x.png",
       "scale" : "3x"
     }
   ],
