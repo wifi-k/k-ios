@@ -57,7 +57,7 @@
 
     self.tableView.frame = self.view.bounds;
 
-    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 266);
+    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 370);
 }
     
 #pragma mark -UITableViewDelegate/UITableViewDataSource-

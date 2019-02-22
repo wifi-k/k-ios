@@ -7,10 +7,20 @@
 //
 
 #import "SXHomeMainHeaderView.h"
+#import "SXHomeMainSettingButton.h"
 
 @interface SXHomeMainHeaderView ()
 @property (weak, nonatomic) IBOutlet UIView *topBgView;
 
+@property (weak, nonatomic) IBOutlet UIImageView *messageImageView;
+@property (weak, nonatomic) IBOutlet UILabel *messageL;
+@property (weak, nonatomic) IBOutlet UIView *noticeBgView;
+
+@property (weak, nonatomic) IBOutlet SXHomeMainSettingButton *parentControlBtn;
+@property (weak, nonatomic) IBOutlet SXHomeMainSettingButton *healthyModeBtn;
+@property (weak, nonatomic) IBOutlet SXHomeMainSettingButton *switchBtn;
+@property (weak, nonatomic) IBOutlet SXHomeMainSettingButton *wifiSettingBtn;
+@property (weak, nonatomic) IBOutlet UIView *bottomBgView;
 @end
 
 @implementation SXHomeMainHeaderView
@@ -19,7 +29,7 @@
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
 }
     
-    //xib唤醒转代码
+//xib唤醒转代码
 - (void)awakeFromNib{
     [super awakeFromNib];
     
@@ -39,6 +49,11 @@
     self.topBgView.layer.shadowOffset = CGSizeMake(0, 5);
     self.topBgView.layer.shadowOpacity = 0.5;
     self.topBgView.layer.shadowRadius = 5;
+    
+    self.noticeBgView.backgroundColor = SXColorGray8;
+    [self.noticeBgView roundViewWithRadius:5.0f];
+    
+    self.bottomBgView.backgroundColor = SXColorWhite;
 }
 
 @end

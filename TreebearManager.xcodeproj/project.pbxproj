@@ -55,6 +55,8 @@
 		095540BF221EA492005A5485 /* SXShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540BE221EA492005A5485 /* SXShadowView.m */; };
 		095540C2221EC059005A5485 /* SXHomeFamilyCodeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540C1221EC059005A5485 /* SXHomeFamilyCodeButton.m */; };
 		095540C6221F90BA005A5485 /* SXImaginaryLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540C5221F90BA005A5485 /* SXImaginaryLineView.m */; };
+		095540C9221FEB91005A5485 /* SXHomeMainSettingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540C8221FEB91005A5485 /* SXHomeMainSettingButton.m */; };
+		095540CF221FEF5D005A5485 /* SXHomeMainGotoUserInfoButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540CE221FEF5D005A5485 /* SXHomeMainGotoUserInfoButton.m */; };
 		098BA2E7221654E900F58639 /* SXLoginRegistAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2E6221654E900F58639 /* SXLoginRegistAlertView.m */; };
 		098BA2ED221660A400F58639 /* SXFamilyCodeSuccessAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2EC221660A400F58639 /* SXFamilyCodeSuccessAlertView.m */; };
 		098BA2F0221660BD00F58639 /* SXFamilyCodeFailureAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2EF221660BD00F58639 /* SXFamilyCodeFailureAlertView.m */; };
@@ -233,6 +235,10 @@
 		095540C1221EC059005A5485 /* SXHomeFamilyCodeButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeFamilyCodeButton.m; sourceTree = "<group>"; };
 		095540C4221F90BA005A5485 /* SXImaginaryLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXImaginaryLineView.h; sourceTree = "<group>"; };
 		095540C5221F90BA005A5485 /* SXImaginaryLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXImaginaryLineView.m; sourceTree = "<group>"; };
+		095540C7221FEB91005A5485 /* SXHomeMainSettingButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSettingButton.h; sourceTree = "<group>"; };
+		095540C8221FEB91005A5485 /* SXHomeMainSettingButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSettingButton.m; sourceTree = "<group>"; };
+		095540CD221FEF5D005A5485 /* SXHomeMainGotoUserInfoButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainGotoUserInfoButton.h; sourceTree = "<group>"; };
+		095540CE221FEF5D005A5485 /* SXHomeMainGotoUserInfoButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainGotoUserInfoButton.m; sourceTree = "<group>"; };
 		098BA2E5221654E900F58639 /* SXLoginRegistAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXLoginRegistAlertView.h; sourceTree = "<group>"; };
 		098BA2E6221654E900F58639 /* SXLoginRegistAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXLoginRegistAlertView.m; sourceTree = "<group>"; };
 		098BA2EB221660A400F58639 /* SXFamilyCodeSuccessAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXFamilyCodeSuccessAlertView.h; sourceTree = "<group>"; };
@@ -934,6 +940,10 @@
 				092D6D2D2203F6E100538AC8 /* SXHomeMainHeaderView.h */,
 				092D6D2E2203F6E100538AC8 /* SXHomeMainHeaderView.m */,
 				092D6D302203F6EA00538AC8 /* SXHomeMainHeaderView.xib */,
+				095540CD221FEF5D005A5485 /* SXHomeMainGotoUserInfoButton.h */,
+				095540CE221FEF5D005A5485 /* SXHomeMainGotoUserInfoButton.m */,
+				095540C7221FEB91005A5485 /* SXHomeMainSettingButton.h */,
+				095540C8221FEB91005A5485 /* SXHomeMainSettingButton.m */,
 				092D6D322203F9F300538AC8 /* SXHomeMainSectionHeaderView.h */,
 				092D6D332203F9F300538AC8 /* SXHomeMainSectionHeaderView.m */,
 				098BA2EB221660A400F58639 /* SXFamilyCodeSuccessAlertView.h */,
@@ -1519,6 +1529,8 @@
 				098BA2FF221A559200F58639 /* SXMineListCell.m in Sources */,
 				B348F9B921F721D60000F194 /* SXNetReachablityTool.m in Sources */,
 				B3AF301221FB0A5D001E4E67 /* SXBaseCollectionViewCell.m in Sources */,
+				095540CF221FEF5D005A5485 /* SXHomeMainGotoUserInfoButton.m in Sources */,
+				095540C9221FEB91005A5485 /* SXHomeMainSettingButton.m in Sources */,
 				09118706221522BF00938D9F /* GACErrorManager.m in Sources */,
 				B3AF2FDA21F9C8BD001E4E67 /* UIView+AutoLayout.m in Sources */,
 				B3AF2FF621FB0173001E4E67 /* SXLoginMainHeaderView.m in Sources */,

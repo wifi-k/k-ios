@@ -1,14 +1,14 @@
 //
-//  SXHomeFamilyCodeButton.m
+//  SXHomeMainGotoUserInfoButton.m
 //  TreebearManager
 //
-//  Created by bear on 2019/2/21.
+//  Created by bear on 2019/2/22.
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXHomeFamilyCodeButton.h"
+#import "SXHomeMainGotoUserInfoButton.h"
 
-@implementation SXHomeFamilyCodeButton
+@implementation SXHomeMainGotoUserInfoButton
 
 - (void)awakeFromNib{
     [super awakeFromNib];
@@ -25,28 +25,24 @@
 
 - (void)setUpUI{
     
-    [self setBackgroundColor:UIColor.whiteColor];
-    
     self.titleLabel.textAlignment = NSTextAlignmentRight;
     self.imageView.contentMode = UIViewContentModeCenter;
     
-    [self setTitle:@"输入家庭码" forState:UIControlStateNormal];
-    self.titleLabel.font = [UIFont boldSystemFontOfSize:14];
-    [self setTitleColor:SXColor666666 forState:UIControlStateHighlighted];
-    [self setTitleColor:SXColor999999 forState:UIControlStateNormal];
-    
-    [self roundViewWithRadius:15.0f borderColor:SXColor999999 borderWidth:1.5f];
+    [self setTitle:@"我的小K" forState:UIControlStateNormal];
+    self.titleLabel.font = [UIFont boldSystemFontOfSize:15];
+    [self setTitleColor:SXColorWhite forState:UIControlStateNormal];
+    //[self setTitleColor:SXColor666666 forState:UIControlStateHighlighted];
 }
 
-- (void)setHighlighted:(BOOL)highlighted{
-    [super setHighlighted:highlighted];
-    
-    if (highlighted) {
-        [self borderColor:SXColor666666 borderWidth:1.0f];
-    } else{
-        [self borderColor:SXColor999999 borderWidth:1.0f];
-    }
-}
+//- (void)setHighlighted:(BOOL)highlighted{
+//    [super setHighlighted:highlighted];
+//
+//    if (highlighted) {
+//        [self borderColor:SXColor666666 borderWidth:1.0f];
+//    } else{
+//        [self borderColor:SXColor999999 borderWidth:1.0f];
+//    }
+//}
 
 #pragma mark - 调整内部ImageView的frame
 - (CGRect)imageRectForContentRect:(CGRect)contentRect{
