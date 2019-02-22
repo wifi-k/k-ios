@@ -53,6 +53,8 @@
     self.topImageV.backgroundColor = SXColorRandom;
     
     [self.bindingDeviceBtn setTitleColor:SXColorBlue2 forState:UIControlStateNormal];
+    [self.bindingDeviceBtn setTitleColor:SXColor999999 forState:UIControlStateHighlighted];
+    [self.bindingDeviceBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
     [self.bindingDeviceBtn roundViewWithRadius:20.0f];
     
     self.productL.font = SXFontBold18;

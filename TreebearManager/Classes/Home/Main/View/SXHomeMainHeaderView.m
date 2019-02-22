@@ -8,6 +8,11 @@
 
 #import "SXHomeMainHeaderView.h"
 
+@interface SXHomeMainHeaderView ()
+@property (weak, nonatomic) IBOutlet UIView *topBgView;
+
+@end
+
 @implementation SXHomeMainHeaderView
 
 + (instancetype)headerView{
@@ -28,6 +33,12 @@
     
     self.backgroundColor = SXColorRandom;
     
+    self.topBgView.backgroundColor = [UIColor whiteColor];
+    self.topBgView.layer.cornerRadius = 6;
+    self.topBgView.layer.shadowColor = UIColor.blackColor.CGColor;
+    self.topBgView.layer.shadowOffset = CGSizeMake(0, 5);
+    self.topBgView.layer.shadowOpacity = 0.5;
+    self.topBgView.layer.shadowRadius = 5;
 }
 
 @end

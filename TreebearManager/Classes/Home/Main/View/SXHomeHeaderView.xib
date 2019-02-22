@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="355" height="610"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_button_bg" translatesAutoresizingMaskIntoConstraints="NO" id="RDD-o3-ppr">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_top_bg" translatesAutoresizingMaskIntoConstraints="NO" id="RDD-o3-ppr">
                     <rect key="frame" x="0.0" y="0.0" width="355" height="250"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="250" id="ihT-h1-bLD"/>
@@ -148,9 +148,9 @@
     </objects>
     <resources>
         <image name="home_arrow_right" width="9" height="17"/>
-        <image name="home_bingding_add" width="40" height="39"/>
+        <image name="home_bingding_add" width="40" height="40"/>
         <image name="home_route_wifi" width="80" height="77"/>
+        <image name="home_top_bg" width="375" height="249"/>
         <image name="home_treebear_route" width="235" height="109"/>
-        <image name="img_button_bg" width="375" height="45"/>
     </resources>
 </document>

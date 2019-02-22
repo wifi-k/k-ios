@@ -54,6 +54,7 @@
 		095540BA221E4DCE005A5485 /* SXRegistSetPwdHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 095540B9221E4DCE005A5485 /* SXRegistSetPwdHeaderView.xib */; };
 		095540BF221EA492005A5485 /* SXShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540BE221EA492005A5485 /* SXShadowView.m */; };
 		095540C2221EC059005A5485 /* SXHomeFamilyCodeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540C1221EC059005A5485 /* SXHomeFamilyCodeButton.m */; };
+		095540C6221F90BA005A5485 /* SXImaginaryLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540C5221F90BA005A5485 /* SXImaginaryLineView.m */; };
 		098BA2E7221654E900F58639 /* SXLoginRegistAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2E6221654E900F58639 /* SXLoginRegistAlertView.m */; };
 		098BA2ED221660A400F58639 /* SXFamilyCodeSuccessAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2EC221660A400F58639 /* SXFamilyCodeSuccessAlertView.m */; };
 		098BA2F0221660BD00F58639 /* SXFamilyCodeFailureAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2EF221660BD00F58639 /* SXFamilyCodeFailureAlertView.m */; };
@@ -230,6 +231,8 @@
 		095540BE221EA492005A5485 /* SXShadowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXShadowView.m; sourceTree = "<group>"; };
 		095540C0221EC059005A5485 /* SXHomeFamilyCodeButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeFamilyCodeButton.h; sourceTree = "<group>"; };
 		095540C1221EC059005A5485 /* SXHomeFamilyCodeButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeFamilyCodeButton.m; sourceTree = "<group>"; };
+		095540C4221F90BA005A5485 /* SXImaginaryLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXImaginaryLineView.h; sourceTree = "<group>"; };
+		095540C5221F90BA005A5485 /* SXImaginaryLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXImaginaryLineView.m; sourceTree = "<group>"; };
 		098BA2E5221654E900F58639 /* SXLoginRegistAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXLoginRegistAlertView.h; sourceTree = "<group>"; };
 		098BA2E6221654E900F58639 /* SXLoginRegistAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXLoginRegistAlertView.m; sourceTree = "<group>"; };
 		098BA2EB221660A400F58639 /* SXFamilyCodeSuccessAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXFamilyCodeSuccessAlertView.h; sourceTree = "<group>"; };
@@ -579,6 +582,15 @@
 			path = ShadowView;
 			sourceTree = "<group>";
 		};
+		095540C3221F90A3005A5485 /* ImaginaryView */ = {
+			isa = PBXGroup;
+			children = (
+				095540C4221F90BA005A5485 /* SXImaginaryLineView.h */,
+				095540C5221F90BA005A5485 /* SXImaginaryLineView.m */,
+			);
+			path = ImaginaryView;
+			sourceTree = "<group>";
+		};
 		098BA317221BAF2700F58639 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -698,6 +710,7 @@
 		B348F95921F6C4E10000F194 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				095540C3221F90A3005A5485 /* ImaginaryView */,
 				095540BC221EA483005A5485 /* ShadowView */,
 				095540A9221D070D005A5485 /* Button */,
 				091187332215688600938D9F /* AlertView */,
@@ -1515,6 +1528,7 @@
 				B348F9B621F71E960000F194 /* SXNetRequestTool.m in Sources */,
 				B3AF2FED21FAFF24001E4E67 /* SXLoginController.m in Sources */,
 				B348F97521F6EB070000F194 /* SXMineController.m in Sources */,
+				095540C6221F90BA005A5485 /* SXImaginaryLineView.m in Sources */,
 				B3AF302D21FE9249001E4E67 /* SXBaseCustomTableViewPlainController.m in Sources */,
 				098BA2ED221660A400F58639 /* SXFamilyCodeSuccessAlertView.m in Sources */,
 			);
