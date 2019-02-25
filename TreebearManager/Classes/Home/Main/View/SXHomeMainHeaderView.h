@@ -14,8 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
     
 + (instancetype)headerView;
 
+///点击消息按钮回调
 @property (nonatomic, copy) void (^clickMessageBgViewBlock)(void);
+///点击设置按钮回调
 @property (nonatomic, copy) void (^clickSettingBtnBlock)(NSInteger tag);
+///点击我的小K回调
+@property (nonatomic, copy) void (^clickUserInfoBtnBlock)(void);
 
 @end
 

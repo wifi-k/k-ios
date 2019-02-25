@@ -38,6 +38,9 @@
                                 <constraint firstAttribute="height" constant="30" id="wQl-Hi-y4X"/>
                             </constraints>
                             <state key="normal" title="我的小K" image="white_arrow_right" backgroundImage="home_goto_label"/>
+                            <connections>
+                                <action selector="clickUserInfoBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ayt-rf-D3m"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎回家" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEy-bu-6lr">
                             <rect key="frame" x="90" y="15" width="82" height="24"/>

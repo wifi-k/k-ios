@@ -39,6 +39,4 @@
     self.headerView.frame = self.view.bounds;
 }
 
-
-
 @end

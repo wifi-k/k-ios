@@ -8,6 +8,7 @@
 
 #import "SXHomeMainHeaderView.h"
 #import "SXImaginaryLineView.h"
+#import "SXHomeMainGotoUserInfoButton.h"
 #import "SXHomeMainSettingButton.h"
 
 @interface SXHomeMainHeaderView ()
@@ -67,6 +68,12 @@
 }
 
 #pragma mark -事件监听-
+- (IBAction)clickUserInfoBtn:(SXHomeMainGotoUserInfoButton *)sender {
+    if (self.clickUserInfoBtnBlock) {
+        self.clickUserInfoBtnBlock();
+    }
+}
+
 - (void)clickMessageBgView{
     if (self.clickMessageBgViewBlock) {
         self.clickMessageBgViewBlock();
