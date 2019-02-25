@@ -12,6 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXForgetHeaderView : UIView
+
 + (instancetype)headerView;
 
 ///点击下一步按钮回调
