@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SXParentControlHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="326" height="397"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_top_card" translatesAutoresizingMaskIntoConstraints="NO" id="Riy-OG-ga5">
+                    <rect key="frame" x="0.0" y="0.0" width="326" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="N1x-yW-BnN"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="家长控制" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsz-Ga-P1Q">
+                    <rect key="frame" x="15" y="140" width="70" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gsD-cQ-syZ">
+                    <rect key="frame" x="0.0" y="171" width="326" height="100"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntr-4j-3mG">
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="u6G-Fl-Jpx"/>
+                            </constraints>
+                            <state key="normal" title="禁用App">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5l-Xa-04O">
+                            <rect key="frame" x="120" y="0.0" width="120" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="Mn5-EU-fyV"/>
+                            </constraints>
+                            <state key="normal" title="上网时间">
+                                <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="JDv-PJ-Sdb"/>
+                        <constraint firstItem="ntr-4j-3mG" firstAttribute="top" secondItem="gsD-cQ-syZ" secondAttribute="top" id="O4W-b7-vC1"/>
+                        <constraint firstAttribute="bottom" secondItem="K5l-Xa-04O" secondAttribute="bottom" id="dc8-ZM-Z8c"/>
+                        <constraint firstItem="K5l-Xa-04O" firstAttribute="top" secondItem="gsD-cQ-syZ" secondAttribute="top" id="lSO-NJ-6zS"/>
+                        <constraint firstAttribute="bottom" secondItem="ntr-4j-3mG" secondAttribute="bottom" id="oEt-z9-dIY"/>
+                        <constraint firstItem="ntr-4j-3mG" firstAttribute="leading" secondItem="gsD-cQ-syZ" secondAttribute="leading" id="yZC-GV-cFN"/>
+                        <constraint firstItem="K5l-Xa-04O" firstAttribute="leading" secondItem="ntr-4j-3mG" secondAttribute="trailing" id="zou-ph-TtH"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Riy-OG-ga5" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="4ip-lk-IOK"/>
+                <constraint firstItem="Jsz-Ga-P1Q" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="DlO-Ze-iJV"/>
+                <constraint firstItem="Jsz-Ga-P1Q" firstAttribute="top" secondItem="Riy-OG-ga5" secondAttribute="bottom" constant="20" id="Gfs-hR-oWC"/>
+                <constraint firstItem="gsD-cQ-syZ" firstAttribute="top" secondItem="Jsz-Ga-P1Q" secondAttribute="bottom" constant="10" id="Poa-K4-fpd"/>
+                <constraint firstItem="gsD-cQ-syZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="TFC-qL-y1y"/>
+                <constraint firstItem="gsD-cQ-syZ" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="cvr-li-0gt"/>
+                <constraint firstItem="Riy-OG-ga5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="fdq-d0-fBr"/>
+                <constraint firstItem="Riy-OG-ga5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="jDP-MI-OMk"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="92.799999999999997" y="2.2488755622188905"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="home_top_card" width="347" height="166"/>
+    </resources>
+</document>
