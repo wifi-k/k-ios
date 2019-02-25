@@ -60,6 +60,18 @@
     [self.noticeBgView roundViewWithRadius:5.0f];
     
     self.bottomBgView.backgroundColor = SXColorWhite;
+    
+    //添加手势
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickMessageBgView)];
+    [self.noticeBgView addGestureRecognizer:tap];
 }
+
+#pragma mark -事件监听-
+- (void)clickMessageBgView{
+    if (self.clickMessageBgViewBlock) {
+        self.clickMessageBgViewBlock();
+    }
+}
+
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "SXHomeMainController.h"
+#import "SXMessageController.h"
 #import "SXHomeMainHeaderView.h"
 #import "SXHomeMainSectionHeaderView.h"
 #import "SXHomeNetworkingDeviceCell.h"
@@ -44,7 +45,11 @@
     self.tableView.bounces = NO;
     
     //2.头部视图
+    WS(weakSelf);
     SXHomeMainHeaderView *headerView = [SXHomeMainHeaderView headerView];
+    headerView.clickMessageBgViewBlock = ^{
+        [weakSelf jumpToMessgeVC];
+    };
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
     
@@ -58,6 +63,12 @@
     self.tableView.frame = self.view.bounds;
 
     self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 370);
+}
+
+#pragma mark -页面跳转-
+- (void)jumpToMessgeVC{
+    SXMessageController *messageVC = [[SXMessageController alloc] init];
+    [self.navigationController pushViewController:messageVC animated:YES];
 }
     
 #pragma mark -UITableViewDelegate/UITableViewDataSource-

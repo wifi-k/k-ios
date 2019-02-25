@@ -161,7 +161,7 @@
     [manager.requestSerializer clearAuthorizationHeader];
     
     //设置请求基本参数
-    [manager.requestSerializer  setValue:@"application/json"  forHTTPHeaderField:@"Content－Type"];
+    //[manager.requestSerializer  setValue:@"application/json"  forHTTPHeaderField:@"Content－Type"];
     
     [manager.requestSerializer setValue:APP_VERSION forHTTPHeaderField:@"Api-Version"];
     NSString *tokenStr = SXUserArchiveTool.user.token;
