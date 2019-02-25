@@ -138,18 +138,30 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0iZ-Xa-eGq" customClass="SXHomeMainSettingButton">
                             <rect key="frame" x="0.0" y="0.0" width="80.5" height="100"/>
                             <state key="normal" title="家长控制" image="home_parent_control"/>
+                            <connections>
+                                <action selector="clickSettingBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="aDq-BZ-jrj"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CoV-T5-tty" customClass="SXHomeMainSettingButton">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CoV-T5-tty" customClass="SXHomeMainSettingButton">
                             <rect key="frame" x="80.5" y="0.0" width="80" height="100"/>
                             <state key="normal" title="健康模式" image="home_healthy_mode"/>
+                            <connections>
+                                <action selector="clickSettingBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="JeF-fP-dOs"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byT-gb-Roy" customClass="SXHomeMainSettingButton">
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byT-gb-Roy" customClass="SXHomeMainSettingButton">
                             <rect key="frame" x="160.5" y="0.0" width="80.5" height="100"/>
                             <state key="normal" title="开关面板" image="home_switch_board"/>
+                            <connections>
+                                <action selector="clickSettingBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="WG0-jV-qLm"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8B-Dk-4po" customClass="SXHomeMainSettingButton">
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8B-Dk-4po" customClass="SXHomeMainSettingButton">
                             <rect key="frame" x="241" y="0.0" width="80" height="100"/>
                             <state key="normal" title="WiFi设置" image="home_wifi_setting"/>
+                            <connections>
+                                <action selector="clickSettingBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="K9d-nI-FCF"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

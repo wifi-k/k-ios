@@ -79,6 +79,7 @@
 		09FB473022239E3500809273 /* SXHomeMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB472E22239E3500809273 /* SXHomeMessageCell.m */; };
 		09FB473122239E3500809273 /* SXHomeMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FB472F22239E3500809273 /* SXHomeMessageCell.xib */; };
 		09FB47342223BD8000809273 /* SXHomeMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB47332223BD8000809273 /* SXHomeMessageModel.m */; };
+		09FB473A2223C31000809273 /* SXWifiSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB47392223C31000809273 /* SXWifiSettingController.m */; };
 		327EE8E44A5A7DE11581C0F1 /* libPods-TreebearManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D77B77B9D44D60B532DDE9D2 /* libPods-TreebearManager.a */; };
 		B348F93C21F6C2C10000F194 /* TreebearManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F93B21F6C2C10000F194 /* TreebearManagerTests.m */; };
 		B348F94721F6C2C10000F194 /* TreebearManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F94621F6C2C10000F194 /* TreebearManagerUITests.m */; };
@@ -283,6 +284,8 @@
 		09FB472F22239E3500809273 /* SXHomeMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXHomeMessageCell.xib; sourceTree = "<group>"; };
 		09FB47322223BD8000809273 /* SXHomeMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMessageModel.h; sourceTree = "<group>"; };
 		09FB47332223BD8000809273 /* SXHomeMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMessageModel.m; sourceTree = "<group>"; };
+		09FB47382223C31000809273 /* SXWifiSettingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXWifiSettingController.h; sourceTree = "<group>"; };
+		09FB47392223C31000809273 /* SXWifiSettingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXWifiSettingController.m; sourceTree = "<group>"; };
 		0BF17A1BEC7F76DCAB17507A /* Pods-TreebearManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreebearManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TreebearManager/Pods-TreebearManager.debug.xcconfig"; sourceTree = "<group>"; };
 		B348F91F21F6C2BE0000F194 /* TreebearManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreebearManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B348F93721F6C2C10000F194 /* TreebearManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreebearManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -658,6 +661,31 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		09FB47352223C2FD00809273 /* WifiSetting */ = {
+			isa = PBXGroup;
+			children = (
+				09FB47362223C2FD00809273 /* Controller */,
+				09FB47372223C2FD00809273 /* View */,
+			);
+			path = WifiSetting;
+			sourceTree = "<group>";
+		};
+		09FB47362223C2FD00809273 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				09FB47382223C31000809273 /* SXWifiSettingController.h */,
+				09FB47392223C31000809273 /* SXWifiSettingController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		09FB47372223C2FD00809273 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5C5F2F98843302620E46BD97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -731,6 +759,7 @@
 		B348F95521F6C4E10000F194 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				09FB47352223C2FD00809273 /* WifiSetting */,
 				09FB472622239D6C00809273 /* Message */,
 				B348F96C21F6EAD30000F194 /* Main */,
 			);
@@ -1548,6 +1577,7 @@
 				B3AF302421FE9113001E4E67 /* SXBaseTablePlainRrfreshController.m in Sources */,
 				092D6CF6220062C700538AC8 /* DES3EncryptUtil.m in Sources */,
 				09118703221522BF00938D9F /* GACSocketModel.m in Sources */,
+				09FB473A2223C31000809273 /* SXWifiSettingController.m in Sources */,
 				092D6D152202E35000538AC8 /* SXCodeLoginController.m in Sources */,
 				092D6CFB2200731300538AC8 /* SXNotificationCenterTool.m in Sources */,
 				092D6CE12200504100538AC8 /* SXRefreshFooter.m in Sources */,

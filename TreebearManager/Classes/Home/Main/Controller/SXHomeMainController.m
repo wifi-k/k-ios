@@ -8,6 +8,7 @@
 
 #import "SXHomeMainController.h"
 #import "SXMessageController.h"
+#import "SXWifiSettingController.h"
 #import "SXHomeMainHeaderView.h"
 #import "SXHomeMainSectionHeaderView.h"
 #import "SXHomeNetworkingDeviceCell.h"
@@ -50,6 +51,9 @@
     headerView.clickMessageBgViewBlock = ^{
         [weakSelf jumpToMessgeVC];
     };
+    headerView.clickSettingBtnBlock = ^(NSInteger tag) {
+        [weakSelf jumpToWifiSettingVC:tag];
+    };
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
     
@@ -69,6 +73,30 @@
 - (void)jumpToMessgeVC{
     SXMessageController *messageVC = [[SXMessageController alloc] init];
     [self.navigationController pushViewController:messageVC animated:YES];
+}
+
+- (void)jumpToWifiSettingVC:(NSInteger)tag{
+    switch (tag) {
+        case 0:
+            DLog(@"jumpToWifiSettingVC-%ld",tag);
+            [MBProgressHUD showMessageToWindow:@"开发中..."];
+            break;
+        case 1:
+            DLog(@"jumpToWifiSettingVC-%ld",tag);
+            [MBProgressHUD showMessageToWindow:@"开发中..."];
+            break;
+        case 2:
+            DLog(@"jumpToWifiSettingVC-%ld",tag);
+            [MBProgressHUD showMessageToWindow:@"开发中..."];
+            break;
+        case 3:{
+            SXWifiSettingController *wifiSettingVC = [[SXWifiSettingController alloc] init];
+            [self.navigationController pushViewController:wifiSettingVC animated:YES];
+        }
+            break;
+        default:
+            break;
+    }
 }
     
 #pragma mark -UITableViewDelegate/UITableViewDataSource-

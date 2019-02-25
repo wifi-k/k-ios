@@ -73,5 +73,10 @@
     }
 }
 
+- (IBAction)clickSettingBtn:(SXHomeMainSettingButton *)sender {
+    if (self.clickSettingBtnBlock) {
+        self.clickSettingBtnBlock(sender.tag);
+    }
+}
 
 @end

@@ -15,7 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)headerView;
 
 @property (nonatomic, copy) void (^clickMessageBgViewBlock)(void);
-    
+@property (nonatomic, copy) void (^clickSettingBtnBlock)(NSInteger tag);
+
 @end
 
 NS_ASSUME_NONNULL_END
