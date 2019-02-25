@@ -7,6 +7,7 @@
 //
 
 #import "SXWifiSettingController.h"
+#import "SXNetWallController.h"
 #import "SXWifiSettingHeaderView.h"
 #import "SXWifiSettingSectionHeaderView.h"
 #import "SXWifiSettingCell.h"
@@ -56,6 +57,11 @@
     [alertV alert];
 }
 
+- (void)jumpToNetVC{
+    SXNetWallController *netVC = [[SXNetWallController alloc] init];
+    [self.navigationController pushViewController:netVC animated:YES];
+}
+
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -85,6 +91,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    [self jumpToNetVC];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
