@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
-///点击登录按钮回调
+///点击绑定按钮回调
 @property (nonatomic, copy) void (^clickBindingBtnBlock)(void);
 
 @end

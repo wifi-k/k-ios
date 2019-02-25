@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
+///点击编辑按钮回调
+@property (nonatomic, copy) void (^clickEditingBtnBlock)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -9,6 +9,10 @@
 
 #import "SXWifiSettingHeaderView.h"
 
+@interface SXWifiSettingHeaderView ()
+
+@end
+
 @implementation SXWifiSettingHeaderView
 
 + (instancetype)headerView{
@@ -28,6 +32,12 @@
     
     self.backgroundColor = SXColorWhite;
     
+}
+
+- (IBAction)clickEditingBtn:(UIButton *)sender {
+    if (self.clickEditingBtnBlock) {
+        self.clickEditingBtnBlock();
+    }
 }
 
 @end

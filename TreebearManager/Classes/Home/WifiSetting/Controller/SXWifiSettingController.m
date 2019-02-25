@@ -10,6 +10,7 @@
 #import "SXWifiSettingHeaderView.h"
 #import "SXWifiSettingSectionHeaderView.h"
 #import "SXWifiSettingCell.h"
+#import "SXCodeInputAlertView.h"
 
 @interface SXWifiSettingController ()
 @property (nonatomic, weak) SXWifiSettingHeaderView *headerView;//头部视图
@@ -30,7 +31,11 @@
     self.navigationItem.title = @"Wifi设置";
     
     //2.头部视图
+    WS(weakSelf);
     SXWifiSettingHeaderView *headerView = [SXWifiSettingHeaderView headerView];
+    headerView.clickEditingBtnBlock = ^{
+        [weakSelf alertView];
+    };
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
     
@@ -44,6 +49,11 @@
     self.tableView.frame = self.view.bounds;
     
     self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 242);
+}
+
+- (void)alertView{
+    SXCodeInputAlertView *alertV = [SXCodeInputAlertView alertWithTitle:@"设置WiFi名称" confirmStr:@"确定" cancelStr:@"取消"];
+    [alertV alert];
 }
 
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
