@@ -1,23 +1,24 @@
 //
-//  SXSwitchBoardController.m
+//  SXHealtyControlController.m
 //  TreebearManager
 //
 //  Created by bear on 2019/2/25.
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXSwitchBoardController.h"
-#import "SXSwitchBoardHeaderView.h"
+#import "SXHealtyControlController.h"
+#import "SXHealtyControlHeaderView.h"
 
-@interface SXSwitchBoardController ()
+@interface SXHealtyControlController ()
 ///头部视图
-@property (nonatomic, weak) SXSwitchBoardHeaderView *headerView;
+@property (nonatomic, weak) SXHealtyControlHeaderView *headerView;
 @end
 
-@implementation SXSwitchBoardController
+@implementation SXHealtyControlController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
     
     [self setUpUI];
 }
@@ -26,9 +27,9 @@
 - (void)setUpUI{
     self.view.backgroundColor = SXColorWhite;
     
-    self.navigationItem.title = @"开关面板灯";
+    self.navigationItem.title = @"健康模式";
     
-    SXSwitchBoardHeaderView *headerView = [SXSwitchBoardHeaderView headerView];
+    SXHealtyControlHeaderView *headerView = [SXHealtyControlHeaderView headerView];
     [self.view addSubview:headerView];
     self.headerView = headerView;
 }

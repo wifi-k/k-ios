@@ -8,6 +8,7 @@
 
 #import "SXHomeMainController.h"
 #import "SXMessageController.h"
+#import "SXHealtyControlController.h"
 #import "SXSwitchBoardController.h"
 #import "SXWifiSettingController.h"
 #import "SXHomeMainHeaderView.h"
@@ -83,8 +84,8 @@
             [MBProgressHUD showMessageToWindow:@"开发中..."];
             break;
         case 1:{
-            DLog(@"jumpToWifiSettingVC-%ld",tag);
-            [MBProgressHUD showMessageToWindow:@"开发中..."];
+            SXHealtyControlController *switchVC = [[SXHealtyControlController alloc] init];
+            [self.navigationController pushViewController:switchVC animated:YES];
         }
             break;
         case 2:{
