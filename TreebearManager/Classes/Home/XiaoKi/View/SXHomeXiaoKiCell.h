@@ -1,5 +1,5 @@
 //
-//  SXXiaoKiCell.h
+//  SXHomeXiaoKiCell.h
 //  TreebearManager
 //
 //  Created by bear on 2019/2/25.
@@ -10,7 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SXXiaoKiCell : UITableViewCell
+@interface SXHomeXiaoKiCell : UITableViewCell
+
++ (instancetype)cellWithTableView:(UITableView *)tableView;
 
 @end
 

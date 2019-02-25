@@ -7,6 +7,7 @@
 //
 
 #import "SXXiaoKiController.h"
+#import "SXHomeXiaoKiCell.h"
 
 @interface SXXiaoKiController ()
 
@@ -30,7 +31,25 @@
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     
-   
+    self.tableView.frame = self.view.bounds;
+}
+
+#pragma mark -UITableViewDelegate/UITableViewDataSource-
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 10;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 130.0f;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    SXHomeXiaoKiCell *cell = [SXHomeXiaoKiCell cellWithTableView:tableView];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
 
