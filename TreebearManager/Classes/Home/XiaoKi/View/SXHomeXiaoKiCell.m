@@ -13,7 +13,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *updateNameBtn;
 @property (weak, nonatomic) IBOutlet UIButton *untyingXiaoKiBtn;
 @property (weak, nonatomic) IBOutlet UIButton *upgradeVersionBtn;
+@property (weak, nonatomic) IBOutlet UIView *bottomLineView;
 @property (weak, nonatomic) IBOutlet UIView *bottomBgView;
+
 @end
 
 @implementation SXHomeXiaoKiCell
@@ -40,6 +42,7 @@ static NSString *SXHomeXiaoKiCellID = @"SXHomeXiaoKiCellID";
     //设置背景色
     self.backgroundColor = SXColorWhite;
     
+    self.bottomLineView.backgroundColor = SXColorDivideLine;
     self.bottomBgView.backgroundColor = SXColorWhite;
     
     [self.updateNameBtn roundViewWithRadius:4.0f borderColor:SXColor333333 borderWidth:1.0f];

@@ -78,6 +78,11 @@
 		09F233092223EE4D0086AB35 /* SXXiaoKiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233082223EE4D0086AB35 /* SXXiaoKiController.m */; };
 		09F233182223F03C0086AB35 /* SXHomeXiaoKiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233162223F03C0086AB35 /* SXHomeXiaoKiCell.m */; };
 		09F233192223F03C0086AB35 /* SXHomeXiaoKiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F233172223F03C0086AB35 /* SXHomeXiaoKiCell.xib */; };
+		09F2331C2224102A0086AB35 /* SXWifiSettingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F2331B2224102A0086AB35 /* SXWifiSettingHeaderView.m */; };
+		09F2331E222410350086AB35 /* SXWifiSettingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F2331D222410350086AB35 /* SXWifiSettingHeaderView.xib */; };
+		09F23322222413900086AB35 /* SXWifiSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F23320222413900086AB35 /* SXWifiSettingCell.m */; };
+		09F23323222413900086AB35 /* SXWifiSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F23321222413900086AB35 /* SXWifiSettingCell.xib */; };
+		09F23326222414CB0086AB35 /* SXWifiSettingSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F23325222414CB0086AB35 /* SXWifiSettingSectionHeaderView.m */; };
 		09FB472C22239D7B00809273 /* SXMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB472B22239D7B00809273 /* SXMessageController.m */; };
 		09FB473022239E3500809273 /* SXHomeMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB472E22239E3500809273 /* SXHomeMessageCell.m */; };
 		09FB473122239E3500809273 /* SXHomeMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FB472F22239E3500809273 /* SXHomeMessageCell.xib */; };
@@ -294,6 +299,14 @@
 		09F233152223F03C0086AB35 /* SXHomeXiaoKiCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeXiaoKiCell.h; sourceTree = "<group>"; };
 		09F233162223F03C0086AB35 /* SXHomeXiaoKiCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeXiaoKiCell.m; sourceTree = "<group>"; };
 		09F233172223F03C0086AB35 /* SXHomeXiaoKiCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXHomeXiaoKiCell.xib; sourceTree = "<group>"; };
+		09F2331A2224102A0086AB35 /* SXWifiSettingHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXWifiSettingHeaderView.h; sourceTree = "<group>"; };
+		09F2331B2224102A0086AB35 /* SXWifiSettingHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXWifiSettingHeaderView.m; sourceTree = "<group>"; };
+		09F2331D222410350086AB35 /* SXWifiSettingHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXWifiSettingHeaderView.xib; sourceTree = "<group>"; };
+		09F2331F222413900086AB35 /* SXWifiSettingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXWifiSettingCell.h; sourceTree = "<group>"; };
+		09F23320222413900086AB35 /* SXWifiSettingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXWifiSettingCell.m; sourceTree = "<group>"; };
+		09F23321222413900086AB35 /* SXWifiSettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXWifiSettingCell.xib; sourceTree = "<group>"; };
+		09F23324222414CB0086AB35 /* SXWifiSettingSectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXWifiSettingSectionHeaderView.h; sourceTree = "<group>"; };
+		09F23325222414CB0086AB35 /* SXWifiSettingSectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXWifiSettingSectionHeaderView.m; sourceTree = "<group>"; };
 		09FB472A22239D7B00809273 /* SXMessageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMessageController.h; sourceTree = "<group>"; };
 		09FB472B22239D7B00809273 /* SXMessageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMessageController.m; sourceTree = "<group>"; };
 		09FB472D22239E3500809273 /* SXHomeMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMessageCell.h; sourceTree = "<group>"; };
@@ -742,6 +755,14 @@
 		09FB47372223C2FD00809273 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				09F2331A2224102A0086AB35 /* SXWifiSettingHeaderView.h */,
+				09F2331B2224102A0086AB35 /* SXWifiSettingHeaderView.m */,
+				09F2331D222410350086AB35 /* SXWifiSettingHeaderView.xib */,
+				09F2331F222413900086AB35 /* SXWifiSettingCell.h */,
+				09F23320222413900086AB35 /* SXWifiSettingCell.m */,
+				09F23321222413900086AB35 /* SXWifiSettingCell.xib */,
+				09F23324222414CB0086AB35 /* SXWifiSettingSectionHeaderView.h */,
+				09F23325222414CB0086AB35 /* SXWifiSettingSectionHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1589,6 +1610,7 @@
 				092D6D122202DD9B00538AC8 /* SXLoginHeaderView.xib in Resources */,
 				09FB47532223E8B600809273 /* SXHealtyControlHeaderView.xib in Resources */,
 				09FB473122239E3500809273 /* SXHomeMessageCell.xib in Resources */,
+				09F2331E222410350086AB35 /* SXWifiSettingHeaderView.xib in Resources */,
 				092D6D2C2203011800538AC8 /* SXHomeNetworkingDeviceCell.xib in Resources */,
 				095540BA221E4DCE005A5485 /* SXRegistSetPwdHeaderView.xib in Resources */,
 				092D6D0D2202D78300538AC8 /* SXRegistHeaderView.xib in Resources */,
@@ -1599,6 +1621,7 @@
 				B348F99121F7143A0000F194 /* Assets.xcassets in Resources */,
 				092D6D3922041C5200538AC8 /* SXHomeHeaderView.xib in Resources */,
 				092D6D222202E71A00538AC8 /* SXForgetConfirmHeaderView.xib in Resources */,
+				09F23323222413900086AB35 /* SXWifiSettingCell.xib in Resources */,
 				09FB475B2223EA7000809273 /* SXParentControlHeaderView.xib in Resources */,
 				B3AF2FD521F9C8A3001E4E67 /* MBProgressHUD.bundle in Resources */,
 				098BA305221A57A700F58639 /* SXMineHeaderView.xib in Resources */,
@@ -1693,6 +1716,7 @@
 				B348F9A821F71A680000F194 /* UIView+Frame.m in Sources */,
 				B348F9B021F71E180000F194 /* SXHttpTool.m in Sources */,
 				09118702221522BF00938D9F /* GCDAsyncSocketCommunicationManager.m in Sources */,
+				09F2331C2224102A0086AB35 /* SXWifiSettingHeaderView.m in Sources */,
 				B348F96121F6C50C0000F194 /* SXRootTool.m in Sources */,
 				09118704221522BF00938D9F /* GACConnectConfig.m in Sources */,
 				B3AF300521FB092F001E4E67 /* SXBasePageParam.m in Sources */,
@@ -1755,6 +1779,7 @@
 				092D6D2F2203F6E100538AC8 /* SXHomeMainHeaderView.m in Sources */,
 				B3AF2FFE21FB085C001E4E67 /* SXBaseParam.m in Sources */,
 				B3AF2FD621F9C8A3001E4E67 /* MBProgressHUD+CL.m in Sources */,
+				09F23322222413900086AB35 /* SXWifiSettingCell.m in Sources */,
 				098BA2F0221660BD00F58639 /* SXFamilyCodeFailureAlertView.m in Sources */,
 				092D6CF5220062C700538AC8 /* MyBase64.m in Sources */,
 				091186EE22151D5F00938D9F /* SGSocketConfigM.m in Sources */,
@@ -1767,6 +1792,7 @@
 				B348F99D21F719850000F194 /* UIImage+Extension.m in Sources */,
 				B348F9B321F71E2D0000F194 /* SXUploadParam.m in Sources */,
 				098BA313221B997000F58639 /* SXRegistParam.m in Sources */,
+				09F23326222414CB0086AB35 /* SXWifiSettingSectionHeaderView.m in Sources */,
 				09FB47512223E87300809273 /* SXHealtyControlHeaderView.m in Sources */,
 				B3AF301E21FE90AF001E4E67 /* SXBaseTableViewPlainController.m in Sources */,
 				B3AF302A21FE91B8001E4E67 /* UIViewController+Placeholder.m in Sources */,

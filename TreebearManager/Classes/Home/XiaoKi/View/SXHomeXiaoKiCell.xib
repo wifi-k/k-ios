@@ -67,6 +67,13 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1d4-hM-hTh">
+                                <rect key="frame" x="0.0" y="49" width="327" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="BXC-w0-7eV"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -74,7 +81,10 @@
                             <constraint firstAttribute="trailing" secondItem="mj6-G4-3ic" secondAttribute="trailing" constant="15" id="9xf-tD-CeG"/>
                             <constraint firstAttribute="trailing" secondItem="mj6-G4-3ic" secondAttribute="trailing" constant="15" id="D0g-lz-mfi"/>
                             <constraint firstItem="mj6-G4-3ic" firstAttribute="top" secondItem="nbG-HP-8sQ" secondAttribute="top" constant="5" id="Fce-E5-wFG"/>
+                            <constraint firstItem="1d4-hM-hTh" firstAttribute="leading" secondItem="nbG-HP-8sQ" secondAttribute="leading" id="Ft7-1r-Itx"/>
+                            <constraint firstAttribute="trailing" secondItem="1d4-hM-hTh" secondAttribute="trailing" id="KeV-35-esZ"/>
                             <constraint firstItem="faF-cv-TWX" firstAttribute="leading" secondItem="nbG-HP-8sQ" secondAttribute="leading" constant="15" id="Kio-qx-rAV"/>
+                            <constraint firstAttribute="bottom" secondItem="1d4-hM-hTh" secondAttribute="bottom" id="Uti-T0-9VK"/>
                             <constraint firstItem="mj6-G4-3ic" firstAttribute="width" secondItem="faF-cv-TWX" secondAttribute="width" id="XXd-p8-dJO"/>
                             <constraint firstAttribute="bottom" secondItem="JUs-YW-buO" secondAttribute="bottom" constant="5" id="ZnF-Mj-a2G"/>
                             <constraint firstItem="mj6-G4-3ic" firstAttribute="leading" secondItem="JUs-YW-buO" secondAttribute="trailing" constant="15" id="aQW-1e-dgI"/>
@@ -103,6 +113,7 @@
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="bottomBgView" destination="nbG-HP-8sQ" id="5V2-Bu-IwT"/>
+                <outlet property="bottomLineView" destination="1d4-hM-hTh" id="1xU-cm-d2N"/>
                 <outlet property="untyingXiaoKiBtn" destination="JUs-YW-buO" id="ePU-9f-WkN"/>
                 <outlet property="updateNameBtn" destination="faF-cv-TWX" id="X6s-Ip-GAr"/>
                 <outlet property="upgradeVersionBtn" destination="mj6-G4-3ic" id="bre-YI-XQd"/>
