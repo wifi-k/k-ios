@@ -14,6 +14,7 @@
 @interface SXHomeMainHeaderView ()
 @property (weak, nonatomic) IBOutlet SXImaginaryLineView *horizonDivideView;
 @property (weak, nonatomic) IBOutlet UIView *verticalDivideView;
+@property (weak, nonatomic) IBOutlet UIImageView *topCardBgImageView;
 @property (weak, nonatomic) IBOutlet UIView *topBgView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *messageImageView;
@@ -53,6 +54,8 @@
     self.topBgView.layer.shadowOffset = CGSizeMake(0, 5);
     self.topBgView.layer.shadowOpacity = 0.5;
     self.topBgView.layer.shadowRadius = 5;
+    
+    [self.topCardBgImageView roundViewWithRadius:6.0f];
     
     self.horizonDivideView.backgroundColor = SXColorClear;
     self.verticalDivideView.width = 1;

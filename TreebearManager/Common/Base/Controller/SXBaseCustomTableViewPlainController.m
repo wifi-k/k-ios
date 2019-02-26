@@ -34,6 +34,12 @@
     self.tableView.emptyDataSetDelegate = self;
 }
 
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    self.tableView.frame = self.view.bounds;
+}
+
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

@@ -32,6 +32,8 @@ static NSString *SXWifiSettingCellID = @"SXWifiSettingCellID";
     //设置背景色
     self.backgroundColor = SXColorWhite;
     
+    
+    
 }
 
 @end

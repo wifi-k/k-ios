@@ -27,17 +27,26 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="防蹭网" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYh-gG-8RS">
-                        <rect key="frame" x="70" y="20.5" width="231" height="21"/>
+                        <rect key="frame" x="70" y="20.5" width="223" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="I2X-G5-pyn">
+                        <rect key="frame" x="303" y="23.5" width="9" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="9" id="7fq-th-crI"/>
+                            <constraint firstAttribute="height" constant="15" id="DFc-h4-fkW"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="ZYh-gG-8RS" firstAttribute="leading" secondItem="xVz-nj-ked" secondAttribute="trailing" constant="10" id="2Si-bB-jYG"/>
+                    <constraint firstAttribute="trailing" secondItem="I2X-G5-pyn" secondAttribute="trailing" constant="15" id="CdR-EV-GSC"/>
                     <constraint firstItem="xVz-nj-ked" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="F0T-4a-OsJ"/>
-                    <constraint firstItem="ZYh-gG-8RS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="aem-24-DFc"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="ZYh-gG-8RS" secondAttribute="trailing" constant="10" id="jMS-G7-Zpb"/>
-                    <constraint firstItem="ZYh-gG-8RS" firstAttribute="leading" secondItem="xVz-nj-ked" secondAttribute="trailing" constant="10" id="ly6-SU-FGX"/>
+                    <constraint firstItem="ZYh-gG-8RS" firstAttribute="centerY" secondItem="xVz-nj-ked" secondAttribute="centerY" id="Mc8-oX-JYF"/>
+                    <constraint firstItem="I2X-G5-pyn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fRy-iJ-4Nh"/>
+                    <constraint firstItem="I2X-G5-pyn" firstAttribute="leading" secondItem="ZYh-gG-8RS" secondAttribute="trailing" constant="10" id="oFi-dy-64A"/>
                     <constraint firstItem="xVz-nj-ked" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="wRZ-LJ-siZ"/>
                 </constraints>
             </tableViewCellContentView>
@@ -46,6 +55,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="arrow_right" width="9" height="15"/>
         <image name="img_user_icon" width="50" height="50"/>
     </resources>
 </document>

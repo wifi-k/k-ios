@@ -217,6 +217,7 @@
                 <outlet property="parentControlBtn" destination="0iZ-Xa-eGq" id="BH8-Ki-Xeo"/>
                 <outlet property="switchBtn" destination="byT-gb-Roy" id="uBX-V2-amn"/>
                 <outlet property="topBgView" destination="2t5-Mq-nO8" id="VlH-iR-XJb"/>
+                <outlet property="topCardBgImageView" destination="4FV-Lp-QQY" id="TFL-Sk-jbc"/>
                 <outlet property="verticalDivideView" destination="gc7-yo-8x3" id="2ll-gS-sWt"/>
                 <outlet property="wifiSettingBtn" destination="g8B-Dk-4po" id="6cs-Zr-Ups"/>
             </connections>

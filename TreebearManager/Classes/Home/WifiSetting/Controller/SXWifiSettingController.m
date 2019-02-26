@@ -9,7 +9,6 @@
 #import "SXWifiSettingController.h"
 #import "SXNetWallController.h"
 #import "SXWifiSettingHeaderView.h"
-#import "SXWifiSettingSectionHeaderView.h"
 #import "SXWifiSettingCell.h"
 #import "SXCodeInputAlertView.h"
 
@@ -39,9 +38,6 @@
     };
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
-    
-    //1.注册头部视图
-    [self.tableView registerClass:SXWifiSettingSectionHeaderView.class forHeaderFooterViewReuseIdentifier:SXWifiSettingSectionHeaderViewID];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -49,7 +45,7 @@
     
     self.tableView.frame = self.view.bounds;
     
-    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 242);
+    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 318);
 }
 
 - (void)alertView{
@@ -63,10 +59,6 @@
 }
 
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 2;
 }
@@ -80,28 +72,10 @@
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 0.01f;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    return [[UIView alloc] initWithFrame:CGRectZero];
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     [self jumpToNetVC];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 22.0f;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    SXWifiSettingSectionHeaderView *headerView = [SXWifiSettingSectionHeaderView headerViewWithTableView:tableView];
-    headerView.title = @"高级设置";
-    return headerView;
 }
 
 @end
