@@ -33,8 +33,8 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置WiFi名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nld-Wy-MXK">
-                            <rect key="frame" x="70" y="29.5" width="200" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <rect key="frame" x="70" y="30.5" width="200" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -73,35 +73,47 @@
                                 <constraint firstAttribute="width" constant="45" id="Y7Y-f2-gzd"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置WiFi密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWF-cF-6KP">
-                            <rect key="frame" x="70" y="29.5" width="200" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ze9-ym-gtD">
                             <rect key="frame" x="280" y="25" width="70" height="30"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="70" id="0Pb-SG-T4q"/>
                                 <constraint firstAttribute="height" constant="30" id="WHa-HV-veH"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <state key="normal" title="设置" backgroundImage="img_button_bg_small"/>
+                            <state key="normal" title="设置">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
                             <connections>
                                 <action selector="clickPwdBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="J23-2d-CDh"/>
                             </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置WiFi密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWF-cF-6KP">
+                            <rect key="frame" x="70" y="17.5" width="202" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未设置密码（WiFi容易被蹭）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6E-QX-xrx">
+                            <rect key="frame" x="70" y="45.5" width="200" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="SWF-cF-6KP" firstAttribute="leading" secondItem="vKn-Lb-Djs" secondAttribute="trailing" constant="10" id="2Fs-B5-6Lc"/>
+                        <constraint firstItem="SWF-cF-6KP" firstAttribute="top" secondItem="vKn-Lb-Djs" secondAttribute="top" id="3Ep-r7-Bdq"/>
                         <constraint firstAttribute="trailing" secondItem="ze9-ym-gtD" secondAttribute="trailing" constant="15" id="7uq-i0-DQn"/>
                         <constraint firstItem="vKn-Lb-Djs" firstAttribute="leading" secondItem="wJP-c4-C7S" secondAttribute="leading" constant="15" id="8bO-Ke-y53"/>
                         <constraint firstAttribute="height" constant="80" id="LeJ-lZ-72B"/>
-                        <constraint firstItem="SWF-cF-6KP" firstAttribute="centerY" secondItem="wJP-c4-C7S" secondAttribute="centerY" id="eDX-7j-Pvu"/>
+                        <constraint firstItem="F6E-QX-xrx" firstAttribute="leading" secondItem="vKn-Lb-Djs" secondAttribute="trailing" constant="10" id="Uvn-7d-BCk"/>
+                        <constraint firstItem="ze9-ym-gtD" firstAttribute="leading" secondItem="SWF-cF-6KP" secondAttribute="trailing" constant="8" id="a5H-PS-HHv"/>
+                        <constraint firstItem="ze9-ym-gtD" firstAttribute="leading" secondItem="F6E-QX-xrx" secondAttribute="trailing" constant="10" id="epE-kH-5t5"/>
+                        <constraint firstItem="SWF-cF-6KP" firstAttribute="leading" secondItem="vKn-Lb-Djs" secondAttribute="trailing" constant="10" id="otK-iN-YPh"/>
                         <constraint firstItem="ze9-ym-gtD" firstAttribute="centerY" secondItem="wJP-c4-C7S" secondAttribute="centerY" id="phK-yJ-vVj"/>
                         <constraint firstItem="vKn-Lb-Djs" firstAttribute="centerY" secondItem="wJP-c4-C7S" secondAttribute="centerY" id="s2X-BJ-Pqx"/>
-                        <constraint firstItem="ze9-ym-gtD" firstAttribute="leading" secondItem="SWF-cF-6KP" secondAttribute="trailing" constant="10" id="tWI-gz-Fw2"/>
+                        <constraint firstItem="F6E-QX-xrx" firstAttribute="bottom" secondItem="vKn-Lb-Djs" secondAttribute="bottom" id="sre-7q-l5Y"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="高级设置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAa-6R-b3F">
@@ -128,6 +140,15 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="nameBtn" destination="rO6-Qs-k4L" id="wlJ-5f-jMw"/>
+                <outlet property="nameContentL" destination="Nld-Wy-MXK" id="VHy-Ne-mdv"/>
+                <outlet property="pwdBtn" destination="ze9-ym-gtD" id="ueX-Lp-gpA"/>
+                <outlet property="pwdContentL" destination="SWF-cF-6KP" id="bwa-Fs-bib"/>
+                <outlet property="pwdTipsL" destination="F6E-QX-xrx" id="0hh-ly-DJA"/>
+                <outlet property="titleL" destination="0iU-2k-5HR" id="6lL-pH-3Ha"/>
+                <outlet property="titleL2" destination="hAa-6R-b3F" id="HCC-al-z8s"/>
+            </connections>
             <point key="canvasLocation" x="124" y="-2.6986506746626691"/>
         </view>
     </objects>

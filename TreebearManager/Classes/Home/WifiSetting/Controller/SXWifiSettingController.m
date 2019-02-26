@@ -54,11 +54,17 @@
 #pragma mark -视图弹窗-
 - (void)alertUpdateNameView{
     SXWifiSettingAlertView *nameAlertView = [SXWifiSettingAlertView alertWithTitle:@"设置WiFi名称" placeholder:@"请输入新的名称" confirmStr:@"确定" cancelStr:@"取消"];
+    nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
+        DLog(@"text:%@",text);
+    };
     [nameAlertView alert];
 }
 
 - (void)alertUpdatePwdView{
     SXWifiSettingAlertView *pwdAlertV = [SXWifiSettingAlertView alertWithTitle:@"设置WiFi名称" placeholder:@"请输入新的密码" confirmStr:@"确定" cancelStr:@"取消"];
+    pwdAlertV.confirmButtonBlock = ^(NSString * _Nonnull text) {
+        DLog(@"text:%@",text);
+    };
     [pwdAlertV alert];
 }
 

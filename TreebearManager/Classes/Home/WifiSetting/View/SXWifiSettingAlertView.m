@@ -173,8 +173,14 @@ const CGFloat SXWifiSettingAlertViewHeightRatio = 0.216; //高度系统
 
 #pragma mark -按钮点击事件-
 - (void)confirmButtonTapped{
+    NSString *input = self.textField.text.filterSpace;
+    if ([NSString isEmpty:input]) {
+        [MBProgressHUD showMessageToWindow:self.placeholder];
+        return;
+    }
+    
     if (self.confirmButtonBlock) {
-        self.confirmButtonBlock();
+        self.confirmButtonBlock(input);
     }
     
     [self performSelector:@selector(removeSelf) withObject:nil afterDelay:0.12];
