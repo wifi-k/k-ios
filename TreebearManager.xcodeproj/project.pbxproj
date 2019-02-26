@@ -92,6 +92,7 @@
 		09F2333922251FF70086AB35 /* SXForbiddenAppCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F2333722251FF70086AB35 /* SXForbiddenAppCell.xib */; };
 		09F2333C2225269F0086AB35 /* SXForbiddenAppFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F2333B2225269F0086AB35 /* SXForbiddenAppFooterView.m */; };
 		09F2333E222526AD0086AB35 /* SXForbiddenAppFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F2333D222526AD0086AB35 /* SXForbiddenAppFooterView.xib */; };
+		09F23344222538FB0086AB35 /* SXFamilyMemberController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F23343222538FB0086AB35 /* SXFamilyMemberController.m */; };
 		09FB472C22239D7B00809273 /* SXMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB472B22239D7B00809273 /* SXMessageController.m */; };
 		09FB473022239E3500809273 /* SXHomeMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB472E22239E3500809273 /* SXHomeMessageCell.m */; };
 		09FB473122239E3500809273 /* SXHomeMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FB472F22239E3500809273 /* SXHomeMessageCell.xib */; };
@@ -331,6 +332,8 @@
 		09F2333A2225269F0086AB35 /* SXForbiddenAppFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForbiddenAppFooterView.h; sourceTree = "<group>"; };
 		09F2333B2225269F0086AB35 /* SXForbiddenAppFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForbiddenAppFooterView.m; sourceTree = "<group>"; };
 		09F2333D222526AD0086AB35 /* SXForbiddenAppFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXForbiddenAppFooterView.xib; sourceTree = "<group>"; };
+		09F23342222538FB0086AB35 /* SXFamilyMemberController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXFamilyMemberController.h; sourceTree = "<group>"; };
+		09F23343222538FB0086AB35 /* SXFamilyMemberController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXFamilyMemberController.m; sourceTree = "<group>"; };
 		09FB472A22239D7B00809273 /* SXMessageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMessageController.h; sourceTree = "<group>"; };
 		09FB472B22239D7B00809273 /* SXMessageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMessageController.m; sourceTree = "<group>"; };
 		09FB472D22239E3500809273 /* SXHomeMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMessageCell.h; sourceTree = "<group>"; };
@@ -720,6 +723,31 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		09F2333F222538C10086AB35 /* FamilyMember */ = {
+			isa = PBXGroup;
+			children = (
+				09F23340222538C10086AB35 /* Controller */,
+				09F23341222538C10086AB35 /* View */,
+			);
+			path = FamilyMember;
+			sourceTree = "<group>";
+		};
+		09F23340222538C10086AB35 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				09F23342222538FB0086AB35 /* SXFamilyMemberController.h */,
+				09F23343222538FB0086AB35 /* SXFamilyMemberController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		09F23341222538C10086AB35 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		09FB472622239D6C00809273 /* Message */ = {
 			isa = PBXGroup;
 			children = (
@@ -963,6 +991,7 @@
 		B348F95521F6C4E10000F194 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				09F2333F222538C10086AB35 /* FamilyMember */,
 				09F233042223EE3B0086AB35 /* XiaoKi */,
 				09FB473B2223E50400809273 /* HealtyMode */,
 				09FB47412223E50400809273 /* ParentControl */,
@@ -1863,6 +1892,7 @@
 				09118706221522BF00938D9F /* GACErrorManager.m in Sources */,
 				B3AF2FDA21F9C8BD001E4E67 /* UIView+AutoLayout.m in Sources */,
 				B3AF2FF621FB0173001E4E67 /* SXLoginMainHeaderView.m in Sources */,
+				09F23344222538FB0086AB35 /* SXFamilyMemberController.m in Sources */,
 				092D6D202202E70300538AC8 /* SXForgetConfirmHeaderView.m in Sources */,
 				B3AF303921FE9657001E4E67 /* SXBaseCustomTablePlainRrfreshController.m in Sources */,
 				095540C2221EC059005A5485 /* SXHomeFamilyCodeButton.m in Sources */,

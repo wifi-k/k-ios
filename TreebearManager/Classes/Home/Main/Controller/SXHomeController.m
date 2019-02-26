@@ -7,10 +7,8 @@
 //
 
 #import "SXHomeController.h"
+#import "SXFamilyMemberController.h"
 #import "SXRootTool.h"
-#import "SXTabBarController.h"
-#import "SXNavigationController.h"
-#import "SXMineController.h"
 #import "SXHomeHeaderView.h"
 #import "SXCodeInputAlertView.h"
 
@@ -47,7 +45,7 @@
     WS(weakSelf);
     SXHomeHeaderView *headerView = [SXHomeHeaderView headerView];
     headerView.clickBindingBtnBlock = ^{
-        [SXRootTool changeToMainHomeVC];
+        [weakSelf jumpToFamilyMemberVC];
     };
     headerView.clickFamilyCodeBtnBlock = ^{
         [weakSelf alertUpdateNameView];
@@ -62,11 +60,18 @@
     self.headerView.frame = self.view.bounds;
 }
 
+#pragma mark -页面跳转-
+- (void)jumpToFamilyMemberVC{
+    SXFamilyMemberController *familyVC = [[SXFamilyMemberController alloc] init];
+    [self.navigationController pushViewController:familyVC animated:YES];
+}
+
 #pragma mark -视图弹窗-
 - (void)alertUpdateNameView{
     SXCodeInputAlertView *nameAlertView = [SXCodeInputAlertView alertWithTitle:@"重命名" placeholder:@"请输入新的名称" confirmStr:@"确定" cancelStr:@"取消"];
     nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
         DLog(@"text:%@",text);
+        [SXRootTool changeToMainHomeVC];
     };
     [nameAlertView alert];
 }
