@@ -13,14 +13,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SXHomeMainHeaderView">
-            <rect key="frame" x="0.0" y="0.0" width="361" height="373"/>
+            <rect key="frame" x="0.0" y="0.0" width="369" height="410"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2t5-Mq-nO8">
-                    <rect key="frame" x="20" y="3" width="321" height="170"/>
+                    <rect key="frame" x="20" y="3" width="329" height="170"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_top_card" translatesAutoresizingMaskIntoConstraints="NO" id="4FV-Lp-QQY">
-                            <rect key="frame" x="0.0" y="0.0" width="321" height="170"/>
+                            <rect key="frame" x="0.0" y="0.0" width="329" height="170"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gS-uE-jad">
                             <rect key="frame" x="15" y="15" width="60" height="60"/>
@@ -31,7 +31,7 @@
                             <state key="normal" backgroundImage="img_user_icon"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSs-ox-Yg4" customClass="SXHomeMainGotoUserInfoButton">
-                            <rect key="frame" x="233" y="30" width="93" height="30"/>
+                            <rect key="frame" x="241" y="30" width="93" height="30"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="93" id="mnE-Tg-50Y"/>
@@ -55,14 +55,14 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EHk-L8-Xve" customClass="SXImaginaryLineView">
-                            <rect key="frame" x="15" y="105" width="291" height="3"/>
+                            <rect key="frame" x="15" y="105" width="299" height="3"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="3" id="j7F-Pv-nvH"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gc7-yo-8x3">
-                            <rect key="frame" x="159.5" y="135" width="2" height="15"/>
+                            <rect key="frame" x="163.5" y="135" width="2" height="15"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="15" id="B10-ig-u8c"/>
@@ -70,11 +70,11 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3j-Bz-cOD" customClass="SXHomeMainMemberButton">
-                            <rect key="frame" x="10" y="113" width="139.5" height="52"/>
+                            <rect key="frame" x="10" y="113" width="143.5" height="52"/>
                             <state key="normal" title="我是小熊" image="home_member_manager"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeO-QJ-QvV" customClass="SXHomeMainMemberButton">
-                            <rect key="frame" x="171.5" y="113" width="139.5" height="52"/>
+                            <rect key="frame" x="175.5" y="113" width="143.5" height="52"/>
                             <state key="normal" title="邀请成员" image="home_member_add"/>
                         </button>
                     </subviews>
@@ -109,7 +109,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYY-BX-blF">
-                    <rect key="frame" x="20" y="183" width="321" height="50"/>
+                    <rect key="frame" x="20" y="183" width="329" height="50"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_message_broadcast" translatesAutoresizingMaskIntoConstraints="NO" id="WnL-au-qQb">
                             <rect key="frame" x="15" y="16" width="23" height="18"/>
@@ -119,8 +119,8 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公告正文广告内容公告正文广告内容公告正文广告内容" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfZ-Rd-v6w">
-                            <rect key="frame" x="48" y="14.5" width="263" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <rect key="frame" x="48" y="16.5" width="271" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -136,31 +136,31 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZNH-WI-hGU">
-                    <rect key="frame" x="20" y="234" width="321" height="100"/>
+                    <rect key="frame" x="20" y="234" width="329" height="100"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0iZ-Xa-eGq" customClass="SXHomeMainSettingButton">
-                            <rect key="frame" x="0.0" y="0.0" width="80.5" height="100"/>
+                            <rect key="frame" x="0.0" y="0.0" width="82.5" height="100"/>
                             <state key="normal" title="家长控制" image="home_parent_control"/>
                             <connections>
                                 <action selector="clickSettingBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="aDq-BZ-jrj"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CoV-T5-tty" customClass="SXHomeMainSettingButton">
-                            <rect key="frame" x="80.5" y="0.0" width="80" height="100"/>
+                            <rect key="frame" x="82.5" y="0.0" width="82" height="100"/>
                             <state key="normal" title="健康模式" image="home_healthy_mode"/>
                             <connections>
                                 <action selector="clickSettingBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="JeF-fP-dOs"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byT-gb-Roy" customClass="SXHomeMainSettingButton">
-                            <rect key="frame" x="160.5" y="0.0" width="80.5" height="100"/>
+                            <rect key="frame" x="164.5" y="0.0" width="82.5" height="100"/>
                             <state key="normal" title="开关面板" image="home_switch_board"/>
                             <connections>
                                 <action selector="clickSettingBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="WG0-jV-qLm"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8B-Dk-4po" customClass="SXHomeMainSettingButton">
-                            <rect key="frame" x="241" y="0.0" width="80" height="100"/>
+                            <rect key="frame" x="247" y="0.0" width="82" height="100"/>
                             <state key="normal" title="WiFi设置" image="home_wifi_setting"/>
                             <connections>
                                 <action selector="clickSettingBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="K9d-nI-FCF"/>
@@ -190,17 +190,61 @@
                         <constraint firstItem="byT-gb-Roy" firstAttribute="width" secondItem="0iZ-Xa-eGq" secondAttribute="width" id="tjh-1y-hud"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bvy-QK-Otf">
+                    <rect key="frame" x="20" y="349" width="329" height="50"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_user_icon" translatesAutoresizingMaskIntoConstraints="NO" id="o5P-es-FOV">
+                            <rect key="frame" x="15" y="10" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="1jq-GW-p0g"/>
+                                <constraint firstAttribute="height" constant="30" id="Lh1-xl-Esf"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您有10张新的照片未备份，是否现在备份？" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aI-tS-CeF">
+                            <rect key="frame" x="50" y="16.5" width="204" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y95-Ji-SZF">
+                            <rect key="frame" x="259" y="10" width="60" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="9Tx-fB-bCv"/>
+                                <constraint firstAttribute="width" constant="60" id="cDL-5Q-dbd"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="去备份" backgroundImage="img_button_bg"/>
+                            <connections>
+                                <action selector="clickBackupBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="v0X-z0-jch"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="o5P-es-FOV" firstAttribute="leading" secondItem="Bvy-QK-Otf" secondAttribute="leading" constant="15" id="1Wg-ia-ZNY"/>
+                        <constraint firstItem="0aI-tS-CeF" firstAttribute="centerY" secondItem="Bvy-QK-Otf" secondAttribute="centerY" id="62b-p8-4pr"/>
+                        <constraint firstItem="0aI-tS-CeF" firstAttribute="leading" secondItem="o5P-es-FOV" secondAttribute="trailing" constant="5" id="BoM-6b-x7L"/>
+                        <constraint firstItem="Y95-Ji-SZF" firstAttribute="centerY" secondItem="Bvy-QK-Otf" secondAttribute="centerY" id="C0U-Rc-3vM"/>
+                        <constraint firstAttribute="height" constant="50" id="QWJ-14-3JU"/>
+                        <constraint firstItem="Y95-Ji-SZF" firstAttribute="leading" secondItem="0aI-tS-CeF" secondAttribute="trailing" constant="5" id="eIf-KU-pbL"/>
+                        <constraint firstAttribute="trailing" secondItem="Y95-Ji-SZF" secondAttribute="trailing" constant="10" id="hDQ-ce-gdw"/>
+                        <constraint firstItem="o5P-es-FOV" firstAttribute="centerY" secondItem="Bvy-QK-Otf" secondAttribute="centerY" id="kzh-Bu-ajr"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="2t5-Mq-nO8" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="4Hh-lE-8Ac"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ZNH-WI-hGU" secondAttribute="trailing" constant="20" id="6jI-SX-XAn"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Bvy-QK-Otf" secondAttribute="trailing" constant="20" id="KUx-pP-Id4"/>
                 <constraint firstItem="gYY-BX-blF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="O61-yn-Zh5"/>
                 <constraint firstItem="ZNH-WI-hGU" firstAttribute="top" secondItem="gYY-BX-blF" secondAttribute="bottom" constant="1" id="REj-Dl-aWi"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gYY-BX-blF" secondAttribute="trailing" constant="20" id="S6b-jp-Qk5"/>
+                <constraint firstItem="Bvy-QK-Otf" firstAttribute="top" secondItem="ZNH-WI-hGU" secondAttribute="bottom" constant="15" id="UZZ-cG-YQu"/>
                 <constraint firstItem="ZNH-WI-hGU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="bHr-xf-fza"/>
                 <constraint firstItem="2t5-Mq-nO8" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="3" id="fYb-Lb-Hi7"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="2t5-Mq-nO8" secondAttribute="trailing" constant="20" id="gOc-7N-wLh"/>
+                <constraint firstItem="Bvy-QK-Otf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="pJP-ul-Y18"/>
                 <constraint firstItem="gYY-BX-blF" firstAttribute="top" secondItem="2t5-Mq-nO8" secondAttribute="bottom" constant="10" id="sZ0-DQ-SiU"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
@@ -208,6 +252,10 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="backupBgView" destination="Bvy-QK-Otf" id="tdS-XS-0bN"/>
+                <outlet property="backupBtn" destination="Y95-Ji-SZF" id="dad-e4-NTf"/>
+                <outlet property="backupContentView" destination="0aI-tS-CeF" id="Cvk-Nm-gPD"/>
+                <outlet property="backupIconImageView" destination="o5P-es-FOV" id="zse-BT-LNl"/>
                 <outlet property="bottomBgView" destination="ZNH-WI-hGU" id="MgJ-Ej-Vyk"/>
                 <outlet property="healthyModeBtn" destination="CoV-T5-tty" id="XAX-A7-K9f"/>
                 <outlet property="horizonDivideView" destination="EHk-L8-Xve" id="hgN-1X-Npk"/>
@@ -223,7 +271,7 @@
                 <outlet property="verticalDivideView" destination="gc7-yo-8x3" id="2ll-gS-sWt"/>
                 <outlet property="wifiSettingBtn" destination="g8B-Dk-4po" id="6cs-Zr-Ups"/>
             </connections>
-            <point key="canvasLocation" x="120.8" y="20.239880059970016"/>
+            <point key="canvasLocation" x="127.2" y="36.881559220389811"/>
         </view>
     </objects>
     <resources>
@@ -235,6 +283,7 @@
         <image name="home_switch_board" width="28" height="23"/>
         <image name="home_top_card" width="347" height="166"/>
         <image name="home_wifi_setting" width="27" height="27"/>
+        <image name="img_button_bg" width="375" height="45"/>
         <image name="img_message_broadcast" width="23" height="18"/>
         <image name="img_user_icon" width="50" height="50"/>
         <image name="white_arrow_right" width="5" height="11"/>

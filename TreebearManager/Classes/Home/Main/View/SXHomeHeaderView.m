@@ -43,8 +43,8 @@
     //1.家庭码背景视图
     //self.familyCodeBgView.layer.masksToBounds=YES;这行去掉
     self.familyCodeBgView.backgroundColor = [UIColor whiteColor];
-    self.familyCodeBgView.layer.cornerRadius = 6;
-    self.familyCodeBgView.layer.shadowColor = UIColor.blackColor.CGColor;
+    self.familyCodeBgView.layer.cornerRadius = 5;
+    self.familyCodeBgView.layer.shadowColor = UIColor.lightGrayColor.CGColor;
     self.familyCodeBgView.layer.shadowOffset = CGSizeMake(0, 5);
     self.familyCodeBgView.layer.shadowOpacity = 0.5;
     self.familyCodeBgView.layer.shadowRadius = 5;

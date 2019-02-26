@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) void (^clickSettingBtnBlock)(NSInteger tag);
 ///点击我的小K回调
 @property (nonatomic, copy) void (^clickUserInfoBtnBlock)(void);
+///点击备份按钮回调
+@property (nonatomic, copy) void (^clickBackupBtnBlock)(void);
 
 @end
 

@@ -29,6 +29,11 @@
 @property (weak, nonatomic) IBOutlet SXHomeMainSettingButton *switchBtn;
 @property (weak, nonatomic) IBOutlet SXHomeMainSettingButton *wifiSettingBtn;
 @property (weak, nonatomic) IBOutlet UIView *bottomBgView;
+
+@property (weak, nonatomic) IBOutlet UIImageView *backupIconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *backupContentView;
+@property (weak, nonatomic) IBOutlet UIButton *backupBtn;
+@property (weak, nonatomic) IBOutlet UIView *backupBgView;
 @end
 
 @implementation SXHomeMainHeaderView
@@ -52,8 +57,8 @@
     self.backgroundColor = SXColorWhite;
     
     self.topBgView.backgroundColor = [UIColor whiteColor];
-    self.topBgView.layer.cornerRadius = 6;
-    self.topBgView.layer.shadowColor = UIColor.blackColor.CGColor;
+    self.topBgView.layer.cornerRadius = 5;
+    self.topBgView.layer.shadowColor = UIColor.lightGrayColor.CGColor;
     self.topBgView.layer.shadowOffset = CGSizeMake(0, 5);
     self.topBgView.layer.shadowOpacity = 0.5;
     self.topBgView.layer.shadowRadius = 5;
@@ -67,6 +72,17 @@
     [self.noticeBgView roundViewWithRadius:5.0f];
     
     self.bottomBgView.backgroundColor = SXColorWhite;
+    
+    self.backupBgView.backgroundColor = [UIColor whiteColor];
+    self.backupBgView.layer.cornerRadius = 4;
+    self.backupBgView.layer.shadowColor = UIColor.lightGrayColor.CGColor;
+    self.backupBgView.layer.shadowOffset = CGSizeMake(0, 2);
+    self.backupBgView.layer.shadowOpacity = 0.5;
+    self.backupBgView.layer.shadowRadius = 2;
+    self.backupBgView.backgroundColor = SXColorWhite;
+    
+    self.backupContentView.textColor = SXColor666666;
+    [self.backupBtn roundViewWithRadius:15.0f];
     
     //添加手势
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickMessageBgView)];
@@ -104,6 +120,12 @@
 - (IBAction)clickSettingBtn:(SXHomeMainSettingButton *)sender {
     if (self.clickSettingBtnBlock) {
         self.clickSettingBtnBlock(sender.tag);
+    }
+}
+
+- (IBAction)clickBackupBtn:(UIButton *)sender {
+    if (self.clickBackupBtnBlock) {
+        self.clickBackupBtnBlock();
     }
 }
 

@@ -61,6 +61,9 @@
     headerView.clickSettingBtnBlock = ^(NSInteger tag) {
         [weakSelf jumpToWifiSettingVC:tag];
     };
+    headerView.clickBackupBtnBlock = ^{
+        DLog(@"备份...");
+    };
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
     
@@ -73,7 +76,7 @@
 
     self.tableView.frame = self.view.bounds;
 
-    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 370);
+    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 420);
 }
 
 #pragma mark -页面跳转-
