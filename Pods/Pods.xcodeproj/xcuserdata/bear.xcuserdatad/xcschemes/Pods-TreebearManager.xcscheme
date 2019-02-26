@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F507CDFC6888CC88605FEF7CD098902F"
+               BlueprintIdentifier = "81BBAC7868E3DCFD505EB85C61B2B4B0"
                BlueprintName = "Pods-TreebearManager"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libPods-TreebearManager.a">

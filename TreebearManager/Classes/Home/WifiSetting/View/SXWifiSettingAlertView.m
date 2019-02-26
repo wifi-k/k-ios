@@ -122,6 +122,9 @@ const CGFloat SXWifiSettingAlertViewHeightRatio = 0.216; //高度系统
     self.bgView.alpha = 1;
     
     self.closeUserInteractionEnabled = YES;
+    
+    //成为第一响应
+    [self.textField becomeFirstResponder];
 }
 
 - (void)layoutSubviews{

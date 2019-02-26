@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1BF3358FC1333F62D30C918D15FA7336"
-               BlueprintName = "SDCycleScrollView"
+               BlueprintIdentifier = "FA537628116457EEF1A98BDAC71C0B76"
+               BlueprintName = "KeyboardToolBar"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libSDCycleScrollView.a">
+               BuildableName = "libKeyboardToolBar.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

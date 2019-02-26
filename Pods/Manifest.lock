@@ -21,6 +21,7 @@ PODS:
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
   - JSONModel (1.8.0)
+  - KeyboardToolBar (2.0.1)
   - MarqueeLabel (2.2.5)
   - Masonry (1.1.0)
   - MBProgressHUD (1.0.0)
@@ -45,6 +46,7 @@ DEPENDENCIES:
   - DZNEmptyDataSet
   - FMDB (~> 2.7.2)
   - JSONModel
+  - KeyboardToolBar
   - MarqueeLabel (~> 2.2.0)
   - Masonry
   - MBProgressHUD (~> 1.0.0)
@@ -65,6 +67,7 @@ SPEC REPOS:
     - DZNEmptyDataSet
     - FMDB
     - JSONModel
+    - KeyboardToolBar
     - MarqueeLabel
     - Masonry
     - MBProgressHUD
@@ -84,6 +87,7 @@ SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
+  KeyboardToolBar: fdf2a1f2368e4a53965da4c21f9719e77f407b26
   MarqueeLabel: 65ca60ee9ba554be34f35339004c6c9fe6366a31
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
@@ -96,6 +100,6 @@ SPEC CHECKSUMS:
   TZImagePickerController: c3f7c505d23281e21e98df6dbeae372946caa28f
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: b1e167f8ae64874070b1fdb8928ed0145db4de2b
+PODFILE CHECKSUM: 75a2e05be1774bb3409560f6ccde6915301ed2d7
 
 COCOAPODS: 1.5.3
