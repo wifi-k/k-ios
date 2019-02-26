@@ -22,8 +22,8 @@
     
     
     //1.创建tabBar
-//    self.tabBar.tintColor = UIColor.blackColor;
-    self.tabBar.tintColor = SXColorBlue2;
+    self.tabBar.tintColor = SXColorBlue;
+    self.tabBar.barTintColor = SXColorWhite;
     
     //2.添加子控制器
     [self setUpChildViewController];

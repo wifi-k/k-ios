@@ -50,7 +50,7 @@
     self.familyCodeBgView.layer.shadowRadius = 5;
     
     self.titleL.font = SXFontBold20;
-    self.topImageV.backgroundColor = SXColorRandom;
+    self.topImageV.backgroundColor = SXColorWhite;
     
     self.bindingDeviceL.textColor = UIColor.whiteColor;
     self.bindingDeviceL.font = SXFontBold20;

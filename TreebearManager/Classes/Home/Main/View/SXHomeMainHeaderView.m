@@ -10,11 +10,14 @@
 #import "SXImaginaryLineView.h"
 #import "SXHomeMainGotoUserInfoButton.h"
 #import "SXHomeMainSettingButton.h"
+#import "SXHomeMainMemberButton.h"
 
 @interface SXHomeMainHeaderView ()
 @property (weak, nonatomic) IBOutlet SXImaginaryLineView *horizonDivideView;
 @property (weak, nonatomic) IBOutlet UIView *verticalDivideView;
 @property (weak, nonatomic) IBOutlet UIImageView *topCardBgImageView;
+@property (weak, nonatomic) IBOutlet SXHomeMainMemberButton *managerBtn;
+@property (weak, nonatomic) IBOutlet SXHomeMainMemberButton *inviteMemberBtn;
 @property (weak, nonatomic) IBOutlet UIView *topBgView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *messageImageView;
@@ -55,7 +58,7 @@
     self.topBgView.layer.shadowOpacity = 0.5;
     self.topBgView.layer.shadowRadius = 5;
     
-    [self.topCardBgImageView roundViewWithRadius:6.0f];
+    [self.topCardBgImageView roundViewWithRadius:5.0f];
     
     self.horizonDivideView.backgroundColor = SXColorClear;
     self.verticalDivideView.width = 1;
@@ -68,6 +71,21 @@
     //添加手势
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickMessageBgView)];
     [self.noticeBgView addGestureRecognizer:tap];
+    
+    //添加标签
+    UILabel *managerL = [[UILabel alloc] init];
+    managerL.backgroundColor = SXColorOrange;
+    managerL.textColor = SXColorWhite;
+    managerL.textAlignment = NSTextAlignmentCenter;
+    managerL.font = SXFont14;
+    managerL.text = @"管理员";
+    [managerL roundViewWithRadius:12.5f];
+    [self.managerBtn addSubview:managerL];
+    [managerL mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(60, 25));
+        make.top.mas_equalTo(self.managerBtn.mas_top);
+        make.right.mas_equalTo(self.managerBtn.mas_right);
+    }];
 }
 
 #pragma mark -事件监听-

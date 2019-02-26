@@ -211,6 +211,8 @@
                 <outlet property="bottomBgView" destination="ZNH-WI-hGU" id="MgJ-Ej-Vyk"/>
                 <outlet property="healthyModeBtn" destination="CoV-T5-tty" id="XAX-A7-K9f"/>
                 <outlet property="horizonDivideView" destination="EHk-L8-Xve" id="hgN-1X-Npk"/>
+                <outlet property="inviteMemberBtn" destination="qeO-QJ-QvV" id="riM-eV-6wA"/>
+                <outlet property="managerBtn" destination="d3j-Bz-cOD" id="cSc-02-R1Y"/>
                 <outlet property="messageImageView" destination="WnL-au-qQb" id="kql-y7-5L8"/>
                 <outlet property="messageL" destination="CfZ-Rd-v6w" id="jGh-4h-9OA"/>
                 <outlet property="noticeBgView" destination="gYY-BX-blF" id="Pku-9Z-oCn"/>
