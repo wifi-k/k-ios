@@ -7,6 +7,7 @@
 //
 
 #import "SXHomeHeaderView.h"
+#import "SXHomeFamilyCodeButton.h"
 
 @interface SXHomeHeaderView ()
 @property (weak, nonatomic) IBOutlet UILabel *titleL;
@@ -59,11 +60,18 @@
     self.addFamilyCodeL.font = SXFontBold18;
     self.addFamilyCodeL.textColor = SXColor333333;
 }
-    
+
+#pragma mark -事件监听-
 - (IBAction)clickBindingBtn:(UIButton *)sender {
     if (self.clickBindingBtnBlock) {
         self.clickBindingBtnBlock();
     }
 }
-    
+
+- (IBAction)clickFamilyCodeBtn:(SXHomeFamilyCodeButton *)sender {
+    if (self.clickFamilyCodeBtnBlock) {
+        self.clickFamilyCodeBtnBlock();
+    }
+}
+
 @end

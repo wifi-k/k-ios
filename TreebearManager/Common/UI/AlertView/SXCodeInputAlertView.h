@@ -15,12 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 //设置遮罩蒙板响应事件是否关闭
 @property (nonatomic, assign) BOOL closeUserInteractionEnabled;
 
-@property (nonatomic,copy) void(^confirmButtonBlock)(void);
+@property (nonatomic,copy) void(^confirmButtonBlock)(NSString *text);
 
 @property (nonatomic,copy) void(^cancelButtonBlock)(void);
 
 //初始化
-+ (instancetype)alertWithTitle:(NSString *)title confirmStr:(NSString *)confirmStr cancelStr:(NSString *)cancelStr;
++ (instancetype)alertWithTitle:(NSString *)title placeholder:(NSString *)placeholder confirmStr:(NSString *)confirmStr cancelStr:(NSString *)cancelStr;
 
 //弹窗
 - (void)alert;

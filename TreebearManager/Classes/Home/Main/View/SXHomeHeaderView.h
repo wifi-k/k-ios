@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///点击绑定按钮回调
 @property (nonatomic, copy) void (^clickBindingBtnBlock)(void);
+///点击家庭码按钮回调
+@property (nonatomic, copy) void (^clickFamilyCodeBtnBlock)(void);
 
 @end
 

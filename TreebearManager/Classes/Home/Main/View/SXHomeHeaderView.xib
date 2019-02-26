@@ -62,6 +62,9 @@
                                 <constraint firstAttribute="height" constant="30" id="Lib-Q0-rzV"/>
                             </constraints>
                             <state key="normal" title="输入家庭码" image="home_arrow_right"/>
+                            <connections>
+                                <action selector="clickFamilyCodeBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="fBp-63-4Xw"/>
+                            </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_route_wifi" translatesAutoresizingMaskIntoConstraints="NO" id="oDf-aN-WSR">
                             <rect key="frame" x="220" y="26.5" width="80" height="77"/>

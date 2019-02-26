@@ -44,7 +44,7 @@ static NSString *SXForbiddenAppCellID = @"SXForbiddenAppCellID";
     self.contentBgView.backgroundColor = [UIColor whiteColor];
     self.contentBgView.layer.cornerRadius = 3;
     self.contentBgView.layer.shadowColor = UIColor.lightGrayColor.CGColor;
-    self.contentBgView.layer.shadowOffset = CGSizeMake(0, 5);
+    self.contentBgView.layer.shadowOffset = CGSizeMake(3, 3);
     self.contentBgView.layer.shadowOpacity = 0.5;
     self.contentBgView.layer.shadowRadius = 3;
 }

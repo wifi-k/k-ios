@@ -12,6 +12,7 @@
 #import "SXNavigationController.h"
 #import "SXMineController.h"
 #import "SXHomeHeaderView.h"
+#import "SXCodeInputAlertView.h"
 
 @interface SXHomeController ()
 ///头部视图
@@ -43,9 +44,13 @@
     
     self.navigationItem.title = @"首页";
     
+    WS(weakSelf);
     SXHomeHeaderView *headerView = [SXHomeHeaderView headerView];
     headerView.clickBindingBtnBlock = ^{
         [SXRootTool changeToMainHomeVC];
+    };
+    headerView.clickFamilyCodeBtnBlock = ^{
+        [weakSelf alertUpdateNameView];
     };
     [self.view addSubview:headerView];
     self.headerView = headerView;
@@ -55,6 +60,15 @@
     [super viewDidLayoutSubviews];
     
     self.headerView.frame = self.view.bounds;
+}
+
+#pragma mark -视图弹窗-
+- (void)alertUpdateNameView{
+    SXCodeInputAlertView *nameAlertView = [SXCodeInputAlertView alertWithTitle:@"重命名" placeholder:@"请输入新的名称" confirmStr:@"确定" cancelStr:@"取消"];
+    nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
+        DLog(@"text:%@",text);
+    };
+    [nameAlertView alert];
 }
 
 @end
