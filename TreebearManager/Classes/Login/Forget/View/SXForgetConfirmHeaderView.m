@@ -17,8 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView2;
     
 @property (weak, nonatomic) IBOutlet UIButton *confirmBtn;
-@property (weak, nonatomic) IBOutlet UIButton *agreeBtn;
-@property (weak, nonatomic) IBOutlet UIButton *licence;
 @end
 
 @implementation SXForgetConfirmHeaderView
@@ -69,26 +67,8 @@
         return;
     }
     
-    if (!self.agreeBtn.selected) {
-        [MBProgressHUD showWarningWithMessage:@"请选择同意用户协议!" toView:SXKeyWindow];
-        return;
-    }
-    
     if (self.clickConfirmBtnBlock) {
         self.clickConfirmBtnBlock();
-    }
-}
- 
-- (IBAction)clickAgreeBtn:(UIButton *)sender {
-    sender.selected = !sender.isSelected;
-    if (self.clickAgreeBtnBlock) {
-        self.clickAgreeBtnBlock();
-    }
-}
- 
-- (IBAction)clickLicenceBtn:(UIButton *)sender {
-    if (self.clickLicenceBtnBlock) {
-        self.clickLicenceBtnBlock();
     }
 }
 

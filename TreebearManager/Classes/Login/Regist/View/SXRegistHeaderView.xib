@@ -91,10 +91,35 @@
                         <action selector="clickRegistBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="z0e-oS-SfA"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXW-Cx-C9Q">
+                    <rect key="frame" x="30" y="335" width="96" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="gs0-V6-rDm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title=" 已阅读并同意" image="login_licence_uncheck">
+                        <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <state key="selected" title=" 已阅读并同意" image="login_licence_check"/>
+                    <connections>
+                        <action selector="clickAgreeBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="ggI-US-J2X"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xw2-m4-bk8">
+                    <rect key="frame" x="127" y="336" width="160" height="28"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="《用户协议》《隐私政策》">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="clickLicenceBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="s3F-QU-h8n"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gMa-RY-bup" secondAttribute="trailing" constant="30" id="6hQ-8N-wU8"/>
+                <constraint firstItem="xw2-m4-bk8" firstAttribute="centerY" secondItem="QXW-Cx-C9Q" secondAttribute="centerY" id="CZN-9o-LNQ"/>
                 <constraint firstItem="gMa-RY-bup" firstAttribute="top" secondItem="C14-s5-Sjk" secondAttribute="bottom" constant="50" id="ELy-Bc-NE8"/>
                 <constraint firstItem="i1P-gO-U6c" firstAttribute="top" secondItem="7I3-wR-pMP" secondAttribute="bottom" constant="20" id="FSx-WJ-cow"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Fqp-QN-rsU" secondAttribute="trailing" constant="30" id="Ljh-Ji-DiE"/>
@@ -107,10 +132,13 @@
                 <constraint firstItem="m9N-m2-XEY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="Z26-Q4-Nh0"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="m9N-m2-XEY" secondAttribute="trailing" constant="30" id="Z3B-52-Gvd"/>
                 <constraint firstItem="Fqp-QN-rsU" firstAttribute="top" secondItem="m9N-m2-XEY" secondAttribute="bottom" constant="50" id="c3Y-Gc-sPF"/>
+                <constraint firstItem="QXW-Cx-C9Q" firstAttribute="top" secondItem="gMa-RY-bup" secondAttribute="bottom" constant="8" id="fWo-nD-PoB"/>
+                <constraint firstItem="xw2-m4-bk8" firstAttribute="leading" secondItem="QXW-Cx-C9Q" secondAttribute="trailing" constant="1" id="jnn-lY-11d"/>
                 <constraint firstItem="jQJ-sv-ZdV" firstAttribute="centerY" secondItem="i1P-gO-U6c" secondAttribute="centerY" id="mjV-11-V6S"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jQJ-sv-ZdV" secondAttribute="trailing" constant="30" id="oG0-vx-n11"/>
                 <constraint firstItem="Fqp-QN-rsU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="qYM-zX-hsY"/>
                 <constraint firstItem="7I3-wR-pMP" firstAttribute="top" secondItem="Fqp-QN-rsU" secondAttribute="bottom" constant="8" id="u9O-lz-poZ"/>
+                <constraint firstItem="QXW-Cx-C9Q" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="uD8-1U-8S3"/>
                 <constraint firstItem="i1P-gO-U6c" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="y9T-KF-j7a"/>
                 <constraint firstItem="C14-s5-Sjk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="zK4-ua-FUz"/>
             </constraints>
@@ -119,12 +147,14 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="agreeBtn" destination="QXW-Cx-C9Q" id="1NK-5W-UcT"/>
                 <outlet property="bottomLineV" destination="7I3-wR-pMP" id="XNQ-ch-Sga"/>
                 <outlet property="bottomLineV2" destination="C14-s5-Sjk" id="FbJ-jj-28K"/>
                 <outlet property="bottomLineV2H" destination="zvx-dh-fgh" id="naD-lr-CbN"/>
                 <outlet property="bottomLineVH" destination="Wmc-xI-Cac" id="lbD-tt-lN9"/>
                 <outlet property="codeBtn" destination="jQJ-sv-ZdV" id="gao-bu-wTO"/>
                 <outlet property="codeTextField" destination="i1P-gO-U6c" id="6L7-F1-lz2"/>
+                <outlet property="licence" destination="xw2-m4-bk8" id="Nj8-Ih-iuC"/>
                 <outlet property="phoneTextField" destination="Fqp-QN-rsU" id="Vc2-Ih-Pk8"/>
                 <outlet property="registBtn" destination="gMa-RY-bup" id="SDb-m2-hch"/>
                 <outlet property="titleL" destination="m9N-m2-XEY" id="TqC-1s-sug"/>
@@ -134,5 +164,7 @@
     </objects>
     <resources>
         <image name="img_button_bg" width="375" height="45"/>
+        <image name="login_licence_check" width="12" height="12"/>
+        <image name="login_licence_uncheck" width="12" height="12"/>
     </resources>
 </document>

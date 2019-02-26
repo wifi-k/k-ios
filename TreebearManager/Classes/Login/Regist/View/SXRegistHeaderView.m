@@ -21,6 +21,9 @@
 @property (weak, nonatomic) IBOutlet UIView *bottomLineV2;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLineV2H;
 @property (weak, nonatomic) IBOutlet UIButton *registBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *agreeBtn;
+@property (weak, nonatomic) IBOutlet UIButton *licence;
 @end
 
 @implementation SXRegistHeaderView
@@ -86,6 +89,11 @@
 }
 
 - (IBAction)clickRegistBtn:(UIButton *)sender {
+    if (!self.agreeBtn.selected) {
+        [MBProgressHUD showWarningWithMessage:@"请选择同意用户协议!" toView:SXKeyWindow];
+        return;
+    }
+    
     WS(weakSelf);
     NSString *mobile = self.phoneTextField.text.filterSpace;
     NSString *vcode = self.codeTextField.text.filterSpace;
@@ -109,6 +117,19 @@
             [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
         }
     }];
+}
+
+- (IBAction)clickAgreeBtn:(UIButton *)sender {
+    sender.selected = !sender.isSelected;
+    if (self.clickAgreeBtnBlock) {
+        self.clickAgreeBtnBlock();
+    }
+}
+
+- (IBAction)clickLicenceBtn:(UIButton *)sender {
+    if (self.clickLicenceBtnBlock) {
+        self.clickLicenceBtnBlock();
+    }
 }
 
 #pragma mark -文本输入框编辑-

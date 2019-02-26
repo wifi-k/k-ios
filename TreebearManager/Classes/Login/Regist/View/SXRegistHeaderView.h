@@ -15,6 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
+///点击同意按钮回调
+@property (nonatomic, copy) void (^clickAgreeBtnBlock)(void);
+///点击协议按钮回调
+@property (nonatomic, copy) void (^clickLicenceBtnBlock)(void);
 ///注册成功回调
 @property (nonatomic, copy) void (^registSuccessBlock)(void);
 ///手机号已注册回调
