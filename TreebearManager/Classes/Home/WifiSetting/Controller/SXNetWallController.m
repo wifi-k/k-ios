@@ -7,7 +7,7 @@
 //
 
 #import "SXNetWallController.h"
-#import "SXWifiSettingCell.h"
+#import "SXNetWallCell.h"
 
 @interface SXNetWallController ()
 
@@ -36,11 +36,11 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
+    return 100;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    SXWifiSettingCell *cell = [SXWifiSettingCell cellWithTableView:tableView];
+    SXNetWallCell *cell = [SXNetWallCell cellWithTableView:tableView];
     return cell;
 }
 

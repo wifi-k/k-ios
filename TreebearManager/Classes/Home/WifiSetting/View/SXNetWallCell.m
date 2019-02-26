@@ -1,19 +1,19 @@
 //
-//  SXWifiSettingCell.m
+//  SXNetWallCell.m
 //  TreebearManager
 //
-//  Created by bear on 2019/2/25.
+//  Created by bear on 2019/2/26.
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXWifiSettingCell.h"
+#import "SXNetWallCell.h"
 
-@implementation SXWifiSettingCell
+@implementation SXNetWallCell
 
-static NSString *SXWifiSettingCellID = @"SXWifiSettingCellID";
+static NSString *SXNetWallCellID = @"SXNetWallCellID";
 
 + (instancetype)cellWithTableView:(UITableView *)tableView{
-    id cell = [tableView dequeueReusableCellWithIdentifier:SXWifiSettingCellID];
+    id cell = [tableView dequeueReusableCellWithIdentifier:SXNetWallCellID];
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
     }

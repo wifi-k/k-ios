@@ -34,10 +34,17 @@
     
 }
 
-- (IBAction)clickEditingBtn:(UIButton *)sender {
-    if (self.clickEditingBtnBlock) {
-        self.clickEditingBtnBlock();
+- (IBAction)clickNameBtn:(UIButton *)sender {
+    if (self.clickWifiNameBlock) {
+        self.clickWifiNameBlock();
     }
 }
+
+- (IBAction)clickPwdBtn:(UIButton *)sender {
+    if (self.clickWifiPasswordBlock) {
+        self.clickWifiPasswordBlock();
+    }
+}
+
 
 @end

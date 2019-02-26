@@ -1,17 +1,18 @@
 //
-//  SXCodeInputAlertView.m
+//  SXWifiSettingAlertView.m
 //  TreebearManager
 //
-//  Created by bear on 2019/2/14.
+//  Created by bear on 2019/2/26.
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXCodeInputAlertView.h"
+#import "SXWifiSettingAlertView.h"
 
-const CGFloat SXCodeInputAlertViewWidthRatio = 0.655;  //宽度系数
-const CGFloat SXCodeInputAlertViewHeightRatio = 0.216; //高度系统
+const CGFloat SXWifiSettingAlertViewWidthRatio = 0.655;  //宽度系数
+const CGFloat SXWifiSettingAlertViewHeightRatio = 0.216; //高度系统
 
-@interface SXCodeInputAlertView ()
+@interface SXWifiSettingAlertView ()
+
 @property (nonatomic, weak) UIView *bgView;
 @property (nonatomic, weak) UIImageView *bgImageView;
 @property (nonatomic, weak) UILabel *titleL;//标题
@@ -21,15 +22,17 @@ const CGFloat SXCodeInputAlertViewHeightRatio = 0.216; //高度系统
 @property (nonatomic, weak) UIButton *cancleButton;//取消按钮
 
 @property (nonatomic, copy) NSString *title;//标题
+@property (nonatomic, copy) NSString *placeholder;//占位符
 @property (nonatomic, copy) NSString *confirmStr;//确认按钮
 @property (nonatomic, copy) NSString *cancelStr;//取消按钮
 @end
 
-@implementation SXCodeInputAlertView
+@implementation SXWifiSettingAlertView
 
-+ (instancetype)alertWithTitle:(NSString *)title confirmStr:(NSString *)confirmStr cancelStr:(NSString *)cancelStr{
-    SXCodeInputAlertView *alert = [[self alloc] initWithFrame:UIApplication.sharedApplication.delegate.window.bounds];
++ (instancetype)alertWithTitle:(NSString *)title placeholder:(NSString *)placeholder confirmStr:(NSString *)confirmStr cancelStr:(NSString *)cancelStr{
+    SXWifiSettingAlertView *alert = [[self alloc] initWithFrame:UIApplication.sharedApplication.delegate.window.bounds];
     alert.title = title;
+    alert.placeholder = placeholder;
     alert.confirmStr = confirmStr;
     alert.cancelStr = cancelStr;
     return alert;
@@ -77,7 +80,7 @@ const CGFloat SXCodeInputAlertViewHeightRatio = 0.216; //高度系统
     
     UITextField *textField = [[UITextField alloc] init];
     textField.backgroundColor = SXColorGray7;
-    textField.placeholder = @"请输入家庭码";
+    textField.placeholder = @"请输入...";
     [self.bgImageView addSubview:textField];
     self.textField = textField;
     [self.textField roundViewWithRadius:4];
@@ -96,9 +99,9 @@ const CGFloat SXCodeInputAlertViewHeightRatio = 0.216; //高度系统
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [confirmButton setTitle:@"确定" forState:UIControlStateNormal];
     [confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [confirmButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+    //[confirmButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
     [confirmButton setBackgroundImage:[UIImage imageNamed:@"img_button_bg_small"] forState:UIControlStateNormal];
-    [confirmButton setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
+    //[confirmButton setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
     [confirmButton.titleLabel setFont:[UIFont systemFontOfSize:15]];
     [confirmButton addTarget:self action:@selector(confirmButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     [self.bottomView addSubview:confirmButton];
@@ -125,8 +128,8 @@ const CGFloat SXCodeInputAlertViewHeightRatio = 0.216; //高度系统
     [super layoutSubviews];
     
     //内容宽高
-//    CGFloat contentW = [UIScreen mainScreen].bounds.size.width * SXCodeInputAlertViewWidthRatio;
-//    CGFloat contentH = [UIScreen mainScreen].bounds.size.height * SXCodeInputAlertViewHeightRatio;
+    //    CGFloat contentW = [UIScreen mainScreen].bounds.size.width * SXWifiSettingAlertViewWidthRatio;
+    //    CGFloat contentH = [UIScreen mainScreen].bounds.size.height * SXWifiSettingAlertViewHeightRatio;
     CGFloat contentW = [UIScreen mainScreen].bounds.size.width - 30 * 2;
     CGFloat contentH = 200;
     
@@ -197,6 +200,11 @@ const CGFloat SXCodeInputAlertViewHeightRatio = 0.216; //高度系统
 - (void)setTitle:(NSString *)title{
     _title = title;
     self.titleL.text = title;
+}
+
+- (void)setPlaceholder:(NSString *)placeholder{
+    _placeholder = placeholder;
+    self.textField.placeholder = placeholder;
 }
 
 - (void)setConfirmStr:(NSString *)confirmStr{

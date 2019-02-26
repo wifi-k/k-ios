@@ -10,7 +10,7 @@
 #import "SXNetWallController.h"
 #import "SXWifiSettingHeaderView.h"
 #import "SXWifiSettingCell.h"
-#import "SXCodeInputAlertView.h"
+#import "SXWifiSettingAlertView.h"
 
 @interface SXWifiSettingController ()
 @property (nonatomic, weak) SXWifiSettingHeaderView *headerView;//头部视图
@@ -33,8 +33,11 @@
     //2.头部视图
     WS(weakSelf);
     SXWifiSettingHeaderView *headerView = [SXWifiSettingHeaderView headerView];
-    headerView.clickEditingBtnBlock = ^{
-        [weakSelf alertView];
+    headerView.clickWifiNameBlock = ^{
+        [weakSelf alertUpdateNameView];
+    };
+    headerView.clickWifiPasswordBlock = ^{
+        [weakSelf alertUpdatePwdView];
     };
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
@@ -48,11 +51,18 @@
     self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 318);
 }
 
-- (void)alertView{
-    SXCodeInputAlertView *alertV = [SXCodeInputAlertView alertWithTitle:@"设置WiFi名称" confirmStr:@"确定" cancelStr:@"取消"];
-    [alertV alert];
+#pragma mark -视图弹窗-
+- (void)alertUpdateNameView{
+    SXWifiSettingAlertView *nameAlertView = [SXWifiSettingAlertView alertWithTitle:@"设置WiFi名称" placeholder:@"请输入新的名称" confirmStr:@"确定" cancelStr:@"取消"];
+    [nameAlertView alert];
 }
 
+- (void)alertUpdatePwdView{
+    SXWifiSettingAlertView *pwdAlertV = [SXWifiSettingAlertView alertWithTitle:@"设置WiFi名称" placeholder:@"请输入新的密码" confirmStr:@"确定" cancelStr:@"取消"];
+    [pwdAlertV alert];
+}
+
+#pragma mark -页面跳转-
 - (void)jumpToNetVC{
     SXNetWallController *netVC = [[SXNetWallController alloc] init];
     [self.navigationController pushViewController:netVC animated:YES];

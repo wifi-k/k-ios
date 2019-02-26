@@ -14,8 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
-///点击编辑按钮回调
-@property (nonatomic, copy) void (^clickEditingBtnBlock)(void);
+///更改Wifi名称回调
+@property (nonatomic, copy) void (^clickWifiNameBlock)(void);
+///更改Wifi密码回调
+@property (nonatomic, copy) void (^clickWifiPasswordBlock)(void);
 
 @end
 
