@@ -44,19 +44,32 @@
                             <constraint firstAttribute="height" constant="31" id="2ep-Rk-xcX"/>
                         </constraints>
                     </switch>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ACL-xS-UNU">
+                        <rect key="frame" x="15" y="95.5" width="333" height="1"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.80000000000000004" id="bUk-ij-dIc"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="upa-Ow-UFe" firstAttribute="bottom" secondItem="AUE-yw-qxc" secondAttribute="bottom" id="5iT-0n-k6o"/>
+                    <constraint firstAttribute="trailing" secondItem="ACL-xS-UNU" secondAttribute="trailing" id="Bkt-1q-ts0"/>
                     <constraint firstItem="4Dn-Md-ppS" firstAttribute="leading" secondItem="AUE-yw-qxc" secondAttribute="trailing" constant="10" id="CBf-6y-V3b"/>
                     <constraint firstItem="sKh-aR-YkO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="EyT-ZG-cAF"/>
                     <constraint firstItem="upa-Ow-UFe" firstAttribute="leading" secondItem="AUE-yw-qxc" secondAttribute="trailing" constant="10" id="GyB-A0-xFv"/>
                     <constraint firstItem="4Dn-Md-ppS" firstAttribute="top" secondItem="AUE-yw-qxc" secondAttribute="top" id="OMJ-nG-Oqb"/>
+                    <constraint firstAttribute="bottom" secondItem="ACL-xS-UNU" secondAttribute="bottom" id="SNX-4v-Bod"/>
                     <constraint firstItem="AUE-yw-qxc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="YDG-Ko-xoz"/>
                     <constraint firstItem="AUE-yw-qxc" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dLO-IW-6jl"/>
+                    <constraint firstItem="ACL-xS-UNU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="udJ-qv-SU5"/>
                     <constraint firstAttribute="trailing" secondItem="sKh-aR-YkO" secondAttribute="trailing" constant="15" id="xY5-lc-CTF"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="bottomLineView" destination="ACL-xS-UNU" id="zYY-4R-bEy"/>
+            </connections>
             <point key="canvasLocation" x="155.19999999999999" y="172.26386806596702"/>
         </tableViewCell>
     </objects>

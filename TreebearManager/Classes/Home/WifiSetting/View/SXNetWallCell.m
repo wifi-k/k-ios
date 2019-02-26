@@ -8,6 +8,10 @@
 
 #import "SXNetWallCell.h"
 
+@interface SXNetWallCell ()
+@property (weak, nonatomic) IBOutlet UIView *bottomLineView;
+@end
+
 @implementation SXNetWallCell
 
 static NSString *SXNetWallCellID = @"SXNetWallCellID";
@@ -31,6 +35,9 @@ static NSString *SXNetWallCellID = @"SXNetWallCellID";
     
     //设置背景色
     self.backgroundColor = SXColorWhite;
+    
+    self.bottomLineView.backgroundColor = SXColorDivideLine;
+    self.bottomLineView.height = 0.5;
 }
 
 @end
