@@ -87,6 +87,11 @@
 		09F2332D2224DBB80086AB35 /* SXNetWallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F2332B2224DBB80086AB35 /* SXNetWallCell.m */; };
 		09F2332E2224DBB80086AB35 /* SXNetWallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F2332C2224DBB80086AB35 /* SXNetWallCell.xib */; };
 		09F233312224DF6B0086AB35 /* SXWifiSettingAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233302224DF6B0086AB35 /* SXWifiSettingAlertView.m */; };
+		09F2333422251F380086AB35 /* SXForbiddenAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F2333322251F380086AB35 /* SXForbiddenAppController.m */; };
+		09F2333822251FF70086AB35 /* SXForbiddenAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F2333622251FF70086AB35 /* SXForbiddenAppCell.m */; };
+		09F2333922251FF70086AB35 /* SXForbiddenAppCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F2333722251FF70086AB35 /* SXForbiddenAppCell.xib */; };
+		09F2333C2225269F0086AB35 /* SXForbiddenAppFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F2333B2225269F0086AB35 /* SXForbiddenAppFooterView.m */; };
+		09F2333E222526AD0086AB35 /* SXForbiddenAppFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F2333D222526AD0086AB35 /* SXForbiddenAppFooterView.xib */; };
 		09FB472C22239D7B00809273 /* SXMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB472B22239D7B00809273 /* SXMessageController.m */; };
 		09FB473022239E3500809273 /* SXHomeMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB472E22239E3500809273 /* SXHomeMessageCell.m */; };
 		09FB473122239E3500809273 /* SXHomeMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FB472F22239E3500809273 /* SXHomeMessageCell.xib */; };
@@ -318,6 +323,14 @@
 		09F2332C2224DBB80086AB35 /* SXNetWallCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXNetWallCell.xib; sourceTree = "<group>"; };
 		09F2332F2224DF6B0086AB35 /* SXWifiSettingAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXWifiSettingAlertView.h; sourceTree = "<group>"; };
 		09F233302224DF6B0086AB35 /* SXWifiSettingAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXWifiSettingAlertView.m; sourceTree = "<group>"; };
+		09F2333222251F380086AB35 /* SXForbiddenAppController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForbiddenAppController.h; sourceTree = "<group>"; };
+		09F2333322251F380086AB35 /* SXForbiddenAppController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForbiddenAppController.m; sourceTree = "<group>"; };
+		09F2333522251FF70086AB35 /* SXForbiddenAppCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForbiddenAppCell.h; sourceTree = "<group>"; };
+		09F2333622251FF70086AB35 /* SXForbiddenAppCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForbiddenAppCell.m; sourceTree = "<group>"; };
+		09F2333722251FF70086AB35 /* SXForbiddenAppCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXForbiddenAppCell.xib; sourceTree = "<group>"; };
+		09F2333A2225269F0086AB35 /* SXForbiddenAppFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForbiddenAppFooterView.h; sourceTree = "<group>"; };
+		09F2333B2225269F0086AB35 /* SXForbiddenAppFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForbiddenAppFooterView.m; sourceTree = "<group>"; };
+		09F2333D222526AD0086AB35 /* SXForbiddenAppFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXForbiddenAppFooterView.xib; sourceTree = "<group>"; };
 		09FB472A22239D7B00809273 /* SXMessageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMessageController.h; sourceTree = "<group>"; };
 		09FB472B22239D7B00809273 /* SXMessageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMessageController.m; sourceTree = "<group>"; };
 		09FB472D22239E3500809273 /* SXHomeMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMessageCell.h; sourceTree = "<group>"; };
@@ -855,6 +868,8 @@
 			children = (
 				09FB47542223EA1500809273 /* SXParentControlController.h */,
 				09FB47552223EA1500809273 /* SXParentControlController.m */,
+				09F2333222251F380086AB35 /* SXForbiddenAppController.h */,
+				09F2333322251F380086AB35 /* SXForbiddenAppController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -865,6 +880,12 @@
 				09FB47572223EA2E00809273 /* SXParentControlHeaderView.h */,
 				09FB47582223EA2E00809273 /* SXParentControlHeaderView.m */,
 				09FB475A2223EA7000809273 /* SXParentControlHeaderView.xib */,
+				09F2333522251FF70086AB35 /* SXForbiddenAppCell.h */,
+				09F2333622251FF70086AB35 /* SXForbiddenAppCell.m */,
+				09F2333722251FF70086AB35 /* SXForbiddenAppCell.xib */,
+				09F2333A2225269F0086AB35 /* SXForbiddenAppFooterView.h */,
+				09F2333B2225269F0086AB35 /* SXForbiddenAppFooterView.m */,
+				09F2333D222526AD0086AB35 /* SXForbiddenAppFooterView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1640,11 +1661,13 @@
 				B348F99121F7143A0000F194 /* Assets.xcassets in Resources */,
 				092D6D3922041C5200538AC8 /* SXHomeHeaderView.xib in Resources */,
 				092D6D222202E71A00538AC8 /* SXForgetConfirmHeaderView.xib in Resources */,
+				09F2333E222526AD0086AB35 /* SXForbiddenAppFooterView.xib in Resources */,
 				09F23323222413900086AB35 /* SXWifiSettingCell.xib in Resources */,
 				09FB475B2223EA7000809273 /* SXParentControlHeaderView.xib in Resources */,
 				B3AF2FD521F9C8A3001E4E67 /* MBProgressHUD.bundle in Resources */,
 				098BA305221A57A700F58639 /* SXMineHeaderView.xib in Resources */,
 				098BA300221A559200F58639 /* SXMineListCell.xib in Resources */,
+				09F2333922251FF70086AB35 /* SXForbiddenAppCell.xib in Resources */,
 				092D6D1A2202E51C00538AC8 /* SXForgetHeaderView.xib in Resources */,
 				092D6D312203F6EA00538AC8 /* SXHomeMainHeaderView.xib in Resources */,
 				098BA30A221AB1C200F58639 /* SXCodeLoginHeaderView.xib in Resources */,
@@ -1747,6 +1770,7 @@
 				B3AF2FF021FAFF34001E4E67 /* SXForgetController.m in Sources */,
 				09FB47342223BD8000809273 /* SXHomeMessageModel.m in Sources */,
 				B3AF302121FE90DA001E4E67 /* SXBaseTableViewGroupController.m in Sources */,
+				09F2333C2225269F0086AB35 /* SXForbiddenAppFooterView.m in Sources */,
 				095540D222200EB6005A5485 /* SXHomeMainMemberButton.m in Sources */,
 				B348F98921F713A80000F194 /* AppDelegate.m in Sources */,
 				09FB472C22239D7B00809273 /* SXMessageController.m in Sources */,
@@ -1789,6 +1813,7 @@
 				B3AF303321FE92CC001E4E67 /* SXBaseCustomTableViewGroupController.m in Sources */,
 				098BA30D221AD98400F58639 /* SXLoginCertifyCodeButton.m in Sources */,
 				091186EF22151D5F00938D9F /* SGSocketManager.m in Sources */,
+				09F2333822251FF70086AB35 /* SXForbiddenAppCell.m in Sources */,
 				092D6CFF220073A600538AC8 /* SXUserDefaultsTool.m in Sources */,
 				B3AF302721FE914E001E4E67 /* SXBaseTableGroupRefreshController.m in Sources */,
 				098BA2F72216ADDF00F58639 /* SXPhotoListCell.m in Sources */,
@@ -1801,6 +1826,7 @@
 				09F23322222413900086AB35 /* SXWifiSettingCell.m in Sources */,
 				098BA2F0221660BD00F58639 /* SXFamilyCodeFailureAlertView.m in Sources */,
 				092D6CF5220062C700538AC8 /* MyBase64.m in Sources */,
+				09F2333422251F380086AB35 /* SXForbiddenAppController.m in Sources */,
 				091186EE22151D5F00938D9F /* SGSocketConfigM.m in Sources */,
 				092D6D022200745500538AC8 /* SXUserModel.m in Sources */,
 				095540B8221E4DC6005A5485 /* SXRegistSetPwdHeaderView.m in Sources */,

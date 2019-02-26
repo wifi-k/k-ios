@@ -7,6 +7,7 @@
 //
 
 #import "SXParentControlController.h"
+#import "SXForbiddenAppController.h"
 #import "SXParentControlHeaderView.h"
 
 @interface SXParentControlController ()
@@ -28,7 +29,11 @@
     
     self.navigationItem.title = @"家长控制";
     
+    WS(weakSelf);
     SXParentControlHeaderView *headerView = [SXParentControlHeaderView headerView];
+    headerView.clickForbiddenAppBlock = ^{
+        [weakSelf jumpToForbiddenAppVC];
+    };
     [self.view addSubview:headerView];
     self.headerView = headerView;
 }
@@ -37,6 +42,11 @@
     [super viewDidLayoutSubviews];
     
     self.headerView.frame = self.view.bounds;
+}
+
+- (void)jumpToForbiddenAppVC{
+    SXForbiddenAppController *forbiddenVC = [[SXForbiddenAppController alloc] init];
+    [self.navigationController pushViewController:forbiddenVC animated:YES];
 }
 
 @end

@@ -8,6 +8,10 @@
 
 #import "SXParentControlHeaderView.h"
 
+@interface SXParentControlHeaderView ()
+
+@end
+
 @implementation SXParentControlHeaderView
 
 + (instancetype)headerView{
@@ -29,4 +33,18 @@
     self.backgroundColor = SXColorWhite;
 }
 
+#pragma mark -点击事件-
+- (IBAction)clickForbiddenBtn:(UIButton *)sender {
+    if (self.clickForbiddenAppBlock) {
+        self.clickForbiddenAppBlock();
+    }
+}
+
+- (IBAction)clickTimeControlBtn:(UIButton *)sender {
+    if (self.clickTimeControlBlock) {
+        self.clickTimeControlBlock();
+    }
+}
+
 @end
+
