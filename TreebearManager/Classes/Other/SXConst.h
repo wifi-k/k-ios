@@ -19,9 +19,10 @@ extern NSString *const SXHomeMessageName;
 extern NSString *const user_vcode_getv2;
 extern NSString *const user_signup_vcode;
 extern NSString *const user_signin_vcode;
+extern NSString *const user_signup_passwd;
 extern NSString *const user_passwd_forget;
-extern NSString *const user_passwd_reset;
 
+extern NSString *const user_passwd_reset;
 extern NSString *const user_signin_passwd;
 
 @end

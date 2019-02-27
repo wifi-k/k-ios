@@ -9,9 +9,8 @@
 #import "SXHomeMainSectionHeaderView.h"
 
 @interface SXHomeMainSectionHeaderView ()
-
 @property (weak, nonatomic) UILabel *titleL;
-    
+@property (weak, nonatomic) UILabel *contentL;
 @end
 
 @implementation SXHomeMainSectionHeaderView
@@ -44,6 +43,15 @@
     titleL.textColor = SXColor333333;
     [self.contentView addSubview:titleL];
     self.titleL = titleL;
+    
+    UILabel *contentL = [[UILabel alloc] init];
+    contentL.font = SXFont14;
+    contentL.textColor = SXColor999999;
+    [self.contentView addSubview:contentL];
+    self.contentL = contentL;
+    
+    self.titleL.text = @"连网设备";
+    self.contentL.text = @"前在线2台/上行网速1000k/下行";
 }
 
 - (void)layoutSubviews{
@@ -51,14 +59,13 @@
     
     [self.titleL mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.contentView).mas_offset(15);
-        make.centerY.mas_equalTo(self.contentView);
+        make.centerY.mas_equalTo(self.contentView).mas_offset(-15);
     }];
-}
     
-- (void)setTitle:(NSString *)title{
-    _title = title;
-    
-    self.titleL.text = title;
+    [self.contentL mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.contentView).mas_offset(15);
+        make.centerY.mas_equalTo(self.contentView).mas_offset(15);
+    }];
 }
     
 @end

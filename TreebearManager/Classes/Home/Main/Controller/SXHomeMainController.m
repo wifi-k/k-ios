@@ -15,6 +15,9 @@
 #import "SXWifiSettingController.h"
 #import "SXHomeMainHeaderView.h"
 #import "SXHomeMainSectionHeaderView.h"
+#import "SXHomeMainSectionFooterView.h"
+#import "SXHomeMainSectionHeaderView2.h"
+#import "SXHomeMainSectionFooterView2.h"
 #import "SXHomeNetworkingDeviceCell.h"
 #import "SXRootTool.h"
 
@@ -69,6 +72,7 @@
     
     //3.注册头部视图
     [self.tableView registerClass:SXHomeMainSectionHeaderView.class forHeaderFooterViewReuseIdentifier:SXHomeMainSectionHeaderViewID];
+    [self.tableView registerClass:SXHomeMainSectionHeaderView2.class forHeaderFooterViewReuseIdentifier:SXHomeMainSectionHeaderView2ID];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -127,10 +131,16 @@
     return 3;
 }
     
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    SXHomeNetworkingDeviceCell *cell = [SXHomeNetworkingDeviceCell cellWithTableView:tableView];
-    return cell;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *tempCell = nil;
+    if (indexPath.section == 0) {
+        SXHomeNetworkingDeviceCell *cell = [SXHomeNetworkingDeviceCell cellWithTableView:tableView];
+        tempCell = cell;
+    } else{
+        SXHomeNetworkingDeviceCell *cell = [SXHomeNetworkingDeviceCell cellWithTableView:tableView];
+        tempCell = cell;
+    }
+    return tempCell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -138,27 +148,96 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 50.0f;
+    if (section == 0) {
+        return 80.0;
+    } else{
+        return 50.0f;
+    }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    SXHomeMainSectionHeaderView *headerView = [SXHomeMainSectionHeaderView headerViewWithTableView:tableView];
-    headerView.title = [NSString stringWithFormat:@"标题-%ld",section];
-    return headerView;
+    UIView *sectionHeaderV = nil;
+    if (section == 0) {
+        SXHomeMainSectionHeaderView *headerView = [SXHomeMainSectionHeaderView headerViewWithTableView:tableView];
+        sectionHeaderV = headerView;
+    } else {
+        SXHomeMainSectionHeaderView2 *headerView = [SXHomeMainSectionHeaderView2 headerViewWithTableView:tableView];
+        sectionHeaderV = headerView;
+    }
+    return sectionHeaderV;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    if (section == 1) {
+        return 200.0f;
+    } else if (section == 0){
+        return 80.0f;
+    }
     return 0.01;
 }
     
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    if (section == 1) {
+        SXHomeMainSectionFooterView2 *footerView = [SXHomeMainSectionFooterView2 footerView];
+        return footerView;
+    } else {
+        SXHomeMainSectionFooterView *footerView = [SXHomeMainSectionFooterView footerView];
+        footerView.clickMoreBtnBlock = ^{
+            DLog(@"点击更多");
+            [SXRootTool changeToHomeVC];
+        };
+        return footerView;
+    }
     return [[UIView alloc] initWithFrame:CGRectZero];
 }
     
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    [SXRootTool changeToHomeVC];
+    
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    /*
+    if (indexPath.section == 0) {//第一分组
+        //圆率
+        CGFloat cornerRadius = 10.0;
+        //大小
+        CGRect bounds = cell.bounds;
+        bounds.origin.x += 15;
+        bounds.size.width -= 30;
+        //行数
+        NSInteger numberOfRows = [tableView numberOfRowsInSection:indexPath.section];
+        //绘制曲线
+        UIBezierPath *bezierPath = nil;
+        
+        if (indexPath.row == 0 && numberOfRows == 1) {
+            //一个为一组时,四个角都为圆角
+            bezierPath = [UIBezierPath bezierPathWithRoundedRect:bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
+        } else if (indexPath.row == 0) {
+            //为组的第一行时,左上、右上角为圆角
+            bezierPath = [UIBezierPath bezierPathWithRoundedRect:bounds byRoundingCorners:(UIRectCornerTopLeft|UIRectCornerTopRight) cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
+        } else if (indexPath.row == numberOfRows - 1) {
+            //为组的最后一行,左下、右下角为圆角
+            bezierPath = [UIBezierPath bezierPathWithRoundedRect:bounds byRoundingCorners:(UIRectCornerBottomLeft|UIRectCornerBottomRight) cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
+        } else {
+            //中间的都为矩形
+            bezierPath = [UIBezierPath bezierPathWithRect:bounds];
+        }
+        //cell的背景色透明
+        cell.backgroundColor = [UIColor clearColor];
+        //新建一个图层
+        CAShapeLayer *layer = [CAShapeLayer layer];
+        //图层边框路径
+        layer.path = bezierPath.CGPath;
+        //图层填充色,也就是cell的底色
+        layer.fillColor = SXColorWhite.CGColor;
+        //图层边框线条颜色
+        //layer.strokeColor = SXColorRandom.CGColor;
+        //将图层添加到cell的图层中,并插到最底层
+        [cell.contentView.layer insertSublayer:layer atIndex:0];
+    }*/
 }
     
 @end

@@ -9,8 +9,12 @@
 #import "SXHomeNetworkingDeviceCell.h"
 
 @interface SXHomeNetworkingDeviceCell ()
-    
+@property (weak, nonatomic) IBOutlet UIView *contentBgView;
+
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageV;
+@property (weak, nonatomic) IBOutlet UILabel *mobileNameL;
+@property (weak, nonatomic) IBOutlet UILabel *timeL;
+@property (weak, nonatomic) IBOutlet UIButton *statusBtn;
 @end
 
 @implementation SXHomeNetworkingDeviceCell
@@ -39,6 +43,17 @@ static NSString *ID = @"SXHomeNetworkingDeviceCellID";
     
     self.iconImageV.backgroundColor = SXColorRandom;
     [self.iconImageV roundViewWithRadius:30.0f];
+    
+    self.contentBgView.backgroundColor = SXColorClear;
+    
+    [self.statusBtn setTitleColor:SXColorBlue2 forState:UIControlStateNormal];
+    [self.statusBtn setBackgroundColor:SXColorWhite];
+    self.statusBtn.backgroundColor = [UIColor whiteColor];
+    self.statusBtn.layer.cornerRadius = 15;
+    self.statusBtn.layer.shadowColor = UIColor.lightGrayColor.CGColor;
+    self.statusBtn.layer.shadowOffset = CGSizeMake(0, 2);
+    self.statusBtn.layer.shadowOpacity = 0.5;
+    self.statusBtn.layer.shadowRadius = 2;
 }
     
 @end

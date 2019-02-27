@@ -15,8 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SXHomeMainSectionHeaderView : UITableViewHeaderFooterView
     
 + (instancetype)headerViewWithTableView:(UITableView *)tableView;
-
-@property (nonatomic, copy) NSString *title;//标题
     
 @end
 
