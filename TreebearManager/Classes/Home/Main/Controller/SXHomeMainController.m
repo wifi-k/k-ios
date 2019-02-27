@@ -67,7 +67,7 @@
         [weakSelf jumpToWifiSettingVC:tag];
     };
     headerView.clickBackupBtnBlock = ^{
-        [weakSelf requestAlbumAuthorization];
+        [weakSelf checkAlbumAuthorization];
     };
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
@@ -78,7 +78,7 @@
 }
 
 #pragma mark -相册授权-
-- (void)requestAlbumAuthorization{
+- (void)checkAlbumAuthorization{
     WS(weakSelf);
     [SXAlbumAuthorizationTool checkAlbumAuthorization:^(NSInteger status) {
         if (status != 3) {//没有授权，去请求授权
@@ -88,7 +88,7 @@
                 DLog(@"读取数据");
             } failure:^{
                 DLog(@"请求失败");
-                [weakSelf alertView];
+                [weakSelf alertSettingView];
             }];
         } else{
             //直接读取
@@ -97,8 +97,9 @@
     }];
 }
 
-- (void)alertView{
-    [SXAlertControllerTool alertWithTitle:@"提示" message:@"您之前拒绝了访问相册，请到手机隐私设置" confirm:^(UIAlertAction * _Nonnull action) {
+#pragma mark -系统弹窗提示-
+- (void)alertSettingView{
+    [SXAlertControllerTool alertWithTitle:@"提示" message:@"您的相册访问权限未开启，请到手机隐私设置" confirm:^(UIAlertAction * _Nonnull action) {
         NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
         if ([[UIApplication sharedApplication] canOpenURL:url]) {
             [[UIApplication sharedApplication] openURL:url];

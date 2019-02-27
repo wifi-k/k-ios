@@ -9,6 +9,8 @@
 #import "SXPhotoController.h"
 #import "SXPhotoSectionHeaderView.h"
 #import "SXPhotoListCell.h"
+#import "SXAlbumAuthorizationTool.h"
+#import "SXAlertControllerTool.h"
 
 @interface SXPhotoController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic, weak) UICollectionView *collectionView;
@@ -26,6 +28,8 @@
     DLog(@"-SXPhotoController-");
     
     [self setUpUI];
+    
+    [self checkAlbumAuthorization];
 }
 
 - (void)setUpUI{
@@ -71,6 +75,38 @@
 //    }];
     
     self.collectionView.frame = self.view.bounds;
+}
+
+#pragma mark -相册授权-
+- (void)checkAlbumAuthorization{
+    WS(weakSelf);
+    [SXAlbumAuthorizationTool checkAlbumAuthorization:^(NSInteger status) {
+        if (status != 3) {//没有授权，去请求授权
+            [SXAlbumAuthorizationTool requestAlbumAuthorizationSuccess:^{
+                DLog(@"请求成功");
+                //直接读取
+                DLog(@"读取数据");
+            } failure:^{
+                DLog(@"请求失败");
+                [weakSelf alertSettingView];
+            }];
+        } else{
+            //直接读取
+            DLog(@"读取数据");
+        }
+    }];
+}
+
+#pragma mark -系统弹窗提示-
+- (void)alertSettingView{
+    [SXAlertControllerTool alertWithTitle:@"提示" message:@"您的相册访问权限未开启，请到手机隐私设置" confirm:^(UIAlertAction * _Nonnull action) {
+        NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        if ([[UIApplication sharedApplication] canOpenURL:url]) {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    } cancel:^(UIAlertAction * _Nonnull action) {
+        DLog(@"action.title:%@",action.title);
+    }];
 }
 
 #pragma mark -UICollectionViewDelegate/UICollectionViewDataSource-
