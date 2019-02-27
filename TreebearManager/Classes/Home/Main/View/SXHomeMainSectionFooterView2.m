@@ -12,7 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *topBgView;
 
-@property (weak, nonatomic) IBOutlet UIView *reportBtn;
+@property (weak, nonatomic) IBOutlet UIButton *reportBtn;
 @property (weak, nonatomic) IBOutlet UIView *bottomBgView;
 @end
 

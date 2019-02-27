@@ -22,7 +22,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cN2-XX-bLV">
                         <rect key="frame" x="15" y="0.0" width="290" height="100.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QgE-dA-f1a">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_user_icon" translatesAutoresizingMaskIntoConstraints="NO" id="QgE-dA-f1a">
                                 <rect key="frame" x="10" y="20.5" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="JTq-yM-dMG"/>
@@ -85,4 +85,7 @@
             <point key="canvasLocation" x="40" y="72.413793103448285"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="img_user_icon" width="50" height="50"/>
+    </resources>
 </document>

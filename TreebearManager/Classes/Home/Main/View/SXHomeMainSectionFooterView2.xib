@@ -132,7 +132,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="bottomBgView" destination="Cuc-3X-oSK" id="2WZ-pQ-Av6"/>
-                <outlet property="reportBtn" destination="Cuc-3X-oSK" id="1sJ-Hw-1PL"/>
+                <outlet property="reportBtn" destination="McW-Ce-Fp2" id="x8U-YJ-gXN"/>
                 <outlet property="topBgView" destination="ud0-e9-GNE" id="DMz-0L-0mD"/>
             </connections>
             <point key="canvasLocation" x="104" y="-49.475262368815599"/>
