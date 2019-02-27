@@ -20,6 +20,8 @@
 #import "SXHomeMainSectionFooterView2.h"
 #import "SXHomeNetworkingDeviceCell.h"
 #import "SXRootTool.h"
+#import "SXAlbumAuthorizationTool.h"
+#import "SXAlertControllerTool.h"
 
 @interface SXHomeMainController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak) SXHomeMainHeaderView *headerView;//头部视图
@@ -65,7 +67,7 @@
         [weakSelf jumpToWifiSettingVC:tag];
     };
     headerView.clickBackupBtnBlock = ^{
-        DLog(@"备份...");
+        [weakSelf requestAlbumAuthorization];
     };
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
@@ -73,6 +75,37 @@
     //3.注册头部视图
     [self.tableView registerClass:SXHomeMainSectionHeaderView.class forHeaderFooterViewReuseIdentifier:SXHomeMainSectionHeaderViewID];
     [self.tableView registerClass:SXHomeMainSectionHeaderView2.class forHeaderFooterViewReuseIdentifier:SXHomeMainSectionHeaderView2ID];
+}
+
+#pragma mark -相册授权-
+- (void)requestAlbumAuthorization{
+    WS(weakSelf);
+    [SXAlbumAuthorizationTool checkAlbumAuthorization:^(NSInteger status) {
+        if (status != 3) {//没有授权，去请求授权
+            [SXAlbumAuthorizationTool requestAlbumAuthorizationSuccess:^{
+                DLog(@"请求成功");
+                //直接读取
+                DLog(@"读取数据");
+            } failure:^{
+                DLog(@"请求失败");
+                [weakSelf alertView];
+            }];
+        } else{
+            //直接读取
+            DLog(@"读取数据");
+        }
+    }];
+}
+
+- (void)alertView{
+    [SXAlertControllerTool alertWithTitle:@"提示" message:@"您之前拒绝了访问相册，请到手机隐私设置" confirm:^(UIAlertAction * _Nonnull action) {
+        NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        if ([[UIApplication sharedApplication] canOpenURL:url]) {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    } cancel:^(UIAlertAction * _Nonnull action) {
+        DLog(@"action.title:%@",action.title);
+    }];
 }
 
 - (void)viewDidLayoutSubviews{

@@ -82,7 +82,7 @@
                 <outlet property="statusBtn" destination="Yrq-Xj-Go7" id="fWV-kL-o5G"/>
                 <outlet property="timeL" destination="UHv-Jj-yaW" id="afo-gH-Ua2"/>
             </connections>
-            <point key="canvasLocation" x="40" y="72.413793103448285"/>
+            <point key="canvasLocation" x="-102" y="67"/>
         </tableViewCell>
     </objects>
     <resources>
