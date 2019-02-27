@@ -128,7 +128,10 @@
     
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    if (section == 0) {
+        return 3;
+    }
+    return 0;
 }
     
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -169,7 +172,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     if (section == 1) {
-        return 200.0f;
+        return 230.0f;
     } else if (section == 0){
         return 80.0f;
     }

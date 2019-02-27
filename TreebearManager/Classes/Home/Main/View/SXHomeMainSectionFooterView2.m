@@ -8,6 +8,14 @@
 
 #import "SXHomeMainSectionFooterView2.h"
 
+@interface SXHomeMainSectionFooterView2 ()
+
+@property (weak, nonatomic) IBOutlet UIView *topBgView;
+
+@property (weak, nonatomic) IBOutlet UIView *reportBtn;
+@property (weak, nonatomic) IBOutlet UIView *bottomBgView;
+@end
+
 @implementation SXHomeMainSectionFooterView2
 
 + (instancetype)footerView{
@@ -27,6 +35,12 @@
 - (void)setUpUI{
     
     self.backgroundColor = SXColorWhite;
+    
+    self.topBgView.backgroundColor = SXColorWhite;
+    
+    self.bottomBgView.backgroundColor = SXColorWhite;
+    
+    [self.reportBtn roundViewWithRadius:15.0f];
 }
 
 @end
