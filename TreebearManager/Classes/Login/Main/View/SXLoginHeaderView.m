@@ -65,6 +65,9 @@
     [self.codeLoginBtn setTitleColor:SXColor2F2F2F forState:UIControlStateNormal];
     //忘记密码按钮
     [self.forgetBtn setTitleColor:SXColor2F2F2F forState:UIControlStateNormal];
+    
+    //成为第一响应
+    [self.phoneTextField becomeFirstResponder];
 }
 
 #pragma mark -按钮点击事件-

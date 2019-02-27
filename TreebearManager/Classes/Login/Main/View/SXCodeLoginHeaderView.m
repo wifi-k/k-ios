@@ -58,6 +58,9 @@
     self.loginBtn.enabled = NO;
     
     self.codeBtn.enabled = NO;
+    
+    //成为第一响应
+    [self.phoneTextField becomeFirstResponder];
 }
 
 #pragma mark -按钮点击事件-

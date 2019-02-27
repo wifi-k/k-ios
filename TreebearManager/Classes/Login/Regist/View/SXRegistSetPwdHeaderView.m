@@ -57,6 +57,9 @@
     [self.confirmBtn roundViewWithRadius:6.0f];
     
     self.confirmBtn.enabled = NO;
+    
+    //成为第一响应
+    [self.pwdTextField becomeFirstResponder];
 }
 
 #pragma mark -按钮点击事件-
