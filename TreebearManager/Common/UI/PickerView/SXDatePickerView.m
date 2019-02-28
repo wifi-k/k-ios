@@ -79,6 +79,7 @@
     datePicker.backgroundColor = UIColorFromRGB(0xf5f5f5);
     datePicker.datePickerMode = UIDatePickerModeCountDownTimer;
     datePicker.locale = [NSLocale localeWithLocaleIdentifier:@"zh_CN"];
+    datePicker.timeZone = [NSTimeZone localTimeZone];
     [datePicker addTarget:self action:@selector(dateChange:) forControlEvents:UIControlEventValueChanged];
     [self.contentBgView addSubview:datePicker];
     self.datePicker = datePicker;
@@ -124,6 +125,7 @@
     NSDate *theDate = NSDate.date;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"HH时mm分";
+    dateFormatter.timeZone = [NSTimeZone localTimeZone];
     NSString *dateStr = [dateFormatter stringFromDate:theDate];
     self.dateStr = dateStr;
 }
