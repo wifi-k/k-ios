@@ -24,7 +24,7 @@ extern NSString *const user_passwd_forget;
 
 extern NSString *const user_passwd_reset;
 extern NSString *const user_signin_passwd;
-
+extern NSString *const user_info_get;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)cellWithCollectionView:(UICollectionView *)collectionView atIndexPath:(NSIndexPath *)indexPath;
 
+@property (nonatomic, strong) UIImage *image;
+
 @end
 
 NS_ASSUME_NONNULL_END

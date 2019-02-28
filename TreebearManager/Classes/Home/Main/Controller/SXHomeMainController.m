@@ -11,7 +11,7 @@
 #import "SXMessageController.h"
 #import "SXParentControlController.h"
 #import "SXHealtyControlController.h"
-#import "SXSwitchBoardController.h"
+#import "SXCheckReportController.h"
 #import "SXWifiSettingController.h"
 #import "SXHomeMainHeaderView.h"
 #import "SXHomeMainSectionHeaderView.h"
@@ -22,6 +22,7 @@
 #import "SXRootTool.h"
 #import "SXAlbumAuthorizationTool.h"
 #import "SXAlertControllerTool.h"
+#import <Photos/Photos.h>
 
 @interface SXHomeMainController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak) SXHomeMainHeaderView *headerView;//头部视图
@@ -141,7 +142,7 @@
         }
             break;
         case 2:{
-            SXSwitchBoardController *switchVC = [[SXSwitchBoardController alloc] init];
+            SXCheckReportController *switchVC = [[SXCheckReportController alloc] init];
             [self.navigationController pushViewController:switchVC animated:YES];
         }
             break;

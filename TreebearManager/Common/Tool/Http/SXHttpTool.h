@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 @class SXUploadParam;
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface SXHttpTool : NSObject
 
 /**
@@ -69,4 +67,3 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-NS_ASSUME_NONNULL_END

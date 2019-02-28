@@ -82,6 +82,9 @@
 		09D5F5F1222689E300EA681A /* SXHomeMainSectionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F5F0222689E300EA681A /* SXHomeMainSectionFooterView.xib */; };
 		09D5F5F62226B6AF00EA681A /* SXAlbumAuthorizationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5F52226B6AF00EA681A /* SXAlbumAuthorizationTool.m */; };
 		09D5F5F92226C22B00EA681A /* SXAlertControllerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5F82226C22B00EA681A /* SXAlertControllerTool.m */; };
+		09D5F5FE2227E3D000EA681A /* SXMineNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5FD2227E3D000EA681A /* SXMineNetTool.m */; };
+		09D5F6012227E3DF00EA681A /* SXPhotoNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F6002227E3DF00EA681A /* SXPhotoNetTool.m */; };
+		09D5F6042227E4DA00EA681A /* SXMineUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F6032227E4DA00EA681A /* SXMineUserInfoModel.m */; };
 		09F233092223EE4D0086AB35 /* SXXiaoKiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233082223EE4D0086AB35 /* SXXiaoKiController.m */; };
 		09F233182223F03C0086AB35 /* SXHomeXiaoKiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233162223F03C0086AB35 /* SXHomeXiaoKiCell.m */; };
 		09F233192223F03C0086AB35 /* SXHomeXiaoKiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F233172223F03C0086AB35 /* SXHomeXiaoKiCell.xib */; };
@@ -105,7 +108,7 @@
 		09FB473122239E3500809273 /* SXHomeMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FB472F22239E3500809273 /* SXHomeMessageCell.xib */; };
 		09FB47342223BD8000809273 /* SXHomeMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB47332223BD8000809273 /* SXHomeMessageModel.m */; };
 		09FB473A2223C31000809273 /* SXWifiSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB47392223C31000809273 /* SXWifiSettingController.m */; };
-		09FB47462223E52200809273 /* SXSwitchBoardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB47452223E52200809273 /* SXSwitchBoardController.m */; };
+		09FB47462223E52200809273 /* SXCheckReportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB47452223E52200809273 /* SXCheckReportController.m */; };
 		09FB47492223E56000809273 /* SXSwitchBoardHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB47482223E56000809273 /* SXSwitchBoardHeaderView.m */; };
 		09FB474B2223E56600809273 /* SXSwitchBoardHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FB474A2223E56600809273 /* SXSwitchBoardHeaderView.xib */; };
 		09FB474E2223E83600809273 /* SXHealtyControlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB474D2223E83600809273 /* SXHealtyControlController.m */; };
@@ -323,6 +326,12 @@
 		09D5F5F52226B6AF00EA681A /* SXAlbumAuthorizationTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXAlbumAuthorizationTool.m; sourceTree = "<group>"; };
 		09D5F5F72226C22B00EA681A /* SXAlertControllerTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXAlertControllerTool.h; sourceTree = "<group>"; };
 		09D5F5F82226C22B00EA681A /* SXAlertControllerTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXAlertControllerTool.m; sourceTree = "<group>"; };
+		09D5F5FC2227E3D000EA681A /* SXMineNetTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMineNetTool.h; sourceTree = "<group>"; };
+		09D5F5FD2227E3D000EA681A /* SXMineNetTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMineNetTool.m; sourceTree = "<group>"; };
+		09D5F5FF2227E3DF00EA681A /* SXPhotoNetTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPhotoNetTool.h; sourceTree = "<group>"; };
+		09D5F6002227E3DF00EA681A /* SXPhotoNetTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoNetTool.m; sourceTree = "<group>"; };
+		09D5F6022227E4DA00EA681A /* SXMineUserInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMineUserInfoModel.h; sourceTree = "<group>"; };
+		09D5F6032227E4DA00EA681A /* SXMineUserInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMineUserInfoModel.m; sourceTree = "<group>"; };
 		09F233072223EE4D0086AB35 /* SXXiaoKiController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXXiaoKiController.h; sourceTree = "<group>"; };
 		09F233082223EE4D0086AB35 /* SXXiaoKiController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXXiaoKiController.m; sourceTree = "<group>"; };
 		09F233152223F03C0086AB35 /* SXHomeXiaoKiCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeXiaoKiCell.h; sourceTree = "<group>"; };
@@ -362,8 +371,8 @@
 		09FB47332223BD8000809273 /* SXHomeMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMessageModel.m; sourceTree = "<group>"; };
 		09FB47382223C31000809273 /* SXWifiSettingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXWifiSettingController.h; sourceTree = "<group>"; };
 		09FB47392223C31000809273 /* SXWifiSettingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXWifiSettingController.m; sourceTree = "<group>"; };
-		09FB47442223E52200809273 /* SXSwitchBoardController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXSwitchBoardController.h; sourceTree = "<group>"; };
-		09FB47452223E52200809273 /* SXSwitchBoardController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXSwitchBoardController.m; sourceTree = "<group>"; };
+		09FB47442223E52200809273 /* SXCheckReportController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXCheckReportController.h; sourceTree = "<group>"; };
+		09FB47452223E52200809273 /* SXCheckReportController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXCheckReportController.m; sourceTree = "<group>"; };
 		09FB47472223E56000809273 /* SXSwitchBoardHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXSwitchBoardHeaderView.h; sourceTree = "<group>"; };
 		09FB47482223E56000809273 /* SXSwitchBoardHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXSwitchBoardHeaderView.m; sourceTree = "<group>"; };
 		09FB474A2223E56600809273 /* SXSwitchBoardHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXSwitchBoardHeaderView.xib; sourceTree = "<group>"; };
@@ -733,6 +742,24 @@
 			path = AlbumAuthorization;
 			sourceTree = "<group>";
 		};
+		09D5F5FA2227E3A600EA681A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				09D5F5FF2227E3DF00EA681A /* SXPhotoNetTool.h */,
+				09D5F6002227E3DF00EA681A /* SXPhotoNetTool.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		09D5F5FB2227E3C000EA681A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				09D5F5FC2227E3D000EA681A /* SXMineNetTool.h */,
+				09D5F5FD2227E3D000EA681A /* SXMineNetTool.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		09F233042223EE3B0086AB35 /* XiaoKi */ = {
 			isa = PBXGroup;
 			children = (
@@ -904,8 +931,8 @@
 		09FB473F2223E50400809273 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				09FB47442223E52200809273 /* SXSwitchBoardController.h */,
-				09FB47452223E52200809273 /* SXSwitchBoardController.m */,
+				09FB47442223E52200809273 /* SXCheckReportController.h */,
+				09FB47452223E52200809273 /* SXCheckReportController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1044,6 +1071,7 @@
 		B348F95621F6C4E10000F194 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				09D5F5FB2227E3C000EA681A /* Helper */,
 				B348F96821F6EACC0000F194 /* Main */,
 			);
 			path = Mine;
@@ -1052,6 +1080,7 @@
 		B348F95721F6C4E10000F194 /* Photo */ = {
 			isa = PBXGroup;
 			children = (
+				09D5F5FA2227E3A600EA681A /* Helper */,
 				B348F96421F6EAC20000F194 /* Main */,
 			);
 			path = Photo;
@@ -1239,6 +1268,8 @@
 		B348F96A21F6EACC0000F194 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				09D5F6022227E4DA00EA681A /* SXMineUserInfoModel.h */,
+				09D5F6032227E4DA00EA681A /* SXMineUserInfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1843,6 +1874,7 @@
 				B3AF2FF321FAFF45001E4E67 /* SXRegistController.m in Sources */,
 				098BA316221BA75900F58639 /* SXLoginParam.m in Sources */,
 				092D6CF7220062C700538AC8 /* NSString+Hash.m in Sources */,
+				09D5F5FE2227E3D000EA681A /* SXMineNetTool.m in Sources */,
 				098BA303221A579D00F58639 /* SXMineHeaderView.m in Sources */,
 				098BA31A221BAFD500F58639 /* SXLoginNetTool.m in Sources */,
 				B3AF2FF021FAFF34001E4E67 /* SXForgetController.m in Sources */,
@@ -1867,7 +1899,8 @@
 				0911873C2215854400938D9F /* SXCodeInputAlertView.m in Sources */,
 				092D6CDE22004FB400538AC8 /* SXRefreshHeader.m in Sources */,
 				095540AF221D076C005A5485 /* SXTitleImageButton.m in Sources */,
-				09FB47462223E52200809273 /* SXSwitchBoardController.m in Sources */,
+				09FB47462223E52200809273 /* SXCheckReportController.m in Sources */,
+				09D5F6042227E4DA00EA681A /* SXMineUserInfoModel.m in Sources */,
 				09F233092223EE4D0086AB35 /* SXXiaoKiController.m in Sources */,
 				092D6D052200748F00538AC8 /* SXUserArchiveTool.m in Sources */,
 				09FB47562223EA1500809273 /* SXParentControlController.m in Sources */,
@@ -1952,6 +1985,7 @@
 				095540C2221EC059005A5485 /* SXHomeFamilyCodeButton.m in Sources */,
 				B348F9B621F71E960000F194 /* SXNetRequestTool.m in Sources */,
 				B3AF2FED21FAFF24001E4E67 /* SXLoginController.m in Sources */,
+				09D5F6012227E3DF00EA681A /* SXPhotoNetTool.m in Sources */,
 				B348F97521F6EB070000F194 /* SXMineController.m in Sources */,
 				095540C6221F90BA005A5485 /* SXImaginaryLineView.m in Sources */,
 				B3AF302D21FE9249001E4E67 /* SXBaseCustomTableViewPlainController.m in Sources */,

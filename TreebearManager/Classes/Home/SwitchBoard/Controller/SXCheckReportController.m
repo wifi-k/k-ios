@@ -6,15 +6,15 @@
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXSwitchBoardController.h"
+#import "SXCheckReportController.h"
 #import "SXSwitchBoardHeaderView.h"
 
-@interface SXSwitchBoardController ()
+@interface SXCheckReportController ()
 ///头部视图
 @property (nonatomic, weak) SXSwitchBoardHeaderView *headerView;
 @end
 
-@implementation SXSwitchBoardController
+@implementation SXCheckReportController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,7 +26,7 @@
 - (void)setUpUI{
     self.view.backgroundColor = SXColorWhite;
     
-    self.navigationItem.title = @"开关面板灯";
+    self.navigationItem.title = @"查看周报";
     
     SXSwitchBoardHeaderView *headerView = [SXSwitchBoardHeaderView headerView];
     [self.view addSubview:headerView];

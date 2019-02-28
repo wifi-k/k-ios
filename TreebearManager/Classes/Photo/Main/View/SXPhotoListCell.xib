@@ -19,20 +19,22 @@
                 <rect key="frame" x="0.0" y="0.0" width="99" height="94"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2th-YD-0tK">
-                        <rect key="frame" x="10" y="10" width="79" height="74"/>
-                        <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OFk-IQ-yfF">
+                        <rect key="frame" x="0.0" y="0.0" width="99" height="94"/>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="2th-YD-0tK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="LXz-Be-Lx3"/>
-                <constraint firstItem="2th-YD-0tK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="bts-al-5mL"/>
-                <constraint firstAttribute="trailing" secondItem="2th-YD-0tK" secondAttribute="trailing" constant="10" id="dYM-7j-kup"/>
-                <constraint firstAttribute="bottom" secondItem="2th-YD-0tK" secondAttribute="bottom" constant="10" id="y1K-HC-Zv8"/>
+                <constraint firstAttribute="bottom" secondItem="OFk-IQ-yfF" secondAttribute="bottom" id="2I6-JH-c0l"/>
+                <constraint firstAttribute="trailing" secondItem="OFk-IQ-yfF" secondAttribute="trailing" id="6Wu-sL-S2z"/>
+                <constraint firstItem="OFk-IQ-yfF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Rfo-6M-e8p"/>
+                <constraint firstItem="OFk-IQ-yfF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Wd7-5s-HA5"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="99" height="94"/>
+            <connections>
+                <outlet property="photoImageView" destination="OFk-IQ-yfF" id="xPq-I3-HAL"/>
+            </connections>
             <point key="canvasLocation" x="172" y="167.31634182908547"/>
         </collectionViewCell>
     </objects>

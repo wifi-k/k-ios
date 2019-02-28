@@ -11,6 +11,7 @@
 #import "SXRootTool.h"
 #import "SXMineHeaderView.h"
 #import <TZImagePickerController/TZImagePickerController.h>
+#import "SXMineNetTool.h"
 
 @interface SXMineController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak) SXMineHeaderView *headerView;//头部视图
@@ -23,6 +24,9 @@
     [super viewDidLoad];
     
     [self setUpUI];
+    
+    //用户信息获取
+    [self getUserinfoData];
 }
 
 - (void)setUpUI{
@@ -58,6 +62,19 @@
     self.tableView.frame = self.view.bounds;
     
      self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 150);
+}
+
+#pragma mark -获取用户信息-
+- (void)getUserinfoData{
+    [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
+    [SXMineNetTool getUserInfoDataSuccess:^(SXMineUserInfoModel * _Nonnull model) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        DLog(@"model:%@",model);
+    } failure:^(NSError * _Nonnull error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
 
 - (void)jumpToImagePickerVC{

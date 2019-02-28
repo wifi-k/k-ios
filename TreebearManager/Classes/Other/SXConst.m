@@ -23,5 +23,7 @@ NSString *const user_passwd_forget = @"user/passwd/forget";
 
 NSString *const user_passwd_reset = @"user/passwd/reset";
 NSString *const user_signin_passwd = @"user/signin/passwd";
+NSString *const user_info_get = @"user/info/get";
+
 
 @end

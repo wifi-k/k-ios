@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "SXHttpTool.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface SXNetRequestTool : NSObject
 
 + (void)GET:(NSString *)path
@@ -37,4 +35,3 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-NS_ASSUME_NONNULL_END

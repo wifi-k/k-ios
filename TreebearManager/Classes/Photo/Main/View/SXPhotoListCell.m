@@ -9,7 +9,7 @@
 #import "SXPhotoListCell.h"
 
 @interface SXPhotoListCell ()
-
+@property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 @end
 
 @implementation SXPhotoListCell
@@ -27,6 +27,12 @@
 - (void)setUpUI{
     
     self.contentView.backgroundColor = SXColorBlue;
+}
+
+- (void)setImage:(UIImage *)image{
+    _image = image;
+    
+    self.photoImageView.image = image;
 }
 
 @end
