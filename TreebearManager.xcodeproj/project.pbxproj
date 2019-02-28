@@ -85,6 +85,7 @@
 		09D5F5FE2227E3D000EA681A /* SXMineNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5FD2227E3D000EA681A /* SXMineNetTool.m */; };
 		09D5F6012227E3DF00EA681A /* SXPhotoNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F6002227E3DF00EA681A /* SXPhotoNetTool.m */; };
 		09D5F6042227E4DA00EA681A /* SXMineUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F6032227E4DA00EA681A /* SXMineUserInfoModel.m */; };
+		09D5F6082227ECB700EA681A /* SXDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F6072227ECB700EA681A /* SXDatePickerView.m */; };
 		09F233092223EE4D0086AB35 /* SXXiaoKiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233082223EE4D0086AB35 /* SXXiaoKiController.m */; };
 		09F233182223F03C0086AB35 /* SXHomeXiaoKiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233162223F03C0086AB35 /* SXHomeXiaoKiCell.m */; };
 		09F233192223F03C0086AB35 /* SXHomeXiaoKiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F233172223F03C0086AB35 /* SXHomeXiaoKiCell.xib */; };
@@ -332,6 +333,8 @@
 		09D5F6002227E3DF00EA681A /* SXPhotoNetTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoNetTool.m; sourceTree = "<group>"; };
 		09D5F6022227E4DA00EA681A /* SXMineUserInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMineUserInfoModel.h; sourceTree = "<group>"; };
 		09D5F6032227E4DA00EA681A /* SXMineUserInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMineUserInfoModel.m; sourceTree = "<group>"; };
+		09D5F6062227ECB700EA681A /* SXDatePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXDatePickerView.h; sourceTree = "<group>"; };
+		09D5F6072227ECB700EA681A /* SXDatePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXDatePickerView.m; sourceTree = "<group>"; };
 		09F233072223EE4D0086AB35 /* SXXiaoKiController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXXiaoKiController.h; sourceTree = "<group>"; };
 		09F233082223EE4D0086AB35 /* SXXiaoKiController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXXiaoKiController.m; sourceTree = "<group>"; };
 		09F233152223F03C0086AB35 /* SXHomeXiaoKiCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeXiaoKiCell.h; sourceTree = "<group>"; };
@@ -760,6 +763,15 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		09D5F6052227EC9F00EA681A /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				09D5F6062227ECB700EA681A /* SXDatePickerView.h */,
+				09D5F6072227ECB700EA681A /* SXDatePickerView.m */,
+			);
+			path = PickerView;
+			sourceTree = "<group>";
+		};
 		09F233042223EE3B0086AB35 /* XiaoKi */ = {
 			isa = PBXGroup;
 			children = (
@@ -1102,6 +1114,7 @@
 		B348F95921F6C4E10000F194 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				09D5F6052227EC9F00EA681A /* PickerView */,
 				095540C3221F90A3005A5485 /* ImaginaryView */,
 				095540BC221EA483005A5485 /* ShadowView */,
 				095540A9221D070D005A5485 /* Button */,
@@ -1862,6 +1875,7 @@
 				B3AF2FEA21FAFF10001E4E67 /* SXLoginMainController.m in Sources */,
 				092D6CE92200625700538AC8 /* Foundation+Log.m in Sources */,
 				B3AF301521FB0A92001E4E67 /* SXBaseSectionHeaderCollectionView.m in Sources */,
+				09D5F6082227ECB700EA681A /* SXDatePickerView.m in Sources */,
 				091187362215689E00938D9F /* SXTitleAlertView.m in Sources */,
 				092D6D082202AC3200538AC8 /* SXHomeMainController.m in Sources */,
 				B348F9A821F71A680000F194 /* UIView+Frame.m in Sources */,

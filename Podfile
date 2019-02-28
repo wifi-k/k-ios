@@ -19,4 +19,5 @@ target 'TreebearManager' do #工程名称
     pod 'TZImagePickerController'
     pod 'CocoaAsyncSocket'
     pod 'KeyboardToolBar'
+    pod 'RKNotificationHub'
 end

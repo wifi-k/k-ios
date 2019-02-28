@@ -10,6 +10,7 @@
 #import "SXForbiddenAppFooterView.h"
 #import "SXForbiddenAppCell.h"
 #import "SXWifiSettingAlertView.h"
+#import "SXDatePickerView.h"
 
 @interface SXForbiddenAppController ()
 
@@ -79,6 +80,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    SXDatePickerView *pickerView = [SXDatePickerView pickerView];
+    [pickerView showPickerView];
 }
 
 @end
