@@ -7,6 +7,7 @@
 //
 
 #import "SXForbiddenAppUpdateController.h"
+#import "SXDeviceControlController.h"
 #import "SXForbiddenUpdateHeaderView.h"
 
 @interface SXForbiddenAppUpdateController ()
@@ -27,17 +28,17 @@
 
 #pragma mark -初始化UI-
 - (void)setUpUI{
-    self.view.backgroundColor = SXColorWhite;
+    self.view.backgroundColor = SXColorBgViewGray;
     
     self.navigationItem.title = @"新增";
     
     WS(weakSelf);
     SXForbiddenUpdateHeaderView *headerView = [SXForbiddenUpdateHeaderView headerView];
     headerView.clickTimeControlBlock = ^{
-        DLog(@"商检clickTimeControlBlock");
+        [weakSelf jumpTofdfdf];
     };
     headerView.clickDeviceControlBlock = ^{
-        DLog(@"商检clickDeviceControlBlock");
+        [weakSelf jumpTofdfdf];
     };
     [self.view addSubview:headerView];
     self.headerView = headerView;
@@ -47,6 +48,11 @@
     [super viewDidLayoutSubviews];
     
     self.headerView.frame = self.view.bounds;
+}
+
+- (void)jumpTofdfdf{
+    SXDeviceControlController *fdf = [[SXDeviceControlController alloc] init];
+    [self.navigationController pushViewController:fdf animated:YES];
 }
 
 @end

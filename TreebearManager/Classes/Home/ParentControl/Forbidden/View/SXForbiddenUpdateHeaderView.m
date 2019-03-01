@@ -9,6 +9,8 @@
 #import "SXForbiddenUpdateHeaderView.h"
 
 @interface SXForbiddenUpdateHeaderView ()
+
+@property (weak, nonatomic) IBOutlet UIButton *updateNameBtn;
 @property (weak, nonatomic) IBOutlet UIView *firstBgView;
 @property (weak, nonatomic) IBOutlet UIView *secondBgView;
 @property (weak, nonatomic) IBOutlet UIView *thirdBgView;
@@ -32,7 +34,7 @@
 
 - (void)setUpUI{
     
-    self.backgroundColor = SXColorWhite;
+    self.backgroundColor = SXColorBgViewGray;
     
     self.firstBgView.backgroundColor = SXColorWhite;
     self.secondBgView.backgroundColor = SXColorWhite;
@@ -58,6 +60,9 @@
     self.thirdBgView.layer.shadowOffset = CGSizeMake(3, 3);
     self.thirdBgView.layer.shadowOpacity = 0.5;
     self.thirdBgView.layer.shadowRadius = 3;
+    
+    [self.updateNameBtn setTitleColor:SXColorBlue forState:UIControlStateNormal];
+    [self.updateNameBtn roundViewWithRadius:15.0f borderColor:SXColorBlue borderWidth:1.0f];
     
     //添加事件
     UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickTimeControl:)];

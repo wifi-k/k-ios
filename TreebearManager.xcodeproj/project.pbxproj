@@ -98,6 +98,7 @@
 		09D5F63622292C1500EA681A /* SXForbiddenAppUpdateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F63522292C1500EA681A /* SXForbiddenAppUpdateController.m */; };
 		09D5F63922292F2C00EA681A /* SXForbiddenUpdateHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F63822292F2C00EA681A /* SXForbiddenUpdateHeaderView.m */; };
 		09D5F63B22292F3900EA681A /* SXForbiddenUpdateHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F63A22292F3900EA681A /* SXForbiddenUpdateHeaderView.xib */; };
+		09D5F63E22293D5D00EA681A /* SXDeviceControlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F63D22293D5D00EA681A /* SXDeviceControlController.m */; };
 		09F233092223EE4D0086AB35 /* SXXiaoKiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233082223EE4D0086AB35 /* SXXiaoKiController.m */; };
 		09F233182223F03C0086AB35 /* SXHomeXiaoKiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233162223F03C0086AB35 /* SXHomeXiaoKiCell.m */; };
 		09F233192223F03C0086AB35 /* SXHomeXiaoKiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F233172223F03C0086AB35 /* SXHomeXiaoKiCell.xib */; };
@@ -359,6 +360,8 @@
 		09D5F63722292F2C00EA681A /* SXForbiddenUpdateHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForbiddenUpdateHeaderView.h; sourceTree = "<group>"; };
 		09D5F63822292F2C00EA681A /* SXForbiddenUpdateHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForbiddenUpdateHeaderView.m; sourceTree = "<group>"; };
 		09D5F63A22292F3900EA681A /* SXForbiddenUpdateHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXForbiddenUpdateHeaderView.xib; sourceTree = "<group>"; };
+		09D5F63C22293D5D00EA681A /* SXDeviceControlController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXDeviceControlController.h; sourceTree = "<group>"; };
+		09D5F63D22293D5D00EA681A /* SXDeviceControlController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXDeviceControlController.m; sourceTree = "<group>"; };
 		09F233072223EE4D0086AB35 /* SXXiaoKiController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXXiaoKiController.h; sourceTree = "<group>"; };
 		09F233082223EE4D0086AB35 /* SXXiaoKiController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXXiaoKiController.m; sourceTree = "<group>"; };
 		09F233152223F03C0086AB35 /* SXHomeXiaoKiCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeXiaoKiCell.h; sourceTree = "<group>"; };
@@ -852,6 +855,8 @@
 				09D5F61C222925C200EA681A /* SXForbiddenAppController.m */,
 				09D5F63422292C1500EA681A /* SXForbiddenAppUpdateController.h */,
 				09D5F63522292C1500EA681A /* SXForbiddenAppUpdateController.m */,
+				09D5F63C22293D5D00EA681A /* SXDeviceControlController.h */,
+				09D5F63D22293D5D00EA681A /* SXDeviceControlController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1985,6 +1990,7 @@
 				B348F9AA21F71A680000F194 /* UIBarButtonItem+Extention.m in Sources */,
 				09FB474E2223E83600809273 /* SXHealtyControlController.m in Sources */,
 				09F233182223F03C0086AB35 /* SXHomeXiaoKiCell.m in Sources */,
+				09D5F63E22293D5D00EA681A /* SXDeviceControlController.m in Sources */,
 				B3AF303C21FE96A4001E4E67 /* SXBaseCustomTableGroupRefreshController.m in Sources */,
 				0911873C2215854400938D9F /* SXCodeInputAlertView.m in Sources */,
 				09D5F62D2229297000EA681A /* SXForbiddenAppFooterView.m in Sources */,
