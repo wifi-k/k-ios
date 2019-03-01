@@ -8,6 +8,7 @@
 
 #import "SXParentControlController.h"
 #import "SXForbiddenAppController.h"
+#import "SXTimeControlController.h"
 #import "SXParentControlHeaderView.h"
 
 @interface SXParentControlController ()
@@ -34,6 +35,9 @@
     headerView.clickForbiddenAppBlock = ^{
         [weakSelf jumpToForbiddenAppVC];
     };
+    headerView.clickTimeControlBlock = ^{
+        [weakSelf jumpToTimeControlVC];
+    };
     [self.view addSubview:headerView];
     self.headerView = headerView;
 }
@@ -44,8 +48,14 @@
     self.headerView.frame = self.view.bounds;
 }
 
+#pragma mark -页面跳转-
 - (void)jumpToForbiddenAppVC{
     SXForbiddenAppController *forbiddenVC = [[SXForbiddenAppController alloc] init];
+    [self.navigationController pushViewController:forbiddenVC animated:YES];
+}
+
+- (void)jumpToTimeControlVC{
+    SXTimeControlController *forbiddenVC = [[SXTimeControlController alloc] init];
     [self.navigationController pushViewController:forbiddenVC animated:YES];
 }
 

@@ -86,6 +86,16 @@
 		09D5F6012227E3DF00EA681A /* SXPhotoNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F6002227E3DF00EA681A /* SXPhotoNetTool.m */; };
 		09D5F6042227E4DA00EA681A /* SXMineUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F6032227E4DA00EA681A /* SXMineUserInfoModel.m */; };
 		09D5F6082227ECB700EA681A /* SXDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F6072227ECB700EA681A /* SXDatePickerView.m */; };
+		09D5F61F222925C200EA681A /* SXParentControlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F60C222925C200EA681A /* SXParentControlController.m */; };
+		09D5F622222925C200EA681A /* SXParentControlHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F612222925C200EA681A /* SXParentControlHeaderView.xib */; };
+		09D5F625222925C200EA681A /* SXParentControlHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F616222925C200EA681A /* SXParentControlHeaderView.m */; };
+		09D5F626222925C200EA681A /* SXForbiddenAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F61C222925C200EA681A /* SXForbiddenAppController.m */; };
+		09D5F6292229266F00EA681A /* SXTimeControlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F6282229266F00EA681A /* SXTimeControlController.m */; };
+		09D5F62D2229297000EA681A /* SXForbiddenAppFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F62A2229297000EA681A /* SXForbiddenAppFooterView.m */; };
+		09D5F62E2229297000EA681A /* SXForbiddenAppFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F62B2229297000EA681A /* SXForbiddenAppFooterView.xib */; };
+		09D5F6322229298500EA681A /* SXForbiddenAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F6302229298500EA681A /* SXForbiddenAppCell.m */; };
+		09D5F6332229298500EA681A /* SXForbiddenAppCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F6312229298500EA681A /* SXForbiddenAppCell.xib */; };
+		09D5F63622292C1500EA681A /* SXForbiddenAppUpdateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F63522292C1500EA681A /* SXForbiddenAppUpdateController.m */; };
 		09F233092223EE4D0086AB35 /* SXXiaoKiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233082223EE4D0086AB35 /* SXXiaoKiController.m */; };
 		09F233182223F03C0086AB35 /* SXHomeXiaoKiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233162223F03C0086AB35 /* SXHomeXiaoKiCell.m */; };
 		09F233192223F03C0086AB35 /* SXHomeXiaoKiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F233172223F03C0086AB35 /* SXHomeXiaoKiCell.xib */; };
@@ -98,11 +108,6 @@
 		09F2332D2224DBB80086AB35 /* SXNetWallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F2332B2224DBB80086AB35 /* SXNetWallCell.m */; };
 		09F2332E2224DBB80086AB35 /* SXNetWallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F2332C2224DBB80086AB35 /* SXNetWallCell.xib */; };
 		09F233312224DF6B0086AB35 /* SXWifiSettingAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233302224DF6B0086AB35 /* SXWifiSettingAlertView.m */; };
-		09F2333422251F380086AB35 /* SXForbiddenAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F2333322251F380086AB35 /* SXForbiddenAppController.m */; };
-		09F2333822251FF70086AB35 /* SXForbiddenAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F2333622251FF70086AB35 /* SXForbiddenAppCell.m */; };
-		09F2333922251FF70086AB35 /* SXForbiddenAppCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F2333722251FF70086AB35 /* SXForbiddenAppCell.xib */; };
-		09F2333C2225269F0086AB35 /* SXForbiddenAppFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F2333B2225269F0086AB35 /* SXForbiddenAppFooterView.m */; };
-		09F2333E222526AD0086AB35 /* SXForbiddenAppFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F2333D222526AD0086AB35 /* SXForbiddenAppFooterView.xib */; };
 		09F23344222538FB0086AB35 /* SXFamilyMemberController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F23343222538FB0086AB35 /* SXFamilyMemberController.m */; };
 		09FB472C22239D7B00809273 /* SXMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB472B22239D7B00809273 /* SXMessageController.m */; };
 		09FB473022239E3500809273 /* SXHomeMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB472E22239E3500809273 /* SXHomeMessageCell.m */; };
@@ -115,9 +120,6 @@
 		09FB474E2223E83600809273 /* SXHealtyControlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB474D2223E83600809273 /* SXHealtyControlController.m */; };
 		09FB47512223E87300809273 /* SXHealtyControlHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB47502223E87300809273 /* SXHealtyControlHeaderView.m */; };
 		09FB47532223E8B600809273 /* SXHealtyControlHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FB47522223E8B600809273 /* SXHealtyControlHeaderView.xib */; };
-		09FB47562223EA1500809273 /* SXParentControlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB47552223EA1500809273 /* SXParentControlController.m */; };
-		09FB47592223EA2E00809273 /* SXParentControlHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB47582223EA2E00809273 /* SXParentControlHeaderView.m */; };
-		09FB475B2223EA7000809273 /* SXParentControlHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FB475A2223EA7000809273 /* SXParentControlHeaderView.xib */; };
 		327EE8E44A5A7DE11581C0F1 /* libPods-TreebearManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D77B77B9D44D60B532DDE9D2 /* libPods-TreebearManager.a */; };
 		B348F93C21F6C2C10000F194 /* TreebearManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F93B21F6C2C10000F194 /* TreebearManagerTests.m */; };
 		B348F94721F6C2C10000F194 /* TreebearManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B348F94621F6C2C10000F194 /* TreebearManagerUITests.m */; };
@@ -335,6 +337,23 @@
 		09D5F6032227E4DA00EA681A /* SXMineUserInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMineUserInfoModel.m; sourceTree = "<group>"; };
 		09D5F6062227ECB700EA681A /* SXDatePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXDatePickerView.h; sourceTree = "<group>"; };
 		09D5F6072227ECB700EA681A /* SXDatePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXDatePickerView.m; sourceTree = "<group>"; };
+		09D5F60B222925C200EA681A /* SXParentControlController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXParentControlController.h; sourceTree = "<group>"; };
+		09D5F60C222925C200EA681A /* SXParentControlController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXParentControlController.m; sourceTree = "<group>"; };
+		09D5F611222925C200EA681A /* SXParentControlHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXParentControlHeaderView.h; sourceTree = "<group>"; };
+		09D5F612222925C200EA681A /* SXParentControlHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SXParentControlHeaderView.xib; sourceTree = "<group>"; };
+		09D5F616222925C200EA681A /* SXParentControlHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXParentControlHeaderView.m; sourceTree = "<group>"; };
+		09D5F61C222925C200EA681A /* SXForbiddenAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXForbiddenAppController.m; sourceTree = "<group>"; };
+		09D5F61D222925C200EA681A /* SXForbiddenAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXForbiddenAppController.h; sourceTree = "<group>"; };
+		09D5F6272229266F00EA681A /* SXTimeControlController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTimeControlController.h; sourceTree = "<group>"; };
+		09D5F6282229266F00EA681A /* SXTimeControlController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXTimeControlController.m; sourceTree = "<group>"; };
+		09D5F62A2229297000EA681A /* SXForbiddenAppFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXForbiddenAppFooterView.m; sourceTree = "<group>"; };
+		09D5F62B2229297000EA681A /* SXForbiddenAppFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SXForbiddenAppFooterView.xib; sourceTree = "<group>"; };
+		09D5F62C2229297000EA681A /* SXForbiddenAppFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXForbiddenAppFooterView.h; sourceTree = "<group>"; };
+		09D5F62F2229298500EA681A /* SXForbiddenAppCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXForbiddenAppCell.h; sourceTree = "<group>"; };
+		09D5F6302229298500EA681A /* SXForbiddenAppCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXForbiddenAppCell.m; sourceTree = "<group>"; };
+		09D5F6312229298500EA681A /* SXForbiddenAppCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SXForbiddenAppCell.xib; sourceTree = "<group>"; };
+		09D5F63422292C1500EA681A /* SXForbiddenAppUpdateController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForbiddenAppUpdateController.h; sourceTree = "<group>"; };
+		09D5F63522292C1500EA681A /* SXForbiddenAppUpdateController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForbiddenAppUpdateController.m; sourceTree = "<group>"; };
 		09F233072223EE4D0086AB35 /* SXXiaoKiController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXXiaoKiController.h; sourceTree = "<group>"; };
 		09F233082223EE4D0086AB35 /* SXXiaoKiController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXXiaoKiController.m; sourceTree = "<group>"; };
 		09F233152223F03C0086AB35 /* SXHomeXiaoKiCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeXiaoKiCell.h; sourceTree = "<group>"; };
@@ -355,14 +374,6 @@
 		09F2332C2224DBB80086AB35 /* SXNetWallCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXNetWallCell.xib; sourceTree = "<group>"; };
 		09F2332F2224DF6B0086AB35 /* SXWifiSettingAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXWifiSettingAlertView.h; sourceTree = "<group>"; };
 		09F233302224DF6B0086AB35 /* SXWifiSettingAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXWifiSettingAlertView.m; sourceTree = "<group>"; };
-		09F2333222251F380086AB35 /* SXForbiddenAppController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForbiddenAppController.h; sourceTree = "<group>"; };
-		09F2333322251F380086AB35 /* SXForbiddenAppController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForbiddenAppController.m; sourceTree = "<group>"; };
-		09F2333522251FF70086AB35 /* SXForbiddenAppCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForbiddenAppCell.h; sourceTree = "<group>"; };
-		09F2333622251FF70086AB35 /* SXForbiddenAppCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForbiddenAppCell.m; sourceTree = "<group>"; };
-		09F2333722251FF70086AB35 /* SXForbiddenAppCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXForbiddenAppCell.xib; sourceTree = "<group>"; };
-		09F2333A2225269F0086AB35 /* SXForbiddenAppFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForbiddenAppFooterView.h; sourceTree = "<group>"; };
-		09F2333B2225269F0086AB35 /* SXForbiddenAppFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForbiddenAppFooterView.m; sourceTree = "<group>"; };
-		09F2333D222526AD0086AB35 /* SXForbiddenAppFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXForbiddenAppFooterView.xib; sourceTree = "<group>"; };
 		09F23342222538FB0086AB35 /* SXFamilyMemberController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXFamilyMemberController.h; sourceTree = "<group>"; };
 		09F23343222538FB0086AB35 /* SXFamilyMemberController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXFamilyMemberController.m; sourceTree = "<group>"; };
 		09FB472A22239D7B00809273 /* SXMessageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMessageController.h; sourceTree = "<group>"; };
@@ -384,11 +395,6 @@
 		09FB474F2223E87300809273 /* SXHealtyControlHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHealtyControlHeaderView.h; sourceTree = "<group>"; };
 		09FB47502223E87300809273 /* SXHealtyControlHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHealtyControlHeaderView.m; sourceTree = "<group>"; };
 		09FB47522223E8B600809273 /* SXHealtyControlHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXHealtyControlHeaderView.xib; sourceTree = "<group>"; };
-		09FB47542223EA1500809273 /* SXParentControlController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXParentControlController.h; sourceTree = "<group>"; };
-		09FB47552223EA1500809273 /* SXParentControlController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXParentControlController.m; sourceTree = "<group>"; };
-		09FB47572223EA2E00809273 /* SXParentControlHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXParentControlHeaderView.h; sourceTree = "<group>"; };
-		09FB47582223EA2E00809273 /* SXParentControlHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXParentControlHeaderView.m; sourceTree = "<group>"; };
-		09FB475A2223EA7000809273 /* SXParentControlHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXParentControlHeaderView.xib; sourceTree = "<group>"; };
 		0BF17A1BEC7F76DCAB17507A /* Pods-TreebearManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreebearManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TreebearManager/Pods-TreebearManager.debug.xcconfig"; sourceTree = "<group>"; };
 		B348F91F21F6C2BE0000F194 /* TreebearManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreebearManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B348F93721F6C2C10000F194 /* TreebearManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreebearManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -772,6 +778,92 @@
 			path = PickerView;
 			sourceTree = "<group>";
 		};
+		09D5F609222925C200EA681A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				09D5F60A222925C200EA681A /* Controller */,
+				09D5F60D222925C200EA681A /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		09D5F60A222925C200EA681A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				09D5F60B222925C200EA681A /* SXParentControlController.h */,
+				09D5F60C222925C200EA681A /* SXParentControlController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		09D5F60D222925C200EA681A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				09D5F611222925C200EA681A /* SXParentControlHeaderView.h */,
+				09D5F616222925C200EA681A /* SXParentControlHeaderView.m */,
+				09D5F612222925C200EA681A /* SXParentControlHeaderView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		09D5F617222925C200EA681A /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				09D5F618222925C200EA681A /* Controller */,
+				09D5F619222925C200EA681A /* View */,
+			);
+			path = Time;
+			sourceTree = "<group>";
+		};
+		09D5F618222925C200EA681A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				09D5F6272229266F00EA681A /* SXTimeControlController.h */,
+				09D5F6282229266F00EA681A /* SXTimeControlController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		09D5F619222925C200EA681A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		09D5F61A222925C200EA681A /* Forbidden */ = {
+			isa = PBXGroup;
+			children = (
+				09D5F61B222925C200EA681A /* Controller */,
+				09D5F61E222925C200EA681A /* View */,
+			);
+			path = Forbidden;
+			sourceTree = "<group>";
+		};
+		09D5F61B222925C200EA681A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				09D5F61D222925C200EA681A /* SXForbiddenAppController.h */,
+				09D5F61C222925C200EA681A /* SXForbiddenAppController.m */,
+				09D5F63422292C1500EA681A /* SXForbiddenAppUpdateController.h */,
+				09D5F63522292C1500EA681A /* SXForbiddenAppUpdateController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		09D5F61E222925C200EA681A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				09D5F62F2229298500EA681A /* SXForbiddenAppCell.h */,
+				09D5F6302229298500EA681A /* SXForbiddenAppCell.m */,
+				09D5F6312229298500EA681A /* SXForbiddenAppCell.xib */,
+				09D5F62C2229297000EA681A /* SXForbiddenAppFooterView.h */,
+				09D5F62A2229297000EA681A /* SXForbiddenAppFooterView.m */,
+				09D5F62B2229297000EA681A /* SXForbiddenAppFooterView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		09F233042223EE3B0086AB35 /* XiaoKi */ = {
 			isa = PBXGroup;
 			children = (
@@ -962,37 +1054,11 @@
 		09FB47412223E50400809273 /* ParentControl */ = {
 			isa = PBXGroup;
 			children = (
-				09FB47422223E50400809273 /* Controller */,
-				09FB47432223E50400809273 /* View */,
+				09D5F609222925C200EA681A /* Main */,
+				09D5F61A222925C200EA681A /* Forbidden */,
+				09D5F617222925C200EA681A /* Time */,
 			);
 			path = ParentControl;
-			sourceTree = "<group>";
-		};
-		09FB47422223E50400809273 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				09FB47542223EA1500809273 /* SXParentControlController.h */,
-				09FB47552223EA1500809273 /* SXParentControlController.m */,
-				09F2333222251F380086AB35 /* SXForbiddenAppController.h */,
-				09F2333322251F380086AB35 /* SXForbiddenAppController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		09FB47432223E50400809273 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				09FB47572223EA2E00809273 /* SXParentControlHeaderView.h */,
-				09FB47582223EA2E00809273 /* SXParentControlHeaderView.m */,
-				09FB475A2223EA7000809273 /* SXParentControlHeaderView.xib */,
-				09F2333522251FF70086AB35 /* SXForbiddenAppCell.h */,
-				09F2333622251FF70086AB35 /* SXForbiddenAppCell.m */,
-				09F2333722251FF70086AB35 /* SXForbiddenAppCell.xib */,
-				09F2333A2225269F0086AB35 /* SXForbiddenAppFooterView.h */,
-				09F2333B2225269F0086AB35 /* SXForbiddenAppFooterView.m */,
-				09F2333D222526AD0086AB35 /* SXForbiddenAppFooterView.xib */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		5C5F2F98843302620E46BD97 /* Frameworks */ = {
@@ -1777,21 +1843,21 @@
 				098BA2F82216ADDF00F58639 /* SXPhotoListCell.xib in Resources */,
 				B348F99421F714CC0000F194 /* LaunchScreen.storyboard in Resources */,
 				09D5F5EC2226820B00EA681A /* SXHomeMainSectionFooterView2.xib in Resources */,
+				09D5F622222925C200EA681A /* SXParentControlHeaderView.xib in Resources */,
 				09FB474B2223E56600809273 /* SXSwitchBoardHeaderView.xib in Resources */,
 				09F233192223F03C0086AB35 /* SXHomeXiaoKiCell.xib in Resources */,
 				B348F99121F7143A0000F194 /* Assets.xcassets in Resources */,
 				092D6D3922041C5200538AC8 /* SXHomeHeaderView.xib in Resources */,
 				092D6D222202E71A00538AC8 /* SXForgetConfirmHeaderView.xib in Resources */,
-				09F2333E222526AD0086AB35 /* SXForbiddenAppFooterView.xib in Resources */,
+				09D5F62E2229297000EA681A /* SXForbiddenAppFooterView.xib in Resources */,
 				09F23323222413900086AB35 /* SXWifiSettingCell.xib in Resources */,
-				09FB475B2223EA7000809273 /* SXParentControlHeaderView.xib in Resources */,
 				B3AF2FD521F9C8A3001E4E67 /* MBProgressHUD.bundle in Resources */,
 				098BA305221A57A700F58639 /* SXMineHeaderView.xib in Resources */,
 				098BA300221A559200F58639 /* SXMineListCell.xib in Resources */,
-				09F2333922251FF70086AB35 /* SXForbiddenAppCell.xib in Resources */,
 				092D6D1A2202E51C00538AC8 /* SXForgetHeaderView.xib in Resources */,
 				092D6D312203F6EA00538AC8 /* SXHomeMainHeaderView.xib in Resources */,
 				098BA30A221AB1C200F58639 /* SXCodeLoginHeaderView.xib in Resources */,
+				09D5F6332229298500EA681A /* SXForbiddenAppCell.xib in Resources */,
 				B3AF2FF821FB0180001E4E67 /* SXLoginMainHeaderView.xib in Resources */,
 				09D5F5F1222689E300EA681A /* SXHomeMainSectionFooterView.xib in Resources */,
 				092D6CE622005A1A00538AC8 /* SXEmptyDataEventView.xib in Resources */,
@@ -1878,6 +1944,7 @@
 				09D5F6082227ECB700EA681A /* SXDatePickerView.m in Sources */,
 				091187362215689E00938D9F /* SXTitleAlertView.m in Sources */,
 				092D6D082202AC3200538AC8 /* SXHomeMainController.m in Sources */,
+				09D5F6322229298500EA681A /* SXForbiddenAppCell.m in Sources */,
 				B348F9A821F71A680000F194 /* UIView+Frame.m in Sources */,
 				B348F9B021F71E180000F194 /* SXHttpTool.m in Sources */,
 				09118702221522BF00938D9F /* GCDAsyncSocketCommunicationManager.m in Sources */,
@@ -1894,7 +1961,6 @@
 				B3AF2FF021FAFF34001E4E67 /* SXForgetController.m in Sources */,
 				09FB47342223BD8000809273 /* SXHomeMessageModel.m in Sources */,
 				B3AF302121FE90DA001E4E67 /* SXBaseTableViewGroupController.m in Sources */,
-				09F2333C2225269F0086AB35 /* SXForbiddenAppFooterView.m in Sources */,
 				095540D222200EB6005A5485 /* SXHomeMainMemberButton.m in Sources */,
 				B348F98921F713A80000F194 /* AppDelegate.m in Sources */,
 				09D5F5F92226C22B00EA681A /* SXAlertControllerTool.m in Sources */,
@@ -1911,13 +1977,13 @@
 				09F233182223F03C0086AB35 /* SXHomeXiaoKiCell.m in Sources */,
 				B3AF303C21FE96A4001E4E67 /* SXBaseCustomTableGroupRefreshController.m in Sources */,
 				0911873C2215854400938D9F /* SXCodeInputAlertView.m in Sources */,
+				09D5F62D2229297000EA681A /* SXForbiddenAppFooterView.m in Sources */,
 				092D6CDE22004FB400538AC8 /* SXRefreshHeader.m in Sources */,
 				095540AF221D076C005A5485 /* SXTitleImageButton.m in Sources */,
 				09FB47462223E52200809273 /* SXCheckReportController.m in Sources */,
 				09D5F6042227E4DA00EA681A /* SXMineUserInfoModel.m in Sources */,
 				09F233092223EE4D0086AB35 /* SXXiaoKiController.m in Sources */,
 				092D6D052200748F00538AC8 /* SXUserArchiveTool.m in Sources */,
-				09FB47562223EA1500809273 /* SXParentControlController.m in Sources */,
 				098BA2E7221654E900F58639 /* SXLoginRegistAlertView.m in Sources */,
 				B3AF304221FE9BF3001E4E67 /* SXBaseEmptyDataView.m in Sources */,
 				B3AF303F21FE97B1001E4E67 /* SXBaseJSWebController.m in Sources */,
@@ -1926,6 +1992,7 @@
 				B348F97821F6EB170000F194 /* SXPhotoController.m in Sources */,
 				B348F97D21F711450000F194 /* SXConst.m in Sources */,
 				B3AF302421FE9113001E4E67 /* SXBaseTablePlainRrfreshController.m in Sources */,
+				09D5F63622292C1500EA681A /* SXForbiddenAppUpdateController.m in Sources */,
 				09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */,
 				092D6CF6220062C700538AC8 /* DES3EncryptUtil.m in Sources */,
 				09118703221522BF00938D9F /* GACSocketModel.m in Sources */,
@@ -1934,14 +2001,14 @@
 				092D6D152202E35000538AC8 /* SXCodeLoginController.m in Sources */,
 				092D6CFB2200731300538AC8 /* SXNotificationCenterTool.m in Sources */,
 				092D6CE12200504100538AC8 /* SXRefreshFooter.m in Sources */,
+				09D5F6292229266F00EA681A /* SXTimeControlController.m in Sources */,
 				B348F98821F713A80000F194 /* main.m in Sources */,
-				09FB47592223EA2E00809273 /* SXParentControlHeaderView.m in Sources */,
+				09D5F625222925C200EA681A /* SXParentControlHeaderView.m in Sources */,
 				092D6D0B2202D76000538AC8 /* SXRegistHeaderView.m in Sources */,
 				B3AF300221FB08D1001E4E67 /* SXUtil.m in Sources */,
 				B3AF303321FE92CC001E4E67 /* SXBaseCustomTableViewGroupController.m in Sources */,
 				098BA30D221AD98400F58639 /* SXLoginCertifyCodeButton.m in Sources */,
 				091186EF22151D5F00938D9F /* SGSocketManager.m in Sources */,
-				09F2333822251FF70086AB35 /* SXForbiddenAppCell.m in Sources */,
 				092D6CFF220073A600538AC8 /* SXUserDefaultsTool.m in Sources */,
 				B3AF302721FE914E001E4E67 /* SXBaseTableGroupRefreshController.m in Sources */,
 				098BA2F72216ADDF00F58639 /* SXPhotoListCell.m in Sources */,
@@ -1954,11 +2021,12 @@
 				09F23322222413900086AB35 /* SXWifiSettingCell.m in Sources */,
 				098BA2F0221660BD00F58639 /* SXFamilyCodeFailureAlertView.m in Sources */,
 				092D6CF5220062C700538AC8 /* MyBase64.m in Sources */,
-				09F2333422251F380086AB35 /* SXForbiddenAppController.m in Sources */,
 				091186EE22151D5F00938D9F /* SGSocketConfigM.m in Sources */,
 				092D6D022200745500538AC8 /* SXUserModel.m in Sources */,
+				09D5F61F222925C200EA681A /* SXParentControlController.m in Sources */,
 				095540B8221E4DC6005A5485 /* SXRegistSetPwdHeaderView.m in Sources */,
 				B348F9A921F71A680000F194 /* UIButton+EnlargeArea.m in Sources */,
+				09D5F626222925C200EA681A /* SXForbiddenAppController.m in Sources */,
 				092D6D3722041C4900538AC8 /* SXHomeHeaderView.m in Sources */,
 				098BA2FB2216B54100F58639 /* SXPhotoSectionHeaderView.m in Sources */,
 				B348F99721F716C60000F194 /* SXTabBarController.m in Sources */,

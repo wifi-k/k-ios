@@ -9,6 +9,10 @@
 #import "SXForbiddenAppCell.h"
 
 @interface SXForbiddenAppCell ()
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *titleL;
+@property (weak, nonatomic) IBOutlet UIButton *deleteBtn;
+@property (weak, nonatomic) IBOutlet UIButton *editBtn;
 @property (weak, nonatomic) IBOutlet UIView *contentBgView;
 @end
 
@@ -47,6 +51,26 @@ static NSString *SXForbiddenAppCellID = @"SXForbiddenAppCellID";
     self.contentBgView.layer.shadowOffset = CGSizeMake(3, 3);
     self.contentBgView.layer.shadowOpacity = 0.5;
     self.contentBgView.layer.shadowRadius = 3;
+}
+
+#pragma mark -setter方法-
+- (void)setTitle:(NSString *)title{
+    _title = title;
+    
+    self.titleL.text = title;
+}
+
+#pragma mark -点击事件-
+- (IBAction)clickEditBtn:(UIButton *)sender {
+    if (self.clickEditBtnBlock) {
+        self.clickEditBtnBlock();
+    }
+}
+
+- (IBAction)clickDeleteBtn:(UIButton *)sender {
+    if (self.clickDeleteBtnBlock) {
+        self.clickDeleteBtnBlock();
+    }
 }
 
 @end

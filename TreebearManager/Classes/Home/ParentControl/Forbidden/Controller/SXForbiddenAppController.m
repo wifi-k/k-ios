@@ -7,6 +7,7 @@
 //
 
 #import "SXForbiddenAppController.h"
+#import "SXForbiddenAppUpdateController.h"
 #import "SXForbiddenAppFooterView.h"
 #import "SXForbiddenAppCell.h"
 #import "SXWifiSettingAlertView.h"
@@ -42,7 +43,7 @@
     SXForbiddenAppFooterView *footerView = [SXForbiddenAppFooterView
                                             footerView];
     footerView.clickAddForbiddenBlock = ^{
-        [weakSelf alertUpdateNameView];
+        [weakSelf jumpToUpdateVC];
     };
     [self.tableView.tableFooterView addSubview:footerView];
     footerView.frame = self.tableView.tableFooterView.bounds;
@@ -52,6 +53,12 @@
     [super viewDidLayoutSubviews];
     
     self.tableView.frame = self.view.bounds;
+}
+
+#pragma mark -页面跳转-
+- (void)jumpToUpdateVC{
+    SXForbiddenAppUpdateController *updateVC = [[SXForbiddenAppUpdateController alloc] init];
+    [self.navigationController pushViewController:updateVC animated:YES];
 }
 
 #pragma mark -视图弹窗-
@@ -73,7 +80,15 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    WS(weakSelf);
     SXForbiddenAppCell *cell = [SXForbiddenAppCell cellWithTableView:tableView];
+    cell.title = [NSString stringWithFormat:@"禁用APP方案%ld",indexPath.row];
+    cell.clickEditBtnBlock = ^{
+        [weakSelf jumpToUpdateVC];
+    };
+    cell.clickDeleteBtnBlock = ^{
+        [weakSelf alertUpdateNameView];
+    };
     return cell;
 }
 
