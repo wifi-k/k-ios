@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) void(^cancelButtonBlock)(void);
 
 //初始化
-+ (instancetype)alertWithTitle:(NSString *)title confirmStr:(NSString *)confirmStr cancelStr:(NSString *)cancelStr;
++ (instancetype)alertWithTitle:(NSString *)title content:(NSString *)content confirmStr:(NSString *)confirmStr cancelStr:(NSString *)cancelStr;
 
 //弹窗
 - (void)alert;

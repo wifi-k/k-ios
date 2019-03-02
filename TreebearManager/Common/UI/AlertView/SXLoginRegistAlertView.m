@@ -37,10 +37,6 @@ const CGFloat SXLoginRegistAlertViewHeightRatio = 0.206; //高度系统
     return alert;
 }
 
-- (void)alert{
-    [UIApplication.sharedApplication.delegate.window addSubview:self];
-}
-
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
@@ -49,6 +45,11 @@ const CGFloat SXLoginRegistAlertViewHeightRatio = 0.206; //高度系统
     return self;
 }
 
+- (void)alert{
+    [UIApplication.sharedApplication.delegate.window addSubview:self];
+}
+
+#pragma mark -初始化UI-
 - (void)setUpUI{
     
     //半透明遮盖视图（满屏）
@@ -81,7 +82,7 @@ const CGFloat SXLoginRegistAlertViewHeightRatio = 0.206; //高度系统
     UILabel *contentL = [[UILabel alloc] init];
     contentL.numberOfLines = 2;
     contentL.textAlignment = NSTextAlignmentCenter;
-    contentL.font = SXFont16;
+    titleL.font = SXFontBold18;
     contentL.textColor = [UIColor grayColor];
     [self.bgImageView addSubview:contentL];
     self.contentL = contentL;

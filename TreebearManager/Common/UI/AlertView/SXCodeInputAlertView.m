@@ -49,6 +49,7 @@ const CGFloat SXCodeInputAlertViewHeightRatio = 0.216; //高度系统
     return self;
 }
 
+#pragma mark -初始化UI-
 - (void)setUpUI{
     
     //半透明遮盖视图（满屏）
@@ -72,7 +73,7 @@ const CGFloat SXCodeInputAlertViewHeightRatio = 0.216; //高度系统
     UILabel *titleL = [[UILabel alloc] init];
     titleL.numberOfLines = 2;
     titleL.textAlignment = NSTextAlignmentLeft;
-    titleL.font = SXFont18;
+    titleL.font = SXFontBold18;
     titleL.textColor = [UIColor blackColor];
     [self.bgImageView addSubview:titleL];
     self.titleL = titleL;

@@ -73,7 +73,7 @@ const CGFloat SXWifiSettingAlertViewHeightRatio = 0.216; //高度系统
     UILabel *titleL = [[UILabel alloc] init];
     titleL.numberOfLines = 2;
     titleL.textAlignment = NSTextAlignmentCenter;
-    titleL.font = SXFont18;
+    titleL.font = SXFontBold18;
     titleL.textColor = [UIColor blackColor];
     [self.bgImageView addSubview:titleL];
     self.titleL = titleL;

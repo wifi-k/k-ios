@@ -11,6 +11,7 @@
 #import "SXTimeOptionController.h"
 #import "SXForbiddenUpdateHeaderView.h"
 #import "SXDatePickerView.h"
+#import "SXWifiSettingAlertView.h"
 
 @interface SXForbiddenAppUpdateController ()
 ///头部视图
@@ -30,13 +31,14 @@
 - (void)setUpUI{
     self.view.backgroundColor = SXColorBgViewGray;
     
-    self.navigationItem.title = @"新增";
+    self.navigationItem.title = @"新增|编辑";
     
     WS(weakSelf);
     SXForbiddenUpdateHeaderView *headerView = [SXForbiddenUpdateHeaderView headerView];
     headerView.clickUpdateNameBtnBlock = ^{
-        SXDatePickerView *pickerView = [SXDatePickerView pickerView];
-        [pickerView showPickerView];
+//        SXDatePickerView *pickerView = [SXDatePickerView pickerView];
+//        [pickerView showPickerView];
+        [weakSelf alertUpdateNameView];
     };
     headerView.clickTimeControlBlock = ^{
         [weakSelf jumpTimeOptionVC];
@@ -52,6 +54,15 @@
     [super viewDidLayoutSubviews];
     
     self.headerView.frame = self.view.bounds;
+}
+
+#pragma mark -视图弹窗-
+- (void)alertUpdateNameView{
+    SXWifiSettingAlertView *nameAlertView = [SXWifiSettingAlertView alertWithTitle:@"重命名" placeholder:@"请输入新的名称" confirmStr:@"确定" cancelStr:@"取消"];
+    nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
+        DLog(@"text:%@",text);
+    };
+    [nameAlertView alert];
 }
 
 #pragma mark -页面跳转-

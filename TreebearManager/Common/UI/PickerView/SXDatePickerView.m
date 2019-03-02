@@ -85,6 +85,7 @@ const CGFloat SXDatePickerViewHeight = 350;
     return self;
 }
 
+#pragma mark -初始化UI-
 - (void)setUpUI{
     
     //1.半透明遮盖视图（满屏）

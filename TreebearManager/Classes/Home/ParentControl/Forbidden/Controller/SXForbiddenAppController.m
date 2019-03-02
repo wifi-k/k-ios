@@ -10,7 +10,7 @@
 #import "SXForbiddenAppUpdateController.h"
 #import "SXForbiddenAppFooterView.h"
 #import "SXForbiddenAppCell.h"
-#import "SXWifiSettingAlertView.h"
+#import "SXTitleAlertView.h"
 
 @interface SXForbiddenAppController ()
 
@@ -54,19 +54,16 @@
     self.tableView.frame = self.view.bounds;
 }
 
+#pragma mark -视图弹窗-
+- (void)alertDeleteAlertView{
+    SXTitleAlertView *deleteAlertView = [SXTitleAlertView alertWithTitle:@"提示" content:@"您确定要删除此方案吗?" confirmStr:@"确定" cancelStr:@"取消"];
+    [deleteAlertView alert];
+}
+
 #pragma mark -页面跳转-
 - (void)jumpToUpdateVC{
     SXForbiddenAppUpdateController *updateVC = [[SXForbiddenAppUpdateController alloc] init];
     [self.navigationController pushViewController:updateVC animated:YES];
-}
-
-#pragma mark -视图弹窗-
-- (void)alertUpdateNameView{
-    SXWifiSettingAlertView *nameAlertView = [SXWifiSettingAlertView alertWithTitle:@"重命名" placeholder:@"请输入新的名称" confirmStr:@"确定" cancelStr:@"取消"];
-    nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
-        DLog(@"text:%@",text);
-    };
-    [nameAlertView alert];
 }
 
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
@@ -86,7 +83,7 @@
         [weakSelf jumpToUpdateVC];
     };
     cell.clickDeleteBtnBlock = ^{
-        [weakSelf alertUpdateNameView];
+        [weakSelf alertDeleteAlertView];
     };
     return cell;
 }
