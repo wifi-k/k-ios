@@ -7,6 +7,7 @@
 //
 
 #import "SXHealtyControlController.h"
+#import "SXHealtyTimeController.h"
 #import "SXHealtyControlHeaderView.h"
 
 @interface SXHealtyControlController ()
@@ -29,7 +30,14 @@
     
     self.navigationItem.title = @"健康模式";
     
+    WS(weakSelf);
     SXHealtyControlHeaderView *headerView = [SXHealtyControlHeaderView headerView];
+    headerView.clickEditTimeBlock = ^{
+        [weakSelf jumpToTimeVC];
+    };
+    headerView.clickAddTimeBlock = ^{
+        [weakSelf jumpToTimeVC];
+    };
     [self.view addSubview:headerView];
     self.headerView = headerView;
 }
@@ -38,6 +46,12 @@
     [super viewDidLayoutSubviews];
     
     self.headerView.frame = self.view.bounds;
+}
+
+#pragma mark -页面跳转-
+- (void)jumpToTimeVC{
+    SXHealtyTimeController *timeVC = [[SXHealtyTimeController alloc] init];
+    [self.navigationController pushViewController:timeVC animated:YES];
 }
 
 @end

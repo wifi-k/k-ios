@@ -102,6 +102,9 @@
 		09D5F642222A5BE100EA681A /* SXDeviceControlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F640222A5BE100EA681A /* SXDeviceControlCell.m */; };
 		09D5F643222A5BE100EA681A /* SXDeviceControlCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F641222A5BE100EA681A /* SXDeviceControlCell.xib */; };
 		09D5F646222A615300EA681A /* SXTimeOptionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F645222A615300EA681A /* SXTimeOptionController.m */; };
+		09D5F649222A73AD00EA681A /* SXHealtyTimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F648222A73AD00EA681A /* SXHealtyTimeController.m */; };
+		09D5F64F222A748E00EA681A /* SXHealthTimeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F64E222A748E00EA681A /* SXHealthTimeHeaderView.m */; };
+		09D5F651222A749E00EA681A /* SXHealthTimeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F650222A749E00EA681A /* SXHealthTimeHeaderView.xib */; };
 		09F233092223EE4D0086AB35 /* SXXiaoKiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233082223EE4D0086AB35 /* SXXiaoKiController.m */; };
 		09F233182223F03C0086AB35 /* SXHomeXiaoKiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233162223F03C0086AB35 /* SXHomeXiaoKiCell.m */; };
 		09F233192223F03C0086AB35 /* SXHomeXiaoKiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F233172223F03C0086AB35 /* SXHomeXiaoKiCell.xib */; };
@@ -370,6 +373,11 @@
 		09D5F641222A5BE100EA681A /* SXDeviceControlCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXDeviceControlCell.xib; sourceTree = "<group>"; };
 		09D5F644222A615300EA681A /* SXTimeOptionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTimeOptionController.h; sourceTree = "<group>"; };
 		09D5F645222A615300EA681A /* SXTimeOptionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXTimeOptionController.m; sourceTree = "<group>"; };
+		09D5F647222A73AD00EA681A /* SXHealtyTimeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHealtyTimeController.h; sourceTree = "<group>"; };
+		09D5F648222A73AD00EA681A /* SXHealtyTimeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHealtyTimeController.m; sourceTree = "<group>"; };
+		09D5F64D222A748E00EA681A /* SXHealthTimeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHealthTimeHeaderView.h; sourceTree = "<group>"; };
+		09D5F64E222A748E00EA681A /* SXHealthTimeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHealthTimeHeaderView.m; sourceTree = "<group>"; };
+		09D5F650222A749E00EA681A /* SXHealthTimeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXHealthTimeHeaderView.xib; sourceTree = "<group>"; };
 		09F233072223EE4D0086AB35 /* SXXiaoKiController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXXiaoKiController.h; sourceTree = "<group>"; };
 		09F233082223EE4D0086AB35 /* SXXiaoKiController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXXiaoKiController.m; sourceTree = "<group>"; };
 		09F233152223F03C0086AB35 /* SXHomeXiaoKiCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeXiaoKiCell.h; sourceTree = "<group>"; };
@@ -1035,6 +1043,8 @@
 			children = (
 				09FB474C2223E83600809273 /* SXHealtyControlController.h */,
 				09FB474D2223E83600809273 /* SXHealtyControlController.m */,
+				09D5F647222A73AD00EA681A /* SXHealtyTimeController.h */,
+				09D5F648222A73AD00EA681A /* SXHealtyTimeController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1045,6 +1055,9 @@
 				09FB474F2223E87300809273 /* SXHealtyControlHeaderView.h */,
 				09FB47502223E87300809273 /* SXHealtyControlHeaderView.m */,
 				09FB47522223E8B600809273 /* SXHealtyControlHeaderView.xib */,
+				09D5F64D222A748E00EA681A /* SXHealthTimeHeaderView.h */,
+				09D5F64E222A748E00EA681A /* SXHealthTimeHeaderView.m */,
+				09D5F650222A749E00EA681A /* SXHealthTimeHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1889,6 +1902,7 @@
 				B3AF2FF821FB0180001E4E67 /* SXLoginMainHeaderView.xib in Resources */,
 				09D5F5F1222689E300EA681A /* SXHomeMainSectionFooterView.xib in Resources */,
 				092D6CE622005A1A00538AC8 /* SXEmptyDataEventView.xib in Resources */,
+				09D5F651222A749E00EA681A /* SXHealthTimeHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2033,6 +2047,7 @@
 				092D6CFB2200731300538AC8 /* SXNotificationCenterTool.m in Sources */,
 				092D6CE12200504100538AC8 /* SXRefreshFooter.m in Sources */,
 				09D5F6292229266F00EA681A /* SXTimeControlController.m in Sources */,
+				09D5F649222A73AD00EA681A /* SXHealtyTimeController.m in Sources */,
 				B348F98821F713A80000F194 /* main.m in Sources */,
 				09D5F625222925C200EA681A /* SXParentControlHeaderView.m in Sources */,
 				092D6D0B2202D76000538AC8 /* SXRegistHeaderView.m in Sources */,
@@ -2096,6 +2111,7 @@
 				092D6D202202E70300538AC8 /* SXForgetConfirmHeaderView.m in Sources */,
 				09D5F646222A615300EA681A /* SXTimeOptionController.m in Sources */,
 				B3AF303921FE9657001E4E67 /* SXBaseCustomTablePlainRrfreshController.m in Sources */,
+				09D5F64F222A748E00EA681A /* SXHealthTimeHeaderView.m in Sources */,
 				095540C2221EC059005A5485 /* SXHomeFamilyCodeButton.m in Sources */,
 				B348F9B621F71E960000F194 /* SXNetRequestTool.m in Sources */,
 				B3AF2FED21FAFF24001E4E67 /* SXLoginController.m in Sources */,

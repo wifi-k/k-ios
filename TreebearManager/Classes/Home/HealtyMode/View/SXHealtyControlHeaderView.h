@@ -14,6 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
+///点击编辑按钮回调
+@property (nonatomic, copy) void (^clickEditTimeBlock)(void);
+///点击增加按钮回调
+@property (nonatomic, copy) void (^clickAddTimeBlock)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

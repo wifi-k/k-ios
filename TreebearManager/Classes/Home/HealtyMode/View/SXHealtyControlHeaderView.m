@@ -8,6 +8,12 @@
 
 #import "SXHealtyControlHeaderView.h"
 
+@interface SXHealtyControlHeaderView ()
+@property (weak, nonatomic) IBOutlet UIButton *editBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *addTimeBtn;
+@end
+
 @implementation SXHealtyControlHeaderView
 
 + (instancetype)headerView{
@@ -24,9 +30,25 @@
     [self setUpUI];
 }
 
+#pragma mark -初始化UI-
 - (void)setUpUI{
     
     self.backgroundColor = SXColorWhite;
+    
+    [self.addTimeBtn roundViewWithRadius:22.5f];
+}
+
+#pragma mark -点击事件-
+- (IBAction)clickEditBtn:(UIButton *)sender {
+    if (self.clickEditTimeBlock) {
+        self.clickEditTimeBlock();
+    }
+}
+
+- (IBAction)clickAddBtn:(UIButton *)sender {
+    if (self.clickAddTimeBlock) {
+        self.clickAddTimeBlock();
+    }
 }
 
 @end

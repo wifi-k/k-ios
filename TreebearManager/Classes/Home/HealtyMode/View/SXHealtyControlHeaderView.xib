@@ -54,12 +54,38 @@
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVW-jW-bfn">
+                            <rect key="frame" x="314" y="10" width="46" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="46" id="0Hr-4W-LOG"/>
+                                <constraint firstAttribute="height" constant="30" id="oPn-Jw-gZV"/>
+                            </constraints>
+                            <state key="normal" title="编辑">
+                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="clickEditBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="A44-3e-IDQ"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="WVW-jW-bfn" secondAttribute="trailing" constant="15" id="94D-NN-m6E"/>
                         <constraint firstAttribute="height" constant="50" id="AXZ-OJ-FUw"/>
+                        <constraint firstItem="WVW-jW-bfn" firstAttribute="centerY" secondItem="MjP-15-Ecl" secondAttribute="centerY" id="aSz-WB-pG1"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEW-tH-66O">
+                    <rect key="frame" x="107.5" y="482" width="160" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="FWY-2W-6E9"/>
+                        <constraint firstAttribute="width" constant="160" id="fyF-Rx-srk"/>
+                    </constraints>
+                    <state key="normal" title="+ 添加时间段" backgroundImage="img_button_bg"/>
+                    <connections>
+                        <action selector="clickAddBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Xar-2b-DxY"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -68,7 +94,9 @@
                 <constraint firstItem="juD-IG-fvq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="OOP-9Z-fUN"/>
                 <constraint firstItem="AcY-Bs-LtH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="S0t-uF-vpR"/>
                 <constraint firstItem="juD-IG-fvq" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ZsO-21-Z1R"/>
+                <constraint firstItem="fEW-tH-66O" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="bJL-Cc-6Z0"/>
                 <constraint firstItem="AcY-Bs-LtH" firstAttribute="top" secondItem="juD-IG-fvq" secondAttribute="bottom" id="ftq-F8-OGw"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="fEW-tH-66O" secondAttribute="bottom" constant="140" id="jt1-3T-evM"/>
                 <constraint firstItem="MjP-15-Ecl" firstAttribute="top" secondItem="AcY-Bs-LtH" secondAttribute="bottom" id="uRx-gv-sWo"/>
                 <constraint firstItem="MjP-15-Ecl" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="upI-Qu-BKs"/>
                 <constraint firstItem="juD-IG-fvq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="yWm-zp-nNW"/>
@@ -77,10 +105,15 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="addTimeBtn" destination="fEW-tH-66O" id="wFi-F3-tEY"/>
+                <outlet property="editBtn" destination="WVW-jW-bfn" id="0l3-I5-9q3"/>
+            </connections>
             <point key="canvasLocation" x="52" y="62.518740629685162"/>
         </view>
     </objects>
     <resources>
         <image name="home_top_card" width="347" height="166"/>
+        <image name="img_button_bg" width="375" height="45"/>
     </resources>
 </document>

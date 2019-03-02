@@ -10,7 +10,6 @@
 #import "SXDeviceControlController.h"
 #import "SXTimeOptionController.h"
 #import "SXForbiddenUpdateHeaderView.h"
-#import "SXDatePickerView.h"
 #import "SXWifiSettingAlertView.h"
 
 @interface SXForbiddenAppUpdateController ()
@@ -36,8 +35,6 @@
     WS(weakSelf);
     SXForbiddenUpdateHeaderView *headerView = [SXForbiddenUpdateHeaderView headerView];
     headerView.clickUpdateNameBtnBlock = ^{
-//        SXDatePickerView *pickerView = [SXDatePickerView pickerView];
-//        [pickerView showPickerView];
         [weakSelf alertUpdateNameView];
     };
     headerView.clickTimeControlBlock = ^{
