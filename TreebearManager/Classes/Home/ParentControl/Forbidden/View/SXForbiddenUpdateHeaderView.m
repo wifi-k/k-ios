@@ -32,6 +32,7 @@
     [self setUpUI];
 }
 
+#pragma mark -初始化UI-
 - (void)setUpUI{
     
     self.backgroundColor = SXColorBgViewGray;
@@ -41,21 +42,21 @@
     self.thirdBgView.backgroundColor = SXColorWhite;
     
     self.firstBgView.backgroundColor = [UIColor whiteColor];
-    self.firstBgView.layer.cornerRadius = 3;
+    self.firstBgView.layer.cornerRadius = 5;
     self.firstBgView.layer.shadowColor = UIColor.lightGrayColor.CGColor;
     self.firstBgView.layer.shadowOffset = CGSizeMake(3, 3);
     self.firstBgView.layer.shadowOpacity = 0.5;
     self.firstBgView.layer.shadowRadius = 3;
     
     self.secondBgView.backgroundColor = [UIColor whiteColor];
-    self.secondBgView.layer.cornerRadius = 3;
+    self.secondBgView.layer.cornerRadius = 5;
     self.secondBgView.layer.shadowColor = UIColor.lightGrayColor.CGColor;
     self.secondBgView.layer.shadowOffset = CGSizeMake(3, 3);
     self.secondBgView.layer.shadowOpacity = 0.5;
-    self.secondBgView.layer.shadowRadius = 3;
+    self.secondBgView.layer.shadowRadius = 5;
     
     self.thirdBgView.backgroundColor = [UIColor whiteColor];
-    self.thirdBgView.layer.cornerRadius = 3;
+    self.thirdBgView.layer.cornerRadius = 5;
     self.thirdBgView.layer.shadowColor = UIColor.lightGrayColor.CGColor;
     self.thirdBgView.layer.shadowOffset = CGSizeMake(3, 3);
     self.thirdBgView.layer.shadowOpacity = 0.5;
@@ -73,6 +74,13 @@
     [self.thirdBgView addGestureRecognizer:tap3];
 }
 
+#pragma mark -点击事件-
+- (IBAction)updateNameBtn:(UIButton *)sender {
+    if (self.clickUpdateNameBtnBlock) {
+        self.clickUpdateNameBtnBlock();
+    }
+}
+
 - (void)clickTimeControl:(UITapGestureRecognizer *)sender {
     if (self.clickTimeControlBlock) {
         self.clickTimeControlBlock();
@@ -84,6 +92,5 @@
         self.clickDeviceControlBlock();
     }
 }
-
 
 @end

@@ -47,6 +47,9 @@
                             <state key="normal" title="修改名称">
                                 <color key="titleColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="updateNameBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="1xg-2X-Oiv"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -80,11 +83,20 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="rbx-1Q-ifI">
+                            <rect key="frame" x="308" y="22.5" width="9" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="4HG-9W-Kuq"/>
+                                <constraint firstAttribute="width" constant="9" id="Mdd-gF-L4I"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <gestureRecognizers/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="rbx-1Q-ifI" secondAttribute="trailing" constant="10" id="ALC-Xg-usA"/>
                         <constraint firstItem="R0r-q2-1mw" firstAttribute="leading" secondItem="Zm6-8Q-5gB" secondAttribute="leading" constant="10" id="FId-UQ-g1z"/>
+                        <constraint firstItem="rbx-1Q-ifI" firstAttribute="centerY" secondItem="Zm6-8Q-5gB" secondAttribute="centerY" id="HN2-Q7-3Oo"/>
                         <constraint firstItem="FfI-1n-i6H" firstAttribute="centerY" secondItem="R0r-q2-1mw" secondAttribute="centerY" id="WVj-ef-jvB"/>
                         <constraint firstAttribute="height" constant="60" id="ZMb-pu-CRx"/>
                         <constraint firstItem="R0r-q2-1mw" firstAttribute="centerY" secondItem="Zm6-8Q-5gB" secondAttribute="centerY" id="ZOh-Cm-Cxi"/>
@@ -107,13 +119,22 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="sr9-91-Oji">
+                            <rect key="frame" x="308" y="22.5" width="9" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="chX-7f-dAC"/>
+                                <constraint firstAttribute="width" constant="9" id="vdP-dt-FGG"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <gestureRecognizers/>
                     <constraints>
                         <constraint firstItem="svD-Wf-8ZU" firstAttribute="centerY" secondItem="Scr-qT-SmU" secondAttribute="centerY" id="9Op-8f-gXY"/>
+                        <constraint firstItem="sr9-91-Oji" firstAttribute="centerY" secondItem="Scr-qT-SmU" secondAttribute="centerY" id="BMd-Wo-sIx"/>
                         <constraint firstAttribute="height" constant="60" id="CkY-fe-39D"/>
                         <constraint firstItem="c97-Y7-D0h" firstAttribute="leading" secondItem="Scr-qT-SmU" secondAttribute="leading" constant="10" id="Mb3-kf-ICW"/>
+                        <constraint firstAttribute="trailing" secondItem="sr9-91-Oji" secondAttribute="trailing" constant="10" id="UXW-3W-BsY"/>
                         <constraint firstItem="c97-Y7-D0h" firstAttribute="centerY" secondItem="Scr-qT-SmU" secondAttribute="centerY" id="ZpK-Yz-yTH"/>
                         <constraint firstItem="svD-Wf-8ZU" firstAttribute="leading" secondItem="c97-Y7-D0h" secondAttribute="trailing" constant="10" id="nrz-In-wRQ"/>
                     </constraints>
@@ -145,6 +166,7 @@
         </view>
     </objects>
     <resources>
+        <image name="arrow_right" width="9" height="15"/>
         <image name="img_user_icon" width="50" height="50"/>
     </resources>
 </document>

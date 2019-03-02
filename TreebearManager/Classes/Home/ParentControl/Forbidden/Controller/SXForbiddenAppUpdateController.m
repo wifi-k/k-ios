@@ -8,7 +8,9 @@
 
 #import "SXForbiddenAppUpdateController.h"
 #import "SXDeviceControlController.h"
+#import "SXTimeOptionController.h"
 #import "SXForbiddenUpdateHeaderView.h"
+#import "SXDatePickerView.h"
 
 @interface SXForbiddenAppUpdateController ()
 ///头部视图
@@ -24,8 +26,6 @@
     [self setUpUI];
 }
 
-
-
 #pragma mark -初始化UI-
 - (void)setUpUI{
     self.view.backgroundColor = SXColorBgViewGray;
@@ -34,11 +34,15 @@
     
     WS(weakSelf);
     SXForbiddenUpdateHeaderView *headerView = [SXForbiddenUpdateHeaderView headerView];
+    headerView.clickUpdateNameBtnBlock = ^{
+        SXDatePickerView *pickerView = [SXDatePickerView pickerView];
+        [pickerView showPickerView];
+    };
     headerView.clickTimeControlBlock = ^{
-        [weakSelf jumpTofdfdf];
+        [weakSelf jumpTimeOptionVC];
     };
     headerView.clickDeviceControlBlock = ^{
-        [weakSelf jumpTofdfdf];
+        [weakSelf jumpToDeviceVC];
     };
     [self.view addSubview:headerView];
     self.headerView = headerView;
@@ -50,8 +54,14 @@
     self.headerView.frame = self.view.bounds;
 }
 
-- (void)jumpTofdfdf{
+#pragma mark -页面跳转-
+- (void)jumpToDeviceVC{
     SXDeviceControlController *fdf = [[SXDeviceControlController alloc] init];
+    [self.navigationController pushViewController:fdf animated:YES];
+}
+
+- (void)jumpTimeOptionVC{
+    SXTimeOptionController *fdf = [[SXTimeOptionController alloc] init];
     [self.navigationController pushViewController:fdf animated:YES];
 }
 

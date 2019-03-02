@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
+///点击更新名称回调
+@property (nonatomic, copy) void (^clickUpdateNameBtnBlock)(void);
+
 ///点击时间控制回调
 @property (nonatomic, copy) void (^clickTimeControlBlock)(void);
 

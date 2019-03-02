@@ -46,11 +46,12 @@ static NSString *SXForbiddenAppCellID = @"SXForbiddenAppCellID";
     //1.家庭码背景视图
     //self.contentBgView.layer.masksToBounds=YES;这行去掉
     self.contentBgView.backgroundColor = [UIColor whiteColor];
-    self.contentBgView.layer.cornerRadius = 3;
+    self.contentBgView.layer.cornerRadius = 5;
     self.contentBgView.layer.shadowColor = UIColor.lightGrayColor.CGColor;
     self.contentBgView.layer.shadowOffset = CGSizeMake(3, 3);
     self.contentBgView.layer.shadowOpacity = 0.5;
     self.contentBgView.layer.shadowRadius = 3;
+    [self.contentBgView borderColor:UIColor.lightGrayColor borderWidth:0.1];
 }
 
 #pragma mark -setter方法-
