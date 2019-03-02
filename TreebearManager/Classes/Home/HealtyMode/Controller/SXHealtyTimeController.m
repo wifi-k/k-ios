@@ -32,10 +32,18 @@
     WS(weakSelf);
     SXHealthTimeHeaderView *headerView = [SXHealthTimeHeaderView headerView];
     headerView.clickBeginTimeControlBlock = ^{
-        [weakSelf pickerDateView];
+        SXDatePickerView *pickerView = [SXDatePickerView pickerView];
+        pickerView.confirmBtnBlock = ^(NSString * _Nonnull timeStr) {
+            weakSelf.headerView.beginTimeStr = timeStr;
+        };
+        [pickerView showPickerView];
     };
     headerView.clickEndTimeControlBlock = ^{
-        [weakSelf pickerDateView];
+        SXDatePickerView *pickerView = [SXDatePickerView pickerView];
+        pickerView.confirmBtnBlock = ^(NSString * _Nonnull timeStr) {
+            weakSelf.headerView.endTimeStr = timeStr;
+        };
+        [pickerView showPickerView];
     };
     headerView.clickConfirmBtnBlock = ^{
         DLog(@"点击确定...");
@@ -48,12 +56,6 @@
     [super viewDidLayoutSubviews];
     
     self.headerView.frame = self.view.bounds;
-}
-
-#pragma mark -弹窗视图-
-- (void)pickerDateView{
-    SXDatePickerView *pickerView = [SXDatePickerView pickerView];
-    [pickerView showPickerView];
 }
 
 @end

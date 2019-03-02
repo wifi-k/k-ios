@@ -9,8 +9,10 @@
 #import "SXHealthTimeHeaderView.h"
 
 @interface SXHealthTimeHeaderView ()
+@property (weak, nonatomic) IBOutlet UILabel *beginTimeL;
 @property (weak, nonatomic) IBOutlet UIView *firstBgView;
 
+@property (weak, nonatomic) IBOutlet UILabel *endTimeL;
 @property (weak, nonatomic) IBOutlet UIView *secondBgView;
 
 @property (weak, nonatomic) IBOutlet UIButton *confirmBtn;
@@ -64,6 +66,24 @@
     
     UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickEndTimeControl:)];
     [self.secondBgView addGestureRecognizer:tap2];
+    
+    //默认值
+    self.endTimeStr = @"";
+    self.beginTimeStr = @"";
+}
+
+
+#pragma mark -setter-
+- (void)setBeginTimeStr:(NSString *)beginTimeStr{
+    _beginTimeStr = beginTimeStr;
+    
+    self.beginTimeL.text = beginTimeStr;
+}
+
+- (void)setEndTimeStr:(NSString *)endTimeStr{
+    _endTimeStr = endTimeStr;
+    
+    self.endTimeL.text = endTimeStr;
 }
 
 #pragma mark -点击事件-

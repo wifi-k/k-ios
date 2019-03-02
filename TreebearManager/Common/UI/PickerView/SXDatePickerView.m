@@ -228,9 +228,9 @@ const CGFloat SXDatePickerViewHeight = 350;
 
 #pragma mark -点击完成按钮-
 - (void)confirmButtonTapped{
-    if (self.confirmButtonBlock) {
+    if (self.confirmBtnBlock) {
         NSString *timeStr = [NSString stringWithFormat:@"%@:%@",self.hourStr,self.minuteStr];
-        self.confirmButtonBlock(timeStr);
+        self.confirmBtnBlock(timeStr);
     }
     if (self.hourStr.length && self.minuteStr.length) {
         [self cancleButtonTapped];

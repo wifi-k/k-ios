@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 //设置遮罩蒙板响应事件是否关闭
 @property (nonatomic, assign) BOOL closeUserInteractionEnabled;
 
-@property (nonatomic,copy) void(^confirmButtonBlock)(NSString *timeStr);
+@property (nonatomic,copy) void(^confirmBtnBlock)(NSString *timeStr);
 
 //初始化
 + (instancetype)pickerView;
