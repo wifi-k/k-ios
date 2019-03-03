@@ -57,6 +57,9 @@
 #pragma mark -视图弹窗-
 - (void)alertDeleteAlertView{
     SXTitleAlertView *deleteAlertView = [SXTitleAlertView alertWithTitle:@"提示" content:@"您确定要删除此方案吗?" confirmStr:@"确定" cancelStr:@"取消"];
+    deleteAlertView.confirmButtonBlock = ^{
+        DLog(@"确定。。。");
+    };
     [deleteAlertView alert];
 }
 

@@ -8,6 +8,12 @@
 
 #import "SXFamilyMemberCell.h"
 
+@interface SXFamilyMemberCell ()
+@property (weak, nonatomic) IBOutlet UIButton *addBtn;
+@property (weak, nonatomic) IBOutlet UIButton *editBtn;
+@property (weak, nonatomic) IBOutlet UIButton *deleteBtn;
+@end
+
 @implementation SXFamilyMemberCell
 
 static NSString *SXFamilyMemberCellID = @"SXFamilyMemberCellID";
@@ -37,4 +43,24 @@ static NSString *SXFamilyMemberCellID = @"SXFamilyMemberCellID";
     
 }
 
+#pragma mark -点击事件-
+- (IBAction)clickAddBtn:(UIButton *)sender {
+    if (self.clickAddBtnBlock) {
+        self.clickAddBtnBlock();
+    }
+}
+
+- (IBAction)clickEditBtn:(UIButton *)sender {
+    if (self.clickEditBtnBlock) {
+        self.clickEditBtnBlock();
+    }
+}
+
+- (IBAction)clickDeleteBtn:(UIButton *)sender {
+    if (self.clickDeleteBtnBlock) {
+        self.clickDeleteBtnBlock();
+    }
+}
+
 @end
+

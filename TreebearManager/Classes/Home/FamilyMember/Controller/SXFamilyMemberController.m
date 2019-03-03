@@ -10,6 +10,7 @@
 #import "SXFamilyMemberFooterView.h"
 #import "SXFamilyMemberCell.h"
 #import "SXWifiSettingAlertView.h"
+#import "SXTitleAlertView.h"
 
 @interface SXFamilyMemberController ()
 
@@ -61,6 +62,15 @@
     [nameAlertView alert];
 }
 
+#pragma mark -视图弹窗-
+- (void)alertDeleteAlertView{
+    SXTitleAlertView *deleteAlertView = [SXTitleAlertView alertWithTitle:@"提示" content:@"您确定要删除此成员吗?" confirmStr:@"确定" cancelStr:@"取消"];
+    deleteAlertView.confirmButtonBlock = ^{
+        DLog(@"确定。。。");
+    };
+    [deleteAlertView alert];
+}
+
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 3;
@@ -71,7 +81,17 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    WS(weakSelf);
     SXFamilyMemberCell *cell = [SXFamilyMemberCell cellWithTableView:tableView];
+    cell.clickAddBtnBlock = ^{
+        [weakSelf alertUpdateNameView];
+    };
+    cell.clickEditBtnBlock = ^{
+        [weakSelf alertUpdateNameView];
+    };
+    cell.clickDeleteBtnBlock = ^{
+        [weakSelf alertDeleteAlertView];
+    };
     return cell;
 }
 
