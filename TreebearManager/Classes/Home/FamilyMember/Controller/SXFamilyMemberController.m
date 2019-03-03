@@ -7,8 +7,8 @@
 //
 
 #import "SXFamilyMemberController.h"
-#import "SXForbiddenAppFooterView.h"
-#import "SXForbiddenAppCell.h"
+#import "SXFamilyMemberFooterView.h"
+#import "SXFamilyMemberCell.h"
 #import "SXWifiSettingAlertView.h"
 
 @interface SXFamilyMemberController ()
@@ -43,9 +43,9 @@
     
     //2.添加底部视图
     WS(weakSelf);
-    SXForbiddenAppFooterView *footerView = [SXForbiddenAppFooterView
+    SXFamilyMemberFooterView *footerView = [SXFamilyMemberFooterView
                                             footerView];
-    footerView.clickAddForbiddenBlock = ^{
+    footerView.clickAddMemberBlock = ^{
         [weakSelf alertUpdateNameView];
     };
     [self.tableView.tableFooterView addSubview:footerView];
@@ -71,7 +71,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    SXForbiddenAppCell *cell = [SXForbiddenAppCell cellWithTableView:tableView];
+    SXFamilyMemberCell *cell = [SXFamilyMemberCell cellWithTableView:tableView];
     return cell;
 }
 
