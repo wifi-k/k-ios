@@ -1,40 +1,48 @@
 //
-//  SXTitleAlertView.m
+//  SXInputAlertView.m
 //  TreebearManager
 //
-//  Created by bear on 2019/2/14.
+//  Created by bear on 2019/3/3.
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXTitleAlertView.h"
+#import "SXInputAlertView.h"
 
-const CGFloat titleAlertViewWidthRatio = 0.655;  //宽度系数
-const CGFloat titleAlertViewHeightRatio = 0.206; //高度系统
+const CGFloat SXInputAlertViewWidthRatio = 0.655;  //宽度系数
+const CGFloat SXInputAlertViewHeightRatio = 0.216; //高度系统
 
-@interface SXTitleAlertView ()
+@interface SXInputAlertView ()
 @property (nonatomic, weak) UIView *bgView;
-@property (nonatomic, weak) UIImageView *contentBgView;
+@property (nonatomic, weak) UIImageView *bgImageView;
 @property (nonatomic, weak) UILabel *titleL;//标题
-@property (nonatomic, weak) UILabel *contentL;//内容
+@property (nonatomic, weak) UITextField *textField;//文本输入框
 @property (nonatomic, weak) UIView *bottomView;//底部视图
 @property (nonatomic, weak) UIButton *confirmButton;//确认按钮
 @property (nonatomic, weak) UIButton *cancleButton;//取消按钮
 
 @property (nonatomic, copy) NSString *title;//标题
-@property (nonatomic, copy) NSString *content;//内容
+@property (nonatomic, copy) NSString *placeholder;//占位符
 @property (nonatomic, copy) NSString *confirmStr;//确认按钮
 @property (nonatomic, copy) NSString *cancelStr;//取消按钮
 @end
 
-@implementation SXTitleAlertView
+@implementation SXInputAlertView
 
-+ (instancetype)alertWithTitle:(NSString *)title content:(NSString *)content confirmStr:(NSString *)confirmStr cancelStr:(NSString *)cancelStr{
-    SXTitleAlertView *alert = [[self alloc] initWithFrame:SXDelegateWindow.bounds];
++ (instancetype)alertWithTitle:(NSString *)title placeholder:(NSString *)placeholder confirmStr:(NSString *)confirmStr cancelStr:(NSString *)cancelStr{
+    SXInputAlertView *alert = [[self alloc] initWithFrame:UIApplication.sharedApplication.delegate.window.bounds];
     alert.title = title;
-    alert.content = content;
+    alert.placeholder = placeholder;
     alert.confirmStr = confirmStr;
     alert.cancelStr = cancelStr;
     return alert;
+}
+
+- (void)alert{
+    [UIApplication.sharedApplication.delegate.window addSubview:self];
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.bgView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+    }];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame{
@@ -43,14 +51,6 @@ const CGFloat titleAlertViewHeightRatio = 0.206; //高度系统
         [self setUpUI];
     }
     return self;
-}
-
-- (void)alert{
-    [SXDelegateWindow addSubview:self];
-    
-    [UIView animateWithDuration:0.3 animations:^{
-        self.bgView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
-    }];
 }
 
 #pragma mark -初始化UI-
@@ -71,28 +71,32 @@ const CGFloat titleAlertViewHeightRatio = 0.206; //高度系统
     [bgImageView setUserInteractionEnabled:YES];
     [bgImageView roundViewWithRadius:10];
     [self addSubview:bgImageView];
-    self.contentBgView = bgImageView;
+    self.bgImageView = bgImageView;
     
     //标题
     UILabel *titleL = [[UILabel alloc] init];
-    titleL.textAlignment = NSTextAlignmentCenter;
+    titleL.numberOfLines = 2;
+    titleL.textAlignment = NSTextAlignmentLeft;
     titleL.font = SXFontBold18;
     titleL.textColor = [UIColor blackColor];
-    [self.contentBgView addSubview:titleL];
+    [self.bgImageView addSubview:titleL];
     self.titleL = titleL;
     
-    //内容
-    UILabel *contentL = [[UILabel alloc] init];
-    contentL.numberOfLines = 2;
-    contentL.textAlignment = NSTextAlignmentCenter;
-    contentL.textColor = SXColor333333;
-    [self.contentBgView addSubview:contentL];
-    self.contentL = contentL;
+    UITextField *textField = [[UITextField alloc] init];
+    textField.backgroundColor = SXColorGray7;
+    textField.placeholder = @"请输入...";
+    [self.bgImageView addSubview:textField];
+    self.textField = textField;
+    [self.textField roundViewWithRadius:4];
+    UIImageView *leftImageV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 24)];
+    leftImageV.contentMode = UIViewContentModeCenter;
+    self.textField.leftView = leftImageV;
+    self.textField.leftViewMode = UITextFieldViewModeAlways;
     
     //底部视图
     UIView *bottomView = [[UIView alloc] init];
     bottomView.backgroundColor = [UIColor lightGrayColor];
-    [self.contentBgView addSubview:bottomView];
+    [self.bgImageView addSubview:bottomView];
     self.bottomView = bottomView;
     
     //确定按钮
@@ -122,39 +126,42 @@ const CGFloat titleAlertViewHeightRatio = 0.206; //高度系统
     self.bgView.alpha = 1;
     
     self.closeUserInteractionEnabled = YES;
+    
+    //成为第一响应
+    [self.textField becomeFirstResponder];
 }
 
 - (void)layoutSubviews{
     [super layoutSubviews];
     
     //内容宽高
-//    CGFloat contentW = [UIScreen mainScreen].bounds.size.width * titleAlertViewWidthRatio;
-//    CGFloat contentH = [UIScreen mainScreen].bounds.size.height * titleAlertViewHeightRatio;
-    
+    //    CGFloat contentW = [UIScreen mainScreen].bounds.size.width * SXInputAlertViewWidthRatio;
+    //    CGFloat contentH = [UIScreen mainScreen].bounds.size.height * SXInputAlertViewHeightRatio;
     CGFloat contentW = [UIScreen mainScreen].bounds.size.width - 30 * 2;
-    CGFloat contentH = 180;
+    CGFloat contentH = 200;
     
-    [self.contentBgView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(contentW, contentH));
         make.center.mas_equalTo(self);
     }];
     
     [self.titleL mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.contentBgView.mas_top).mas_offset(30);
-        make.left.mas_equalTo(self.contentBgView).mas_offset(20);
-        make.right.mas_equalTo(self.contentBgView.mas_right).mas_offset(-20);
+        make.top.mas_equalTo(self.bgImageView.mas_top).mas_offset(30);
+        make.left.mas_equalTo(self.bgImageView).mas_offset(20);
+        make.right.mas_equalTo(self.bgImageView.mas_right).mas_offset(-20);
     }];
     
-    [self.contentL mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.textField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.titleL.mas_bottom).mas_offset(20);
-        make.left.mas_equalTo(self.contentBgView).mas_offset(20);
-        make.right.mas_equalTo(self.contentBgView.mas_right).mas_offset(-20);
+        make.left.mas_equalTo(self.bgImageView).mas_offset(20);
+        make.right.mas_equalTo(self.bgImageView.mas_right).mas_offset(-20);
+        make.height.mas_equalTo(40);
     }];
     
     [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.contentBgView);
-        make.bottom.mas_equalTo(self.contentBgView.mas_bottom);
-        make.right.mas_equalTo(self.contentBgView);
+        make.left.mas_equalTo(self.bgImageView);
+        make.bottom.mas_equalTo(self.bgImageView.mas_bottom);
+        make.right.mas_equalTo(self.bgImageView);
         make.height.mas_equalTo(45);
     }];
     
@@ -173,10 +180,16 @@ const CGFloat titleAlertViewHeightRatio = 0.206; //高度系统
 
 #pragma mark -按钮点击事件-
 - (void)confirmButtonTapped{
-    if (self.confirmButtonBlock) {
-        self.confirmButtonBlock();
+    NSString *input = self.textField.text.filterSpace;
+    if ([NSString isEmpty:input]) {
+        [MBProgressHUD showMessageToWindow:self.placeholder];
+        return;
     }
-
+    
+    if (self.confirmButtonBlock) {
+        self.confirmButtonBlock(input);
+    }
+    
     [self performSelector:@selector(removeSelf) withObject:nil afterDelay:0.12];
 }
 
@@ -189,7 +202,7 @@ const CGFloat titleAlertViewHeightRatio = 0.206; //高度系统
     if (self.cancelButtonBlock) {
         self.cancelButtonBlock();
     }
-
+    
     [self performSelector:@selector(removeSelf) withObject:nil afterDelay:0.12];
 }
 
@@ -206,9 +219,9 @@ const CGFloat titleAlertViewHeightRatio = 0.206; //高度系统
     self.titleL.text = title;
 }
 
-- (void)setContent:(NSString *)content{
-    _content = content;
-    self.contentL.text = content;
+- (void)setPlaceholder:(NSString *)placeholder{
+    _placeholder = placeholder;
+    self.textField.placeholder = placeholder;
 }
 
 - (void)setConfirmStr:(NSString *)confirmStr{
@@ -224,5 +237,6 @@ const CGFloat titleAlertViewHeightRatio = 0.206; //高度系统
         [self.cancleButton setTitle:cancelStr forState:UIControlStateNormal];
     }
 }
+
 
 @end

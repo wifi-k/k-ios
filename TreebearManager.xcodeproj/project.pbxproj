@@ -105,6 +105,8 @@
 		09D5F649222A73AD00EA681A /* SXHealtyTimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F648222A73AD00EA681A /* SXHealtyTimeController.m */; };
 		09D5F64F222A748E00EA681A /* SXHealthTimeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F64E222A748E00EA681A /* SXHealthTimeHeaderView.m */; };
 		09D5F651222A749E00EA681A /* SXHealthTimeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F650222A749E00EA681A /* SXHealthTimeHeaderView.xib */; };
+		09D5F654222B88E400EA681A /* SXInputAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F653222B88E400EA681A /* SXInputAlertView.m */; };
+		09D5F657222B8BD600EA681A /* SXUpdateVersionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F656222B8BD600EA681A /* SXUpdateVersionController.m */; };
 		09F233092223EE4D0086AB35 /* SXXiaoKiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233082223EE4D0086AB35 /* SXXiaoKiController.m */; };
 		09F233182223F03C0086AB35 /* SXHomeXiaoKiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233162223F03C0086AB35 /* SXHomeXiaoKiCell.m */; };
 		09F233192223F03C0086AB35 /* SXHomeXiaoKiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F233172223F03C0086AB35 /* SXHomeXiaoKiCell.xib */; };
@@ -378,6 +380,10 @@
 		09D5F64D222A748E00EA681A /* SXHealthTimeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHealthTimeHeaderView.h; sourceTree = "<group>"; };
 		09D5F64E222A748E00EA681A /* SXHealthTimeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHealthTimeHeaderView.m; sourceTree = "<group>"; };
 		09D5F650222A749E00EA681A /* SXHealthTimeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXHealthTimeHeaderView.xib; sourceTree = "<group>"; };
+		09D5F652222B88E400EA681A /* SXInputAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXInputAlertView.h; sourceTree = "<group>"; };
+		09D5F653222B88E400EA681A /* SXInputAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXInputAlertView.m; sourceTree = "<group>"; };
+		09D5F655222B8BD600EA681A /* SXUpdateVersionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXUpdateVersionController.h; sourceTree = "<group>"; };
+		09D5F656222B8BD600EA681A /* SXUpdateVersionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXUpdateVersionController.m; sourceTree = "<group>"; };
 		09F233072223EE4D0086AB35 /* SXXiaoKiController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXXiaoKiController.h; sourceTree = "<group>"; };
 		09F233082223EE4D0086AB35 /* SXXiaoKiController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXXiaoKiController.m; sourceTree = "<group>"; };
 		09F233152223F03C0086AB35 /* SXHomeXiaoKiCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeXiaoKiCell.h; sourceTree = "<group>"; };
@@ -632,6 +638,8 @@
 			children = (
 				091187342215689E00938D9F /* SXTitleAlertView.h */,
 				091187352215689E00938D9F /* SXTitleAlertView.m */,
+				09D5F652222B88E400EA681A /* SXInputAlertView.h */,
+				09D5F653222B88E400EA681A /* SXInputAlertView.m */,
 				0911873A2215854400938D9F /* SXCodeInputAlertView.h */,
 				0911873B2215854400938D9F /* SXCodeInputAlertView.m */,
 				098BA2E5221654E900F58639 /* SXLoginRegistAlertView.h */,
@@ -912,6 +920,8 @@
 			children = (
 				09F233072223EE4D0086AB35 /* SXXiaoKiController.h */,
 				09F233082223EE4D0086AB35 /* SXXiaoKiController.m */,
+				09D5F655222B8BD600EA681A /* SXUpdateVersionController.h */,
+				09D5F656222B8BD600EA681A /* SXUpdateVersionController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2052,6 +2062,7 @@
 				09D5F625222925C200EA681A /* SXParentControlHeaderView.m in Sources */,
 				092D6D0B2202D76000538AC8 /* SXRegistHeaderView.m in Sources */,
 				B3AF300221FB08D1001E4E67 /* SXUtil.m in Sources */,
+				09D5F657222B8BD600EA681A /* SXUpdateVersionController.m in Sources */,
 				B3AF303321FE92CC001E4E67 /* SXBaseCustomTableViewGroupController.m in Sources */,
 				098BA30D221AD98400F58639 /* SXLoginCertifyCodeButton.m in Sources */,
 				091186EF22151D5F00938D9F /* SGSocketManager.m in Sources */,
@@ -2060,6 +2071,7 @@
 				098BA2F72216ADDF00F58639 /* SXPhotoListCell.m in Sources */,
 				092D6D102202DD9400538AC8 /* SXLoginHeaderView.m in Sources */,
 				092D6D1D2202E6EC00538AC8 /* SXForgetConfirmController.m in Sources */,
+				09D5F654222B88E400EA681A /* SXInputAlertView.m in Sources */,
 				B348F9AB21F71A680000F194 /* UIButton+Extension.m in Sources */,
 				092D6D2F2203F6E100538AC8 /* SXHomeMainHeaderView.m in Sources */,
 				B3AF2FFE21FB085C001E4E67 /* SXBaseParam.m in Sources */,

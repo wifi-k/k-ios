@@ -10,11 +10,15 @@
 
 @interface SXHomeXiaoKiCell ()
 
+@property (weak, nonatomic) IBOutlet UIButton *statusBtn;
+
+@property (weak, nonatomic) IBOutlet UIView *bottomBgView;
+@property (weak, nonatomic) IBOutlet UIView *bottomLineView;
+
 @property (weak, nonatomic) IBOutlet UIButton *updateNameBtn;
 @property (weak, nonatomic) IBOutlet UIButton *untyingXiaoKiBtn;
 @property (weak, nonatomic) IBOutlet UIButton *upgradeVersionBtn;
-@property (weak, nonatomic) IBOutlet UIView *bottomLineView;
-@property (weak, nonatomic) IBOutlet UIView *bottomBgView;
+
 
 @end
 
@@ -36,11 +40,15 @@ static NSString *SXHomeXiaoKiCellID = @"SXHomeXiaoKiCellID";
     [self setUpUI];
 }
 
-//初始化UI
+#pragma mark -初始化UI-
 - (void)setUpUI{
+    
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     
     //设置背景色
     self.backgroundColor = SXColorWhite;
+    
+    [self.statusBtn roundViewWithRadius:15.0f];
     
     self.bottomLineView.backgroundColor = SXColorDivideLine;
     self.bottomBgView.backgroundColor = SXColorWhite;
@@ -49,5 +57,27 @@ static NSString *SXHomeXiaoKiCellID = @"SXHomeXiaoKiCellID";
     [self.untyingXiaoKiBtn roundViewWithRadius:4.0f borderColor:SXColor333333 borderWidth:1.0f];
     [self.upgradeVersionBtn roundViewWithRadius:4.0f borderColor:SXColor333333 borderWidth:1.0f];
 }
+
+
+#pragma mark -点击事件-
+- (IBAction)updateNameBtn:(UIButton *)sender {
+    if (self.clickUpdateNameBtnBlock) {
+        self.clickUpdateNameBtnBlock();
+    }
+}
+
+
+- (IBAction)clickUnbindBtn:(UIButton *)sender {
+    if (self.clickUnbindBtnBlock) {
+        self.clickUnbindBtnBlock();
+    }
+}
+
+- (IBAction)updateVersionBtn:(UIButton *)sender {
+    if (self.clickUpdateVersionBtnBlock) {
+        self.clickUpdateVersionBtnBlock();
+    }
+}
+
 
 @end
