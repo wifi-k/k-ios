@@ -35,7 +35,8 @@
     //self.autoresizingMask = UIViewAutoresizingNone;
     [self setUpUI];
 }
-    
+
+#pragma mark -初始化UI-
 - (void)setUpUI{
     
     self.backgroundColor = SXColorWhite;

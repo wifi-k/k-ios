@@ -13,6 +13,7 @@
 #import "SXHealtyControlController.h"
 #import "SXCheckReportController.h"
 #import "SXWifiSettingController.h"
+#import "SXHomeManagerController.h"
 #import "SXHomeMainHeaderView.h"
 #import "SXHomeMainSectionHeaderView.h"
 #import "SXHomeMainSectionFooterView.h"
@@ -58,6 +59,9 @@
     //2.头部视图
     WS(weakSelf);
     SXHomeMainHeaderView *headerView = [SXHomeMainHeaderView headerView];
+    headerView.clickMangerBtnBlock = ^{
+        [weakSelf jumpToManagerVC];
+    };
     headerView.clickUserInfoBtnBlock = ^{
         [weakSelf jumpToXiaoKiVC];
     };
@@ -119,6 +123,11 @@
 }
 
 #pragma mark -页面跳转-
+- (void)jumpToManagerVC{
+    SXHomeManagerController *managerVC = [[SXHomeManagerController alloc] init];
+    [self.navigationController pushViewController:managerVC animated:YES];
+}
+
 - (void)jumpToXiaoKiVC{
     SXXiaoKiController *messageVC = [[SXXiaoKiController alloc] init];
     [self.navigationController pushViewController:messageVC animated:YES];

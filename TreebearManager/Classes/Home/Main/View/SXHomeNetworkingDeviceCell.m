@@ -37,8 +37,8 @@ static NSString *ID = @"SXHomeNetworkingDeviceCellID";
     
     [self setUpUI];
 }
-    
-    //初始化UI
+
+#pragma mark -初始化UI-
 - (void)setUpUI{
     
     self.iconImageV.backgroundColor = SXColorRandom;

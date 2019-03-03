@@ -105,6 +105,12 @@
 }
 
 #pragma mark -事件监听-
+- (IBAction)clickManagerBtn:(SXHomeMainMemberButton *)sender {
+    if (self.clickMangerBtnBlock) {
+        self.clickMangerBtnBlock();
+    }
+}
+
 - (IBAction)clickUserInfoBtn:(SXHomeMainGotoUserInfoButton *)sender {
     if (self.clickUserInfoBtnBlock) {
         self.clickUserInfoBtnBlock();
