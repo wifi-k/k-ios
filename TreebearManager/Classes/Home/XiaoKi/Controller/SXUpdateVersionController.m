@@ -7,9 +7,11 @@
 //
 
 #import "SXUpdateVersionController.h"
+#import "SXUpdateVersionHeaderView.h"
 
 @interface SXUpdateVersionController ()
-
+///头部视图
+@property (nonatomic, weak) SXUpdateVersionHeaderView *headerView;
 @end
 
 @implementation SXUpdateVersionController
@@ -26,6 +28,25 @@
     self.view.backgroundColor = SXColorWhite;
     
     self.navigationItem.title = @"升级版本";
+    
+    WS(weakSelf);
+    SXUpdateVersionHeaderView *headerView = [SXUpdateVersionHeaderView headerView];
+    headerView.clickUpdateBtnBlock = ^{
+        [weakSelf updateVersion];
+    };
+    [self.view addSubview:headerView];
+    self.headerView = headerView;
+}
+
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    self.headerView.frame = self.view.bounds;
+}
+
+#pragma mark -升级中-
+- (void)updateVersion{
+    DLog(@"升级..."); 
 }
 
 @end

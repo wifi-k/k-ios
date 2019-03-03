@@ -48,9 +48,10 @@ static NSString *SXHomeXiaoKiCellID = @"SXHomeXiaoKiCellID";
     //设置背景色
     self.backgroundColor = SXColorWhite;
     
-    [self.statusBtn roundViewWithRadius:15.0f];
+    [self.statusBtn roundViewWithRadius:4.0f];
     
     self.bottomLineView.backgroundColor = SXColorDivideLine;
+    self.bottomLineView.height = 0.5f;
     self.bottomBgView.backgroundColor = SXColorWhite;
     
     [self.updateNameBtn roundViewWithRadius:4.0f borderColor:SXColor333333 borderWidth:1.0f];
