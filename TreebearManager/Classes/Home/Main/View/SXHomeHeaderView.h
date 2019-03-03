@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) void (^clickBindingBtnBlock)(void);
 ///点击家庭码按钮回调
 @property (nonatomic, copy) void (^clickFamilyCodeBtnBlock)(void);
+///点击产品介绍按钮回调
+@property (nonatomic, copy) void (^clickProductBtnBlock)(void);
 
 @end
 

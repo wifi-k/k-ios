@@ -8,6 +8,7 @@
 
 #import "SXHomeController.h"
 #import "SXFamilyMemberController.h"
+#import "SXAddXiaoKiController.h"
 #import "SXRootTool.h"
 #import "SXHomeHeaderView.h"
 #import "SXCodeInputAlertView.h"
@@ -50,6 +51,9 @@
     headerView.clickFamilyCodeBtnBlock = ^{
         [weakSelf alertUpdateNameView];
     };
+    headerView.clickProductBtnBlock = ^{
+        [weakSelf addVC];
+    };
     [self.view addSubview:headerView];
     self.headerView = headerView;
 }
@@ -64,6 +68,11 @@
 - (void)jumpToFamilyMemberVC{
     SXFamilyMemberController *familyVC = [[SXFamilyMemberController alloc] init];
     [self.navigationController pushViewController:familyVC animated:YES];
+}
+
+- (void)addVC{
+    SXAddXiaoKiController *addVC = [[SXAddXiaoKiController alloc] init];
+    [self.navigationController pushViewController:addVC animated:YES];
 }
 
 #pragma mark -视图弹窗-

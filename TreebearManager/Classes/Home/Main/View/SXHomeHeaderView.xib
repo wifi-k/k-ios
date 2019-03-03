@@ -101,6 +101,9 @@
                         <constraint firstAttribute="height" constant="120" id="IU2-Aj-oFY"/>
                     </constraints>
                     <state key="normal" backgroundImage="home_treebear_route"/>
+                    <connections>
+                        <action selector="clickProductBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="DQh-tR-igP"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="绑定小K管家" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cto-R2-vHh">
                     <rect key="frame" x="120" y="146" width="115" height="24"/>
@@ -137,6 +140,7 @@
                 <outlet property="addFamilyCodeL" destination="RDj-L1-uek" id="hz3-yC-d4b"/>
                 <outlet property="bindingDeviceL" destination="cto-R2-vHh" id="F0f-qj-X6F"/>
                 <outlet property="familyCodeBgView" destination="2xs-Nk-c3k" id="Tbd-Xs-Ib9"/>
+                <outlet property="productBtn" destination="9Wa-ky-4pp" id="gAs-lL-sLg"/>
                 <outlet property="productL" destination="4ER-QV-Qz5" id="z9Z-q7-KnG"/>
                 <outlet property="titleL" destination="QEZ-md-J3f" id="Vgq-hg-hMa"/>
                 <outlet property="topImageV" destination="RDD-o3-ppr" id="m6T-YV-tIG"/>

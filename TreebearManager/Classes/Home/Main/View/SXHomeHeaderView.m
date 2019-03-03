@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIView *familyCodeBgView;
 
 @property (weak, nonatomic) IBOutlet UILabel *productL;
+@property (weak, nonatomic) IBOutlet UIButton *productBtn;
+
 @end
 
 @implementation SXHomeHeaderView
@@ -72,6 +74,12 @@
 - (IBAction)clickFamilyCodeBtn:(SXHomeFamilyCodeButton *)sender {
     if (self.clickFamilyCodeBtnBlock) {
         self.clickFamilyCodeBtnBlock();
+    }
+}
+
+- (IBAction)clickProductBtn:(UIButton *)sender {
+    if (self.clickProductBtnBlock) {
+        self.clickProductBtnBlock();
     }
 }
 
