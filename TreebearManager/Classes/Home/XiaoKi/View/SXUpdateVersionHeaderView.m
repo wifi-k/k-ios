@@ -9,6 +9,14 @@
 #import "SXUpdateVersionHeaderView.h"
 
 @interface SXUpdateVersionHeaderView ()
+@property (weak, nonatomic) IBOutlet UILabel *ssidTitleL;
+@property (weak, nonatomic) IBOutlet UILabel *currentVersionTitleL;
+@property (weak, nonatomic) IBOutlet UILabel *latestVersionTitleL;
+
+@property (weak, nonatomic) IBOutlet UILabel *ssidL;
+@property (weak, nonatomic) IBOutlet UILabel *currentVersionL;
+@property (weak, nonatomic) IBOutlet UILabel *latestVersionL;
+
 @property (weak, nonatomic) IBOutlet UIButton *statusBtn;
 @property (weak, nonatomic) IBOutlet UIButton *updateBtn;
 @end
@@ -34,6 +42,14 @@
 - (void)setUpUI{
     
     self.backgroundColor = SXColorWhite;
+    
+    self.ssidTitleL.textColor = SXColor999999;
+    self.currentVersionTitleL.textColor = SXColor999999;
+    self.latestVersionTitleL.textColor = SXColor999999;
+    
+    self.ssidL.textColor = SXColor666666;
+    self.currentVersionL.textColor = SXColor666666;
+    self.latestVersionL.textColor = SXColor666666;
     
     [self.statusBtn roundViewWithRadius:4.0f];
     

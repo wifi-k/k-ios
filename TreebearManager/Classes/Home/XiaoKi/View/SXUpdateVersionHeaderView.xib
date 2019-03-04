@@ -22,22 +22,22 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="序列号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fQ-F9-JPn">
-                    <rect key="frame" x="15" y="71.5" width="46" height="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="序列号：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fQ-F9-JPn">
+                    <rect key="frame" x="15" y="71.5" width="61.5" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前固件版本" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2u-l4-4MI">
-                    <rect key="frame" x="15" y="109.5" width="92" height="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前固件版本：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2u-l4-4MI">
+                    <rect key="frame" x="15" y="109.5" width="107.5" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最新固件版本" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJa-x0-60h">
-                    <rect key="frame" x="15" y="147.5" width="92" height="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最新固件版本：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJa-x0-60h">
+                    <rect key="frame" x="15" y="147.5" width="107.5" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AV7-6i-ZO1">
@@ -59,28 +59,58 @@
                         <action selector="clickUpdateBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="LCm-ea-HkZ"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kJG58824542802" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXm-Ch-UBb">
+                    <rect key="frame" x="81.5" y="71.5" width="128" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vm0-ZG-FLE">
+                    <rect key="frame" x="127.5" y="147.5" width="42" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YII-uj-ci8">
+                    <rect key="frame" x="127.5" y="109.5" width="42" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="g0h-hs-bjd" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="00h-Yb-TZ6"/>
+                <constraint firstItem="YII-uj-ci8" firstAttribute="leading" secondItem="E2u-l4-4MI" secondAttribute="trailing" constant="5" id="2Pa-8V-elQ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="AV7-6i-ZO1" secondAttribute="trailing" constant="15" id="4yh-Jd-83x"/>
                 <constraint firstItem="g0h-hs-bjd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="POa-YU-mDb"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="4RD-FF-siX" secondAttribute="bottom" constant="20" id="QEj-4C-PDu"/>
+                <constraint firstItem="YII-uj-ci8" firstAttribute="centerY" secondItem="E2u-l4-4MI" secondAttribute="centerY" id="SBa-z5-1eF"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4RD-FF-siX" secondAttribute="trailing" constant="15" id="Vc6-j1-xvK"/>
                 <constraint firstItem="E2u-l4-4MI" firstAttribute="top" secondItem="3fQ-F9-JPn" secondAttribute="bottom" constant="20" id="VdT-Rf-vRK"/>
+                <constraint firstItem="Vm0-ZG-FLE" firstAttribute="centerY" secondItem="XJa-x0-60h" secondAttribute="centerY" id="bVe-gz-PzY"/>
+                <constraint firstItem="Vm0-ZG-FLE" firstAttribute="leading" secondItem="XJa-x0-60h" secondAttribute="trailing" constant="5" id="cCD-CP-sgI"/>
                 <constraint firstItem="XJa-x0-60h" firstAttribute="top" secondItem="E2u-l4-4MI" secondAttribute="bottom" constant="20" id="ekn-av-P1m"/>
                 <constraint firstItem="4RD-FF-siX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="nh1-mc-d4f"/>
                 <constraint firstItem="AV7-6i-ZO1" firstAttribute="centerY" secondItem="3fQ-F9-JPn" secondAttribute="centerY" id="pZc-LI-BPX"/>
                 <constraint firstItem="3fQ-F9-JPn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="sNy-wx-G6j"/>
+                <constraint firstItem="sXm-Ch-UBb" firstAttribute="leading" secondItem="3fQ-F9-JPn" secondAttribute="trailing" constant="5" id="scf-fq-h28"/>
                 <constraint firstItem="XJa-x0-60h" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="sdU-Dp-kXu"/>
                 <constraint firstItem="E2u-l4-4MI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="skw-cZ-sEr"/>
                 <constraint firstItem="3fQ-F9-JPn" firstAttribute="top" secondItem="g0h-hs-bjd" secondAttribute="bottom" constant="20" id="uA2-2z-hK5"/>
+                <constraint firstItem="sXm-Ch-UBb" firstAttribute="centerY" secondItem="3fQ-F9-JPn" secondAttribute="centerY" id="xLq-vK-Tg9"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="currentVersionL" destination="YII-uj-ci8" id="TKu-Zp-JC6"/>
+                <outlet property="currentVersionTitleL" destination="E2u-l4-4MI" id="YgZ-fT-sxm"/>
+                <outlet property="latestVersionL" destination="Vm0-ZG-FLE" id="k3I-im-YuR"/>
+                <outlet property="latestVersionTitleL" destination="XJa-x0-60h" id="fZd-UZ-Gai"/>
+                <outlet property="ssidL" destination="sXm-Ch-UBb" id="3S2-18-tmC"/>
+                <outlet property="ssidTitleL" destination="3fQ-F9-JPn" id="RPU-ZQ-kJi"/>
                 <outlet property="statusBtn" destination="AV7-6i-ZO1" id="gUj-Km-AW8"/>
                 <outlet property="updateBtn" destination="4RD-FF-siX" id="rXh-I1-rxe"/>
             </connections>

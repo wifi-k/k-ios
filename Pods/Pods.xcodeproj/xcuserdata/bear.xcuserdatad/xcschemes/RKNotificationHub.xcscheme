@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "27B743A292A0E1B97559BB7EA7710D9E"
-               BlueprintName = "SVProgressHUD"
+               BlueprintIdentifier = "0E5D1B508685381B06DF72142150E0CF"
+               BlueprintName = "RKNotificationHub"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libSVProgressHUD.a">
+               BuildableName = "libRKNotificationHub.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

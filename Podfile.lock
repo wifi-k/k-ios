@@ -27,6 +27,7 @@ PODS:
   - MBProgressHUD (1.0.0)
   - MJExtension (3.0.15.1)
   - MJRefresh (3.1.15.7)
+  - RKNotificationHub (2.0.5)
   - SAMKeychain (1.5.3)
   - SDCycleScrollView (1.75):
     - SDWebImage (>= 4.0.0)
@@ -34,7 +35,7 @@ PODS:
     - SDWebImage/Core (= 4.1.2)
   - SDWebImage/Core (4.1.2)
   - SVProgressHUD (2.0.3)
-  - TZImagePickerController (3.1.9)
+  - TZImagePickerController (3.2.0)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
@@ -52,6 +53,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.0.0)
   - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.12)
+  - RKNotificationHub
   - SAMKeychain
   - SDCycleScrollView
   - SDWebImage (~> 4.1.0)
@@ -73,6 +75,7 @@ SPEC REPOS:
     - MBProgressHUD
     - MJExtension
     - MJRefresh
+    - RKNotificationHub
     - SAMKeychain
     - SDCycleScrollView
     - SDWebImage
@@ -93,13 +96,14 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  RKNotificationHub: e926748820d719f21ff374657a47fceefa1796b4
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: cb6f9f266a9977741efcbc21e618e8be3734c774
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
-  TZImagePickerController: c3f7c505d23281e21e98df6dbeae372946caa28f
+  TZImagePickerController: 7850b158d025065b162a1a963d445040b828abc9
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 75a2e05be1774bb3409560f6ccde6915301ed2d7
+PODFILE CHECKSUM: 5ed6a2a2755ac6033efad123bf709299ad396af1
 
 COCOAPODS: 1.5.3
