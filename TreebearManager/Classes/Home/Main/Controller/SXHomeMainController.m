@@ -13,7 +13,7 @@
 #import "SXHealtyControlController.h"
 #import "SXCheckReportController.h"
 #import "SXWifiSettingController.h"
-#import "SXHomeManagerController.h"
+#import "SXFamilyMemberController.h"
 #import "SXHomeMainHeaderView.h"
 #import "SXHomeMainSectionHeaderView.h"
 #import "SXHomeMainSectionFooterView.h"
@@ -124,7 +124,7 @@
 
 #pragma mark -页面跳转-
 - (void)jumpToManagerVC{
-    SXHomeManagerController *managerVC = [[SXHomeManagerController alloc] init];
+    SXFamilyMemberController *managerVC = [[SXFamilyMemberController alloc] init];
     [self.navigationController pushViewController:managerVC animated:YES];
 }
 

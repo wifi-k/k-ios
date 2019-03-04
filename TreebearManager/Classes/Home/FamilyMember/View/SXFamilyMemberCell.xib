@@ -26,16 +26,16 @@
                             <constraint firstAttribute="height" constant="50" id="VRV-I9-HCk"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFh-ra-HMu">
-                        <rect key="frame" x="75" y="31" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFh-ra-HMu">
+                        <rect key="frame" x="75" y="31" width="33" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08u-4V-ORI">
-                        <rect key="frame" x="75" y="60" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08u-4V-ORI">
+                        <rect key="frame" x="75" y="64" width="43" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQH-mH-VCQ">
@@ -80,8 +80,16 @@
                             <action selector="clickAddBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Jiv-Lc-IdT"/>
                         </connections>
                     </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDo-3f-eOD">
+                        <rect key="frame" x="15" y="111" width="331" height="0.5"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="l64-6b-wdY"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="jDo-3f-eOD" secondAttribute="trailing" id="5XY-5i-Zvq"/>
                     <constraint firstItem="cFh-ra-HMu" firstAttribute="leading" secondItem="m1k-HZ-2Or" secondAttribute="trailing" constant="10" id="IGG-lJ-eiL"/>
                     <constraint firstItem="rD5-m8-SUV" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="IRu-Ut-iof"/>
                     <constraint firstItem="cFh-ra-HMu" firstAttribute="top" secondItem="m1k-HZ-2Or" secondAttribute="top" id="RKU-Ml-SPf"/>
@@ -89,18 +97,24 @@
                     <constraint firstItem="6TJ-G6-AFo" firstAttribute="leading" secondItem="rD5-m8-SUV" secondAttribute="trailing" constant="10" id="W5H-XS-FuK"/>
                     <constraint firstAttribute="trailing" secondItem="MQH-mH-VCQ" secondAttribute="trailing" constant="15" id="X3C-4r-fIb"/>
                     <constraint firstItem="m1k-HZ-2Or" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Zio-Ch-WnS"/>
+                    <constraint firstItem="jDo-3f-eOD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="dn7-F5-1hM"/>
                     <constraint firstItem="6TJ-G6-AFo" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="eNM-fO-5ar"/>
                     <constraint firstItem="08u-4V-ORI" firstAttribute="bottom" secondItem="m1k-HZ-2Or" secondAttribute="bottom" id="gNO-18-90G"/>
                     <constraint firstItem="MQH-mH-VCQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="quf-O7-BG3"/>
                     <constraint firstItem="MQH-mH-VCQ" firstAttribute="leading" secondItem="6TJ-G6-AFo" secondAttribute="trailing" constant="10" id="uWF-4a-3CW"/>
                     <constraint firstItem="08u-4V-ORI" firstAttribute="leading" secondItem="m1k-HZ-2Or" secondAttribute="trailing" constant="10" id="wAc-or-FFy"/>
+                    <constraint firstAttribute="bottom" secondItem="jDo-3f-eOD" secondAttribute="bottom" id="yPR-4N-ecH"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="addBtn" destination="rD5-m8-SUV" id="5bK-JL-IOy"/>
+                <outlet property="bottomLineView" destination="jDo-3f-eOD" id="FLq-Gv-oLS"/>
                 <outlet property="deleteBtn" destination="MQH-mH-VCQ" id="nfE-en-j39"/>
                 <outlet property="editBtn" destination="6TJ-G6-AFo" id="hef-li-BpH"/>
+                <outlet property="iconImageView" destination="m1k-HZ-2Or" id="Rsr-B9-zwe"/>
+                <outlet property="mobileL" destination="08u-4V-ORI" id="yAc-vf-mRN"/>
+                <outlet property="nickNameL" destination="cFh-ra-HMu" id="lpq-H2-nFE"/>
             </connections>
             <point key="canvasLocation" x="158.40000000000001" y="184.40779610194903"/>
         </tableViewCell>

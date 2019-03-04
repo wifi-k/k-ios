@@ -24,7 +24,7 @@
 - (void)setUpUI{
     self.view.backgroundColor = SXColorWhite;
     
-    self.navigationItem.title = @"小K添加";
+    self.navigationItem.title = @"管理员";
 }
 
 @end

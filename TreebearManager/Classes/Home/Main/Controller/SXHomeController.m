@@ -46,13 +46,13 @@
     WS(weakSelf);
     SXHomeHeaderView *headerView = [SXHomeHeaderView headerView];
     headerView.clickBindingBtnBlock = ^{
-        [weakSelf jumpToFamilyMemberVC];
+        [weakSelf addXiaoKiVC];
     };
     headerView.clickFamilyCodeBtnBlock = ^{
         [weakSelf alertUpdateNameView];
     };
     headerView.clickProductBtnBlock = ^{
-        [weakSelf addVC];
+        DLog(@"点击产品页面...");
     };
     [self.view addSubview:headerView];
     self.headerView = headerView;
@@ -65,12 +65,7 @@
 }
 
 #pragma mark -页面跳转-
-- (void)jumpToFamilyMemberVC{
-    SXFamilyMemberController *familyVC = [[SXFamilyMemberController alloc] init];
-    [self.navigationController pushViewController:familyVC animated:YES];
-}
-
-- (void)addVC{
+- (void)addXiaoKiVC{
     SXAddXiaoKiController *addVC = [[SXAddXiaoKiController alloc] init];
     [self.navigationController pushViewController:addVC animated:YES];
 }
