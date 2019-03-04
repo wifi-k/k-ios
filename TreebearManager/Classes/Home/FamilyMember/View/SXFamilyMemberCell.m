@@ -39,7 +39,7 @@ static NSString *SXFamilyMemberCellID = @"SXFamilyMemberCellID";
 #pragma mark -初始化UI-
 - (void)setUpUI{
     
-    self.selectionStyle = UITableViewCellSelectionStyleNone; 
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     
     //设置背景色
     self.backgroundColor = SXColorWhite;

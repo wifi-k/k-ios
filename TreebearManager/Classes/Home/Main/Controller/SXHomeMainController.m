@@ -21,9 +21,6 @@
 #import "SXHomeMainSectionFooterView2.h"
 #import "SXHomeNetworkingDeviceCell.h"
 #import "SXRootTool.h"
-#import "SXAlbumAuthorizationTool.h"
-#import "SXAlertControllerTool.h"
-#import <Photos/Photos.h>
 
 @interface SXHomeMainController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak) SXHomeMainHeaderView *headerView;//头部视图
@@ -62,6 +59,9 @@
     headerView.clickMangerBtnBlock = ^{
         [weakSelf jumpToManagerVC];
     };
+    headerView.clickShareBtnBlock = ^{
+        [MBProgressHUD showMessage:@"微信分享!" toView:weakSelf.view];
+    };
     headerView.clickUserInfoBtnBlock = ^{
         [weakSelf jumpToXiaoKiVC];
     };
@@ -72,7 +72,7 @@
         [weakSelf jumpToWifiSettingVC:tag];
     };
     headerView.clickBackupBtnBlock = ^{
-        [weakSelf checkAlbumAuthorization];
+        [weakSelf jumpToPhotoVC];
     };
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
@@ -82,36 +82,9 @@
     [self.tableView registerClass:SXHomeMainSectionHeaderView2.class forHeaderFooterViewReuseIdentifier:SXHomeMainSectionHeaderView2ID];
 }
 
-#pragma mark -相册授权-
-- (void)checkAlbumAuthorization{
-    WS(weakSelf);
-    [SXAlbumAuthorizationTool checkAlbumAuthorization:^(NSInteger status) {
-        if (status != 3) {//没有授权，去请求授权
-            [SXAlbumAuthorizationTool requestAlbumAuthorizationSuccess:^{
-                DLog(@"请求成功");
-                //直接读取
-                DLog(@"读取数据");
-            } failure:^{
-                DLog(@"请求失败");
-                [weakSelf alertSettingView];
-            }];
-        } else{
-            //直接读取
-            DLog(@"读取数据");
-        }
-    }];
-}
-
-#pragma mark -系统弹窗提示-
-- (void)alertSettingView{
-    [SXAlertControllerTool alertWithTitle:@"提示" message:@"您的相册访问权限未开启，请到手机隐私设置" confirm:^(UIAlertAction * _Nonnull action) {
-        NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
-        if ([[UIApplication sharedApplication] canOpenURL:url]) {
-            [[UIApplication sharedApplication] openURL:url];
-        }
-    } cancel:^(UIAlertAction * _Nonnull action) {
-        DLog(@"action.title:%@",action.title);
-    }];
+#pragma mark -跳转相册-
+- (void)jumpToPhotoVC{
+    [SXRootTool changeToPhotoVC];
 }
 
 - (void)viewDidLayoutSubviews{

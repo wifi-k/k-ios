@@ -24,6 +24,11 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)changeToMainHomeVC;
 ///连接失败
 + (void)changeToHomeVC;
+///选中相册
++ (void)changeToPhotoVC;
+
+#pragma mark -页面跳转-
++ (void)jumpToVC:(UIViewController *)controller;
 
 @end
 

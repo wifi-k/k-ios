@@ -62,5 +62,21 @@
         [tabBarVC changeToHomeVC];
     }
 }
+
++ (void)changeToPhotoVC{
+    UIViewController *rootVC = self.rootViewController;
+    if ([rootVC isKindOfClass:[SXTabBarController class]]) {
+        SXTabBarController *tabBarVC = (SXTabBarController *)rootVC;
+        tabBarVC.selectedIndex = 1;
+    }
+}
+
++ (void)jumpToVC:(UIViewController *)controller{
+    UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+    if([rootVC isKindOfClass:[SXNavigationController class]]) {
+        SXNavigationController *naviVC = (SXNavigationController *)rootVC;
+        [naviVC pushViewController:controller animated:YES];
+    }
+}
     
 @end

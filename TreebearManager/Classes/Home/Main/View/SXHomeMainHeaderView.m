@@ -111,6 +111,12 @@
     }
 }
 
+- (IBAction)shareBtn:(SXHomeMainMemberButton *)sender {
+    if (self.clickShareBtnBlock) {
+        self.clickShareBtnBlock();
+    }
+}
+
 - (IBAction)clickUserInfoBtn:(SXHomeMainGotoUserInfoButton *)sender {
     if (self.clickUserInfoBtnBlock) {
         self.clickUserInfoBtnBlock();
