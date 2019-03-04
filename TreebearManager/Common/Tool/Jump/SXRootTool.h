@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SXRootTool : NSObject
 
+#pragma mark -根控制器切换-
 + (void)chooseRootWithTabBarVC:(UIWindow *)window;
 
 + (void)chooseRootWithLoginVC:(UIWindow *)window;
@@ -27,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 ///选中相册
 + (void)changeToPhotoVC;
 
-#pragma mark -页面跳转-
+#pragma mark -页面跳转(不含参数)-
 + (void)jumpToVC:(UIViewController *)controller;
 
 @end

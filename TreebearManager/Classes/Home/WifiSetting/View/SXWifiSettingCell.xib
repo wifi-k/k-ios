@@ -27,16 +27,16 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="防蹭网" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYh-gG-8RS">
-                        <rect key="frame" x="70" y="20.5" width="223" height="21"/>
+                        <rect key="frame" x="70" y="20.5" width="225" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="I2X-G5-pyn">
-                        <rect key="frame" x="303" y="23.5" width="9" height="15"/>
+                        <rect key="frame" x="305" y="26" width="7" height="10"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="9" id="7fq-th-crI"/>
-                            <constraint firstAttribute="height" constant="15" id="DFc-h4-fkW"/>
+                            <constraint firstAttribute="width" constant="7" id="7fq-th-crI"/>
+                            <constraint firstAttribute="height" constant="10" id="DFc-h4-fkW"/>
                         </constraints>
                     </imageView>
                 </subviews>
@@ -55,7 +55,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="arrow_right" width="9" height="15"/>
+        <image name="arrow_right" width="7" height="10"/>
         <image name="img_user_icon" width="50" height="50"/>
     </resources>
 </document>

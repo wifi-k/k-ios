@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0900F514222D31BD00250155 /* SXNetOptionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0900F513222D31BD00250155 /* SXNetOptionModel.m */; };
 		091186EE22151D5F00938D9F /* SGSocketConfigM.m in Sources */ = {isa = PBXBuildFile; fileRef = 091186EB22151D5F00938D9F /* SGSocketConfigM.m */; };
 		091186EF22151D5F00938D9F /* SGSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 091186ED22151D5F00938D9F /* SGSocketManager.m */; };
 		09118701221522BF00938D9F /* GCDAsyncSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 091186F3221522BF00938D9F /* GCDAsyncSocketManager.m */; };
@@ -119,6 +120,10 @@
 		09D5F678222BC71200EA681A /* SXFamilyMemberFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F677222BC71200EA681A /* SXFamilyMemberFooterView.xib */; };
 		09D5F67C222BC87000EA681A /* SXFamilyMemberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F67A222BC87000EA681A /* SXFamilyMemberCell.m */; };
 		09D5F67D222BC87000EA681A /* SXFamilyMemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F67B222BC87000EA681A /* SXFamilyMemberCell.xib */; };
+		09D5F681222D23C900EA681A /* SXNetOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F67F222D23C900EA681A /* SXNetOptionCell.m */; };
+		09D5F682222D23C900EA681A /* SXNetOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F680222D23C900EA681A /* SXNetOptionCell.xib */; };
+		09D5F685222D247200EA681A /* SXNetOptionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F684222D247200EA681A /* SXNetOptionFooterView.m */; };
+		09D5F687222D24B700EA681A /* SXNetOptionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F686222D24B700EA681A /* SXNetOptionFooterView.xib */; };
 		09F233092223EE4D0086AB35 /* SXXiaoKiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233082223EE4D0086AB35 /* SXXiaoKiController.m */; };
 		09F233182223F03C0086AB35 /* SXHomeXiaoKiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233162223F03C0086AB35 /* SXHomeXiaoKiCell.m */; };
 		09F233192223F03C0086AB35 /* SXHomeXiaoKiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F233172223F03C0086AB35 /* SXHomeXiaoKiCell.xib */; };
@@ -216,6 +221,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0900F512222D31BD00250155 /* SXNetOptionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXNetOptionModel.h; sourceTree = "<group>"; };
+		0900F513222D31BD00250155 /* SXNetOptionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXNetOptionModel.m; sourceTree = "<group>"; };
 		091186EA22151D5F00938D9F /* SGSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSocketManager.h; sourceTree = "<group>"; };
 		091186EB22151D5F00938D9F /* SGSocketConfigM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSocketConfigM.m; sourceTree = "<group>"; };
 		091186EC22151D5F00938D9F /* SGSocketConfigM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSocketConfigM.h; sourceTree = "<group>"; };
@@ -416,6 +423,12 @@
 		09D5F679222BC87000EA681A /* SXFamilyMemberCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXFamilyMemberCell.h; sourceTree = "<group>"; };
 		09D5F67A222BC87000EA681A /* SXFamilyMemberCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXFamilyMemberCell.m; sourceTree = "<group>"; };
 		09D5F67B222BC87000EA681A /* SXFamilyMemberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXFamilyMemberCell.xib; sourceTree = "<group>"; };
+		09D5F67E222D23C900EA681A /* SXNetOptionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXNetOptionCell.h; sourceTree = "<group>"; };
+		09D5F67F222D23C900EA681A /* SXNetOptionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXNetOptionCell.m; sourceTree = "<group>"; };
+		09D5F680222D23C900EA681A /* SXNetOptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXNetOptionCell.xib; sourceTree = "<group>"; };
+		09D5F683222D247200EA681A /* SXNetOptionFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXNetOptionFooterView.h; sourceTree = "<group>"; };
+		09D5F684222D247200EA681A /* SXNetOptionFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXNetOptionFooterView.m; sourceTree = "<group>"; };
+		09D5F686222D24B700EA681A /* SXNetOptionFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXNetOptionFooterView.xib; sourceTree = "<group>"; };
 		09F233072223EE4D0086AB35 /* SXXiaoKiController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXXiaoKiController.h; sourceTree = "<group>"; };
 		09F233082223EE4D0086AB35 /* SXXiaoKiController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXXiaoKiController.m; sourceTree = "<group>"; };
 		09F233152223F03C0086AB35 /* SXHomeXiaoKiCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeXiaoKiCell.h; sourceTree = "<group>"; };
@@ -594,6 +607,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0900F511222D31AF00250155 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0900F512222D31BD00250155 /* SXNetOptionModel.h */,
+				0900F513222D31BD00250155 /* SXNetOptionModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		091186E5221516A600938D9F /* GCDSocket */ = {
 			isa = PBXGroup;
 			children = (
@@ -968,6 +990,7 @@
 		09D5F666222BC22300EA681A /* AddXiaoKi */ = {
 			isa = PBXGroup;
 			children = (
+				0900F511222D31AF00250155 /* Model */,
 				09D5F667222BC22300EA681A /* Controller */,
 				09D5F668222BC22300EA681A /* View */,
 			);
@@ -991,6 +1014,12 @@
 				09D5F66C222BC2B900EA681A /* SXAddXiaoKiHeaderView.h */,
 				09D5F66D222BC2B900EA681A /* SXAddXiaoKiHeaderView.m */,
 				09D5F66F222BC2F200EA681A /* SXAddXiaoKiHeaderView.xib */,
+				09D5F67E222D23C900EA681A /* SXNetOptionCell.h */,
+				09D5F67F222D23C900EA681A /* SXNetOptionCell.m */,
+				09D5F680222D23C900EA681A /* SXNetOptionCell.xib */,
+				09D5F683222D247200EA681A /* SXNetOptionFooterView.h */,
+				09D5F684222D247200EA681A /* SXNetOptionFooterView.m */,
+				09D5F686222D24B700EA681A /* SXNetOptionFooterView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1984,6 +2013,7 @@
 				092D6D122202DD9B00538AC8 /* SXLoginHeaderView.xib in Resources */,
 				09F2332E2224DBB80086AB35 /* SXNetWallCell.xib in Resources */,
 				09FB47532223E8B600809273 /* SXHealtyControlHeaderView.xib in Resources */,
+				09D5F687222D24B700EA681A /* SXNetOptionFooterView.xib in Resources */,
 				09D5F643222A5BE100EA681A /* SXDeviceControlCell.xib in Resources */,
 				09FB473122239E3500809273 /* SXHomeMessageCell.xib in Resources */,
 				09F2331E222410350086AB35 /* SXWifiSettingHeaderView.xib in Resources */,
@@ -1996,6 +2026,7 @@
 				09D5F622222925C200EA681A /* SXParentControlHeaderView.xib in Resources */,
 				09FB474B2223E56600809273 /* SXSwitchBoardHeaderView.xib in Resources */,
 				09D5F678222BC71200EA681A /* SXFamilyMemberFooterView.xib in Resources */,
+				09D5F682222D23C900EA681A /* SXNetOptionCell.xib in Resources */,
 				09F233192223F03C0086AB35 /* SXHomeXiaoKiCell.xib in Resources */,
 				B348F99121F7143A0000F194 /* Assets.xcassets in Resources */,
 				092D6D3922041C5200538AC8 /* SXHomeHeaderView.xib in Resources */,
@@ -2094,6 +2125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0900F514222D31BD00250155 /* SXNetOptionModel.m in Sources */,
 				B3AF2FEA21FAFF10001E4E67 /* SXLoginMainController.m in Sources */,
 				092D6CE92200625700538AC8 /* Foundation+Log.m in Sources */,
 				B3AF301521FB0A92001E4E67 /* SXBaseSectionHeaderCollectionView.m in Sources */,
@@ -2223,6 +2255,7 @@
 				098BA2FF221A559200F58639 /* SXMineListCell.m in Sources */,
 				09F233312224DF6B0086AB35 /* SXWifiSettingAlertView.m in Sources */,
 				B348F9B921F721D60000F194 /* SXNetReachablityTool.m in Sources */,
+				09D5F685222D247200EA681A /* SXNetOptionFooterView.m in Sources */,
 				09D5F66E222BC2B900EA681A /* SXAddXiaoKiHeaderView.m in Sources */,
 				B3AF301221FB0A5D001E4E67 /* SXBaseCollectionViewCell.m in Sources */,
 				095540CF221FEF5D005A5485 /* SXHomeMainGotoUserInfoButton.m in Sources */,
@@ -2234,6 +2267,7 @@
 				092D6D202202E70300538AC8 /* SXForgetConfirmHeaderView.m in Sources */,
 				09D5F646222A615300EA681A /* SXTimeOptionController.m in Sources */,
 				09D5F673222BC4D200EA681A /* SXNetOptionController.m in Sources */,
+				09D5F681222D23C900EA681A /* SXNetOptionCell.m in Sources */,
 				B3AF303921FE9657001E4E67 /* SXBaseCustomTablePlainRrfreshController.m in Sources */,
 				09D5F64F222A748E00EA681A /* SXHealthTimeHeaderView.m in Sources */,
 				095540C2221EC059005A5485 /* SXHomeFamilyCodeButton.m in Sources */,

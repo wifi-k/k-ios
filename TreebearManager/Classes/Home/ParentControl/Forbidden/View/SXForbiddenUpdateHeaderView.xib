@@ -84,10 +84,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="rbx-1Q-ifI">
-                            <rect key="frame" x="308" y="22.5" width="9" height="15"/>
+                            <rect key="frame" x="310" y="25" width="7" height="10"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="15" id="4HG-9W-Kuq"/>
-                                <constraint firstAttribute="width" constant="9" id="Mdd-gF-L4I"/>
+                                <constraint firstAttribute="height" constant="10" id="4HG-9W-Kuq"/>
+                                <constraint firstAttribute="width" constant="7" id="Mdd-gF-L4I"/>
                             </constraints>
                         </imageView>
                     </subviews>
@@ -120,10 +120,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="sr9-91-Oji">
-                            <rect key="frame" x="308" y="22.5" width="9" height="15"/>
+                            <rect key="frame" x="310" y="25" width="7" height="10"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="15" id="chX-7f-dAC"/>
-                                <constraint firstAttribute="width" constant="9" id="vdP-dt-FGG"/>
+                                <constraint firstAttribute="height" constant="10" id="chX-7f-dAC"/>
+                                <constraint firstAttribute="width" constant="7" id="vdP-dt-FGG"/>
                             </constraints>
                         </imageView>
                     </subviews>
@@ -166,7 +166,7 @@
         </view>
     </objects>
     <resources>
-        <image name="arrow_right" width="9" height="15"/>
+        <image name="arrow_right" width="7" height="10"/>
         <image name="img_user_icon" width="50" height="50"/>
     </resources>
 </document>

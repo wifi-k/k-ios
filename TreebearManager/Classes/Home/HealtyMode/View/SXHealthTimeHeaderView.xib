@@ -26,14 +26,14 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="fKU-MU-jIe">
-                            <rect key="frame" x="315" y="22.5" width="9" height="15"/>
+                            <rect key="frame" x="317" y="25" width="7" height="10"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="9" id="HLo-PX-1VX"/>
-                                <constraint firstAttribute="height" constant="15" id="qNe-uw-Pbe"/>
+                                <constraint firstAttribute="width" constant="7" id="HLo-PX-1VX"/>
+                                <constraint firstAttribute="height" constant="10" id="qNe-uw-Pbe"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="begin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bh-c3-qQO">
-                            <rect key="frame" x="129" y="19.5" width="171" height="21"/>
+                            <rect key="frame" x="129" y="19.5" width="173" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -62,14 +62,14 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="Ur8-R6-Pnp">
-                            <rect key="frame" x="315" y="22.5" width="9" height="15"/>
+                            <rect key="frame" x="317" y="25" width="7" height="10"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="15" id="SFB-Qn-NiF"/>
-                                <constraint firstAttribute="width" constant="9" id="Ytc-ph-tur"/>
+                                <constraint firstAttribute="height" constant="10" id="SFB-Qn-NiF"/>
+                                <constraint firstAttribute="width" constant="7" id="Ytc-ph-tur"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="end" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sa2-kq-1Pm">
-                            <rect key="frame" x="129" y="19.5" width="171" height="21"/>
+                            <rect key="frame" x="129" y="19.5" width="173" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -126,7 +126,7 @@
         </view>
     </objects>
     <resources>
-        <image name="arrow_right" width="9" height="15"/>
+        <image name="arrow_right" width="7" height="10"/>
         <image name="img_button_bg" width="375" height="45"/>
     </resources>
 </document>

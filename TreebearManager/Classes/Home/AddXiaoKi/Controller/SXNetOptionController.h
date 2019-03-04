@@ -6,11 +6,11 @@
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SXBaseCustomTableViewPlainController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SXNetOptionController : UIViewController
+@interface SXNetOptionController : SXBaseCustomTableViewPlainController
 
 @end
 
