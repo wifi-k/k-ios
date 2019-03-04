@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///是否选中
 @property (nonatomic, copy) NSNumber *selected;
+///行数
+@property (nonatomic, copy) NSNumber *row;
 ///title
 @property (nonatomic, copy) NSString *title;
 

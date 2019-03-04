@@ -7,6 +7,9 @@
 //
 
 #import "SXNetOptionController.h"
+#import "SXNetBroadbandController.h"
+#import "SXNetStaticController.h"
+#import "SXDynamicController.h"
 #import "SXNetOptionCell.h"
 #import "SXNetOptionFooterView.h"
 
@@ -24,16 +27,19 @@
         SXNetOptionModel *model0 = [[SXNetOptionModel alloc] init];
         model0.title = @"宽带拨号上网";
         model0.selected = @(YES);
+        model0.row= @(0);
         [_dataArray addObject:model0];
         
         SXNetOptionModel *model1 = [[SXNetOptionModel alloc] init];
         model1.title = @"静态IP上网";
         model1.selected = @(NO);
+        model1.row= @(1);
         [_dataArray addObject:model1];
         
         SXNetOptionModel *model2 = [[SXNetOptionModel alloc] init];
         model2.title = @"动态IP上网";
         model2.selected = @(NO);
+        model2.row= @(2);
         [_dataArray addObject:model2];
     }
     return _dataArray;
@@ -64,14 +70,38 @@
     self.tableView.tableFooterView = footerBgView;
     
     //2.添加底部视图
-    //WS(weakSelf);
+    WS(weakSelf);
     SXNetOptionFooterView *footerView = [SXNetOptionFooterView footerView];
     footerView.dataArray = self.dataArray;
     footerView.clickNextBtnBlock = ^(SXNetOptionModel * _Nonnull model) {
         DLog(@"%@-%@",model.title,model.selected);
+        [weakSelf jumpToNetVC:model];
     };
     [self.tableView.tableFooterView addSubview:footerView];
     footerView.frame = self.tableView.tableFooterView.bounds;
+}
+
+#pragma mark -跳转网络连接页面-
+- (void)jumpToNetVC:(SXNetOptionModel *)model{
+    switch (model.row.integerValue) {
+        case 0:{
+            SXNetBroadbandController *broadVC = [[SXNetBroadbandController alloc] init];
+            [self.navigationController pushViewController:broadVC animated:YES];
+        }
+            break;
+        case 1:{
+            SXNetStaticController *broadVC = [[SXNetStaticController alloc] init];
+            [self.navigationController pushViewController:broadVC animated:YES];
+        }
+            break;
+        case 2:{
+            SXDynamicController *broadVC = [[SXDynamicController alloc] init];
+            [self.navigationController pushViewController:broadVC animated:YES];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
