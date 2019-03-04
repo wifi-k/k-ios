@@ -7,9 +7,11 @@
 //
 
 #import "SXDynamicController.h"
+#import "SXDynamicHeaderView.h"
 
 @interface SXDynamicController ()
-
+///头部视图
+@property (nonatomic, weak) SXDynamicHeaderView *headerView;
 @end
 
 @implementation SXDynamicController
@@ -26,6 +28,16 @@
     
     self.navigationItem.title = @"动态IP上网";
     
+//    WS(weakSelf);
+    SXDynamicHeaderView *headerView = [SXDynamicHeaderView headerView];
+    [self.view addSubview:headerView];
+    self.headerView = headerView;
+}
+
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    self.headerView.frame = self.view.bounds;
 }
 
 @end

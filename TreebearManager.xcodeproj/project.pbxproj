@@ -11,6 +11,12 @@
 		0900F517222D4F2700250155 /* SXNetBroadbandController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0900F516222D4F2700250155 /* SXNetBroadbandController.m */; };
 		0900F51A222D4FAF00250155 /* SXNetStaticController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0900F519222D4FAF00250155 /* SXNetStaticController.m */; };
 		0900F51D222D4FC600250155 /* SXDynamicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0900F51C222D4FC600250155 /* SXDynamicController.m */; };
+		0900F520222D50DD00250155 /* SXNetBroadbandHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0900F51F222D50DD00250155 /* SXNetBroadbandHeaderView.m */; };
+		0900F522222D50EB00250155 /* SXNetBroadbandHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0900F521222D50EB00250155 /* SXNetBroadbandHeaderView.xib */; };
+		0900F525222D513600250155 /* SXNetStaticHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0900F524222D513600250155 /* SXNetStaticHeaderView.m */; };
+		0900F527222D514E00250155 /* SXNetStaticHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0900F526222D514E00250155 /* SXNetStaticHeaderView.xib */; };
+		0900F52A222D517600250155 /* SXDynamicHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0900F529222D517600250155 /* SXDynamicHeaderView.m */; };
+		0900F52C222D517C00250155 /* SXDynamicHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0900F52B222D517C00250155 /* SXDynamicHeaderView.xib */; };
 		091186EE22151D5F00938D9F /* SGSocketConfigM.m in Sources */ = {isa = PBXBuildFile; fileRef = 091186EB22151D5F00938D9F /* SGSocketConfigM.m */; };
 		091186EF22151D5F00938D9F /* SGSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 091186ED22151D5F00938D9F /* SGSocketManager.m */; };
 		09118701221522BF00938D9F /* GCDAsyncSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 091186F3221522BF00938D9F /* GCDAsyncSocketManager.m */; };
@@ -232,6 +238,15 @@
 		0900F519222D4FAF00250155 /* SXNetStaticController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXNetStaticController.m; sourceTree = "<group>"; };
 		0900F51B222D4FC600250155 /* SXDynamicController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXDynamicController.h; sourceTree = "<group>"; };
 		0900F51C222D4FC600250155 /* SXDynamicController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXDynamicController.m; sourceTree = "<group>"; };
+		0900F51E222D50DD00250155 /* SXNetBroadbandHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXNetBroadbandHeaderView.h; sourceTree = "<group>"; };
+		0900F51F222D50DD00250155 /* SXNetBroadbandHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXNetBroadbandHeaderView.m; sourceTree = "<group>"; };
+		0900F521222D50EB00250155 /* SXNetBroadbandHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXNetBroadbandHeaderView.xib; sourceTree = "<group>"; };
+		0900F523222D513600250155 /* SXNetStaticHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXNetStaticHeaderView.h; sourceTree = "<group>"; };
+		0900F524222D513600250155 /* SXNetStaticHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXNetStaticHeaderView.m; sourceTree = "<group>"; };
+		0900F526222D514E00250155 /* SXNetStaticHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXNetStaticHeaderView.xib; sourceTree = "<group>"; };
+		0900F528222D517600250155 /* SXDynamicHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXDynamicHeaderView.h; sourceTree = "<group>"; };
+		0900F529222D517600250155 /* SXDynamicHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXDynamicHeaderView.m; sourceTree = "<group>"; };
+		0900F52B222D517C00250155 /* SXDynamicHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXDynamicHeaderView.xib; sourceTree = "<group>"; };
 		091186EA22151D5F00938D9F /* SGSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSocketManager.h; sourceTree = "<group>"; };
 		091186EB22151D5F00938D9F /* SGSocketConfigM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSocketConfigM.m; sourceTree = "<group>"; };
 		091186EC22151D5F00938D9F /* SGSocketConfigM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSocketConfigM.h; sourceTree = "<group>"; };
@@ -1035,6 +1050,15 @@
 				09D5F683222D247200EA681A /* SXNetOptionFooterView.h */,
 				09D5F684222D247200EA681A /* SXNetOptionFooterView.m */,
 				09D5F686222D24B700EA681A /* SXNetOptionFooterView.xib */,
+				0900F51E222D50DD00250155 /* SXNetBroadbandHeaderView.h */,
+				0900F51F222D50DD00250155 /* SXNetBroadbandHeaderView.m */,
+				0900F521222D50EB00250155 /* SXNetBroadbandHeaderView.xib */,
+				0900F523222D513600250155 /* SXNetStaticHeaderView.h */,
+				0900F524222D513600250155 /* SXNetStaticHeaderView.m */,
+				0900F526222D514E00250155 /* SXNetStaticHeaderView.xib */,
+				0900F528222D517600250155 /* SXDynamicHeaderView.h */,
+				0900F529222D517600250155 /* SXDynamicHeaderView.m */,
+				0900F52B222D517C00250155 /* SXDynamicHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2027,6 +2051,7 @@
 			files = (
 				092D6D122202DD9B00538AC8 /* SXLoginHeaderView.xib in Resources */,
 				09F2332E2224DBB80086AB35 /* SXNetWallCell.xib in Resources */,
+				0900F52C222D517C00250155 /* SXDynamicHeaderView.xib in Resources */,
 				09FB47532223E8B600809273 /* SXHealtyControlHeaderView.xib in Resources */,
 				09D5F687222D24B700EA681A /* SXNetOptionFooterView.xib in Resources */,
 				09D5F643222A5BE100EA681A /* SXDeviceControlCell.xib in Resources */,
@@ -2048,6 +2073,7 @@
 				092D6D222202E71A00538AC8 /* SXForgetConfirmHeaderView.xib in Resources */,
 				09D5F63B22292F3900EA681A /* SXForbiddenUpdateHeaderView.xib in Resources */,
 				09D5F670222BC2F200EA681A /* SXAddXiaoKiHeaderView.xib in Resources */,
+				0900F522222D50EB00250155 /* SXNetBroadbandHeaderView.xib in Resources */,
 				09D5F62E2229297000EA681A /* SXForbiddenAppFooterView.xib in Resources */,
 				09F23323222413900086AB35 /* SXWifiSettingCell.xib in Resources */,
 				B3AF2FD521F9C8A3001E4E67 /* MBProgressHUD.bundle in Resources */,
@@ -2056,6 +2082,7 @@
 				092D6D1A2202E51C00538AC8 /* SXForgetHeaderView.xib in Resources */,
 				092D6D312203F6EA00538AC8 /* SXHomeMainHeaderView.xib in Resources */,
 				098BA30A221AB1C200F58639 /* SXCodeLoginHeaderView.xib in Resources */,
+				0900F527222D514E00250155 /* SXNetStaticHeaderView.xib in Resources */,
 				09D5F6332229298500EA681A /* SXForbiddenAppCell.xib in Resources */,
 				B3AF2FF821FB0180001E4E67 /* SXLoginMainHeaderView.xib in Resources */,
 				09D5F5F1222689E300EA681A /* SXHomeMainSectionFooterView.xib in Resources */,
@@ -2176,6 +2203,7 @@
 				095540BF221EA492005A5485 /* SXShadowView.m in Sources */,
 				092D6D342203F9F300538AC8 /* SXHomeMainSectionHeaderView.m in Sources */,
 				09FB473022239E3500809273 /* SXHomeMessageCell.m in Sources */,
+				0900F525222D513600250155 /* SXNetStaticHeaderView.m in Sources */,
 				B348F99A21F716E40000F194 /* SXNavigationController.m in Sources */,
 				B348F9AA21F71A680000F194 /* UIBarButtonItem+Extention.m in Sources */,
 				09FB474E2223E83600809273 /* SXHealtyControlController.m in Sources */,
@@ -2247,6 +2275,7 @@
 				09D5F66B222BC24700EA681A /* SXAddXiaoKiController.m in Sources */,
 				B348F99D21F719850000F194 /* UIImage+Extension.m in Sources */,
 				09D5F5EA2226820000EA681A /* SXHomeMainSectionFooterView2.m in Sources */,
+				0900F520222D50DD00250155 /* SXNetBroadbandHeaderView.m in Sources */,
 				B348F9B321F71E2D0000F194 /* SXUploadParam.m in Sources */,
 				098BA313221B997000F58639 /* SXRegistParam.m in Sources */,
 				09D5F662222B961600EA681A /* SXHomeManagerController.m in Sources */,
@@ -2287,6 +2316,7 @@
 				09D5F681222D23C900EA681A /* SXNetOptionCell.m in Sources */,
 				B3AF303921FE9657001E4E67 /* SXBaseCustomTablePlainRrfreshController.m in Sources */,
 				09D5F64F222A748E00EA681A /* SXHealthTimeHeaderView.m in Sources */,
+				0900F52A222D517600250155 /* SXDynamicHeaderView.m in Sources */,
 				095540C2221EC059005A5485 /* SXHomeFamilyCodeButton.m in Sources */,
 				B348F9B621F71E960000F194 /* SXNetRequestTool.m in Sources */,
 				B3AF2FED21FAFF24001E4E67 /* SXLoginController.m in Sources */,

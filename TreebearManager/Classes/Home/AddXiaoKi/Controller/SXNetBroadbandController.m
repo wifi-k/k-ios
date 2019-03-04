@@ -7,9 +7,11 @@
 //
 
 #import "SXNetBroadbandController.h"
+#import "SXNetBroadbandHeaderView.h"
 
 @interface SXNetBroadbandController ()
-
+///头部视图
+@property (nonatomic, weak) SXNetBroadbandHeaderView *headerView;
 @end
 
 @implementation SXNetBroadbandController
@@ -26,6 +28,16 @@
     
     self.navigationItem.title = @"宽带拨号上网";
     
+//    WS(weakSelf);
+    SXNetBroadbandHeaderView *headerView = [SXNetBroadbandHeaderView headerView];
+    [self.view addSubview:headerView];
+    self.headerView = headerView;
+}
+
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    self.headerView.frame = self.view.bounds;
 }
 
 @end
