@@ -85,6 +85,7 @@
 		098BA313221B997000F58639 /* SXRegistParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA312221B997000F58639 /* SXRegistParam.m */; };
 		098BA316221BA75900F58639 /* SXLoginParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA315221BA75900F58639 /* SXLoginParam.m */; };
 		098BA31A221BAFD500F58639 /* SXLoginNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA319221BAFD500F58639 /* SXLoginNetTool.m */; };
+		09B9B794222E4906000868D5 /* SXParentControlButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B793222E4906000868D5 /* SXParentControlButton.m */; };
 		09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */; };
 		09D5F5EA2226820000EA681A /* SXHomeMainSectionFooterView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E92226820000EA681A /* SXHomeMainSectionFooterView2.m */; };
 		09D5F5EC2226820B00EA681A /* SXHomeMainSectionFooterView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F5EB2226820B00EA681A /* SXHomeMainSectionFooterView2.xib */; };
@@ -371,6 +372,8 @@
 		098BA315221BA75900F58639 /* SXLoginParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXLoginParam.m; sourceTree = "<group>"; };
 		098BA318221BAFD500F58639 /* SXLoginNetTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXLoginNetTool.h; sourceTree = "<group>"; };
 		098BA319221BAFD500F58639 /* SXLoginNetTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXLoginNetTool.m; sourceTree = "<group>"; };
+		09B9B792222E4906000868D5 /* SXParentControlButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXParentControlButton.h; sourceTree = "<group>"; };
+		09B9B793222E4906000868D5 /* SXParentControlButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXParentControlButton.m; sourceTree = "<group>"; };
 		09D5F5E0222678C000EA681A /* SXHomeMainSectionHeaderView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionHeaderView2.h; sourceTree = "<group>"; };
 		09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSectionHeaderView2.m; sourceTree = "<group>"; };
 		09D5F5E82226820000EA681A /* SXHomeMainSectionFooterView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionFooterView2.h; sourceTree = "<group>"; };
@@ -912,6 +915,8 @@
 				09D5F611222925C200EA681A /* SXParentControlHeaderView.h */,
 				09D5F616222925C200EA681A /* SXParentControlHeaderView.m */,
 				09D5F612222925C200EA681A /* SXParentControlHeaderView.xib */,
+				09B9B792222E4906000868D5 /* SXParentControlButton.h */,
+				09B9B793222E4906000868D5 /* SXParentControlButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2299,6 +2304,7 @@
 				095540B5221E4B9A005A5485 /* SXRegistSetPwdController.m in Sources */,
 				09D5F665222B96B000EA681A /* SXHomeManagerHeaderView.m in Sources */,
 				098BA2FF221A559200F58639 /* SXMineListCell.m in Sources */,
+				09B9B794222E4906000868D5 /* SXParentControlButton.m in Sources */,
 				09F233312224DF6B0086AB35 /* SXWifiSettingAlertView.m in Sources */,
 				B348F9B921F721D60000F194 /* SXNetReachablityTool.m in Sources */,
 				09D5F685222D247200EA681A /* SXNetOptionFooterView.m in Sources */,

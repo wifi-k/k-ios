@@ -31,24 +31,24 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gsD-cQ-syZ">
                     <rect key="frame" x="0.0" y="171" width="326" height="100"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntr-4j-3mG">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntr-4j-3mG" customClass="SXParentControlButton">
                             <rect key="frame" x="0.0" y="0.0" width="120" height="100"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="120" id="u6G-Fl-Jpx"/>
                             </constraints>
-                            <state key="normal" title="禁用App">
+                            <state key="normal" title="禁用App" image="img_control_forbidden">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
                                 <action selector="clickForbiddenBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Nh1-Lu-bAY"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5l-Xa-04O">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5l-Xa-04O" customClass="SXParentControlButton">
                             <rect key="frame" x="120" y="0.0" width="120" height="100"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="120" id="Mn5-EU-fyV"/>
                             </constraints>
-                            <state key="normal" title="上网时间">
+                            <state key="normal" title="上网时间" image="img_control_time">
                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
@@ -88,5 +88,7 @@
     </objects>
     <resources>
         <image name="home_time_control" width="375" height="146"/>
+        <image name="img_control_forbidden" width="34" height="35"/>
+        <image name="img_control_time" width="34" height="34"/>
     </resources>
 </document>
