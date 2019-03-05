@@ -15,6 +15,7 @@
 #import "SXHeader.h"
 #import "SXConst.h"
 #import "SXThemeDefine.h"
+#import "Singleton.h"
 
 /** pod三方 */
 #import <Masonry/Masonry.h>

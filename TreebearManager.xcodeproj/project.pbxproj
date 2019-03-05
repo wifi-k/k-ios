@@ -87,6 +87,11 @@
 		098BA31A221BAFD500F58639 /* SXLoginNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA319221BAFD500F58639 /* SXLoginNetTool.m */; };
 		09B9B794222E4906000868D5 /* SXParentControlButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B793222E4906000868D5 /* SXParentControlButton.m */; };
 		09B9B798222E4F1F000868D5 /* SXForbiddenAppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B797222E4F1F000868D5 /* SXForbiddenAppModel.m */; };
+		09B9B79C222E5375000868D5 /* XKHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B79B222E5375000868D5 /* XKHttpTool.m */; };
+		09B9B79F222E5387000868D5 /* XKUploadParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B79E222E5387000868D5 /* XKUploadParam.m */; };
+		09B9B7A2222E5488000868D5 /* XKNetRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7A1222E5488000868D5 /* XKNetRequestTool.m */; };
+		09B9B7A5222E555A000868D5 /* XKNetReachablityTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7A4222E555A000868D5 /* XKNetReachablityTool.m */; };
+		09B9B7A9222E56C0000868D5 /* XKUserMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7A8222E56C0000868D5 /* XKUserMember.m */; };
 		09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */; };
 		09D5F5EA2226820000EA681A /* SXHomeMainSectionFooterView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E92226820000EA681A /* SXHomeMainSectionFooterView2.m */; };
 		09D5F5EC2226820B00EA681A /* SXHomeMainSectionFooterView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F5EB2226820B00EA681A /* SXHomeMainSectionFooterView2.xib */; };
@@ -377,6 +382,16 @@
 		09B9B793222E4906000868D5 /* SXParentControlButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXParentControlButton.m; sourceTree = "<group>"; };
 		09B9B796222E4F1F000868D5 /* SXForbiddenAppModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForbiddenAppModel.h; sourceTree = "<group>"; };
 		09B9B797222E4F1F000868D5 /* SXForbiddenAppModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForbiddenAppModel.m; sourceTree = "<group>"; };
+		09B9B79A222E5375000868D5 /* XKHttpTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XKHttpTool.h; sourceTree = "<group>"; };
+		09B9B79B222E5375000868D5 /* XKHttpTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XKHttpTool.m; sourceTree = "<group>"; };
+		09B9B79D222E5387000868D5 /* XKUploadParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XKUploadParam.h; sourceTree = "<group>"; };
+		09B9B79E222E5387000868D5 /* XKUploadParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XKUploadParam.m; sourceTree = "<group>"; };
+		09B9B7A0222E5488000868D5 /* XKNetRequestTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XKNetRequestTool.h; sourceTree = "<group>"; };
+		09B9B7A1222E5488000868D5 /* XKNetRequestTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XKNetRequestTool.m; sourceTree = "<group>"; };
+		09B9B7A3222E555A000868D5 /* XKNetReachablityTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XKNetReachablityTool.h; sourceTree = "<group>"; };
+		09B9B7A4222E555A000868D5 /* XKNetReachablityTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XKNetReachablityTool.m; sourceTree = "<group>"; };
+		09B9B7A7222E56C0000868D5 /* XKUserMember.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XKUserMember.h; sourceTree = "<group>"; };
+		09B9B7A8222E56C0000868D5 /* XKUserMember.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XKUserMember.m; sourceTree = "<group>"; };
 		09D5F5E0222678C000EA681A /* SXHomeMainSectionHeaderView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionHeaderView2.h; sourceTree = "<group>"; };
 		09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSectionHeaderView2.m; sourceTree = "<group>"; };
 		09D5F5E82226820000EA681A /* SXHomeMainSectionFooterView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionFooterView2.h; sourceTree = "<group>"; };
@@ -857,6 +872,31 @@
 				09B9B797222E4F1F000868D5 /* SXForbiddenAppModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		09B9B799222E5352000868D5 /* XKHTTP */ = {
+			isa = PBXGroup;
+			children = (
+				09B9B7A3222E555A000868D5 /* XKNetReachablityTool.h */,
+				09B9B7A4222E555A000868D5 /* XKNetReachablityTool.m */,
+				09B9B7A0222E5488000868D5 /* XKNetRequestTool.h */,
+				09B9B7A1222E5488000868D5 /* XKNetRequestTool.m */,
+				09B9B79A222E5375000868D5 /* XKHttpTool.h */,
+				09B9B79B222E5375000868D5 /* XKHttpTool.m */,
+				09B9B79D222E5387000868D5 /* XKUploadParam.h */,
+				09B9B79E222E5387000868D5 /* XKUploadParam.m */,
+				09B9B7A6222E5699000868D5 /* Member */,
+			);
+			path = XKHTTP;
+			sourceTree = "<group>";
+		};
+		09B9B7A6222E5699000868D5 /* Member */ = {
+			isa = PBXGroup;
+			children = (
+				09B9B7A7222E56C0000868D5 /* XKUserMember.h */,
+				09B9B7A8222E56C0000868D5 /* XKUserMember.m */,
+			);
+			path = Member;
 			sourceTree = "<group>";
 		};
 		09D5F5F22226B69F00EA681A /* Authorization */ = {
@@ -1471,6 +1511,7 @@
 		B348F95D21F6C4E10000F194 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				09B9B799222E5352000868D5 /* XKHTTP */,
 				09D5F5F22226B69F00EA681A /* Authorization */,
 				092D6CFC2200739800538AC8 /* Persistence */,
 				092D6CF8220072FD00538AC8 /* Notification */,
@@ -2191,6 +2232,7 @@
 				B3AF301521FB0A92001E4E67 /* SXBaseSectionHeaderCollectionView.m in Sources */,
 				09D5F6082227ECB700EA681A /* SXDatePickerView.m in Sources */,
 				091187362215689E00938D9F /* SXTitleAlertView.m in Sources */,
+				09B9B7A5222E555A000868D5 /* XKNetReachablityTool.m in Sources */,
 				092D6D082202AC3200538AC8 /* SXHomeMainController.m in Sources */,
 				09D5F6322229298500EA681A /* SXForbiddenAppCell.m in Sources */,
 				B348F9A821F71A680000F194 /* UIView+Frame.m in Sources */,
@@ -2257,6 +2299,7 @@
 				092D6CFB2200731300538AC8 /* SXNotificationCenterTool.m in Sources */,
 				092D6CE12200504100538AC8 /* SXRefreshFooter.m in Sources */,
 				09D5F6292229266F00EA681A /* SXTimeControlController.m in Sources */,
+				09B9B7A9222E56C0000868D5 /* XKUserMember.m in Sources */,
 				09D5F649222A73AD00EA681A /* SXHealtyTimeController.m in Sources */,
 				0900F51D222D4FC600250155 /* SXDynamicController.m in Sources */,
 				B348F98821F713A80000F194 /* main.m in Sources */,
@@ -2270,6 +2313,7 @@
 				092D6CFF220073A600538AC8 /* SXUserDefaultsTool.m in Sources */,
 				B3AF302721FE914E001E4E67 /* SXBaseTableGroupRefreshController.m in Sources */,
 				098BA2F72216ADDF00F58639 /* SXPhotoListCell.m in Sources */,
+				09B9B79F222E5387000868D5 /* XKUploadParam.m in Sources */,
 				092D6D102202DD9400538AC8 /* SXLoginHeaderView.m in Sources */,
 				092D6D1D2202E6EC00538AC8 /* SXForgetConfirmController.m in Sources */,
 				09D5F654222B88E400EA681A /* SXInputAlertView.m in Sources */,
@@ -2322,6 +2366,7 @@
 				09F233312224DF6B0086AB35 /* SXWifiSettingAlertView.m in Sources */,
 				B348F9B921F721D60000F194 /* SXNetReachablityTool.m in Sources */,
 				09D5F685222D247200EA681A /* SXNetOptionFooterView.m in Sources */,
+				09B9B7A2222E5488000868D5 /* XKNetRequestTool.m in Sources */,
 				09D5F66E222BC2B900EA681A /* SXAddXiaoKiHeaderView.m in Sources */,
 				B3AF301221FB0A5D001E4E67 /* SXBaseCollectionViewCell.m in Sources */,
 				095540CF221FEF5D005A5485 /* SXHomeMainGotoUserInfoButton.m in Sources */,
@@ -2345,6 +2390,7 @@
 				B348F97521F6EB070000F194 /* SXMineController.m in Sources */,
 				095540C6221F90BA005A5485 /* SXImaginaryLineView.m in Sources */,
 				B3AF302D21FE9249001E4E67 /* SXBaseCustomTableViewPlainController.m in Sources */,
+				09B9B79C222E5375000868D5 /* XKHttpTool.m in Sources */,
 				098BA2ED221660A400F58639 /* SXFamilyCodeSuccessAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
