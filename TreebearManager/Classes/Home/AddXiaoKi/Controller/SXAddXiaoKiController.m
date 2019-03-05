@@ -20,14 +20,24 @@
 
 @implementation SXAddXiaoKiController
 
+#pragma mark -life recycle-
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    //1.获取当前连接wifi信息
+    [self getWifiInfo];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
    
     //1.初始化UI
     [self setUpUI];
     
-    //2.获取当前连接wifi信息
-    [self getWifiInfo];
+    // app启动或者app从后台进入前台都会调用这个方法
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
+    // app从后台进入前台都会调用这个方法
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationBecomeActive) name:UIApplicationWillEnterForegroundNotification object:nil];
 }
 
 #pragma mark -初始化UI-
@@ -39,10 +49,11 @@
     WS(weakSelf);
     SXAddXiaoKiHeaderView *headerView = [SXAddXiaoKiHeaderView headerView];
     headerView.clickConfirmBtnBlock = ^{
-        [weakSelf getWifiInfo];
+        [weakSelf jumpToNetOptionVC];
     };
     [self.view addSubview:headerView];
     self.headerView = headerView;
+    self.headerView.hidden = YES;
 }
 
 - (void)viewDidLayoutSubviews{
@@ -51,12 +62,23 @@
     self.headerView.frame = self.view.bounds;
 }
 
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark -事件监听-
+- (void)applicationBecomeActive{
+    //1.获取当前连接wifi信息
+    [self getWifiInfo];
+}
+
 #pragma mark -获取当前连接wifi信息-
 - (void)getWifiInfo{
     NSString *wifiSSID = [XKGetWifiNetTool getWifiSSID];
     if ([wifiSSID containsString:@"Xiaomi"] || [wifiSSID containsString:@"Office"]) {
-        [self alertOnNetAlertView];
+        self.headerView.hidden = NO;
     } else{
+        self.headerView.hidden = YES;
         [self alertOnNetAlertView];
     }
     DLog(@"wifi:%@",wifiSSID);

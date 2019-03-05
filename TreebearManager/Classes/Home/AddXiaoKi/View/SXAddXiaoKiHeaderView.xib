@@ -23,10 +23,20 @@
                         <action selector="clickConfirmBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="gq1-yQ-3Uq"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您已连接wifi名称为&quot;xiaok-0001&quot;的设备，点击立即绑定设备" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6i-kl-J7N">
+                    <rect key="frame" x="15" y="187.5" width="338" height="41"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="r6i-kl-J7N" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="2PE-EX-rHE"/>
+                <constraint firstItem="r6i-kl-J7N" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="86H-T6-QWM"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="gsa-10-ugA" secondAttribute="bottom" constant="30" id="IPy-7T-fIp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="r6i-kl-J7N" secondAttribute="trailing" constant="15" id="apA-Tn-ByW"/>
+                <constraint firstItem="r6i-kl-J7N" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="mKx-DJ-qhp"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gsa-10-ugA" secondAttribute="trailing" constant="15" id="pDF-xP-w7q"/>
                 <constraint firstItem="gsa-10-ugA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="uZb-rA-NxH"/>
             </constraints>
@@ -36,6 +46,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="confirmBtn" destination="gsa-10-ugA" id="kb3-UW-e53"/>
+                <outlet property="tipsL" destination="r6i-kl-J7N" id="RRv-y6-bHl"/>
             </connections>
             <point key="canvasLocation" x="132.80000000000001" y="24.287856071964018"/>
         </view>

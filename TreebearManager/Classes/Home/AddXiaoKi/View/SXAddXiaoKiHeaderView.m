@@ -9,8 +9,9 @@
 #import "SXAddXiaoKiHeaderView.h"
 
 @interface SXAddXiaoKiHeaderView ()
-@property (weak, nonatomic) IBOutlet UIButton *confirmBtn;
+@property (weak, nonatomic) IBOutlet UILabel *tipsL;
 
+@property (weak, nonatomic) IBOutlet UIButton *confirmBtn;
 @end
 
 @implementation SXAddXiaoKiHeaderView
@@ -33,15 +34,16 @@
     
     self.backgroundColor = SXColorWhite;
     
+    self.tipsL.textColor = SXColor666666;
+    
     [self.confirmBtn roundViewWithRadius:6.0f];
 }
 
-
+#pragma mark -点击事件-
 - (IBAction)clickConfirmBtn:(UIButton *)sender {
     if (self.clickConfirmBtnBlock) {
         self.clickConfirmBtnBlock();
     }
 }
-
 
 @end
