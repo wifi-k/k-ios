@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="326" height="397"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_top_card" translatesAutoresizingMaskIntoConstraints="NO" id="Riy-OG-ga5">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_time_control" translatesAutoresizingMaskIntoConstraints="NO" id="Riy-OG-ga5">
                     <rect key="frame" x="0.0" y="0.0" width="326" height="120"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="N1x-yW-BnN"/>
@@ -87,6 +87,6 @@
         </view>
     </objects>
     <resources>
-        <image name="home_top_card" width="347" height="166"/>
+        <image name="home_time_control" width="375" height="146"/>
     </resources>
 </document>

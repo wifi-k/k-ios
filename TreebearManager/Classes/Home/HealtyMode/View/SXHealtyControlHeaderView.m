@@ -9,7 +9,16 @@
 #import "SXHealtyControlHeaderView.h"
 
 @interface SXHealtyControlHeaderView ()
+@property (weak, nonatomic) IBOutlet UIImageView *topImageView;
+
+@property (weak, nonatomic) IBOutlet UILabel *healthTitleL;
+@property (weak, nonatomic) IBOutlet UISwitch *switchBtn;
+@property (weak, nonatomic) IBOutlet UIView *bottomLineView;
+@property (weak, nonatomic) IBOutlet UIView *firstBgView;
+
+@property (weak, nonatomic) IBOutlet UILabel *timeL;
 @property (weak, nonatomic) IBOutlet UIButton *editBtn;
+@property (weak, nonatomic) IBOutlet UIView *secondBgView;
 
 @property (weak, nonatomic) IBOutlet UIButton *addTimeBtn;
 @end
@@ -34,6 +43,14 @@
 - (void)setUpUI{
     
     self.backgroundColor = SXColorWhite;
+    
+    self.healthTitleL.textColor = SXColor333333;
+    self.timeL.textColor = SXColor333333;
+    self.bottomLineView.backgroundColor = SXColorDivideLine;
+    
+    //缩放
+    self.switchBtn.transform = CGAffineTransformMakeScale( 0.8, 0.8);
+    
     
     [self.addTimeBtn roundViewWithRadius:22.5f];
 }
