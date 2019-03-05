@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
+///点击确定按钮回调
+@property (nonatomic, copy) void (^clickConfirmBtnBlock)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

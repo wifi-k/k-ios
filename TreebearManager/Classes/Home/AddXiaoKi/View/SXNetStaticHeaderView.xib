@@ -16,13 +16,17 @@
             <rect key="frame" x="0.0" y="0.0" width="355" height="353"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n29-ZH-yDI">
-                    <rect key="frame" x="8" y="269" width="338" height="45"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n29-ZH-yDI">
+                    <rect key="frame" x="20" y="278" width="315" height="45"/>
                     <state key="normal" title="确定" backgroundImage="img_button_bg"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="n29-ZH-yDI" secondAttribute="trailing" constant="20" id="VQQ-35-RqC"/>
+                <constraint firstItem="n29-ZH-yDI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="cLt-VY-Gt9"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="n29-ZH-yDI" secondAttribute="bottom" constant="30" id="xgG-VL-gu1"/>
+            </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

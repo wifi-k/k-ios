@@ -16,21 +16,111 @@
             <rect key="frame" x="0.0" y="0.0" width="362" height="351"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66M-vg-wRf">
-                    <rect key="frame" x="20" y="277" width="316" height="45"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入Wi-Fi名称" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Jjj-Jj-wbe">
+                    <rect key="frame" x="20" y="50" width="322" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="hYF-Xz-yux"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="editingNameTextField:" destination="iN0-l3-epB" eventType="editingChanged" id="1BP-Es-Zi4"/>
+                        <action selector="editingNameTextField:" destination="iN0-l3-epB" eventType="editingDidBegin" id="t6g-ES-ufM"/>
+                        <action selector="endNameTextField:" destination="iN0-l3-epB" eventType="editingDidEnd" id="etd-2D-Uko"/>
+                    </connections>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="88k-FZ-nsM">
+                    <rect key="frame" x="20" y="85" width="322" height="0.5"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="nS3-B3-XJA"/>
+                    </constraints>
+                </view>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入Wi-Fi密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dzs-Gm-zt4">
+                    <rect key="frame" x="20" y="115.5" width="282" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="FgI-tx-A7P"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <connections>
+                        <action selector="editingPwdTextField:" destination="iN0-l3-epB" eventType="editingChanged" id="6of-HA-A33"/>
+                        <action selector="editingPwdTextField:" destination="iN0-l3-epB" eventType="editingDidBegin" id="MHJ-CM-9H2"/>
+                        <action selector="endPwdTextField:" destination="iN0-l3-epB" eventType="editingDidEnd" id="uOU-j8-UYj"/>
+                    </connections>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrW-xH-Y1f">
+                    <rect key="frame" x="312" y="115.5" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="6a6-Em-liE"/>
+                        <constraint firstAttribute="height" constant="30" id="FFd-yn-TaF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" image="img_invisible_eye">
+                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected" image="img_visible_eye"/>
+                    <connections>
+                        <action selector="clickVisibleBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Nk8-Tm-TQ6"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94q-uI-SKD">
+                    <rect key="frame" x="20" y="150.5" width="322" height="0.5"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="Ur5-9i-Q7K"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66M-vg-wRf">
+                    <rect key="frame" x="20" y="211" width="322" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="axu-4A-vWg"/>
+                    </constraints>
                     <state key="normal" title="确定" backgroundImage="img_button_bg"/>
+                    <connections>
+                        <action selector="clickConfirmBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="CfN-P0-GHB"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="94q-uI-SKD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="1Bs-tW-Vej"/>
+                <constraint firstItem="TrW-xH-Y1f" firstAttribute="centerY" secondItem="dzs-Gm-zt4" secondAttribute="centerY" id="6Ou-hW-9zc"/>
+                <constraint firstItem="Jjj-Jj-wbe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="CGq-JZ-WLd"/>
+                <constraint firstItem="66M-vg-wRf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="DYb-vc-oRA"/>
+                <constraint firstItem="88k-FZ-nsM" firstAttribute="top" secondItem="Jjj-Jj-wbe" secondAttribute="bottom" constant="5" id="KVv-O6-bwY"/>
+                <constraint firstItem="66M-vg-wRf" firstAttribute="top" secondItem="94q-uI-SKD" secondAttribute="bottom" constant="60" id="Kxu-XV-Ief"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Jjj-Jj-wbe" secondAttribute="trailing" constant="20" id="SbJ-At-gvD"/>
+                <constraint firstItem="88k-FZ-nsM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="TRX-xd-X6f"/>
+                <constraint firstItem="dzs-Gm-zt4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="ZJk-Og-B4F"/>
+                <constraint firstItem="Jjj-Jj-wbe" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="50" id="diT-NI-11S"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="66M-vg-wRf" secondAttribute="trailing" constant="20" id="e5s-s2-RgX"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TrW-xH-Y1f" secondAttribute="trailing" constant="20" id="hO7-6R-ufi"/>
+                <constraint firstAttribute="trailing" secondItem="88k-FZ-nsM" secondAttribute="trailing" constant="20" id="igY-0T-0gl"/>
+                <constraint firstItem="TrW-xH-Y1f" firstAttribute="leading" secondItem="dzs-Gm-zt4" secondAttribute="trailing" constant="10" id="n2F-Mg-3RQ"/>
+                <constraint firstAttribute="trailing" secondItem="94q-uI-SKD" secondAttribute="trailing" constant="20" id="rgc-rd-W6l"/>
+                <constraint firstItem="dzs-Gm-zt4" firstAttribute="top" secondItem="88k-FZ-nsM" secondAttribute="bottom" constant="30" id="t1o-0l-Fgs"/>
+                <constraint firstItem="94q-uI-SKD" firstAttribute="top" secondItem="dzs-Gm-zt4" secondAttribute="bottom" constant="5" id="zEr-vp-CBJ"/>
+            </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="confirmBtn" destination="66M-vg-wRf" id="Xie-4T-fRL"/>
+                <outlet property="firstLineView" destination="88k-FZ-nsM" id="W7V-oW-fXd"/>
+                <outlet property="nameTextField" destination="Jjj-Jj-wbe" id="BL8-rt-bTp"/>
+                <outlet property="pwdTextField" destination="dzs-Gm-zt4" id="33Q-0a-IVL"/>
+                <outlet property="secondLineView" destination="94q-uI-SKD" id="JYy-mc-3t3"/>
+            </connections>
             <point key="canvasLocation" x="121.59999999999999" y="5.8470764617691158"/>
         </view>
     </objects>
     <resources>
         <image name="img_button_bg" width="375" height="45"/>
+        <image name="img_invisible_eye" width="16" height="9"/>
+        <image name="img_visible_eye" width="18" height="12"/>
     </resources>
 </document>
