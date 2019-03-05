@@ -28,8 +28,11 @@
     
     self.navigationItem.title = @"静态IP上网";
     
-//    WS(weakSelf);
+    WS(weakSelf);
     SXNetStaticHeaderView *headerView = [SXNetStaticHeaderView headerView];
+    headerView.clickConfirmBtnBlock = ^{
+        [weakSelf setNetStaticData];
+    };
     [self.view addSubview:headerView];
     self.headerView = headerView;
 }
@@ -38,6 +41,12 @@
     [super viewDidLayoutSubviews];
     
     self.headerView.frame = self.view.bounds;
+}
+
+#pragma mark -网络设置-
+- (void)setNetStaticData{
+    DLog(@"静态IP - 网络设置");
+    [MBProgressHUD showMessage:@"静态IP - 网络设置 - 成功" toView:self.view];
 }
 
 @end

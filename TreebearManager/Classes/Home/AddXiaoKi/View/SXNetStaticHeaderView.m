@@ -8,6 +8,21 @@
 
 #import "SXNetStaticHeaderView.h"
 
+@interface SXNetStaticHeaderView ()
+
+@property (weak, nonatomic) IBOutlet UIView *firstLineView;
+
+@property (weak, nonatomic) IBOutlet UIView *secondLineView;
+
+@property (weak, nonatomic) IBOutlet UIView *thirdLineView;
+
+@property (weak, nonatomic) IBOutlet UIView *fourthLineView;
+
+@property (weak, nonatomic) IBOutlet UIView *fifthLineView;
+
+@property (weak, nonatomic) IBOutlet UIButton *confirmBtn;
+@end
+
 @implementation SXNetStaticHeaderView
 
 + (instancetype)headerView{
@@ -28,6 +43,33 @@
     
     self.backgroundColor = SXColorWhite;
     
+    self.firstLineView.backgroundColor = SXColorDivideLine;
+    self.secondLineView.backgroundColor = SXColorDivideLine;
+    self.thirdLineView.backgroundColor = SXColorDivideLine;
+    self.fourthLineView.backgroundColor = SXColorDivideLine;
+    self.fifthLineView.backgroundColor = SXColorDivideLine;
+    
+    self.firstLineView.height = 0.5;
+    self.secondLineView.height = 0.5;
+    self.thirdLineView.height = 0.5;
+    self.fourthLineView.height = 0.5;
+    self.fifthLineView.height = 0.5;
+    
+    [self.confirmBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
+    [self.confirmBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
+    [self.confirmBtn roundViewWithRadius:6.0f];
+    
+//    self.confirmBtn.enabled = NO;
+    
+    //成为第一响应
+//    [self.broadAccountTextField becomeFirstResponder];
+}
+
+#pragma mark -点击事件-
+- (IBAction)clickConfirmBtn:(UIButton *)sender {
+    if (self.clickConfirmBtnBlock) {
+        self.clickConfirmBtnBlock();
+    }
 }
 
 @end
