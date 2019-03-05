@@ -18,6 +18,16 @@
 
 @implementation SXForbiddenAppCell
 
+static NSArray *_imageNameArr = nil;//提示文字容器
+
++ (void)initialize{
+    if (!_imageNameArr) {
+        _imageNameArr = @[@"img_forbidden_ scheme1",
+                          @"img_forbidden_ scheme2",
+                          @"img_forbidden_ scheme3"];
+    }
+}
+
 static NSString *SXForbiddenAppCellID = @"SXForbiddenAppCellID";
 
 + (instancetype)cellWithTableView:(UITableView *)tableView{
@@ -55,10 +65,12 @@ static NSString *SXForbiddenAppCellID = @"SXForbiddenAppCellID";
 }
 
 #pragma mark -setter方法-
-- (void)setTitle:(NSString *)title{
-    _title = title;
+- (void)setModel:(SXForbiddenAppModel *)model{
+    _model = model;
     
-    self.titleL.text = title;
+    self.titleL.text = model.title;
+    NSInteger index = model.row.integerValue % 3;
+    self.iconImageView.image = [UIImage imageNamed:_imageNameArr[index]];
 }
 
 #pragma mark -点击事件-
@@ -73,5 +85,7 @@ static NSString *SXForbiddenAppCellID = @"SXForbiddenAppCellID";
         self.clickDeleteBtnBlock();
     }
 }
+
+
 
 @end

@@ -11,12 +11,36 @@
 #import "SXForbiddenAppFooterView.h"
 #import "SXForbiddenAppCell.h"
 #import "SXTitleAlertView.h"
+#import "SXForbiddenAppModel.h"
 
 @interface SXForbiddenAppController ()
-
+///模型数组
+@property (nonatomic, strong) NSMutableArray *dataArray;
 @end
 
 @implementation SXForbiddenAppController
+
+#pragma mark -getter-
+- (NSMutableArray *)dataArray{
+    if (_dataArray == nil) {
+        _dataArray = [NSMutableArray array];
+        SXForbiddenAppModel *model0 = [[SXForbiddenAppModel alloc] init];
+        model0.title = @"禁用APP方案1";
+        model0.row= @(0);
+        [_dataArray addObject:model0];
+        
+        SXForbiddenAppModel *model1 = [[SXForbiddenAppModel alloc] init];
+        model1.title = @"禁用APP方案2";
+        model1.row= @(1);
+        [_dataArray addObject:model1];
+        
+        SXForbiddenAppModel *model2 = [[SXForbiddenAppModel alloc] init];
+        model2.title = @"禁用APP方案3";
+        model2.row= @(2);
+        [_dataArray addObject:model2];
+    }
+    return _dataArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -71,7 +95,7 @@
 
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return self.dataArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -81,7 +105,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     WS(weakSelf);
     SXForbiddenAppCell *cell = [SXForbiddenAppCell cellWithTableView:tableView];
-    cell.title = [NSString stringWithFormat:@"禁用APP方案%ld",indexPath.row];
+    SXForbiddenAppModel *model = self.dataArray[indexPath.row];
+    cell.model = model;
     cell.clickEditBtnBlock = ^{
         [weakSelf jumpToUpdateVC];
     };

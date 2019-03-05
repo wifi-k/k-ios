@@ -86,6 +86,7 @@
 		098BA316221BA75900F58639 /* SXLoginParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA315221BA75900F58639 /* SXLoginParam.m */; };
 		098BA31A221BAFD500F58639 /* SXLoginNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA319221BAFD500F58639 /* SXLoginNetTool.m */; };
 		09B9B794222E4906000868D5 /* SXParentControlButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B793222E4906000868D5 /* SXParentControlButton.m */; };
+		09B9B798222E4F1F000868D5 /* SXForbiddenAppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B797222E4F1F000868D5 /* SXForbiddenAppModel.m */; };
 		09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */; };
 		09D5F5EA2226820000EA681A /* SXHomeMainSectionFooterView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E92226820000EA681A /* SXHomeMainSectionFooterView2.m */; };
 		09D5F5EC2226820B00EA681A /* SXHomeMainSectionFooterView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F5EB2226820B00EA681A /* SXHomeMainSectionFooterView2.xib */; };
@@ -374,6 +375,8 @@
 		098BA319221BAFD500F58639 /* SXLoginNetTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXLoginNetTool.m; sourceTree = "<group>"; };
 		09B9B792222E4906000868D5 /* SXParentControlButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXParentControlButton.h; sourceTree = "<group>"; };
 		09B9B793222E4906000868D5 /* SXParentControlButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXParentControlButton.m; sourceTree = "<group>"; };
+		09B9B796222E4F1F000868D5 /* SXForbiddenAppModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForbiddenAppModel.h; sourceTree = "<group>"; };
+		09B9B797222E4F1F000868D5 /* SXForbiddenAppModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForbiddenAppModel.m; sourceTree = "<group>"; };
 		09D5F5E0222678C000EA681A /* SXHomeMainSectionHeaderView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionHeaderView2.h; sourceTree = "<group>"; };
 		09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSectionHeaderView2.m; sourceTree = "<group>"; };
 		09D5F5E82226820000EA681A /* SXHomeMainSectionFooterView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionFooterView2.h; sourceTree = "<group>"; };
@@ -847,6 +850,15 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		09B9B795222E4F14000868D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				09B9B796222E4F1F000868D5 /* SXForbiddenAppModel.h */,
+				09B9B797222E4F1F000868D5 /* SXForbiddenAppModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		09D5F5F22226B69F00EA681A /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
@@ -949,6 +961,7 @@
 		09D5F61A222925C200EA681A /* Forbidden */ = {
 			isa = PBXGroup;
 			children = (
+				09B9B795222E4F14000868D5 /* Model */,
 				09D5F61B222925C200EA681A /* Controller */,
 				09D5F61E222925C200EA681A /* View */,
 			);
@@ -2296,6 +2309,7 @@
 				09D5F5F62226B6AF00EA681A /* SXAlbumAuthorizationTool.m in Sources */,
 				B3AF301821FB0C2E001E4E67 /* SXBaseWebController.m in Sources */,
 				09118701221522BF00938D9F /* GCDAsyncSocketManager.m in Sources */,
+				09B9B798222E4F1F000868D5 /* SXForbiddenAppModel.m in Sources */,
 				098BA310221B98E200F58639 /* NSString+Extension.m in Sources */,
 				B3AF300821FB0956001E4E67 /* SXBaseModel.m in Sources */,
 				095540AC221D073D005A5485 /* SXTitleImageCustomButton.m in Sources */,

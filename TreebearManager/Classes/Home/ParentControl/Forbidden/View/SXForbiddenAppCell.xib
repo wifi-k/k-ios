@@ -22,58 +22,58 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q8F-VK-5Ji">
                         <rect key="frame" x="10" y="2" width="299" height="101.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_user_icon" translatesAutoresizingMaskIntoConstraints="NO" id="O1b-3V-2Uq">
-                                <rect key="frame" x="15" y="31" width="40" height="40"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_forbidden_ scheme1" translatesAutoresizingMaskIntoConstraints="NO" id="O1b-3V-2Uq">
+                                <rect key="frame" x="5" y="31" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0Ey-Ng-0zD"/>
                                     <constraint firstAttribute="width" constant="40" id="uDr-om-zcf"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="禁用方案" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYD-1x-KYL">
-                                <rect key="frame" x="65" y="42.5" width="58" height="17"/>
+                                <rect key="frame" x="50" y="42.5" width="58" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9i-9j-b9j">
-                                <rect key="frame" x="260" y="36" width="31" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="6jH-Tq-aZc"/>
-                                    <constraint firstAttribute="width" constant="31" id="HAW-zW-Hfp"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="编辑">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="clickEditBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="VEn-sK-w08"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orK-3p-bDY">
-                                <rect key="frame" x="221" y="36" width="31" height="30"/>
+                                <rect key="frame" x="264" y="36" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="AD7-1M-GvA"/>
-                                    <constraint firstAttribute="width" constant="31" id="cQG-Qx-Fbq"/>
+                                    <constraint firstAttribute="height" constant="30" id="Bal-Xy-Sah"/>
+                                    <constraint firstAttribute="width" constant="30" id="SHp-B7-10d"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="删除">
+                                <state key="normal" image="home_manager_delete">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="clickDeleteBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="avF-Yo-pPb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9i-9j-b9j">
+                                <rect key="frame" x="229" y="36" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="EnL-vr-oyh"/>
+                                    <constraint firstAttribute="width" constant="30" id="kQk-oe-a78"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" image="home_manager_edit">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickEditBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="VEn-sK-w08"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="H9i-9j-b9j" firstAttribute="centerY" secondItem="q8F-VK-5Ji" secondAttribute="centerY" id="3yk-FR-xx9"/>
-                            <constraint firstItem="H9i-9j-b9j" firstAttribute="leading" secondItem="orK-3p-bDY" secondAttribute="trailing" constant="8" id="Czo-7N-8Qb"/>
-                            <constraint firstItem="HYD-1x-KYL" firstAttribute="leading" secondItem="O1b-3V-2Uq" secondAttribute="trailing" constant="10" id="Oc3-gx-Ths"/>
-                            <constraint firstItem="O1b-3V-2Uq" firstAttribute="leading" secondItem="q8F-VK-5Ji" secondAttribute="leading" constant="15" id="XAz-xE-X7r"/>
+                            <constraint firstItem="H9i-9j-b9j" firstAttribute="centerY" secondItem="orK-3p-bDY" secondAttribute="centerY" id="A7C-Ql-vvW"/>
+                            <constraint firstItem="orK-3p-bDY" firstAttribute="centerY" secondItem="q8F-VK-5Ji" secondAttribute="centerY" id="MD7-Id-GYa"/>
+                            <constraint firstItem="HYD-1x-KYL" firstAttribute="leading" secondItem="O1b-3V-2Uq" secondAttribute="trailing" constant="5" id="Oc3-gx-Ths"/>
+                            <constraint firstItem="O1b-3V-2Uq" firstAttribute="leading" secondItem="q8F-VK-5Ji" secondAttribute="leading" constant="5" id="XAz-xE-X7r"/>
                             <constraint firstItem="HYD-1x-KYL" firstAttribute="centerY" secondItem="q8F-VK-5Ji" secondAttribute="centerY" id="cAd-oJ-vrJ"/>
                             <constraint firstItem="O1b-3V-2Uq" firstAttribute="centerY" secondItem="q8F-VK-5Ji" secondAttribute="centerY" id="dWC-la-PLW"/>
-                            <constraint firstItem="orK-3p-bDY" firstAttribute="centerY" secondItem="q8F-VK-5Ji" secondAttribute="centerY" id="drP-nb-cTA"/>
-                            <constraint firstAttribute="trailing" secondItem="H9i-9j-b9j" secondAttribute="trailing" constant="8" id="rfs-X9-7wG"/>
+                            <constraint firstAttribute="trailing" secondItem="orK-3p-bDY" secondAttribute="trailing" constant="5" id="hmG-s6-8AA"/>
+                            <constraint firstItem="orK-3p-bDY" firstAttribute="leading" secondItem="H9i-9j-b9j" secondAttribute="trailing" constant="5" id="tDr-yX-4lF"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -97,6 +97,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="img_user_icon" width="50" height="50"/>
+        <image name="home_manager_delete" width="18" height="18"/>
+        <image name="home_manager_edit" width="18" height="18"/>
+        <image name="img_forbidden_ scheme1" width="54" height="54"/>
     </resources>
 </document>
