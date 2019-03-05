@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="348" height="126.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_login_icon" translatesAutoresizingMaskIntoConstraints="NO" id="pw7-xc-OE3">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_message_icon" translatesAutoresizingMaskIntoConstraints="NO" id="pw7-xc-OE3">
                         <rect key="frame" x="16" y="28.5" width="70" height="70"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="70" id="9mv-hK-t0o"/>
@@ -78,6 +78,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="img_login_icon" width="81" height="81"/>
+        <image name="home_message_icon" width="44" height="44"/>
     </resources>
 </document>
