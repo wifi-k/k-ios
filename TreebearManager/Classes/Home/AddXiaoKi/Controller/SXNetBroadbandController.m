@@ -7,6 +7,7 @@
 //
 
 #import "SXNetBroadbandController.h"
+#import "SXDynamicController.h"
 #import "SXNetBroadbandHeaderView.h"
 
 @interface SXNetBroadbandController ()
@@ -31,7 +32,7 @@
     WS(weakSelf);
     SXNetBroadbandHeaderView *headerView = [SXNetBroadbandHeaderView headerView];
     headerView.clickConfirmBtnBlock = ^{
-        [weakSelf setNetBroadbandData];
+        [weakSelf jumpToNetDynamicVC];
     };
     [self.view addSubview:headerView];
     self.headerView = headerView;
@@ -43,10 +44,10 @@
     self.headerView.frame = self.view.bounds;
 }
 
-#pragma mark -网络设置-
-- (void)setNetBroadbandData{
-    DLog(@"宽带 - 网络设置");
-    [MBProgressHUD showMessage:@"宽带 - 网络设置 - 成功" toView:self.view];
+#pragma mark -跳转动态设置页面-
+- (void)jumpToNetDynamicVC{
+    SXDynamicController *dynamicVC = [[SXDynamicController alloc] init];
+    [self.navigationController pushViewController:dynamicVC animated:YES];
 }
 
 @end

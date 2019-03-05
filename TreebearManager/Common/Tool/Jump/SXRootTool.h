@@ -31,6 +31,10 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark -页面跳转(不含参数)-
 + (void)jumpToVC:(UIViewController *)controller;
 
++ (void)jumpToSystemWIFI;
+
++ (void)jumpToSystemAppSetting;
+
 @end
 
 NS_ASSUME_NONNULL_END

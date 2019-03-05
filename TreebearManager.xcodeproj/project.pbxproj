@@ -92,6 +92,7 @@
 		09B9B7A2222E5488000868D5 /* XKNetRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7A1222E5488000868D5 /* XKNetRequestTool.m */; };
 		09B9B7A5222E555A000868D5 /* XKNetReachablityTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7A4222E555A000868D5 /* XKNetReachablityTool.m */; };
 		09B9B7A9222E56C0000868D5 /* XKUserMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7A8222E56C0000868D5 /* XKUserMember.m */; };
+		09B9B7AD222E667B000868D5 /* XKGetWifiNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7AC222E667B000868D5 /* XKGetWifiNetTool.m */; };
 		09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */; };
 		09D5F5EA2226820000EA681A /* SXHomeMainSectionFooterView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E92226820000EA681A /* SXHomeMainSectionFooterView2.m */; };
 		09D5F5EC2226820B00EA681A /* SXHomeMainSectionFooterView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F5EB2226820B00EA681A /* SXHomeMainSectionFooterView2.xib */; };
@@ -392,6 +393,9 @@
 		09B9B7A4222E555A000868D5 /* XKNetReachablityTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XKNetReachablityTool.m; sourceTree = "<group>"; };
 		09B9B7A7222E56C0000868D5 /* XKUserMember.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XKUserMember.h; sourceTree = "<group>"; };
 		09B9B7A8222E56C0000868D5 /* XKUserMember.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XKUserMember.m; sourceTree = "<group>"; };
+		09B9B7AB222E667B000868D5 /* XKGetWifiNetTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XKGetWifiNetTool.h; sourceTree = "<group>"; };
+		09B9B7AC222E667B000868D5 /* XKGetWifiNetTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XKGetWifiNetTool.m; sourceTree = "<group>"; };
+		09B9B7AE222E758E000868D5 /* TreebearManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TreebearManager.entitlements; sourceTree = "<group>"; };
 		09D5F5E0222678C000EA681A /* SXHomeMainSectionHeaderView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionHeaderView2.h; sourceTree = "<group>"; };
 		09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSectionHeaderView2.m; sourceTree = "<group>"; };
 		09D5F5E82226820000EA681A /* SXHomeMainSectionFooterView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionFooterView2.h; sourceTree = "<group>"; };
@@ -886,6 +890,7 @@
 				09B9B79D222E5387000868D5 /* XKUploadParam.h */,
 				09B9B79E222E5387000868D5 /* XKUploadParam.m */,
 				09B9B7A6222E5699000868D5 /* Member */,
+				09B9B7AA222E6662000868D5 /* Wifi */,
 			);
 			path = XKHTTP;
 			sourceTree = "<group>";
@@ -897,6 +902,15 @@
 				09B9B7A8222E56C0000868D5 /* XKUserMember.m */,
 			);
 			path = Member;
+			sourceTree = "<group>";
+		};
+		09B9B7AA222E6662000868D5 /* Wifi */ = {
+			isa = PBXGroup;
+			children = (
+				09B9B7AB222E667B000868D5 /* XKGetWifiNetTool.h */,
+				09B9B7AC222E667B000868D5 /* XKGetWifiNetTool.m */,
+			);
+			path = Wifi;
 			sourceTree = "<group>";
 		};
 		09D5F5F22226B69F00EA681A /* Authorization */ = {
@@ -1367,6 +1381,7 @@
 		B348F92121F6C2BE0000F194 /* TreebearManager */ = {
 			isa = PBXGroup;
 			children = (
+				09B9B7AE222E758E000868D5 /* TreebearManager.entitlements */,
 				B348F95821F6C4E10000F194 /* Common */,
 				B348F95421F6C4E10000F194 /* Classes */,
 			);
@@ -2068,6 +2083,9 @@
 					B348F91E21F6C2BE0000F194 = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
+							com.apple.AccessWiFi = {
+								enabled = 1;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
@@ -2234,6 +2252,7 @@
 				091187362215689E00938D9F /* SXTitleAlertView.m in Sources */,
 				09B9B7A5222E555A000868D5 /* XKNetReachablityTool.m in Sources */,
 				092D6D082202AC3200538AC8 /* SXHomeMainController.m in Sources */,
+				09B9B7AD222E667B000868D5 /* XKGetWifiNetTool.m in Sources */,
 				09D5F6322229298500EA681A /* SXForbiddenAppCell.m in Sources */,
 				B348F9A821F71A680000F194 /* UIView+Frame.m in Sources */,
 				B348F9B021F71E180000F194 /* SXHttpTool.m in Sources */,
@@ -2555,6 +2574,7 @@
 			baseConfigurationReference = 0BF17A1BEC7F76DCAB17507A /* Pods-TreebearManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TreebearManager/TreebearManager.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VC9XKZC8C4;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/TreebearManager/Classes/Other/PrefixHeader.pch";
@@ -2575,6 +2595,7 @@
 			baseConfigurationReference = EEBD44E4C2934D74FE5F59E6 /* Pods-TreebearManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TreebearManager/TreebearManager.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VC9XKZC8C4;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/TreebearManager/Classes/Other/PrefixHeader.pch";

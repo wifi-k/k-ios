@@ -7,6 +7,7 @@
 //
 
 #import "SXNetStaticController.h"
+#import "SXDynamicController.h"
 #import "SXNetStaticHeaderView.h"
 
 @interface SXNetStaticController ()
@@ -31,7 +32,7 @@
     WS(weakSelf);
     SXNetStaticHeaderView *headerView = [SXNetStaticHeaderView headerView];
     headerView.clickConfirmBtnBlock = ^{
-        [weakSelf setNetStaticData];
+        [weakSelf jumpToNetDynamicVC];
     };
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
@@ -43,10 +44,10 @@
     
 }
 
-#pragma mark -网络设置-
-- (void)setNetStaticData{
-    DLog(@"静态IP - 网络设置");
-    [MBProgressHUD showMessage:@"静态IP - 网络设置 - 成功" toView:SXKeyWindow];
+#pragma mark -跳转动态设置页面-
+- (void)jumpToNetDynamicVC{
+    SXDynamicController *dynamicVC = [[SXDynamicController alloc] init];
+    [self.navigationController pushViewController:dynamicVC animated:YES];
 }
 
 @end

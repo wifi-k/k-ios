@@ -9,6 +9,9 @@
 #import "SXAddXiaoKiController.h"
 #import "SXNetOptionController.h"
 #import "SXAddXiaoKiHeaderView.h"
+#import "SXTitleAlertView.h"
+#import "XKGetWifiNetTool.h"
+#import "SXRootTool.h"
 
 @interface SXAddXiaoKiController ()
 ///头部视图
@@ -20,7 +23,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
+    //1.初始化UI
     [self setUpUI];
+    
+    //2.获取当前连接wifi信息
+    [self getWifiInfo];
 }
 
 #pragma mark -初始化UI-
@@ -32,7 +39,7 @@
     WS(weakSelf);
     SXAddXiaoKiHeaderView *headerView = [SXAddXiaoKiHeaderView headerView];
     headerView.clickConfirmBtnBlock = ^{
-        [weakSelf jumpToNetOptionVC];
+        [weakSelf getWifiInfo];
     };
     [self.view addSubview:headerView];
     self.headerView = headerView;
@@ -44,10 +51,30 @@
     self.headerView.frame = self.view.bounds;
 }
 
-#pragma mark -升级中-
+#pragma mark -获取当前连接wifi信息-
+- (void)getWifiInfo{
+    NSString *wifiSSID = [XKGetWifiNetTool getWifiSSID];
+    if ([wifiSSID containsString:@"Xiaomi"] || [wifiSSID containsString:@"Office"]) {
+        [self alertOnNetAlertView];
+    } else{
+        [self alertOnNetAlertView];
+    }
+    DLog(@"wifi:%@",wifiSSID);
+}
+
+#pragma mark -跳转网络选择页面-
 - (void)jumpToNetOptionVC{
     SXNetOptionController *netVC = [[SXNetOptionController alloc] init];
     [self.navigationController pushViewController:netVC animated:YES];
+}
+
+#pragma mark -视图弹窗-
+- (void)alertOnNetAlertView{
+    SXTitleAlertView *netAlertView = [SXTitleAlertView alertWithTitle:@"联网提示" content:@"请立即连接wifi名称为'xiaoki-xxxx',然后再绑定设备" confirmStr:@"确定" cancelStr:@"取消"];
+    netAlertView.confirmButtonBlock = ^{
+        [SXRootTool jumpToSystemWIFI];
+    };
+    [netAlertView alert];
 }
 
 @end

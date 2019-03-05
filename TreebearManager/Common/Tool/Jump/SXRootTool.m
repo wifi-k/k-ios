@@ -78,5 +78,28 @@
         [naviVC pushViewController:controller animated:YES];
     }
 }
+
++ (void)jumpToSystemWIFI{
+    NSURL *url = [NSURL URLWithString:@"App-Prefs:root=WIFI"];
+    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+        if (@available(iOS 10.0, *)) {
+            [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+        } else {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    } else {
+        NSURL *url2 = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        if([[UIApplication sharedApplication] canOpenURL:url2]) {
+            [[UIApplication sharedApplication] openURL:url2];
+        }
+    }
+}
+
++ (void)jumpToSystemAppSetting{
+    NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+    if([[UIApplication sharedApplication] canOpenURL:url]) {
+        [[UIApplication sharedApplication] openURL:url];
+    }
+}
     
 @end
