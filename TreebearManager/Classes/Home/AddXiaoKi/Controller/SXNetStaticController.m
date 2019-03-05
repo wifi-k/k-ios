@@ -33,20 +33,20 @@
     headerView.clickConfirmBtnBlock = ^{
         [weakSelf setNetStaticData];
     };
-    [self.view addSubview:headerView];
+    self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
+    self.headerView.frame = self.view.bounds;
 }
 
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     
-    self.headerView.frame = self.view.bounds;
 }
 
 #pragma mark -网络设置-
 - (void)setNetStaticData{
     DLog(@"静态IP - 网络设置");
-    [MBProgressHUD showMessage:@"静态IP - 网络设置 - 成功" toView:self.view];
+    [MBProgressHUD showMessage:@"静态IP - 网络设置 - 成功" toView:SXKeyWindow];
 }
 
 @end
