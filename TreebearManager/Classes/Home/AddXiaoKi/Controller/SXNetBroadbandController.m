@@ -28,8 +28,11 @@
     
     self.navigationItem.title = @"宽带拨号上网";
     
-//    WS(weakSelf);
+    WS(weakSelf);
     SXNetBroadbandHeaderView *headerView = [SXNetBroadbandHeaderView headerView];
+    headerView.clickConfirmBtnBlock = ^{
+        [weakSelf setNetBroadbandData];
+    };
     [self.view addSubview:headerView];
     self.headerView = headerView;
 }
@@ -38,6 +41,12 @@
     [super viewDidLayoutSubviews];
     
     self.headerView.frame = self.view.bounds;
+}
+
+#pragma mark -网络设置-
+- (void)setNetBroadbandData{
+    DLog(@"宽带 - 网络设置");
+    [MBProgressHUD showMessage:@"宽带 - 网络设置 - 成功" toView:self.view];
 }
 
 @end
