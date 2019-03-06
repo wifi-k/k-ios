@@ -20,6 +20,14 @@
 
 @implementation SXDynamicHeaderView
 
+#pragma mark -getter-
+- (SXDynamicParam *)param{
+    if (_param == nil) {
+        _param = [[SXDynamicParam alloc] init];
+    }
+    return _param;
+}
+
 + (instancetype)headerView{
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
 }
@@ -71,7 +79,7 @@
     DLog(@"editingNameTextField:%@",sender.text);
     self.firstLineView.backgroundColor = SXColorBlue;
     self.firstLineView.height = 1;
-    //    self.param.passwd = sender.text.trim.filterSpace;
+    self.param.ssid = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];
 }
 
@@ -85,7 +93,7 @@
     DLog(@"editingPwdTextField:%@",sender.text);
     self.secondLineView.backgroundColor = SXColorBlue;
     self.secondLineView.height = 1;
-    //    self.param.passwd2 = sender.text.trim.filterSpace;
+    self.param.passwd = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];
 }
 

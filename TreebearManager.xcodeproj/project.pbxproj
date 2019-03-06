@@ -98,6 +98,8 @@
 		09B9B7B5222FAE0C000868D5 /* SXSingleAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7B4222FAE0C000868D5 /* SXSingleAlertView.m */; };
 		09B9B7BB222FBE3F000868D5 /* SXNetStaticParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7BA222FBE3F000868D5 /* SXNetStaticParam.m */; };
 		09B9B7BF222FC584000868D5 /* SXAddXiaokiNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7BE222FC584000868D5 /* SXAddXiaokiNetTool.m */; };
+		09B9B7C2222FED88000868D5 /* SXNetBroadbandParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7C1222FED88000868D5 /* SXNetBroadbandParam.m */; };
+		09B9B7C8222FF2E3000868D5 /* SXDynamicParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7C7222FF2E3000868D5 /* SXDynamicParam.m */; };
 		09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */; };
 		09D5F5EA2226820000EA681A /* SXHomeMainSectionFooterView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E92226820000EA681A /* SXHomeMainSectionFooterView2.m */; };
 		09D5F5EC2226820B00EA681A /* SXHomeMainSectionFooterView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F5EB2226820B00EA681A /* SXHomeMainSectionFooterView2.xib */; };
@@ -409,6 +411,10 @@
 		09B9B7BA222FBE3F000868D5 /* SXNetStaticParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXNetStaticParam.m; sourceTree = "<group>"; };
 		09B9B7BD222FC584000868D5 /* SXAddXiaokiNetTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXAddXiaokiNetTool.h; sourceTree = "<group>"; };
 		09B9B7BE222FC584000868D5 /* SXAddXiaokiNetTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXAddXiaokiNetTool.m; sourceTree = "<group>"; };
+		09B9B7C0222FED88000868D5 /* SXNetBroadbandParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXNetBroadbandParam.h; sourceTree = "<group>"; };
+		09B9B7C1222FED88000868D5 /* SXNetBroadbandParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXNetBroadbandParam.m; sourceTree = "<group>"; };
+		09B9B7C6222FF2E3000868D5 /* SXDynamicParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXDynamicParam.h; sourceTree = "<group>"; };
+		09B9B7C7222FF2E3000868D5 /* SXDynamicParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXDynamicParam.m; sourceTree = "<group>"; };
 		09D5F5E0222678C000EA681A /* SXHomeMainSectionHeaderView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionHeaderView2.h; sourceTree = "<group>"; };
 		09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSectionHeaderView2.m; sourceTree = "<group>"; };
 		09D5F5E82226820000EA681A /* SXHomeMainSectionFooterView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionFooterView2.h; sourceTree = "<group>"; };
@@ -678,6 +684,10 @@
 				0900F513222D31BD00250155 /* SXNetOptionModel.m */,
 				09B9B7B9222FBE3F000868D5 /* SXNetStaticParam.h */,
 				09B9B7BA222FBE3F000868D5 /* SXNetStaticParam.m */,
+				09B9B7C0222FED88000868D5 /* SXNetBroadbandParam.h */,
+				09B9B7C1222FED88000868D5 /* SXNetBroadbandParam.m */,
+				09B9B7C6222FF2E3000868D5 /* SXDynamicParam.h */,
+				09B9B7C7222FF2E3000868D5 /* SXDynamicParam.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2307,6 +2317,7 @@
 				B3AF2FF321FAFF45001E4E67 /* SXRegistController.m in Sources */,
 				098BA316221BA75900F58639 /* SXLoginParam.m in Sources */,
 				092D6CF7220062C700538AC8 /* NSString+Hash.m in Sources */,
+				09B9B7C2222FED88000868D5 /* SXNetBroadbandParam.m in Sources */,
 				09D5F5FE2227E3D000EA681A /* SXMineNetTool.m in Sources */,
 				098BA303221A579D00F58639 /* SXMineHeaderView.m in Sources */,
 				098BA31A221BAFD500F58639 /* SXLoginNetTool.m in Sources */,
@@ -2409,6 +2420,7 @@
 				B3AF301E21FE90AF001E4E67 /* SXBaseTableViewPlainController.m in Sources */,
 				B3AF302A21FE91B8001E4E67 /* UIViewController+Placeholder.m in Sources */,
 				092D6D2B2203011800538AC8 /* SXHomeNetworkingDeviceCell.m in Sources */,
+				09B9B7C8222FF2E3000868D5 /* SXDynamicParam.m in Sources */,
 				092D6D182202E4FD00538AC8 /* SXForgetHeaderView.m in Sources */,
 				B348F9AC21F71A680000F194 /* UIView+Extension.m in Sources */,
 				09D5F5F62226B6AF00EA681A /* SXAlbumAuthorizationTool.m in Sources */,

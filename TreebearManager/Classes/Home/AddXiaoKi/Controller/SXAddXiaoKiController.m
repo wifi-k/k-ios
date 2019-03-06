@@ -11,7 +11,10 @@
 #import "SXAddXiaoKiHeaderView.h"
 #import "SXSingleAlertView.h"
 #import "XKGetWifiNetTool.h"
+#import "SXAddXiaokiNetTool.h"
 #import "SXRootTool.h"
+#import "SXNetBroadbandParam.h"
+#import "NSString+Hash.h"
 
 @interface SXAddXiaoKiController ()
 ///头部视图
@@ -93,6 +96,18 @@
 
 #pragma mark -跳转网络选择页面-
 - (void)jumpToNetOptionVC{
+//    WS(weakSelf);
+//    SXNetBroadbandParam *param = [SXNetBroadbandParam param];
+//    param.name = @"admin";
+//    param.passwd = @"123456".md5String;
+//    [SXAddXiaokiNetTool loginWithPasswdDataWithParams:param.mj_keyValues Success:^{
+//        SXNetOptionController *netVC = [[SXNetOptionController alloc] init];
+//        [weakSelf.navigationController pushViewController:netVC animated:YES];
+//    } failure:^(NSError * _Nonnull error) {
+//        NSString *message = [error.userInfo objectForKey:@"msg"];
+//        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+//    }];
+    
     SXNetOptionController *netVC = [[SXNetOptionController alloc] init];
     [self.navigationController pushViewController:netVC animated:YES];
 }

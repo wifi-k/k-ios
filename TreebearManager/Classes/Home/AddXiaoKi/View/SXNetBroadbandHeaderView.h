@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXNetBroadbandParam.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXNetBroadbandHeaderView : UIView
 
 + (instancetype)headerView;
+
+///宽带账号参数
+@property (nonatomic, strong) SXNetBroadbandParam *param;
 
 ///点击确定按钮回调
 @property (nonatomic, copy) void (^clickConfirmBtnBlock)(void);

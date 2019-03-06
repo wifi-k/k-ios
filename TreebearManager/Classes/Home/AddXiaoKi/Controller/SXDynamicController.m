@@ -8,6 +8,7 @@
 
 #import "SXDynamicController.h"
 #import "SXDynamicHeaderView.h"
+#import "SXAddXiaokiNetTool.h"
 
 @interface SXDynamicController ()
 ///头部视图
@@ -45,8 +46,17 @@
 
 #pragma mark -网络设置-
 - (void)setNetDynamicData{
-    DLog(@"动态IP - 网络设置");
-    [MBProgressHUD showMessage:@"动态IP - 网络设置 - 成功" toView:self.view];
+    WS(weakSelf);
+    SXDynamicParam *param = [SXDynamicParam param];
+    param.ssid = self.headerView.param.ssid;
+    param.passwd = self.headerView.param.passwd;
+    [SXAddXiaokiNetTool ssidSettingWithDataWithParams:param.mj_keyValues Success:^{
+        SXDynamicController *dynamicVC = [[SXDynamicController alloc] init];
+        [weakSelf.navigationController pushViewController:dynamicVC animated:YES];
+    } failure:^(NSError * _Nonnull error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
 
 @end

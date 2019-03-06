@@ -18,7 +18,7 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsa-10-ugA">
                     <rect key="frame" x="15" y="341" width="338" height="45"/>
-                    <state key="normal" title="确定" backgroundImage="img_button_bg"/>
+                    <state key="normal" title="立即绑定" backgroundImage="img_button_bg"/>
                     <connections>
                         <action selector="clickConfirmBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="gq1-yQ-3Uq"/>
                     </connections>
