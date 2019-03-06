@@ -25,5 +25,13 @@ NSString *const user_passwd_reset = @"user/passwd/reset";
 NSString *const user_signin_passwd = @"user/signin/passwd";
 NSString *const user_info_get = @"user/info/get";
 
+//xiaoki联网登录
+NSString *const app_login = @"app/login";
+NSString *const pppoe_set = @"pppoe/set";
+NSString *const static_set = @"static/set";
+NSString *const dynamic_set = @"dynamic/set";
+NSString *const network_status = @"network/status";
+
+NSString *const ssid_set = @"ssid/set";
 
 @end

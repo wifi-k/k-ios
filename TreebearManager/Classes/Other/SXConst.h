@@ -25,6 +25,15 @@ extern NSString *const user_passwd_forget;
 extern NSString *const user_passwd_reset;
 extern NSString *const user_signin_passwd;
 extern NSString *const user_info_get;
+
+//xiaoki联网登录
+extern NSString *const app_login;
+extern NSString *const pppoe_set;
+extern NSString *const static_set;
+extern NSString *const dynamic_set;
+extern NSString *const network_status;
+
+extern NSString *const ssid_set;
 @end
 
 NS_ASSUME_NONNULL_END

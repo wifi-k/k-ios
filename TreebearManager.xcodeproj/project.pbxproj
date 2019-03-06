@@ -97,6 +97,7 @@
 		09B9B7B2222FAB54000868D5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B9B7B1222FAB54000868D5 /* CloudKit.framework */; };
 		09B9B7B5222FAE0C000868D5 /* SXSingleAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7B4222FAE0C000868D5 /* SXSingleAlertView.m */; };
 		09B9B7BB222FBE3F000868D5 /* SXNetStaticParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7BA222FBE3F000868D5 /* SXNetStaticParam.m */; };
+		09B9B7BF222FC584000868D5 /* SXAddXiaokiNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7BE222FC584000868D5 /* SXAddXiaokiNetTool.m */; };
 		09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */; };
 		09D5F5EA2226820000EA681A /* SXHomeMainSectionFooterView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E92226820000EA681A /* SXHomeMainSectionFooterView2.m */; };
 		09D5F5EC2226820B00EA681A /* SXHomeMainSectionFooterView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F5EB2226820B00EA681A /* SXHomeMainSectionFooterView2.xib */; };
@@ -406,6 +407,8 @@
 		09B9B7B4222FAE0C000868D5 /* SXSingleAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXSingleAlertView.m; sourceTree = "<group>"; };
 		09B9B7B9222FBE3F000868D5 /* SXNetStaticParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXNetStaticParam.h; sourceTree = "<group>"; };
 		09B9B7BA222FBE3F000868D5 /* SXNetStaticParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXNetStaticParam.m; sourceTree = "<group>"; };
+		09B9B7BD222FC584000868D5 /* SXAddXiaokiNetTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXAddXiaokiNetTool.h; sourceTree = "<group>"; };
+		09B9B7BE222FC584000868D5 /* SXAddXiaokiNetTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXAddXiaokiNetTool.m; sourceTree = "<group>"; };
 		09D5F5E0222678C000EA681A /* SXHomeMainSectionHeaderView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionHeaderView2.h; sourceTree = "<group>"; };
 		09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSectionHeaderView2.m; sourceTree = "<group>"; };
 		09D5F5E82226820000EA681A /* SXHomeMainSectionFooterView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionFooterView2.h; sourceTree = "<group>"; };
@@ -929,6 +932,15 @@
 			path = Wifi;
 			sourceTree = "<group>";
 		};
+		09B9B7BC222FC560000868D5 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				09B9B7BD222FC584000868D5 /* SXAddXiaokiNetTool.h */,
+				09B9B7BE222FC584000868D5 /* SXAddXiaokiNetTool.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		09D5F5F22226B69F00EA681A /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
@@ -1102,6 +1114,7 @@
 		09D5F666222BC22300EA681A /* AddXiaoKi */ = {
 			isa = PBXGroup;
 			children = (
+				09B9B7BC222FC560000868D5 /* Helper */,
 				0900F511222D31AF00250155 /* Model */,
 				09D5F667222BC22300EA681A /* Controller */,
 				09D5F668222BC22300EA681A /* View */,
@@ -2414,6 +2427,7 @@
 				09F233312224DF6B0086AB35 /* SXWifiSettingAlertView.m in Sources */,
 				B348F9B921F721D60000F194 /* SXNetReachablityTool.m in Sources */,
 				09D5F685222D247200EA681A /* SXNetOptionFooterView.m in Sources */,
+				09B9B7BF222FC584000868D5 /* SXAddXiaokiNetTool.m in Sources */,
 				09B9B7A2222E5488000868D5 /* XKNetRequestTool.m in Sources */,
 				09D5F66E222BC2B900EA681A /* SXAddXiaoKiHeaderView.m in Sources */,
 				B3AF301221FB0A5D001E4E67 /* SXBaseCollectionViewCell.m in Sources */,

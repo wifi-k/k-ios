@@ -8,8 +8,6 @@
 
 #import "SXBaseParam.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface SXNetStaticParam : SXBaseParam
 ///ip地址
 @property (nonatomic, copy) NSString *ip;
@@ -21,6 +19,5 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *dns1;
 ///备用DNS服务器
 @property (nonatomic, copy) NSString *dns2;
-@end
 
-NS_ASSUME_NONNULL_END
+@end
