@@ -45,7 +45,20 @@
     UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
     return rootVC;
 }
-    
+
++ (SXNavigationController *)currentNaviController{
+    UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+    SXNavigationController *currentNaviVC = nil;
+    if ([rootVC isKindOfClass:[SXTabBarController class]]) {
+        SXTabBarController *tabVC = (SXTabBarController *)rootVC;
+        SXNavigationController *naviVC = (SXNavigationController *)tabVC.viewControllers[tabVC.selectedIndex];
+        currentNaviVC = naviVC;
+    }else if([rootVC isKindOfClass:[SXNavigationController class]]) {
+        SXNavigationController *naviVC = (SXNavigationController *)rootVC;
+        currentNaviVC = naviVC;
+    }
+    return currentNaviVC;
+}
     
 + (void)changeToMainHomeVC{
     UIViewController *rootVC = self.rootViewController;
@@ -71,12 +84,12 @@
     }
 }
 
-+ (void)jumpToVC:(UIViewController *)controller{
-    UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-    if([rootVC isKindOfClass:[SXNavigationController class]]) {
-        SXNavigationController *naviVC = (SXNavigationController *)rootVC;
-        [naviVC pushViewController:controller animated:YES];
-    }
++ (void)pushToVC:(UIViewController *)controller{
+    [self.currentNaviController pushViewController:controller animated:YES];
+}
+
++ (void)popToPrevious{
+    [self.currentNaviController popViewControllerAnimated:YES];
 }
 
 + (void)jumpToSystemWIFI{

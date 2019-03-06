@@ -29,7 +29,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)changeToPhotoVC;
 
 #pragma mark -页面跳转(不含参数)-
-+ (void)jumpToVC:(UIViewController *)controller;
+///push下一个页面
++ (void)pushToVC:(UIViewController *)controller;
+///返回上一级页面
++ (void)popToPrevious;
 
 + (void)jumpToSystemWIFI;
 

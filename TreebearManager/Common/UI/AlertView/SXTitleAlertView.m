@@ -186,10 +186,6 @@ const CGFloat titleAlertViewHeightRatio = 0.206; //高度系统
 }
 
 - (void)cancleButtonTapped{
-    if (self.cancelButtonBlock) {
-        self.cancelButtonBlock();
-    }
-
     [self performSelector:@selector(removeSelf) withObject:nil afterDelay:0.12];
 }
 
@@ -197,6 +193,11 @@ const CGFloat titleAlertViewHeightRatio = 0.206; //高度系统
     [UIView animateWithDuration:0.3 animations:^{
         self.bgView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.0];
     } completion:^(BOOL finished) {
+        
+        if (self.cancelButtonBlock) {
+            self.cancelButtonBlock();
+        }
+        
         [self removeFromSuperview];
     }];
 }

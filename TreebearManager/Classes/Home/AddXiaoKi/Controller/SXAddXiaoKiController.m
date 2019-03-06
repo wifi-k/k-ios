@@ -37,7 +37,7 @@
     // app启动或者app从后台进入前台都会调用这个方法
     //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
     // app从后台进入前台都会调用这个方法
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationBecomeActive) name:UIApplicationWillEnterForegroundNotification object:nil];
+    [SXNotificationCenter addObserver:self selector:@selector(applicationBecomeActive) name:UIApplicationWillEnterForegroundNotification object:nil];
 }
 
 #pragma mark -初始化UI-
@@ -63,7 +63,7 @@
 }
 
 - (void)dealloc{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [SXNotificationCenter removeObserver:self];
 }
 
 #pragma mark -事件监听-
@@ -75,13 +75,20 @@
 #pragma mark -获取当前连接wifi信息-
 - (void)getWifiInfo{
     NSString *wifiSSID = [XKGetWifiNetTool getWifiSSID];
+    DLog(@"wifi:%@",wifiSSID);
+#warning mark -更换正式-
+//    if ([wifiSSID containsString:@"Xiaomi"] || [wifiSSID containsString:@"Office"]) {
+//        self.headerView.hidden = NO;
+//    } else{
+//        self.headerView.hidden = YES;
+//        [self alertOnNetAlertView];
+//    }
     if ([wifiSSID containsString:@"Xiaomi"] || [wifiSSID containsString:@"Office"]) {
-        self.headerView.hidden = NO;
-    } else{
         self.headerView.hidden = YES;
         [self alertOnNetAlertView];
+    } else{
+        self.headerView.hidden = NO;
     }
-    DLog(@"wifi:%@",wifiSSID);
 }
 
 #pragma mark -跳转网络选择页面-
@@ -92,11 +99,25 @@
 
 #pragma mark -视图弹窗-
 - (void)alertOnNetAlertView{
-    SXTitleAlertView *netAlertView = [SXTitleAlertView alertWithTitle:@"联网提示" content:@"请立即连接wifi名称为'xiaoki-xxxx',然后再绑定设备" confirmStr:@"确定" cancelStr:@"取消"];
-    netAlertView.confirmButtonBlock = ^{
-        [SXRootTool jumpToSystemWIFI];
-    };
-    [netAlertView alert];
+    
+    BOOL isContainsAlert = NO;
+    for (UIView *v in SXDelegateWindow.subviews) {
+        if ([v isKindOfClass:SXTitleAlertView.class]) {
+            isContainsAlert = YES;
+            break;
+        }
+    }
+    
+    if (!isContainsAlert) {
+        SXTitleAlertView *netAlertView = [SXTitleAlertView alertWithTitle:@"联网提示" content:@"请立即连接wifi名称为'xiaoki-xxxx',然后再绑定设备" confirmStr:@"确定" cancelStr:@"取消"];
+        netAlertView.confirmButtonBlock = ^{
+            [SXRootTool jumpToSystemWIFI];
+        };
+        netAlertView.cancelButtonBlock = ^{
+            [SXRootTool popToPrevious];
+        };
+        [netAlertView alert];
+    }
 }
 
 @end
