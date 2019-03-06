@@ -93,6 +93,8 @@
 		09B9B7A5222E555A000868D5 /* XKNetReachablityTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7A4222E555A000868D5 /* XKNetReachablityTool.m */; };
 		09B9B7A9222E56C0000868D5 /* XKUserMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7A8222E56C0000868D5 /* XKUserMember.m */; };
 		09B9B7AD222E667B000868D5 /* XKGetWifiNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7AC222E667B000868D5 /* XKGetWifiNetTool.m */; };
+		09B9B7B0222FA80C000868D5 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B9B7AF222FA80C000868D5 /* ExternalAccessory.framework */; };
+		09B9B7B2222FAB54000868D5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B9B7B1222FAB54000868D5 /* CloudKit.framework */; };
 		09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */; };
 		09D5F5EA2226820000EA681A /* SXHomeMainSectionFooterView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E92226820000EA681A /* SXHomeMainSectionFooterView2.m */; };
 		09D5F5EC2226820B00EA681A /* SXHomeMainSectionFooterView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F5EB2226820B00EA681A /* SXHomeMainSectionFooterView2.xib */; };
@@ -396,6 +398,8 @@
 		09B9B7AB222E667B000868D5 /* XKGetWifiNetTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XKGetWifiNetTool.h; sourceTree = "<group>"; };
 		09B9B7AC222E667B000868D5 /* XKGetWifiNetTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XKGetWifiNetTool.m; sourceTree = "<group>"; };
 		09B9B7AE222E758E000868D5 /* TreebearManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TreebearManager.entitlements; sourceTree = "<group>"; };
+		09B9B7AF222FA80C000868D5 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		09B9B7B1222FAB54000868D5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		09D5F5E0222678C000EA681A /* SXHomeMainSectionHeaderView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionHeaderView2.h; sourceTree = "<group>"; };
 		09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSectionHeaderView2.m; sourceTree = "<group>"; };
 		09D5F5E82226820000EA681A /* SXHomeMainSectionFooterView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionFooterView2.h; sourceTree = "<group>"; };
@@ -635,6 +639,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09B9B7B2222FAB54000868D5 /* CloudKit.framework in Frameworks */,
+				09B9B7B0222FA80C000868D5 /* ExternalAccessory.framework in Frameworks */,
 				327EE8E44A5A7DE11581C0F1 /* libPods-TreebearManager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1351,6 +1357,8 @@
 		5C5F2F98843302620E46BD97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09B9B7B1222FAB54000868D5 /* CloudKit.framework */,
+				09B9B7AF222FA80C000868D5 /* ExternalAccessory.framework */,
 				D77B77B9D44D60B532DDE9D2 /* libPods-TreebearManager.a */,
 			);
 			name = Frameworks;
@@ -2087,6 +2095,15 @@
 								enabled = 1;
 							};
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.WAC = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};

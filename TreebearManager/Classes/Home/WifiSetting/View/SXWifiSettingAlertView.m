@@ -40,6 +40,9 @@ const CGFloat SXWifiSettingAlertViewHeightRatio = 0.216; //高度系统
 
 - (void)alert{
     [UIApplication.sharedApplication.delegate.window addSubview:self];
+    [UIView animateWithDuration:0.3 animations:^{
+        self.bgView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+    }];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame{
@@ -54,7 +57,7 @@ const CGFloat SXWifiSettingAlertViewHeightRatio = 0.216; //高度系统
     
     //半透明遮盖视图（满屏）
     UIView *bgView = [[UIView alloc] initWithFrame:UIApplication.sharedApplication.delegate.window.bounds];
-    bgView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+    bgView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.0];
     bgView.alpha = 0;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bgViewTapped)];
     [bgView addGestureRecognizer:tap];
@@ -195,15 +198,20 @@ const CGFloat SXWifiSettingAlertViewHeightRatio = 0.216; //高度系统
 }
 
 - (void)cancleButtonTapped{
-    if (self.cancelButtonBlock) {
-        self.cancelButtonBlock();
-    }
-    
     [self performSelector:@selector(removeSelf) withObject:nil afterDelay:0.12];
 }
 
 - (void)removeSelf{
-    [self removeFromSuperview];
+    [UIView animateWithDuration:0.3 animations:^{
+        self.bgView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.0];
+    } completion:^(BOOL finished) {
+        
+        if (self.cancelButtonBlock) {
+            self.cancelButtonBlock();
+        }
+        
+        [self removeFromSuperview];
+    }];
 }
 
 - (void)setTitle:(NSString *)title{
