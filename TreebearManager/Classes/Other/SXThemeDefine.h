@@ -79,6 +79,7 @@
 #define SXColor999999 UIColorFromRGB(0x999999) // 半度灰
 #define SXColor3B3B3B UIColorFromRGB(0x3B3B3B) // 重灰
 #define SXColor6B6B6B UIColorFromRGB(0x6B6B6B) // 浅灰
+#define SXColorF6F7FB UIColorFromRGB(0xF6F7FB) // 浅浅灰
 #define SXColorOrange UIColorFromRGB(0xff9900) // 辅色(橙色)
 #define SXColorPlaceholder UIColorFromRGB(0xc9c9cf) // 用于表单 输入框等提示文字
 #define SXColorRed   UIColorFromRGB(0xe64340) // 红色

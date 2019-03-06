@@ -95,6 +95,8 @@
 		09B9B7AD222E667B000868D5 /* XKGetWifiNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7AC222E667B000868D5 /* XKGetWifiNetTool.m */; };
 		09B9B7B0222FA80C000868D5 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B9B7AF222FA80C000868D5 /* ExternalAccessory.framework */; };
 		09B9B7B2222FAB54000868D5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B9B7B1222FAB54000868D5 /* CloudKit.framework */; };
+		09B9B7B5222FAE0C000868D5 /* SXSingleAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7B4222FAE0C000868D5 /* SXSingleAlertView.m */; };
+		09B9B7BB222FBE3F000868D5 /* SXNetStaticParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7BA222FBE3F000868D5 /* SXNetStaticParam.m */; };
 		09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */; };
 		09D5F5EA2226820000EA681A /* SXHomeMainSectionFooterView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E92226820000EA681A /* SXHomeMainSectionFooterView2.m */; };
 		09D5F5EC2226820B00EA681A /* SXHomeMainSectionFooterView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F5EB2226820B00EA681A /* SXHomeMainSectionFooterView2.xib */; };
@@ -400,6 +402,10 @@
 		09B9B7AE222E758E000868D5 /* TreebearManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TreebearManager.entitlements; sourceTree = "<group>"; };
 		09B9B7AF222FA80C000868D5 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		09B9B7B1222FAB54000868D5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		09B9B7B3222FAE0C000868D5 /* SXSingleAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXSingleAlertView.h; sourceTree = "<group>"; };
+		09B9B7B4222FAE0C000868D5 /* SXSingleAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXSingleAlertView.m; sourceTree = "<group>"; };
+		09B9B7B9222FBE3F000868D5 /* SXNetStaticParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXNetStaticParam.h; sourceTree = "<group>"; };
+		09B9B7BA222FBE3F000868D5 /* SXNetStaticParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXNetStaticParam.m; sourceTree = "<group>"; };
 		09D5F5E0222678C000EA681A /* SXHomeMainSectionHeaderView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionHeaderView2.h; sourceTree = "<group>"; };
 		09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSectionHeaderView2.m; sourceTree = "<group>"; };
 		09D5F5E82226820000EA681A /* SXHomeMainSectionFooterView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionFooterView2.h; sourceTree = "<group>"; };
@@ -667,6 +673,8 @@
 			children = (
 				0900F512222D31BD00250155 /* SXNetOptionModel.h */,
 				0900F513222D31BD00250155 /* SXNetOptionModel.m */,
+				09B9B7B9222FBE3F000868D5 /* SXNetStaticParam.h */,
+				09B9B7BA222FBE3F000868D5 /* SXNetStaticParam.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -745,6 +753,8 @@
 		091187332215688600938D9F /* AlertView */ = {
 			isa = PBXGroup;
 			children = (
+				09B9B7B3222FAE0C000868D5 /* SXSingleAlertView.h */,
+				09B9B7B4222FAE0C000868D5 /* SXSingleAlertView.m */,
 				091187342215689E00938D9F /* SXTitleAlertView.h */,
 				091187352215689E00938D9F /* SXTitleAlertView.m */,
 				09D5F652222B88E400EA681A /* SXInputAlertView.h */,
@@ -2275,6 +2285,7 @@
 				B348F9B021F71E180000F194 /* SXHttpTool.m in Sources */,
 				09D5F63922292F2C00EA681A /* SXForbiddenUpdateHeaderView.m in Sources */,
 				09D5F67C222BC87000EA681A /* SXFamilyMemberCell.m in Sources */,
+				09B9B7BB222FBE3F000868D5 /* SXNetStaticParam.m in Sources */,
 				09118702221522BF00938D9F /* GCDAsyncSocketCommunicationManager.m in Sources */,
 				09F2331C2224102A0086AB35 /* SXWifiSettingHeaderView.m in Sources */,
 				B348F96121F6C50C0000F194 /* SXRootTool.m in Sources */,
@@ -2291,6 +2302,7 @@
 				B3AF302121FE90DA001E4E67 /* SXBaseTableViewGroupController.m in Sources */,
 				095540D222200EB6005A5485 /* SXHomeMainMemberButton.m in Sources */,
 				B348F98921F713A80000F194 /* AppDelegate.m in Sources */,
+				09B9B7B5222FAE0C000868D5 /* SXSingleAlertView.m in Sources */,
 				09D5F5F92226C22B00EA681A /* SXAlertControllerTool.m in Sources */,
 				09D5F5EF222689CE00EA681A /* SXHomeMainSectionFooterView.m in Sources */,
 				09FB472C22239D7B00809273 /* SXMessageController.m in Sources */,

@@ -27,7 +27,7 @@
 - (void)setUpUI{
     self.view.backgroundColor = SXColorWhite;
     
-    self.navigationItem.title = @"静态IP上网";
+    self.navigationItem.title = @"设置";
     
     WS(weakSelf);
     SXNetStaticHeaderView *headerView = [SXNetStaticHeaderView headerView];
