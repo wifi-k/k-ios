@@ -19,10 +19,10 @@
 
 @implementation SXHomeNetworkingDeviceCell
 
-static NSString *ID = @"SXHomeNetworkingDeviceCellID";
+static NSString *SXHomeNetworkingDeviceCellID = @"SXHomeNetworkingDeviceCellID";
     
 + (instancetype)cellWithTableView:(UITableView *)tableView{
-    id cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    id cell = [tableView dequeueReusableCellWithIdentifier:SXHomeNetworkingDeviceCellID];
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
     }

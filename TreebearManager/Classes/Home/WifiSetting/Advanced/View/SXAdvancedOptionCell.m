@@ -1,25 +1,25 @@
 //
-//  SXNetOptionCell.m
+//  SXAdvancedOptionCell.m
 //  TreebearManager
 //
-//  Created by bear on 2019/3/4.
+//  Created by bear on 2019/3/7.
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXNetOptionCell.h"
+#import "SXAdvancedOptionCell.h"
 
-@interface SXNetOptionCell ()
+@interface SXAdvancedOptionCell ()
 @property (weak, nonatomic) IBOutlet UILabel *titleL;
 @property (weak, nonatomic) IBOutlet UIImageView *checkImageView;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView;
 @end
 
-@implementation SXNetOptionCell
+@implementation SXAdvancedOptionCell
 
-static NSString *SXNetOptionCellID = @"SXNetOptionCellID";
+static NSString *SXAdvancedOptionCellID = @"SXAdvancedOptionCellID";
 
 + (instancetype)cellWithTableView:(UITableView *)tableView{
-    id cell = [tableView dequeueReusableCellWithIdentifier:SXNetOptionCellID];
+    id cell = [tableView dequeueReusableCellWithIdentifier:SXAdvancedOptionCellID];
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
     }
@@ -28,6 +28,9 @@ static NSString *SXNetOptionCellID = @"SXNetOptionCellID";
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
+    //设置背样式
+    self.contentView.backgroundColor = SXColorWhite;
     
     [self setUpUI];
 }
@@ -39,12 +42,13 @@ static NSString *SXNetOptionCellID = @"SXNetOptionCellID";
     self.backgroundColor = SXColorWhite;
     
     self.bottomLineView.backgroundColor = SXColorDivideLine;
+    self.bottomLineView.height = 0.5;
     
     self.titleL.textColor = SXColor666666;
 }
 
 #pragma mark -setter-
-- (void)setModel:(SXNetOptionModel *)model{
+- (void)setModel:(SXAdvancedOptionModel *)model{
     _model = model;
     
     self.titleL.text = model.title;

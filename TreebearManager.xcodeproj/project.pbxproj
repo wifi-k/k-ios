@@ -126,6 +126,9 @@
 		09B9B84122310B99000868D5 /* SXWorkModeOptionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B84022310B99000868D5 /* SXWorkModeOptionController.m */; };
 		09B9B84422310BB2000868D5 /* SXChannelOptionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B84322310BB2000868D5 /* SXChannelOptionController.m */; };
 		09B9B84722310BCA000868D5 /* SXFrequencyOptionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B84622310BCA000868D5 /* SXFrequencyOptionController.m */; };
+		09B9B85022311126000868D5 /* SXAdvancedOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B84E22311126000868D5 /* SXAdvancedOptionCell.m */; };
+		09B9B85122311126000868D5 /* SXAdvancedOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B9B84F22311126000868D5 /* SXAdvancedOptionCell.xib */; };
+		09B9B85422311324000868D5 /* SXAdvancedOptionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B85322311324000868D5 /* SXAdvancedOptionModel.m */; };
 		09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */; };
 		09D5F5EA2226820000EA681A /* SXHomeMainSectionFooterView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E92226820000EA681A /* SXHomeMainSectionFooterView2.m */; };
 		09D5F5EC2226820B00EA681A /* SXHomeMainSectionFooterView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F5EB2226820B00EA681A /* SXHomeMainSectionFooterView2.xib */; };
@@ -479,6 +482,11 @@
 		09B9B84322310BB2000868D5 /* SXChannelOptionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXChannelOptionController.m; sourceTree = "<group>"; };
 		09B9B84522310BCA000868D5 /* SXFrequencyOptionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXFrequencyOptionController.h; sourceTree = "<group>"; };
 		09B9B84622310BCA000868D5 /* SXFrequencyOptionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXFrequencyOptionController.m; sourceTree = "<group>"; };
+		09B9B84D22311126000868D5 /* SXAdvancedOptionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXAdvancedOptionCell.h; sourceTree = "<group>"; };
+		09B9B84E22311126000868D5 /* SXAdvancedOptionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXAdvancedOptionCell.m; sourceTree = "<group>"; };
+		09B9B84F22311126000868D5 /* SXAdvancedOptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXAdvancedOptionCell.xib; sourceTree = "<group>"; };
+		09B9B85222311324000868D5 /* SXAdvancedOptionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXAdvancedOptionModel.h; sourceTree = "<group>"; };
+		09B9B85322311324000868D5 /* SXAdvancedOptionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXAdvancedOptionModel.m; sourceTree = "<group>"; };
 		09D5F5E0222678C000EA681A /* SXHomeMainSectionHeaderView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionHeaderView2.h; sourceTree = "<group>"; };
 		09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSectionHeaderView2.m; sourceTree = "<group>"; };
 		09D5F5E82226820000EA681A /* SXHomeMainSectionFooterView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionFooterView2.h; sourceTree = "<group>"; };
@@ -1266,6 +1274,8 @@
 		09B9B8132230EC27000868D5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				09B9B85222311324000868D5 /* SXAdvancedOptionModel.h */,
+				09B9B85322311324000868D5 /* SXAdvancedOptionModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1276,6 +1286,9 @@
 				09B9B8372230F590000868D5 /* SXAdvancedHeaderView.h */,
 				09B9B8382230F590000868D5 /* SXAdvancedHeaderView.m */,
 				09B9B83A2230F5A3000868D5 /* SXAdvancedHeaderView.xib */,
+				09B9B84D22311126000868D5 /* SXAdvancedOptionCell.h */,
+				09B9B84E22311126000868D5 /* SXAdvancedOptionCell.m */,
+				09B9B84F22311126000868D5 /* SXAdvancedOptionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2588,6 +2601,7 @@
 				B3AF2FF821FB0180001E4E67 /* SXLoginMainHeaderView.xib in Resources */,
 				09D5F5F1222689E300EA681A /* SXHomeMainSectionFooterView.xib in Resources */,
 				09D5F67D222BC87000EA681A /* SXFamilyMemberCell.xib in Resources */,
+				09B9B85122311126000868D5 /* SXAdvancedOptionCell.xib in Resources */,
 				092D6CE622005A1A00538AC8 /* SXEmptyDataEventView.xib in Resources */,
 				09D5F65C222B8D6A00EA681A /* SXUpdateVersionHeaderView.xib in Resources */,
 				09B9B83B2230F5A3000868D5 /* SXAdvancedHeaderView.xib in Resources */,
@@ -2788,6 +2802,7 @@
 				09B9B84722310BCA000868D5 /* SXFrequencyOptionController.m in Sources */,
 				092D6D3722041C4900538AC8 /* SXHomeHeaderView.m in Sources */,
 				098BA2FB2216B54100F58639 /* SXPhotoSectionHeaderView.m in Sources */,
+				09B9B85022311126000868D5 /* SXAdvancedOptionCell.m in Sources */,
 				B348F99721F716C60000F194 /* SXTabBarController.m in Sources */,
 				09D5F66B222BC24700EA681A /* SXAddXiaoKiController.m in Sources */,
 				B348F99D21F719850000F194 /* UIImage+Extension.m in Sources */,
@@ -2801,6 +2816,7 @@
 				09FB47512223E87300809273 /* SXHealtyControlHeaderView.m in Sources */,
 				B3AF301E21FE90AF001E4E67 /* SXBaseTableViewPlainController.m in Sources */,
 				B3AF302A21FE91B8001E4E67 /* UIViewController+Placeholder.m in Sources */,
+				09B9B85422311324000868D5 /* SXAdvancedOptionModel.m in Sources */,
 				092D6D2B2203011800538AC8 /* SXHomeNetworkingDeviceCell.m in Sources */,
 				09B9B7C8222FF2E3000868D5 /* SXDynamicParam.m in Sources */,
 				092D6D182202E4FD00538AC8 /* SXForgetHeaderView.m in Sources */,
