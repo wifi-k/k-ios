@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="124" height="130"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_android_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Hey-z3-qm2">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_bear_square" translatesAutoresizingMaskIntoConstraints="NO" id="Hey-z3-qm2">
                         <rect key="frame" x="22" y="11" width="80" height="80"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -28,13 +28,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oG0-UJ-g0k">
-                        <rect key="frame" x="5" y="99" width="114" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="5" y="99" width="114" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_netoption_check" translatesAutoresizingMaskIntoConstraints="NO" id="I9A-AZ-hoQ">
-                        <rect key="frame" x="94" y="5" width="26" height="26"/>
+                        <rect key="frame" x="89" y="5" width="26" height="26"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="26" id="iwg-hK-icM"/>
                             <constraint firstAttribute="width" constant="26" id="pdw-7c-mdp"/>
@@ -45,7 +45,7 @@
             <constraints>
                 <constraint firstItem="Hey-z3-qm2" firstAttribute="centerX" secondItem="SEy-5g-ep8" secondAttribute="centerX" id="EWs-NL-cTa"/>
                 <constraint firstItem="Hey-z3-qm2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="11" id="Mb4-16-Jdq"/>
-                <constraint firstItem="I9A-AZ-hoQ" firstAttribute="centerX" secondItem="Hey-z3-qm2" secondAttribute="centerX" constant="45" id="cS9-mv-BLi"/>
+                <constraint firstItem="I9A-AZ-hoQ" firstAttribute="centerX" secondItem="Hey-z3-qm2" secondAttribute="centerX" constant="40" id="cS9-mv-BLi"/>
                 <constraint firstItem="oG0-UJ-g0k" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="dl7-dy-nGC"/>
                 <constraint firstAttribute="trailing" secondItem="oG0-UJ-g0k" secondAttribute="trailing" constant="5" id="fvO-Jr-WOJ"/>
                 <constraint firstItem="oG0-UJ-g0k" firstAttribute="top" secondItem="Hey-z3-qm2" secondAttribute="bottom" constant="8" id="nQJ-mh-lIj"/>
@@ -63,6 +63,6 @@
     </objects>
     <resources>
         <image name="home_netoption_check" width="30" height="30"/>
-        <image name="img_android_icon" width="52" height="52"/>
+        <image name="img_bear_square" width="44" height="44"/>
     </resources>
 </document>

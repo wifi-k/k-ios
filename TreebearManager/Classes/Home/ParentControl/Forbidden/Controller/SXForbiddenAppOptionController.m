@@ -24,6 +24,7 @@
             SXForbiddenAppOptionModel *model = [[SXForbiddenAppOptionModel alloc] init];
             model.title = [NSString stringWithFormat:@"名称%d",i];
             model.row= @(i);
+            model.selected = @(NO);
             [_dataArray addObject:model];
         }
     }
@@ -51,7 +52,7 @@
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     //layout.sectionHeadersPinToVisibleBounds = YES;//头视图悬浮
     float collectionWidth = (SCREEN_WIDTH - (count+1) * 10)/count;
-    layout.itemSize = CGSizeMake(collectionWidth, collectionWidth);
+    layout.itemSize = CGSizeMake(collectionWidth, 150);
     
     //设置每一行之间的间距
     CGFloat inset = (SCREEN_WIDTH - count * layout.itemSize.width) / (count + 1) - 1;
@@ -124,6 +125,12 @@
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     
     DLog(@"indexPath.item:%ld",indexPath.item);
+    
+    SXForbiddenAppOptionModel *model = self.dataArray[indexPath.row];
+    model.selected = @(!model.selected.boolValue);
+    
+    //刷新数组
+    [self.collectionView reloadData];
 }
 
 @end

@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SXForbiddenAppOptionModel : SXBaseModel
 
+///是否选中
+@property (nonatomic, copy) NSNumber *selected;
 ///禁用App
 @property (nonatomic, copy) NSString *title;
 ///行

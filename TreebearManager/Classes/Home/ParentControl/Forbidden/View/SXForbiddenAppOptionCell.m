@@ -28,8 +28,9 @@
 
 - (void)setUpUI{
     
-    self.contentView.backgroundColor = SXColorWhite;
+    self.contentView.backgroundColor = SXColorClear;
     
+    self.appNameL.textColor = SXColor333333;
 }
 
 #pragma mark -setter-
@@ -37,7 +38,12 @@
     _model = model;
     
     self.appNameL.text = model.title;
-//    self.appImageView.image = [UIImage imageNamed:@""];
+    
+    if (model.selected.boolValue) {
+        self.checkImageView.image = [UIImage imageNamed:@"home_netoption_check"];
+    } else{
+        self.checkImageView.image = [UIImage imageNamed:@"home_netoption_uncheck"];
+    }
 }
 
 @end
