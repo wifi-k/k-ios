@@ -19,7 +19,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ud0-e9-GNE">
                     <rect key="frame" x="0.0" y="0.0" width="340" height="120"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_user_icon" translatesAutoresizingMaskIntoConstraints="NO" id="K3h-ll-afx">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_mobile_icon" translatesAutoresizingMaskIntoConstraints="NO" id="K3h-ll-afx">
                             <rect key="frame" x="15" y="25" width="70" height="70"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="70" id="Bgk-nx-2BC"/>
@@ -82,21 +82,21 @@
                                 <action selector="clickReportBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="wKd-Cs-4Gn"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_user_icon" translatesAutoresizingMaskIntoConstraints="NO" id="3bO-Sx-bTa">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_bear_default" translatesAutoresizingMaskIntoConstraints="NO" id="3bO-Sx-bTa">
                             <rect key="frame" x="15" y="51" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="CcA-Pc-gVZ"/>
                                 <constraint firstAttribute="height" constant="40" id="jfO-uR-7c4"/>
                             </constraints>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_user_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Ywc-dy-VPj">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_bear_default" translatesAutoresizingMaskIntoConstraints="NO" id="Ywc-dy-VPj">
                             <rect key="frame" x="60" y="51" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="XUk-mu-Bjs"/>
                                 <constraint firstAttribute="width" constant="40" id="qVp-yH-DZU"/>
                             </constraints>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_user_icon" translatesAutoresizingMaskIntoConstraints="NO" id="70a-mf-3sp">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_bear_default" translatesAutoresizingMaskIntoConstraints="NO" id="70a-mf-3sp">
                             <rect key="frame" x="105" y="51" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="LG5-C6-lGk"/>
@@ -142,7 +142,8 @@
         </view>
     </objects>
     <resources>
+        <image name="home_bear_default" width="47" height="44"/>
         <image name="img_button_bg_small" width="140" height="45"/>
-        <image name="img_user_icon" width="50" height="50"/>
+        <image name="img_mobile_icon" width="52" height="52"/>
     </resources>
 </document>

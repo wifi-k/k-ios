@@ -7,7 +7,7 @@
 //
 
 #import "SXForbiddenAppController.h"
-#import "SXForbiddenAppUpdateController.h"
+#import "SXForbiddenUpdateController.h"
 #import "SXForbiddenAppFooterView.h"
 #import "SXForbiddenAppCell.h"
 #import "SXTitleAlertView.h"
@@ -89,7 +89,7 @@
 
 #pragma mark -页面跳转-
 - (void)jumpToUpdateVC{
-    SXForbiddenAppUpdateController *updateVC = [[SXForbiddenAppUpdateController alloc] init];
+    SXForbiddenUpdateController *updateVC = [[SXForbiddenUpdateController alloc] init];
     [self.navigationController pushViewController:updateVC animated:YES];
 }
 

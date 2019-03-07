@@ -1,8 +1,8 @@
 //
-//  SXTimeOptionController.h
+//  SXForbiddenAppUpdateController.h
 //  TreebearManager
 //
-//  Created by bear on 2019/3/2.
+//  Created by bear on 2019/3/1.
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SXTimeOptionController : UIViewController
+@interface SXForbiddenUpdateController : UIViewController
 
 @end
 

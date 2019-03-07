@@ -6,18 +6,18 @@
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXForbiddenAppUpdateController.h"
-#import "SXDeviceControlController.h"
-#import "SXTimeOptionController.h"
+#import "SXForbiddenUpdateController.h"
+#import "SXForbiddenDeviceOptionController.h"
+#import "SXForbiddenAppOptionController.h"
 #import "SXForbiddenUpdateHeaderView.h"
 #import "SXWifiSettingAlertView.h"
 
-@interface SXForbiddenAppUpdateController ()
+@interface SXForbiddenUpdateController ()
 ///头部视图
 @property (nonatomic, weak) SXForbiddenUpdateHeaderView *headerView;
 @end
 
-@implementation SXForbiddenAppUpdateController
+@implementation SXForbiddenUpdateController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,8 +37,8 @@
     headerView.clickUpdateNameBtnBlock = ^{
         [weakSelf alertUpdateNameView];
     };
-    headerView.clickTimeControlBlock = ^{
-        [weakSelf jumpTimeOptionVC];
+    headerView.clickForbiddenAppBlock = ^{
+        [weakSelf jumpForbiddenAppOptionVC];
     };
     headerView.clickDeviceControlBlock = ^{
         [weakSelf jumpToDeviceVC];
@@ -64,12 +64,12 @@
 
 #pragma mark -页面跳转-
 - (void)jumpToDeviceVC{
-    SXDeviceControlController *fdf = [[SXDeviceControlController alloc] init];
+    SXForbiddenDeviceOptionController *fdf = [[SXForbiddenDeviceOptionController alloc] init];
     [self.navigationController pushViewController:fdf animated:YES];
 }
 
-- (void)jumpTimeOptionVC{
-    SXTimeOptionController *fdf = [[SXTimeOptionController alloc] init];
+- (void)jumpForbiddenAppOptionVC{
+    SXForbiddenAppOptionController *fdf = [[SXForbiddenAppOptionController alloc] init];
     [self.navigationController pushViewController:fdf animated:YES];
 }
 

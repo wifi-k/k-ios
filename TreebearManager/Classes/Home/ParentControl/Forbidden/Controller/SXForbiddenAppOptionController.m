@@ -6,13 +6,13 @@
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXTimeOptionController.h"
+#import "SXForbiddenAppOptionController.h"
 
-@interface SXTimeOptionController ()
+@interface SXForbiddenAppOptionController ()
 
 @end
 
-@implementation SXTimeOptionController
+@implementation SXForbiddenAppOptionController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,7 +25,7 @@
 - (void)setUpUI{
     self.view.backgroundColor = SXColorBgViewGray;
     
-    self.navigationItem.title = @"允许上网时间段";
+    self.navigationItem.title = @"选择禁用的APP";
     
 }
 

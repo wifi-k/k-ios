@@ -41,8 +41,7 @@ static NSString *SXHomeNetworkingDeviceCellID = @"SXHomeNetworkingDeviceCellID";
 #pragma mark -初始化UI-
 - (void)setUpUI{
     
-    self.iconImageV.backgroundColor = SXColorRandom;
-    [self.iconImageV roundViewWithRadius:30.0f];
+    //[self.iconImageV roundViewWithRadius:30.0f];
     
     self.contentBgView.backgroundColor = SXColorClear;
     

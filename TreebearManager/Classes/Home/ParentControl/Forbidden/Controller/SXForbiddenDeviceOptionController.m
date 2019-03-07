@@ -1,19 +1,19 @@
 //
-//  SXDeviceControlController.m
+//  SXForbiddenDeviceOptionController.m
 //  TreebearManager
 //
-//  Created by bear on 2019/3/1.
+//  Created by bear on 2019/3/7.
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXDeviceControlController.h"
+#import "SXForbiddenDeviceOptionController.h"
 #import "SXDeviceControlCell.h"
 
-@interface SXDeviceControlController ()
+@interface SXForbiddenDeviceOptionController ()
 
 @end
 
-@implementation SXDeviceControlController
+@implementation SXForbiddenDeviceOptionController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,7 +31,7 @@
 - (void)setUpUI{
     self.view.backgroundColor = SXColorWhite;
     
-    self.navigationItem.title = @"选择上网设备";
+    self.navigationItem.title = @"选择禁用的设备";
     
 }
 
@@ -51,7 +51,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
+    
     
 }
 
