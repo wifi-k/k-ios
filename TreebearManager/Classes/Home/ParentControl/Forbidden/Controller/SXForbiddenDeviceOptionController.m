@@ -7,7 +7,7 @@
 //
 
 #import "SXForbiddenDeviceOptionController.h"
-#import "SXDeviceControlCell.h"
+#import "SXForbiddenDeviceOptionCell.h"
 
 @interface SXForbiddenDeviceOptionController ()
 
@@ -45,13 +45,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    SXDeviceControlCell *cell = [SXDeviceControlCell cellWithTableView:tableView];
+    SXForbiddenDeviceOptionCell *cell = [SXForbiddenDeviceOptionCell cellWithTableView:tableView];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
     
 }
 

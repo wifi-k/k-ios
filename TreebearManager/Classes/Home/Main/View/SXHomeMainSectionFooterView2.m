@@ -37,7 +37,7 @@
     
     self.backgroundColor = SXColorWhite;
     
-    //self.topBgView.backgroundColor = SXColorWhite;
+    self.topBgView.backgroundColor = SXColorWhite;
     
     self.bottomBgView.backgroundColor = SXColorWhite;
     

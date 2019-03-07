@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SXDeviceControlCell : UITableViewCell
+@interface SXForbiddenDeviceOptionCell : UITableViewCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 

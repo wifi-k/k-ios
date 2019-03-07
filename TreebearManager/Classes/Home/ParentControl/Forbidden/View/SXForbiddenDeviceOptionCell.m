@@ -6,9 +6,9 @@
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXDeviceControlCell.h"
+#import "SXForbiddenDeviceOptionCell.h"
 
-@interface SXDeviceControlCell ()
+@interface SXForbiddenDeviceOptionCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *deviceNameL;
 @property (weak, nonatomic) IBOutlet UILabel *timeL;
@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView;
 @end
 
-@implementation SXDeviceControlCell
+@implementation SXForbiddenDeviceOptionCell
 
 static NSString *SXDeviceControlCellID = @"SXDeviceControlCellID";
 

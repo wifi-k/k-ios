@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SXForbiddenAppOptionCell">
+            <rect key="frame" x="0.0" y="0.0" width="124" height="130"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="124" height="130"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_android_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Hey-z3-qm2">
+                        <rect key="frame" x="22" y="11" width="80" height="80"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="OUV-1u-UMG"/>
+                            <constraint firstAttribute="height" constant="80" id="WFG-Wv-V25"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oG0-UJ-g0k">
+                        <rect key="frame" x="5" y="99" width="114" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_netoption_check" translatesAutoresizingMaskIntoConstraints="NO" id="I9A-AZ-hoQ">
+                        <rect key="frame" x="94" y="5" width="26" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="26" id="iwg-hK-icM"/>
+                            <constraint firstAttribute="width" constant="26" id="pdw-7c-mdp"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Hey-z3-qm2" firstAttribute="centerX" secondItem="SEy-5g-ep8" secondAttribute="centerX" id="EWs-NL-cTa"/>
+                <constraint firstItem="Hey-z3-qm2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="11" id="Mb4-16-Jdq"/>
+                <constraint firstItem="I9A-AZ-hoQ" firstAttribute="centerX" secondItem="Hey-z3-qm2" secondAttribute="centerX" constant="45" id="cS9-mv-BLi"/>
+                <constraint firstItem="oG0-UJ-g0k" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="dl7-dy-nGC"/>
+                <constraint firstAttribute="trailing" secondItem="oG0-UJ-g0k" secondAttribute="trailing" constant="5" id="fvO-Jr-WOJ"/>
+                <constraint firstItem="oG0-UJ-g0k" firstAttribute="top" secondItem="Hey-z3-qm2" secondAttribute="bottom" constant="8" id="nQJ-mh-lIj"/>
+                <constraint firstItem="I9A-AZ-hoQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="ug6-uM-6OZ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="124" height="130"/>
+            <connections>
+                <outlet property="appImageView" destination="Hey-z3-qm2" id="Hdx-Hd-FYx"/>
+                <outlet property="appNameL" destination="oG0-UJ-g0k" id="3LO-CT-CN3"/>
+                <outlet property="checkImageView" destination="I9A-AZ-hoQ" id="HMo-o5-67b"/>
+            </connections>
+            <point key="canvasLocation" x="224" y="190.70464767616193"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="home_netoption_check" width="30" height="30"/>
+        <image name="img_android_icon" width="52" height="52"/>
+    </resources>
+</document>

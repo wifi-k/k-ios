@@ -43,6 +43,7 @@
     [self checkAlbumAuthorization];
 }
 
+#pragma mark -初始化UI-
 - (void)setUpUI{
     
     //流水布局

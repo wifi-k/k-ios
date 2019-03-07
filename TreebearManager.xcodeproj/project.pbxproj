@@ -130,6 +130,9 @@
 		09B9B85122311126000868D5 /* SXAdvancedOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B9B84F22311126000868D5 /* SXAdvancedOptionCell.xib */; };
 		09B9B85422311324000868D5 /* SXAdvancedOptionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B85322311324000868D5 /* SXAdvancedOptionModel.m */; };
 		09B9B857223139AC000868D5 /* SXForbiddenDeviceOptionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B856223139AC000868D5 /* SXForbiddenDeviceOptionController.m */; };
+		09B9B85B22313C7B000868D5 /* SXForbiddenAppOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B85922313C7B000868D5 /* SXForbiddenAppOptionCell.m */; };
+		09B9B85C22313C7B000868D5 /* SXForbiddenAppOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B9B85A22313C7B000868D5 /* SXForbiddenAppOptionCell.xib */; };
+		09B9B85F22313F6C000868D5 /* SXForbiddenAppOptionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B85E22313F6C000868D5 /* SXForbiddenAppOptionModel.m */; };
 		09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */; };
 		09D5F5EA2226820000EA681A /* SXHomeMainSectionFooterView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E92226820000EA681A /* SXHomeMainSectionFooterView2.m */; };
 		09D5F5EC2226820B00EA681A /* SXHomeMainSectionFooterView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F5EB2226820B00EA681A /* SXHomeMainSectionFooterView2.xib */; };
@@ -153,8 +156,8 @@
 		09D5F63622292C1500EA681A /* SXForbiddenUpdateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F63522292C1500EA681A /* SXForbiddenUpdateController.m */; };
 		09D5F63922292F2C00EA681A /* SXForbiddenUpdateHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F63822292F2C00EA681A /* SXForbiddenUpdateHeaderView.m */; };
 		09D5F63B22292F3900EA681A /* SXForbiddenUpdateHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F63A22292F3900EA681A /* SXForbiddenUpdateHeaderView.xib */; };
-		09D5F642222A5BE100EA681A /* SXDeviceControlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F640222A5BE100EA681A /* SXDeviceControlCell.m */; };
-		09D5F643222A5BE100EA681A /* SXDeviceControlCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F641222A5BE100EA681A /* SXDeviceControlCell.xib */; };
+		09D5F642222A5BE100EA681A /* SXForbiddenDeviceOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F640222A5BE100EA681A /* SXForbiddenDeviceOptionCell.m */; };
+		09D5F643222A5BE100EA681A /* SXForbiddenDeviceOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F641222A5BE100EA681A /* SXForbiddenDeviceOptionCell.xib */; };
 		09D5F646222A615300EA681A /* SXForbiddenAppOptionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F645222A615300EA681A /* SXForbiddenAppOptionController.m */; };
 		09D5F649222A73AD00EA681A /* SXHealtyTimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F648222A73AD00EA681A /* SXHealtyTimeController.m */; };
 		09D5F64F222A748E00EA681A /* SXHealthTimeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F64E222A748E00EA681A /* SXHealthTimeHeaderView.m */; };
@@ -489,6 +492,11 @@
 		09B9B85322311324000868D5 /* SXAdvancedOptionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXAdvancedOptionModel.m; sourceTree = "<group>"; };
 		09B9B855223139AC000868D5 /* SXForbiddenDeviceOptionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForbiddenDeviceOptionController.h; sourceTree = "<group>"; };
 		09B9B856223139AC000868D5 /* SXForbiddenDeviceOptionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForbiddenDeviceOptionController.m; sourceTree = "<group>"; };
+		09B9B85822313C7B000868D5 /* SXForbiddenAppOptionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForbiddenAppOptionCell.h; sourceTree = "<group>"; };
+		09B9B85922313C7B000868D5 /* SXForbiddenAppOptionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForbiddenAppOptionCell.m; sourceTree = "<group>"; };
+		09B9B85A22313C7B000868D5 /* SXForbiddenAppOptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXForbiddenAppOptionCell.xib; sourceTree = "<group>"; };
+		09B9B85D22313F6C000868D5 /* SXForbiddenAppOptionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForbiddenAppOptionModel.h; sourceTree = "<group>"; };
+		09B9B85E22313F6C000868D5 /* SXForbiddenAppOptionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForbiddenAppOptionModel.m; sourceTree = "<group>"; };
 		09D5F5E0222678C000EA681A /* SXHomeMainSectionHeaderView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionHeaderView2.h; sourceTree = "<group>"; };
 		09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSectionHeaderView2.m; sourceTree = "<group>"; };
 		09D5F5E82226820000EA681A /* SXHomeMainSectionFooterView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionFooterView2.h; sourceTree = "<group>"; };
@@ -529,9 +537,9 @@
 		09D5F63722292F2C00EA681A /* SXForbiddenUpdateHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForbiddenUpdateHeaderView.h; sourceTree = "<group>"; };
 		09D5F63822292F2C00EA681A /* SXForbiddenUpdateHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForbiddenUpdateHeaderView.m; sourceTree = "<group>"; };
 		09D5F63A22292F3900EA681A /* SXForbiddenUpdateHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXForbiddenUpdateHeaderView.xib; sourceTree = "<group>"; };
-		09D5F63F222A5BE100EA681A /* SXDeviceControlCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXDeviceControlCell.h; sourceTree = "<group>"; };
-		09D5F640222A5BE100EA681A /* SXDeviceControlCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXDeviceControlCell.m; sourceTree = "<group>"; };
-		09D5F641222A5BE100EA681A /* SXDeviceControlCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXDeviceControlCell.xib; sourceTree = "<group>"; };
+		09D5F63F222A5BE100EA681A /* SXForbiddenDeviceOptionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForbiddenDeviceOptionCell.h; sourceTree = "<group>"; };
+		09D5F640222A5BE100EA681A /* SXForbiddenDeviceOptionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForbiddenDeviceOptionCell.m; sourceTree = "<group>"; };
+		09D5F641222A5BE100EA681A /* SXForbiddenDeviceOptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXForbiddenDeviceOptionCell.xib; sourceTree = "<group>"; };
 		09D5F644222A615300EA681A /* SXForbiddenAppOptionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForbiddenAppOptionController.h; sourceTree = "<group>"; };
 		09D5F645222A615300EA681A /* SXForbiddenAppOptionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForbiddenAppOptionController.m; sourceTree = "<group>"; };
 		09D5F647222A73AD00EA681A /* SXHealtyTimeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHealtyTimeController.h; sourceTree = "<group>"; };
@@ -958,6 +966,8 @@
 			children = (
 				09B9B796222E4F1F000868D5 /* SXForbiddenAppModel.h */,
 				09B9B797222E4F1F000868D5 /* SXForbiddenAppModel.m */,
+				09B9B85D22313F6C000868D5 /* SXForbiddenAppOptionModel.h */,
+				09B9B85E22313F6C000868D5 /* SXForbiddenAppOptionModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1495,9 +1505,12 @@
 				09D5F63722292F2C00EA681A /* SXForbiddenUpdateHeaderView.h */,
 				09D5F63822292F2C00EA681A /* SXForbiddenUpdateHeaderView.m */,
 				09D5F63A22292F3900EA681A /* SXForbiddenUpdateHeaderView.xib */,
-				09D5F63F222A5BE100EA681A /* SXDeviceControlCell.h */,
-				09D5F640222A5BE100EA681A /* SXDeviceControlCell.m */,
-				09D5F641222A5BE100EA681A /* SXDeviceControlCell.xib */,
+				09D5F63F222A5BE100EA681A /* SXForbiddenDeviceOptionCell.h */,
+				09D5F640222A5BE100EA681A /* SXForbiddenDeviceOptionCell.m */,
+				09D5F641222A5BE100EA681A /* SXForbiddenDeviceOptionCell.xib */,
+				09B9B85822313C7B000868D5 /* SXForbiddenAppOptionCell.h */,
+				09B9B85922313C7B000868D5 /* SXForbiddenAppOptionCell.m */,
+				09B9B85A22313C7B000868D5 /* SXForbiddenAppOptionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2568,7 +2581,7 @@
 				0900F52C222D517C00250155 /* SXDynamicHeaderView.xib in Resources */,
 				09FB47532223E8B600809273 /* SXHealtyControlHeaderView.xib in Resources */,
 				09D5F687222D24B700EA681A /* SXNetOptionFooterView.xib in Resources */,
-				09D5F643222A5BE100EA681A /* SXDeviceControlCell.xib in Resources */,
+				09D5F643222A5BE100EA681A /* SXForbiddenDeviceOptionCell.xib in Resources */,
 				09FB473122239E3500809273 /* SXHomeMessageCell.xib in Resources */,
 				092D6D2C2203011800538AC8 /* SXHomeNetworkingDeviceCell.xib in Resources */,
 				095540BA221E4DCE005A5485 /* SXRegistSetPwdHeaderView.xib in Resources */,
@@ -2582,6 +2595,7 @@
 				09D5F678222BC71200EA681A /* SXFamilyMemberFooterView.xib in Resources */,
 				09D5F682222D23C900EA681A /* SXNetOptionCell.xib in Resources */,
 				09F233192223F03C0086AB35 /* SXHomeXiaoKiCell.xib in Resources */,
+				09B9B85C22313C7B000868D5 /* SXForbiddenAppOptionCell.xib in Resources */,
 				B348F99121F7143A0000F194 /* Assets.xcassets in Resources */,
 				09B9B7D42230BAB5000868D5 /* SXMobileManagerHeaderView.xib in Resources */,
 				092D6D3922041C5200538AC8 /* SXHomeHeaderView.xib in Resources */,
@@ -2732,7 +2746,7 @@
 				B348F9AA21F71A680000F194 /* UIBarButtonItem+Extention.m in Sources */,
 				09FB474E2223E83600809273 /* SXHealtyControlController.m in Sources */,
 				09F233182223F03C0086AB35 /* SXHomeXiaoKiCell.m in Sources */,
-				09D5F642222A5BE100EA681A /* SXDeviceControlCell.m in Sources */,
+				09D5F642222A5BE100EA681A /* SXForbiddenDeviceOptionCell.m in Sources */,
 				B3AF303C21FE96A4001E4E67 /* SXBaseCustomTableGroupRefreshController.m in Sources */,
 				0911873C2215854400938D9F /* SXCodeInputAlertView.m in Sources */,
 				09D5F62D2229297000EA681A /* SXForbiddenAppFooterView.m in Sources */,
@@ -2764,6 +2778,7 @@
 				09FB47492223E56000809273 /* SXSwitchBoardHeaderView.m in Sources */,
 				092D6D152202E35000538AC8 /* SXCodeLoginController.m in Sources */,
 				092D6CFB2200731300538AC8 /* SXNotificationCenterTool.m in Sources */,
+				09B9B85F22313F6C000868D5 /* SXForbiddenAppOptionModel.m in Sources */,
 				092D6CE12200504100538AC8 /* SXRefreshFooter.m in Sources */,
 				09D5F6292229266F00EA681A /* SXTimeControlController.m in Sources */,
 				09B9B7A9222E56C0000868D5 /* XKUserMember.m in Sources */,
@@ -2772,6 +2787,7 @@
 				B348F98821F713A80000F194 /* main.m in Sources */,
 				09D5F625222925C200EA681A /* SXParentControlHeaderView.m in Sources */,
 				092D6D0B2202D76000538AC8 /* SXRegistHeaderView.m in Sources */,
+				09B9B85B22313C7B000868D5 /* SXForbiddenAppOptionCell.m in Sources */,
 				B3AF300221FB08D1001E4E67 /* SXUtil.m in Sources */,
 				09D5F657222B8BD600EA681A /* SXUpdateVersionController.m in Sources */,
 				B3AF303321FE92CC001E4E67 /* SXBaseCustomTableViewGroupController.m in Sources */,
