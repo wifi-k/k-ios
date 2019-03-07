@@ -57,8 +57,8 @@
     }];
 }
 
-+ (void)dynamicSettingWithDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure{
-    [XKNetRequestTool POST:dynamic_set parameters:params success:^(id response) {
++ (void)dynamicSettingWithDataWithSuccess:(void (^)(void))success failure:(void (^)(NSError *error))failure{
+    [XKNetRequestTool POST:dynamic_set parameters:nil success:^(id response) {
         if (success){
             success();
         }

@@ -11,6 +11,7 @@
 #import "SXNetBroadbandHeaderView.h"
 #import "SXNetBroadbandParam.h"
 #import "SXAddXiaokiNetTool.h"
+#import "NSString+Hash.h"
 
 @interface SXNetBroadbandController ()
 ///头部视图
@@ -54,7 +55,7 @@
 //    WS(weakSelf);
 //    SXNetBroadbandParam *param = [SXNetBroadbandParam param];
 //    param.name = self.headerView.param.name;
-//    param.passwd = self.headerView.param.passwd;
+//    param.passwd = self.headerView.param.passwd.md5String;
 //    [SXAddXiaokiNetTool broadbandSettingWithDataWithParams:param.mj_keyValues Success:^{
 //        SXDynamicController *dynamicVC = [[SXDynamicController alloc] init];
 //        [weakSelf.navigationController pushViewController:dynamicVC animated:YES];

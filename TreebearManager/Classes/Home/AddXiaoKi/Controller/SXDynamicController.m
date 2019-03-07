@@ -9,6 +9,7 @@
 #import "SXDynamicController.h"
 #import "SXDynamicHeaderView.h"
 #import "SXAddXiaokiNetTool.h"
+#import "NSString+Hash.h"
 
 @interface SXDynamicController ()
 ///头部视图
@@ -27,7 +28,7 @@
 - (void)setUpUI{
     self.view.backgroundColor = SXColorWhite;
     
-    self.navigationItem.title = @"动态IP上网";
+    self.navigationItem.title = @"设置WiFi";
     
     WS(weakSelf);
     SXDynamicHeaderView *headerView = [SXDynamicHeaderView headerView];
@@ -49,7 +50,7 @@
     WS(weakSelf);
     SXDynamicParam *param = [SXDynamicParam param];
     param.ssid = self.headerView.param.ssid;
-    param.passwd = self.headerView.param.passwd;
+    param.passwd = self.headerView.param.passwd.md5String;
     [SXAddXiaokiNetTool ssidSettingWithDataWithParams:param.mj_keyValues Success:^{
         SXDynamicController *dynamicVC = [[SXDynamicController alloc] init];
         [weakSelf.navigationController pushViewController:dynamicVC animated:YES];
