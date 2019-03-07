@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) void (^clickWifiNameBlock)(void);
 ///更改Wifi密码回调
 @property (nonatomic, copy) void (^clickWifiPasswordBlock)(void);
+///点击高级设置按钮回调
+@property (nonatomic, copy) void (^clickAdvancedBtnBlock)(NSInteger tag);
 
 @end
 

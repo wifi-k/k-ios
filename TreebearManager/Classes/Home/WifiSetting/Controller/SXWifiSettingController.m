@@ -9,7 +9,6 @@
 #import "SXWifiSettingController.h"
 #import "SXNetWallController.h"
 #import "SXWifiSettingHeaderView.h"
-#import "SXWifiSettingCell.h"
 #import "SXWifiSettingAlertView.h"
 
 @interface SXWifiSettingController ()
@@ -28,7 +27,7 @@
     
     self.view.backgroundColor = SXColorRandom;
     
-    self.navigationItem.title = @"Wifi设置";
+    self.navigationItem.title = @"WiFi工具箱";
     
     //2.头部视图
     WS(weakSelf);
@@ -39,6 +38,9 @@
     headerView.clickWifiPasswordBlock = ^{
         [weakSelf alertUpdatePwdView];
     };
+    headerView.clickAdvancedBtnBlock = ^(NSInteger tag) {
+        [weakSelf jumpToSettingVC:tag];
+    };
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
 }
@@ -48,7 +50,7 @@
     
     self.tableView.frame = self.view.bounds;
     
-    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 318);
+    self.headerView.frame = self.view.bounds;
 }
 
 #pragma mark -视图弹窗-
@@ -74,24 +76,35 @@
     [self.navigationController pushViewController:netVC animated:YES];
 }
 
-#pragma mark -UITableViewDelegate/UITableViewDataSource-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    SXWifiSettingCell *cell = [SXWifiSettingCell cellWithTableView:tableView];
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    [self jumpToNetVC];
+- (void)jumpToSettingVC:(NSInteger)tag{
+    switch (tag) {
+        case 0:
+            DLog(@"tag:%ld",tag);
+            break;
+        case 1:
+            DLog(@"tag:%ld",tag);
+            break;
+        case 2:
+            DLog(@"tag:%ld",tag);
+            break;
+        case 3:
+            DLog(@"tag:%ld",tag);
+            break;
+        case 4:
+            DLog(@"tag:%ld",tag);
+            break;
+        case 5:
+            DLog(@"tag:%ld",tag);
+            break;
+        case 6:
+            DLog(@"tag:%ld",tag);
+            break;
+        case 7:
+            DLog(@"tag:%ld",tag);
+            break;
+        default:
+            break;
+    }
 }
 
 @end
