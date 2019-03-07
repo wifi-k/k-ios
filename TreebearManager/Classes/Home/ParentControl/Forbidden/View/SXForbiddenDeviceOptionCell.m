@@ -12,7 +12,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *deviceNameL;
 @property (weak, nonatomic) IBOutlet UILabel *timeL;
-@property (weak, nonatomic) IBOutlet UISwitch *switchView;
+@property (weak, nonatomic) IBOutlet UISwitch *switchBtn;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView;
 @end
 
@@ -44,6 +44,10 @@ static NSString *SXDeviceControlCellID = @"SXDeviceControlCellID";
     self.contentView.backgroundColor = SXColorWhite;
     
     self.bottomLineView.backgroundColor = SXColorDivideLine;
+    
+    //缩放
+    //    self.switchBtn.transform = CGAffineTransformMakeScale( 0.8, 0.8);
+    self.switchBtn.onTintColor = SXColorBlue2;
 }
 
 @end

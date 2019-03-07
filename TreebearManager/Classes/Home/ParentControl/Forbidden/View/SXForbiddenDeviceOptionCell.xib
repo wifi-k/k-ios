@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="345" height="91.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_user_icon" translatesAutoresizingMaskIntoConstraints="NO" id="r6W-US-xOr">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_mobile_icon" translatesAutoresizingMaskIntoConstraints="NO" id="r6W-US-xOr">
                         <rect key="frame" x="15" y="21" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="CTM-HP-ALZ"/>
@@ -75,6 +75,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="img_user_icon" width="50" height="50"/>
+        <image name="img_mobile_icon" width="52" height="52"/>
     </resources>
 </document>
