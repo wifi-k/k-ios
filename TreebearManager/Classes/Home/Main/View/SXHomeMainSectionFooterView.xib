@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6e-xo-22C">
-                    <rect key="frame" x="40" y="44" width="269" height="40"/>
+                    <rect key="frame" x="15" y="44" width="319" height="40"/>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="eb2-ot-2p0"/>
@@ -33,9 +33,9 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="a6e-xo-22C" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="hvf-Xt-f2b"/>
+                <constraint firstItem="a6e-xo-22C" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="hvf-Xt-f2b"/>
                 <constraint firstItem="a6e-xo-22C" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="nWg-BV-fOx"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="a6e-xo-22C" secondAttribute="trailing" constant="40" id="yWS-gw-eFw"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="a6e-xo-22C" secondAttribute="trailing" constant="15" id="yWS-gw-eFw"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>

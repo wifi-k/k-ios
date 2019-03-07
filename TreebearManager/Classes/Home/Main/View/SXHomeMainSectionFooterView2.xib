@@ -78,6 +78,9 @@
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <state key="normal" title="查看周报" backgroundImage="img_button_bg_small"/>
+                            <connections>
+                                <action selector="clickReportBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="wKd-Cs-4Gn"/>
+                            </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_user_icon" translatesAutoresizingMaskIntoConstraints="NO" id="3bO-Sx-bTa">
                             <rect key="frame" x="15" y="51" width="40" height="40"/>

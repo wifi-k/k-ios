@@ -14,6 +14,9 @@
 #import "SXCheckReportController.h"
 #import "SXWifiSettingController.h"
 #import "SXFamilyMemberController.h"
+#import "SXMobileManagerController.h"
+#import "SXMobileDetailController.h"
+#import "SXHomeReportController.h"
 #import "SXHomeMainHeaderView.h"
 #import "SXHomeMainSectionHeaderView.h"
 #import "SXHomeMainSectionFooterView.h"
@@ -197,14 +200,19 @@
 }
     
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    WS(weakSelf);
     if (section == 1) {
         SXHomeMainSectionFooterView2 *footerView = [SXHomeMainSectionFooterView2 footerView];
+        footerView.clickReportBtnBlock = ^{
+            SXHomeReportController *reportVC = [[SXHomeReportController alloc] init];
+            [weakSelf.navigationController pushViewController:reportVC animated:YES];
+        };
         return footerView;
     } else {
         SXHomeMainSectionFooterView *footerView = [SXHomeMainSectionFooterView footerView];
         footerView.clickMoreBtnBlock = ^{
-            DLog(@"点击更多");
-            [SXRootTool changeToHomeVC];
+            SXMobileManagerController *mobileManagerVC = [[SXMobileManagerController alloc] init];
+            [weakSelf.navigationController pushViewController:mobileManagerVC animated:YES];
         };
         return footerView;
     }
@@ -214,7 +222,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    
+    if (indexPath.section == 0) {
+        SXMobileDetailController *detailVC = [[SXMobileDetailController alloc] init];
+        [self.navigationController pushViewController:detailVC animated:YES];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{

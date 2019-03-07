@@ -110,7 +110,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    [SXRootTool chooseRootWithLoginVC:SXDelegateWindow];
+    if (indexPath.row == 0) {
+        [SXRootTool changeToHomeVC];
+    } else{
+        [SXRootTool chooseRootWithLoginVC:SXDelegateWindow];
+    }
 }
 
 @end

@@ -32,6 +32,7 @@
     [self setUpUI];
 }
 
+#pragma mark -初始化UI-
 - (void)setUpUI{
     
     self.backgroundColor = SXColorWhite;
@@ -41,6 +42,13 @@
     self.bottomBgView.backgroundColor = SXColorWhite;
     
     [self.reportBtn roundViewWithRadius:15.0f];
+}
+
+#pragma mark -点击事件-
+- (IBAction)clickReportBtn:(UIButton *)sender {
+    if (self.clickReportBtnBlock) {
+        self.clickReportBtnBlock();
+    }
 }
 
 @end
