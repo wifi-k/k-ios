@@ -13,25 +13,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SXMobileManagerHeaderView">
-            <rect key="frame" x="0.0" y="0.0" width="358" height="222"/>
+            <rect key="frame" x="0.0" y="0.0" width="358" height="545"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_top_bg" translatesAutoresizingMaskIntoConstraints="NO" id="AH0-Bs-pfG">
-                    <rect key="frame" x="0.0" y="0.0" width="358" height="222"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_top_bg" translatesAutoresizingMaskIntoConstraints="NO" id="AH0-Bs-pfG">
+                    <rect key="frame" x="0.0" y="0.0" width="358" height="210"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="AH0-Bs-pfG" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="2S6-Xo-h38"/>
-                <constraint firstItem="AH0-Bs-pfG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="QC3-Fj-j3S"/>
-                <constraint firstItem="AH0-Bs-pfG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="hOP-Hd-qLC"/>
-                <constraint firstItem="AH0-Bs-pfG" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="sp3-gL-4IA"/>
-            </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="118.40000000000001" y="-45.877061469265371"/>
+            <point key="canvasLocation" x="118.40000000000001" y="99.400299850074973"/>
         </view>
     </objects>
     <resources>

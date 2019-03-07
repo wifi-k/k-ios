@@ -25,7 +25,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_netoption_uncheck" translatesAutoresizingMaskIntoConstraints="NO" id="PD0-77-1d1">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_netoption_checked" translatesAutoresizingMaskIntoConstraints="NO" id="PD0-77-1d1">
                         <rect key="frame" x="300" y="25" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="3Ig-TE-pxq"/>
@@ -60,6 +60,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="home_netoption_uncheck" width="30" height="30"/>
+        <image name="img_netoption_checked" width="22" height="22"/>
     </resources>
 </document>

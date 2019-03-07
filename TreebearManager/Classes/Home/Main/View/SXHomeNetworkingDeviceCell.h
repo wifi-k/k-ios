@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXHomeMobileModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXHomeNetworkingDeviceCell : UITableViewCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
+
+@property (nonatomic, strong) SXHomeMobileModel *model;
     
 @end
 

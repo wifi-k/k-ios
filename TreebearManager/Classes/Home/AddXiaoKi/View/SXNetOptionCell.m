@@ -50,11 +50,7 @@ static NSString *SXNetOptionCellID = @"SXNetOptionCellID";
     _model = model;
     
     self.titleL.text = model.title;
-    if (self.model.selected.boolValue) {
-        self.checkImageView.image = [UIImage imageNamed:@"home_netoption_check"];
-    } else{
-        self.checkImageView.image = [UIImage imageNamed:@"home_netoption_uncheck"];
-    }
+    self.checkImageView.hidden = !self.model.selected.boolValue;
 }
 
 @end

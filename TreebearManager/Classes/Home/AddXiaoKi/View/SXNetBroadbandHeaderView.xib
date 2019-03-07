@@ -78,7 +78,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="KBA-CA-umS"/>
                     </constraints>
-                    <state key="normal" title="确定" backgroundImage="img_button_bg"/>
+                    <state key="normal" title="下一步" backgroundImage="img_button_bg"/>
                     <connections>
                         <action selector="clickConfirmBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="oLB-bQ-0M5"/>
                     </connections>

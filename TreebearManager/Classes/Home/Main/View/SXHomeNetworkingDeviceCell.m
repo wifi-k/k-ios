@@ -55,5 +55,25 @@ static NSString *ID = @"SXHomeNetworkingDeviceCellID";
     self.statusBtn.layer.shadowOpacity = 0.5;
     self.statusBtn.layer.shadowRadius = 2;
 }
+
+#pragma mark -setter-
+- (void)setModel:(SXHomeMobileModel *)model{
+    _model = model;
+    
+    switch (model.mobileType.integerValue) {
+        case 0:
+            self.iconImageV.image = [UIImage imageNamed:@"img_mobile_icon"];
+            break;
+        case 1:
+            self.iconImageV.image = [UIImage imageNamed:@"img_iphone_icon"];
+            break;
+        case 2:
+            self.iconImageV.image = [UIImage imageNamed:@"img_android_icon"];
+            break;
+        default:
+            self.iconImageV.image = [UIImage imageNamed:@"img_mobile_icon"];
+            break;
+    }
+}
     
 @end
