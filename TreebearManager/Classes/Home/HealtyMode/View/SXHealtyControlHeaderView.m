@@ -49,8 +49,8 @@
     self.bottomLineView.backgroundColor = SXColorDivideLine;
     
     //缩放
-    self.switchBtn.transform = CGAffineTransformMakeScale( 0.8, 0.8);
-    
+//    self.switchBtn.transform = CGAffineTransformMakeScale( 0.8, 0.8);
+    self.switchBtn.onTintColor = SXColorBlue2;
     
     [self.addTimeBtn roundViewWithRadius:22.5f];
 }

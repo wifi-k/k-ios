@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="359" height="522"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmV-g9-WQg">
+                <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmV-g9-WQg">
                     <rect key="frame" x="0.0" y="70" width="359" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无线广播" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4R-bi-M1Y">
@@ -48,7 +48,7 @@
                         <constraint firstItem="97v-9H-l3L" firstAttribute="centerY" secondItem="hmV-g9-WQg" secondAttribute="centerY" id="tVB-hY-uqF"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIU-kl-e73">
+                <view tag="11" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIU-kl-e73">
                     <rect key="frame" x="0.0" y="130" width="359" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无线信道" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQ1-bt-Y3q">
@@ -92,7 +92,7 @@
                         <constraint firstItem="Xle-LI-byX" firstAttribute="centerY" secondItem="cIU-kl-e73" secondAttribute="centerY" id="uGW-U3-u3q"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6oH-VQ-eE1">
+                <view tag="12" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6oH-VQ-eE1">
                     <rect key="frame" x="0.0" y="190" width="359" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="工作模式" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YG4-wc-Dey">
@@ -138,7 +138,7 @@
                         <constraint firstItem="YG4-wc-Dey" firstAttribute="leading" secondItem="6oH-VQ-eE1" secondAttribute="leading" constant="15" id="ux5-5y-liN"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RaA-13-AcU">
+                <view tag="13" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RaA-13-AcU">
                     <rect key="frame" x="0.0" y="250" width="359" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="频段带宽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POy-C4-2nW">

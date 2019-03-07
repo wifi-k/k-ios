@@ -123,6 +123,9 @@
 		09B9B8362230EF5D000868D5 /* SXNetPreventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B9B8342230EF5D000868D5 /* SXNetPreventCell.xib */; };
 		09B9B8392230F590000868D5 /* SXAdvancedHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B8382230F590000868D5 /* SXAdvancedHeaderView.m */; };
 		09B9B83B2230F5A3000868D5 /* SXAdvancedHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B9B83A2230F5A3000868D5 /* SXAdvancedHeaderView.xib */; };
+		09B9B84122310B99000868D5 /* SXWorkModeOptionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B84022310B99000868D5 /* SXWorkModeOptionController.m */; };
+		09B9B84422310BB2000868D5 /* SXChannelOptionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B84322310BB2000868D5 /* SXChannelOptionController.m */; };
+		09B9B84722310BCA000868D5 /* SXFrequencyOptionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B84622310BCA000868D5 /* SXFrequencyOptionController.m */; };
 		09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */; };
 		09D5F5EA2226820000EA681A /* SXHomeMainSectionFooterView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E92226820000EA681A /* SXHomeMainSectionFooterView2.m */; };
 		09D5F5EC2226820B00EA681A /* SXHomeMainSectionFooterView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F5EB2226820B00EA681A /* SXHomeMainSectionFooterView2.xib */; };
@@ -470,6 +473,12 @@
 		09B9B8372230F590000868D5 /* SXAdvancedHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXAdvancedHeaderView.h; sourceTree = "<group>"; };
 		09B9B8382230F590000868D5 /* SXAdvancedHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXAdvancedHeaderView.m; sourceTree = "<group>"; };
 		09B9B83A2230F5A3000868D5 /* SXAdvancedHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXAdvancedHeaderView.xib; sourceTree = "<group>"; };
+		09B9B83F22310B99000868D5 /* SXWorkModeOptionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXWorkModeOptionController.h; sourceTree = "<group>"; };
+		09B9B84022310B99000868D5 /* SXWorkModeOptionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXWorkModeOptionController.m; sourceTree = "<group>"; };
+		09B9B84222310BB2000868D5 /* SXChannelOptionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXChannelOptionController.h; sourceTree = "<group>"; };
+		09B9B84322310BB2000868D5 /* SXChannelOptionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXChannelOptionController.m; sourceTree = "<group>"; };
+		09B9B84522310BCA000868D5 /* SXFrequencyOptionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXFrequencyOptionController.h; sourceTree = "<group>"; };
+		09B9B84622310BCA000868D5 /* SXFrequencyOptionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXFrequencyOptionController.m; sourceTree = "<group>"; };
 		09D5F5E0222678C000EA681A /* SXHomeMainSectionHeaderView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionHeaderView2.h; sourceTree = "<group>"; };
 		09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSectionHeaderView2.m; sourceTree = "<group>"; };
 		09D5F5E82226820000EA681A /* SXHomeMainSectionFooterView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionFooterView2.h; sourceTree = "<group>"; };
@@ -1244,6 +1253,12 @@
 			children = (
 				09B9B81D2230EC3F000868D5 /* SXAdvancedController.h */,
 				09B9B81E2230EC3F000868D5 /* SXAdvancedController.m */,
+				09B9B84222310BB2000868D5 /* SXChannelOptionController.h */,
+				09B9B84322310BB2000868D5 /* SXChannelOptionController.m */,
+				09B9B83F22310B99000868D5 /* SXWorkModeOptionController.h */,
+				09B9B84022310B99000868D5 /* SXWorkModeOptionController.m */,
+				09B9B84522310BCA000868D5 /* SXFrequencyOptionController.h */,
+				09B9B84622310BCA000868D5 /* SXFrequencyOptionController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2679,6 +2694,7 @@
 				098BA316221BA75900F58639 /* SXLoginParam.m in Sources */,
 				092D6CF7220062C700538AC8 /* NSString+Hash.m in Sources */,
 				09B9B7C2222FED88000868D5 /* SXNetBroadbandParam.m in Sources */,
+				09B9B84422310BB2000868D5 /* SXChannelOptionController.m in Sources */,
 				09D5F5FE2227E3D000EA681A /* SXMineNetTool.m in Sources */,
 				098BA303221A579D00F58639 /* SXMineHeaderView.m in Sources */,
 				098BA31A221BAFD500F58639 /* SXLoginNetTool.m in Sources */,
@@ -2769,6 +2785,7 @@
 				095540B8221E4DC6005A5485 /* SXRegistSetPwdHeaderView.m in Sources */,
 				B348F9A921F71A680000F194 /* UIButton+EnlargeArea.m in Sources */,
 				09D5F626222925C200EA681A /* SXForbiddenAppController.m in Sources */,
+				09B9B84722310BCA000868D5 /* SXFrequencyOptionController.m in Sources */,
 				092D6D3722041C4900538AC8 /* SXHomeHeaderView.m in Sources */,
 				098BA2FB2216B54100F58639 /* SXPhotoSectionHeaderView.m in Sources */,
 				B348F99721F716C60000F194 /* SXTabBarController.m in Sources */,
@@ -2779,6 +2796,7 @@
 				09B9B8252230EC8D000868D5 /* SXLANPortController.m in Sources */,
 				B348F9B321F71E2D0000F194 /* SXUploadParam.m in Sources */,
 				098BA313221B997000F58639 /* SXRegistParam.m in Sources */,
+				09B9B84122310B99000868D5 /* SXWorkModeOptionController.m in Sources */,
 				09D5F662222B961600EA681A /* SXHomeManagerController.m in Sources */,
 				09FB47512223E87300809273 /* SXHealtyControlHeaderView.m in Sources */,
 				B3AF301E21FE90AF001E4E67 /* SXBaseTableViewPlainController.m in Sources */,

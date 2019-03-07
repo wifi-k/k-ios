@@ -7,7 +7,10 @@
 //
 
 #import "SXAdvancedController.h"
+#import "SXChannelOptionController.h"
+#import "SXWorkModeOptionController.h"
 #import "SXAdvancedHeaderView.h"
+#import "SXFrequencyOptionController.h"
 
 @interface SXAdvancedController ()
 ///头部视图
@@ -22,12 +25,15 @@
     
     self.view.backgroundColor = SXColorWhite;
     
-    self.navigationItem.title = @"无线高级设置";
+    self.navigationItem.title = @"高级选项";
     
     WS(weakSelf);
     SXAdvancedHeaderView *headerView = [SXAdvancedHeaderView headerView];
     headerView.clickSaveBtnBlock = ^{
         [weakSelf jumpToVC];
+    };
+    headerView.clickBgBlock = ^(NSInteger tag) {
+        [weakSelf jumpToNextVC:tag];
     };
     [self.view addSubview:headerView];
     self.headerView = headerView;
@@ -40,7 +46,31 @@
 }
 
 - (void)jumpToVC{
-    DLog(@"保存...");
+    [MBProgressHUD showMessage:@"保存成功!" toView:self.view];
 }
+
+- (void)jumpToNextVC:(NSInteger)tag{
+    DLog(@"%ld",tag);
+    switch (tag) {
+        case 1:{
+            SXChannelOptionController *modeVC = [[SXChannelOptionController alloc] init];
+            [self.navigationController pushViewController:modeVC animated:YES];
+        }
+            break;
+        case 2:{
+            SXWorkModeOptionController *modeVC = [[SXWorkModeOptionController alloc] init];
+            [self.navigationController pushViewController:modeVC animated:YES];
+        }
+            break;
+        case 3:{
+            SXFrequencyOptionController *modeVC = [[SXFrequencyOptionController alloc] init];
+            [self.navigationController pushViewController:modeVC animated:YES];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
 
 @end

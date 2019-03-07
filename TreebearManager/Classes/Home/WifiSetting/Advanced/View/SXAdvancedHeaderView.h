@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///点击保存按钮回调
 @property (nonatomic, copy) void (^clickSaveBtnBlock)(void);
+///点击背景视图
+@property (nonatomic, copy) void (^clickBgBlock)(NSInteger tag);
 
 @end
 

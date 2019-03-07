@@ -77,15 +77,35 @@
     self.workModeL.textColor = SXColor999999;
     self.frequencyL.textColor = SXColor999999;
     
+    //缩放
+    //self.switchBtn.transform = CGAffineTransformMakeScale( 0.8, 0.8);
+    self.switchBtn.onTintColor = SXColorBlue2;
+    
     [self.saveBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
     [self.saveBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
     [self.saveBtn roundViewWithRadius:6.0f];
+    
+    //添加手势
+    UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickBgView:)];
+    [self.secondBgView addGestureRecognizer:tap1];
+    
+    UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickBgView:)];
+    [self.thirdBgView addGestureRecognizer:tap2];
+    
+    UITapGestureRecognizer *tap3 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickBgView:)];
+    [self.fourthBgView addGestureRecognizer:tap3];
 }
 
 #pragma mark -点击事件-
 - (IBAction)clickSaveBtn:(UIButton *)sender {
     if (self.clickSaveBtnBlock) {
         self.clickSaveBtnBlock();
+    }
+}
+
+- (void)clickBgView:(UITapGestureRecognizer *)tap{
+    if (self.clickBgBlock) {
+        self.clickBgBlock(tap.view.tag - 10);
     }
 }
 
