@@ -121,6 +121,8 @@
 		09B9B8312230ECEF000868D5 /* SXRestoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B8302230ECEF000868D5 /* SXRestoreController.m */; };
 		09B9B8352230EF5D000868D5 /* SXNetPreventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B8322230EF5D000868D5 /* SXNetPreventCell.m */; };
 		09B9B8362230EF5D000868D5 /* SXNetPreventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B9B8342230EF5D000868D5 /* SXNetPreventCell.xib */; };
+		09B9B8392230F590000868D5 /* SXAdvancedHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B8382230F590000868D5 /* SXAdvancedHeaderView.m */; };
+		09B9B83B2230F5A3000868D5 /* SXAdvancedHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B9B83A2230F5A3000868D5 /* SXAdvancedHeaderView.xib */; };
 		09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */; };
 		09D5F5EA2226820000EA681A /* SXHomeMainSectionFooterView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E92226820000EA681A /* SXHomeMainSectionFooterView2.m */; };
 		09D5F5EC2226820B00EA681A /* SXHomeMainSectionFooterView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F5EB2226820B00EA681A /* SXHomeMainSectionFooterView2.xib */; };
@@ -465,6 +467,9 @@
 		09B9B8322230EF5D000868D5 /* SXNetPreventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXNetPreventCell.m; sourceTree = "<group>"; };
 		09B9B8332230EF5D000868D5 /* SXNetPreventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXNetPreventCell.h; sourceTree = "<group>"; };
 		09B9B8342230EF5D000868D5 /* SXNetPreventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SXNetPreventCell.xib; sourceTree = "<group>"; };
+		09B9B8372230F590000868D5 /* SXAdvancedHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXAdvancedHeaderView.h; sourceTree = "<group>"; };
+		09B9B8382230F590000868D5 /* SXAdvancedHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXAdvancedHeaderView.m; sourceTree = "<group>"; };
+		09B9B83A2230F5A3000868D5 /* SXAdvancedHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXAdvancedHeaderView.xib; sourceTree = "<group>"; };
 		09D5F5E0222678C000EA681A /* SXHomeMainSectionHeaderView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionHeaderView2.h; sourceTree = "<group>"; };
 		09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSectionHeaderView2.m; sourceTree = "<group>"; };
 		09D5F5E82226820000EA681A /* SXHomeMainSectionFooterView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionFooterView2.h; sourceTree = "<group>"; };
@@ -1253,6 +1258,9 @@
 		09B9B8142230EC27000868D5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				09B9B8372230F590000868D5 /* SXAdvancedHeaderView.h */,
+				09B9B8382230F590000868D5 /* SXAdvancedHeaderView.m */,
+				09B9B83A2230F5A3000868D5 /* SXAdvancedHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2567,6 +2575,7 @@
 				09D5F67D222BC87000EA681A /* SXFamilyMemberCell.xib in Resources */,
 				092D6CE622005A1A00538AC8 /* SXEmptyDataEventView.xib in Resources */,
 				09D5F65C222B8D6A00EA681A /* SXUpdateVersionHeaderView.xib in Resources */,
+				09B9B83B2230F5A3000868D5 /* SXAdvancedHeaderView.xib in Resources */,
 				09D5F651222A749E00EA681A /* SXHealthTimeHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2651,6 +2660,7 @@
 				B3AF301521FB0A92001E4E67 /* SXBaseSectionHeaderCollectionView.m in Sources */,
 				09D5F6082227ECB700EA681A /* SXDatePickerView.m in Sources */,
 				091187362215689E00938D9F /* SXTitleAlertView.m in Sources */,
+				09B9B8392230F590000868D5 /* SXAdvancedHeaderView.m in Sources */,
 				09B9B7A5222E555A000868D5 /* XKNetReachablityTool.m in Sources */,
 				092D6D082202AC3200538AC8 /* SXHomeMainController.m in Sources */,
 				09B9B7E12230C64E000868D5 /* SXHomeMobileModel.m in Sources */,
