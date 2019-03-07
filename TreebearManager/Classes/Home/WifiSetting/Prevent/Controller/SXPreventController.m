@@ -1,38 +1,31 @@
 //
-//  SXNetWallController.m
+//  SXPreventController.m
 //  TreebearManager
 //
-//  Created by bear on 2019/2/25.
+//  Created by bear on 2019/3/7.
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXNetWallController.h"
-#import "SXNetWallCell.h"
+#import "SXPreventController.h"
+#import "SXNetPreventCell.h"
 
-@interface SXNetWallController ()
+@interface SXPreventController ()
 
 @end
 
-@implementation SXNetWallController
+@implementation SXPreventController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     
     self.view.backgroundColor = SXColorWhite;
     
     self.navigationItem.title = @"防蹭网";
 }
 
-- (void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
-    
-    self.tableView.frame = self.view.bounds;
-}
-
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return 100;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -40,12 +33,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    SXNetWallCell *cell = [SXNetWallCell cellWithTableView:tableView];
+    SXNetPreventCell *cell = [SXNetPreventCell cellWithTableView:tableView];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     
 }
 

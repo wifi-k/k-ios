@@ -6,13 +6,14 @@
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXNetWallCell.h"
+#import "SXNetPreventCell.h"
 
-@interface SXNetWallCell ()
+@interface SXNetPreventCell ()
+@property (weak, nonatomic) IBOutlet UISwitch *switchBtn;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView;
 @end
 
-@implementation SXNetWallCell
+@implementation SXNetPreventCell
 
 static NSString *SXNetWallCellID = @"SXNetWallCellID";
 
@@ -38,6 +39,10 @@ static NSString *SXNetWallCellID = @"SXNetWallCellID";
     
     self.bottomLineView.backgroundColor = SXColorDivideLine;
     self.bottomLineView.height = 0.5;
+    
+    //缩放
+    //self.switchBtn.transform = CGAffineTransformMakeScale( 0.8, 0.8);
+    self.switchBtn.onTintColor = SXColorBlue2;
 }
 
 @end

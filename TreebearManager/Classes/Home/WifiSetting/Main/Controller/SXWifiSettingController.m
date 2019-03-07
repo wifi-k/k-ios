@@ -7,7 +7,13 @@
 //
 
 #import "SXWifiSettingController.h"
-#import "SXNetWallController.h"
+#import "SXPreventController.h"
+#import "SXAdvancedController.h"
+#import "SXOnlineController.h"
+#import "SXLANPortController.h"
+#import "SXRestartController.h"
+#import "SXDHCPServerController.h"
+#import "SXRestoreController.h"
 #import "SXWifiSettingHeaderView.h"
 #import "SXWifiSettingAlertView.h"
 
@@ -71,33 +77,42 @@
 }
 
 #pragma mark -页面跳转-
-- (void)jumpToNetVC{
-    SXNetWallController *netVC = [[SXNetWallController alloc] init];
-    [self.navigationController pushViewController:netVC animated:YES];
-}
-
 - (void)jumpToSettingVC:(NSInteger)tag{
     switch (tag) {
-        case 0:
-            DLog(@"tag:%ld",tag);
+        case 0:{
+            SXPreventController *preventVC = [[SXPreventController alloc] init];
+            [self.navigationController pushViewController:preventVC animated:YES];
+        }
             break;
-        case 1:
-            DLog(@"tag:%ld",tag);
+        case 1:{
+            SXAdvancedController *advancedVC = [[SXAdvancedController alloc] init];
+            [self.navigationController pushViewController:advancedVC animated:YES];
+        }
             break;
-        case 2:
-            DLog(@"tag:%ld",tag);
+        case 2:{
+            SXOnlineController *advancedVC = [[SXOnlineController alloc] init];
+            [self.navigationController pushViewController:advancedVC animated:YES];
+        }
             break;
-        case 3:
-            DLog(@"tag:%ld",tag);
+        case 3:{
+            SXLANPortController *advancedVC = [[SXLANPortController alloc] init];
+            [self.navigationController pushViewController:advancedVC animated:YES];
+        }
             break;
-        case 4:
-            DLog(@"tag:%ld",tag);
+        case 4:{
+            SXRestartController *advancedVC = [[SXRestartController alloc] init];
+            [self.navigationController pushViewController:advancedVC animated:YES];
+        }
             break;
-        case 5:
-            DLog(@"tag:%ld",tag);
+        case 5:{
+            SXDHCPServerController *advancedVC = [[SXDHCPServerController alloc] init];
+            [self.navigationController pushViewController:advancedVC animated:YES];
+        }
             break;
-        case 6:
-            DLog(@"tag:%ld",tag);
+        case 6:{
+            SXRestoreController *advancedVC = [[SXRestoreController alloc] init];
+            [self.navigationController pushViewController:advancedVC animated:YES];
+        }
             break;
         case 7:
             DLog(@"tag:%ld",tag);

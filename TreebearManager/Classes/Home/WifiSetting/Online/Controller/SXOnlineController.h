@@ -1,8 +1,8 @@
 //
-//  SXNetWallCell.h
+//  SXOnlineController.h
 //  TreebearManager
 //
-//  Created by bear on 2019/2/26.
+//  Created by bear on 2019/3/7.
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
@@ -10,9 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SXNetWallCell : UITableViewCell
-
-+ (instancetype)cellWithTableView:(UITableView *)tableView;
+@interface SXOnlineController : UIViewController
 
 @end
 

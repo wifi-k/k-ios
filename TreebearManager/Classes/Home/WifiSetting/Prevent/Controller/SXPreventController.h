@@ -1,8 +1,8 @@
 //
-//  SXNetWallController.h
+//  SXPreventController.h
 //  TreebearManager
 //
-//  Created by bear on 2019/2/25.
+//  Created by bear on 2019/3/7.
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SXNetWallController : SXBaseCustomTableViewPlainController
+@interface SXPreventController : SXBaseCustomTableViewPlainController
 
 @end
 
