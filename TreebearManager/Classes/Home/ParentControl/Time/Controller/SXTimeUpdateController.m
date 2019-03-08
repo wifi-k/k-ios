@@ -8,7 +8,7 @@
 
 #import "SXTimeUpdateController.h"
 #import "SXForbiddenDeviceOptionController.h"
-#import "SXForbiddenAppOptionController.h"
+#import "SXTimeControlAddController.h"
 #import "SXTimeUpdateHeaderView.h"
 #import "SXWifiSettingAlertView.h"
 
@@ -31,8 +31,8 @@
     headerView.clickUpdateNameBtnBlock = ^{
         [weakSelf alertUpdateNameView];
     };
-    headerView.clickForbiddenAppBlock = ^{
-        [weakSelf jumpForbiddenAppOptionVC];
+    headerView.clickTimeControlAppBlock = ^{
+        [weakSelf jumpTimeControlVC];
     };
     headerView.clickDeviceControlBlock = ^{
         [weakSelf jumpToDeviceVC];
@@ -58,13 +58,13 @@
 
 #pragma mark -页面跳转-
 - (void)jumpToDeviceVC{
-    SXForbiddenDeviceOptionController *fdf = [[SXForbiddenDeviceOptionController alloc] init];
-    [self.navigationController pushViewController:fdf animated:YES];
+    SXForbiddenDeviceOptionController *deviceVC = [[SXForbiddenDeviceOptionController alloc] init];
+    [self.navigationController pushViewController:deviceVC animated:YES];
 }
 
-- (void)jumpForbiddenAppOptionVC{
-    SXForbiddenAppOptionController *fdf = [[SXForbiddenAppOptionController alloc] init];
-    [self.navigationController pushViewController:fdf animated:YES];
+- (void)jumpTimeControlVC{
+    SXTimeControlAddController *timeVC = [[SXTimeControlAddController alloc] init];
+    [self.navigationController pushViewController:timeVC animated:YES];
 }
 
 @end

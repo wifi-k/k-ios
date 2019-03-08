@@ -11,7 +11,6 @@
 #import "SXForbiddenAppFooterView.h"
 #import "SXTimeControlCell.h"
 #import "SXWifiSettingAlertView.h"
-#import "SXDatePickerView.h"
 #import "SXTitleAlertView.h"
 
 @interface SXTimeControlController ()
@@ -120,8 +119,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    SXDatePickerView *pickerView = [SXDatePickerView pickerView];
-    [pickerView showPickerView];
+    
 }
 
 @end

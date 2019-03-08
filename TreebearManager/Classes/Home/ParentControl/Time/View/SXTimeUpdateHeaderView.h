@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) void (^clickUpdateNameBtnBlock)(void);
 
 ///点击禁用的App回调
-@property (nonatomic, copy) void (^clickForbiddenAppBlock)(void);
+@property (nonatomic, copy) void (^clickTimeControlAppBlock)(void);
 
 ///点击设备控制回调
 @property (nonatomic, copy) void (^clickDeviceControlBlock)(void);

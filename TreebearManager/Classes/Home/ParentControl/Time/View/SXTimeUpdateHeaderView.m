@@ -65,7 +65,7 @@
     [self.updateNameBtn roundViewWithRadius:15.0f borderColor:SXColorBlue borderWidth:1.0f];
     
     //添加事件
-    UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickForbiddenAppControl:)];
+    UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickTimeControlAppControl:)];
     [self.secondBgView addGestureRecognizer:tap2];
     
     
@@ -80,9 +80,9 @@
     }
 }
 
-- (void)clickForbiddenAppControl:(UITapGestureRecognizer *)sender {
-    if (self.clickForbiddenAppBlock) {
-        self.clickForbiddenAppBlock();
+- (void)clickTimeControlAppControl:(UITapGestureRecognizer *)sender {
+    if (self.clickTimeControlAppBlock) {
+        self.clickTimeControlAppBlock();
     }
 }
 
