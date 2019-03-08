@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageV;
 @property (weak, nonatomic) IBOutlet UILabel *mobileNameL;
 @property (weak, nonatomic) IBOutlet UILabel *timeL;
+
+@property (weak, nonatomic) IBOutlet UIButton *remarkBtn;
 @property (weak, nonatomic) IBOutlet UIButton *statusBtn;
 @end
 
@@ -53,6 +55,8 @@ static NSString *SXHomeNetworkingDeviceCellID = @"SXHomeNetworkingDeviceCellID";
     self.statusBtn.layer.shadowOffset = CGSizeMake(0, 2);
     self.statusBtn.layer.shadowOpacity = 0.5;
     self.statusBtn.layer.shadowRadius = 2;
+    
+    [self.remarkBtn setTitleColor:SXColorBlue2 forState:UIControlStateNormal];
 }
 
 #pragma mark -setter-
@@ -72,6 +76,13 @@ static NSString *SXHomeNetworkingDeviceCellID = @"SXHomeNetworkingDeviceCellID";
         default:
             self.iconImageV.image = [UIImage imageNamed:@"img_mobile_icon"];
             break;
+    }
+}
+
+#pragma mark -点击事件-
+- (IBAction)clickRemarkBtn:(UIButton *)sender {
+    if (self.clickRemarkBtnBlock) {
+        self.clickRemarkBtnBlock();
     }
 }
     

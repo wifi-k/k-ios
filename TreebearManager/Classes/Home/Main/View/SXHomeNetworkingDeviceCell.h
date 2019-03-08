@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
 @property (nonatomic, strong) SXHomeMobileModel *model;
+
+///点击备注按钮回调
+@property (nonatomic, copy) void (^clickRemarkBtnBlock)(void);
     
 @end
 

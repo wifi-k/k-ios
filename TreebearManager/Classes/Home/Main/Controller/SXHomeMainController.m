@@ -23,6 +23,7 @@
 #import "SXHomeMainSectionHeaderView2.h"
 #import "SXHomeMainSectionFooterView2.h"
 #import "SXHomeNetworkingDeviceCell.h"
+#import "SXInputAlertView.h"
 #import "SXRootTool.h"
 
 @interface SXHomeMainController ()<UITableViewDelegate,UITableViewDataSource>
@@ -140,6 +141,15 @@
             break;
     }
 }
+
+#pragma mark -弹窗视图-
+- (void)alertRemarkNameView{
+    SXInputAlertView *nameAlertView = [SXInputAlertView alertWithTitle:@"备注名称" placeholder:@"请输入名称" confirmStr:@"确定" cancelStr:@"取消"];
+    nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
+        DLog(@"text:%@",text);
+    };
+    [nameAlertView alert];
+}
     
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -157,7 +167,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *tempCell = nil;
     if (indexPath.section == 0) {
+        WS(weakSelf);
         SXHomeNetworkingDeviceCell *cell = [SXHomeNetworkingDeviceCell cellWithTableView:tableView];
+        cell.clickRemarkBtnBlock = ^{
+            [weakSelf alertRemarkNameView];
+        };
         tempCell = cell;
     } else{
         SXHomeNetworkingDeviceCell *cell = [SXHomeNetworkingDeviceCell cellWithTableView:tableView];
