@@ -14,6 +14,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
+///点击更新名称回调
+@property (nonatomic, copy) void (^clickUpdateNameBtnBlock)(void);
+
+///点击禁用的App回调
+@property (nonatomic, copy) void (^clickForbiddenAppBlock)(void);
+
+///点击设备控制回调
+@property (nonatomic, copy) void (^clickDeviceControlBlock)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

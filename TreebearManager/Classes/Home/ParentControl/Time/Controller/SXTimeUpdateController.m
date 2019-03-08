@@ -7,6 +7,8 @@
 //
 
 #import "SXTimeUpdateController.h"
+#import "SXForbiddenDeviceOptionController.h"
+#import "SXForbiddenAppOptionController.h"
 #import "SXTimeUpdateHeaderView.h"
 #import "SXWifiSettingAlertView.h"
 
@@ -24,8 +26,17 @@
     
     self.navigationItem.title = @"编辑|新增";
     
-//    WS(weakSelf);
+    WS(weakSelf);
     SXTimeUpdateHeaderView *headerView = [SXTimeUpdateHeaderView headerView];
+    headerView.clickUpdateNameBtnBlock = ^{
+        [weakSelf alertUpdateNameView];
+    };
+    headerView.clickForbiddenAppBlock = ^{
+        [weakSelf jumpForbiddenAppOptionVC];
+    };
+    headerView.clickDeviceControlBlock = ^{
+        [weakSelf jumpToDeviceVC];
+    };
     [self.view addSubview:headerView];
     self.headerView = headerView;
 }
@@ -43,6 +54,17 @@
         DLog(@"text:%@",text);
     };
     [nameAlertView alert];
+}
+
+#pragma mark -页面跳转-
+- (void)jumpToDeviceVC{
+    SXForbiddenDeviceOptionController *fdf = [[SXForbiddenDeviceOptionController alloc] init];
+    [self.navigationController pushViewController:fdf animated:YES];
+}
+
+- (void)jumpForbiddenAppOptionVC{
+    SXForbiddenAppOptionController *fdf = [[SXForbiddenAppOptionController alloc] init];
+    [self.navigationController pushViewController:fdf animated:YES];
 }
 
 @end

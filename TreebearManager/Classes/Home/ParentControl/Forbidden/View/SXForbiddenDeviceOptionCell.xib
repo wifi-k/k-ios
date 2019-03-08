@@ -68,7 +68,7 @@
                 <outlet property="bottomLineView" destination="HQQ-qf-yWW" id="6R5-OU-F0z"/>
                 <outlet property="deviceNameL" destination="qkh-WJ-v1P" id="Scv-eo-fv3"/>
                 <outlet property="iconImageView" destination="r6W-US-xOr" id="E0J-z5-R5F"/>
-                <outlet property="switchView" destination="kW7-Re-4WG" id="lcG-XA-Pjg"/>
+                <outlet property="switchBtn" destination="kW7-Re-4WG" id="p4D-fZ-Ibu"/>
                 <outlet property="timeL" destination="cms-0x-F6q" id="iHf-Jf-RCq"/>
             </connections>
             <point key="canvasLocation" x="31.199999999999999" y="153.82308845577214"/>
