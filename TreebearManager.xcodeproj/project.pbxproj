@@ -146,6 +146,8 @@
 		09B9B87C22321542000868D5 /* SXTimeControlEditHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B9B87B22321542000868D5 /* SXTimeControlEditHeaderView.xib */; };
 		09B9B87F22325729000868D5 /* SXLANPortHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B87E22325728000868D5 /* SXLANPortHeaderView.m */; };
 		09B9B88122325766000868D5 /* SXLANPortHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B9B88022325766000868D5 /* SXLANPortHeaderView.xib */; };
+		09B9B88422326967000868D5 /* SXDHCPServerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B88322326967000868D5 /* SXDHCPServerHeaderView.m */; };
+		09B9B88622326974000868D5 /* SXDHCPServerHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B9B88522326974000868D5 /* SXDHCPServerHeaderView.xib */; };
 		09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */; };
 		09D5F5EA2226820000EA681A /* SXHomeMainSectionFooterView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E92226820000EA681A /* SXHomeMainSectionFooterView2.m */; };
 		09D5F5EC2226820B00EA681A /* SXHomeMainSectionFooterView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F5EB2226820B00EA681A /* SXHomeMainSectionFooterView2.xib */; };
@@ -531,6 +533,9 @@
 		09B9B87D22325728000868D5 /* SXLANPortHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXLANPortHeaderView.h; sourceTree = "<group>"; };
 		09B9B87E22325728000868D5 /* SXLANPortHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXLANPortHeaderView.m; sourceTree = "<group>"; };
 		09B9B88022325766000868D5 /* SXLANPortHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXLANPortHeaderView.xib; sourceTree = "<group>"; };
+		09B9B88222326967000868D5 /* SXDHCPServerHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXDHCPServerHeaderView.h; sourceTree = "<group>"; };
+		09B9B88322326967000868D5 /* SXDHCPServerHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXDHCPServerHeaderView.m; sourceTree = "<group>"; };
+		09B9B88522326974000868D5 /* SXDHCPServerHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXDHCPServerHeaderView.xib; sourceTree = "<group>"; };
 		09D5F5E0222678C000EA681A /* SXHomeMainSectionHeaderView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionHeaderView2.h; sourceTree = "<group>"; };
 		09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSectionHeaderView2.m; sourceTree = "<group>"; };
 		09D5F5E82226820000EA681A /* SXHomeMainSectionFooterView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionFooterView2.h; sourceTree = "<group>"; };
@@ -1184,6 +1189,9 @@
 		09B9B8042230EC26000868D5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				09B9B88222326967000868D5 /* SXDHCPServerHeaderView.h */,
+				09B9B88322326967000868D5 /* SXDHCPServerHeaderView.m */,
+				09B9B88522326974000868D5 /* SXDHCPServerHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2675,6 +2683,7 @@
 				B3AF2FF821FB0180001E4E67 /* SXLoginMainHeaderView.xib in Resources */,
 				09D5F5F1222689E300EA681A /* SXHomeMainSectionFooterView.xib in Resources */,
 				09D5F67D222BC87000EA681A /* SXFamilyMemberCell.xib in Resources */,
+				09B9B88622326974000868D5 /* SXDHCPServerHeaderView.xib in Resources */,
 				09B9B85122311126000868D5 /* SXAdvancedOptionCell.xib in Resources */,
 				092D6CE622005A1A00538AC8 /* SXEmptyDataEventView.xib in Resources */,
 				09D5F65C222B8D6A00EA681A /* SXUpdateVersionHeaderView.xib in Resources */,
@@ -2901,6 +2910,7 @@
 				092D6D182202E4FD00538AC8 /* SXForgetHeaderView.m in Sources */,
 				09B9B87222320B73000868D5 /* SXTimeControlEditController.m in Sources */,
 				B348F9AC21F71A680000F194 /* UIView+Extension.m in Sources */,
+				09B9B88422326967000868D5 /* SXDHCPServerHeaderView.m in Sources */,
 				09D5F5F62226B6AF00EA681A /* SXAlbumAuthorizationTool.m in Sources */,
 				B3AF301821FB0C2E001E4E67 /* SXBaseWebController.m in Sources */,
 				09118701221522BF00938D9F /* GCDAsyncSocketManager.m in Sources */,
