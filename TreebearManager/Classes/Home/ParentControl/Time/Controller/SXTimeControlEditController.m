@@ -40,8 +40,14 @@
         };
         [pickerView showPickerView];
     };
-    headerView.clickConfirmBtnBlock = ^{
+    headerView.clickConfirmBtnBlock = ^(NSString * _Nonnull beginTimeStr, NSString * _Nonnull endTimeStr) {
+        
         DLog(@"点击确定...");
+        if (self.selectTimeBlock) {
+            self.selectTimeBlock();
+        }
+        
+        [weakSelf.navigationController popViewControllerAnimated:YES];
     };
     [self.view addSubview:headerView];
     self.headerView = headerView;

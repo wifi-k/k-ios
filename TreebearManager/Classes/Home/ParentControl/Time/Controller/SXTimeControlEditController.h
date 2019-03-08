@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SXTimeControlEditController : UIViewController
 
+///点击选择时间回调
+@property (nonatomic, copy) void (^selectTimeBlock)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

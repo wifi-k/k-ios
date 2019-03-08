@@ -67,8 +67,8 @@
     [self.secondBgView addGestureRecognizer:tap2];
     
     //默认值
-    self.endTimeStr = @"";
-    self.beginTimeStr = @"";
+    self.endTimeStr = @"00:00";
+    self.beginTimeStr = @"00:00";
 }
 
 

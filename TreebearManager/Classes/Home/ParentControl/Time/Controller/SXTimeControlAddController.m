@@ -33,6 +33,9 @@
 #pragma mark -页面跳转-
 - (void)jumpToUpdateVC{
     SXTimeControlEditController *editVC = [[SXTimeControlEditController alloc] init];
+    editVC.selectTimeBlock = ^{
+        DLog(@"选中了时间");
+    };
     [self.navigationController pushViewController:editVC animated:YES];
 }
 
