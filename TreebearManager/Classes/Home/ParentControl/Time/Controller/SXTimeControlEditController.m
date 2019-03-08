@@ -8,9 +8,11 @@
 
 #import "SXTimeControlEditController.h"
 #import "SXDatePickerView.h"
+#import "SXTimeControlEditHeaderView.h"
 
 @interface SXTimeControlEditController ()
-
+///头部视图
+@property (nonatomic, weak) SXTimeControlEditHeaderView *headerView;
 @end
 
 @implementation SXTimeControlEditController
@@ -21,11 +23,34 @@
     self.view.backgroundColor = SXColorWhite;
     
     self.navigationItem.title = @"编辑时间";
+
+    WS(weakSelf);
+    SXTimeControlEditHeaderView *headerView = [SXTimeControlEditHeaderView headerView];
+    headerView.clickBeginTimeControlBlock = ^{
+        SXDatePickerView *pickerView = [SXDatePickerView pickerView];
+        pickerView.confirmBtnBlock = ^(NSString * _Nonnull timeStr) {
+            weakSelf.headerView.beginTimeStr = timeStr;
+        };
+        [pickerView showPickerView];
+    };
+    headerView.clickEndTimeControlBlock = ^{
+        SXDatePickerView *pickerView = [SXDatePickerView pickerView];
+        pickerView.confirmBtnBlock = ^(NSString * _Nonnull timeStr) {
+            weakSelf.headerView.endTimeStr = timeStr;
+        };
+        [pickerView showPickerView];
+    };
+    headerView.clickConfirmBtnBlock = ^{
+        DLog(@"点击确定...");
+    };
+    [self.view addSubview:headerView];
+    self.headerView = headerView;
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    SXDatePickerView *pickerView = [SXDatePickerView pickerView];
-    [pickerView showPickerView];
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    self.headerView.frame = self.view.bounds;
 }
 
 @end

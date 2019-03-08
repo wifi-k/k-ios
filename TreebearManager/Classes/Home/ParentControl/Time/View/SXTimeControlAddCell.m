@@ -42,6 +42,8 @@ static NSString *SXTimeControlAddCellID = @"SXTimeControlAddCellID";
     self.backgroundColor = SXColorWhite;
     self.contentView.backgroundColor = SXColorWhite;
     
+    self.titleL.font = SXFontBold16;
+    
     //1.家庭码背景视图
     //self.contentBgView.layer.masksToBounds=YES;这行去掉
     self.contentBgView.backgroundColor = [UIColor whiteColor];

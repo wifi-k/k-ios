@@ -1,14 +1,14 @@
 //
-//  SXHealthTimeHeaderView.m
+//  SXTimeControlEditHeaderView.m
 //  TreebearManager
 //
-//  Created by bear on 2019/3/2.
+//  Created by bear on 2019/3/8.
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXHealthTimeHeaderView.h"
+#import "SXTimeControlEditHeaderView.h"
 
-@interface SXHealthTimeHeaderView ()
+@interface SXTimeControlEditHeaderView ()
 @property (weak, nonatomic) IBOutlet UILabel *beginTimeL;
 @property (weak, nonatomic) IBOutlet UIView *firstBgView;
 
@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *confirmBtn;
 @end
 
-@implementation SXHealthTimeHeaderView
+@implementation SXTimeControlEditHeaderView
 
 + (instancetype)headerView{
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
@@ -70,7 +70,6 @@
     self.endTimeStr = @"";
     self.beginTimeStr = @"";
 }
-
 
 #pragma mark -setter-
 - (void)setBeginTimeStr:(NSString *)beginTimeStr{
