@@ -8,6 +8,12 @@
 
 #import "SXDHCPServerHeaderView.h"
 
+@interface SXDHCPServerHeaderView ()
+
+@property (weak, nonatomic) IBOutlet UIButton *saveBtn;
+
+@end
+
 @implementation SXDHCPServerHeaderView
 
 + (instancetype)headerView{
@@ -27,6 +33,18 @@
 - (void)setUpUI{
     
     self.backgroundColor = SXColorWhite;
+    
+    [self.saveBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
+    [self.saveBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
+    [self.saveBtn roundViewWithRadius:6.0f];
 }
+
+#pragma mark -点击事件-
+- (IBAction)clickSaveBtn:(UIButton *)sender {
+    if (self.clickSaveBtnBlock) {
+        self.clickSaveBtnBlock();
+    }
+}
+
 
 @end

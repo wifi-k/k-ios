@@ -23,8 +23,11 @@
     
     self.navigationItem.title = @"DHCP服务器";
 
-//    WS(weakSelf);
+    WS(weakSelf);
     SXDHCPServerHeaderView *headerView = [SXDHCPServerHeaderView headerView];
+    headerView.clickSaveBtnBlock = ^{
+        [weakSelf jumpToVC];
+    };
     [self.view addSubview:headerView];
     self.headerView = headerView;
 }
@@ -33,6 +36,10 @@
     [super viewDidLayoutSubviews];
     
     self.headerView.frame = self.view.bounds;
+}
+
+- (void)jumpToVC{
+    [MBProgressHUD showMessage:@"保存成功" toView:self.view];
 }
 
 @end

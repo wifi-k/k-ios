@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
+///点击保存按钮回调
+@property (nonatomic, copy) void (^clickSaveBtnBlock)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END
