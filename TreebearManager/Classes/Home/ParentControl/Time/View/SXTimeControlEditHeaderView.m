@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *endTimeL;
 @property (weak, nonatomic) IBOutlet UIView *secondBgView;
 
+@property (weak, nonatomic) IBOutlet UIView *weekBgView;
+
 @property (weak, nonatomic) IBOutlet UIButton *confirmBtn;
 @end
 
@@ -65,6 +67,20 @@
     
     UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickEndTimeControl:)];
     [self.secondBgView addGestureRecognizer:tap2];
+    
+    CGFloat btnX = 0;
+    CGFloat btnY = 0;
+    CGFloat btnW = 40;
+    CGFloat btnH = 40;
+    for (int i=0; i<7; i++) {
+        btnX = i * btnW;
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.backgroundColor = SXColorRandom;
+        btn.frame = CGRectMake(btnX, btnY, btnW, btnH);
+        NSString *title = [NSString stringWithFormat:@"%d",i];
+        [btn setTitle:title forState:UIControlStateNormal];
+        [self.weekBgView addSubview:btn];
+    }
     
     //默认值
     self.endTimeStr = @"";
