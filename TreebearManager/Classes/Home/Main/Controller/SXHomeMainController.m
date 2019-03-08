@@ -60,6 +60,9 @@
     //2.头部视图
     WS(weakSelf);
     SXHomeMainHeaderView *headerView = [SXHomeMainHeaderView headerView];
+    headerView.clickNameLabelBlock = ^{
+        [MBProgressHUD showMessage:@"小K列表" toView:weakSelf.view];
+    };
     headerView.clickMangerBtnBlock = ^{
         [weakSelf jumpToManagerVC];
     };

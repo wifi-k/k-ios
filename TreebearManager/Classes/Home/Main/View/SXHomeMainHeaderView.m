@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet SXImaginaryLineView *horizonDivideView;
 @property (weak, nonatomic) IBOutlet UIView *verticalDivideView;
 @property (weak, nonatomic) IBOutlet UIImageView *topCardBgImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameL;
 @property (weak, nonatomic) IBOutlet SXHomeMainMemberButton *managerBtn;
 @property (weak, nonatomic) IBOutlet SXHomeMainMemberButton *inviteMemberBtn;
 @property (weak, nonatomic) IBOutlet UIView *topBgView;
@@ -84,7 +85,12 @@
     self.backupContentView.textColor = SXColor666666;
     [self.backupBtn roundViewWithRadius:15.0f];
     
+    //开启交互
+    self.nameL.userInteractionEnabled = YES;
     //添加手势
+    UITapGestureRecognizer *tap0 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickNameLabel)];
+    [self.nameL addGestureRecognizer:tap0];
+    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickMessageBgView)];
     [self.noticeBgView addGestureRecognizer:tap];
     
@@ -105,6 +111,18 @@
 }
 
 #pragma mark -事件监听-
+- (void)clickNameLabel{
+    if (self.clickNameLabelBlock) {
+        self.clickNameLabelBlock();
+    }
+}
+
+- (void)clickMessageBgView{
+    if (self.clickMessageBgViewBlock) {
+        self.clickMessageBgViewBlock();
+    }
+}
+
 - (IBAction)clickManagerBtn:(SXHomeMainMemberButton *)sender {
     if (self.clickMangerBtnBlock) {
         self.clickMangerBtnBlock();
@@ -120,12 +138,6 @@
 - (IBAction)clickUserInfoBtn:(SXHomeMainGotoUserInfoButton *)sender {
     if (self.clickUserInfoBtnBlock) {
         self.clickUserInfoBtnBlock();
-    }
-}
-
-- (void)clickMessageBgView{
-    if (self.clickMessageBgViewBlock) {
-        self.clickMessageBgViewBlock();
     }
 }
 

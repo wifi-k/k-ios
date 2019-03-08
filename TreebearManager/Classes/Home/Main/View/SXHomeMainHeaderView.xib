@@ -54,6 +54,13 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="CuX-dX-vLQ">
+                            <rect key="frame" x="192" y="59.5" width="5" height="11"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="5" id="rmU-5u-1e0"/>
+                                <constraint firstAttribute="height" constant="11" id="yck-C7-k3F"/>
+                            </constraints>
+                        </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EHk-L8-Xve" customClass="SXImaginaryLineView">
                             <rect key="frame" x="15" y="105" width="309" height="3"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -104,8 +111,10 @@
                         <constraint firstItem="7gS-uE-jad" firstAttribute="top" secondItem="2t5-Mq-nO8" secondAttribute="top" constant="15" id="Zm4-ys-OPS"/>
                         <constraint firstItem="d3j-Bz-cOD" firstAttribute="leading" secondItem="2t5-Mq-nO8" secondAttribute="leading" constant="10" id="adW-oV-2v5"/>
                         <constraint firstItem="JU9-Me-Idc" firstAttribute="leading" secondItem="7gS-uE-jad" secondAttribute="trailing" constant="15" id="bSy-Ux-u0d"/>
+                        <constraint firstItem="CuX-dX-vLQ" firstAttribute="leading" secondItem="JU9-Me-Idc" secondAttribute="trailing" constant="5" id="coc-mB-6vb"/>
                         <constraint firstItem="AEy-bu-6lr" firstAttribute="leading" secondItem="7gS-uE-jad" secondAttribute="trailing" constant="15" id="d2I-kA-ZsX"/>
                         <constraint firstAttribute="bottom" secondItem="d3j-Bz-cOD" secondAttribute="bottom" constant="5" id="dMu-cS-irB"/>
+                        <constraint firstItem="CuX-dX-vLQ" firstAttribute="centerY" secondItem="JU9-Me-Idc" secondAttribute="centerY" id="eVj-0Y-QQb"/>
                         <constraint firstItem="4FV-Lp-QQY" firstAttribute="leading" secondItem="2t5-Mq-nO8" secondAttribute="leading" id="fYJ-Ri-gJu"/>
                         <constraint firstItem="gc7-yo-8x3" firstAttribute="leading" secondItem="d3j-Bz-cOD" secondAttribute="trailing" constant="10" id="gJA-jf-QRU"/>
                         <constraint firstAttribute="height" constant="170" id="kqf-Bu-TX8"/>
@@ -269,6 +278,7 @@
                 <outlet property="managerBtn" destination="d3j-Bz-cOD" id="cSc-02-R1Y"/>
                 <outlet property="messageImageView" destination="WnL-au-qQb" id="kql-y7-5L8"/>
                 <outlet property="messageL" destination="CfZ-Rd-v6w" id="jGh-4h-9OA"/>
+                <outlet property="nameL" destination="JU9-Me-Idc" id="wwI-K6-MAQ"/>
                 <outlet property="noticeBgView" destination="gYY-BX-blF" id="Pku-9Z-oCn"/>
                 <outlet property="parentControlBtn" destination="0iZ-Xa-eGq" id="BH8-Ki-Xeo"/>
                 <outlet property="switchBtn" destination="byT-gb-Roy" id="uBX-V2-amn"/>
