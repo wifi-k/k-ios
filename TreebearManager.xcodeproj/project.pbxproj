@@ -144,6 +144,8 @@
 		09B9B87722321104000868D5 /* SXTimeControlAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B9B87522321104000868D5 /* SXTimeControlAddCell.xib */; };
 		09B9B87A22321536000868D5 /* SXTimeControlEditHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B87922321536000868D5 /* SXTimeControlEditHeaderView.m */; };
 		09B9B87C22321542000868D5 /* SXTimeControlEditHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B9B87B22321542000868D5 /* SXTimeControlEditHeaderView.xib */; };
+		09B9B87F22325729000868D5 /* SXLANPortHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B87E22325728000868D5 /* SXLANPortHeaderView.m */; };
+		09B9B88122325766000868D5 /* SXLANPortHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B9B88022325766000868D5 /* SXLANPortHeaderView.xib */; };
 		09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */; };
 		09D5F5EA2226820000EA681A /* SXHomeMainSectionFooterView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E92226820000EA681A /* SXHomeMainSectionFooterView2.m */; };
 		09D5F5EC2226820B00EA681A /* SXHomeMainSectionFooterView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F5EB2226820B00EA681A /* SXHomeMainSectionFooterView2.xib */; };
@@ -526,6 +528,9 @@
 		09B9B87822321536000868D5 /* SXTimeControlEditHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTimeControlEditHeaderView.h; sourceTree = "<group>"; };
 		09B9B87922321536000868D5 /* SXTimeControlEditHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXTimeControlEditHeaderView.m; sourceTree = "<group>"; };
 		09B9B87B22321542000868D5 /* SXTimeControlEditHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXTimeControlEditHeaderView.xib; sourceTree = "<group>"; };
+		09B9B87D22325728000868D5 /* SXLANPortHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXLANPortHeaderView.h; sourceTree = "<group>"; };
+		09B9B87E22325728000868D5 /* SXLANPortHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXLANPortHeaderView.m; sourceTree = "<group>"; };
+		09B9B88022325766000868D5 /* SXLANPortHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXLANPortHeaderView.xib; sourceTree = "<group>"; };
 		09D5F5E0222678C000EA681A /* SXHomeMainSectionHeaderView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionHeaderView2.h; sourceTree = "<group>"; };
 		09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSectionHeaderView2.m; sourceTree = "<group>"; };
 		09D5F5E82226820000EA681A /* SXHomeMainSectionFooterView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionFooterView2.h; sourceTree = "<group>"; };
@@ -1361,6 +1366,9 @@
 		09B9B8182230EC27000868D5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				09B9B87D22325728000868D5 /* SXLANPortHeaderView.h */,
+				09B9B87E22325728000868D5 /* SXLANPortHeaderView.m */,
+				09B9B88022325766000868D5 /* SXLANPortHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2645,6 +2653,7 @@
 				09F233192223F03C0086AB35 /* SXHomeXiaoKiCell.xib in Resources */,
 				09B9B85C22313C7B000868D5 /* SXForbiddenAppOptionCell.xib in Resources */,
 				B348F99121F7143A0000F194 /* Assets.xcassets in Resources */,
+				09B9B88122325766000868D5 /* SXLANPortHeaderView.xib in Resources */,
 				09B9B7D42230BAB5000868D5 /* SXMobileManagerHeaderView.xib in Resources */,
 				092D6D3922041C5200538AC8 /* SXHomeHeaderView.xib in Resources */,
 				092D6D222202E71A00538AC8 /* SXForgetConfirmHeaderView.xib in Resources */,
@@ -2897,6 +2906,7 @@
 				09118701221522BF00938D9F /* GCDAsyncSocketManager.m in Sources */,
 				09B9B798222E4F1F000868D5 /* SXForbiddenAppModel.m in Sources */,
 				098BA310221B98E200F58639 /* NSString+Extension.m in Sources */,
+				09B9B87F22325729000868D5 /* SXLANPortHeaderView.m in Sources */,
 				B3AF300821FB0956001E4E67 /* SXBaseModel.m in Sources */,
 				095540AC221D073D005A5485 /* SXTitleImageCustomButton.m in Sources */,
 				09B9B7D22230BAA6000868D5 /* SXMobileManagerHeaderView.m in Sources */,
