@@ -1,37 +1,26 @@
 //
-//  SXTimeControlCell.m
+//  SXTimeControlAddCell.m
 //  TreebearManager
 //
 //  Created by bear on 2019/3/8.
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXTimeControlCell.h"
+#import "SXTimeControlAddCell.h"
 
-@interface SXTimeControlCell ()
-@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@interface SXTimeControlAddCell ()
 @property (weak, nonatomic) IBOutlet UILabel *titleL;
 @property (weak, nonatomic) IBOutlet UIButton *deleteBtn;
 @property (weak, nonatomic) IBOutlet UIButton *editBtn;
 @property (weak, nonatomic) IBOutlet UIView *contentBgView;
 @end
 
-@implementation SXTimeControlCell
+@implementation SXTimeControlAddCell
 
-static NSArray *_imageNameArr = nil;//提示文字容器
-
-+ (void)initialize{
-    if (!_imageNameArr) {
-        _imageNameArr = @[@"img_forbidden_ scheme1",
-                          @"img_forbidden_ scheme2",
-                          @"img_forbidden_ scheme3"];
-    }
-}
-
-static NSString *SXTimeControlCellID = @"SXTimeControlCellID";
+static NSString *SXTimeControlAddCellID = @"SXTimeControlAddCellID";
 
 + (instancetype)cellWithTableView:(UITableView *)tableView{
-    id cell = [tableView dequeueReusableCellWithIdentifier:SXTimeControlCellID];
+    id cell = [tableView dequeueReusableCellWithIdentifier:SXTimeControlAddCellID];
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
     }
@@ -64,14 +53,6 @@ static NSString *SXTimeControlCellID = @"SXTimeControlCellID";
     [self.contentBgView borderColor:UIColor.lightGrayColor borderWidth:0.1];
 }
 
-#pragma mark -setter方法-
-- (void)setModel:(SXForbiddenAppModel *)model{
-    _model = model;
-    
-    self.titleL.text = model.title;
-    NSInteger index = model.row.integerValue % 3;
-    self.iconImageView.image = [UIImage imageNamed:_imageNameArr[index]];
-}
 
 #pragma mark -点击事件-
 - (IBAction)clickEditBtn:(UIButton *)sender {
