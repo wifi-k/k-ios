@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="114" id="KGk-i7-Jjw" customClass="SXTimeControlCell">
+            <rect key="frame" x="0.0" y="0.0" width="347" height="114"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="347" height="113.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UWo-4i-xFa">
+                        <rect key="frame" x="10" y="2" width="327" height="103.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_forbidden_ scheme1" translatesAutoresizingMaskIntoConstraints="NO" id="Dbd-og-RI4">
+                                <rect key="frame" x="5" y="32" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="0T5-fW-OzS"/>
+                                    <constraint firstAttribute="height" constant="40" id="iYl-tD-Yji"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="禁用方案" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlK-Og-4a0">
+                                <rect key="frame" x="50" y="43.5" width="58" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBf-bF-sk4">
+                                <rect key="frame" x="292" y="37" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="hVk-b6-Da9"/>
+                                    <constraint firstAttribute="height" constant="30" id="mtC-AY-ZT4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" image="home_manager_delete">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickDeleteBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="k4w-qA-mFo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXE-n5-oIR">
+                                <rect key="frame" x="257" y="37" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="geJ-Yh-GvM"/>
+                                    <constraint firstAttribute="height" constant="30" id="p9A-zg-3Om"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" image="home_manager_edit">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickEditBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="iIc-QR-ocQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AlK-Og-4a0" firstAttribute="leading" secondItem="Dbd-og-RI4" secondAttribute="trailing" constant="5" id="5gT-Ol-Kdn"/>
+                            <constraint firstItem="vBf-bF-sk4" firstAttribute="leading" secondItem="fXE-n5-oIR" secondAttribute="trailing" constant="5" id="If6-8d-YFb"/>
+                            <constraint firstItem="fXE-n5-oIR" firstAttribute="centerY" secondItem="vBf-bF-sk4" secondAttribute="centerY" id="JKf-zB-swW"/>
+                            <constraint firstItem="vBf-bF-sk4" firstAttribute="centerY" secondItem="UWo-4i-xFa" secondAttribute="centerY" id="Oqf-C6-Vwh"/>
+                            <constraint firstAttribute="trailing" secondItem="vBf-bF-sk4" secondAttribute="trailing" constant="5" id="QJd-MI-nJK"/>
+                            <constraint firstItem="AlK-Og-4a0" firstAttribute="centerY" secondItem="Dbd-og-RI4" secondAttribute="centerY" id="aYZ-Sm-x8a"/>
+                            <constraint firstItem="Dbd-og-RI4" firstAttribute="centerY" secondItem="UWo-4i-xFa" secondAttribute="centerY" id="scs-9Y-xcu"/>
+                            <constraint firstItem="Dbd-og-RI4" firstAttribute="leading" secondItem="UWo-4i-xFa" secondAttribute="leading" constant="5" id="xKD-c8-WWV"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="UWo-4i-xFa" secondAttribute="trailing" constant="10" id="IyB-3y-G3y"/>
+                    <constraint firstItem="UWo-4i-xFa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="OQf-3D-Zfl"/>
+                    <constraint firstAttribute="bottom" secondItem="UWo-4i-xFa" secondAttribute="bottom" constant="8" id="P0S-Bs-SFK"/>
+                    <constraint firstItem="UWo-4i-xFa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="XTp-a8-ksk"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="contentBgView" destination="UWo-4i-xFa" id="By1-eY-AMb"/>
+                <outlet property="deleteBtn" destination="vBf-bF-sk4" id="ZyI-TB-vkY"/>
+                <outlet property="editBtn" destination="fXE-n5-oIR" id="vaI-LY-0vd"/>
+                <outlet property="iconImageView" destination="Dbd-og-RI4" id="q37-Cn-fNt"/>
+                <outlet property="titleL" destination="AlK-Og-4a0" id="4Be-bs-T6z"/>
+            </connections>
+            <point key="canvasLocation" x="154.40000000000001" y="186.20689655172416"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="home_manager_delete" width="18" height="18"/>
+        <image name="home_manager_edit" width="18" height="18"/>
+        <image name="img_forbidden_ scheme1" width="54" height="54"/>
+    </resources>
+</document>

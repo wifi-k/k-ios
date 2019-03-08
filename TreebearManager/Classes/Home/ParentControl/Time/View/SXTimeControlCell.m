@@ -1,14 +1,14 @@
 //
-//  SXForbiddenAppCell.m
+//  SXTimeControlCell.m
 //  TreebearManager
 //
-//  Created by bear on 2019/2/26.
+//  Created by bear on 2019/3/8.
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXForbiddenAppCell.h"
+#import "SXTimeControlCell.h"
 
-@interface SXForbiddenAppCell ()
+@interface SXTimeControlCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleL;
 @property (weak, nonatomic) IBOutlet UIButton *deleteBtn;
@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIView *contentBgView;
 @end
 
-@implementation SXForbiddenAppCell
+@implementation SXTimeControlCell
 
 static NSArray *_imageNameArr = nil;//提示文字容器
 
