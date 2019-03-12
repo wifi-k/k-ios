@@ -80,36 +80,37 @@
     NSString *wifiSSID = [XKGetWifiNetTool getWifiSSID];
     DLog(@"wifi:%@",wifiSSID);
 #warning mark -更换正式-
-//    if ([wifiSSID containsString:@"Xiaomi"] || [wifiSSID containsString:@"Office"]) {
-//        self.headerView.hidden = NO;
-//    } else{
-//        self.headerView.hidden = YES;
-//        [self alertOnNetAlertView];
-//    }
-    if ([wifiSSID containsString:@"Xiaomi"] || [wifiSSID containsString:@"Office"]) {
+    if ([wifiSSID containsString:@"Xiaomi"] || [wifiSSID containsString:@"Office"] || [wifiSSID containsString:@"truelv"]) {
+        self.headerView.title = [NSString stringWithFormat:@"您已连接wifi名称为'%@'的设备，点击立即绑定设备",wifiSSID];
+        self.headerView.hidden = NO;
+    } else{
         self.headerView.hidden = YES;
         [self alertOnNetAlertView];
-    } else{
-        self.headerView.hidden = NO;
     }
+//    if ([wifiSSID containsString:@"Xiaomi"] || [wifiSSID containsString:@"Office"]) {
+//        self.headerView.hidden = YES;
+//        [self alertOnNetAlertView];
+//    } else{
+//        self.headerView.hidden = NO;
+//    }
 }
 
 #pragma mark -跳转网络选择页面-
 - (void)jumpToNetOptionVC{
-//    WS(weakSelf);
-//    SXNetBroadbandParam *param = [SXNetBroadbandParam param];
-//    param.name = @"admin";
-//    param.passwd = @"123456".md5String;
-//    [SXAddXiaokiNetTool loginWithPasswdDataWithParams:param.mj_keyValues Success:^{
-//        SXNetOptionController *netVC = [[SXNetOptionController alloc] init];
-//        [weakSelf.navigationController pushViewController:netVC animated:YES];
-//    } failure:^(NSError * _Nonnull error) {
-//        NSString *message = [error.userInfo objectForKey:@"msg"];
-//        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
-//    }];
+    WS(weakSelf);
+    SXNetBroadbandParam *param = [SXNetBroadbandParam param];
+    param.name = @"admin";
+    param.passwd = @"123456".md5String;
+    [SXAddXiaokiNetTool loginWithPasswdDataWithParams:param.mj_keyValues Success:^{
+        SXNetOptionController *netVC = [[SXNetOptionController alloc] init];
+        [weakSelf.navigationController pushViewController:netVC animated:YES];
+    } failure:^(NSError * _Nonnull error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
     
-    SXNetOptionController *netVC = [[SXNetOptionController alloc] init];
-    [self.navigationController pushViewController:netVC animated:YES];
+//    SXNetOptionController *netVC = [[SXNetOptionController alloc] init];
+//    [self.navigationController pushViewController:netVC animated:YES];
 }
 
 #pragma mark -视图弹窗-

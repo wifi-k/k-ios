@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
+///更改title
+@property (nonatomic, copy) NSString *title;
+
 ///点击确定按钮回调
 @property (nonatomic, copy) void (^clickConfirmBtnBlock)(void);
 

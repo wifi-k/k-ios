@@ -34,8 +34,8 @@
 + (UIBarButtonItem *)barButtonItemWithTitle:(NSString *)title target:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents{
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setTitle:title forState:UIControlStateNormal];
-    [btn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-    [btn setTitleColor:UIColor.whiteColor forState:UIControlStateHighlighted];
+    [btn setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
+    [btn setTitleColor:UIColor.blackColor forState:UIControlStateHighlighted];
     btn.titleLabel.font = [UIFont systemFontOfSize:15.0];
     [btn sizeToFit];
     [btn addTarget:target action:action forControlEvents:controlEvents];

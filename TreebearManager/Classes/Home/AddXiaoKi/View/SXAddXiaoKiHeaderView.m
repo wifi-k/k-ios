@@ -46,4 +46,10 @@
     }
 }
 
+- (void)setTitle:(NSString *)title{
+    _title = title;
+    
+    self.tipsL.text = title;
+}
+
 @end
