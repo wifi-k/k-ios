@@ -284,14 +284,27 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="addressBeginTextField" destination="Cju-ra-wiO" id="yKS-zy-xef"/>
+                <outlet property="addressEndTextField" destination="ItC-ST-5Fa" id="qPf-3J-mSg"/>
+                <outlet property="addressTermTextField" destination="5Rf-hj-vp6" id="6Tt-FB-aIe"/>
+                <outlet property="dns2TextField" destination="kBE-AY-qc8" id="uC5-NG-JcO"/>
+                <outlet property="dnsTextField" destination="3QN-ie-nkQ" id="KKJ-0K-TFN"/>
                 <outlet property="fifthBgView" destination="FIY-tI-x1j" id="QyB-CP-IcC"/>
+                <outlet property="fifthTitleL" destination="TC3-Q5-ESF" id="VJW-en-iGc"/>
                 <outlet property="firstBgView" destination="573-Fj-QAi" id="SjZ-TC-fmT"/>
+                <outlet property="firstTitleL" destination="b6O-4P-EFm" id="7a3-Wb-FNL"/>
                 <outlet property="fourthBgView" destination="nmL-So-nal" id="VDl-te-d1J"/>
+                <outlet property="fourthTitleL" destination="TrR-rU-6qp" id="akZ-S3-a4j"/>
+                <outlet property="maskTextField" destination="lwo-35-M1K" id="kVS-9J-RPh"/>
                 <outlet property="saveBtn" destination="edc-bE-ARC" id="ru4-oi-2iE"/>
                 <outlet property="secondBgView" destination="tUA-WZ-g6F" id="73J-vG-XBX"/>
+                <outlet property="secondTitleL" destination="fFu-9K-dd6" id="e8G-rt-fQt"/>
                 <outlet property="seventhBgView" destination="Blt-VY-vjF" id="0Iu-B8-GSf"/>
+                <outlet property="seventhTitleL" destination="Tae-M4-J3A" id="W6Q-ax-Eka"/>
                 <outlet property="sixthBgView" destination="59N-2e-azE" id="Z5D-cC-1Ea"/>
+                <outlet property="sixthTitleL" destination="Gf0-MK-WBZ" id="Fma-cI-0fv"/>
                 <outlet property="thirdBgView" destination="adT-4F-Wfo" id="wYR-J4-BxP"/>
+                <outlet property="thirdTitleL" destination="sDA-A6-byo" id="802-Vd-NhZ"/>
             </connections>
             <point key="canvasLocation" x="123.2" y="171.81409295352324"/>
         </view>

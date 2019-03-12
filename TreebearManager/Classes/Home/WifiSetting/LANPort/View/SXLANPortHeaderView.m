@@ -108,6 +108,8 @@
     [self.saveBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
     [self.saveBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
     [self.saveBtn roundViewWithRadius:6.0f];
+    
+    [self.macTextField becomeFirstResponder];
 }
 
 #pragma mark -点击保存-

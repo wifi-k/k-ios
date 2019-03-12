@@ -9,23 +9,34 @@
 #import "SXDHCPServerHeaderView.h"
 
 @interface SXDHCPServerHeaderView ()
-
-@property (weak, nonatomic) IBOutlet UIButton *saveBtn;
-
+@property (weak, nonatomic) IBOutlet UILabel *firstTitleL;
 @property (weak, nonatomic) IBOutlet UIView *firstBgView;
 
+@property (weak, nonatomic) IBOutlet UILabel *secondTitleL;
+@property (weak, nonatomic) IBOutlet UITextField *addressBeginTextField;
 @property (weak, nonatomic) IBOutlet UIView *secondBgView;
 
+@property (weak, nonatomic) IBOutlet UILabel *thirdTitleL;
+@property (weak, nonatomic) IBOutlet UITextField *addressEndTextField;
 @property (weak, nonatomic) IBOutlet UIView *thirdBgView;
 
+@property (weak, nonatomic) IBOutlet UILabel *fourthTitleL;
+@property (weak, nonatomic) IBOutlet UITextField *addressTermTextField;
 @property (weak, nonatomic) IBOutlet UIView *fourthBgView;
 
+@property (weak, nonatomic) IBOutlet UILabel *fifthTitleL;
+@property (weak, nonatomic) IBOutlet UITextField *maskTextField;
 @property (weak, nonatomic) IBOutlet UIView *fifthBgView;
 
+@property (weak, nonatomic) IBOutlet UILabel *sixthTitleL;
+@property (weak, nonatomic) IBOutlet UITextField *dnsTextField;
 @property (weak, nonatomic) IBOutlet UIView *sixthBgView;
 
+@property (weak, nonatomic) IBOutlet UILabel *seventhTitleL;
+@property (weak, nonatomic) IBOutlet UITextField *dns2TextField;
 @property (weak, nonatomic) IBOutlet UIView *seventhBgView;
 
+@property (weak, nonatomic) IBOutlet UIButton *saveBtn;
 @end
 
 @implementation SXDHCPServerHeaderView
@@ -56,9 +67,39 @@
     self.sixthBgView.backgroundColor = SXColorWhite;
     self.seventhBgView.backgroundColor = SXColorWhite;
     
+    self.firstTitleL.textColor = SXColor333333;
+    self.secondTitleL.textColor = SXColor333333;
+    self.thirdTitleL.textColor = SXColor333333;
+    self.fourthTitleL.textColor = SXColor333333;
+    self.fifthTitleL.textColor = SXColor333333;
+    self.sixthTitleL.textColor = SXColor333333;
+    self.seventhTitleL.textColor = SXColor333333;
+    
+    self.addressBeginTextField.backgroundColor = SXColorF6F7FB;
+    self.addressEndTextField.backgroundColor = SXColorF6F7FB;
+    self.addressTermTextField.backgroundColor = SXColorF6F7FB;
+    self.maskTextField.backgroundColor = SXColorF6F7FB;
+    self.dnsTextField.backgroundColor = SXColorF6F7FB;
+    self.dns2TextField.backgroundColor = SXColorF6F7FB;
+    
+    self.addressBeginTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 24)];
+    self.addressBeginTextField.leftViewMode = UITextFieldViewModeAlways;
+    self.addressEndTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 24)];
+    self.addressEndTextField.leftViewMode = UITextFieldViewModeAlways;
+    self.addressTermTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 24)];
+    self.addressTermTextField.leftViewMode = UITextFieldViewModeAlways;
+    self.maskTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 24)];
+    self.maskTextField.leftViewMode = UITextFieldViewModeAlways;
+    self.dnsTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 24)];
+    self.dnsTextField.leftViewMode = UITextFieldViewModeAlways;
+    self.dns2TextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 24)];
+    self.dns2TextField.leftViewMode = UITextFieldViewModeAlways;
+    
     [self.saveBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
     [self.saveBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
     [self.saveBtn roundViewWithRadius:6.0f];
+    
+    [self.addressBeginTextField becomeFirstResponder];
 }
 
 #pragma mark -点击事件-

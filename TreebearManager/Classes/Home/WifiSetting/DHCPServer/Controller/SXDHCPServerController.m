@@ -28,14 +28,17 @@
     headerView.clickSaveBtnBlock = ^{
         [weakSelf jumpToVC];
     };
-    [self.view addSubview:headerView];
+    self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
+    self.headerView.frame = self.view.bounds;
 }
 
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     
-    self.headerView.frame = self.view.bounds;
+//    self.tableView.frame = self.view.bounds;
+//    
+//    self.headerView.frame = self.view.bounds;
 }
 
 - (void)jumpToVC{
