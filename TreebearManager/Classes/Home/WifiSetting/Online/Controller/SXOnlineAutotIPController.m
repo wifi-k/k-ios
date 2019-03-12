@@ -7,9 +7,11 @@
 //
 
 #import "SXOnlineAutotIPController.h"
+#import "SXOnlineAutotIPHeaderView.h"
 
 @interface SXOnlineAutotIPController ()
-
+///头部视图
+@property (nonatomic, weak) SXOnlineAutotIPHeaderView *headerView;
 @end
 
 @implementation SXOnlineAutotIPController
@@ -23,7 +25,7 @@
 - (void)setUpUI{
     self.view.backgroundColor = SXColorRandom;
     
-    self.navigationItem.title = @"自动获取IP地址";
+    //self.navigationItem.title = @"自动获取IP地址";
 }
 
 

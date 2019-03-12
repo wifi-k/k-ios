@@ -160,7 +160,7 @@
 
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
     
-    DLog(@"徐昂大幅度发...");
+    DLog(@"手势滑动分页...");
 //    UIViewController *viewController = self.pageViewController.viewControllers[0];
 //    NSUInteger index = [self indexForViewController:viewController];
 //    [self.topTitleView trans2ShowAtIndex:index];

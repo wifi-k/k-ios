@@ -7,9 +7,11 @@
 //
 
 #import "SXOnlineFixedIPController.h"
+#import "SXOnlineFixedIPHeaderView.h"
 
 @interface SXOnlineFixedIPController ()
-
+///头部视图
+@property (nonatomic, weak) SXOnlineFixedIPHeaderView *headerView;
 @end
 
 @implementation SXOnlineFixedIPController

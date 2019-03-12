@@ -7,9 +7,11 @@
 //
 
 #import "SXOnlineBroadbandController.h"
+#import "SXOnlineBroadbandHeaderView.h"
 
 @interface SXOnlineBroadbandController ()
-
+///头部视图
+@property (nonatomic, weak) SXOnlineBroadbandHeaderView *headerView;
 @end
 
 @implementation SXOnlineBroadbandController

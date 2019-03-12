@@ -64,6 +64,12 @@
 		09462ADA2237AA660063F67E /* SXOnlineAutotIPController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462AD92237AA660063F67E /* SXOnlineAutotIPController.m */; };
 		09462ADD2237AAA60063F67E /* SXOnlineFixedIPController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ADC2237AAA60063F67E /* SXOnlineFixedIPController.m */; };
 		09462AE02237AAE10063F67E /* SXOnlineBroadbandController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ADF2237AAE10063F67E /* SXOnlineBroadbandController.m */; };
+		09462AE32237AE5F0063F67E /* SXOnlineAutotIPHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462AE22237AE5F0063F67E /* SXOnlineAutotIPHeaderView.m */; };
+		09462AE52237AE6A0063F67E /* SXOnlineAutotIPHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462AE42237AE6A0063F67E /* SXOnlineAutotIPHeaderView.xib */; };
+		09462AE82237AE930063F67E /* SXOnlineFixedIPHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462AE72237AE930063F67E /* SXOnlineFixedIPHeaderView.m */; };
+		09462AEA2237AE9E0063F67E /* SXOnlineFixedIPHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462AE92237AE9E0063F67E /* SXOnlineFixedIPHeaderView.xib */; };
+		09462AED2237AEBE0063F67E /* SXOnlineBroadbandHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462AEC2237AEBE0063F67E /* SXOnlineBroadbandHeaderView.m */; };
+		09462AEF2237AEC80063F67E /* SXOnlineBroadbandHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462AEE2237AEC80063F67E /* SXOnlineBroadbandHeaderView.xib */; };
 		095540AC221D073D005A5485 /* SXTitleImageCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540AB221D073D005A5485 /* SXTitleImageCustomButton.m */; };
 		095540AF221D076C005A5485 /* SXTitleImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540AE221D076C005A5485 /* SXTitleImageButton.m */; };
 		095540B5221E4B9A005A5485 /* SXRegistSetPwdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540B4221E4B9A005A5485 /* SXRegistSetPwdController.m */; };
@@ -391,6 +397,15 @@
 		09462ADC2237AAA60063F67E /* SXOnlineFixedIPController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineFixedIPController.m; sourceTree = "<group>"; };
 		09462ADE2237AAE10063F67E /* SXOnlineBroadbandController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineBroadbandController.h; sourceTree = "<group>"; };
 		09462ADF2237AAE10063F67E /* SXOnlineBroadbandController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineBroadbandController.m; sourceTree = "<group>"; };
+		09462AE12237AE5F0063F67E /* SXOnlineAutotIPHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineAutotIPHeaderView.h; sourceTree = "<group>"; };
+		09462AE22237AE5F0063F67E /* SXOnlineAutotIPHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineAutotIPHeaderView.m; sourceTree = "<group>"; };
+		09462AE42237AE6A0063F67E /* SXOnlineAutotIPHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXOnlineAutotIPHeaderView.xib; sourceTree = "<group>"; };
+		09462AE62237AE930063F67E /* SXOnlineFixedIPHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineFixedIPHeaderView.h; sourceTree = "<group>"; };
+		09462AE72237AE930063F67E /* SXOnlineFixedIPHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineFixedIPHeaderView.m; sourceTree = "<group>"; };
+		09462AE92237AE9E0063F67E /* SXOnlineFixedIPHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXOnlineFixedIPHeaderView.xib; sourceTree = "<group>"; };
+		09462AEB2237AEBE0063F67E /* SXOnlineBroadbandHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineBroadbandHeaderView.h; sourceTree = "<group>"; };
+		09462AEC2237AEBE0063F67E /* SXOnlineBroadbandHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineBroadbandHeaderView.m; sourceTree = "<group>"; };
+		09462AEE2237AEC80063F67E /* SXOnlineBroadbandHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXOnlineBroadbandHeaderView.xib; sourceTree = "<group>"; };
 		095540AA221D073D005A5485 /* SXTitleImageCustomButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTitleImageCustomButton.h; sourceTree = "<group>"; };
 		095540AB221D073D005A5485 /* SXTitleImageCustomButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXTitleImageCustomButton.m; sourceTree = "<group>"; };
 		095540AD221D076C005A5485 /* SXTitleImageButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTitleImageButton.h; sourceTree = "<group>"; };
@@ -1298,6 +1313,15 @@
 				09462AC922375DEE0063F67E /* SXOnlineOptionHeaderView.h */,
 				09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */,
 				09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */,
+				09462AE12237AE5F0063F67E /* SXOnlineAutotIPHeaderView.h */,
+				09462AE22237AE5F0063F67E /* SXOnlineAutotIPHeaderView.m */,
+				09462AE42237AE6A0063F67E /* SXOnlineAutotIPHeaderView.xib */,
+				09462AE62237AE930063F67E /* SXOnlineFixedIPHeaderView.h */,
+				09462AE72237AE930063F67E /* SXOnlineFixedIPHeaderView.m */,
+				09462AE92237AE9E0063F67E /* SXOnlineFixedIPHeaderView.xib */,
+				09462AEB2237AEBE0063F67E /* SXOnlineBroadbandHeaderView.h */,
+				09462AEC2237AEBE0063F67E /* SXOnlineBroadbandHeaderView.m */,
+				09462AEE2237AEC80063F67E /* SXOnlineBroadbandHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2689,6 +2713,7 @@
 				09B9B87C22321542000868D5 /* SXTimeControlEditHeaderView.xib in Resources */,
 				09D5F643222A5BE100EA681A /* SXForbiddenDeviceOptionCell.xib in Resources */,
 				09FB473122239E3500809273 /* SXHomeMessageCell.xib in Resources */,
+				09462AEF2237AEC80063F67E /* SXOnlineBroadbandHeaderView.xib in Resources */,
 				092D6D2C2203011800538AC8 /* SXHomeNetworkingDeviceCell.xib in Resources */,
 				095540BA221E4DCE005A5485 /* SXRegistSetPwdHeaderView.xib in Resources */,
 				092D6D0D2202D78300538AC8 /* SXRegistHeaderView.xib in Resources */,
@@ -2716,6 +2741,7 @@
 				B3AF2FD521F9C8A3001E4E67 /* MBProgressHUD.bundle in Resources */,
 				098BA305221A57A700F58639 /* SXMineHeaderView.xib in Resources */,
 				098BA300221A559200F58639 /* SXMineListCell.xib in Resources */,
+				09462AE52237AE6A0063F67E /* SXOnlineAutotIPHeaderView.xib in Resources */,
 				09B9B8672231FF42000868D5 /* SXTimeControlCell.xib in Resources */,
 				092D6D1A2202E51C00538AC8 /* SXForgetHeaderView.xib in Resources */,
 				092D6D312203F6EA00538AC8 /* SXHomeMainHeaderView.xib in Resources */,
@@ -2730,6 +2756,7 @@
 				092D6CE622005A1A00538AC8 /* SXEmptyDataEventView.xib in Resources */,
 				09D5F65C222B8D6A00EA681A /* SXUpdateVersionHeaderView.xib in Resources */,
 				09B9B83B2230F5A3000868D5 /* SXAdvancedHeaderView.xib in Resources */,
+				09462AEA2237AE9E0063F67E /* SXOnlineFixedIPHeaderView.xib in Resources */,
 				09D5F651222A749E00EA681A /* SXHealthTimeHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2843,6 +2870,7 @@
 				B3AF302121FE90DA001E4E67 /* SXBaseTableViewGroupController.m in Sources */,
 				095540D222200EB6005A5485 /* SXHomeMainMemberButton.m in Sources */,
 				B348F98921F713A80000F194 /* AppDelegate.m in Sources */,
+				09462AE82237AE930063F67E /* SXOnlineFixedIPHeaderView.m in Sources */,
 				09B9B7B5222FAE0C000868D5 /* SXSingleAlertView.m in Sources */,
 				09D5F5F92226C22B00EA681A /* SXAlertControllerTool.m in Sources */,
 				09D5F5EF222689CE00EA681A /* SXHomeMainSectionFooterView.m in Sources */,
@@ -2866,6 +2894,7 @@
 				09D5F62D2229297000EA681A /* SXForbiddenAppFooterView.m in Sources */,
 				09B9B7D72230BC57000868D5 /* SXMobileDetailController.m in Sources */,
 				09B9B8282230ECB3000868D5 /* SXOnlineController.m in Sources */,
+				09462AED2237AEBE0063F67E /* SXOnlineBroadbandHeaderView.m in Sources */,
 				09B9B7FB2230EAD2000868D5 /* SXWifiSettingButton.m in Sources */,
 				092D6CDE22004FB400538AC8 /* SXRefreshHeader.m in Sources */,
 				095540AF221D076C005A5485 /* SXTitleImageButton.m in Sources */,
@@ -3002,6 +3031,7 @@
 				09B9B857223139AC000868D5 /* SXForbiddenDeviceOptionController.m in Sources */,
 				09B9B7CF2230BA8A000868D5 /* SXMobileManagerController.m in Sources */,
 				09B9B81F2230EC3F000868D5 /* SXAdvancedController.m in Sources */,
+				09462AE32237AE5F0063F67E /* SXOnlineAutotIPHeaderView.m in Sources */,
 				095540C2221EC059005A5485 /* SXHomeFamilyCodeButton.m in Sources */,
 				B348F9B621F71E960000F194 /* SXNetRequestTool.m in Sources */,
 				B3AF2FED21FAFF24001E4E67 /* SXLoginController.m in Sources */,
