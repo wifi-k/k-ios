@@ -162,8 +162,7 @@
     
     //设置请求基本参数
     //[manager.requestSerializer  setValue:@"application/json"  forHTTPHeaderField:@"Content－Type"];
-    
-    [manager.requestSerializer setValue:APP_VERSION forHTTPHeaderField:@"Api-Version"];
+    [manager.requestSerializer setValue:@"2019.3.1" forHTTPHeaderField:@"Api-Version"];
     NSString *tokenStr = XKUserMember.sharedXKUserMember.token;
     if ([NSString isNotEmpty:tokenStr]) {
         [manager.requestSerializer setValue:tokenStr forHTTPHeaderField:@"Api-Token"];

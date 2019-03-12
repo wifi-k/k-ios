@@ -14,6 +14,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
+///点击更新按钮回调
+@property (nonatomic, copy) void (^clickUpdateIPBtnBlock)(void);
+
+///点击高级选项回调
+@property (nonatomic, copy) void (^clickAdvancedBgViewBlock)(void);
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -93,7 +93,6 @@
         DLog(@"菜单。。。");
         [weakSelf dropDownMenu];
     };
-    headerView.backgroundColor = SXColorRandom;
     [self.view addSubview:headerView];
     self.headerView = headerView;
     [self.headerView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -116,6 +115,7 @@
     
 }
 
+#pragma mark -下拉菜单视图-
 - (void)dropDownMenu{
     SXDropDownMenu *dropDownMenu = [SXDropDownMenu dropMenu];
     [dropDownMenu showDropDownMenuWithButtonFrame:self.headerView.menuBtn.frame arrayOfTitle:self.titles];

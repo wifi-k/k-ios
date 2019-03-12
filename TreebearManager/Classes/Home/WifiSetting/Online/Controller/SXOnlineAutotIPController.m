@@ -7,6 +7,7 @@
 //
 
 #import "SXOnlineAutotIPController.h"
+#import "SXAdvancedOptionController.h"
 #import "SXOnlineAutotIPHeaderView.h"
 
 @interface SXOnlineAutotIPController ()
@@ -22,11 +23,34 @@
     [self setUpUI];
 }
 
+#pragma mark -初始化UI-
 - (void)setUpUI{
     self.view.backgroundColor = SXColorRandom;
     
     //self.navigationItem.title = @"自动获取IP地址";
+    WS(weakSelf);
+    SXOnlineAutotIPHeaderView *headerView = [SXOnlineAutotIPHeaderView headerView];
+    headerView.clickUpdateIPBtnBlock = ^{
+        DLog(@"菜单。。。");
+        [MBProgressHUD showMessage:@"更新成功！" toView:self.view];
+    };
+    headerView.clickAdvancedBgViewBlock = ^{
+        [weakSelf jumpToOptionVC];
+    };
+    [self.view addSubview:headerView];
+    self.headerView = headerView;
 }
 
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    self.headerView.frame = self.view.bounds;
+}
+
+#pragma mark -点击事件-
+- (void)jumpToOptionVC{
+    SXAdvancedOptionController *optionVC = [[SXAdvancedOptionController alloc] init];
+    [self.navigationController pushViewController:optionVC animated:YES];
+}
 
 @end
