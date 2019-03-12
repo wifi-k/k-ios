@@ -25,7 +25,7 @@
     
     self.view.backgroundColor = SXColorWhite;
     
-    self.navigationItem.title = @"高级选项";
+    self.navigationItem.title = @"高级设置";
     
     WS(weakSelf);
     SXAdvancedHeaderView *headerView = [SXAdvancedHeaderView headerView];

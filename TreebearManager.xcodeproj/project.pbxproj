@@ -57,6 +57,8 @@
 		092D6D342203F9F300538AC8 /* SXHomeMainSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6D332203F9F300538AC8 /* SXHomeMainSectionHeaderView.m */; };
 		092D6D3722041C4900538AC8 /* SXHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6D3622041C4900538AC8 /* SXHomeHeaderView.m */; };
 		092D6D3922041C5200538AC8 /* SXHomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092D6D3822041C5200538AC8 /* SXHomeHeaderView.xib */; };
+		09462ACB22375DEE0063F67E /* SXOnlineOptionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */; };
+		09462ACD22375DF90063F67E /* SXOnlineOptionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */; };
 		095540AC221D073D005A5485 /* SXTitleImageCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540AB221D073D005A5485 /* SXTitleImageCustomButton.m */; };
 		095540AF221D076C005A5485 /* SXTitleImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540AE221D076C005A5485 /* SXTitleImageButton.m */; };
 		095540B5221E4B9A005A5485 /* SXRegistSetPwdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540B4221E4B9A005A5485 /* SXRegistSetPwdController.m */; };
@@ -371,6 +373,9 @@
 		092D6D3522041C4900538AC8 /* SXHomeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeHeaderView.h; sourceTree = "<group>"; };
 		092D6D3622041C4900538AC8 /* SXHomeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeHeaderView.m; sourceTree = "<group>"; };
 		092D6D3822041C5200538AC8 /* SXHomeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXHomeHeaderView.xib; sourceTree = "<group>"; };
+		09462AC922375DEE0063F67E /* SXOnlineOptionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineOptionHeaderView.h; sourceTree = "<group>"; };
+		09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineOptionHeaderView.m; sourceTree = "<group>"; };
+		09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXOnlineOptionHeaderView.xib; sourceTree = "<group>"; };
 		095540AA221D073D005A5485 /* SXTitleImageCustomButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTitleImageCustomButton.h; sourceTree = "<group>"; };
 		095540AB221D073D005A5485 /* SXTitleImageCustomButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXTitleImageCustomButton.m; sourceTree = "<group>"; };
 		095540AD221D076C005A5485 /* SXTitleImageButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTitleImageButton.h; sourceTree = "<group>"; };
@@ -1258,6 +1263,9 @@
 		09B9B80C2230EC27000868D5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				09462AC922375DEE0063F67E /* SXOnlineOptionHeaderView.h */,
+				09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */,
+				09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2643,6 +2651,7 @@
 				092D6D122202DD9B00538AC8 /* SXLoginHeaderView.xib in Resources */,
 				0900F52C222D517C00250155 /* SXDynamicHeaderView.xib in Resources */,
 				09FB47532223E8B600809273 /* SXHealtyControlHeaderView.xib in Resources */,
+				09462ACD22375DF90063F67E /* SXOnlineOptionHeaderView.xib in Resources */,
 				09D5F687222D24B700EA681A /* SXNetOptionFooterView.xib in Resources */,
 				09B9B87C22321542000868D5 /* SXTimeControlEditHeaderView.xib in Resources */,
 				09D5F643222A5BE100EA681A /* SXForbiddenDeviceOptionCell.xib in Resources */,
@@ -2832,6 +2841,7 @@
 				09FB47462223E52200809273 /* SXCheckReportController.m in Sources */,
 				09D5F6042227E4DA00EA681A /* SXMineUserInfoModel.m in Sources */,
 				09F233092223EE4D0086AB35 /* SXXiaoKiController.m in Sources */,
+				09462ACB22375DEE0063F67E /* SXOnlineOptionHeaderView.m in Sources */,
 				092D6D052200748F00538AC8 /* SXUserArchiveTool.m in Sources */,
 				098BA2E7221654E900F58639 /* SXLoginRegistAlertView.m in Sources */,
 				B3AF304221FE9BF3001E4E67 /* SXBaseEmptyDataView.m in Sources */,

@@ -38,9 +38,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setUpUI];
+}
+
+- (void)setUpUI{
     self.view.backgroundColor = SXColorWhite;
     
     self.navigationItem.title = @"无线信道";
+    
+    UIBarButtonItem *right = [UIBarButtonItem barButtonItemWithTitle:@"保存" target:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = right;
+}
+
+- (void)rightButtonAction:(UIButton *)button{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
