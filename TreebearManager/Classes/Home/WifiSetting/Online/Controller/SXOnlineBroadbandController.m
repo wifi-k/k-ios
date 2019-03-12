@@ -25,7 +25,25 @@
 - (void)setUpUI{
     self.view.backgroundColor = SXColorRandom;
     
-    self.navigationItem.title = @"宽带拨号上网";
+//    self.navigationItem.title = @"宽带拨号上网";
+    
+    
+//    WS(weakSelf);
+    SXOnlineBroadbandHeaderView *headerView = [SXOnlineBroadbandHeaderView headerView];
+    headerView.clickDisconnectedBtnBlock = ^{
+        [MBProgressHUD showMessage:@"断开连接！" toView:self.view];
+    };
+    headerView.clickConnectedBtnBlock = ^{
+        [MBProgressHUD showMessage:@"重新连接！" toView:self.view];
+    };
+    [self.view addSubview:headerView];
+    self.headerView = headerView;
+}
+
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    self.headerView.frame = self.view.bounds;
 }
 
 @end

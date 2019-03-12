@@ -8,6 +8,24 @@
 
 #import "SXOnlineBroadbandHeaderView.h"
 
+@interface SXOnlineBroadbandHeaderView ()
+
+@property (weak, nonatomic) IBOutlet UIView *firstBgView;
+
+@property (weak, nonatomic) IBOutlet UIView *secondBgView;
+
+@property (weak, nonatomic) IBOutlet UIView *thirdBgView;
+
+@property (weak, nonatomic) IBOutlet UIView *fourthBgView;
+
+@property (weak, nonatomic) IBOutlet UIView *fifthBgView;
+
+@property (weak, nonatomic) IBOutlet UIButton *disconnectedBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *connectedBtn;
+
+@end
+
 @implementation SXOnlineBroadbandHeaderView
 
 + (instancetype)headerView{
@@ -28,6 +46,26 @@
     
     self.backgroundColor = SXColorWhite;
     
+    self.firstBgView.backgroundColor = SXColorWhite;
+    self.secondBgView.backgroundColor = SXColorWhite;
+    self.thirdBgView.backgroundColor = SXColorWhite;
+    self.fourthBgView.backgroundColor = SXColorWhite;
+    self.fifthBgView.backgroundColor = SXColorWhite;
+    
+    self.disconnectedBtn.backgroundColor = SXColorBtnDisabled;
+    [self.disconnectedBtn setTitleColor:SXColor666666 forState:UIControlStateNormal];
+}
+
+- (IBAction)clickDisconnectedBtn:(UIButton *)sender {
+    if (self.clickDisconnectedBtnBlock) {
+        self.clickDisconnectedBtnBlock();
+    }
+}
+
+- (IBAction)clickConnectedBtn:(UIButton *)sender {
+    if (self.clickConnectedBtnBlock) {
+        self.clickConnectedBtnBlock();
+    }
 }
 
 @end

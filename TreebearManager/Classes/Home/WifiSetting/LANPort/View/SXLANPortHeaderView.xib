@@ -171,11 +171,6 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                         </textField>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gAE-Yy-Hb5">
-                            <rect key="frame" x="15" y="69.5" width="223" height="0.5"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -226,7 +221,6 @@
                 <outlet property="firstBgView" destination="jCj-KQ-1WB" id="Y2j-fj-4ok"/>
                 <outlet property="firstLineView" destination="892-JY-Kxb" id="vIS-gw-UYZ"/>
                 <outlet property="fourthBgView" destination="ZQL-di-bwX" id="4nC-G3-zYR"/>
-                <outlet property="fourthLineView" destination="gAE-Yy-Hb5" id="n3v-F5-M5R"/>
                 <outlet property="ipTextField" destination="VcZ-yR-zSq" id="F7l-eI-UOd"/>
                 <outlet property="ipTitleL" destination="PqY-6g-PTH" id="3jF-AW-Lb5"/>
                 <outlet property="macTextField" destination="CF8-vV-erg" id="YwG-9d-7Y6"/>
