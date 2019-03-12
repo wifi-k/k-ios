@@ -14,6 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
+///点击菜单按钮回调
+@property (nonatomic, copy) void (^clickOptionBtnBlock)(void);
+
+///菜单按钮
+@property (nonatomic, weak) UIButton *menuBtn;
+
 @end
 
 NS_ASSUME_NONNULL_END

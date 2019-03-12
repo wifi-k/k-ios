@@ -59,6 +59,8 @@
 		092D6D3922041C5200538AC8 /* SXHomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092D6D3822041C5200538AC8 /* SXHomeHeaderView.xib */; };
 		09462ACB22375DEE0063F67E /* SXOnlineOptionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */; };
 		09462ACD22375DF90063F67E /* SXOnlineOptionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */; };
+		09462AD12237898C0063F67E /* XDSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACF2237898C0063F67E /* XDSDropDownMenu.m */; };
+		09462AD4223791180063F67E /* SXDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462AD3223791180063F67E /* SXDropDownMenu.m */; };
 		095540AC221D073D005A5485 /* SXTitleImageCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540AB221D073D005A5485 /* SXTitleImageCustomButton.m */; };
 		095540AF221D076C005A5485 /* SXTitleImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540AE221D076C005A5485 /* SXTitleImageButton.m */; };
 		095540B5221E4B9A005A5485 /* SXRegistSetPwdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540B4221E4B9A005A5485 /* SXRegistSetPwdController.m */; };
@@ -376,6 +378,10 @@
 		09462AC922375DEE0063F67E /* SXOnlineOptionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineOptionHeaderView.h; sourceTree = "<group>"; };
 		09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineOptionHeaderView.m; sourceTree = "<group>"; };
 		09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXOnlineOptionHeaderView.xib; sourceTree = "<group>"; };
+		09462ACF2237898C0063F67E /* XDSDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDSDropDownMenu.m; sourceTree = "<group>"; };
+		09462AD02237898C0063F67E /* XDSDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSDropDownMenu.h; sourceTree = "<group>"; };
+		09462AD2223791180063F67E /* SXDropDownMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXDropDownMenu.h; sourceTree = "<group>"; };
+		09462AD3223791180063F67E /* SXDropDownMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXDropDownMenu.m; sourceTree = "<group>"; };
 		095540AA221D073D005A5485 /* SXTitleImageCustomButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTitleImageCustomButton.h; sourceTree = "<group>"; };
 		095540AB221D073D005A5485 /* SXTitleImageCustomButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXTitleImageCustomButton.m; sourceTree = "<group>"; };
 		095540AD221D076C005A5485 /* SXTitleImageButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTitleImageButton.h; sourceTree = "<group>"; };
@@ -965,6 +971,17 @@
 				092D6D042200748F00538AC8 /* SXUserArchiveTool.m */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		09462ACE223789680063F67E /* DropMenu */ = {
+			isa = PBXGroup;
+			children = (
+				09462AD02237898C0063F67E /* XDSDropDownMenu.h */,
+				09462ACF2237898C0063F67E /* XDSDropDownMenu.m */,
+				09462AD2223791180063F67E /* SXDropDownMenu.h */,
+				09462AD3223791180063F67E /* SXDropDownMenu.m */,
+			);
+			path = DropMenu;
 			sourceTree = "<group>";
 		};
 		095540A9221D070D005A5485 /* Button */ = {
@@ -1980,6 +1997,7 @@
 		B348F95921F6C4E10000F194 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				09462ACE223789680063F67E /* DropMenu */,
 				09D5F6052227EC9F00EA681A /* PickerView */,
 				095540C3221F90A3005A5485 /* ImaginaryView */,
 				095540BC221EA483005A5485 /* ShadowView */,
@@ -2817,6 +2835,7 @@
 				09118705221522BF00938D9F /* GCKeyChainManager.m in Sources */,
 				B348F97221F6EAF40000F194 /* SXHomeController.m in Sources */,
 				095540BF221EA492005A5485 /* SXShadowView.m in Sources */,
+				09462AD4223791180063F67E /* SXDropDownMenu.m in Sources */,
 				092D6D342203F9F300538AC8 /* SXHomeMainSectionHeaderView.m in Sources */,
 				09B9B7FF2230EAD2000868D5 /* SXWifiSettingSectionHeaderView.m in Sources */,
 				09FB473022239E3500809273 /* SXHomeMessageCell.m in Sources */,
@@ -2922,6 +2941,7 @@
 				B348F9AC21F71A680000F194 /* UIView+Extension.m in Sources */,
 				09B9B88422326967000868D5 /* SXDHCPServerHeaderView.m in Sources */,
 				09D5F5F62226B6AF00EA681A /* SXAlbumAuthorizationTool.m in Sources */,
+				09462AD12237898C0063F67E /* XDSDropDownMenu.m in Sources */,
 				B3AF301821FB0C2E001E4E67 /* SXBaseWebController.m in Sources */,
 				09118701221522BF00938D9F /* GCDAsyncSocketManager.m in Sources */,
 				09B9B798222E4F1F000868D5 /* SXForbiddenAppModel.m in Sources */,

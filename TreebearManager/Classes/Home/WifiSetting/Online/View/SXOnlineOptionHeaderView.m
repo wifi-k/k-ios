@@ -16,6 +16,10 @@
 
 @implementation SXOnlineOptionHeaderView
 
+- (UIButton *)menuBtn{
+    return _optionBtn;
+}
+
 + (instancetype)headerView{
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
 }
@@ -41,6 +45,13 @@
     self.bottomLineView.height = 0.5f;
     
     [self.optionBtn setTitleColor:SXColor666666 forState:UIControlStateNormal];
+}
+
+#pragma mark -点击菜单视图-
+- (IBAction)clickOptionBtn:(UIButton *)sender {
+    if (self.clickOptionBtnBlock) {
+        self.clickOptionBtnBlock();
+    }
 }
 
 @end
