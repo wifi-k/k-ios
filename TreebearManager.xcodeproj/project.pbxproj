@@ -61,6 +61,9 @@
 		09462ACD22375DF90063F67E /* SXOnlineOptionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */; };
 		09462AD12237898C0063F67E /* XDSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACF2237898C0063F67E /* XDSDropDownMenu.m */; };
 		09462AD4223791180063F67E /* SXDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462AD3223791180063F67E /* SXDropDownMenu.m */; };
+		09462ADA2237AA660063F67E /* SXOnlineAutotIPController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462AD92237AA660063F67E /* SXOnlineAutotIPController.m */; };
+		09462ADD2237AAA60063F67E /* SXOnlineFixedIPController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ADC2237AAA60063F67E /* SXOnlineFixedIPController.m */; };
+		09462AE02237AAE10063F67E /* SXOnlineBroadbandController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ADF2237AAE10063F67E /* SXOnlineBroadbandController.m */; };
 		095540AC221D073D005A5485 /* SXTitleImageCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540AB221D073D005A5485 /* SXTitleImageCustomButton.m */; };
 		095540AF221D076C005A5485 /* SXTitleImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540AE221D076C005A5485 /* SXTitleImageButton.m */; };
 		095540B5221E4B9A005A5485 /* SXRegistSetPwdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540B4221E4B9A005A5485 /* SXRegistSetPwdController.m */; };
@@ -382,6 +385,12 @@
 		09462AD02237898C0063F67E /* XDSDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSDropDownMenu.h; sourceTree = "<group>"; };
 		09462AD2223791180063F67E /* SXDropDownMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXDropDownMenu.h; sourceTree = "<group>"; };
 		09462AD3223791180063F67E /* SXDropDownMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXDropDownMenu.m; sourceTree = "<group>"; };
+		09462AD82237AA660063F67E /* SXOnlineAutotIPController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineAutotIPController.h; sourceTree = "<group>"; };
+		09462AD92237AA660063F67E /* SXOnlineAutotIPController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineAutotIPController.m; sourceTree = "<group>"; };
+		09462ADB2237AAA60063F67E /* SXOnlineFixedIPController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineFixedIPController.h; sourceTree = "<group>"; };
+		09462ADC2237AAA60063F67E /* SXOnlineFixedIPController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineFixedIPController.m; sourceTree = "<group>"; };
+		09462ADE2237AAE10063F67E /* SXOnlineBroadbandController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineBroadbandController.h; sourceTree = "<group>"; };
+		09462ADF2237AAE10063F67E /* SXOnlineBroadbandController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineBroadbandController.m; sourceTree = "<group>"; };
 		095540AA221D073D005A5485 /* SXTitleImageCustomButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTitleImageCustomButton.h; sourceTree = "<group>"; };
 		095540AB221D073D005A5485 /* SXTitleImageCustomButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXTitleImageCustomButton.m; sourceTree = "<group>"; };
 		095540AD221D076C005A5485 /* SXTitleImageButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTitleImageButton.h; sourceTree = "<group>"; };
@@ -1266,6 +1275,12 @@
 			children = (
 				09B9B8262230ECB3000868D5 /* SXOnlineController.h */,
 				09B9B8272230ECB3000868D5 /* SXOnlineController.m */,
+				09462AD82237AA660063F67E /* SXOnlineAutotIPController.h */,
+				09462AD92237AA660063F67E /* SXOnlineAutotIPController.m */,
+				09462ADB2237AAA60063F67E /* SXOnlineFixedIPController.h */,
+				09462ADC2237AAA60063F67E /* SXOnlineFixedIPController.m */,
+				09462ADE2237AAE10063F67E /* SXOnlineBroadbandController.h */,
+				09462ADF2237AAE10063F67E /* SXOnlineBroadbandController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2900,6 +2915,7 @@
 				09B9B79F222E5387000868D5 /* XKUploadParam.m in Sources */,
 				092D6D102202DD9400538AC8 /* SXLoginHeaderView.m in Sources */,
 				092D6D1D2202E6EC00538AC8 /* SXForgetConfirmController.m in Sources */,
+				09462ADD2237AAA60063F67E /* SXOnlineFixedIPController.m in Sources */,
 				09B9B8312230ECEF000868D5 /* SXRestoreController.m in Sources */,
 				09D5F654222B88E400EA681A /* SXInputAlertView.m in Sources */,
 				B348F9AB21F71A680000F194 /* UIButton+Extension.m in Sources */,
@@ -2921,6 +2937,7 @@
 				098BA2FB2216B54100F58639 /* SXPhotoSectionHeaderView.m in Sources */,
 				09B9B85022311126000868D5 /* SXAdvancedOptionCell.m in Sources */,
 				B348F99721F716C60000F194 /* SXTabBarController.m in Sources */,
+				09462ADA2237AA660063F67E /* SXOnlineAutotIPController.m in Sources */,
 				09D5F66B222BC24700EA681A /* SXAddXiaoKiController.m in Sources */,
 				B348F99D21F719850000F194 /* UIImage+Extension.m in Sources */,
 				09D5F5EA2226820000EA681A /* SXHomeMainSectionFooterView2.m in Sources */,
@@ -2950,6 +2967,7 @@
 				B3AF300821FB0956001E4E67 /* SXBaseModel.m in Sources */,
 				095540AC221D073D005A5485 /* SXTitleImageCustomButton.m in Sources */,
 				09B9B7D22230BAA6000868D5 /* SXMobileManagerHeaderView.m in Sources */,
+				09462AE02237AAE10063F67E /* SXOnlineBroadbandController.m in Sources */,
 				092D6CE422005A0C00538AC8 /* SXEmptyDataEventView.m in Sources */,
 				B3AF300F21FB0A20001E4E67 /* SXBaseTableViewCell.m in Sources */,
 				095540B5221E4B9A005A5485 /* SXRegistSetPwdController.m in Sources */,
