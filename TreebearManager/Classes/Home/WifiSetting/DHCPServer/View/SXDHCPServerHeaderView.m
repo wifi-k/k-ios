@@ -12,6 +12,20 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *saveBtn;
 
+@property (weak, nonatomic) IBOutlet UIView *firstBgView;
+
+@property (weak, nonatomic) IBOutlet UIView *secondBgView;
+
+@property (weak, nonatomic) IBOutlet UIView *thirdBgView;
+
+@property (weak, nonatomic) IBOutlet UIView *fourthBgView;
+
+@property (weak, nonatomic) IBOutlet UIView *fifthBgView;
+
+@property (weak, nonatomic) IBOutlet UIView *sixthBgView;
+
+@property (weak, nonatomic) IBOutlet UIView *seventhBgView;
+
 @end
 
 @implementation SXDHCPServerHeaderView
@@ -33,6 +47,14 @@
 - (void)setUpUI{
     
     self.backgroundColor = SXColorWhite;
+    
+    self.firstBgView.backgroundColor = SXColorWhite;
+    self.secondBgView.backgroundColor = SXColorWhite;
+    self.thirdBgView.backgroundColor = SXColorWhite;
+    self.fourthBgView.backgroundColor = SXColorWhite;
+    self.fifthBgView.backgroundColor = SXColorWhite;
+    self.sixthBgView.backgroundColor = SXColorWhite;
+    self.seventhBgView.backgroundColor = SXColorWhite;
     
     [self.saveBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
     [self.saveBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];

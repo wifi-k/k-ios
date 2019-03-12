@@ -71,16 +71,6 @@
                         <constraint firstItem="fFu-9K-dd6" firstAttribute="centerY" secondItem="tUA-WZ-g6F" secondAttribute="centerY" id="x1f-Fz-ZBx"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edc-bE-ARC">
-                    <rect key="frame" x="15" y="631" width="334" height="45"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="45" id="bsa-fh-ONC"/>
-                    </constraints>
-                    <state key="normal" title="保存" backgroundImage="img_button_bg"/>
-                    <connections>
-                        <action selector="clickSaveBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Xrf-ep-nKf"/>
-                    </connections>
-                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adT-4F-Wfo">
                     <rect key="frame" x="0.0" y="170" width="364" height="70"/>
                     <subviews>
@@ -251,6 +241,16 @@
                         <constraint firstItem="Tae-M4-J3A" firstAttribute="leading" secondItem="Blt-VY-vjF" secondAttribute="leading" constant="5" id="zIb-oX-tbZ"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edc-bE-ARC">
+                    <rect key="frame" x="15" y="631" width="334" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="bsa-fh-ONC"/>
+                    </constraints>
+                    <state key="normal" title="保存" backgroundImage="img_button_bg"/>
+                    <connections>
+                        <action selector="clickSaveBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Xrf-ep-nKf"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -284,7 +284,14 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="fifthBgView" destination="FIY-tI-x1j" id="QyB-CP-IcC"/>
+                <outlet property="firstBgView" destination="573-Fj-QAi" id="SjZ-TC-fmT"/>
+                <outlet property="fourthBgView" destination="nmL-So-nal" id="VDl-te-d1J"/>
                 <outlet property="saveBtn" destination="edc-bE-ARC" id="ru4-oi-2iE"/>
+                <outlet property="secondBgView" destination="tUA-WZ-g6F" id="73J-vG-XBX"/>
+                <outlet property="seventhBgView" destination="Blt-VY-vjF" id="0Iu-B8-GSf"/>
+                <outlet property="sixthBgView" destination="59N-2e-azE" id="Z5D-cC-1Ea"/>
+                <outlet property="thirdBgView" destination="adT-4F-Wfo" id="wYR-J4-BxP"/>
             </connections>
             <point key="canvasLocation" x="123.2" y="171.81409295352324"/>
         </view>

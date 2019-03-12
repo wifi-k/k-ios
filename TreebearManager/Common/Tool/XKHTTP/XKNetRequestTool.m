@@ -9,9 +9,9 @@
 #import "XKNetRequestTool.h"
 
 #ifdef DEBUG
-#define API_HOST @"http://test.user.famwifi.com/api" //主测试环境
+#define API_HOST @"http://192.168.18.254:4000" //主测试环境
 #else
-#define API_HOST @"http://test.user.famwifi.com/api" //主线上环境
+#define API_HOST @"http://192.168.18.254:4000" //主线上环境
 #endif
 
 /** 接收消息提示(0,成功) **/
