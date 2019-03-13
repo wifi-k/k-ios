@@ -9,6 +9,7 @@
 #import "SXMineController.h"
 #import "SXXiaoKiController.h"
 #import "SXMineChildController.h"
+#import "SXMineSettingController.h"
 #import "SXMineListCell.h"
 #import "SXRootTool.h"
 #import "SXMineHeaderView.h"
@@ -82,7 +83,8 @@
 
 #pragma mark -点击事件-
 - (void)rightButtonAction:(UIButton *)btn{
-    DLog(@"titleLabel.text:%@",btn.titleLabel.text);
+    SXMineSettingController *settingVC = [[SXMineSettingController alloc] init];
+    [self.navigationController pushViewController:settingVC animated:YES];
 }
 
 #pragma mark -获取用户信息-

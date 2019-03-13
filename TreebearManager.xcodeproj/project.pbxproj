@@ -80,6 +80,13 @@
 		09462B052238DBC00063F67E /* SXMobileInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462B042238DBC00063F67E /* SXMobileInfoHeaderView.m */; };
 		09462B072238DBC60063F67E /* SXMobileInfoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462B062238DBC60063F67E /* SXMobileInfoHeaderView.xib */; };
 		09462B112238ED750063F67E /* SXMineChildController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462B102238ED750063F67E /* SXMineChildController.m */; };
+		09462B182238F10A0063F67E /* SXMineSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462B172238F10A0063F67E /* SXMineSettingController.m */; };
+		09462B1B2238F20B0063F67E /* SXMineSettingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462B1A2238F20B0063F67E /* SXMineSettingHeaderView.m */; };
+		09462B1D2238F2130063F67E /* SXMineSettingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462B1C2238F2130063F67E /* SXMineSettingHeaderView.xib */; };
+		09462B222238F5930063F67E /* SXMineAboutUsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462B212238F5930063F67E /* SXMineAboutUsController.m */; };
+		09462B282238F6170063F67E /* SXMineVersionUpdateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462B272238F6170063F67E /* SXMineVersionUpdateController.m */; };
+		09462B2B2238F72D0063F67E /* SXMineVersionUpdateHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462B2A2238F72D0063F67E /* SXMineVersionUpdateHeaderView.m */; };
+		09462B2D2238F7350063F67E /* SXMineVersionUpdateHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462B2C2238F7350063F67E /* SXMineVersionUpdateHeaderView.xib */; };
 		095540AC221D073D005A5485 /* SXTitleImageCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540AB221D073D005A5485 /* SXTitleImageCustomButton.m */; };
 		095540AF221D076C005A5485 /* SXTitleImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540AE221D076C005A5485 /* SXTitleImageButton.m */; };
 		095540B5221E4B9A005A5485 /* SXRegistSetPwdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540B4221E4B9A005A5485 /* SXRegistSetPwdController.m */; };
@@ -430,6 +437,18 @@
 		09462B062238DBC60063F67E /* SXMobileInfoHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXMobileInfoHeaderView.xib; sourceTree = "<group>"; };
 		09462B0F2238ED750063F67E /* SXMineChildController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMineChildController.h; sourceTree = "<group>"; };
 		09462B102238ED750063F67E /* SXMineChildController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMineChildController.m; sourceTree = "<group>"; };
+		09462B162238F10A0063F67E /* SXMineSettingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMineSettingController.h; sourceTree = "<group>"; };
+		09462B172238F10A0063F67E /* SXMineSettingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMineSettingController.m; sourceTree = "<group>"; };
+		09462B192238F20B0063F67E /* SXMineSettingHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMineSettingHeaderView.h; sourceTree = "<group>"; };
+		09462B1A2238F20B0063F67E /* SXMineSettingHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMineSettingHeaderView.m; sourceTree = "<group>"; };
+		09462B1C2238F2130063F67E /* SXMineSettingHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXMineSettingHeaderView.xib; sourceTree = "<group>"; };
+		09462B202238F5930063F67E /* SXMineAboutUsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMineAboutUsController.h; sourceTree = "<group>"; };
+		09462B212238F5930063F67E /* SXMineAboutUsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMineAboutUsController.m; sourceTree = "<group>"; };
+		09462B262238F6170063F67E /* SXMineVersionUpdateController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMineVersionUpdateController.h; sourceTree = "<group>"; };
+		09462B272238F6170063F67E /* SXMineVersionUpdateController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMineVersionUpdateController.m; sourceTree = "<group>"; };
+		09462B292238F72D0063F67E /* SXMineVersionUpdateHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMineVersionUpdateHeaderView.h; sourceTree = "<group>"; };
+		09462B2A2238F72D0063F67E /* SXMineVersionUpdateHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMineVersionUpdateHeaderView.m; sourceTree = "<group>"; };
+		09462B2C2238F7350063F67E /* SXMineVersionUpdateHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXMineVersionUpdateHeaderView.xib; sourceTree = "<group>"; };
 		095540AA221D073D005A5485 /* SXTitleImageCustomButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTitleImageCustomButton.h; sourceTree = "<group>"; };
 		095540AB221D073D005A5485 /* SXTitleImageCustomButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXTitleImageCustomButton.m; sourceTree = "<group>"; };
 		095540AD221D076C005A5485 /* SXTitleImageButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTitleImageButton.h; sourceTree = "<group>"; };
@@ -1056,6 +1075,87 @@
 		09462B0B2238ED4D0063F67E /* View */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		09462B122238F0FF0063F67E /* MineSetting */ = {
+			isa = PBXGroup;
+			children = (
+				09462B132238F0FF0063F67E /* Controller */,
+				09462B142238F0FF0063F67E /* Model */,
+				09462B152238F0FF0063F67E /* View */,
+			);
+			path = MineSetting;
+			sourceTree = "<group>";
+		};
+		09462B132238F0FF0063F67E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				09462B162238F10A0063F67E /* SXMineSettingController.h */,
+				09462B172238F10A0063F67E /* SXMineSettingController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		09462B142238F0FF0063F67E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		09462B152238F0FF0063F67E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				09462B192238F20B0063F67E /* SXMineSettingHeaderView.h */,
+				09462B1A2238F20B0063F67E /* SXMineSettingHeaderView.m */,
+				09462B1C2238F2130063F67E /* SXMineSettingHeaderView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		09462B1E2238F57B0063F67E /* AboutUs */ = {
+			isa = PBXGroup;
+			children = (
+				09462B1F2238F57B0063F67E /* Controller */,
+			);
+			path = AboutUs;
+			sourceTree = "<group>";
+		};
+		09462B1F2238F57B0063F67E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				09462B202238F5930063F67E /* SXMineAboutUsController.h */,
+				09462B212238F5930063F67E /* SXMineAboutUsController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		09462B232238F60A0063F67E /* Version */ = {
+			isa = PBXGroup;
+			children = (
+				09462B242238F60A0063F67E /* Controller */,
+				09462B252238F60A0063F67E /* View */,
+			);
+			path = Version;
+			sourceTree = "<group>";
+		};
+		09462B242238F60A0063F67E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				09462B262238F6170063F67E /* SXMineVersionUpdateController.h */,
+				09462B272238F6170063F67E /* SXMineVersionUpdateController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		09462B252238F60A0063F67E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				09462B292238F72D0063F67E /* SXMineVersionUpdateHeaderView.h */,
+				09462B2A2238F72D0063F67E /* SXMineVersionUpdateHeaderView.m */,
+				09462B2C2238F7350063F67E /* SXMineVersionUpdateHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2043,6 +2143,9 @@
 		B348F95621F6C4E10000F194 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				09462B232238F60A0063F67E /* Version */,
+				09462B1E2238F57B0063F67E /* AboutUs */,
+				09462B122238F0FF0063F67E /* MineSetting */,
 				09462B082238ED4D0063F67E /* Child */,
 				09D5F5FB2227E3C000EA681A /* Helper */,
 				B348F96821F6EACC0000F194 /* Main */,
@@ -2764,6 +2867,8 @@
 				09D5F678222BC71200EA681A /* SXFamilyMemberFooterView.xib in Resources */,
 				09D5F682222D23C900EA681A /* SXNetOptionCell.xib in Resources */,
 				09F233192223F03C0086AB35 /* SXHomeXiaoKiCell.xib in Resources */,
+				09462B2D2238F7350063F67E /* SXMineVersionUpdateHeaderView.xib in Resources */,
+				09462B1D2238F2130063F67E /* SXMineSettingHeaderView.xib in Resources */,
 				09B9B85C22313C7B000868D5 /* SXForbiddenAppOptionCell.xib in Resources */,
 				B348F99121F7143A0000F194 /* Assets.xcassets in Resources */,
 				09B9B88122325766000868D5 /* SXLANPortHeaderView.xib in Resources */,
@@ -2899,6 +3004,7 @@
 				09118702221522BF00938D9F /* GCDAsyncSocketCommunicationManager.m in Sources */,
 				B348F96121F6C50C0000F194 /* SXRootTool.m in Sources */,
 				09118704221522BF00938D9F /* GACConnectConfig.m in Sources */,
+				09462B182238F10A0063F67E /* SXMineSettingController.m in Sources */,
 				B3AF300521FB092F001E4E67 /* SXBasePageParam.m in Sources */,
 				B3AF2FF321FAFF45001E4E67 /* SXRegistController.m in Sources */,
 				098BA316221BA75900F58639 /* SXLoginParam.m in Sources */,
@@ -2917,6 +3023,7 @@
 				09462AE82237AE930063F67E /* SXOnlineFixedIPHeaderView.m in Sources */,
 				09B9B7B5222FAE0C000868D5 /* SXSingleAlertView.m in Sources */,
 				09D5F5F92226C22B00EA681A /* SXAlertControllerTool.m in Sources */,
+				09462B222238F5930063F67E /* SXMineAboutUsController.m in Sources */,
 				09D5F5EF222689CE00EA681A /* SXHomeMainSectionFooterView.m in Sources */,
 				09FB472C22239D7B00809273 /* SXMessageController.m in Sources */,
 				09118705221522BF00938D9F /* GCKeyChainManager.m in Sources */,
@@ -3044,6 +3151,7 @@
 				092D6CE422005A0C00538AC8 /* SXEmptyDataEventView.m in Sources */,
 				09462AFD2238A8840063F67E /* SXMobileDetailHeaderView.m in Sources */,
 				B3AF300F21FB0A20001E4E67 /* SXBaseTableViewCell.m in Sources */,
+				09462B2B2238F72D0063F67E /* SXMineVersionUpdateHeaderView.m in Sources */,
 				095540B5221E4B9A005A5485 /* SXRegistSetPwdController.m in Sources */,
 				09D5F665222B96B000EA681A /* SXHomeManagerHeaderView.m in Sources */,
 				098BA2FF221A559200F58639 /* SXMineListCell.m in Sources */,
@@ -3053,6 +3161,7 @@
 				09B9B7BF222FC584000868D5 /* SXAddXiaokiNetTool.m in Sources */,
 				09B9B7A2222E5488000868D5 /* XKNetRequestTool.m in Sources */,
 				09B9B82B2230ECD3000868D5 /* SXPreventController.m in Sources */,
+				09462B282238F6170063F67E /* SXMineVersionUpdateController.m in Sources */,
 				09D5F66E222BC2B900EA681A /* SXAddXiaoKiHeaderView.m in Sources */,
 				B3AF301221FB0A5D001E4E67 /* SXBaseCollectionViewCell.m in Sources */,
 				09B9B7DE2230BE2F000868D5 /* SXHomeReportController.m in Sources */,
@@ -3077,6 +3186,7 @@
 				09B9B7CF2230BA8A000868D5 /* SXMobileManagerController.m in Sources */,
 				09B9B81F2230EC3F000868D5 /* SXAdvancedController.m in Sources */,
 				09462B112238ED750063F67E /* SXMineChildController.m in Sources */,
+				09462B1B2238F20B0063F67E /* SXMineSettingHeaderView.m in Sources */,
 				09462AE32237AE5F0063F67E /* SXOnlineAutotIPHeaderView.m in Sources */,
 				095540C2221EC059005A5485 /* SXHomeFamilyCodeButton.m in Sources */,
 				B348F9B621F71E960000F194 /* SXNetRequestTool.m in Sources */,

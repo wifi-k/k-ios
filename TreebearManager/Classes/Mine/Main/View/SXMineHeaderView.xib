@@ -38,7 +38,7 @@
                     <state key="normal" backgroundImage="mine_xioaki_default"/>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wE2-3v-ulJ" secondAttribute="trailing" constant="15" id="UbB-xv-6lL"/>
                 <constraint firstItem="VXU-Yf-Q6f" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="eLD-9J-WWf"/>
