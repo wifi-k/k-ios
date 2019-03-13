@@ -164,6 +164,12 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="firstBgView" destination="BTs-ZP-nga" id="q0S-ZE-sMO"/>
+                <outlet property="fourthBgView" destination="I1z-2m-H0N" id="167-bL-ED8"/>
+                <outlet property="secondBgView" destination="Dm2-n4-tlP" id="F8k-U2-C4g"/>
+                <outlet property="thirdBgView" destination="PY5-3h-ZcF" id="gth-iK-OCa"/>
+            </connections>
             <point key="canvasLocation" x="116" y="-8.995502248875562"/>
         </view>
     </objects>

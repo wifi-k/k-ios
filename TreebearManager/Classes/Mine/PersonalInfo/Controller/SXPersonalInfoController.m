@@ -7,6 +7,7 @@
 //
 
 #import "SXPersonalInfoController.h"
+#import "SXNickNameUpdateController.h"
 #import "SXPersonalInfoHeaderView.h"
 
 @interface SXPersonalInfoController ()
@@ -28,8 +29,20 @@
     self.navigationItem.title = @"个人信息";
     
     //2.头部视图
-//    WS(weakSelf);
+    WS(weakSelf);
     SXPersonalInfoHeaderView *headerView = [SXPersonalInfoHeaderView headerView];
+    headerView.clickIconBgViewBlock = ^{
+        [weakSelf fdfdfdf];
+    };
+    headerView.clickNickNameBgViewBlock = ^{
+        [weakSelf jumpToNickNameVC];
+    };
+    headerView.clickMobileBgViewBlock = ^{
+        [weakSelf jumpToMobileVC];
+    };
+    headerView.clickPasswordBgViewBlock = ^{
+        [weakSelf jumpToPasswordVC];
+    };
     [self.view addSubview:headerView];
     self.headerView = headerView;
 }
@@ -38,6 +51,23 @@
     [super viewDidLayoutSubviews];
     
     self.headerView.frame = self.view.bounds;
+}
+
+- (void)fdfdfdf{
+    [MBProgressHUD showMessage:@"相册" toView:self.view];
+}
+
+- (void)jumpToNickNameVC{
+    SXNickNameUpdateController *nickVC = [[SXNickNameUpdateController alloc] init];
+    [self.navigationController pushViewController:nickVC animated:YES];
+}
+
+- (void)jumpToMobileVC{
+    [MBProgressHUD showMessage:@"jumpToMobileVC" toView:self.view];
+}
+
+- (void)jumpToPasswordVC{
+    [MBProgressHUD showMessage:@"jumpToPasswordVC" toView:self.view];
 }
 
 @end

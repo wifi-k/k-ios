@@ -14,6 +14,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
+///点击关于我们
+@property (nonatomic, copy) void (^clickIconBgViewBlock)(void);
+///点击关于我们
+@property (nonatomic, copy) void (^clickNickNameBgViewBlock)(void);
+///点击关于我们
+@property (nonatomic, copy) void (^clickMobileBgViewBlock)(void);
+///点击关于我们
+@property (nonatomic, copy) void (^clickPasswordBgViewBlock)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END
