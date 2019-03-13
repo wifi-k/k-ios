@@ -7,19 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-
-NS_ASSUME_NONNULL_BEGIN
+#import "SXOnlineOptionButton.h"
 
 @interface SXOnlineOptionHeaderView : UIView
 
 + (instancetype)headerView;
 
 ///点击菜单按钮回调
-@property (nonatomic, copy) void (^clickOptionBtnBlock)(void);
+@property (nonatomic, copy) void (^clickOptionBtnBlock)(BOOL isSelected);
 
 ///菜单按钮
-@property (nonatomic, weak) UIButton *menuBtn;
+@property (weak, nonatomic) IBOutlet SXOnlineOptionButton *optionBtn;
+
+///菜单名称
+@property (nonatomic, copy) NSString *optionStr;
 
 @end
-
-NS_ASSUME_NONNULL_END

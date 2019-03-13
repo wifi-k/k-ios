@@ -16,6 +16,8 @@
 @interface SXOnlineController ()<SXDropDownMenuDelegate,UIPageViewControllerDelegate,UIPageViewControllerDataSource>
 ///头部视图
 @property (nonatomic, weak) SXOnlineOptionHeaderView *headerView;
+///下拉菜单
+@property (nonatomic, weak) SXDropDownMenu *dropDownMenu;
 
 @property (nonatomic, weak) UIPageViewController *pageViewController;
 @property (nonatomic, strong) NSMutableArray *titles;//分类标题数组
@@ -89,9 +91,13 @@
     
     WS(weakSelf);
     SXOnlineOptionHeaderView *headerView = [SXOnlineOptionHeaderView headerView];
-    headerView.clickOptionBtnBlock = ^{
+    headerView.clickOptionBtnBlock = ^(BOOL isSelected) {
         DLog(@"菜单。。。");
-        [weakSelf dropDownMenu];
+        if (isSelected) {
+            [weakSelf setUpDropDownMenu];
+        } else{
+            [weakSelf.dropDownMenu hideDropDownMenuWithBtnFrame:weakSelf.headerView.optionBtn.frame];
+        }
     };
     [self.view addSubview:headerView];
     self.headerView = headerView;
@@ -116,16 +122,19 @@
 }
 
 #pragma mark -下拉菜单视图-
-- (void)dropDownMenu{
+- (void)setUpDropDownMenu{
     SXDropDownMenu *dropDownMenu = [SXDropDownMenu dropMenu];
-    [dropDownMenu showDropDownMenuWithButtonFrame:self.headerView.menuBtn.frame arrayOfTitle:self.titles];
+    [dropDownMenu showDropDownMenuWithButtonFrame:self.headerView.optionBtn.frame arrayOfTitle:self.titles];
     dropDownMenu.delegate = self;
     [self.view addSubview:dropDownMenu];
+    self.dropDownMenu = dropDownMenu;
 }
 
 #pragma mark -SXDropDownMenuDelegate-
 - (void)popDropMenu:(SXDropDownMenu *)popView row:(NSInteger)row{
     DLog(@"row:%ld",row);
+    self.headerView.optionStr = self.titles[row];
+    
     [self.pageViewController setViewControllers:@[[self.controllers objectAtIndex:row]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 }
 

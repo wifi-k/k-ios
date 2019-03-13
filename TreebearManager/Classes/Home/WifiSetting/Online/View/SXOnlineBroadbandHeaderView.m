@@ -54,6 +54,9 @@
     
     self.disconnectedBtn.backgroundColor = SXColorBtnDisabled;
     [self.disconnectedBtn setTitleColor:SXColor666666 forState:UIControlStateNormal];
+    
+    [self.disconnectedBtn roundViewWithRadius:6.0f];
+    [self.connectedBtn roundViewWithRadius:6.0f];
 }
 
 - (IBAction)clickDisconnectedBtn:(UIButton *)sender {

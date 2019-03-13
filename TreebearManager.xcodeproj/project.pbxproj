@@ -71,6 +71,7 @@
 		09462AED2237AEBE0063F67E /* SXOnlineBroadbandHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462AEC2237AEBE0063F67E /* SXOnlineBroadbandHeaderView.m */; };
 		09462AEF2237AEC80063F67E /* SXOnlineBroadbandHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462AEE2237AEC80063F67E /* SXOnlineBroadbandHeaderView.xib */; };
 		09462AF22237DD130063F67E /* SXAdvancedOptionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462AF12237DD130063F67E /* SXAdvancedOptionController.m */; };
+		09462AF5223896FB0063F67E /* SXOnlineOptionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462AF4223896FB0063F67E /* SXOnlineOptionButton.m */; };
 		095540AC221D073D005A5485 /* SXTitleImageCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540AB221D073D005A5485 /* SXTitleImageCustomButton.m */; };
 		095540AF221D076C005A5485 /* SXTitleImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540AE221D076C005A5485 /* SXTitleImageButton.m */; };
 		095540B5221E4B9A005A5485 /* SXRegistSetPwdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540B4221E4B9A005A5485 /* SXRegistSetPwdController.m */; };
@@ -409,6 +410,8 @@
 		09462AEE2237AEC80063F67E /* SXOnlineBroadbandHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXOnlineBroadbandHeaderView.xib; sourceTree = "<group>"; };
 		09462AF02237DD130063F67E /* SXAdvancedOptionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXAdvancedOptionController.h; sourceTree = "<group>"; };
 		09462AF12237DD130063F67E /* SXAdvancedOptionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXAdvancedOptionController.m; sourceTree = "<group>"; };
+		09462AF3223896FB0063F67E /* SXOnlineOptionButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineOptionButton.h; sourceTree = "<group>"; };
+		09462AF4223896FB0063F67E /* SXOnlineOptionButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineOptionButton.m; sourceTree = "<group>"; };
 		095540AA221D073D005A5485 /* SXTitleImageCustomButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTitleImageCustomButton.h; sourceTree = "<group>"; };
 		095540AB221D073D005A5485 /* SXTitleImageCustomButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXTitleImageCustomButton.m; sourceTree = "<group>"; };
 		095540AD221D076C005A5485 /* SXTitleImageButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTitleImageButton.h; sourceTree = "<group>"; };
@@ -1327,6 +1330,8 @@
 				09462AEB2237AEBE0063F67E /* SXOnlineBroadbandHeaderView.h */,
 				09462AEC2237AEBE0063F67E /* SXOnlineBroadbandHeaderView.m */,
 				09462AEE2237AEC80063F67E /* SXOnlineBroadbandHeaderView.xib */,
+				09462AF3223896FB0063F67E /* SXOnlineOptionButton.h */,
+				09462AF4223896FB0063F67E /* SXOnlineOptionButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2908,6 +2913,7 @@
 				09B9B87A22321536000868D5 /* SXTimeControlEditHeaderView.m in Sources */,
 				09B9B82E2230ECE0000868D5 /* SXRestartController.m in Sources */,
 				09FB47462223E52200809273 /* SXCheckReportController.m in Sources */,
+				09462AF5223896FB0063F67E /* SXOnlineOptionButton.m in Sources */,
 				09D5F6042227E4DA00EA681A /* SXMineUserInfoModel.m in Sources */,
 				09F233092223EE4D0086AB35 /* SXXiaoKiController.m in Sources */,
 				09462ACB22375DEE0063F67E /* SXOnlineOptionHeaderView.m in Sources */,

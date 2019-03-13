@@ -10,15 +10,11 @@
 
 @interface SXOnlineOptionHeaderView ()
 @property (weak, nonatomic) IBOutlet UILabel *titleL;
-@property (weak, nonatomic) IBOutlet UIButton *optionBtn;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView;
 @end
 
 @implementation SXOnlineOptionHeaderView
 
-- (UIButton *)menuBtn{
-    return _optionBtn;
-}
 
 + (instancetype)headerView{
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
@@ -47,10 +43,18 @@
     [self.optionBtn setTitleColor:SXColor666666 forState:UIControlStateNormal];
 }
 
+#pragma mark -setter-
+- (void)setOptionStr:(NSString *)optionStr{
+    _optionStr = optionStr;
+    
+    [self.optionBtn setTitle:optionStr forState:UIControlStateNormal];
+}
+
 #pragma mark -点击菜单视图-
 - (IBAction)clickOptionBtn:(UIButton *)sender {
+    sender.selected = !sender.isSelected;
     if (self.clickOptionBtnBlock) {
-        self.clickOptionBtnBlock();
+        self.clickOptionBtnBlock(sender.selected);
     }
 }
 

@@ -8,6 +8,23 @@
 
 #import "SXOnlineFixedIPHeaderView.h"
 
+@interface SXOnlineFixedIPHeaderView ()
+
+@property (weak, nonatomic) IBOutlet UIView *firstBgView;
+
+
+@property (weak, nonatomic) IBOutlet UIView *secondBgView;
+
+@property (weak, nonatomic) IBOutlet UIView *thirdBgView;
+
+
+@property (weak, nonatomic) IBOutlet UIView *fourthBgView;
+
+
+@property (weak, nonatomic) IBOutlet UIView *fifthBgView;
+
+@end
+
 @implementation SXOnlineFixedIPHeaderView
 
 + (instancetype)headerView{
@@ -28,6 +45,11 @@
     
     self.backgroundColor = SXColorWhite;
     
+    self.firstBgView.backgroundColor = SXColorWhite;
+    self.secondBgView.backgroundColor = SXColorWhite;
+    self.thirdBgView.backgroundColor = SXColorWhite;
+    self.fourthBgView.backgroundColor = SXColorWhite;
+    self.fifthBgView.backgroundColor = SXColorWhite;
 }
 
 @end

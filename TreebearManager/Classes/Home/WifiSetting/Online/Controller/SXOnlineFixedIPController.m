@@ -25,7 +25,18 @@
 - (void)setUpUI{
     self.view.backgroundColor = SXColorRandom;
     
-    self.navigationItem.title = @"固定IP地址";
+//    self.navigationItem.title = @"固定IP地址";
+    
+//    WS(weakSelf);
+    SXOnlineFixedIPHeaderView *headerView = [SXOnlineFixedIPHeaderView headerView];
+    [self.view addSubview:headerView];
+    self.headerView = headerView;
+}
+
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    self.headerView.frame = self.view.bounds;
 }
 
 @end
