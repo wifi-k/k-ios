@@ -96,6 +96,7 @@
     [self.seventhBgView addGestureRecognizer:tap];
     
     self.updateIPBtn.backgroundColor = SXColorWhite;
+    [self.updateIPBtn setTitleColor:SXColorDivideLine forState:UIControlStateNormal];
     [self.updateIPBtn roundViewWithRadius:22.5f borderColor:SXColorDivideLine borderWidth:1.0f];
 }
 

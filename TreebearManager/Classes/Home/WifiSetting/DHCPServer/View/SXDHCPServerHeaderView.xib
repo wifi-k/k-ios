@@ -29,12 +29,72 @@
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RVC-Sw-9XK">
+                            <rect key="frame" x="135" y="12.5" width="221" height="45"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQg-oJ-Wfq">
+                                    <rect key="frame" x="5" y="7.5" width="40" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="kal-m7-fW2"/>
+                                        <constraint firstAttribute="height" constant="30" id="n2M-Nh-ahm"/>
+                                    </constraints>
+                                    <state key="normal" title=" 开" image="dhcp_switch_uncheck">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <state key="selected" image="dhcp_switch_check"/>
+                                    <connections>
+                                        <action selector="clickSwitchBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="ljT-kR-UWr"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qs8-PM-2yd">
+                                    <rect key="frame" x="50" y="7.5" width="40" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="8sM-Nt-LE1"/>
+                                        <constraint firstAttribute="height" constant="30" id="t4u-A2-Ae2"/>
+                                    </constraints>
+                                    <state key="normal" title=" 关" image="dhcp_switch_uncheck">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <state key="selected" image="dhcp_switch_check"/>
+                                    <connections>
+                                        <action selector="clickSwitchBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="gIb-1w-QHS"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IhO-nc-KCK">
+                                    <rect key="frame" x="95" y="7.5" width="60" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="JaS-zC-xB2"/>
+                                        <constraint firstAttribute="width" constant="60" id="h2S-MG-wdm"/>
+                                    </constraints>
+                                    <state key="normal" title=" 自动" image="dhcp_switch_uncheck">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <state key="selected" image="dhcp_switch_check"/>
+                                    <connections>
+                                        <action selector="clickSwitchBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="hXL-x9-ubs"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="IhO-nc-KCK" firstAttribute="centerY" secondItem="RVC-Sw-9XK" secondAttribute="centerY" id="EwN-h4-7fs"/>
+                                <constraint firstItem="XQg-oJ-Wfq" firstAttribute="centerY" secondItem="RVC-Sw-9XK" secondAttribute="centerY" id="Jo1-D0-i5w"/>
+                                <constraint firstItem="IhO-nc-KCK" firstAttribute="leading" secondItem="Qs8-PM-2yd" secondAttribute="trailing" constant="5" id="NR4-ei-0QA"/>
+                                <constraint firstItem="Qs8-PM-2yd" firstAttribute="leading" secondItem="XQg-oJ-Wfq" secondAttribute="trailing" constant="5" id="P3U-2Y-dvz"/>
+                                <constraint firstAttribute="height" constant="45" id="WpN-S5-C2J"/>
+                                <constraint firstItem="Qs8-PM-2yd" firstAttribute="centerY" secondItem="RVC-Sw-9XK" secondAttribute="centerY" id="fGP-dt-HiM"/>
+                                <constraint firstItem="XQg-oJ-Wfq" firstAttribute="leading" secondItem="RVC-Sw-9XK" secondAttribute="leading" constant="5" id="jDD-jy-kAu"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstItem="RVC-Sw-9XK" firstAttribute="leading" secondItem="b6O-4P-EFm" secondAttribute="trailing" constant="10" id="3SW-Ky-DoT"/>
                         <constraint firstAttribute="height" constant="70" id="AGN-AA-VMb"/>
                         <constraint firstItem="b6O-4P-EFm" firstAttribute="leading" secondItem="573-Fj-QAi" secondAttribute="leading" constant="5" id="Y5Y-fR-bdn"/>
                         <constraint firstItem="b6O-4P-EFm" firstAttribute="centerY" secondItem="573-Fj-QAi" secondAttribute="centerY" id="dKw-ga-Car"/>
+                        <constraint firstAttribute="trailing" secondItem="RVC-Sw-9XK" secondAttribute="trailing" constant="8" id="iRw-F4-l2d"/>
+                        <constraint firstItem="RVC-Sw-9XK" firstAttribute="centerY" secondItem="573-Fj-QAi" secondAttribute="centerY" id="pNW-QU-bUj"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUA-WZ-g6F">
@@ -287,6 +347,7 @@
                 <outlet property="addressBeginTextField" destination="Cju-ra-wiO" id="yKS-zy-xef"/>
                 <outlet property="addressEndTextField" destination="ItC-ST-5Fa" id="qPf-3J-mSg"/>
                 <outlet property="addressTermTextField" destination="5Rf-hj-vp6" id="6Tt-FB-aIe"/>
+                <outlet property="dhcpSwitchBgView" destination="RVC-Sw-9XK" id="TfN-TW-gKn"/>
                 <outlet property="dns2TextField" destination="kBE-AY-qc8" id="uC5-NG-JcO"/>
                 <outlet property="dnsTextField" destination="3QN-ie-nkQ" id="KKJ-0K-TFN"/>
                 <outlet property="fifthBgView" destination="FIY-tI-x1j" id="QyB-CP-IcC"/>
@@ -303,6 +364,9 @@
                 <outlet property="seventhTitleL" destination="Tae-M4-J3A" id="W6Q-ax-Eka"/>
                 <outlet property="sixthBgView" destination="59N-2e-azE" id="Z5D-cC-1Ea"/>
                 <outlet property="sixthTitleL" destination="Gf0-MK-WBZ" id="Fma-cI-0fv"/>
+                <outlet property="switchAutoBtn" destination="IhO-nc-KCK" id="GdU-lC-zUq"/>
+                <outlet property="switchOffBtn" destination="Qs8-PM-2yd" id="L8J-k6-ixw"/>
+                <outlet property="switchOnBtn" destination="XQg-oJ-Wfq" id="16a-QU-6sM"/>
                 <outlet property="thirdBgView" destination="adT-4F-Wfo" id="wYR-J4-BxP"/>
                 <outlet property="thirdTitleL" destination="sDA-A6-byo" id="802-Vd-NhZ"/>
             </connections>
@@ -310,6 +374,8 @@
         </view>
     </objects>
     <resources>
+        <image name="dhcp_switch_check" width="14" height="14"/>
+        <image name="dhcp_switch_uncheck" width="14" height="14"/>
         <image name="img_button_bg" width="375" height="45"/>
     </resources>
 </document>

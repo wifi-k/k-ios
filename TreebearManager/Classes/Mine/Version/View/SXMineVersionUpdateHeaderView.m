@@ -60,8 +60,8 @@
     self.bottomLineView2.height = 0.1;
     
     self.updateBtn.backgroundColor = SXColorWhite;
-    [self.updateBtn setTitleColor:SXColor999999 forState:UIControlStateNormal];
-    [self.updateBtn roundViewWithRadius:22.5f borderColor:SXColor999999 borderWidth: 1.0f];
+    [self.updateBtn setTitleColor:SXColorDivideLine forState:UIControlStateNormal];
+    [self.updateBtn roundViewWithRadius:22.5f borderColor:SXColorDivideLine borderWidth: 1.0f];
 }
 
 #pragma mark -Event-

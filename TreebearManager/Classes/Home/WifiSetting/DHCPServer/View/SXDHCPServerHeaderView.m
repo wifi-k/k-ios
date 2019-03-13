@@ -9,6 +9,11 @@
 #import "SXDHCPServerHeaderView.h"
 
 @interface SXDHCPServerHeaderView ()
+
+@property (weak, nonatomic) IBOutlet UIButton *switchOnBtn;
+@property (weak, nonatomic) IBOutlet UIButton *switchOffBtn;
+@property (weak, nonatomic) IBOutlet UIButton *switchAutoBtn;
+@property (weak, nonatomic) IBOutlet UIView *dhcpSwitchBgView;
 @property (weak, nonatomic) IBOutlet UILabel *firstTitleL;
 @property (weak, nonatomic) IBOutlet UIView *firstBgView;
 
@@ -100,14 +105,25 @@
     [self.saveBtn roundViewWithRadius:6.0f];
     
     [self.addressBeginTextField becomeFirstResponder];
+    
+    //默认选中
+    self.switchOnBtn.selected = YES;
 }
 
 #pragma mark -点击事件-
+- (IBAction)clickSwitchBtn:(UIButton *)sender {
+    for (UIButton *btn in self.dhcpSwitchBgView.subviews) {
+        btn.selected = NO;
+    }
+    
+    sender.selected = YES;
+}
+
+
 - (IBAction)clickSaveBtn:(UIButton *)sender {
     if (self.clickSaveBtnBlock) {
         self.clickSaveBtnBlock();
     }
 }
-
 
 @end

@@ -29,7 +29,7 @@
                         <constraint firstAttribute="height" constant="30" id="gTH-y5-VQx"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <state key="normal" title="自动获取IP地址" image="arrow_right">
+                    <state key="normal" title="自动获取IP地址" image="arrow_down_stroke">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
@@ -67,6 +67,6 @@
         </view>
     </objects>
     <resources>
-        <image name="arrow_right" width="7" height="10"/>
+        <image name="arrow_down_stroke" width="8" height="5"/>
     </resources>
 </document>
