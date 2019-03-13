@@ -12,18 +12,34 @@
 
 @property (weak, nonatomic) IBOutlet UIView *topBgView;
 
-
+@property (weak, nonatomic) IBOutlet UILabel *mobileInfoTitleL;
 @property (weak, nonatomic) IBOutlet UIView *centerFirstBgView;
 
+@property (weak, nonatomic) IBOutlet UISwitch *careSwitchBtn;
+@property (weak, nonatomic) IBOutlet UILabel *childCareTitleL;
 @property (weak, nonatomic) IBOutlet UIView *centerSecondBgView;
 
+@property (weak, nonatomic) IBOutlet UISwitch *remindSwitchBtn;
+@property (weak, nonatomic) IBOutlet UILabel *remindTitleL;
 @property (weak, nonatomic) IBOutlet UIView *centerThirdBgView;
 
+@property (weak, nonatomic) IBOutlet UISwitch *blackSwitchBtn;
+@property (weak, nonatomic) IBOutlet UILabel *blacklistTitleL;
 @property (weak, nonatomic) IBOutlet UIView *centerFourthBgView;
 @property (weak, nonatomic) IBOutlet UIView *centerBgView;
 
+@property (weak, nonatomic) IBOutlet UISwitch *limitSwitchBtn;
+@property (weak, nonatomic) IBOutlet UILabel *limitTitleL;
 @property (weak, nonatomic) IBOutlet UIView *bottomFirstBgView;
+
+@property (weak, nonatomic) IBOutlet UILabel *upTitleL;
+@property (weak, nonatomic) IBOutlet UISlider *upSlider;
+@property (weak, nonatomic) IBOutlet UILabel *upL;
 @property (weak, nonatomic) IBOutlet UIView *bottomSecondBgView;
+
+@property (weak, nonatomic) IBOutlet UILabel *downTitleL;
+@property (weak, nonatomic) IBOutlet UISlider *downSlider;
+@property (weak, nonatomic) IBOutlet UILabel *downL;
 @property (weak, nonatomic) IBOutlet UIView *bottomThirdBgView;
 @property (weak, nonatomic) IBOutlet UIView *bottomBgView;
 @end
@@ -67,6 +83,17 @@
     self.bottomBgView.layer.shadowOffset = CGSizeMake(0, 5);
     self.bottomBgView.layer.shadowOpacity = 0.5;
     self.bottomBgView.layer.shadowRadius = 5;
+    
+    
+    //缩放
+    //    self.switchBtn.transform = CGAffineTransformMakeScale( 0.8, 0.8);
+    self.careSwitchBtn.onTintColor = SXColorBlue2;
+    self.remindSwitchBtn.onTintColor = SXColorBlue2;
+    self.blackSwitchBtn.onTintColor = SXColorBlue2;
+    self.limitSwitchBtn.onTintColor = SXColorBlue2;
+    
+    self.upSlider.tintColor = SXColorBlue2;
+    self.downSlider.tintColor = SXColorBlue2;
 }
 
 #pragma mark -点击事件-

@@ -77,6 +77,8 @@
 		09462AFD2238A8840063F67E /* SXMobileDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462AFC2238A8840063F67E /* SXMobileDetailHeaderView.m */; };
 		09462AFF2238A88C0063F67E /* SXMobileDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462AFE2238A88C0063F67E /* SXMobileDetailHeaderView.xib */; };
 		09462B022238D6600063F67E /* SXMobileInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462B012238D6600063F67E /* SXMobileInfoController.m */; };
+		09462B052238DBC00063F67E /* SXMobileInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462B042238DBC00063F67E /* SXMobileInfoHeaderView.m */; };
+		09462B072238DBC60063F67E /* SXMobileInfoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462B062238DBC60063F67E /* SXMobileInfoHeaderView.xib */; };
 		095540AC221D073D005A5485 /* SXTitleImageCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540AB221D073D005A5485 /* SXTitleImageCustomButton.m */; };
 		095540AF221D076C005A5485 /* SXTitleImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540AE221D076C005A5485 /* SXTitleImageButton.m */; };
 		095540B5221E4B9A005A5485 /* SXRegistSetPwdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540B4221E4B9A005A5485 /* SXRegistSetPwdController.m */; };
@@ -422,6 +424,9 @@
 		09462AFE2238A88C0063F67E /* SXMobileDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXMobileDetailHeaderView.xib; sourceTree = "<group>"; };
 		09462B002238D6600063F67E /* SXMobileInfoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMobileInfoController.h; sourceTree = "<group>"; };
 		09462B012238D6600063F67E /* SXMobileInfoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMobileInfoController.m; sourceTree = "<group>"; };
+		09462B032238DBC00063F67E /* SXMobileInfoHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMobileInfoHeaderView.h; sourceTree = "<group>"; };
+		09462B042238DBC00063F67E /* SXMobileInfoHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMobileInfoHeaderView.m; sourceTree = "<group>"; };
+		09462B062238DBC60063F67E /* SXMobileInfoHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXMobileInfoHeaderView.xib; sourceTree = "<group>"; };
 		095540AA221D073D005A5485 /* SXTitleImageCustomButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTitleImageCustomButton.h; sourceTree = "<group>"; };
 		095540AB221D073D005A5485 /* SXTitleImageCustomButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXTitleImageCustomButton.m; sourceTree = "<group>"; };
 		095540AD221D076C005A5485 /* SXTitleImageButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTitleImageButton.h; sourceTree = "<group>"; };
@@ -1154,6 +1159,9 @@
 				09462AFB2238A8840063F67E /* SXMobileDetailHeaderView.h */,
 				09462AFC2238A8840063F67E /* SXMobileDetailHeaderView.m */,
 				09462AFE2238A88C0063F67E /* SXMobileDetailHeaderView.xib */,
+				09462B032238DBC00063F67E /* SXMobileInfoHeaderView.h */,
+				09462B042238DBC00063F67E /* SXMobileInfoHeaderView.m */,
+				09462B062238DBC60063F67E /* SXMobileInfoHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2744,6 +2752,7 @@
 				09D5F6332229298500EA681A /* SXForbiddenAppCell.xib in Resources */,
 				B3AF2FF821FB0180001E4E67 /* SXLoginMainHeaderView.xib in Resources */,
 				09462AFA2238A8270063F67E /* SXMobileManagerCell.xib in Resources */,
+				09462B072238DBC60063F67E /* SXMobileInfoHeaderView.xib in Resources */,
 				09D5F5F1222689E300EA681A /* SXHomeMainSectionFooterView.xib in Resources */,
 				09D5F67D222BC87000EA681A /* SXFamilyMemberCell.xib in Resources */,
 				09B9B88622326974000868D5 /* SXDHCPServerHeaderView.xib in Resources */,
@@ -2846,6 +2855,7 @@
 				B348F9A821F71A680000F194 /* UIView+Frame.m in Sources */,
 				B348F9B021F71E180000F194 /* SXHttpTool.m in Sources */,
 				09D5F63922292F2C00EA681A /* SXForbiddenUpdateHeaderView.m in Sources */,
+				09462B052238DBC00063F67E /* SXMobileInfoHeaderView.m in Sources */,
 				09D5F67C222BC87000EA681A /* SXFamilyMemberCell.m in Sources */,
 				09B9B7BB222FBE3F000868D5 /* SXNetStaticParam.m in Sources */,
 				09462AF22237DD130063F67E /* SXAdvancedOptionController.m in Sources */,

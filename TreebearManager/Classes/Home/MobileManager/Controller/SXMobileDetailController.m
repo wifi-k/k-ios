@@ -33,7 +33,7 @@
     headerView.clickCenterFirstBgViewBlock = ^{
         [weakSelf jumpToMobileInfoVC];
     };
-    [self.view addSubview:headerView];
+    self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
 }
 
@@ -41,6 +41,8 @@
     [super viewDidLayoutSubviews];
     
     self.headerView.frame = self.view.bounds;
+    
+    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 750);
 }
 
 #pragma mark -点击事件-

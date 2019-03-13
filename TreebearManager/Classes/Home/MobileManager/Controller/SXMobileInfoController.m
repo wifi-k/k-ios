@@ -7,9 +7,10 @@
 //
 
 #import "SXMobileInfoController.h"
+#import "SXMobileInfoHeaderView.h"
 
 @interface SXMobileInfoController ()
-
+@property (nonatomic, weak) SXMobileInfoHeaderView *headerView;//头部视图
 @end
 
 @implementation SXMobileInfoController
@@ -25,6 +26,18 @@
     self.view.backgroundColor = SXColorWhite;
     
     self.navigationItem.title = @"设备信息";
+    
+    
+//    WS(weakSelf);
+    SXMobileInfoHeaderView *headerView = [SXMobileInfoHeaderView headerView];
+    [self.view addSubview:headerView];
+    self.headerView = headerView;
+}
+
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    self.headerView.frame = self.view.bounds;
 }
 
 @end
