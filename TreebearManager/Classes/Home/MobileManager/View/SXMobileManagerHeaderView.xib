@@ -13,23 +13,40 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SXMobileManagerHeaderView">
-            <rect key="frame" x="0.0" y="0.0" width="358" height="545"/>
+            <rect key="frame" x="0.0" y="0.0" width="358" height="210"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_top_bg" translatesAutoresizingMaskIntoConstraints="NO" id="AH0-Bs-pfG">
-                    <rect key="frame" x="0.0" y="0.0" width="358" height="210"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RP9-cW-kgW">
+                    <rect key="frame" x="15" y="30" width="328" height="90"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="aMg-BC-RQB"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设备列表" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zea-DQ-gjO">
+                    <rect key="frame" x="15" y="150" width="70" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Zea-DQ-gjO" firstAttribute="top" secondItem="RP9-cW-kgW" secondAttribute="bottom" constant="30" id="9td-Yk-rWv"/>
+                <constraint firstItem="RP9-cW-kgW" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="EHy-Ge-hAB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RP9-cW-kgW" secondAttribute="trailing" constant="15" id="Tpb-xv-cVQ"/>
+                <constraint firstItem="Zea-DQ-gjO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="dIh-wx-ZsR"/>
+                <constraint firstItem="RP9-cW-kgW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="k0A-Kc-fgI"/>
+            </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="118.40000000000001" y="99.400299850074973"/>
+            <connections>
+                <outlet property="titleL" destination="Zea-DQ-gjO" id="097-R5-LN1"/>
+                <outlet property="topBgView" destination="RP9-cW-kgW" id="d6e-uT-0Na"/>
+            </connections>
+            <point key="canvasLocation" x="118.40000000000001" y="-51.27436281859071"/>
         </view>
     </objects>
-    <resources>
-        <image name="home_top_bg" width="375" height="249"/>
-    </resources>
 </document>

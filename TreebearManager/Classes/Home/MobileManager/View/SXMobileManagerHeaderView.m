@@ -10,6 +10,8 @@
 
 @interface SXMobileManagerHeaderView ()
 
+@property (weak, nonatomic) IBOutlet UIView *topBgView;
+@property (weak, nonatomic) IBOutlet UILabel *titleL;
 @end
 
 @implementation SXMobileManagerHeaderView
@@ -32,6 +34,8 @@
     
     self.backgroundColor = SXColorWhite;
     
+    self.titleL.font = SXFontBold18;
+    self.titleL.textColor = SXColor333333;
 }
 
 @end
