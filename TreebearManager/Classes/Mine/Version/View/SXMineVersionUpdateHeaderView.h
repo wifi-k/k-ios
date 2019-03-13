@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
+///点击更新版本回调
+@property (nonatomic, copy) void (^clickUpdaeVersionBtnBlock)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

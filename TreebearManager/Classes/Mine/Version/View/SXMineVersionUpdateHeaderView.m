@@ -8,6 +8,21 @@
 
 #import "SXMineVersionUpdateHeaderView.h"
 
+@interface SXMineVersionUpdateHeaderView ()
+@property (weak, nonatomic) IBOutlet UILabel *currentVersionTitleL;
+@property (weak, nonatomic) IBOutlet UILabel *currentVersionL;
+@property (weak, nonatomic) IBOutlet UIView *bottomLineView1;
+@property (weak, nonatomic) IBOutlet UIView *firstBgView;
+
+@property (weak, nonatomic) IBOutlet UILabel *lastestVersionTitleL;
+@property (weak, nonatomic) IBOutlet UILabel *lastestVersionL;
+@property (weak, nonatomic) IBOutlet UIView *bottomLineView2;
+@property (weak, nonatomic) IBOutlet UIView *secondBgView;
+
+@property (weak, nonatomic) IBOutlet UIButton *updateBtn;
+
+@end
+
 @implementation SXMineVersionUpdateHeaderView
 
 + (instancetype)headerView{
@@ -29,6 +44,32 @@
     
     self.backgroundColor = SXColorWhite;
     
+    self.currentVersionTitleL.textColor = SXColor333333;
+    self.lastestVersionTitleL.textColor = SXColor333333;
+    
+    self.currentVersionL.textColor = SXColor999999;
+    self.lastestVersionL.textColor = SXColor999999;
+    
+    self.firstBgView.backgroundColor = SXColorWhite;
+    self.secondBgView.backgroundColor = SXColorWhite;
+    
+    self.bottomLineView1.backgroundColor = SXColorDivideLine;
+    self.bottomLineView2.backgroundColor = SXColorDivideLine;
+    
+    self.bottomLineView1.height = 0.5;
+    self.bottomLineView2.height = 0.1;
+    
+    self.updateBtn.backgroundColor = SXColorWhite;
+    [self.updateBtn setTitleColor:SXColor999999 forState:UIControlStateNormal];
+    [self.updateBtn roundViewWithRadius:22.5f borderColor:SXColor999999 borderWidth: 1.0f];
 }
+
+#pragma mark -Event-
+- (IBAction)clickUpdateBtn:(UIButton *)sender {
+    if (self.clickUpdaeVersionBtnBlock) {
+        self.clickUpdaeVersionBtnBlock();
+    }
+}
+
 
 @end

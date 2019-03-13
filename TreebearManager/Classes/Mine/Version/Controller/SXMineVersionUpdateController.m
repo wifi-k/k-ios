@@ -26,9 +26,9 @@
     //2.头部视图
     WS(weakSelf);
     SXMineVersionUpdateHeaderView *headerView = [SXMineVersionUpdateHeaderView headerView];
-//    headerView.clickBindingBtnBlock = ^{
-//        [weakSelf jumpToImagePickerVC];
-//    };
+    headerView.clickUpdaeVersionBtnBlock = ^{
+        [weakSelf jumpToImagePickerVC];
+    };
     [self.view addSubview:headerView];
     self.headerView = headerView;
 }
@@ -37,6 +37,10 @@
     [super viewDidLayoutSubviews];
     
     self.headerView.frame = self.view.bounds;
+}
+
+- (void)jumpToImagePickerVC{
+    [MBProgressHUD showMessage:@"更新啊" toView:self.view];
 }
 
 @end
