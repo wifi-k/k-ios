@@ -11,7 +11,6 @@
 #import "SXMessageController.h"
 #import "SXParentControlController.h"
 #import "SXHealtyControlController.h"
-#import "SXCheckReportController.h"
 #import "SXWifiSettingController.h"
 #import "SXFamilyMemberController.h"
 #import "SXMobileManagerController.h"
@@ -121,18 +120,18 @@
 - (void)jumpToWifiSettingVC:(NSInteger)tag{
     switch (tag) {
         case 0:{
-            SXParentControlController *switchVC = [[SXParentControlController alloc] init];
-            [self.navigationController pushViewController:switchVC animated:YES];
+            SXParentControlController *parentVC = [[SXParentControlController alloc] init];
+            [self.navigationController pushViewController:parentVC animated:YES];
         }
             break;
         case 1:{
-            SXHealtyControlController *switchVC = [[SXHealtyControlController alloc] init];
-            [self.navigationController pushViewController:switchVC animated:YES];
+            SXHealtyControlController *healthVC = [[SXHealtyControlController alloc] init];
+            [self.navigationController pushViewController:healthVC animated:YES];
         }
             break;
         case 2:{
-            SXCheckReportController *switchVC = [[SXCheckReportController alloc] init];
-            [self.navigationController pushViewController:switchVC animated:YES];
+            SXHomeReportController *reportVC = [[SXHomeReportController alloc] init];
+            [self.navigationController pushViewController:reportVC animated:YES];
         }
             break;
         case 3:{

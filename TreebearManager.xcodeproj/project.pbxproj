@@ -222,9 +222,6 @@
 		09FB473022239E3500809273 /* SXHomeMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB472E22239E3500809273 /* SXHomeMessageCell.m */; };
 		09FB473122239E3500809273 /* SXHomeMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FB472F22239E3500809273 /* SXHomeMessageCell.xib */; };
 		09FB47342223BD8000809273 /* SXHomeMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB47332223BD8000809273 /* SXHomeMessageModel.m */; };
-		09FB47462223E52200809273 /* SXCheckReportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB47452223E52200809273 /* SXCheckReportController.m */; };
-		09FB47492223E56000809273 /* SXSwitchBoardHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB47482223E56000809273 /* SXSwitchBoardHeaderView.m */; };
-		09FB474B2223E56600809273 /* SXSwitchBoardHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FB474A2223E56600809273 /* SXSwitchBoardHeaderView.xib */; };
 		09FB474E2223E83600809273 /* SXHealtyControlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB474D2223E83600809273 /* SXHealtyControlController.m */; };
 		09FB47512223E87300809273 /* SXHealtyControlHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB47502223E87300809273 /* SXHealtyControlHeaderView.m */; };
 		09FB47532223E8B600809273 /* SXHealtyControlHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FB47522223E8B600809273 /* SXHealtyControlHeaderView.xib */; };
@@ -681,11 +678,6 @@
 		09FB472F22239E3500809273 /* SXHomeMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXHomeMessageCell.xib; sourceTree = "<group>"; };
 		09FB47322223BD8000809273 /* SXHomeMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMessageModel.h; sourceTree = "<group>"; };
 		09FB47332223BD8000809273 /* SXHomeMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMessageModel.m; sourceTree = "<group>"; };
-		09FB47442223E52200809273 /* SXCheckReportController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXCheckReportController.h; sourceTree = "<group>"; };
-		09FB47452223E52200809273 /* SXCheckReportController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXCheckReportController.m; sourceTree = "<group>"; };
-		09FB47472223E56000809273 /* SXSwitchBoardHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXSwitchBoardHeaderView.h; sourceTree = "<group>"; };
-		09FB47482223E56000809273 /* SXSwitchBoardHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXSwitchBoardHeaderView.m; sourceTree = "<group>"; };
-		09FB474A2223E56600809273 /* SXSwitchBoardHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXSwitchBoardHeaderView.xib; sourceTree = "<group>"; };
 		09FB474C2223E83600809273 /* SXHealtyControlController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHealtyControlController.h; sourceTree = "<group>"; };
 		09FB474D2223E83600809273 /* SXHealtyControlController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHealtyControlController.m; sourceTree = "<group>"; };
 		09FB474F2223E87300809273 /* SXHealtyControlHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHealtyControlHeaderView.h; sourceTree = "<group>"; };
@@ -1898,34 +1890,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		09FB473E2223E50400809273 /* SwitchBoard */ = {
-			isa = PBXGroup;
-			children = (
-				09FB473F2223E50400809273 /* Controller */,
-				09FB47402223E50400809273 /* View */,
-			);
-			path = SwitchBoard;
-			sourceTree = "<group>";
-		};
-		09FB473F2223E50400809273 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				09FB47442223E52200809273 /* SXCheckReportController.h */,
-				09FB47452223E52200809273 /* SXCheckReportController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		09FB47402223E50400809273 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				09FB47472223E56000809273 /* SXSwitchBoardHeaderView.h */,
-				09FB47482223E56000809273 /* SXSwitchBoardHeaderView.m */,
-				09FB474A2223E56600809273 /* SXSwitchBoardHeaderView.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		09FB47412223E50400809273 /* ParentControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -2020,7 +1984,6 @@
 				09F233042223EE3B0086AB35 /* XiaoKi */,
 				09FB473B2223E50400809273 /* HealtyMode */,
 				09FB47412223E50400809273 /* ParentControl */,
-				09FB473E2223E50400809273 /* SwitchBoard */,
 				09FB47352223C2FD00809273 /* WifiSetting */,
 				09FB472622239D6C00809273 /* Message */,
 				B348F96C21F6EAD30000F194 /* Main */,
@@ -2748,7 +2711,6 @@
 				09D5F5EC2226820B00EA681A /* SXHomeMainSectionFooterView2.xib in Resources */,
 				09D5F622222925C200EA681A /* SXParentControlHeaderView.xib in Resources */,
 				09B9B8362230EF5D000868D5 /* SXNetPreventCell.xib in Resources */,
-				09FB474B2223E56600809273 /* SXSwitchBoardHeaderView.xib in Resources */,
 				09D5F678222BC71200EA681A /* SXFamilyMemberFooterView.xib in Resources */,
 				09D5F682222D23C900EA681A /* SXNetOptionCell.xib in Resources */,
 				09F233192223F03C0086AB35 /* SXHomeXiaoKiCell.xib in Resources */,
@@ -2931,7 +2893,6 @@
 				09D5F65A222B8D6100EA681A /* SXUpdateVersionHeaderView.m in Sources */,
 				09B9B87A22321536000868D5 /* SXTimeControlEditHeaderView.m in Sources */,
 				09B9B82E2230ECE0000868D5 /* SXRestartController.m in Sources */,
-				09FB47462223E52200809273 /* SXCheckReportController.m in Sources */,
 				09462AF5223896FB0063F67E /* SXOnlineOptionButton.m in Sources */,
 				09D5F6042227E4DA00EA681A /* SXMineUserInfoModel.m in Sources */,
 				09F233092223EE4D0086AB35 /* SXXiaoKiController.m in Sources */,
@@ -2951,7 +2912,6 @@
 				09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */,
 				092D6CF6220062C700538AC8 /* DES3EncryptUtil.m in Sources */,
 				09118703221522BF00938D9F /* GACSocketModel.m in Sources */,
-				09FB47492223E56000809273 /* SXSwitchBoardHeaderView.m in Sources */,
 				092D6D152202E35000538AC8 /* SXCodeLoginController.m in Sources */,
 				092D6CFB2200731300538AC8 /* SXNotificationCenterTool.m in Sources */,
 				09B9B85F22313F6C000868D5 /* SXForbiddenAppOptionModel.m in Sources */,
