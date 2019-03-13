@@ -12,6 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SXMobileDetailHeaderView : UIView
 
++ (instancetype)headerView;
+
+///点击设备信息回调
+@property (nonatomic, copy) void (^clickCenterFirstBgViewBlock)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END
