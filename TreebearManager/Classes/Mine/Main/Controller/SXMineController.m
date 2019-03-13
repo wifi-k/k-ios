@@ -7,6 +7,8 @@
 //
 
 #import "SXMineController.h"
+#import "SXXiaoKiController.h"
+#import "SXMineChildController.h"
 #import "SXMineListCell.h"
 #import "SXRootTool.h"
 #import "SXMineHeaderView.h"
@@ -16,9 +18,20 @@
 @interface SXMineController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak) SXMineHeaderView *headerView;//头部视图
 @property (nonatomic, weak) UITableView *tableView;//列表视图
+
+@property (nonatomic, strong) NSMutableArray *dataArray;//数据源
 @end
 
 @implementation SXMineController
+
+#pragma mark -getter-
+- (NSMutableArray *)dataArray{
+    if (_dataArray == nil) {
+        NSArray *array = @[@{@"name":@"我的小K",@"avatar":@"mine_xiaok_mine"},@{@"name":@"我的孩子",@"avatar":@"mine_xiaok_child"}];
+        _dataArray = [NSMutableArray arrayWithArray:[SXMineUserInfoModel mj_objectArrayWithKeyValuesArray:array]];
+    }
+    return _dataArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,6 +47,9 @@
     self.view.backgroundColor = SXColorRandom;
     
     self.navigationItem.title = @"我的";
+    
+    UIBarButtonItem *right = [UIBarButtonItem barButtonItemWithTitle:@"设置" target:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = right;
     
     //1.创建tableView
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
@@ -61,7 +77,12 @@
     
     self.tableView.frame = self.view.bounds;
     
-     self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 150);
+    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 120);
+}
+
+#pragma mark -点击事件-
+- (void)rightButtonAction:(UIButton *)btn{
+    DLog(@"titleLabel.text:%@",btn.titleLabel.text);
 }
 
 #pragma mark -获取用户信息-
@@ -92,28 +113,37 @@
 }
 
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 3;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.dataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    SXMineUserInfoModel *model = self.dataArray[indexPath.row];
     SXMineListCell *cell = [SXMineListCell cellWithTableView:tableView];
+    cell.model = model;
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 80.0f;
+    return 60.0f;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+//    if (indexPath.row == 0) {
+//        [SXRootTool changeToHomeVC];
+//    } else{
+//        [SXRootTool chooseRootWithLoginVC:SXDelegateWindow];
+//    }
+    
     if (indexPath.row == 0) {
-        [SXRootTool changeToHomeVC];
+        SXXiaoKiController *xiaokVC = [[SXXiaoKiController alloc] init];
+        [self.navigationController pushViewController:xiaokVC animated:YES];
     } else{
-        [SXRootTool chooseRootWithLoginVC:SXDelegateWindow];
+        SXMineChildController *childVC = [[SXMineChildController alloc] init];
+        [self.navigationController pushViewController:childVC animated:YES];
     }
 }
 

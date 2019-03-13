@@ -33,6 +33,9 @@
     headerView.clickCenterFirstBgViewBlock = ^{
         [weakSelf jumpToMobileInfoVC];
     };
+    headerView.clickEditBtnBlock = ^{
+        [MBProgressHUD showMessage:@"编辑中" toView:weakSelf.view];
+    };
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
 }

@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXMineUserInfoModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXMineListCell : UITableViewCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
+
+///模型
+@property (nonatomic, strong) SXMineUserInfoModel *model;
 
 @end
 

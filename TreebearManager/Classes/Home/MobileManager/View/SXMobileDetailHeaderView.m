@@ -9,7 +9,10 @@
 #import "SXMobileDetailHeaderView.h"
 
 @interface SXMobileDetailHeaderView ()
-
+@property (weak, nonatomic) IBOutlet UIImageView *topIconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameL;
+@property (weak, nonatomic) IBOutlet UIButton *editBtn;
+@property (weak, nonatomic) IBOutlet UILabel *statusL;
 @property (weak, nonatomic) IBOutlet UIView *topBgView;
 
 @property (weak, nonatomic) IBOutlet UILabel *mobileInfoTitleL;
@@ -100,6 +103,12 @@
 - (void)clickCenterFirstBgView{
     if (self.clickCenterFirstBgViewBlock) {
         self.clickCenterFirstBgViewBlock();
+    }
+}
+
+- (IBAction)clickEditBtn:(UIButton *)sender {
+    if (self.clickEditBtnBlock) {
+        self.clickEditBtnBlock();
     }
 }
 

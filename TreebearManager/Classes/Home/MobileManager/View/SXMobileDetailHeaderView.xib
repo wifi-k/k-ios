@@ -42,6 +42,9 @@
                                 <constraint firstAttribute="width" constant="30" id="sAG-0b-tMv"/>
                             </constraints>
                             <state key="normal" image="img_mobile_edit"/>
+                            <connections>
+                                <action selector="clickEditBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="EEz-C6-QXm"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:00 状态" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jnu-Mw-H7Q">
                             <rect key="frame" x="154.5" y="124.5" width="76" height="18"/>
@@ -374,12 +377,16 @@
                 <outlet property="downL" destination="UX5-5A-DLj" id="h1X-YV-Cds"/>
                 <outlet property="downSlider" destination="knc-Qo-VRG" id="rXa-PH-Niu"/>
                 <outlet property="downTitleL" destination="M4e-hA-uXp" id="rXx-10-dUP"/>
+                <outlet property="editBtn" destination="PFi-8v-N0Q" id="Q3n-Bi-JPV"/>
                 <outlet property="limitSwitchBtn" destination="ZfE-qW-MP4" id="jOP-Sj-3I2"/>
                 <outlet property="limitTitleL" destination="bhQ-PZ-rXu" id="DC0-qH-z9E"/>
                 <outlet property="mobileInfoTitleL" destination="Hri-TA-iRM" id="mlb-J4-QTN"/>
+                <outlet property="nameL" destination="sLf-l6-nPU" id="7OX-1P-oVE"/>
                 <outlet property="remindSwitchBtn" destination="x37-Sa-acS" id="TeU-Hj-cu6"/>
                 <outlet property="remindTitleL" destination="7hc-hd-k0T" id="xae-PC-yTF"/>
+                <outlet property="statusL" destination="Jnu-Mw-H7Q" id="TV7-BF-xQT"/>
                 <outlet property="topBgView" destination="ucG-OB-S6V" id="6ro-fS-we3"/>
+                <outlet property="topIconImageView" destination="OJI-y9-6R2" id="WIc-c3-5Oj"/>
                 <outlet property="upL" destination="0CF-3t-xsC" id="Puw-kc-GIJ"/>
                 <outlet property="upSlider" destination="hUh-dz-Rtq" id="RKm-K7-ODN"/>
                 <outlet property="upTitleL" destination="lz7-lv-AQj" id="ars-I6-3bU"/>

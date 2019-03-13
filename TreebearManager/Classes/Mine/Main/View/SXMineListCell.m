@@ -9,6 +9,8 @@
 #import "SXMineListCell.h"
 
 @interface SXMineListCell ()
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameL;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView;
 @end
 
@@ -36,7 +38,14 @@ static NSString *SXMineListCellID = @"SXMineListCellID";
 //初始化UI
 - (void)setUpUI{
     
-    self.bottomLineView.backgroundColor = SXColorRandom;
+    self.bottomLineView.backgroundColor = SXColorDivideLine;
+}
+
+- (void)setModel:(SXMineUserInfoModel *)model{
+    _model = model;
+    
+    self.iconImageView.image = [UIImage imageNamed:model.avatar];
+    self.nameL.text = model.name;
 }
 
 @end
