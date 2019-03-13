@@ -10,6 +10,7 @@
 #import "SXXiaoKiController.h"
 #import "SXMineChildController.h"
 #import "SXMineSettingController.h"
+#import "SXPersonalInfoController.h"
 #import "SXMineListCell.h"
 #import "SXRootTool.h"
 #import "SXMineHeaderView.h"
@@ -34,6 +35,19 @@
     return _dataArray;
 }
 
+#pragma mark -life recycle-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    //设置当前导航条背景色
+    self.navigationController.navigationBar.barTintColor = SXColor2E2E2E;
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    //设置当前导航条背景色
+    self.navigationController.navigationBar.barTintColor = UIColor.whiteColor;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -45,9 +59,9 @@
 
 - (void)setUpUI{
     
-    self.view.backgroundColor = SXColorRandom;
+    self.view.backgroundColor = SXColorWhite;
     
-    self.navigationItem.title = @"我的";
+//    self.navigationItem.title = @"我的";
     
     UIBarButtonItem *right = [UIBarButtonItem barButtonItemWithTitle:@"设置" target:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = right;
@@ -62,11 +76,16 @@
     tableView.showsHorizontalScrollIndicator = NO;
     [self.view addSubview:tableView];
     self.tableView = tableView;
+    self.tableView.bounces = NO;
     
     //2.头部视图
     WS(weakSelf);
     SXMineHeaderView *headerView = [SXMineHeaderView headerView];
-    headerView.clickBindingBtnBlock = ^{
+    headerView.clickMobileBlock = ^{
+        DLog(@"clickMobileBlock");
+        [weakSelf jumpToPersonVC];
+    };
+    headerView.clickIconBtnBlock = ^{
         [weakSelf jumpToImagePickerVC];
     };
     self.tableView.tableHeaderView = headerView;
@@ -85,6 +104,11 @@
 - (void)rightButtonAction:(UIButton *)btn{
     SXMineSettingController *settingVC = [[SXMineSettingController alloc] init];
     [self.navigationController pushViewController:settingVC animated:YES];
+}
+
+- (void)jumpToPersonVC{
+    SXPersonalInfoController *personVC = [[SXPersonalInfoController alloc] init];
+    [self.navigationController pushViewController:personVC animated:YES];
 }
 
 #pragma mark -获取用户信息-

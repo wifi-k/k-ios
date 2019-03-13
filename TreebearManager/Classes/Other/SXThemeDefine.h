@@ -46,6 +46,7 @@
 //文本灰色
 #define SXColorB2B2B2  [UIColor hex:@"B2B2B2"]
 #define SXColor2F2F2F  [UIColor hex:@"2F2F2F"]
+#define SXColor2E2E2E  [UIColor hex:@"2E2E2E"]//深灰
 #define SXColorC5C5C5  UIColorFromRGB(0xC5C5C5) // 浅灰
 
 //按钮状态颜色

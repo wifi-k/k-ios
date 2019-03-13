@@ -14,8 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
-///点击登录按钮回调
-@property (nonatomic, copy) void (^clickBindingBtnBlock)(void);
+///点击手机号回调
+@property (nonatomic, copy) void (^clickMobileBlock)(void);
+
+///点击头像按钮回调
+@property (nonatomic, copy) void (^clickIconBtnBlock)(void);
 
 @end
 

@@ -57,6 +57,9 @@
 		092D6D342203F9F300538AC8 /* SXHomeMainSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6D332203F9F300538AC8 /* SXHomeMainSectionHeaderView.m */; };
 		092D6D3722041C4900538AC8 /* SXHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6D3622041C4900538AC8 /* SXHomeHeaderView.m */; };
 		092D6D3922041C5200538AC8 /* SXHomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092D6D3822041C5200538AC8 /* SXHomeHeaderView.xib */; };
+		0936B721223928C200E68C4C /* SXPersonalInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0936B720223928C200E68C4C /* SXPersonalInfoController.m */; };
+		0936B72422392B5100E68C4C /* SXPersonalInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0936B72322392B5100E68C4C /* SXPersonalInfoHeaderView.m */; };
+		0936B72622392B5900E68C4C /* SXPersonalInfoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0936B72522392B5900E68C4C /* SXPersonalInfoHeaderView.xib */; };
 		09462ACB22375DEE0063F67E /* SXOnlineOptionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */; };
 		09462ACD22375DF90063F67E /* SXOnlineOptionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */; };
 		09462AD12237898C0063F67E /* XDSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACF2237898C0063F67E /* XDSDropDownMenu.m */; };
@@ -398,6 +401,11 @@
 		092D6D3522041C4900538AC8 /* SXHomeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeHeaderView.h; sourceTree = "<group>"; };
 		092D6D3622041C4900538AC8 /* SXHomeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeHeaderView.m; sourceTree = "<group>"; };
 		092D6D3822041C5200538AC8 /* SXHomeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXHomeHeaderView.xib; sourceTree = "<group>"; };
+		0936B71F223928C200E68C4C /* SXPersonalInfoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPersonalInfoController.h; sourceTree = "<group>"; };
+		0936B720223928C200E68C4C /* SXPersonalInfoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPersonalInfoController.m; sourceTree = "<group>"; };
+		0936B72222392B5100E68C4C /* SXPersonalInfoHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPersonalInfoHeaderView.h; sourceTree = "<group>"; };
+		0936B72322392B5100E68C4C /* SXPersonalInfoHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPersonalInfoHeaderView.m; sourceTree = "<group>"; };
+		0936B72522392B5900E68C4C /* SXPersonalInfoHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXPersonalInfoHeaderView.xib; sourceTree = "<group>"; };
 		09462AC922375DEE0063F67E /* SXOnlineOptionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineOptionHeaderView.h; sourceTree = "<group>"; };
 		09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineOptionHeaderView.m; sourceTree = "<group>"; };
 		09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXOnlineOptionHeaderView.xib; sourceTree = "<group>"; };
@@ -1033,6 +1041,42 @@
 				092D6D042200748F00538AC8 /* SXUserArchiveTool.m */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		0936B71B223928B500E68C4C /* PersonalInfo */ = {
+			isa = PBXGroup;
+			children = (
+				0936B71C223928B500E68C4C /* Controller */,
+				0936B71D223928B500E68C4C /* Model */,
+				0936B71E223928B500E68C4C /* View */,
+			);
+			path = PersonalInfo;
+			sourceTree = "<group>";
+		};
+		0936B71C223928B500E68C4C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0936B71F223928C200E68C4C /* SXPersonalInfoController.h */,
+				0936B720223928C200E68C4C /* SXPersonalInfoController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0936B71D223928B500E68C4C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0936B71E223928B500E68C4C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0936B72222392B5100E68C4C /* SXPersonalInfoHeaderView.h */,
+				0936B72322392B5100E68C4C /* SXPersonalInfoHeaderView.m */,
+				0936B72522392B5900E68C4C /* SXPersonalInfoHeaderView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		09462ACE223789680063F67E /* DropMenu */ = {
@@ -2143,6 +2187,7 @@
 		B348F95621F6C4E10000F194 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				0936B71B223928B500E68C4C /* PersonalInfo */,
 				09462B232238F60A0063F67E /* Version */,
 				09462B1E2238F57B0063F67E /* AboutUs */,
 				09462B122238F0FF0063F67E /* MineSetting */,
@@ -2899,6 +2944,7 @@
 				09D5F67D222BC87000EA681A /* SXFamilyMemberCell.xib in Resources */,
 				09B9B88622326974000868D5 /* SXDHCPServerHeaderView.xib in Resources */,
 				09B9B85122311126000868D5 /* SXAdvancedOptionCell.xib in Resources */,
+				0936B72622392B5900E68C4C /* SXPersonalInfoHeaderView.xib in Resources */,
 				092D6CE622005A1A00538AC8 /* SXEmptyDataEventView.xib in Resources */,
 				09D5F65C222B8D6A00EA681A /* SXUpdateVersionHeaderView.xib in Resources */,
 				09B9B83B2230F5A3000868D5 /* SXAdvancedHeaderView.xib in Resources */,
@@ -3067,6 +3113,7 @@
 				B348F98121F711B90000F194 /* UIColor+BFKit.m in Sources */,
 				B348F97821F6EB170000F194 /* SXPhotoController.m in Sources */,
 				B348F97D21F711450000F194 /* SXConst.m in Sources */,
+				0936B72422392B5100E68C4C /* SXPersonalInfoHeaderView.m in Sources */,
 				B3AF302421FE9113001E4E67 /* SXBaseTablePlainRrfreshController.m in Sources */,
 				09D5F63622292C1500EA681A /* SXForbiddenUpdateController.m in Sources */,
 				09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */,
@@ -3121,6 +3168,7 @@
 				09D5F66B222BC24700EA681A /* SXAddXiaoKiController.m in Sources */,
 				B348F99D21F719850000F194 /* UIImage+Extension.m in Sources */,
 				09D5F5EA2226820000EA681A /* SXHomeMainSectionFooterView2.m in Sources */,
+				0936B721223928C200E68C4C /* SXPersonalInfoController.m in Sources */,
 				0900F520222D50DD00250155 /* SXNetBroadbandHeaderView.m in Sources */,
 				09B9B8252230EC8D000868D5 /* SXLANPortController.m in Sources */,
 				B348F9B321F71E2D0000F194 /* SXUploadParam.m in Sources */,

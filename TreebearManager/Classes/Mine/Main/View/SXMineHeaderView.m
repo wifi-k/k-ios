@@ -9,8 +9,9 @@
 #import "SXMineHeaderView.h"
 
 @interface SXMineHeaderView ()
+@property (weak, nonatomic) IBOutlet UILabel *nameL;
+@property (weak, nonatomic) IBOutlet UILabel *mobileL;
 @property (weak, nonatomic) IBOutlet UIButton *iconBtn;
-
 @end
 
 @implementation SXMineHeaderView
@@ -29,16 +30,32 @@
     [self setUpUI];
 }
 
+#pragma mark -UI-
 - (void)setUpUI{
     
-    self.backgroundColor = SXColorGray8;
+    self.backgroundColor = SXColor2E2E2E;
+    
+    self.nameL.font = SXFontBold16;
+    self.mobileL.textColor = SXColorWhite;
+    
+    //1.1添加点击手势
+    self.mobileL.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickMobile)];
+    [self.mobileL addGestureRecognizer:tap];
     
     [self.iconBtn roundViewWithRadius:30.0f];
 }
 
+#pragma mark -Event-
+- (void)clickMobile{
+    if (self.clickMobileBlock) {
+        self.clickMobileBlock();
+    }
+}
+
 - (IBAction)clickIconBtn:(UIButton *)sender {
-    if (self.clickBindingBtnBlock) {
-        self.clickBindingBtnBlock();
+    if (self.clickIconBtnBlock) {
+        self.clickIconBtnBlock();
     }
 }
 
