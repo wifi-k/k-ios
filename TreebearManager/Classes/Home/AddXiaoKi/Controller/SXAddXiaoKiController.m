@@ -57,6 +57,9 @@
     [self.view addSubview:headerView];
     self.headerView = headerView;
     self.headerView.hidden = YES;
+    
+    //尝试登录
+    [self loginWithData];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -69,6 +72,31 @@
     [SXNotificationCenter removeObserver:self];
 }
 
+#pragma mark -Net-
+- (void)loginWithData{
+    //1.尝试登录
+    WS(weakSelf);
+    SXNetBroadbandParam *param = [SXNetBroadbandParam param];
+    param.name = @"admin";
+    param.passwd = @"123456".md5String;
+    [SXAddXiaokiNetTool loginWithPasswdDataWithParams:param.mj_keyValues Success:^{
+        DLog(@"登录成功!");
+        [weakSelf getNodeData];
+    } failure:^(NSError * _Nonnull error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
+- (void)getNodeData{
+    [SXAddXiaokiNetTool getNodeWithDataWithSuccess:^(NSString * _Nonnull node) {
+        DLog(@"node:%@",node);
+    } failure:^(NSError * _Nonnull error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
 #pragma mark -事件监听-
 - (void)applicationBecomeActive{
     //1.获取当前连接wifi信息
@@ -79,7 +107,6 @@
 - (void)getWifiInfo{
     NSString *wifiSSID = [XKGetWifiNetTool getWifiSSID];
     DLog(@"wifi:%@",wifiSSID);
-#warning mark -更换正式-
     if ([wifiSSID containsString:@"Xiaomi"] || [wifiSSID containsString:@"Office"] || [wifiSSID containsString:@"truelv"]) {
         self.headerView.title = [NSString stringWithFormat:@"您已连接wifi名称为'%@'的设备，点击立即绑定设备",wifiSSID];
         self.headerView.hidden = NO;
@@ -95,7 +122,7 @@
 //    }
 }
 
-#pragma mark -跳转网络选择页面-
+#pragma mark -网络选择页面-
 - (void)jumpToNetOptionVC{
     WS(weakSelf);
     SXNetBroadbandParam *param = [SXNetBroadbandParam param];
@@ -108,9 +135,6 @@
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
     }];
-    
-//    SXNetOptionController *netVC = [[SXNetOptionController alloc] init];
-//    [self.navigationController pushViewController:netVC animated:YES];
 }
 
 #pragma mark -视图弹窗-

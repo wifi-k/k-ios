@@ -30,6 +30,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///设置wifi参数
 + (void)ssidSettingWithDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
+///获取节点信息
++ (void)getNodeWithDataWithSuccess:(void (^)(NSString *node))success failure:(void (^)(NSError *error))failure;
+
 @end
 
 NS_ASSUME_NONNULL_END

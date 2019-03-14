@@ -34,6 +34,7 @@ extern NSString *const dynamic_set;
 extern NSString *const network_status;
 
 extern NSString *const ssid_set;
+extern NSString *const node_get;
 @end
 
 NS_ASSUME_NONNULL_END

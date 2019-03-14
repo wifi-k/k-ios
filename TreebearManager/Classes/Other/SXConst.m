@@ -33,5 +33,6 @@ NSString *const dynamic_set = @"dynamic/set";
 NSString *const network_status = @"network/status";
 
 NSString *const ssid_set = @"ssid/set";
+NSString *const node_get = @"node/get";
 
 @end

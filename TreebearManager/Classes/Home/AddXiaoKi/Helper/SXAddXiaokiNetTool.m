@@ -82,9 +82,24 @@
 }
 
 + (void)ssidSettingWithDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure{
-    [XKNetRequestTool POST:ssid_set parameters:nil success:^(id response) {
+    [XKNetRequestTool POST:ssid_set parameters:params success:^(id response) {
         if (success){
             success();
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
++ (void)getNodeWithDataWithSuccess:(void (^)(NSString *node))success failure:(void (^)(NSError *error))failure{
+    [XKNetRequestTool POST:ssid_set parameters:nil success:^(id response) {
+        
+        if (![response isKindOfClass:NSString.class]) return;
+        
+        if (success){
+            success(response);
         }
     } failure:^(NSError *error) {
         if (failure) {
