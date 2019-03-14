@@ -18,9 +18,18 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RP9-cW-kgW">
                     <rect key="frame" x="0.0" y="0.0" width="358" height="120"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wMS-1o-mTN">
+                            <rect key="frame" x="0.0" y="0.0" width="358" height="120"/>
+                        </scrollView>
+                    </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="wMS-1o-mTN" secondAttribute="bottom" id="AkV-6x-8jT"/>
                         <constraint firstAttribute="height" constant="120" id="aMg-BC-RQB"/>
+                        <constraint firstItem="wMS-1o-mTN" firstAttribute="top" secondItem="RP9-cW-kgW" secondAttribute="top" id="djO-OS-LIM"/>
+                        <constraint firstAttribute="trailing" secondItem="wMS-1o-mTN" secondAttribute="trailing" id="uvb-gV-AIb"/>
+                        <constraint firstItem="wMS-1o-mTN" firstAttribute="leading" secondItem="RP9-cW-kgW" secondAttribute="leading" id="zD1-u2-hAB"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设备列表" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zea-DQ-gjO">
@@ -43,6 +52,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="scrollView" destination="wMS-1o-mTN" id="0eF-0x-ELF"/>
                 <outlet property="titleL" destination="Zea-DQ-gjO" id="097-R5-LN1"/>
                 <outlet property="topBgView" destination="RP9-cW-kgW" id="d6e-uT-0Na"/>
             </connections>

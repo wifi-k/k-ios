@@ -9,8 +9,9 @@
 #import "SXMobileManagerHeaderView.h"
 
 @interface SXMobileManagerHeaderView ()
-
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *topBgView;
+
 @property (weak, nonatomic) IBOutlet UILabel *titleL;
 @end
 
@@ -33,9 +34,30 @@
 - (void)setUpUI{
     
     self.backgroundColor = SXColorWhite;
+    self.topBgView.backgroundColor = SXColorWhite;
     
     self.titleL.font = SXFontBold18;
     self.titleL.textColor = SXColor333333;
+    
+    CGFloat itemX = 0;
+    CGFloat itemY = 0;
+    CGFloat itemW = 200.0f;
+    CGFloat itemH = 120;
+    self.scrollView.contentSize = CGSizeMake(3*itemW, 120);
+    self.scrollView.showsHorizontalScrollIndicator = NO;
+    for (int i=0; i<3; i++) {
+        itemX = i * itemW;
+        UIView *itemBgV = [[UIView alloc] init];
+        itemBgV.frame = CGRectMake(itemX, itemY, itemW, itemH);
+        itemBgV.backgroundColor = SXColorRandom;
+        [self.scrollView addSubview:itemBgV];
+        
+        UIImageView *imageV = [[UIImageView alloc] init];
+        imageV.frame = CGRectMake(10, 10, 180, 100);
+        imageV.image = [UIImage imageNamed:@"home_top_bg"];
+        imageV.contentMode = UIViewContentModeScaleAspectFill;
+        [itemBgV addSubview:imageV];
+    }
 }
 
 @end

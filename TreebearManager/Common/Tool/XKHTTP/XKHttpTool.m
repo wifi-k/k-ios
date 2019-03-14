@@ -151,7 +151,7 @@
 
 + (void)setSessionManager:(AFHTTPSessionManager *)manager{
     //设置超时时间
-    manager.requestSerializer.timeoutInterval = 160;
+    manager.requestSerializer.timeoutInterval = 30;
     
     //请求的序列化
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -162,7 +162,7 @@
     
     //设置请求基本参数
     [manager.requestSerializer  setValue:@"utf-8"  forHTTPHeaderField:@"Accept-Encoding"];
-    //[manager.requestSerializer  setValue:@"application/json;charset=utf-8"  forHTTPHeaderField:@"Content－Type"];
+    [manager.requestSerializer  setValue:@"application/json"  forHTTPHeaderField:@"Content－Type"];
     [manager.requestSerializer setValue:@"2019.3.1" forHTTPHeaderField:@"Api-Version"];
     NSString *tokenStr = XKUserMember.sharedXKUserMember.token;
     if ([NSString isNotEmpty:tokenStr]) {
