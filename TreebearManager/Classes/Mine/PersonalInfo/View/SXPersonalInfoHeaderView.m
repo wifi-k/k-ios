@@ -7,6 +7,7 @@
 //
 
 #import "SXPersonalInfoHeaderView.h"
+#import "SXAlertControllerTool.h"
 
 @interface SXPersonalInfoHeaderView ()
 
@@ -24,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIView *thirdBgView;
 
 @property (weak, nonatomic) IBOutlet UILabel *pwdTitleL;
+@property (weak, nonatomic) IBOutlet UIView *bottomLineView4;
 @property (weak, nonatomic) IBOutlet UIView *fourthBgView;
 @end
 
@@ -61,9 +63,11 @@
     self.bottomLineView1.backgroundColor = SXColorDivideLine;
     self.bottomLineView2.backgroundColor = SXColorDivideLine;
     self.bottomLineView3.backgroundColor = SXColorDivideLine;
+    self.bottomLineView4.backgroundColor = SXColorDivideLine;
     self.bottomLineView1.height = 0.5f;
     self.bottomLineView2.height = 0.5f;
     self.bottomLineView3.height = 0.5f;
+    self.bottomLineView4.height = 0.5f;
     
     [self.iconImageView roundViewWithRadius:22.5f];
     
@@ -83,6 +87,12 @@
 
 #pragma mark -Event-
 - (void)clickIconBgView{
+    [SXAlertControllerTool actionSheetWithTitle:@"提示" message:nil confirm:^(UIAlertAction * _Nonnull action) {
+        DLog(@"action:%@",action.title);
+    } cancel:^(UIAlertAction * _Nonnull action) {
+        DLog(@"action:%@",action.title);
+    }];
+    
     if (self.clickIconBgViewBlock) {
         self.clickIconBgViewBlock();
     }

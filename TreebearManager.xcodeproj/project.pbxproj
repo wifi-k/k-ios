@@ -64,6 +64,8 @@
 		0936B72C2239F0DB00E68C4C /* SXNickNameUpdateHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0936B72B2239F0DB00E68C4C /* SXNickNameUpdateHeaderView.m */; };
 		0936B72E2239F0E300E68C4C /* SXNickNameUpdateHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0936B72D2239F0E300E68C4C /* SXNickNameUpdateHeaderView.xib */; };
 		0936B7312239F4F200E68C4C /* SXMobileUpdateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0936B7302239F4F200E68C4C /* SXMobileUpdateController.m */; };
+		0936B734223A037400E68C4C /* SXMobileUpdateHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0936B733223A037400E68C4C /* SXMobileUpdateHeaderView.m */; };
+		0936B736223A037D00E68C4C /* SXMobileUpdateHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0936B735223A037D00E68C4C /* SXMobileUpdateHeaderView.xib */; };
 		09462ACB22375DEE0063F67E /* SXOnlineOptionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */; };
 		09462ACD22375DF90063F67E /* SXOnlineOptionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */; };
 		09462AD12237898C0063F67E /* XDSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACF2237898C0063F67E /* XDSDropDownMenu.m */; };
@@ -417,6 +419,9 @@
 		0936B72D2239F0E300E68C4C /* SXNickNameUpdateHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXNickNameUpdateHeaderView.xib; sourceTree = "<group>"; };
 		0936B72F2239F4F200E68C4C /* SXMobileUpdateController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMobileUpdateController.h; sourceTree = "<group>"; };
 		0936B7302239F4F200E68C4C /* SXMobileUpdateController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMobileUpdateController.m; sourceTree = "<group>"; };
+		0936B732223A037400E68C4C /* SXMobileUpdateHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMobileUpdateHeaderView.h; sourceTree = "<group>"; };
+		0936B733223A037400E68C4C /* SXMobileUpdateHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMobileUpdateHeaderView.m; sourceTree = "<group>"; };
+		0936B735223A037D00E68C4C /* SXMobileUpdateHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXMobileUpdateHeaderView.xib; sourceTree = "<group>"; };
 		09462AC922375DEE0063F67E /* SXOnlineOptionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineOptionHeaderView.h; sourceTree = "<group>"; };
 		09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineOptionHeaderView.m; sourceTree = "<group>"; };
 		09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXOnlineOptionHeaderView.xib; sourceTree = "<group>"; };
@@ -1093,6 +1098,9 @@
 				0936B72A2239F0DB00E68C4C /* SXNickNameUpdateHeaderView.h */,
 				0936B72B2239F0DB00E68C4C /* SXNickNameUpdateHeaderView.m */,
 				0936B72D2239F0E300E68C4C /* SXNickNameUpdateHeaderView.xib */,
+				0936B732223A037400E68C4C /* SXMobileUpdateHeaderView.h */,
+				0936B733223A037400E68C4C /* SXMobileUpdateHeaderView.m */,
+				0936B735223A037D00E68C4C /* SXMobileUpdateHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2947,6 +2955,7 @@
 				09B9B87722321104000868D5 /* SXTimeControlAddCell.xib in Resources */,
 				B3AF2FD521F9C8A3001E4E67 /* MBProgressHUD.bundle in Resources */,
 				098BA305221A57A700F58639 /* SXMineHeaderView.xib in Resources */,
+				0936B736223A037D00E68C4C /* SXMobileUpdateHeaderView.xib in Resources */,
 				098BA300221A559200F58639 /* SXMineListCell.xib in Resources */,
 				0936B72E2239F0E300E68C4C /* SXNickNameUpdateHeaderView.xib in Resources */,
 				09462AE52237AE6A0063F67E /* SXOnlineAutotIPHeaderView.xib in Resources */,
@@ -3174,6 +3183,7 @@
 				091186EE22151D5F00938D9F /* SGSocketConfigM.m in Sources */,
 				092D6D022200745500538AC8 /* SXUserModel.m in Sources */,
 				09D5F676222BC6D800EA681A /* SXFamilyMemberFooterView.m in Sources */,
+				0936B734223A037400E68C4C /* SXMobileUpdateHeaderView.m in Sources */,
 				09D5F61F222925C200EA681A /* SXParentControlController.m in Sources */,
 				095540B8221E4DC6005A5485 /* SXRegistSetPwdHeaderView.m in Sources */,
 				B348F9A921F71A680000F194 /* UIButton+EnlargeArea.m in Sources */,

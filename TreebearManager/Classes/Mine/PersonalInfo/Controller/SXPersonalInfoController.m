@@ -9,6 +9,7 @@
 #import "SXPersonalInfoController.h"
 #import "SXNickNameUpdateController.h"
 #import "SXMobileUpdateController.h"
+#import "SXForgetConfirmController.h"
 #import "SXPersonalInfoHeaderView.h"
 
 @interface SXPersonalInfoController ()
@@ -33,7 +34,7 @@
     WS(weakSelf);
     SXPersonalInfoHeaderView *headerView = [SXPersonalInfoHeaderView headerView];
     headerView.clickIconBgViewBlock = ^{
-        [weakSelf fdfdfdf];
+        [weakSelf clickIconBgView];
     };
     headerView.clickNickNameBgViewBlock = ^{
         [weakSelf jumpToNickNameVC];
@@ -54,8 +55,9 @@
     self.headerView.frame = self.view.bounds;
 }
 
-- (void)fdfdfdf{
-    [MBProgressHUD showMessage:@"相册" toView:self.view];
+#pragma mark -Event-
+- (void)clickIconBgView{
+    DLog(@"clickIconBgView");
 }
 
 - (void)jumpToNickNameVC{
@@ -69,7 +71,8 @@
 }
 
 - (void)jumpToPasswordVC{
-    [MBProgressHUD showMessage:@"jumpToPasswordVC" toView:self.view];
+    SXForgetConfirmController *forgetVC = [[SXForgetConfirmController alloc] init];
+    [self.navigationController pushViewController:forgetVC animated:YES];
 }
 
 @end

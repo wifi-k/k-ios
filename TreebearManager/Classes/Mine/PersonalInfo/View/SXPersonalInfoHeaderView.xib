@@ -165,14 +165,24 @@
                                 <constraint firstAttribute="height" constant="10" id="w8m-sW-59b"/>
                             </constraints>
                         </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YiD-mc-YpJ">
+                            <rect key="frame" x="15" y="59.5" width="340" height="0.5"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="TXr-mF-SRt"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="ncE-g9-76O" firstAttribute="centerY" secondItem="I1z-2m-H0N" secondAttribute="centerY" id="D7S-F1-s73"/>
+                        <constraint firstItem="YiD-mc-YpJ" firstAttribute="leading" secondItem="I1z-2m-H0N" secondAttribute="leading" constant="15" id="NJ2-VA-hqi"/>
                         <constraint firstAttribute="trailing" secondItem="lV7-W0-YwZ" secondAttribute="trailing" constant="15" id="NTP-w8-2yb"/>
                         <constraint firstAttribute="height" constant="60" id="o5r-bJ-x92"/>
                         <constraint firstItem="ncE-g9-76O" firstAttribute="leading" secondItem="I1z-2m-H0N" secondAttribute="leading" constant="15" id="pOv-35-t3u"/>
                         <constraint firstItem="lV7-W0-YwZ" firstAttribute="centerY" secondItem="I1z-2m-H0N" secondAttribute="centerY" id="rtp-74-pWd"/>
+                        <constraint firstAttribute="bottom" secondItem="YiD-mc-YpJ" secondAttribute="bottom" id="tav-5e-ydn"/>
+                        <constraint firstAttribute="trailing" secondItem="YiD-mc-YpJ" secondAttribute="trailing" id="ylO-ZO-oYn"/>
                     </constraints>
                 </view>
             </subviews>
@@ -200,6 +210,7 @@
                 <outlet property="bottomLineView1" destination="VrL-q1-tab" id="3fl-Xx-IP6"/>
                 <outlet property="bottomLineView2" destination="Vut-KF-dc6" id="czn-V7-Xg4"/>
                 <outlet property="bottomLineView3" destination="pTR-c4-Vt4" id="US6-cX-ezd"/>
+                <outlet property="bottomLineView4" destination="YiD-mc-YpJ" id="bFq-zd-DkV"/>
                 <outlet property="firstBgView" destination="BTs-ZP-nga" id="q0S-ZE-sMO"/>
                 <outlet property="fourthBgView" destination="I1z-2m-H0N" id="167-bL-ED8"/>
                 <outlet property="iconImageView" destination="9EF-Ph-qOF" id="FoY-N5-nP9"/>
