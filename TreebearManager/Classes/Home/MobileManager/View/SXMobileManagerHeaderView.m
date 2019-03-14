@@ -105,6 +105,78 @@
         make.centerY.mas_equalTo(itemBgV3);
         make.centerX.mas_equalTo(itemBgV3).mas_offset(-5);
     }];
+    
+    UILabel *l1 = [[UILabel alloc] init];
+    l1.textAlignment = NSTextAlignmentCenter;
+    l1.text = @"1000";
+    l1.textColor = SXColorWhite;
+    l1.font = SXFontBold18;
+    [imageV1 addSubview:l1];
+    [l1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(imageV1).mas_offset(5);
+        make.right.mas_equalTo(imageV1).mas_offset(-5);
+        make.centerY.mas_equalTo(imageV1).mas_offset(-12);
+    }];
+    
+    UILabel *l11 = [[UILabel alloc] init];
+    l11.textAlignment = NSTextAlignmentCenter;
+    l11.text = @"上网限速";
+    l11.textColor = SXColorWhite;
+    l11.font = SXFont16;
+    [imageV1 addSubview:l11];
+    [l11 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(imageV1).mas_offset(5);
+        make.right.mas_equalTo(imageV1).mas_offset(-5);
+        make.centerY.mas_equalTo(imageV1).mas_offset(12);
+    }];
+    
+    UILabel *l2 = [[UILabel alloc] init];
+    l2.textAlignment = NSTextAlignmentCenter;
+    l2.text = @"1000";
+    l2.textColor = SXColorWhite;
+    l2.font = SXFontBold18;
+    [imageV2 addSubview:l2];
+    [l2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(imageV2).mas_offset(5);
+        make.right.mas_equalTo(imageV2).mas_offset(-5);
+        make.centerY.mas_equalTo(imageV2).mas_offset(-12);
+    }];
+    
+    UILabel *l22 = [[UILabel alloc] init];
+    l22.textAlignment = NSTextAlignmentCenter;
+    l22.text = @"上网限速";
+    l22.textColor = SXColorWhite;
+    l22.font = SXFont16;
+    [imageV2 addSubview:l22];
+    [l22 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(imageV2).mas_offset(5);
+        make.right.mas_equalTo(imageV2).mas_offset(-5);
+        make.centerY.mas_equalTo(imageV2).mas_offset(12);
+    }];
+    
+    UILabel *l3 = [[UILabel alloc] init];
+    l3.textAlignment = NSTextAlignmentCenter;
+    l3.text = @"1000";
+    l3.textColor = SXColorWhite;
+    l3.font = SXFontBold18;
+    [imageV3 addSubview:l3];
+    [l3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(imageV3).mas_offset(5);
+        make.right.mas_equalTo(imageV3).mas_offset(-5);
+        make.centerY.mas_equalTo(imageV3).mas_offset(-12);
+    }];
+    
+    UILabel *l33 = [[UILabel alloc] init];
+    l33.textAlignment = NSTextAlignmentCenter;
+    l33.text = @"上网限速";
+    l33.textColor = SXColorWhite;
+    l33.font = SXFont16;
+    [imageV3 addSubview:l33];
+    [l33 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(imageV3).mas_offset(5);
+        make.right.mas_equalTo(imageV3).mas_offset(-5);
+        make.centerY.mas_equalTo(imageV3).mas_offset(12);
+    }];
 }
 
 @end
