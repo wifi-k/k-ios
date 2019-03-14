@@ -41,15 +41,16 @@
     
     CGFloat itemX = 0;
     CGFloat itemY = 0;
-    CGFloat itemW = (SCREEN_WIDTH - 4*10)/2.5f;
+    CGFloat itemW = SCREEN_WIDTH/2.5f;
     CGFloat itemH = 120;
+    CGFloat imageW = itemW - 20;
     self.scrollView.contentSize = CGSizeMake(3*itemW, 120);
     self.scrollView.showsHorizontalScrollIndicator = NO;
     for (int i=0; i<3; i++) {
         itemX = i * itemW;
         UIView *itemBgV = [[UIView alloc] init];
         itemBgV.frame = CGRectMake(itemX, itemY, itemW, itemH);
-        itemBgV.backgroundColor = SXColorRandom;
+        itemBgV.backgroundColor = SXColorWhite;
         itemBgV.tag = i + 10;
         [self.scrollView addSubview:itemBgV];
     }
@@ -59,35 +60,48 @@
     UIView *itemBgV3 = [self.scrollView viewWithTag:12];
     
     UIImageView *imageV1 = [[UIImageView alloc] init];
-    imageV1.frame = CGRectMake(15, 10, 180, 100);
-    imageV1.image = [UIImage imageNamed:@"home_top_bg"];
     imageV1.contentMode = UIViewContentModeScaleAspectFill;
-    [imageV1 roundViewWithRadius:6.0f];
+    //阴影
+    imageV1.backgroundColor = SXColorRandom;
+    imageV1.layer.cornerRadius = 5;
+    imageV1.layer.shadowColor = UIColor.lightGrayColor.CGColor;
+    imageV1.layer.shadowOffset = CGSizeMake(3, 3);
+    imageV1.layer.shadowOpacity = 0.5;
+    imageV1.layer.shadowRadius = 3;
     [itemBgV1 addSubview:imageV1];
     [imageV1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(180, 100));
+        make.size.mas_equalTo(CGSizeMake(imageW, 100));
         make.centerY.mas_equalTo(itemBgV1);
         make.centerX.mas_equalTo(itemBgV1).mas_offset(5);
     }];
     
     UIImageView *imageV2 = [[UIImageView alloc] init];
-    imageV2.image = [UIImage imageNamed:@"home_top_bg"];
     imageV2.contentMode = UIViewContentModeScaleAspectFill;
-    [imageV2 roundViewWithRadius:6.0f];
+    //阴影
+    imageV2.backgroundColor = SXColorRandom;
+    imageV2.layer.cornerRadius = 5;
+    imageV2.layer.shadowColor = UIColor.lightGrayColor.CGColor;
+    imageV2.layer.shadowOffset = CGSizeMake(3, 3);
+    imageV2.layer.shadowOpacity = 0.5;
+    imageV2.layer.shadowRadius = 3;
     [itemBgV2 addSubview:imageV2];
     [imageV2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(180, 100));
+        make.size.mas_equalTo(CGSizeMake(imageW, 100));
         make.center.mas_equalTo(itemBgV2);
     }];
     
     UIImageView *imageV3 = [[UIImageView alloc] init];
-    imageV3.frame = CGRectMake(8, 10, 180, 100);
-    imageV3.image = [UIImage imageNamed:@"home_top_bg"];
     imageV3.contentMode = UIViewContentModeScaleAspectFill;
-    [imageV3 roundViewWithRadius:6.0f];
+    //阴影
+    imageV3.backgroundColor = SXColorRandom;
+    imageV3.layer.cornerRadius = 5;
+    imageV3.layer.shadowColor = UIColor.lightGrayColor.CGColor;
+    imageV3.layer.shadowOffset = CGSizeMake(3, 3);
+    imageV3.layer.shadowOpacity = 0.5;
+    imageV3.layer.shadowRadius = 3;
     [itemBgV3 addSubview:imageV3];
     [imageV3 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(180, 100));
+        make.size.mas_equalTo(CGSizeMake(imageW, 100));
         make.centerY.mas_equalTo(itemBgV3);
         make.centerX.mas_equalTo(itemBgV3).mas_offset(-5);
     }];
