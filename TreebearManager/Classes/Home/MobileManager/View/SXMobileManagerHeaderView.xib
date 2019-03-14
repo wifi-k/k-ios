@@ -17,10 +17,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RP9-cW-kgW">
-                    <rect key="frame" x="15" y="30" width="328" height="90"/>
+                    <rect key="frame" x="0.0" y="0.0" width="358" height="120"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="90" id="aMg-BC-RQB"/>
+                        <constraint firstAttribute="height" constant="120" id="aMg-BC-RQB"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设备列表" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zea-DQ-gjO">
@@ -33,10 +33,10 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Zea-DQ-gjO" firstAttribute="top" secondItem="RP9-cW-kgW" secondAttribute="bottom" constant="30" id="9td-Yk-rWv"/>
-                <constraint firstItem="RP9-cW-kgW" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="EHy-Ge-hAB"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RP9-cW-kgW" secondAttribute="trailing" constant="15" id="Tpb-xv-cVQ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RP9-cW-kgW" secondAttribute="trailing" id="Tpb-xv-cVQ"/>
+                <constraint firstItem="RP9-cW-kgW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="azB-z0-Py4"/>
                 <constraint firstItem="Zea-DQ-gjO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="dIh-wx-ZsR"/>
-                <constraint firstItem="RP9-cW-kgW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="k0A-Kc-fgI"/>
+                <constraint firstItem="RP9-cW-kgW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="k0A-Kc-fgI"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>

@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView3;
 @property (weak, nonatomic) IBOutlet UIView *thirdBgView;
 
+@property (weak, nonatomic) IBOutlet UIView *bottomLineView4;
 @property (weak, nonatomic) IBOutlet UIView *fourthBgView;
 
 @end
@@ -51,10 +52,12 @@
     self.bottomLineView1.backgroundColor = SXColorDivideLine;
     self.bottomLineView2.backgroundColor = SXColorDivideLine;
     self.bottomLineView3.backgroundColor = SXColorDivideLine;
+    self.bottomLineView4.backgroundColor = SXColorDivideLine;
     
     self.bottomLineView1.height = 0.5f;
     self.bottomLineView2.height = 0.5f;
     self.bottomLineView3.height = 0.5f;
+    self.bottomLineView4.height = 0.5f;
 }
 
 @end

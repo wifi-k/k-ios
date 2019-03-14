@@ -136,13 +136,24 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l1z-jg-vfR">
+                            <rect key="frame" x="15" y="59.5" width="320" height="0.5"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="0.5" id="bcC-Rw-14l"/>
+                                <constraint firstAttribute="height" constant="0.5" id="s9U-6s-ENI"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="l1z-jg-vfR" secondAttribute="trailing" id="49n-Xy-Qs0"/>
+                        <constraint firstAttribute="bottom" secondItem="l1z-jg-vfR" secondAttribute="bottom" id="6aw-4I-BZv"/>
                         <constraint firstAttribute="trailing" secondItem="91i-9Z-fug" secondAttribute="trailing" constant="15" id="BTj-Se-BvT"/>
                         <constraint firstItem="uIj-PN-YUm" firstAttribute="centerY" secondItem="78z-Yt-2NR" secondAttribute="centerY" id="MS3-h8-5E2"/>
                         <constraint firstItem="uIj-PN-YUm" firstAttribute="leading" secondItem="78z-Yt-2NR" secondAttribute="leading" constant="15" id="TcS-Jf-8ma"/>
                         <constraint firstAttribute="height" constant="60" id="TeQ-Hq-f8P"/>
+                        <constraint firstItem="l1z-jg-vfR" firstAttribute="leading" secondItem="78z-Yt-2NR" secondAttribute="leading" constant="15" id="a7s-0f-dqK"/>
                         <constraint firstItem="91i-9Z-fug" firstAttribute="centerY" secondItem="78z-Yt-2NR" secondAttribute="centerY" id="g3J-1U-Ey2"/>
                     </constraints>
                 </view>
@@ -170,6 +181,7 @@
                 <outlet property="bottomLineView1" destination="WbR-5o-Y0u" id="5Vd-5y-12D"/>
                 <outlet property="bottomLineView2" destination="jdF-ro-Msn" id="VP7-GK-X6e"/>
                 <outlet property="bottomLineView3" destination="3qt-Em-DA6" id="9bC-Zx-mje"/>
+                <outlet property="bottomLineView4" destination="l1z-jg-vfR" id="Mki-Sd-KaW"/>
                 <outlet property="firstBgView" destination="etB-Pa-og7" id="EUl-5f-Dax"/>
                 <outlet property="fourthBgView" destination="78z-Yt-2NR" id="4am-SN-Z0b"/>
                 <outlet property="secondBgView" destination="8il-eb-Vg2" id="DOX-xg-8Wu"/>
