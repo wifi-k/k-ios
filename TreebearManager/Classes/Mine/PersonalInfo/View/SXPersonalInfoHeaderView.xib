@@ -38,13 +38,23 @@
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VrL-q1-tab">
+                            <rect key="frame" x="15" y="59.5" width="340" height="0.5"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="hUi-hQ-ah5"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="VrL-q1-tab" firstAttribute="leading" secondItem="BTs-ZP-nga" secondAttribute="leading" constant="15" id="0k5-OM-uMl"/>
+                        <constraint firstAttribute="bottom" secondItem="VrL-q1-tab" secondAttribute="bottom" id="33h-2V-zth"/>
                         <constraint firstItem="kKz-Ru-gL4" firstAttribute="leading" secondItem="BTs-ZP-nga" secondAttribute="leading" constant="15" id="GZu-0A-rrT"/>
                         <constraint firstAttribute="trailing" secondItem="eAy-qI-mwt" secondAttribute="trailing" constant="15" id="HEw-mh-hyk"/>
                         <constraint firstItem="kKz-Ru-gL4" firstAttribute="centerY" secondItem="BTs-ZP-nga" secondAttribute="centerY" id="IfO-8d-mf4"/>
                         <constraint firstItem="eAy-qI-mwt" firstAttribute="centerY" secondItem="BTs-ZP-nga" secondAttribute="centerY" id="g9l-Ek-hvW"/>
+                        <constraint firstAttribute="trailing" secondItem="VrL-q1-tab" secondAttribute="trailing" id="lUI-eG-fTI"/>
                         <constraint firstItem="AyP-ev-xNt" firstAttribute="centerY" secondItem="BTs-ZP-nga" secondAttribute="centerY" id="qhn-DC-KaO"/>
                         <constraint firstItem="eAy-qI-mwt" firstAttribute="leading" secondItem="AyP-ev-xNt" secondAttribute="trailing" constant="5" id="xya-lX-r4j"/>
                         <constraint firstAttribute="height" constant="60" id="yEh-5a-xeu"/>
@@ -72,6 +82,13 @@
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vut-KF-dc6">
+                            <rect key="frame" x="15" y="59.5" width="340" height="0.5"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="mXY-M8-PXF"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -79,9 +96,12 @@
                         <constraint firstAttribute="height" constant="60" id="33M-bG-Wyz"/>
                         <constraint firstItem="69N-hz-NfC" firstAttribute="centerY" secondItem="Dm2-n4-tlP" secondAttribute="centerY" id="Bvf-po-7Ei"/>
                         <constraint firstItem="fHP-Ev-TC5" firstAttribute="centerY" secondItem="Dm2-n4-tlP" secondAttribute="centerY" id="DNZ-wO-N8K"/>
+                        <constraint firstItem="Vut-KF-dc6" firstAttribute="leading" secondItem="Dm2-n4-tlP" secondAttribute="leading" constant="15" id="QjP-Co-TJJ"/>
                         <constraint firstItem="fHP-Ev-TC5" firstAttribute="leading" secondItem="Dm2-n4-tlP" secondAttribute="leading" constant="15" id="T0B-iS-5ZH"/>
                         <constraint firstItem="2uV-75-rzN" firstAttribute="leading" secondItem="69N-hz-NfC" secondAttribute="trailing" constant="5" id="VEm-Pb-1qX"/>
                         <constraint firstItem="2uV-75-rzN" firstAttribute="centerY" secondItem="Dm2-n4-tlP" secondAttribute="centerY" id="WzG-az-dZC"/>
+                        <constraint firstAttribute="bottom" secondItem="Vut-KF-dc6" secondAttribute="bottom" id="pB4-1I-9ha"/>
+                        <constraint firstAttribute="trailing" secondItem="Vut-KF-dc6" secondAttribute="trailing" id="qBf-e9-SYo"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PY5-3h-ZcF">
@@ -106,15 +126,25 @@
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTR-c4-Vt4">
+                            <rect key="frame" x="15" y="59.5" width="340" height="0.5"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="8QB-hP-C2K"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="pTR-c4-Vt4" firstAttribute="leading" secondItem="PY5-3h-ZcF" secondAttribute="leading" constant="15" id="5mu-CJ-uJ5"/>
                         <constraint firstItem="Bla-R3-pVi" firstAttribute="centerY" secondItem="PY5-3h-ZcF" secondAttribute="centerY" id="HnG-9Z-189"/>
                         <constraint firstItem="C7w-gp-DIv" firstAttribute="centerY" secondItem="PY5-3h-ZcF" secondAttribute="centerY" id="O2Q-OK-7hJ"/>
                         <constraint firstItem="C7w-gp-DIv" firstAttribute="leading" secondItem="PY5-3h-ZcF" secondAttribute="leading" constant="15" id="QEX-JX-VUe"/>
                         <constraint firstItem="6mo-mc-SC7" firstAttribute="centerY" secondItem="PY5-3h-ZcF" secondAttribute="centerY" id="TFe-6h-oac"/>
+                        <constraint firstAttribute="bottom" secondItem="pTR-c4-Vt4" secondAttribute="bottom" id="XZL-LB-SJC"/>
                         <constraint firstAttribute="trailing" secondItem="6mo-mc-SC7" secondAttribute="trailing" constant="15" id="itm-Cb-Luk"/>
                         <constraint firstItem="6mo-mc-SC7" firstAttribute="leading" secondItem="Bla-R3-pVi" secondAttribute="trailing" constant="5" id="lbz-KB-ZW5"/>
+                        <constraint firstAttribute="trailing" secondItem="pTR-c4-Vt4" secondAttribute="trailing" id="o9M-Sf-FVv"/>
                         <constraint firstAttribute="height" constant="60" id="qW4-ik-Lk0"/>
                     </constraints>
                 </view>
@@ -165,6 +195,9 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="bottomLineView1" destination="VrL-q1-tab" id="3fl-Xx-IP6"/>
+                <outlet property="bottomLineView2" destination="Vut-KF-dc6" id="czn-V7-Xg4"/>
+                <outlet property="bottomLineView3" destination="pTR-c4-Vt4" id="US6-cX-ezd"/>
                 <outlet property="firstBgView" destination="BTs-ZP-nga" id="q0S-ZE-sMO"/>
                 <outlet property="fourthBgView" destination="I1z-2m-H0N" id="167-bL-ED8"/>
                 <outlet property="secondBgView" destination="Dm2-n4-tlP" id="F8k-U2-C4g"/>

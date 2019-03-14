@@ -9,11 +9,13 @@
 #import "SXPersonalInfoHeaderView.h"
 
 @interface SXPersonalInfoHeaderView ()
-
+@property (weak, nonatomic) IBOutlet UIView *bottomLineView1;
 @property (weak, nonatomic) IBOutlet UIView *firstBgView;
 
+@property (weak, nonatomic) IBOutlet UIView *bottomLineView2;
 @property (weak, nonatomic) IBOutlet UIView *secondBgView;
 
+@property (weak, nonatomic) IBOutlet UIView *bottomLineView3;
 @property (weak, nonatomic) IBOutlet UIView *thirdBgView;
 
 @property (weak, nonatomic) IBOutlet UIView *fourthBgView;
@@ -45,6 +47,13 @@
     self.secondBgView.backgroundColor = SXColorWhite;
     self.thirdBgView.backgroundColor = SXColorWhite;
     self.fourthBgView.backgroundColor = SXColorWhite;
+    
+    self.bottomLineView1.backgroundColor = SXColorDivideLine;
+    self.bottomLineView2.backgroundColor = SXColorDivideLine;
+    self.bottomLineView3.backgroundColor = SXColorDivideLine;
+    self.bottomLineView1.height = 0.5f;
+    self.bottomLineView2.height = 0.5f;
+    self.bottomLineView3.height = 0.5f;
     
     //添加事件
     UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickIconBgView)];
