@@ -41,7 +41,7 @@
     
     CGFloat itemX = 0;
     CGFloat itemY = 0;
-    CGFloat itemW = 200.0f;
+    CGFloat itemW = (SCREEN_WIDTH - 4*10)/2.5f;
     CGFloat itemH = 120;
     self.scrollView.contentSize = CGSizeMake(3*itemW, 120);
     self.scrollView.showsHorizontalScrollIndicator = NO;
@@ -50,14 +50,47 @@
         UIView *itemBgV = [[UIView alloc] init];
         itemBgV.frame = CGRectMake(itemX, itemY, itemW, itemH);
         itemBgV.backgroundColor = SXColorRandom;
+        itemBgV.tag = i + 10;
         [self.scrollView addSubview:itemBgV];
-        
-        UIImageView *imageV = [[UIImageView alloc] init];
-        imageV.frame = CGRectMake(10, 10, 180, 100);
-        imageV.image = [UIImage imageNamed:@"home_top_bg"];
-        imageV.contentMode = UIViewContentModeScaleAspectFill;
-        [itemBgV addSubview:imageV];
     }
+    
+    UIView *itemBgV1 = [self.scrollView viewWithTag:10];
+    UIView *itemBgV2 = [self.scrollView viewWithTag:11];
+    UIView *itemBgV3 = [self.scrollView viewWithTag:12];
+    
+    UIImageView *imageV1 = [[UIImageView alloc] init];
+    imageV1.frame = CGRectMake(15, 10, 180, 100);
+    imageV1.image = [UIImage imageNamed:@"home_top_bg"];
+    imageV1.contentMode = UIViewContentModeScaleAspectFill;
+    [imageV1 roundViewWithRadius:6.0f];
+    [itemBgV1 addSubview:imageV1];
+    [imageV1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(180, 100));
+        make.centerY.mas_equalTo(itemBgV1);
+        make.centerX.mas_equalTo(itemBgV1).mas_offset(5);
+    }];
+    
+    UIImageView *imageV2 = [[UIImageView alloc] init];
+    imageV2.image = [UIImage imageNamed:@"home_top_bg"];
+    imageV2.contentMode = UIViewContentModeScaleAspectFill;
+    [imageV2 roundViewWithRadius:6.0f];
+    [itemBgV2 addSubview:imageV2];
+    [imageV2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(180, 100));
+        make.center.mas_equalTo(itemBgV2);
+    }];
+    
+    UIImageView *imageV3 = [[UIImageView alloc] init];
+    imageV3.frame = CGRectMake(8, 10, 180, 100);
+    imageV3.image = [UIImage imageNamed:@"home_top_bg"];
+    imageV3.contentMode = UIViewContentModeScaleAspectFill;
+    [imageV3 roundViewWithRadius:6.0f];
+    [itemBgV3 addSubview:imageV3];
+    [imageV3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(180, 100));
+        make.centerY.mas_equalTo(itemBgV3);
+        make.centerX.mas_equalTo(itemBgV3).mas_offset(-5);
+    }];
 }
 
 @end

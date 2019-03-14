@@ -52,13 +52,21 @@
     };
     [self.view addSubview:headerView];
     self.headerView = headerView;
+    
+    
+    //测试使用
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self loginWithPasswordData];
+    });
 }
 
 - (void)loginWithPasswordData{
     WS(weakSelf);
     SXLoginParam *param = [SXLoginParam param];
-    param.mobile = self.headerView.param.mobile;
-    param.passwd = self.headerView.param.passwd.md5String;
+//    param.mobile = self.headerView.param.mobile;
+//    param.passwd = self.headerView.param.passwd.md5String;
+    param.mobile = @"13211111111";
+    param.passwd = @"123".md5String;
     [SXLoginNetTool loginWithPasswordDataWithParams:param.mj_keyValues Success:^{
         [weakSelf changeRootVC];
     } failure:^(NSError * _Nonnull error) {

@@ -29,7 +29,7 @@
 #pragma mark -getter-
 - (NSMutableArray *)dataArray{
     if (_dataArray == nil) {
-        NSArray *array = @[@{@"name":@"我的小K",@"avatar":@"mine_xiaok_mine"},@{@"name":@"我的孩子",@"avatar":@"mine_xiaok_child"}];
+        NSArray *array = @[@{@"name":@"我的小K",@"avatar":@"mine_xiaok_mine"},@{@"name":@"我的孩子",@"avatar":@"mine_xiaok_child"},@{@"name":@"测试使用",@"avatar":@"mine_xiaok_child"}];
         _dataArray = [NSMutableArray arrayWithArray:[SXMineUserInfoModel mj_objectArrayWithKeyValuesArray:array]];
     }
     return _dataArray;
@@ -54,7 +54,7 @@
     [self setUpUI];
     
     //用户信息获取
-    [self getUserinfoData];
+//    [self getUserinfoData];
 }
 
 - (void)setUpUI{
@@ -167,9 +167,11 @@
     if (indexPath.row == 0) {
         SXXiaoKiController *xiaokVC = [[SXXiaoKiController alloc] init];
         [self.navigationController pushViewController:xiaokVC animated:YES];
-    } else{
+    } else if(indexPath.row == 1){
         SXMineChildController *childVC = [[SXMineChildController alloc] init];
         [self.navigationController pushViewController:childVC animated:YES];
+    } else {
+        [SXRootTool changeToHomeVC];
     }
 }
 

@@ -31,7 +31,6 @@
     self.navigationItem.title = @"连网设备";
     
     //2.头部视图
-//    WS(weakSelf);
     SXMobileManagerHeaderView *headerView = [SXMobileManagerHeaderView headerView];
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
