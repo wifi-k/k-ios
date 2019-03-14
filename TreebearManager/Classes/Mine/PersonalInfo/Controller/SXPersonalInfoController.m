@@ -8,6 +8,7 @@
 
 #import "SXPersonalInfoController.h"
 #import "SXNickNameUpdateController.h"
+#import "SXMobileUpdateController.h"
 #import "SXPersonalInfoHeaderView.h"
 
 @interface SXPersonalInfoController ()
@@ -63,7 +64,8 @@
 }
 
 - (void)jumpToMobileVC{
-    [MBProgressHUD showMessage:@"jumpToMobileVC" toView:self.view];
+    SXMobileUpdateController *mobileVC = [[SXMobileUpdateController alloc] init];
+    [self.navigationController pushViewController:mobileVC animated:YES];
 }
 
 - (void)jumpToPasswordVC{

@@ -7,9 +7,10 @@
 //
 
 #import "SXNickNameUpdateController.h"
+#import "SXNickNameUpdateHeaderView.h"
 
 @interface SXNickNameUpdateController ()
-
+@property (nonatomic, weak) SXNickNameUpdateHeaderView *headerView;//头部视图
 @end
 
 @implementation SXNickNameUpdateController
@@ -27,8 +28,25 @@
     
     self.navigationItem.title = @"昵称";
     
+    UIBarButtonItem *right = [UIBarButtonItem barButtonItemWithTitle:@"完成" target:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = right;
+    
+    //2.头部视图
+    SXNickNameUpdateHeaderView *headerView = [SXNickNameUpdateHeaderView headerView];
+    [self.view addSubview:headerView];
+    self.headerView = headerView;
 }
 
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    self.headerView.frame = self.view.bounds;
+}
 
+#pragma mark -Event-
+- (void)rightButtonAction:(UIButton *)btn{
+    DLog(@"btn:%@",btn.titleLabel.text);
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end

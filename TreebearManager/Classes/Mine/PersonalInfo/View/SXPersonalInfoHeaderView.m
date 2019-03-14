@@ -9,17 +9,22 @@
 #import "SXPersonalInfoHeaderView.h"
 
 @interface SXPersonalInfoHeaderView ()
+
+@property (weak, nonatomic) IBOutlet UILabel *avatarTitleL;
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView1;
 @property (weak, nonatomic) IBOutlet UIView *firstBgView;
 
+@property (weak, nonatomic) IBOutlet UILabel *nickTitleL;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView2;
 @property (weak, nonatomic) IBOutlet UIView *secondBgView;
 
+@property (weak, nonatomic) IBOutlet UILabel *mobileTitleL;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView3;
 @property (weak, nonatomic) IBOutlet UIView *thirdBgView;
 
+@property (weak, nonatomic) IBOutlet UILabel *pwdTitleL;
 @property (weak, nonatomic) IBOutlet UIView *fourthBgView;
-
 @end
 
 @implementation SXPersonalInfoHeaderView
@@ -48,12 +53,19 @@
     self.thirdBgView.backgroundColor = SXColorWhite;
     self.fourthBgView.backgroundColor = SXColorWhite;
     
+    self.avatarTitleL.textColor = SXColor333333;
+    self.nickTitleL.textColor = SXColor333333;
+    self.mobileTitleL.textColor = SXColor333333;
+    self.pwdTitleL.textColor = SXColor333333;
+    
     self.bottomLineView1.backgroundColor = SXColorDivideLine;
     self.bottomLineView2.backgroundColor = SXColorDivideLine;
     self.bottomLineView3.backgroundColor = SXColorDivideLine;
     self.bottomLineView1.height = 0.5f;
     self.bottomLineView2.height = 0.5f;
     self.bottomLineView3.height = 0.5f;
+    
+    [self.iconImageView roundViewWithRadius:22.5f];
     
     //添加事件
     UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickIconBgView)];
