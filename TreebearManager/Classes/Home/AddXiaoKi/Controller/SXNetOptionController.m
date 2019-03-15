@@ -97,8 +97,6 @@
         }
             break;
         case 2:{
-//            SXDynamicController *broadVC = [[SXDynamicController alloc] init];
-//            [self.navigationController pushViewController:broadVC animated:YES];
             [SXAddXiaokiNetTool dynamicSettingWithDataWithSuccess:^{
                 DLog(@"动态设置校验成功");
                 SXDynamicController *broadVC = [[SXDynamicController alloc] init];

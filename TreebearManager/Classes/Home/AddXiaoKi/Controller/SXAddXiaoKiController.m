@@ -128,7 +128,8 @@
 - (void)getWifiInfo{
     NSString *wifiSSID = [XKGetWifiNetTool getWifiSSID];
     DLog(@"wifi:%@",wifiSSID);
-    if ([wifiSSID containsString:@"Xiaomi"] || [wifiSSID containsString:@"Office"] || [wifiSSID containsString:@"truelv"]) {
+    
+    if (wifiSSID.length > 1) {
         self.headerView.title = [NSString stringWithFormat:@"您已连接wifi名称为'%@'的设备，点击立即绑定设备",wifiSSID];
         self.headerView.hidden = NO;
     } else{
