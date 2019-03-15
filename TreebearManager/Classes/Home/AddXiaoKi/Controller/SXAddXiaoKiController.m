@@ -128,27 +128,25 @@
 
 #pragma mark -网络选择页面-
 - (void)jumpToNetOptionVC{
-    
-    [self networkStatusData];
+    SXNetOptionController *netVC = [[SXNetOptionController alloc] init];
+    [self.navigationController pushViewController:netVC animated:YES];
 }
 
 #pragma mark -查询网络状态-
-- (void)networkStatusData{
-    WS(weakSelf);
-    static NSInteger count = 0;
-    [SXAddXiaokiNetTool networkStatusWithDataSuccess:^{
-        DLog(@"网络状态正常");
-        SXNetOptionController *netVC = [[SXNetOptionController alloc] init];
-        [weakSelf.navigationController pushViewController:netVC animated:YES];
-    } failure:^(NSError * _Nonnull error) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            //递归方法
-            if (error.code == 1 && count++ != 5) {
-                [weakSelf networkStatusData];
-            }
-        });
-    }];
-}
+//- (void)networkStatusData{
+//    WS(weakSelf);
+//    static NSInteger count = 0;
+//    [SXAddXiaokiNetTool networkStatusWithDataSuccess:^{
+//        DLog(@"网络状态正常");
+//    } failure:^(NSError * _Nonnull error) {
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            //递归方法
+//            if (error.code == 1 && count++ != 5) {
+//                [weakSelf networkStatusData];
+//            }
+//        });
+//    }];
+//}
 
 #pragma mark -视图弹窗-
 - (void)alertOnNetAlertView{
