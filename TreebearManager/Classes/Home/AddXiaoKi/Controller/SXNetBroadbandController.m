@@ -48,7 +48,7 @@
 }
 
 #pragma mark -跳转动态设置页面-
-- (void)jumpToNetDynamicVC{    
+- (void)jumpToNetDynamicVC{
     WS(weakSelf);
     SXNetBroadbandParam *param = [SXNetBroadbandParam param];
     param.name = self.headerView.param.name;
