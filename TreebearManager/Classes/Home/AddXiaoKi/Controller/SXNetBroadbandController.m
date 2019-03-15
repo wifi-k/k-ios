@@ -54,11 +54,28 @@
     param.name = self.headerView.param.name;
     param.passwd = self.headerView.param.passwd.md5String;
     [SXAddXiaokiNetTool broadbandSettingWithDataWithParams:param.mj_keyValues Success:^{
-        SXDynamicController *dynamicVC = [[SXDynamicController alloc] init];
-        [weakSelf.navigationController pushViewController:dynamicVC animated:YES];
+        DLog(@"宽带拨号成功");
+        [weakSelf networkStatusData];
     } failure:^(NSError * _Nonnull error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
+#pragma mark -查询网络状态-
+- (void)networkStatusData{
+    WS(weakSelf);
+    [SXAddXiaokiNetTool networkStatusWithDataSuccess:^{
+        DLog(@"网络状态正常");
+        SXDynamicController *dynamicVC = [[SXDynamicController alloc] init];
+        [weakSelf.navigationController pushViewController:dynamicVC animated:YES];
+    } failure:^(NSError * _Nonnull error) {
+        if (error.code == 1) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                //递归方法
+                [weakSelf networkStatusData];
+            });
+        }
     }];
 }
 

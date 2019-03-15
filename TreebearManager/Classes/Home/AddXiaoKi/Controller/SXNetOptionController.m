@@ -99,8 +99,7 @@
         case 2:{
             [SXAddXiaokiNetTool dynamicSettingWithDataWithSuccess:^{
                 DLog(@"动态设置校验成功");
-                SXDynamicController *broadVC = [[SXDynamicController alloc] init];
-                [weakSelf.navigationController pushViewController:broadVC animated:YES];
+                [weakSelf networkStatusData];
             } failure:^(NSError * _Nonnull error) {
                 NSString *message = [error.userInfo objectForKey:@"msg"];
                 [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
@@ -110,6 +109,23 @@
         default:
             break;
     }
+}
+
+#pragma mark -查询网络状态-
+- (void)networkStatusData{
+    WS(weakSelf);
+    [SXAddXiaokiNetTool networkStatusWithDataSuccess:^{
+        DLog(@"网络状态正常");
+        SXDynamicController *broadVC = [[SXDynamicController alloc] init];
+        [weakSelf.navigationController pushViewController:broadVC animated:YES];
+    } failure:^(NSError * _Nonnull error) {
+        if (error.code == 1) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                //递归方法
+                [weakSelf networkStatusData];
+            });
+        }
+    }];
 }
 
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
