@@ -69,6 +69,8 @@
 }
 
 - (IBAction)clickConfirmBtn:(UIButton *)sender {
+    [self endEditing:YES];
+    
     if (self.clickConfirmBtnBlock) {
         self.clickConfirmBtnBlock();
     }

@@ -92,7 +92,8 @@
 - (void)getNodeData{
 //    WS(weakSelf);
     [SXAddXiaokiNetTool getNodeWithDataWithSuccess:^(NSString * _Nonnull node) {
-        DLog(@"获取节点->node:%@",node);
+        DLog(@"获取节点");
+        DLog(@"node:%@",node);
     } failure:^(NSError * _Nonnull error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
@@ -127,16 +128,25 @@
 
 #pragma mark -网络选择页面-
 - (void)jumpToNetOptionVC{
+    
+    [self networkStatusData];
+}
+
+#pragma mark -查询网络状态-
+- (void)networkStatusData{
     WS(weakSelf);
-    SXNetBroadbandParam *param = [SXNetBroadbandParam param];
-    param.name = @"admin";
-    param.passwd = @"123456".md5String;
-    [SXAddXiaokiNetTool loginWithPasswdDataWithParams:param.mj_keyValues Success:^{
+    __block NSInteger count = 0;
+    [SXAddXiaokiNetTool networkStatusWithDataSuccess:^{
+        DLog(@"网络状态正常");
         SXNetOptionController *netVC = [[SXNetOptionController alloc] init];
         [weakSelf.navigationController pushViewController:netVC animated:YES];
     } failure:^(NSError * _Nonnull error) {
-        NSString *message = [error.userInfo objectForKey:@"msg"];
-        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        if (error.code == 1 && count++ != 5) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                //递归方法
+                [weakSelf networkStatusData];
+            });
+        }
     }];
 }
 

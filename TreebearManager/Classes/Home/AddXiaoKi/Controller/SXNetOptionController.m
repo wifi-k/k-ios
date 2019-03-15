@@ -114,12 +114,13 @@
 #pragma mark -查询网络状态-
 - (void)networkStatusData{
     WS(weakSelf);
+    __block NSInteger count = 0;
     [SXAddXiaokiNetTool networkStatusWithDataSuccess:^{
         DLog(@"网络状态正常");
         SXDynamicController *broadVC = [[SXDynamicController alloc] init];
         [weakSelf.navigationController pushViewController:broadVC animated:YES];
     } failure:^(NSError * _Nonnull error) {
-        if (error.code == 1) {
+        if (error.code == 1 && count++ != 5) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 //递归方法
                 [weakSelf networkStatusData];

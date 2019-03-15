@@ -59,7 +59,9 @@
         //1.指示器
         [MBProgressHUD showSuccessWithMessage:@"WiFi设置成功!" toView:weakSelf.view];
         //2.WiFi名称已经更改，前往系统设置重新连接
-        [weakSelf alertOnNetAlertView];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf alertOnNetAlertView];
+        });
     } failure:^(NSError * _Nonnull error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];

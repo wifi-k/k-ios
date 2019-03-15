@@ -7,7 +7,6 @@
 //
 
 #import "SXPersonalInfoHeaderView.h"
-#import "SXAlertControllerTool.h"
 
 @interface SXPersonalInfoHeaderView ()
 
@@ -85,14 +84,15 @@
     [self.fourthBgView addGestureRecognizer:tap4];
 }
 
+#pragma mark -setter-
+- (void)setImage:(UIImage *)image{
+    _image = image;
+    
+    self.iconImageView.image = image;
+}
+
 #pragma mark -Event-
 - (void)clickIconBgView{
-    [SXAlertControllerTool actionSheetWithTitle:@"提示" message:nil confirm:^(UIAlertAction * _Nonnull action) {
-        DLog(@"action:%@",action.title);
-    } cancel:^(UIAlertAction * _Nonnull action) {
-        DLog(@"action:%@",action.title);
-    }];
-    
     if (self.clickIconBgViewBlock) {
         self.clickIconBgViewBlock();
     }

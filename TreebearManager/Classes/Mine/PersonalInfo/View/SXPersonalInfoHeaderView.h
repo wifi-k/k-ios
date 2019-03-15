@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 ///点击关于我们
 @property (nonatomic, copy) void (^clickPasswordBgViewBlock)(void);
 
+@property (nonatomic, strong) UIImage *image;
+
 @end
 
 NS_ASSUME_NONNULL_END
