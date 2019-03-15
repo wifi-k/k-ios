@@ -148,6 +148,7 @@
 
 #pragma mark -点击事件-
 - (IBAction)clickConfirmBtn:(UIButton *)sender {
+    [self endEditing:YES];
     if (self.clickConfirmBtnBlock) {
         self.clickConfirmBtnBlock();
     }

@@ -56,7 +56,7 @@
     param.dns2 = self.headerView.param.dns2;
     [MBProgressHUD showWhiteLoadingWithMessage:nil toView:self.view];
     [SXAddXiaokiNetTool loginWithPasswdDataWithParams:param.mj_keyValues Success:^{
-        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        
         DLog(@"静态IP设置成功");
         //跳转
         [weakSelf networkStatusData];
@@ -72,6 +72,7 @@
     WS(weakSelf);
     static NSInteger count = 0;
     [SXAddXiaokiNetTool networkStatusWithDataSuccess:^{
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
         DLog(@"网络状态正常");
         SXDynamicController *dynamicVC = [[SXDynamicController alloc] init];
         [weakSelf.navigationController pushViewController:dynamicVC animated:YES];
@@ -79,10 +80,13 @@
         ++count;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             //递归方法
-            if (error.code == 1 && count%5 != 0) {
+            if (error.code == 1 && count%3 != 0) {
                 [weakSelf networkStatusData];
             } else{
-                [MBProgressHUD showMessage:@"请检查配置参数，然后重试!" toView:weakSelf.view];
+                [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [MBProgressHUD showMessage:@"请检查配置参数，然后重试!" toView:weakSelf.view];
+                });
             }
         });
     }];
