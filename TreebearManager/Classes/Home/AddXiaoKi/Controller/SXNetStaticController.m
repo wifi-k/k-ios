@@ -47,26 +47,21 @@
 
 #pragma mark -跳转动态设置页面-
 - (void)jumpToNetDynamicVC{
-    
-    SXDynamicController *dynamicVC = [[SXDynamicController alloc] init];
-    [self.navigationController pushViewController:dynamicVC animated:YES];
-    
-//    WS(weakSelf);
-//    SXNetStaticParam *param = [SXNetStaticParam param];
-//    param.ip = self.headerView.param.ip;
-//    param.netmask = self.headerView.param.netmask;
-//    param.gateway = self.headerView.param.gateway;
-//    param.dns1 = self.headerView.param.dns1;
-//    param.dns2 = self.headerView.param.dns2;
-//    [SXAddXiaokiNetTool loginWithPasswdDataWithParams:param.mj_keyValues Success:^{
-//
-//        //跳转
-//        SXDynamicController *dynamicVC = [[SXDynamicController alloc] init];
-//        [weakSelf.navigationController pushViewController:dynamicVC animated:YES];
-//    } failure:^(NSError * _Nonnull error) {
-//        NSString *message = [error.userInfo objectForKey:@"msg"];
-//        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
-//    }];
+    WS(weakSelf);
+    SXNetStaticParam *param = [SXNetStaticParam param];
+    param.ip = self.headerView.param.ip;
+    param.netmask = self.headerView.param.netmask;
+    param.gateway = self.headerView.param.gateway;
+    param.dns1 = self.headerView.param.dns1;
+    param.dns2 = self.headerView.param.dns2;
+    [SXAddXiaokiNetTool loginWithPasswdDataWithParams:param.mj_keyValues Success:^{
+        //跳转
+        SXDynamicController *dynamicVC = [[SXDynamicController alloc] init];
+        [weakSelf.navigationController pushViewController:dynamicVC animated:YES];
+    } failure:^(NSError * _Nonnull error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
 
 @end

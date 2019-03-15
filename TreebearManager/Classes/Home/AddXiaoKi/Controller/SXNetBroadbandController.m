@@ -48,21 +48,18 @@
 }
 
 #pragma mark -跳转动态设置页面-
-- (void)jumpToNetDynamicVC{
-    SXDynamicController *dynamicVC = [[SXDynamicController alloc] init];
-    [self.navigationController pushViewController:dynamicVC animated:YES];
-    
-//    WS(weakSelf);
-//    SXNetBroadbandParam *param = [SXNetBroadbandParam param];
-//    param.name = self.headerView.param.name;
-//    param.passwd = self.headerView.param.passwd.md5String;
-//    [SXAddXiaokiNetTool broadbandSettingWithDataWithParams:param.mj_keyValues Success:^{
-//        SXDynamicController *dynamicVC = [[SXDynamicController alloc] init];
-//        [weakSelf.navigationController pushViewController:dynamicVC animated:YES];
-//    } failure:^(NSError * _Nonnull error) {
-//        NSString *message = [error.userInfo objectForKey:@"msg"];
-//        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
-//    }];
+- (void)jumpToNetDynamicVC{    
+    WS(weakSelf);
+    SXNetBroadbandParam *param = [SXNetBroadbandParam param];
+    param.name = self.headerView.param.name;
+    param.passwd = self.headerView.param.passwd.md5String;
+    [SXAddXiaokiNetTool broadbandSettingWithDataWithParams:param.mj_keyValues Success:^{
+        SXDynamicController *dynamicVC = [[SXDynamicController alloc] init];
+        [weakSelf.navigationController pushViewController:dynamicVC animated:YES];
+    } failure:^(NSError * _Nonnull error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
 
 @end
