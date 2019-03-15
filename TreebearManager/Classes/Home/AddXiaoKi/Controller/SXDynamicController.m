@@ -10,6 +10,7 @@
 #import "SXDynamicHeaderView.h"
 #import "SXAddXiaokiNetTool.h"
 #import "NSString+Hash.h"
+#import "XKGetWifiNetTool.h"
 
 @interface SXDynamicController ()
 ///头部视图
@@ -49,11 +50,11 @@
 - (void)setNetDynamicData{
     WS(weakSelf);
     SXDynamicParam *param = [SXDynamicParam param];
+    param.ssid0 = [XKGetWifiNetTool getWifiSSID];
     param.ssid = self.headerView.param.ssid;
     param.passwd = self.headerView.param.passwd.md5String;
     [SXAddXiaokiNetTool ssidSettingWithDataWithParams:param.mj_keyValues Success:^{
-        SXDynamicController *dynamicVC = [[SXDynamicController alloc] init];
-        [weakSelf.navigationController pushViewController:dynamicVC animated:YES];
+        [MBProgressHUD showSuccessWithMessage:@"WiFi设置成功!" toView:weakSelf.view];
     } failure:^(NSError * _Nonnull error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];

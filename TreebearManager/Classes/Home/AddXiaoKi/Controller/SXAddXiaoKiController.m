@@ -92,7 +92,7 @@
 - (void)getNodeData{
     WS(weakSelf);
     [SXAddXiaokiNetTool getNodeWithDataWithSuccess:^(NSString * _Nonnull node) {
-        DLog(@"node:%@",node);
+        DLog(@"获取节点->node:%@",node);
         [weakSelf networkStatusData];
     } failure:^(NSError * _Nonnull error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
@@ -103,7 +103,7 @@
 - (void)networkStatusData{
 //    WS(weakSelf);
     [SXAddXiaokiNetTool networkStatusWithDataSuccess:^{
-        DLog(@"正常");
+        DLog(@"网络状态正常");
     } failure:^(NSError * _Nonnull error) {
 //        if (error.code == 1) {
 //            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
