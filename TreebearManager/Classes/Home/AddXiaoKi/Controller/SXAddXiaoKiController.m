@@ -10,6 +10,7 @@
 #import "SXNetOptionController.h"
 #import "SXAddXiaoKiHeaderView.h"
 #import "SXSingleAlertView.h"
+#import "SXTitleAlertView.h"
 #import "XKGetWifiNetTool.h"
 #import "SXAddXiaokiNetTool.h"
 #import "SXRootTool.h"
@@ -169,13 +170,14 @@
     }
     
     if (!isContainsAlert) {
+        /*
         SXSingleAlertView *singleAV = [SXSingleAlertView alertWithTitle:@"连网提示" content:@"请立即连接wifi名称为'xiaoki-xxxx',然后再绑定设备" confirmStr:@"确定"];
         singleAV.confirmButtonBlock = ^{
             [SXRootTool jumpToSystemWIFI];
         };
         [singleAV alert];
-
-        /*
+         */
+        
         SXTitleAlertView *netAlertView = [SXTitleAlertView alertWithTitle:@"连网提示" content:@"请立即连接wifi名称为'xiaoki-xxxx',然后再绑定设备" confirmStr:@"确定" cancelStr:@"取消"];
         netAlertView.confirmButtonBlock = ^{
             [SXRootTool jumpToSystemWIFI];
@@ -183,7 +185,7 @@
         netAlertView.cancelButtonBlock = ^{
             [SXRootTool popToPrevious];
         };
-        [netAlertView alert];*/
+        [netAlertView alert];
     }
 }
 
