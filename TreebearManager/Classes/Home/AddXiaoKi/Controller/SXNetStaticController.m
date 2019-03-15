@@ -54,11 +54,14 @@
     param.gateway = self.headerView.param.gateway;
     param.dns1 = self.headerView.param.dns1;
     param.dns2 = self.headerView.param.dns2;
+    [MBProgressHUD showWhiteLoadingWithMessage:nil toView:self.view];
     [SXAddXiaokiNetTool loginWithPasswdDataWithParams:param.mj_keyValues Success:^{
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
         DLog(@"静态IP设置成功");
         //跳转
         [weakSelf networkStatusData];
     } failure:^(NSError * _Nonnull error) {
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
     }];
@@ -67,7 +70,7 @@
 #pragma mark -查询网络状态-
 - (void)networkStatusData{
     WS(weakSelf);
-    __block NSInteger count = 0;
+    static NSInteger count = 0;
     [SXAddXiaokiNetTool networkStatusWithDataSuccess:^{
         DLog(@"网络状态正常");
         SXDynamicController *dynamicVC = [[SXDynamicController alloc] init];

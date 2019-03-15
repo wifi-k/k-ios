@@ -53,10 +53,13 @@
     SXNetBroadbandParam *param = [SXNetBroadbandParam param];
     param.name = self.headerView.param.name;
     param.passwd = self.headerView.param.passwd.md5String;
+    [MBProgressHUD showWhiteLoadingWithMessage:nil toView:self.view];
     [SXAddXiaokiNetTool broadbandSettingWithDataWithParams:param.mj_keyValues Success:^{
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
         DLog(@"宽带拨号成功");
         [weakSelf networkStatusData];
     } failure:^(NSError * _Nonnull error) {
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
     }];
@@ -65,7 +68,7 @@
 #pragma mark -查询网络状态-
 - (void)networkStatusData{
     WS(weakSelf);
-    __block NSInteger count = 0;
+    static NSInteger count = 0;
     [SXAddXiaokiNetTool networkStatusWithDataSuccess:^{
         DLog(@"网络状态正常");
         SXDynamicController *dynamicVC = [[SXDynamicController alloc] init];

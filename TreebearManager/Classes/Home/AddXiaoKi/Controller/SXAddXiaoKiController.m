@@ -135,7 +135,7 @@
 #pragma mark -查询网络状态-
 - (void)networkStatusData{
     WS(weakSelf);
-    __block NSInteger count = 0;
+    static NSInteger count = 0;
     [SXAddXiaokiNetTool networkStatusWithDataSuccess:^{
         DLog(@"网络状态正常");
         SXNetOptionController *netVC = [[SXNetOptionController alloc] init];
