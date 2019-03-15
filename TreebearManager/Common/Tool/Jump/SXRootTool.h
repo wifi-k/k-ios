@@ -33,6 +33,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)pushToVC:(UIViewController *)controller;
 ///返回上一级页面
 + (void)popToPrevious;
+///返回上级指定页面，根据名称
++ (void)popToVC:(NSString *)controllerName;
 
 + (void)jumpToSystemWIFI;
 

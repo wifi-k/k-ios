@@ -30,7 +30,8 @@ static NSString * const kResultCode = @"code";
     
     NSString *requestPath = [NSString stringWithFormat:@"%@/%@",API_HOST,path];
     
-    DLog(@"requestPath:%@",requestPath);
+    DLog(@"requestPath->:%@",requestPath);
+    if (parameters != nil) DLog(@"parameters->:%@",parameters);
     
     [XKHttpTool GET:requestPath parameters:parameters success:^(id responseObject) {
         
@@ -68,7 +69,8 @@ static NSString * const kResultCode = @"code";
     
     NSString *requestPath = [NSString stringWithFormat:@"%@/%@",API_HOST,path];
     
-    DLog(@"requestPath:%@",requestPath);
+    DLog(@"requestPath->:%@",requestPath);
+    if (parameters != nil) DLog(@"parameters->:%@",parameters);
     
     [XKHttpTool POST:requestPath parameters:parameters success:^(id responseObject) {
         
@@ -107,7 +109,8 @@ static NSString * const kResultCode = @"code";
     
     NSString *requestPath = [NSString stringWithFormat:@"%@/%@",API_HOST,path];
     
-    DLog(@"requestPath:%@",requestPath);
+    DLog(@"requestPath->:%@",requestPath);
+    if (parameters != nil) DLog(@"parameters:->%@",parameters);
     
     [XKHttpTool UPLOAD:requestPath parameters:parameters upload:uploadParam success:^(id responseObject) {
         
@@ -146,7 +149,8 @@ static NSString * const kResultCode = @"code";
     
     NSString *requestPath = [NSString stringWithFormat:@"%@/%@",API_HOST,path];
     
-    DLog(@"requestPath:%@",requestPath);
+    DLog(@"requestPath->:%@",requestPath);
+    if (parameters != nil) DLog(@"parameters->:%@",parameters);
     
     [XKHttpTool UPLOAD:requestPath parameters:parameters photos:photos success:^(id responseObject) {
         

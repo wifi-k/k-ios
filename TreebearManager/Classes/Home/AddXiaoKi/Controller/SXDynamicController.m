@@ -13,6 +13,7 @@
 #import "NSString+Hash.h"
 #import "XKGetWifiNetTool.h"
 #import "SXRootTool.h"
+@class SXAddXiaoKiController;
 
 @interface SXDynamicController ()
 ///头部视图
@@ -75,7 +76,7 @@
         [SXRootTool jumpToSystemWIFI];
     };
     netAlertView.cancelButtonBlock = ^{
-        [SXRootTool popToPrevious];
+        [SXRootTool popToVC:@"SXAddXiaoKiController"];
     };
     [netAlertView alert];
 }

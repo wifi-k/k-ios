@@ -92,6 +92,15 @@
     [self.currentNaviController popViewControllerAnimated:YES];
 }
 
++ (void)popToVC:(NSString *)controllerName{
+    for (UIViewController *vc in self.currentNaviController.viewControllers) {
+        if ([vc isKindOfClass:NSClassFromString(controllerName)]) {
+            [self.currentNaviController popToViewController:vc animated:YES];
+            break;
+        }
+    }
+}
+
 + (void)jumpToSystemWIFI{
     NSURL *url = [NSURL URLWithString:@"App-Prefs:root=WIFI"];
     if ([[UIApplication sharedApplication] canOpenURL:url]) {

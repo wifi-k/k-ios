@@ -37,7 +37,7 @@
         if (success) {
             success(responseObject);
         }
-        DLog(@"%@",responseObject);
+        DLog(@"responseObject->:%@",responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (failure) {
             failure(error);
@@ -68,7 +68,7 @@
         if (success) {
             success(responseObject);
         }
-        DLog(@"%@",responseObject);
+        DLog(@"responseObject->:%@",responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (failure) {
             failure(error);
@@ -107,7 +107,7 @@
         if (success) {
             success(responseObject);
         }
-        DLog(@"%@",responseObject);
+        DLog(@"responseObject->:%@",responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (failure) {
             failure(error);
@@ -141,7 +141,7 @@
         if (success) {
             success(responseObject);
         }
-        DLog(@"%@",responseObject);
+        DLog(@"responseObject->:%@",responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (failure) {
             failure(error);
