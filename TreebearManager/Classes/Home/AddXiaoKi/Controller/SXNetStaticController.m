@@ -73,12 +73,12 @@
         SXDynamicController *dynamicVC = [[SXDynamicController alloc] init];
         [weakSelf.navigationController pushViewController:dynamicVC animated:YES];
     } failure:^(NSError * _Nonnull error) {
-        if (error.code == 1 && count++ != 5) {
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                //递归方法
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            //递归方法
+            if (error.code == 1 && count++ != 5) {
                 [weakSelf networkStatusData];
-            });
-        }
+            }
+        });
     }];
 }
 
