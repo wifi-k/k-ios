@@ -31,6 +31,8 @@
 		091BC469223F6E2100FEBFD1 /* SXHealtyControlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC467223F6E2100FEBFD1 /* SXHealtyControlCell.m */; };
 		091BC46A223F6E2100FEBFD1 /* SXHealtyControlCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091BC468223F6E2100FEBFD1 /* SXHealtyControlCell.xib */; };
 		091BC46E223F717400FEBFD1 /* SXHealtyControlModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC46D223F717400FEBFD1 /* SXHealtyControlModel.m */; };
+		091BC471223F772B00FEBFD1 /* SXHealtyControlFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC470223F772B00FEBFD1 /* SXHealtyControlFooterView.m */; };
+		091BC473223F773500FEBFD1 /* SXHealtyControlFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091BC472223F773500FEBFD1 /* SXHealtyControlFooterView.xib */; };
 		092D6CDE22004FB400538AC8 /* SXRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CDD22004FB400538AC8 /* SXRefreshHeader.m */; };
 		092D6CE12200504100538AC8 /* SXRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CE02200504100538AC8 /* SXRefreshFooter.m */; };
 		092D6CE422005A0C00538AC8 /* SXEmptyDataEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CE322005A0C00538AC8 /* SXEmptyDataEventView.m */; };
@@ -376,6 +378,9 @@
 		091BC468223F6E2100FEBFD1 /* SXHealtyControlCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXHealtyControlCell.xib; sourceTree = "<group>"; };
 		091BC46C223F717400FEBFD1 /* SXHealtyControlModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHealtyControlModel.h; sourceTree = "<group>"; };
 		091BC46D223F717400FEBFD1 /* SXHealtyControlModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHealtyControlModel.m; sourceTree = "<group>"; };
+		091BC46F223F772B00FEBFD1 /* SXHealtyControlFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHealtyControlFooterView.h; sourceTree = "<group>"; };
+		091BC470223F772B00FEBFD1 /* SXHealtyControlFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHealtyControlFooterView.m; sourceTree = "<group>"; };
+		091BC472223F773500FEBFD1 /* SXHealtyControlFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXHealtyControlFooterView.xib; sourceTree = "<group>"; };
 		092D6CDC22004FB400538AC8 /* SXRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXRefreshHeader.h; sourceTree = "<group>"; };
 		092D6CDD22004FB400538AC8 /* SXRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXRefreshHeader.m; sourceTree = "<group>"; };
 		092D6CDF2200504100538AC8 /* SXRefreshFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXRefreshFooter.h; sourceTree = "<group>"; };
@@ -2167,12 +2172,15 @@
 				09FB474F2223E87300809273 /* SXHealtyControlHeaderView.h */,
 				09FB47502223E87300809273 /* SXHealtyControlHeaderView.m */,
 				09FB47522223E8B600809273 /* SXHealtyControlHeaderView.xib */,
-				09D5F64D222A748E00EA681A /* SXHealthTimeHeaderView.h */,
-				09D5F64E222A748E00EA681A /* SXHealthTimeHeaderView.m */,
-				09D5F650222A749E00EA681A /* SXHealthTimeHeaderView.xib */,
+				091BC46F223F772B00FEBFD1 /* SXHealtyControlFooterView.h */,
+				091BC470223F772B00FEBFD1 /* SXHealtyControlFooterView.m */,
+				091BC472223F773500FEBFD1 /* SXHealtyControlFooterView.xib */,
 				091BC466223F6E2100FEBFD1 /* SXHealtyControlCell.h */,
 				091BC467223F6E2100FEBFD1 /* SXHealtyControlCell.m */,
 				091BC468223F6E2100FEBFD1 /* SXHealtyControlCell.xib */,
+				09D5F64D222A748E00EA681A /* SXHealthTimeHeaderView.h */,
+				09D5F64E222A748E00EA681A /* SXHealthTimeHeaderView.m */,
+				09D5F650222A749E00EA681A /* SXHealthTimeHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3032,6 +3040,7 @@
 				098BA300221A559200F58639 /* SXMineListCell.xib in Resources */,
 				0936B72E2239F0E300E68C4C /* SXNickNameUpdateHeaderView.xib in Resources */,
 				09462AE52237AE6A0063F67E /* SXOnlineAutotIPHeaderView.xib in Resources */,
+				091BC473223F773500FEBFD1 /* SXHealtyControlFooterView.xib in Resources */,
 				09B9B8672231FF42000868D5 /* SXTimeControlCell.xib in Resources */,
 				092D6D1A2202E51C00538AC8 /* SXForgetHeaderView.xib in Resources */,
 				092D6D312203F6EA00538AC8 /* SXHomeMainHeaderView.xib in Resources */,
@@ -3182,6 +3191,7 @@
 				092D6D342203F9F300538AC8 /* SXHomeMainSectionHeaderView.m in Sources */,
 				09462AF92238A8270063F67E /* SXMobileManagerCell.m in Sources */,
 				09B9B7FF2230EAD2000868D5 /* SXWifiSettingSectionHeaderView.m in Sources */,
+				091BC471223F772B00FEBFD1 /* SXHealtyControlFooterView.m in Sources */,
 				09FB473022239E3500809273 /* SXHomeMessageCell.m in Sources */,
 				0900F525222D513600250155 /* SXNetStaticHeaderView.m in Sources */,
 				B348F99A21F716E40000F194 /* SXNavigationController.m in Sources */,
