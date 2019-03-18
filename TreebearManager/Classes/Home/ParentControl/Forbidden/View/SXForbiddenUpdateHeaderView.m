@@ -11,8 +11,13 @@
 @interface SXForbiddenUpdateHeaderView ()
 
 @property (weak, nonatomic) IBOutlet UIButton *updateNameBtn;
+@property (weak, nonatomic) IBOutlet UILabel *contentL;
 @property (weak, nonatomic) IBOutlet UIView *firstBgView;
+
+@property (weak, nonatomic) IBOutlet UILabel *forbiddenContentL;
 @property (weak, nonatomic) IBOutlet UIView *secondBgView;
+
+@property (weak, nonatomic) IBOutlet UILabel *deviceContentL;
 @property (weak, nonatomic) IBOutlet UIView *thirdBgView;
 @end
 
@@ -72,6 +77,15 @@
     
     UITapGestureRecognizer *tap3 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickDeviceControl:)];
     [self.thirdBgView addGestureRecognizer:tap3];
+}
+
+#pragma mark -setter方法-
+- (void)setModel:(SXForbiddenAppModel *)model{
+    _model = model;
+    
+    self.contentL.text = model.content;
+    self.forbiddenContentL.text = model.content1;
+    self.deviceContentL.text = model.content2;
 }
 
 #pragma mark -点击事件-

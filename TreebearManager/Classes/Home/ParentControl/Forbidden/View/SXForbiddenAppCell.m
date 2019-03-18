@@ -76,7 +76,7 @@ static NSString *SXForbiddenAppCellID = @"SXForbiddenAppCellID";
 #pragma mark -点击事件-
 - (IBAction)clickEditBtn:(UIButton *)sender {
     if (self.clickEditBtnBlock) {
-        self.clickEditBtnBlock();
+        self.clickEditBtnBlock(self.model);
     }
 }
 

@@ -30,13 +30,25 @@
 - (void)setUpUI{
     self.view.backgroundColor = SXColorBgViewGray;
     
-    self.navigationItem.title = @"新增|编辑";
+    BOOL isAdd = (self.model == nil? YES:NO);
+    if (isAdd) {
+        self.navigationItem.title = @"新增";
+    } else{
+        self.navigationItem.title = @"编辑";
+    }
     
     UIBarButtonItem *right = [UIBarButtonItem barButtonItemWithTitle:@"保存" target:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = right;
     
     WS(weakSelf);
     SXForbiddenUpdateHeaderView *headerView = [SXForbiddenUpdateHeaderView headerView];
+    if (isAdd) {
+        SXForbiddenAppModel *addModel = [[SXForbiddenAppModel alloc] init];
+        headerView.model = addModel;
+    } else {
+        headerView.model = self.model;
+    }
+    headerView.model = self.model;
     headerView.clickUpdateNameBtnBlock = ^{
         [weakSelf alertUpdateNameView];
     };
@@ -71,17 +83,21 @@
 
 #pragma mark -页面跳转-
 - (void)jumpToDeviceVC{
+    WS(weakSelf);
     SXForbiddenDeviceOptionController *deviceVC = [[SXForbiddenDeviceOptionController alloc] init];
     deviceVC.selectForbiddenOptionBlock = ^(NSString * _Nonnull model) {
-        
+        weakSelf.model.content2 = model;
+        weakSelf.headerView.model = weakSelf.model;
     };
     [self.navigationController pushViewController:deviceVC animated:YES];
 }
 
 - (void)jumpForbiddenAppOptionVC{
+    WS(weakSelf);
     SXForbiddenAppOptionController *appVC = [[SXForbiddenAppOptionController alloc] init];
     appVC.selectForbiddenOptionBlock = ^(NSString * _Nonnull model) {
-        
+        weakSelf.model.content1 = model;
+        weakSelf.headerView.model = weakSelf.model;
     };
     [self.navigationController pushViewController:appVC animated:YES];
 }

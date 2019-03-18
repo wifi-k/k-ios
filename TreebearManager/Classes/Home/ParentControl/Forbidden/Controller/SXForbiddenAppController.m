@@ -26,16 +26,19 @@
         _dataArray = [NSMutableArray array];
         SXForbiddenAppModel *model0 = [[SXForbiddenAppModel alloc] init];
         model0.title = @"禁用APP方案1";
+        model0.content = @"禁用APP方案1&禁用APP方案1&禁用APP方案1&禁用APP方案1&禁用APP方案1&禁用APP方案1&禁用APP方案1&禁用APP方案1";
         model0.row= @(0);
         [_dataArray addObject:model0];
         
         SXForbiddenAppModel *model1 = [[SXForbiddenAppModel alloc] init];
         model1.title = @"禁用APP方案2";
+        model1.content = @"禁用APP方案2&禁用APP方案2&禁用APP方案2&禁用APP方案2&禁用APP方案2&禁用APP方案2&禁用APP方案2&禁用APP方案2";
         model1.row= @(1);
         [_dataArray addObject:model1];
         
         SXForbiddenAppModel *model2 = [[SXForbiddenAppModel alloc] init];
         model2.title = @"禁用APP方案3";
+        model2.content = @"禁用APP方案3&禁用APP方案3&禁用APP方案3&禁用APP方案3&禁用APP方案3&禁用APP方案3&禁用APP方案3&禁用APP方案3&禁用APP方案3";
         model2.row= @(2);
         [_dataArray addObject:model2];
     }
@@ -69,7 +72,7 @@
     SXForbiddenAppFooterView *footerView = [SXForbiddenAppFooterView
                                             footerView];
     footerView.clickAddForbiddenBlock = ^{
-        [weakSelf jumpToUpdateVC];
+        [weakSelf jumpToUpdateVC:nil];
     };
     [self.tableView.tableFooterView addSubview:footerView];
     footerView.frame = self.tableView.tableFooterView.bounds;
@@ -95,8 +98,9 @@
 }
 
 #pragma mark -页面跳转-
-- (void)jumpToUpdateVC{
+- (void)jumpToUpdateVC:(SXForbiddenAppModel *)model{
     SXForbiddenUpdateController *updateVC = [[SXForbiddenUpdateController alloc] init];
+    updateVC.model = model;
     [self.navigationController pushViewController:updateVC animated:YES];
 }
 
@@ -114,8 +118,8 @@
     SXForbiddenAppCell *cell = [SXForbiddenAppCell cellWithTableView:tableView];
     SXForbiddenAppModel *model = self.dataArray[indexPath.row];
     cell.model = model;
-    cell.clickEditBtnBlock = ^{
-        [weakSelf jumpToUpdateVC];
+    cell.clickEditBtnBlock = ^(SXForbiddenAppModel * _Nonnull model) {
+        [weakSelf jumpToUpdateVC:model];
     };
     cell.clickDeleteBtnBlock = ^{
         [weakSelf alertDeleteAlertView];

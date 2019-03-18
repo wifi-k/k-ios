@@ -89,7 +89,7 @@
 - (void)rightButtonAction:(UIButton *)button{
     [MBProgressHUD showMessage:@"保存成功!" toView:self.view];
     if (self.selectForbiddenOptionBlock) {
-        NSString *fdfdf = [NSString stringWithFormat:@"%@个",10];
+        NSString *fdfdf = [NSString stringWithFormat:@"%d个",10];
         self.selectForbiddenOptionBlock(fdfdf);
     }
     

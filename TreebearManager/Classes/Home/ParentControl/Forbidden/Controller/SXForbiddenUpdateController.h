@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXForbiddenAppModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXForbiddenUpdateController : UIViewController
+
+///禁用方案模型
+@property (nonatomic, strong) SXForbiddenAppModel *model;
 
 @end
 

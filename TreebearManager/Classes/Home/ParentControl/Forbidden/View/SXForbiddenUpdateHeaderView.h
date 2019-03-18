@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXForbiddenAppModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXForbiddenUpdateHeaderView : UIView
 
 + (instancetype)headerView;
+
+///禁用方案模型
+@property (nonatomic, strong) SXForbiddenAppModel *model;
 
 ///点击更新名称回调
 @property (nonatomic, copy) void (^clickUpdateNameBtnBlock)(void);
