@@ -46,11 +46,20 @@
     
     self.navigationItem.title = @"无线信道";
     
-    UIBarButtonItem *right = [UIBarButtonItem barButtonItemWithTitle:@"保存" target:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *right = [UIBarButtonItem barButtonItemWithTitle:@"确定" target:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = right;
 }
 
 - (void)rightButtonAction:(UIButton *)button{
+    for (SXAdvancedOptionModel *model in self.dataArray) {
+        if (model.selected.boolValue) {
+            if (self.selectOptionBlock) {
+                self.selectOptionBlock(model.title);
+            }
+            break;
+        }
+    }
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 

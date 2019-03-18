@@ -44,6 +44,8 @@ static NSString *SXMineChildCellID = @"SXMineChildCellID";
 //初始化UI
 - (void)setUpUI{
     
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     //设置背景色
     self.contentView.backgroundColor = SXColorWhite;
    

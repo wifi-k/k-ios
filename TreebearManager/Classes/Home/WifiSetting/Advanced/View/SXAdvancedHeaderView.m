@@ -84,6 +84,7 @@
     [self.saveBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
     [self.saveBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
     [self.saveBtn roundViewWithRadius:6.0f];
+    self.saveBtn.hidden = YES;
     
     //添加手势
     UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickBgView:)];
@@ -96,11 +97,21 @@
     [self.fourthBgView addGestureRecognizer:tap3];
 }
 
+#pragma mark -setter-
+- (void)setParam:(SXAdvancedOptionParam *)param{
+    _param = param;
+    
+    self.switchBtn.on = param.selected.boolValue;
+    self.channelL.text = param.title1;
+    self.workModeL.text = param.title2;
+    self.frequencyL.text = param.title3;
+}
+
 #pragma mark -点击事件-
 - (IBAction)clickSaveBtn:(UIButton *)sender {
-    if (self.clickSaveBtnBlock) {
-        self.clickSaveBtnBlock();
-    }
+//    if (self.clickSaveBtnBlock) {
+//        self.clickSaveBtnBlock();
+//    }
 }
 
 - (void)clickBgView:(UITapGestureRecognizer *)tap{

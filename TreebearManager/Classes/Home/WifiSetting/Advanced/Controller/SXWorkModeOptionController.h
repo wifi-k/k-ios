@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SXWorkModeOptionController : SXBaseCustomTableViewPlainController
 
+///选中高级设置回调
+@property (nonatomic, copy) void (^selectOptionBlock)(NSString *option);
+
 @end
 
 NS_ASSUME_NONNULL_END

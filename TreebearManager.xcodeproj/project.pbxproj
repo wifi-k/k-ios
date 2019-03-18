@@ -27,6 +27,7 @@
 		09118706221522BF00938D9F /* GACErrorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09118700221522BF00938D9F /* GACErrorManager.m */; };
 		091187362215689E00938D9F /* SXTitleAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 091187352215689E00938D9F /* SXTitleAlertView.m */; };
 		0911873C2215854400938D9F /* SXCodeInputAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0911873B2215854400938D9F /* SXCodeInputAlertView.m */; };
+		091BC465223F361000FEBFD1 /* SXAdvancedOptionParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC464223F361000FEBFD1 /* SXAdvancedOptionParam.m */; };
 		092D6CDE22004FB400538AC8 /* SXRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CDD22004FB400538AC8 /* SXRefreshHeader.m */; };
 		092D6CE12200504100538AC8 /* SXRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CE02200504100538AC8 /* SXRefreshFooter.m */; };
 		092D6CE422005A0C00538AC8 /* SXEmptyDataEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CE322005A0C00538AC8 /* SXEmptyDataEventView.m */; };
@@ -365,6 +366,8 @@
 		091187352215689E00938D9F /* SXTitleAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXTitleAlertView.m; sourceTree = "<group>"; };
 		0911873A2215854400938D9F /* SXCodeInputAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXCodeInputAlertView.h; sourceTree = "<group>"; };
 		0911873B2215854400938D9F /* SXCodeInputAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXCodeInputAlertView.m; sourceTree = "<group>"; };
+		091BC463223F361000FEBFD1 /* SXAdvancedOptionParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXAdvancedOptionParam.h; sourceTree = "<group>"; };
+		091BC464223F361000FEBFD1 /* SXAdvancedOptionParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXAdvancedOptionParam.m; sourceTree = "<group>"; };
 		092D6CDC22004FB400538AC8 /* SXRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXRefreshHeader.h; sourceTree = "<group>"; };
 		092D6CDD22004FB400538AC8 /* SXRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXRefreshHeader.m; sourceTree = "<group>"; };
 		092D6CDF2200504100538AC8 /* SXRefreshFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXRefreshFooter.h; sourceTree = "<group>"; };
@@ -1669,6 +1672,8 @@
 		09B9B8132230EC27000868D5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				091BC463223F361000FEBFD1 /* SXAdvancedOptionParam.h */,
+				091BC464223F361000FEBFD1 /* SXAdvancedOptionParam.m */,
 				09B9B85222311324000868D5 /* SXAdvancedOptionModel.h */,
 				09B9B85322311324000868D5 /* SXAdvancedOptionModel.m */,
 			);
@@ -3191,6 +3196,7 @@
 				B348F97821F6EB170000F194 /* SXPhotoController.m in Sources */,
 				B348F97D21F711450000F194 /* SXConst.m in Sources */,
 				0936B72422392B5100E68C4C /* SXPersonalInfoHeaderView.m in Sources */,
+				091BC465223F361000FEBFD1 /* SXAdvancedOptionParam.m in Sources */,
 				B3AF302421FE9113001E4E67 /* SXBaseTablePlainRrfreshController.m in Sources */,
 				09D5F63622292C1500EA681A /* SXForbiddenUpdateController.m in Sources */,
 				09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */,

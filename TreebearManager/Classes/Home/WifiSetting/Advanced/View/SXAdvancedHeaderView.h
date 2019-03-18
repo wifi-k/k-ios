@@ -7,18 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-
-NS_ASSUME_NONNULL_BEGIN
+#import "SXAdvancedOptionParam.h"
 
 @interface SXAdvancedHeaderView : UIView
 
 + (instancetype)headerView;
 
 ///点击保存按钮回调
-@property (nonatomic, copy) void (^clickSaveBtnBlock)(void);
+//@property (nonatomic, copy) void (^clickSaveBtnBlock)(void);
 ///点击背景视图
 @property (nonatomic, copy) void (^clickBgBlock)(NSInteger tag);
 
+@property (nonatomic, strong) SXAdvancedOptionParam *param;
+
 @end
 
-NS_ASSUME_NONNULL_END
