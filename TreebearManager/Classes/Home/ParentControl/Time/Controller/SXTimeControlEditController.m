@@ -44,7 +44,7 @@
         
         DLog(@"点击确定...");
         if (self.selectTimeBlock) {
-            self.selectTimeBlock();
+            self.selectTimeBlock(beginTimeStr);
         }
         
         [weakSelf.navigationController popViewControllerAnimated:YES];

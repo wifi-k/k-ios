@@ -22,6 +22,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setUpUI];
+}
+
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    self.headerView.frame = self.view.bounds;
+}
+
+#pragma mark -初始化UI-
+- (void)setUpUI{
     self.view.backgroundColor = SXColorWhite;
     
     BOOL isAdd = (self.model == nil? YES:NO);
@@ -30,6 +41,9 @@
     } else{
         self.navigationItem.title = @"编辑";
     }
+    
+    UIBarButtonItem *right = [UIBarButtonItem barButtonItemWithTitle:@"保存" target:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = right;
     
     WS(weakSelf);
     SXTimeUpdateHeaderView *headerView = [SXTimeUpdateHeaderView headerView];
@@ -55,10 +69,12 @@
     self.headerView = headerView;
 }
 
-- (void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
+- (void)rightButtonAction:(UIButton *)button{
+    [MBProgressHUD showMessage:@"保存成功!" toView:self.view];
     
-    self.headerView.frame = self.view.bounds;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.navigationController popViewControllerAnimated:YES];
+    });
 }
 
 #pragma mark -视图弹窗-
@@ -72,7 +88,12 @@
 
 #pragma mark -页面跳转-
 - (void)jumpTimeControlVC{
+    WS(weakSelf);
     SXTimeControlEditController *timeVC = [[SXTimeControlEditController alloc] init];
+    timeVC.selectTimeBlock = ^(NSString * _Nonnull time) {
+        weakSelf.model.content1 = time;
+        weakSelf.headerView.model = weakSelf.model;
+    };
     [self.navigationController pushViewController:timeVC animated:YES];
 }
 
