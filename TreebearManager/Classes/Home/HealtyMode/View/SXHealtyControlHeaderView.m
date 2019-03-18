@@ -19,8 +19,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeL;
 @property (weak, nonatomic) IBOutlet UIButton *editBtn;
 @property (weak, nonatomic) IBOutlet UIView *secondBgView;
-
-@property (weak, nonatomic) IBOutlet UIButton *addTimeBtn;
 @end
 
 @implementation SXHealtyControlHeaderView
@@ -51,20 +49,12 @@
     //缩放
 //    self.switchBtn.transform = CGAffineTransformMakeScale( 0.8, 0.8);
     self.switchBtn.onTintColor = SXColorBlue2;
-    
-    [self.addTimeBtn roundViewWithRadius:22.5f];
 }
 
 #pragma mark -点击事件-
 - (IBAction)clickEditBtn:(UIButton *)sender {
     if (self.clickEditTimeBlock) {
         self.clickEditTimeBlock();
-    }
-}
-
-- (IBAction)clickAddBtn:(UIButton *)sender {
-    if (self.clickAddTimeBlock) {
-        self.clickAddTimeBlock();
     }
 }
 
