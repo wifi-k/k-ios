@@ -33,6 +33,7 @@
 		091BC46E223F717400FEBFD1 /* SXHealtyControlModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC46D223F717400FEBFD1 /* SXHealtyControlModel.m */; };
 		091BC471223F772B00FEBFD1 /* SXHealtyControlFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC470223F772B00FEBFD1 /* SXHealtyControlFooterView.m */; };
 		091BC473223F773500FEBFD1 /* SXHealtyControlFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091BC472223F773500FEBFD1 /* SXHealtyControlFooterView.xib */; };
+		091BC477223FBCAA00FEBFD1 /* SXTimeControlModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC476223FBCAA00FEBFD1 /* SXTimeControlModel.m */; };
 		092D6CDE22004FB400538AC8 /* SXRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CDD22004FB400538AC8 /* SXRefreshHeader.m */; };
 		092D6CE12200504100538AC8 /* SXRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CE02200504100538AC8 /* SXRefreshFooter.m */; };
 		092D6CE422005A0C00538AC8 /* SXEmptyDataEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CE322005A0C00538AC8 /* SXEmptyDataEventView.m */; };
@@ -189,10 +190,7 @@
 		09B9B8672231FF42000868D5 /* SXTimeControlCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B9B8652231FF42000868D5 /* SXTimeControlCell.xib */; };
 		09B9B86A223202CE000868D5 /* SXTimeUpdateHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B869223202CE000868D5 /* SXTimeUpdateHeaderView.m */; };
 		09B9B86C223202DB000868D5 /* SXTimeUpdateHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B9B86B223202DB000868D5 /* SXTimeUpdateHeaderView.xib */; };
-		09B9B86F22320B20000868D5 /* SXTimeControlAddController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B86E22320B20000868D5 /* SXTimeControlAddController.m */; };
 		09B9B87222320B73000868D5 /* SXTimeControlEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B87122320B73000868D5 /* SXTimeControlEditController.m */; };
-		09B9B87622321104000868D5 /* SXTimeControlAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B87422321104000868D5 /* SXTimeControlAddCell.m */; };
-		09B9B87722321104000868D5 /* SXTimeControlAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B9B87522321104000868D5 /* SXTimeControlAddCell.xib */; };
 		09B9B87A22321536000868D5 /* SXTimeControlEditHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B87922321536000868D5 /* SXTimeControlEditHeaderView.m */; };
 		09B9B87C22321542000868D5 /* SXTimeControlEditHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B9B87B22321542000868D5 /* SXTimeControlEditHeaderView.xib */; };
 		09B9B87F22325729000868D5 /* SXLANPortHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B87E22325728000868D5 /* SXLANPortHeaderView.m */; };
@@ -381,6 +379,8 @@
 		091BC46F223F772B00FEBFD1 /* SXHealtyControlFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHealtyControlFooterView.h; sourceTree = "<group>"; };
 		091BC470223F772B00FEBFD1 /* SXHealtyControlFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHealtyControlFooterView.m; sourceTree = "<group>"; };
 		091BC472223F773500FEBFD1 /* SXHealtyControlFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXHealtyControlFooterView.xib; sourceTree = "<group>"; };
+		091BC475223FBCAA00FEBFD1 /* SXTimeControlModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTimeControlModel.h; sourceTree = "<group>"; };
+		091BC476223FBCAA00FEBFD1 /* SXTimeControlModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXTimeControlModel.m; sourceTree = "<group>"; };
 		092D6CDC22004FB400538AC8 /* SXRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXRefreshHeader.h; sourceTree = "<group>"; };
 		092D6CDD22004FB400538AC8 /* SXRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXRefreshHeader.m; sourceTree = "<group>"; };
 		092D6CDF2200504100538AC8 /* SXRefreshFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXRefreshFooter.h; sourceTree = "<group>"; };
@@ -657,13 +657,8 @@
 		09B9B868223202CE000868D5 /* SXTimeUpdateHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTimeUpdateHeaderView.h; sourceTree = "<group>"; };
 		09B9B869223202CE000868D5 /* SXTimeUpdateHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXTimeUpdateHeaderView.m; sourceTree = "<group>"; };
 		09B9B86B223202DB000868D5 /* SXTimeUpdateHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXTimeUpdateHeaderView.xib; sourceTree = "<group>"; };
-		09B9B86D22320B20000868D5 /* SXTimeControlAddController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTimeControlAddController.h; sourceTree = "<group>"; };
-		09B9B86E22320B20000868D5 /* SXTimeControlAddController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXTimeControlAddController.m; sourceTree = "<group>"; };
 		09B9B87022320B73000868D5 /* SXTimeControlEditController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTimeControlEditController.h; sourceTree = "<group>"; };
 		09B9B87122320B73000868D5 /* SXTimeControlEditController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXTimeControlEditController.m; sourceTree = "<group>"; };
-		09B9B87322321104000868D5 /* SXTimeControlAddCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTimeControlAddCell.h; sourceTree = "<group>"; };
-		09B9B87422321104000868D5 /* SXTimeControlAddCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXTimeControlAddCell.m; sourceTree = "<group>"; };
-		09B9B87522321104000868D5 /* SXTimeControlAddCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXTimeControlAddCell.xib; sourceTree = "<group>"; };
 		09B9B87822321536000868D5 /* SXTimeControlEditHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTimeControlEditHeaderView.h; sourceTree = "<group>"; };
 		09B9B87922321536000868D5 /* SXTimeControlEditHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXTimeControlEditHeaderView.m; sourceTree = "<group>"; };
 		09B9B87B22321542000868D5 /* SXTimeControlEditHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXTimeControlEditHeaderView.xib; sourceTree = "<group>"; };
@@ -1028,6 +1023,15 @@
 			children = (
 				091BC46C223F717400FEBFD1 /* SXHealtyControlModel.h */,
 				091BC46D223F717400FEBFD1 /* SXHealtyControlModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		091BC474223FBC7900FEBFD1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				091BC475223FBCAA00FEBFD1 /* SXTimeControlModel.h */,
+				091BC476223FBCAA00FEBFD1 /* SXTimeControlModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1861,6 +1865,7 @@
 		09D5F617222925C200EA681A /* Time */ = {
 			isa = PBXGroup;
 			children = (
+				091BC474223FBC7900FEBFD1 /* Model */,
 				09D5F618222925C200EA681A /* Controller */,
 				09D5F619222925C200EA681A /* View */,
 			);
@@ -1874,8 +1879,6 @@
 				09D5F6282229266F00EA681A /* SXTimeControlController.m */,
 				09B9B8602231528E000868D5 /* SXTimeUpdateController.h */,
 				09B9B8612231528E000868D5 /* SXTimeUpdateController.m */,
-				09B9B86D22320B20000868D5 /* SXTimeControlAddController.h */,
-				09B9B86E22320B20000868D5 /* SXTimeControlAddController.m */,
 				09B9B87022320B73000868D5 /* SXTimeControlEditController.h */,
 				09B9B87122320B73000868D5 /* SXTimeControlEditController.m */,
 			);
@@ -1891,9 +1894,6 @@
 				09B9B868223202CE000868D5 /* SXTimeUpdateHeaderView.h */,
 				09B9B869223202CE000868D5 /* SXTimeUpdateHeaderView.m */,
 				09B9B86B223202DB000868D5 /* SXTimeUpdateHeaderView.xib */,
-				09B9B87322321104000868D5 /* SXTimeControlAddCell.h */,
-				09B9B87422321104000868D5 /* SXTimeControlAddCell.m */,
-				09B9B87522321104000868D5 /* SXTimeControlAddCell.xib */,
 				09B9B87822321536000868D5 /* SXTimeControlEditHeaderView.h */,
 				09B9B87922321536000868D5 /* SXTimeControlEditHeaderView.m */,
 				09B9B87B22321542000868D5 /* SXTimeControlEditHeaderView.xib */,
@@ -3033,7 +3033,6 @@
 				09462AFF2238A88C0063F67E /* SXMobileDetailHeaderView.xib in Resources */,
 				0900F522222D50EB00250155 /* SXNetBroadbandHeaderView.xib in Resources */,
 				09D5F62E2229297000EA681A /* SXForbiddenAppFooterView.xib in Resources */,
-				09B9B87722321104000868D5 /* SXTimeControlAddCell.xib in Resources */,
 				B3AF2FD521F9C8A3001E4E67 /* MBProgressHUD.bundle in Resources */,
 				098BA305221A57A700F58639 /* SXMineHeaderView.xib in Resources */,
 				0936B736223A037D00E68C4C /* SXMobileUpdateHeaderView.xib in Resources */,
@@ -3204,6 +3203,7 @@
 				0911873C2215854400938D9F /* SXCodeInputAlertView.m in Sources */,
 				09D5F62D2229297000EA681A /* SXForbiddenAppFooterView.m in Sources */,
 				09B9B7D72230BC57000868D5 /* SXMobileDetailController.m in Sources */,
+				091BC477223FBCAA00FEBFD1 /* SXTimeControlModel.m in Sources */,
 				09B9B8282230ECB3000868D5 /* SXOnlineController.m in Sources */,
 				09462AED2237AEBE0063F67E /* SXOnlineBroadbandHeaderView.m in Sources */,
 				09B9B7FB2230EAD2000868D5 /* SXWifiSettingButton.m in Sources */,
@@ -3343,7 +3343,6 @@
 				099CEFF0223B452D0077DE42 /* SXHomeReportReusableView.m in Sources */,
 				0936B729223930FA00E68C4C /* SXNickNameUpdateController.m in Sources */,
 				09F23344222538FB0086AB35 /* SXFamilyMemberController.m in Sources */,
-				09B9B87622321104000868D5 /* SXTimeControlAddCell.m in Sources */,
 				092D6D202202E70300538AC8 /* SXForgetConfirmHeaderView.m in Sources */,
 				09D5F646222A615300EA681A /* SXForbiddenAppOptionController.m in Sources */,
 				09D5F673222BC4D200EA681A /* SXNetOptionController.m in Sources */,
@@ -3364,7 +3363,6 @@
 				B3AF2FED21FAFF24001E4E67 /* SXLoginController.m in Sources */,
 				0900F517222D4F2700250155 /* SXNetBroadbandController.m in Sources */,
 				09D5F6012227E3DF00EA681A /* SXPhotoNetTool.m in Sources */,
-				09B9B86F22320B20000868D5 /* SXTimeControlAddController.m in Sources */,
 				B348F97521F6EB070000F194 /* SXMineController.m in Sources */,
 				09EEC0D5223A2B2600F519E4 /* SXMineAddChildController.m in Sources */,
 				095540C6221F90BA005A5485 /* SXImaginaryLineView.m in Sources */,

@@ -90,17 +90,25 @@
                                 <constraint firstAttribute="width" constant="7" id="mUx-Ry-KCW"/>
                             </constraints>
                         </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pX-fi-JQy">
+                            <rect key="frame" x="257" y="21.5" width="36" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <gestureRecognizers/>
                     <constraints>
                         <constraint firstItem="pNq-1N-zqI" firstAttribute="leading" secondItem="wRD-gH-FCj" secondAttribute="leading" constant="10" id="3tG-p0-rne"/>
+                        <constraint firstItem="1pX-fi-JQy" firstAttribute="centerY" secondItem="wRD-gH-FCj" secondAttribute="centerY" id="49k-95-M3t"/>
                         <constraint firstItem="J65-j3-KRI" firstAttribute="leading" secondItem="pNq-1N-zqI" secondAttribute="trailing" constant="10" id="NzZ-te-l0b"/>
                         <constraint firstItem="J65-j3-KRI" firstAttribute="centerY" secondItem="pNq-1N-zqI" secondAttribute="centerY" id="b5e-io-d7G"/>
                         <constraint firstAttribute="height" constant="60" id="bf5-1n-hjG"/>
                         <constraint firstAttribute="trailing" secondItem="dCV-0y-fvH" secondAttribute="trailing" constant="10" id="oSM-wx-3hZ"/>
                         <constraint firstItem="pNq-1N-zqI" firstAttribute="centerY" secondItem="wRD-gH-FCj" secondAttribute="centerY" id="piH-kt-3Mq"/>
                         <constraint firstItem="dCV-0y-fvH" firstAttribute="centerY" secondItem="wRD-gH-FCj" secondAttribute="centerY" id="qex-3q-uMI"/>
+                        <constraint firstItem="dCV-0y-fvH" firstAttribute="leading" secondItem="1pX-fi-JQy" secondAttribute="trailing" constant="5" id="u73-df-xqv"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMb-gx-7k4">
@@ -126,14 +134,22 @@
                                 <constraint firstAttribute="width" constant="7" id="rmZ-2q-sfs"/>
                             </constraints>
                         </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDR-PT-ASf">
+                            <rect key="frame" x="257" y="21.5" width="36" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <gestureRecognizers/>
                     <constraints>
                         <constraint firstItem="6jK-K2-5gJ" firstAttribute="leading" secondItem="cMb-gx-7k4" secondAttribute="leading" constant="10" id="Aie-v8-NG2"/>
+                        <constraint firstItem="NDR-PT-ASf" firstAttribute="centerY" secondItem="cMb-gx-7k4" secondAttribute="centerY" id="Ana-2v-bmh"/>
                         <constraint firstAttribute="trailing" secondItem="TG8-WE-yyw" secondAttribute="trailing" constant="10" id="NlJ-NQ-f1B"/>
                         <constraint firstAttribute="height" constant="60" id="OK3-ae-m6d"/>
                         <constraint firstItem="6jK-K2-5gJ" firstAttribute="centerY" secondItem="cMb-gx-7k4" secondAttribute="centerY" id="Ogg-CA-Jao"/>
+                        <constraint firstItem="TG8-WE-yyw" firstAttribute="leading" secondItem="NDR-PT-ASf" secondAttribute="trailing" constant="5" id="gIK-th-l0y"/>
                         <constraint firstItem="TG8-WE-yyw" firstAttribute="centerY" secondItem="cMb-gx-7k4" secondAttribute="centerY" id="kNQ-3b-Uzh"/>
                         <constraint firstItem="WGd-H8-nbd" firstAttribute="leading" secondItem="6jK-K2-5gJ" secondAttribute="trailing" constant="10" id="mRd-ZP-atb"/>
                         <constraint firstItem="WGd-H8-nbd" firstAttribute="centerY" secondItem="6jK-K2-5gJ" secondAttribute="centerY" id="nXV-IF-cdy"/>
@@ -157,9 +173,12 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="contentL" destination="WAz-zu-mz4" id="Aya-5V-SxD"/>
+                <outlet property="deviceContentL" destination="NDR-PT-ASf" id="Po2-FC-6CF"/>
                 <outlet property="firstBgView" destination="tlx-7t-cda" id="GYS-u2-oP8"/>
                 <outlet property="secondBgView" destination="wRD-gH-FCj" id="lwD-hz-2Fx"/>
                 <outlet property="thirdBgView" destination="cMb-gx-7k4" id="9xT-V5-e8K"/>
+                <outlet property="timeContentL" destination="1pX-fi-JQy" id="WfA-xP-NFq"/>
                 <outlet property="updateNameBtn" destination="jAJ-J0-FD0" id="swi-FF-pGY"/>
             </connections>
             <point key="canvasLocation" x="108" y="62.518740629685162"/>

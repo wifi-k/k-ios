@@ -65,7 +65,7 @@ static NSString *SXTimeControlCellID = @"SXTimeControlCellID";
 }
 
 #pragma mark -setter方法-
-- (void)setModel:(SXForbiddenAppModel *)model{
+- (void)setModel:(SXTimeControlModel *)model{
     _model = model;
     
     self.titleL.text = model.title;

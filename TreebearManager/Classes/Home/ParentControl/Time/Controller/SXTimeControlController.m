@@ -24,17 +24,17 @@
 - (NSMutableArray *)dataArray{
     if (_dataArray == nil) {
         _dataArray = [NSMutableArray array];
-        SXForbiddenAppModel *model0 = [[SXForbiddenAppModel alloc] init];
+        SXTimeControlModel *model0 = [[SXTimeControlModel alloc] init];
         model0.title = @"上网时间控制1";
         model0.row= @(0);
         [_dataArray addObject:model0];
         
-        SXForbiddenAppModel *model1 = [[SXForbiddenAppModel alloc] init];
+        SXTimeControlModel *model1 = [[SXTimeControlModel alloc] init];
         model1.title = @"上网时间控制2";
         model1.row= @(1);
         [_dataArray addObject:model1];
         
-        SXForbiddenAppModel *model2 = [[SXForbiddenAppModel alloc] init];
+        SXTimeControlModel *model2 = [[SXTimeControlModel alloc] init];
         model2.title = @"上网时间控制3";
         model2.row= @(2);
         [_dataArray addObject:model2];
@@ -66,7 +66,7 @@
     SXForbiddenAppFooterView *footerView = [SXForbiddenAppFooterView
                                             footerView];
     footerView.clickAddForbiddenBlock = ^{
-        [weakSelf jumpToUpdateVC];
+        [weakSelf jumpToUpdateVC:nil];
     };
     [self.tableView.tableFooterView addSubview:footerView];
     footerView.frame = self.tableView.tableFooterView.bounds;
@@ -79,8 +79,9 @@
 }
 
 #pragma mark -页面跳转-
-- (void)jumpToUpdateVC{
+- (void)jumpToUpdateVC:(SXTimeControlModel *)model{
     SXTimeUpdateController *updateVC = [[SXTimeUpdateController alloc] init];
+    updateVC.model = model;
     [self.navigationController pushViewController:updateVC animated:YES];
 }
 
@@ -105,10 +106,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     WS(weakSelf);
     SXTimeControlCell *cell = [SXTimeControlCell cellWithTableView:tableView];
-    SXForbiddenAppModel *model = self.dataArray[indexPath.row];
+    SXTimeControlModel *model = self.dataArray[indexPath.row];
     cell.model = model;
     cell.clickEditBtnBlock = ^{
-        [weakSelf jumpToUpdateVC];
+        [weakSelf jumpToUpdateVC:nil];
     };
     cell.clickDeleteBtnBlock = ^{
         [weakSelf alertDeleteAlertView];

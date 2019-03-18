@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXTimeControlModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXTimeUpdateHeaderView : UIView
 
 + (instancetype)headerView;
+
+///时间模型
+@property (nonatomic, strong) SXTimeControlModel *model;
 
 ///点击更新名称回调
 @property (nonatomic, copy) void (^clickUpdateNameBtnBlock)(void);

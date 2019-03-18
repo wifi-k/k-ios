@@ -8,7 +8,7 @@
 
 #import "SXTimeUpdateController.h"
 #import "SXForbiddenDeviceOptionController.h"
-#import "SXTimeControlAddController.h"
+#import "SXTimeControlEditController.h"
 #import "SXTimeUpdateHeaderView.h"
 #import "SXWifiSettingAlertView.h"
 
@@ -24,10 +24,24 @@
     
     self.view.backgroundColor = SXColorWhite;
     
-    self.navigationItem.title = @"编辑|新增";
+    BOOL isAdd = (self.model == nil? YES:NO);
+    if (isAdd) {
+        self.navigationItem.title = @"新增";
+    } else{
+        self.navigationItem.title = @"编辑";
+    }
     
     WS(weakSelf);
     SXTimeUpdateHeaderView *headerView = [SXTimeUpdateHeaderView headerView];
+    if (isAdd) {
+        SXTimeControlModel *addModel = [[SXTimeControlModel alloc] init];
+        addModel.content = @"新增新增新增新增新增新增新增新增新增新增新增新增新增新增新增新增新增";
+        headerView.model = addModel;
+        self.model = addModel;
+    } else {
+        headerView.model = self.model;
+    }
+    headerView.model = self.model;
     headerView.clickUpdateNameBtnBlock = ^{
         [weakSelf alertUpdateNameView];
     };
@@ -57,14 +71,19 @@
 }
 
 #pragma mark -页面跳转-
-- (void)jumpToDeviceVC{
-    SXForbiddenDeviceOptionController *deviceVC = [[SXForbiddenDeviceOptionController alloc] init];
-    [self.navigationController pushViewController:deviceVC animated:YES];
+- (void)jumpTimeControlVC{
+    SXTimeControlEditController *timeVC = [[SXTimeControlEditController alloc] init];
+    [self.navigationController pushViewController:timeVC animated:YES];
 }
 
-- (void)jumpTimeControlVC{
-    SXTimeControlAddController *timeVC = [[SXTimeControlAddController alloc] init];
-    [self.navigationController pushViewController:timeVC animated:YES];
+- (void)jumpToDeviceVC{
+    WS(weakSelf);
+    SXForbiddenDeviceOptionController *deviceVC = [[SXForbiddenDeviceOptionController alloc] init];
+    deviceVC.selectForbiddenOptionBlock = ^(NSString * _Nonnull model) {
+        weakSelf.model.content2 = model;
+        weakSelf.headerView.model = weakSelf.model;
+    };
+    [self.navigationController pushViewController:deviceVC animated:YES];
 }
 
 @end

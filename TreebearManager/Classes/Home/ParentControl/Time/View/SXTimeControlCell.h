@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SXForbiddenAppModel.h"
+#import "SXTimeControlModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
 ///禁用方案模型
-@property (nonatomic, strong) SXForbiddenAppModel *model;
+@property (nonatomic, strong) SXTimeControlModel *model;
 
 ///点击编辑按钮回调
 @property (nonatomic, copy) void (^clickEditBtnBlock)(void);
