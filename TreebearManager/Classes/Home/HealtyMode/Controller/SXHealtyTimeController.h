@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXHealtyControlModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXHealtyTimeController : UIViewController
+
+///是否新增
+@property (nonatomic, assign) BOOL isAdd;
+
+///点击确定按钮回调
+@property (nonatomic, copy) void (^selectTimeOptionBlock)(SXHealtyControlModel *model);
 
 @end
 

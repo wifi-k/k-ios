@@ -52,9 +52,9 @@
 }
 
 #pragma mark -点击事件-
-- (IBAction)clickEditBtn:(UIButton *)sender {
-    if (self.clickEditTimeBlock) {
-        self.clickEditTimeBlock();
+- (IBAction)clickSwitchBtn:(UISwitch *)sender {
+    if (self.clickSwitchBtnBlock) {
+        self.clickSwitchBtnBlock(sender.isOn);
     }
 }
 

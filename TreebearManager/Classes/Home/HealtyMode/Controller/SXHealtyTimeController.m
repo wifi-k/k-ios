@@ -27,7 +27,11 @@
 - (void)setUpUI{
     self.view.backgroundColor = SXColorWhite;
     
-    self.navigationItem.title = @"新增|编辑";
+    if (self.isAdd) {
+        self.navigationItem.title = @"编辑";
+    } else{
+        self.navigationItem.title = @"编辑";
+    }
     
     WS(weakSelf);
     SXHealthTimeHeaderView *headerView = [SXHealthTimeHeaderView headerView];
@@ -45,8 +49,13 @@
         };
         [pickerView showPickerView];
     };
-    headerView.clickConfirmBtnBlock = ^{
-        DLog(@"点击确定...");
+    headerView.clickConfirmBtnBlock = ^(SXHealtyControlModel * _Nonnull model) {
+        DLog(@"%@-%@",model.startTime,model.endTime);
+        if (self.selectTimeOptionBlock) {
+            self.selectTimeOptionBlock(model);
+        }
+        
+        [weakSelf.navigationController popViewControllerAnimated:YES];
     };
     [self.view addSubview:headerView];
     self.headerView = headerView;

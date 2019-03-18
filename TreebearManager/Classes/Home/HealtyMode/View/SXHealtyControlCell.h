@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
+///模型
 @property (nonatomic, strong) SXHealtyControlModel *model;
 
 ///点击编辑按钮回调

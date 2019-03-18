@@ -87,8 +87,11 @@
 
 #pragma mark -点击事件-
 - (IBAction)clickConfirmBtn:(UIButton *)sender {
+    SXHealtyControlModel *model = [[SXHealtyControlModel alloc] init];
+    model.startTime = self.beginTimeStr;
+    model.endTime = self.endTimeStr;
     if (self.clickConfirmBtnBlock) {
-        self.clickConfirmBtnBlock();
+        self.clickConfirmBtnBlock(model);
     }
 }
 

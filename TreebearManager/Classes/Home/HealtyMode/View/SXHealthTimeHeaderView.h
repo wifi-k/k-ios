@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXHealtyControlModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)headerView;
 
 ///点击确定按钮回调
-@property (nonatomic, copy) void (^clickConfirmBtnBlock)(void);
+@property (nonatomic, copy) void (^clickConfirmBtnBlock)(SXHealtyControlModel *model);
 ///点击开始时间回调
 @property (nonatomic, copy) void (^clickBeginTimeControlBlock)(void);
 ///点击结束时间回调
