@@ -25,20 +25,30 @@
 
 #pragma mark -初始化UI-
 - (void)setUpUI{
+    
     self.view.backgroundColor = SXColorWhite;
     
-    if (self.isAdd) {
-        self.navigationItem.title = @"编辑";
+    BOOL isAdd = (self.model == nil? YES:NO);
+    if (isAdd) {
+        self.navigationItem.title = @"新增";
     } else{
         self.navigationItem.title = @"编辑";
     }
     
     WS(weakSelf);
     SXHealthTimeHeaderView *headerView = [SXHealthTimeHeaderView headerView];
+    if (isAdd) {
+        SXHealtyControlModel *addModel = [[SXHealtyControlModel alloc] init];
+        addModel.startTime = @"00:00";
+        addModel.endTime = @"00:00";
+        headerView.model = addModel;
+    } else {
+        headerView.model = self.model;
+    }
     headerView.clickBeginTimeControlBlock = ^{
         SXDatePickerView *pickerView = [SXDatePickerView pickerView];
         pickerView.confirmBtnBlock = ^(NSString * _Nonnull timeStr) {
-            weakSelf.headerView.beginTimeStr = timeStr;
+            weakSelf.headerView.startTimeStr = timeStr;
         };
         [pickerView showPickerView];
     };

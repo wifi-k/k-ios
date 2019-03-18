@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) SXHealtyControlModel *model;
 
 ///点击编辑按钮回调
-@property (nonatomic, copy) void (^clickEditBtnBlock)(void);
+@property (nonatomic, copy) void (^clickEditBtnBlock)(SXHealtyControlModel *model);
 
 @end
 

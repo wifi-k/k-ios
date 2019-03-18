@@ -55,7 +55,7 @@
     WS(weakSelf);
     SXHealtyControlFooterView *footerView = [SXHealtyControlFooterView footerView];
     footerView.clickAddTimeBlock = ^{
-        [weakSelf jumpToTimeVC:YES];
+        [weakSelf jumpToTimeVC:nil];
     };
     [self.tableView.tableFooterView addSubview:footerView];
     
@@ -82,22 +82,17 @@
     [MBProgressHUD showMessage:@"保存成功!" toView:self.view];
 }
 
-- (void)addTimeOptionWith:(SXHealtyControlModel *)model{
-    [self.dataArray addObject:model];
-    [self.tableView reloadData];
-}
-
 #pragma mark -页面跳转-
-- (void)jumpToTimeVC:(BOOL)isAdd{
+- (void)jumpToTimeVC:(SXHealtyControlModel *)model{
     WS(weakSelf);
     SXHealtyTimeController *timeVC = [[SXHealtyTimeController alloc] init];
-    timeVC.isAdd = isAdd;
+    BOOL isAdd = (model == nil? YES:NO);
+    timeVC.model = model;
     timeVC.selectTimeOptionBlock = ^(SXHealtyControlModel * _Nonnull model) {
         if (isAdd) {
-            [weakSelf addTimeOptionWith:model];
-        } else {
-            [MBProgressHUD showMessage:@"编辑" toView:self.view];
+            [weakSelf.dataArray addObject:model];
         }
+        [weakSelf.tableView reloadData];
     };
     [self.navigationController pushViewController:timeVC animated:YES];
 }
@@ -113,8 +108,8 @@
     SXHealtyControlCell *cell = [SXHealtyControlCell cellWithTableView:tableView];
     SXHealtyControlModel *model = self.dataArray[indexPath.row];
     cell.model = model;
-    cell.clickEditBtnBlock = ^{
-        [weakSelf jumpToTimeVC:NO];
+    cell.clickEditBtnBlock = ^(SXHealtyControlModel * _Nonnull model) {
+        [weakSelf jumpToTimeVC:model];
     };
     return cell;
 }

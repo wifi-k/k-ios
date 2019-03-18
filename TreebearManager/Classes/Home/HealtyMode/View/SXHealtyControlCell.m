@@ -56,7 +56,7 @@ static NSString *SXHealtyControlCellID = @"SXHealtyControlCellID";
 #pragma mark -event-
 - (IBAction)clickEditBtn:(UIButton *)sender {
     if (self.clickEditBtnBlock) {
-        self.clickEditBtnBlock();
+        self.clickEditBtnBlock(self.model);
     }
 }
 

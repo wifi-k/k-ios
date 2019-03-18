@@ -67,31 +67,37 @@
     [self.secondBgView addGestureRecognizer:tap2];
     
     //默认值
+    self.startTimeStr = @"00:00";
     self.endTimeStr = @"00:00";
-    self.beginTimeStr = @"00:00";
 }
 
+#pragma mark -setter-
+- (void)setModel:(SXHealtyControlModel *)model{
+    _model = model;
+    
+    self.beginTimeL.text = model.startTime;
+    self.endTimeL.text = model.endTime;
+}
 
 #pragma mark -setter-
-- (void)setBeginTimeStr:(NSString *)beginTimeStr{
-    _beginTimeStr = beginTimeStr;
+- (void)setStartTimeStr:(NSString *)startTimeStr{
+    _startTimeStr = startTimeStr;
     
-    self.beginTimeL.text = beginTimeStr;
+    self.beginTimeL.text = startTimeStr;
+    self.model.startTime = startTimeStr;
 }
 
 - (void)setEndTimeStr:(NSString *)endTimeStr{
     _endTimeStr = endTimeStr;
     
     self.endTimeL.text = endTimeStr;
+    self.model.endTime = endTimeStr;
 }
 
 #pragma mark -点击事件-
 - (IBAction)clickConfirmBtn:(UIButton *)sender {
-    SXHealtyControlModel *model = [[SXHealtyControlModel alloc] init];
-    model.startTime = self.beginTimeStr;
-    model.endTime = self.endTimeStr;
     if (self.clickConfirmBtnBlock) {
-        self.clickConfirmBtnBlock(model);
+        self.clickConfirmBtnBlock(self.model);
     }
 }
 

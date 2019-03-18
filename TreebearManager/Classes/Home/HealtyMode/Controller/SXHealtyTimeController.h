@@ -15,7 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///是否新增
 @property (nonatomic, assign) BOOL isAdd;
-
+///模型
+@property (nonatomic, strong) SXHealtyControlModel *model;
 ///点击确定按钮回调
 @property (nonatomic, copy) void (^selectTimeOptionBlock)(SXHealtyControlModel *model);
 
