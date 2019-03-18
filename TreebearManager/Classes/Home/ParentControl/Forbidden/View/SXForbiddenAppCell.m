@@ -22,9 +22,9 @@ static NSArray *_imageNameArr = nil;//提示文字容器
 
 + (void)initialize{
     if (!_imageNameArr) {
-        _imageNameArr = @[@"img_forbidden_ scheme1",
-                          @"img_forbidden_ scheme2",
-                          @"img_forbidden_ scheme3"];
+        _imageNameArr = @[@"img_forbidden_scheme1",
+                          @"img_forbidden_scheme2",
+                          @"img_forbidden_scheme3"];
     }
 }
 

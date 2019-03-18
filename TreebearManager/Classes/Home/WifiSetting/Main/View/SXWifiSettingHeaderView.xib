@@ -131,7 +131,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="1UL-m0-KWI"/>
                             </constraints>
-                            <state key="normal" title="无线高级设置" image="img_forbidden_ scheme1">
+                            <state key="normal" title="无线高级设置" image="img_forbidden_scheme1">
                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
@@ -144,7 +144,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="Na9-1N-NrM"/>
                             </constraints>
-                            <state key="normal" title="上网设置" image="img_forbidden_ scheme1">
+                            <state key="normal" title="上网设置" image="img_forbidden_scheme1">
                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
@@ -157,7 +157,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="k2I-WE-ogn"/>
                             </constraints>
-                            <state key="normal" title="LAN口设置" image="img_forbidden_ scheme1">
+                            <state key="normal" title="LAN口设置" image="img_forbidden_scheme1">
                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
@@ -170,7 +170,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="4Tj-8F-z7T"/>
                             </constraints>
-                            <state key="normal" title="重启路由器" image="img_forbidden_ scheme1">
+                            <state key="normal" title="重启路由器" image="img_forbidden_scheme1">
                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
@@ -183,7 +183,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="8LY-d5-ueS"/>
                             </constraints>
-                            <state key="normal" title="DHCP服务器" image="img_forbidden_ scheme1">
+                            <state key="normal" title="DHCP服务器" image="img_forbidden_scheme1">
                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
@@ -193,7 +193,7 @@
                         <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLk-Li-4Zi" customClass="SXWifiSettingButton">
                             <rect key="frame" x="0.0" y="200" width="125" height="100"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <state key="normal" title="恢复出厂设置" image="img_forbidden_ scheme1">
+                            <state key="normal" title="恢复出厂设置" image="img_forbidden_scheme1">
                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
@@ -206,7 +206,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="aGG-jb-I2X"/>
                             </constraints>
-                            <state key="normal" title="防蹭网" image="img_forbidden_ scheme1">
+                            <state key="normal" title="防蹭网" image="img_forbidden_scheme1">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
@@ -283,7 +283,7 @@
     </objects>
     <resources>
         <image name="img_button_bg_small" width="140" height="45"/>
-        <image name="img_forbidden_ scheme1" width="54" height="54"/>
+        <image name="img_forbidden_scheme1" width="54" height="54"/>
         <image name="img_user_icon" width="50" height="50"/>
     </resources>
 </document>

@@ -19,7 +19,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KqG-8z-6zA">
                     <rect key="frame" x="15" y="5" width="327" height="100"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_user_icon" translatesAutoresizingMaskIntoConstraints="NO" id="RTv-sZ-8f1">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_forbidden_edit1" translatesAutoresizingMaskIntoConstraints="NO" id="RTv-sZ-8f1">
                             <rect key="frame" x="10" y="10" width="35" height="35"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="35" id="8hj-ek-0TE"/>
@@ -70,7 +70,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zm6-8Q-5gB">
                     <rect key="frame" x="15" y="115" width="327" height="60"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_user_icon" translatesAutoresizingMaskIntoConstraints="NO" id="R0r-q2-1mw">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_forbidden_edit2" translatesAutoresizingMaskIntoConstraints="NO" id="R0r-q2-1mw">
                             <rect key="frame" x="10" y="12.5" width="35" height="35"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="dIc-R6-bQ4"/>
@@ -114,7 +114,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Scr-qT-SmU">
                     <rect key="frame" x="15" y="185" width="327" height="60"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_user_icon" translatesAutoresizingMaskIntoConstraints="NO" id="c97-Y7-D0h">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_forbidden_edit3" translatesAutoresizingMaskIntoConstraints="NO" id="c97-Y7-D0h">
                             <rect key="frame" x="10" y="12.5" width="35" height="35"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="XD1-LX-Ogv"/>
@@ -186,6 +186,8 @@
     </objects>
     <resources>
         <image name="arrow_right" width="7" height="10"/>
-        <image name="img_user_icon" width="50" height="50"/>
+        <image name="img_forbidden_edit1" width="54" height="54"/>
+        <image name="img_forbidden_edit2" width="54" height="54"/>
+        <image name="img_forbidden_edit3" width="54" height="54"/>
     </resources>
 </document>
