@@ -44,7 +44,9 @@
     SXForbiddenUpdateHeaderView *headerView = [SXForbiddenUpdateHeaderView headerView];
     if (isAdd) {
         SXForbiddenAppModel *addModel = [[SXForbiddenAppModel alloc] init];
+        addModel.content = @"新增新增新增新增新增新增新增新增新增新增新增新增新增新增新增新增新增";
         headerView.model = addModel;
+        self.model = addModel;
     } else {
         headerView.model = self.model;
     }
@@ -54,6 +56,7 @@
     };
     headerView.clickForbiddenAppBlock = ^{
         [weakSelf jumpForbiddenAppOptionVC];
+        
     };
     headerView.clickDeviceControlBlock = ^{
         [weakSelf jumpToDeviceVC];
@@ -70,6 +73,10 @@
 
 - (void)rightButtonAction:(UIButton *)button{
     [MBProgressHUD showMessage:@"保存成功!" toView:self.view];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.navigationController popViewControllerAnimated:YES];
+    });
 }
 
 #pragma mark -视图弹窗-
@@ -82,16 +89,6 @@
 }
 
 #pragma mark -页面跳转-
-- (void)jumpToDeviceVC{
-    WS(weakSelf);
-    SXForbiddenDeviceOptionController *deviceVC = [[SXForbiddenDeviceOptionController alloc] init];
-    deviceVC.selectForbiddenOptionBlock = ^(NSString * _Nonnull model) {
-        weakSelf.model.content2 = model;
-        weakSelf.headerView.model = weakSelf.model;
-    };
-    [self.navigationController pushViewController:deviceVC animated:YES];
-}
-
 - (void)jumpForbiddenAppOptionVC{
     WS(weakSelf);
     SXForbiddenAppOptionController *appVC = [[SXForbiddenAppOptionController alloc] init];
@@ -100,6 +97,16 @@
         weakSelf.headerView.model = weakSelf.model;
     };
     [self.navigationController pushViewController:appVC animated:YES];
+}
+
+- (void)jumpToDeviceVC{
+    WS(weakSelf);
+    SXForbiddenDeviceOptionController *deviceVC = [[SXForbiddenDeviceOptionController alloc] init];
+    deviceVC.selectForbiddenOptionBlock = ^(NSString * _Nonnull model) {
+        weakSelf.model.content2 = model;
+        weakSelf.headerView.model = weakSelf.model;
+    };
+    [self.navigationController pushViewController:deviceVC animated:YES];
 }
 
 @end

@@ -88,8 +88,17 @@
 
 - (void)rightButtonAction:(UIButton *)button{
     [MBProgressHUD showMessage:@"保存成功!" toView:self.view];
+    
+    //NSArray *selectedModels =  [self.dataArray valueForKeyPath:@"selected"];
+    NSInteger count = 0;
+    for (SXForbiddenAppOptionModel *model in self.dataArray) {
+        if (model.selected.boolValue) {
+            ++ count;
+        }
+    }
+    
     if (self.selectForbiddenOptionBlock) {
-        NSString *fdfdf = [NSString stringWithFormat:@"%d个",10];
+        NSString *fdfdf = [NSString stringWithFormat:@"%ld个",count];
         self.selectForbiddenOptionBlock(fdfdf);
     }
     
@@ -97,10 +106,6 @@
 }
 
 #pragma mark -UICollectionViewDelegate/UICollectionViewDataSource-
-//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-//    return 2;//这里很关键，分两组，把banner放在第一组的footer，把分类按钮放在第二组的header
-//}
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.dataArray.count;
 }

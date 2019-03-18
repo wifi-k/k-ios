@@ -42,6 +42,7 @@
         addModel.startTime = @"00:00";
         addModel.endTime = @"00:00";
         headerView.model = addModel;
+        self.model = addModel;
     } else {
         headerView.model = self.model;
     }

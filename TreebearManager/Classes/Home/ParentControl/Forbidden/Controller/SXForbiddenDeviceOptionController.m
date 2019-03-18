@@ -8,12 +8,28 @@
 
 #import "SXForbiddenDeviceOptionController.h"
 #import "SXForbiddenDeviceOptionCell.h"
+#import "SXForbiddenAppOptionModel.h"
 
 @interface SXForbiddenDeviceOptionController ()
-
+///数据源
+@property (nonatomic, strong) NSMutableArray *dataArray;
 @end
 
 @implementation SXForbiddenDeviceOptionController
+
+- (NSMutableArray *)dataArray{
+    if (_dataArray == nil) {
+        _dataArray = [NSMutableArray array];
+        for (int i=0; i<10; i++) {
+            SXForbiddenAppOptionModel *model = [[SXForbiddenAppOptionModel alloc] init];
+            model.title = [NSString stringWithFormat:@"名称%d",i];
+            model.row= @(i);
+            model.selected = @(NO);
+            [_dataArray addObject:model];
+        }
+    }
+    return _dataArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,8 +55,15 @@
 
 - (void)rightButtonAction:(UIButton *)button{
     [MBProgressHUD showMessage:@"保存成功!" toView:self.view];
+    NSInteger count = 0;
+    for (SXForbiddenAppOptionModel *model in self.dataArray) {
+        if (model.selected.boolValue) {
+            ++ count;
+        }
+    }
+    
     if (self.selectForbiddenOptionBlock) {
-        NSString *fdfdf = [NSString stringWithFormat:@"%d个",10];
+        NSString *fdfdf = [NSString stringWithFormat:@"%ld个",count];
         self.selectForbiddenOptionBlock(fdfdf);
     }
     
@@ -49,7 +72,7 @@
 
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return self.dataArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
