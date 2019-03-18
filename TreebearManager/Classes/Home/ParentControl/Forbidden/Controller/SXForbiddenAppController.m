@@ -55,6 +55,9 @@
     
     self.navigationItem.title = @"禁用";
     
+    UIBarButtonItem *right = [UIBarButtonItem barButtonItemWithTitle:@"保存" target:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = right;
+    
     //4.添加底部视图
     UIView *footerBgView = [[UIView alloc] init];
     footerBgView.backgroundColor = SXColorWhite;
@@ -76,6 +79,10 @@
     [super viewDidLayoutSubviews];
     
     self.tableView.frame = self.view.bounds;
+}
+
+- (void)rightButtonAction:(UIButton *)button{
+    [MBProgressHUD showMessage:@"保存成功!" toView:self.view];
 }
 
 #pragma mark -视图弹窗-

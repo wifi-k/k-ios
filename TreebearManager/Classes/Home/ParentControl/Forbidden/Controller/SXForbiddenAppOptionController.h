@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SXForbiddenAppOptionController : UIViewController
 
+///点击回调
+@property (nonatomic, copy) void (^selectForbiddenOptionBlock)(NSString *model);
+
 @end
 
 NS_ASSUME_NONNULL_END

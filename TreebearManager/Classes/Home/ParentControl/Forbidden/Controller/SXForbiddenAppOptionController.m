@@ -45,6 +45,9 @@
     
     self.navigationItem.title = @"选择禁用的APP";
     
+    UIBarButtonItem *right = [UIBarButtonItem barButtonItemWithTitle:@"保存" target:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = right;
+    
     int count = 3;
     
     //流水布局
@@ -81,6 +84,16 @@
     [super viewDidLayoutSubviews];
     
     self.collectionView.frame = self.view.bounds;
+}
+
+- (void)rightButtonAction:(UIButton *)button{
+    [MBProgressHUD showMessage:@"保存成功!" toView:self.view];
+    if (self.selectForbiddenOptionBlock) {
+        NSString *fdfdf = [NSString stringWithFormat:@"%@个",10];
+        self.selectForbiddenOptionBlock(fdfdf);
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark -UICollectionViewDelegate/UICollectionViewDataSource-

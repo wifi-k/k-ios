@@ -21,18 +21,30 @@
     [self setUpUI];
 }
 
-- (void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
-    
-    self.tableView.frame = self.view.bounds;
-}
-
 #pragma mark -初始化UI-
 - (void)setUpUI{
     self.view.backgroundColor = SXColorWhite;
     
     self.navigationItem.title = @"选择禁用的设备";
     
+    UIBarButtonItem *right = [UIBarButtonItem barButtonItemWithTitle:@"保存" target:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = right;
+}
+
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    self.tableView.frame = self.view.bounds;
+}
+
+- (void)rightButtonAction:(UIButton *)button{
+    [MBProgressHUD showMessage:@"保存成功!" toView:self.view];
+    if (self.selectForbiddenOptionBlock) {
+        NSString *fdfdf = [NSString stringWithFormat:@"%@个",10];
+        self.selectForbiddenOptionBlock(fdfdf);
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark -UITableViewDelegate/UITableViewDataSource-

@@ -32,6 +32,9 @@
     
     self.navigationItem.title = @"新增|编辑";
     
+    UIBarButtonItem *right = [UIBarButtonItem barButtonItemWithTitle:@"保存" target:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = right;
+    
     WS(weakSelf);
     SXForbiddenUpdateHeaderView *headerView = [SXForbiddenUpdateHeaderView headerView];
     headerView.clickUpdateNameBtnBlock = ^{
@@ -53,6 +56,10 @@
     self.headerView.frame = self.view.bounds;
 }
 
+- (void)rightButtonAction:(UIButton *)button{
+    [MBProgressHUD showMessage:@"保存成功!" toView:self.view];
+}
+
 #pragma mark -视图弹窗-
 - (void)alertUpdateNameView{
     SXWifiSettingAlertView *nameAlertView = [SXWifiSettingAlertView alertWithTitle:@"重命名" placeholder:@"请输入新的名称" confirmStr:@"确定" cancelStr:@"取消"];
@@ -64,13 +71,19 @@
 
 #pragma mark -页面跳转-
 - (void)jumpToDeviceVC{
-    SXForbiddenDeviceOptionController *fdf = [[SXForbiddenDeviceOptionController alloc] init];
-    [self.navigationController pushViewController:fdf animated:YES];
+    SXForbiddenDeviceOptionController *deviceVC = [[SXForbiddenDeviceOptionController alloc] init];
+    deviceVC.selectForbiddenOptionBlock = ^(NSString * _Nonnull model) {
+        
+    };
+    [self.navigationController pushViewController:deviceVC animated:YES];
 }
 
 - (void)jumpForbiddenAppOptionVC{
-    SXForbiddenAppOptionController *fdf = [[SXForbiddenAppOptionController alloc] init];
-    [self.navigationController pushViewController:fdf animated:YES];
+    SXForbiddenAppOptionController *appVC = [[SXForbiddenAppOptionController alloc] init];
+    appVC.selectForbiddenOptionBlock = ^(NSString * _Nonnull model) {
+        
+    };
+    [self.navigationController pushViewController:appVC animated:YES];
 }
 
 @end
