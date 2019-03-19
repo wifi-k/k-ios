@@ -25,7 +25,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2m-cL-m08">
                     <rect key="frame" x="0.0" y="82" width="405" height="80"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_user_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Uv6-qL-yM9">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_baseset_name" translatesAutoresizingMaskIntoConstraints="NO" id="Uv6-qL-yM9">
                             <rect key="frame" x="15" y="17.5" width="45" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="Dkf-0n-e79"/>
@@ -40,12 +40,13 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rO6-Qs-k4L">
                             <rect key="frame" x="320" y="25" width="70" height="30"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="70" id="KCH-dN-jCQ"/>
                                 <constraint firstAttribute="height" constant="30" id="KKl-Ds-4H4"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <state key="normal" title="编辑" backgroundImage="img_button_bg_small"/>
+                            <state key="normal" title="编辑"/>
                             <connections>
                                 <action selector="clickNameBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Kfl-1g-coK"/>
                             </connections>
@@ -66,7 +67,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJP-c4-C7S">
                     <rect key="frame" x="0.0" y="162" width="405" height="80"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_user_icon" translatesAutoresizingMaskIntoConstraints="NO" id="vKn-Lb-Djs">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_baseset_password" translatesAutoresizingMaskIntoConstraints="NO" id="vKn-Lb-Djs">
                             <rect key="frame" x="15" y="17.5" width="45" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="UsP-Ad-0q6"/>
@@ -131,7 +132,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="eeS-ag-Rh0"/>
                             </constraints>
-                            <state key="normal" title="上网设置" image="img_forbidden_scheme1">
+                            <state key="normal" title="上网设置" image="img_advanced_surf">
                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
@@ -144,7 +145,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="jWo-mJ-Vtt"/>
                             </constraints>
-                            <state key="normal" title="重启路由器" image="img_forbidden_scheme1">
+                            <state key="normal" title="重启路由器" image="img_advanced_restart">
                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
@@ -157,7 +158,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="JZ9-z3-Bxc"/>
                             </constraints>
-                            <state key="normal" title="防蹭网" image="img_forbidden_scheme1">
+                            <state key="normal" title="防蹭网" image="img_advanced_prevent">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
@@ -170,7 +171,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="EVD-5P-mSM"/>
                             </constraints>
-                            <state key="normal" title="恢复出厂设置" image="img_forbidden_scheme1">
+                            <state key="normal" title="恢复出厂设置" image="img_advanced_restore">
                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
@@ -234,8 +235,11 @@
         </view>
     </objects>
     <resources>
-        <image name="img_button_bg_small" width="140" height="45"/>
-        <image name="img_forbidden_scheme1" width="54" height="54"/>
-        <image name="img_user_icon" width="50" height="50"/>
+        <image name="img_advanced_prevent" width="31" height="31"/>
+        <image name="img_advanced_restart" width="31" height="31"/>
+        <image name="img_advanced_restore" width="31" height="31"/>
+        <image name="img_advanced_surf" width="31" height="31"/>
+        <image name="img_baseset_name" width="37" height="37"/>
+        <image name="img_baseset_password" width="37" height="37"/>
     </resources>
 </document>

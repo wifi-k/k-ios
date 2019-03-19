@@ -53,6 +53,8 @@
     self.pwdTipsL.textColor = SXColor999999;
     
     [self.nameBtn roundViewWithRadius:4.0f];
+    [self.nameBtn setTitleColor:SXColor333333 forState:UIControlStateNormal];
+    [self.nameBtn setBackgroundColor:SXColorBtnDisabled forState:UIControlStateNormal];
     
     [self.pwdBtn roundViewWithRadius:4.0f];
     [self.pwdBtn setTitleColor:SXColor333333 forState:UIControlStateNormal];
