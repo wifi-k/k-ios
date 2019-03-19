@@ -217,11 +217,15 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="bandPwdTextField" destination="n9X-QD-sFg" id="PAX-S9-e9a"/>
+                <outlet property="broadbandTextField" destination="mPZ-6q-IfD" id="m1q-8G-HV9"/>
                 <outlet property="connectedBtn" destination="jU8-yb-htY" id="0BV-vh-YIl"/>
                 <outlet property="disconnectedBtn" destination="VTb-xP-OCf" id="Wah-z4-awE"/>
+                <outlet property="dnsTextField" destination="eVz-Bl-c8T" id="h2X-uZ-xga"/>
                 <outlet property="fifthBgView" destination="H6b-FN-zz6" id="Sly-cm-8vd"/>
                 <outlet property="firstBgView" destination="HEB-wP-v9O" id="zFL-aD-why"/>
                 <outlet property="fourthBgView" destination="g4t-JZ-qlB" id="ODl-mb-YGV"/>
+                <outlet property="ipTextField" destination="Q83-y7-arg" id="hqq-f0-7vW"/>
                 <outlet property="secondBgView" destination="H4Z-fR-Xir" id="FfM-x2-Hpf"/>
                 <outlet property="thirdBgView" destination="8Fa-XC-Hnc" id="2ci-XF-7gH"/>
             </connections>

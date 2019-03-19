@@ -10,19 +10,21 @@
 
 @interface SXOnlineBroadbandHeaderView ()
 
+@property (weak, nonatomic) IBOutlet UITextField *broadbandTextField;
 @property (weak, nonatomic) IBOutlet UIView *firstBgView;
 
+@property (weak, nonatomic) IBOutlet UITextField *bandPwdTextField;
 @property (weak, nonatomic) IBOutlet UIView *secondBgView;
 
+@property (weak, nonatomic) IBOutlet UITextField *ipTextField;
 @property (weak, nonatomic) IBOutlet UIView *thirdBgView;
 
+@property (weak, nonatomic) IBOutlet UITextField *dnsTextField;
 @property (weak, nonatomic) IBOutlet UIView *fourthBgView;
 
-@property (weak, nonatomic) IBOutlet UIView *fifthBgView;
-
 @property (weak, nonatomic) IBOutlet UIButton *disconnectedBtn;
-
 @property (weak, nonatomic) IBOutlet UIButton *connectedBtn;
+@property (weak, nonatomic) IBOutlet UIView *fifthBgView;
 
 @end
 
@@ -45,6 +47,11 @@
 - (void)setUpUI{
     
     self.backgroundColor = SXColorWhite;
+
+    self.broadbandTextField.backgroundColor = SXColorF6F7FB;
+    self.bandPwdTextField.backgroundColor = SXColorF6F7FB;
+    self.ipTextField.backgroundColor = SXColorF6F7FB;
+    self.dnsTextField.backgroundColor = SXColorF6F7FB;
     
     self.firstBgView.backgroundColor = SXColorWhite;
     self.secondBgView.backgroundColor = SXColorWhite;

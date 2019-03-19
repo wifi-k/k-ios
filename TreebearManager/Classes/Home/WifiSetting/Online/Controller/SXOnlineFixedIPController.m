@@ -30,7 +30,7 @@
     WS(weakSelf);
     SXOnlineFixedIPHeaderView *headerView = [SXOnlineFixedIPHeaderView headerView];
     headerView.clickSaveBtnBlock = ^{
-        [weakSelf fdfdfdfd];
+        [weakSelf saveData];
     };
     [self.view addSubview:headerView];
     self.headerView = headerView;
@@ -43,8 +43,8 @@
 }
 
 #pragma mark -Event-
-- (void)fdfdfdfd{
-    DLog(@"fdfdfdfd");
+- (void)saveData{
+    [MBProgressHUD showMessage:@"保存成功" toView:self.view];
 }
 
 @end
