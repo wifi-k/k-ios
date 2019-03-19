@@ -125,24 +125,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8TP-uV-sG0">
                     <rect key="frame" x="15" y="306" width="375" height="300"/>
                     <subviews>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Rb-TY-Xpf" customClass="SXWifiSettingButton">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N15-t8-XVB" customClass="SXWifiSettingButton">
                             <rect key="frame" x="125" y="0.0" width="125" height="100"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="100" id="1UL-m0-KWI"/>
-                            </constraints>
-                            <state key="normal" title="无线高级设置" image="img_forbidden_scheme1">
-                                <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="clickAdvancedBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="olj-jg-un8"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N15-t8-XVB" customClass="SXWifiSettingButton">
-                            <rect key="frame" x="250" y="0.0" width="125" height="100"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="100" id="Na9-1N-NrM"/>
+                                <constraint firstAttribute="height" constant="100" id="eeS-ag-Rh0"/>
                             </constraints>
                             <state key="normal" title="上网设置" image="img_forbidden_scheme1">
                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -151,24 +138,11 @@
                                 <action selector="clickAdvancedBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="RGh-YC-7mU"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wyd-NB-O8y" customClass="SXWifiSettingButton">
-                            <rect key="frame" x="0.0" y="100" width="125" height="100"/>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDa-Cs-Oxo" customClass="SXWifiSettingButton">
+                            <rect key="frame" x="250" y="0.0" width="125" height="100"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="100" id="k2I-WE-ogn"/>
-                            </constraints>
-                            <state key="normal" title="LAN口设置" image="img_forbidden_scheme1">
-                                <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="clickAdvancedBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="2hl-QY-04X"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDa-Cs-Oxo" customClass="SXWifiSettingButton">
-                            <rect key="frame" x="125" y="100" width="125" height="100"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="100" id="4Tj-8F-z7T"/>
+                                <constraint firstAttribute="height" constant="100" id="jWo-mJ-Vtt"/>
                             </constraints>
                             <state key="normal" title="重启路由器" image="img_forbidden_scheme1">
                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -177,34 +151,11 @@
                                 <action selector="clickAdvancedBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="j3k-sI-nFc"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdZ-JM-twy" customClass="SXWifiSettingButton">
-                            <rect key="frame" x="250" y="100" width="125" height="100"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="100" id="8LY-d5-ueS"/>
-                            </constraints>
-                            <state key="normal" title="DHCP服务器" image="img_forbidden_scheme1">
-                                <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="clickAdvancedBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="frf-ar-lrd"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLk-Li-4Zi" customClass="SXWifiSettingButton">
-                            <rect key="frame" x="0.0" y="200" width="125" height="100"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <state key="normal" title="恢复出厂设置" image="img_forbidden_scheme1">
-                                <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="clickAdvancedBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="xoK-0I-qZn"/>
-                            </connections>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJm-uk-wAj" customClass="SXWifiSettingButton">
                             <rect key="frame" x="0.0" y="0.0" width="125" height="100"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="100" id="aGG-jb-I2X"/>
+                                <constraint firstAttribute="height" constant="100" id="JZ9-z3-Bxc"/>
                             </constraints>
                             <state key="normal" title="防蹭网" image="img_forbidden_scheme1">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -213,36 +164,37 @@
                                 <action selector="clickAdvancedBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="s5u-rW-VlD"/>
                             </connections>
                         </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLk-Li-4Zi" customClass="SXWifiSettingButton">
+                            <rect key="frame" x="0.0" y="100" width="125" height="100"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="EVD-5P-mSM"/>
+                            </constraints>
+                            <state key="normal" title="恢复出厂设置" image="img_forbidden_scheme1">
+                                <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="clickAdvancedBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="xoK-0I-qZn"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="aLk-Li-4Zi" firstAttribute="leading" secondItem="8TP-uV-sG0" secondAttribute="leading" id="5Wl-PT-grw"/>
-                        <constraint firstItem="9Rb-TY-Xpf" firstAttribute="width" secondItem="hJm-uk-wAj" secondAttribute="width" id="5an-7b-LWL"/>
-                        <constraint firstItem="Wyd-NB-O8y" firstAttribute="leading" secondItem="8TP-uV-sG0" secondAttribute="leading" id="7ts-GA-PLd"/>
-                        <constraint firstItem="N15-t8-XVB" firstAttribute="leading" secondItem="9Rb-TY-Xpf" secondAttribute="trailing" id="E2z-uc-9n0"/>
-                        <constraint firstItem="hDa-Cs-Oxo" firstAttribute="width" secondItem="Wyd-NB-O8y" secondAttribute="width" id="Epk-hA-WKj"/>
-                        <constraint firstItem="aLk-Li-4Zi" firstAttribute="top" secondItem="Wyd-NB-O8y" secondAttribute="bottom" id="Heg-U4-Efi"/>
-                        <constraint firstItem="jdZ-JM-twy" firstAttribute="top" secondItem="N15-t8-XVB" secondAttribute="bottom" id="Ikh-dW-yea"/>
-                        <constraint firstItem="hDa-Cs-Oxo" firstAttribute="top" secondItem="hJm-uk-wAj" secondAttribute="bottom" id="LI8-sf-jqg"/>
-                        <constraint firstAttribute="trailing" secondItem="jdZ-JM-twy" secondAttribute="trailing" id="LXi-wQ-Y2B"/>
-                        <constraint firstAttribute="trailing" secondItem="N15-t8-XVB" secondAttribute="trailing" id="M5e-tO-7ES"/>
-                        <constraint firstAttribute="bottom" secondItem="aLk-Li-4Zi" secondAttribute="bottom" id="Ogp-io-J8n"/>
+                        <constraint firstItem="aLk-Li-4Zi" firstAttribute="top" secondItem="hJm-uk-wAj" secondAttribute="bottom" id="4II-JV-1Hs"/>
+                        <constraint firstAttribute="trailing" secondItem="hDa-Cs-Oxo" secondAttribute="trailing" id="4mP-FY-TYV"/>
+                        <constraint firstItem="aLk-Li-4Zi" firstAttribute="leading" secondItem="8TP-uV-sG0" secondAttribute="leading" id="5tl-fX-4to"/>
+                        <constraint firstItem="N15-t8-XVB" firstAttribute="leading" secondItem="hJm-uk-wAj" secondAttribute="trailing" id="AhJ-uo-ZkO"/>
+                        <constraint firstItem="N15-t8-XVB" firstAttribute="width" secondItem="hJm-uk-wAj" secondAttribute="width" id="Bie-02-af1"/>
+                        <constraint firstItem="hDa-Cs-Oxo" firstAttribute="top" secondItem="8TP-uV-sG0" secondAttribute="top" id="E30-Yh-1Ap"/>
+                        <constraint firstItem="hJm-uk-wAj" firstAttribute="leading" secondItem="8TP-uV-sG0" secondAttribute="leading" id="Id6-Jt-1eL"/>
                         <constraint firstAttribute="height" constant="300" id="Pf9-6L-tV5"/>
-                        <constraint firstItem="hJm-uk-wAj" firstAttribute="top" secondItem="8TP-uV-sG0" secondAttribute="top" id="Usk-fY-P7X"/>
-                        <constraint firstItem="N15-t8-XVB" firstAttribute="top" secondItem="8TP-uV-sG0" secondAttribute="top" id="ZIz-qF-I3U"/>
-                        <constraint firstItem="hDa-Cs-Oxo" firstAttribute="leading" secondItem="Wyd-NB-O8y" secondAttribute="trailing" id="anm-xs-i82"/>
-                        <constraint firstItem="9Rb-TY-Xpf" firstAttribute="leading" secondItem="hJm-uk-wAj" secondAttribute="trailing" id="dtP-IL-5e0"/>
-                        <constraint firstItem="hJm-uk-wAj" firstAttribute="leading" secondItem="8TP-uV-sG0" secondAttribute="leading" id="fOv-pw-RM9"/>
-                        <constraint firstItem="Wyd-NB-O8y" firstAttribute="top" secondItem="hJm-uk-wAj" secondAttribute="bottom" id="hlh-cP-OVe"/>
-                        <constraint firstAttribute="trailing" secondItem="jdZ-JM-twy" secondAttribute="trailing" id="lLr-Xw-NEq"/>
-                        <constraint firstItem="N15-t8-XVB" firstAttribute="width" secondItem="hJm-uk-wAj" secondAttribute="width" id="nh6-IC-yPY"/>
-                        <constraint firstItem="jdZ-JM-twy" firstAttribute="leading" secondItem="hDa-Cs-Oxo" secondAttribute="trailing" id="oqS-8C-842"/>
-                        <constraint firstItem="9Rb-TY-Xpf" firstAttribute="top" secondItem="8TP-uV-sG0" secondAttribute="top" id="szk-gs-zxa"/>
-                        <constraint firstItem="Wyd-NB-O8y" firstAttribute="leading" secondItem="8TP-uV-sG0" secondAttribute="leading" id="vCe-aa-nLu"/>
-                        <constraint firstAttribute="trailing" secondItem="N15-t8-XVB" secondAttribute="trailing" id="vDd-gj-KoN"/>
-                        <constraint firstItem="jdZ-JM-twy" firstAttribute="width" secondItem="Wyd-NB-O8y" secondAttribute="width" id="vo5-cs-C0e"/>
-                        <constraint firstItem="aLk-Li-4Zi" firstAttribute="width" secondItem="Wyd-NB-O8y" secondAttribute="width" id="yOm-Rj-ch9"/>
-                        <constraint firstItem="hJm-uk-wAj" firstAttribute="leading" secondItem="8TP-uV-sG0" secondAttribute="leading" id="yz3-H3-RS3"/>
+                        <constraint firstItem="hJm-uk-wAj" firstAttribute="leading" secondItem="8TP-uV-sG0" secondAttribute="leading" id="QEq-Pd-jTZ"/>
+                        <constraint firstAttribute="trailing" secondItem="hDa-Cs-Oxo" secondAttribute="trailing" id="hp4-aQ-xWe"/>
+                        <constraint firstItem="aLk-Li-4Zi" firstAttribute="width" secondItem="hJm-uk-wAj" secondAttribute="width" id="igu-LY-XfL"/>
+                        <constraint firstItem="hDa-Cs-Oxo" firstAttribute="leading" secondItem="N15-t8-XVB" secondAttribute="trailing" id="p8R-5C-dot"/>
+                        <constraint firstItem="N15-t8-XVB" firstAttribute="top" secondItem="8TP-uV-sG0" secondAttribute="top" id="t83-Q0-iUh"/>
+                        <constraint firstItem="hDa-Cs-Oxo" firstAttribute="width" secondItem="hJm-uk-wAj" secondAttribute="width" id="zrT-K0-2NM"/>
+                        <constraint firstItem="hJm-uk-wAj" firstAttribute="top" secondItem="8TP-uV-sG0" secondAttribute="top" id="zrl-Xo-LWC"/>
                     </constraints>
                 </view>
             </subviews>

@@ -34,9 +34,6 @@
         DLog(@"菜单。。。");
         [MBProgressHUD showMessage:@"更新成功！" toView:self.view];
     };
-    headerView.clickAdvancedBgViewBlock = ^{
-        [weakSelf jumpToOptionVC];
-    };
     [self.view addSubview:headerView];
     self.headerView = headerView;
 }
@@ -48,9 +45,9 @@
 }
 
 #pragma mark -点击事件-
-- (void)jumpToOptionVC{
-    SXAdvancedOptionController *optionVC = [[SXAdvancedOptionController alloc] init];
-    [self.navigationController pushViewController:optionVC animated:YES];
-}
+//- (void)jumpToOptionVC{
+//    SXAdvancedOptionController *optionVC = [[SXAdvancedOptionController alloc] init];
+//    [self.navigationController pushViewController:optionVC animated:YES];
+//}
 
 @end

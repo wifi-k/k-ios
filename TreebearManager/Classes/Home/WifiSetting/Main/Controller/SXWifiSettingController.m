@@ -11,9 +11,7 @@
 #import "SXAdvancedController.h"
 #import "SXOnlineController.h"
 #import "SXLANPortController.h"
-#import "SXRestartController.h"
 #import "SXDHCPServerController.h"
-#import "SXRestoreController.h"
 #import "SXWifiSettingHeaderView.h"
 #import "SXWifiSettingAlertView.h"
 #import "SXTitleAlertView.h"
@@ -86,21 +84,13 @@
         }
             break;
         case 1:{
-            SXAdvancedController *advancedVC = [[SXAdvancedController alloc] init];
+            SXOnlineController *advancedVC = [[SXOnlineController alloc] init];
             [self.navigationController pushViewController:advancedVC animated:YES];
+//            SXAdvancedController *advancedVC = [[SXAdvancedController alloc] init];
+//            [self.navigationController pushViewController:advancedVC animated:YES];
         }
             break;
         case 2:{
-            SXOnlineController *advancedVC = [[SXOnlineController alloc] init];
-            [self.navigationController pushViewController:advancedVC animated:YES];
-        }
-            break;
-        case 3:{
-            SXLANPortController *advancedVC = [[SXLANPortController alloc] init];
-            [self.navigationController pushViewController:advancedVC animated:YES];
-        }
-            break;
-        case 4:{
             SXTitleAlertView *netAlertView = [SXTitleAlertView alertWithTitle:@"请确认是否重启" content:@"路由器重启预计需要几分钟时间，重启 过程中，所有已连设备会断开连接" confirmStr:@"确定" cancelStr:@"取消"];
             netAlertView.confirmButtonBlock = ^{
                 
@@ -109,17 +99,9 @@
                 
             };
             [netAlertView alert];
-            
-            //SXRestartController *advancedVC = [[SXRestartController alloc] init];
-            //[self.navigationController pushViewController:advancedVC animated:YES];
         }
             break;
-        case 5:{
-            SXDHCPServerController *advancedVC = [[SXDHCPServerController alloc] init];
-            [self.navigationController pushViewController:advancedVC animated:YES];
-        }
-            break;
-        case 6:{
+        case 3:{
             SXTitleAlertView *netAlertView = [SXTitleAlertView alertWithTitle:@"请确认是否恢复出厂设置" content:@"路由器的所有配置将恢复 至出厂时的默认状态" confirmStr:@"确定" cancelStr:@"取消"];
             netAlertView.confirmButtonBlock = ^{
                 
@@ -128,8 +110,24 @@
                 
             };
             [netAlertView alert];
-            //SXRestoreController *advancedVC = [[SXRestoreController alloc] init];
+
+        }
+            break;
+        case 4:{
+            
+//            SXLANPortController *advancedVC = [[SXLANPortController alloc] init];
+//            [self.navigationController pushViewController:advancedVC animated:YES];
+            //SXRestartController *advancedVC = [[SXRestartController alloc] init];
             //[self.navigationController pushViewController:advancedVC animated:YES];
+        }
+            break;
+        case 5:{
+//            SXDHCPServerController *advancedVC = [[SXDHCPServerController alloc] init];
+//            [self.navigationController pushViewController:advancedVC animated:YES];
+        }
+            break;
+        case 6:{
+            DLog(@"tag:%ld",tag);
         }
             break;
         case 7:

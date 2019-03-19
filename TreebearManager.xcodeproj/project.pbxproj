@@ -169,8 +169,6 @@
 		09B9B8252230EC8D000868D5 /* SXLANPortController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B8242230EC8D000868D5 /* SXLANPortController.m */; };
 		09B9B8282230ECB3000868D5 /* SXOnlineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B8272230ECB3000868D5 /* SXOnlineController.m */; };
 		09B9B82B2230ECD3000868D5 /* SXPreventController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B82A2230ECD3000868D5 /* SXPreventController.m */; };
-		09B9B82E2230ECE0000868D5 /* SXRestartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B82D2230ECE0000868D5 /* SXRestartController.m */; };
-		09B9B8312230ECEF000868D5 /* SXRestoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B8302230ECEF000868D5 /* SXRestoreController.m */; };
 		09B9B8352230EF5D000868D5 /* SXNetPreventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B8322230EF5D000868D5 /* SXNetPreventCell.m */; };
 		09B9B8362230EF5D000868D5 /* SXNetPreventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B9B8342230EF5D000868D5 /* SXNetPreventCell.xib */; };
 		09B9B8392230F590000868D5 /* SXAdvancedHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B8382230F590000868D5 /* SXAdvancedHeaderView.m */; };
@@ -621,10 +619,6 @@
 		09B9B8272230ECB3000868D5 /* SXOnlineController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineController.m; sourceTree = "<group>"; };
 		09B9B8292230ECD3000868D5 /* SXPreventController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPreventController.h; sourceTree = "<group>"; };
 		09B9B82A2230ECD3000868D5 /* SXPreventController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPreventController.m; sourceTree = "<group>"; };
-		09B9B82C2230ECE0000868D5 /* SXRestartController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXRestartController.h; sourceTree = "<group>"; };
-		09B9B82D2230ECE0000868D5 /* SXRestartController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXRestartController.m; sourceTree = "<group>"; };
-		09B9B82F2230ECEF000868D5 /* SXRestoreController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXRestoreController.h; sourceTree = "<group>"; };
-		09B9B8302230ECEF000868D5 /* SXRestoreController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXRestoreController.m; sourceTree = "<group>"; };
 		09B9B8322230EF5D000868D5 /* SXNetPreventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXNetPreventCell.m; sourceTree = "<group>"; };
 		09B9B8332230EF5D000868D5 /* SXNetPreventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXNetPreventCell.h; sourceTree = "<group>"; };
 		09B9B8342230EF5D000868D5 /* SXNetPreventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SXNetPreventCell.xib; sourceTree = "<group>"; };
@@ -1546,39 +1540,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		09B9B8052230EC26000868D5 /* Restart */ = {
-			isa = PBXGroup;
-			children = (
-				09B9B8062230EC26000868D5 /* Controller */,
-				09B9B8072230EC26000868D5 /* Model */,
-				09B9B8082230EC26000868D5 /* View */,
-			);
-			path = Restart;
-			sourceTree = "<group>";
-		};
-		09B9B8062230EC26000868D5 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				09B9B82C2230ECE0000868D5 /* SXRestartController.h */,
-				09B9B82D2230ECE0000868D5 /* SXRestartController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		09B9B8072230EC26000868D5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		09B9B8082230EC26000868D5 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		09B9B8092230EC27000868D5 /* Online */ = {
 			isa = PBXGroup;
 			children = (
@@ -1751,39 +1712,6 @@
 				09B9B87D22325728000868D5 /* SXLANPortHeaderView.h */,
 				09B9B87E22325728000868D5 /* SXLANPortHeaderView.m */,
 				09B9B88022325766000868D5 /* SXLANPortHeaderView.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		09B9B8192230EC27000868D5 /* Restore */ = {
-			isa = PBXGroup;
-			children = (
-				09B9B81A2230EC27000868D5 /* Controller */,
-				09B9B81B2230EC27000868D5 /* Model */,
-				09B9B81C2230EC27000868D5 /* View */,
-			);
-			path = Restore;
-			sourceTree = "<group>";
-		};
-		09B9B81A2230EC27000868D5 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				09B9B82F2230ECEF000868D5 /* SXRestoreController.h */,
-				09B9B8302230ECEF000868D5 /* SXRestoreController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		09B9B81B2230EC27000868D5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		09B9B81C2230EC27000868D5 /* View */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2138,8 +2066,6 @@
 				09B9B8152230EC27000868D5 /* LANPort */,
 				09B9B8092230EC27000868D5 /* Online */,
 				09B9B80D2230EC27000868D5 /* Prevent */,
-				09B9B8052230EC26000868D5 /* Restart */,
-				09B9B8192230EC27000868D5 /* Restore */,
 				09B9B7E52230EAD2000868D5 /* Main */,
 			);
 			path = WifiSetting;
@@ -3212,7 +3138,6 @@
 				099CEFEB223B44100077DE42 /* SXHomeReportCollectionCell.m in Sources */,
 				09D5F65A222B8D6100EA681A /* SXUpdateVersionHeaderView.m in Sources */,
 				09B9B87A22321536000868D5 /* SXTimeControlEditHeaderView.m in Sources */,
-				09B9B82E2230ECE0000868D5 /* SXRestartController.m in Sources */,
 				09462AF5223896FB0063F67E /* SXOnlineOptionButton.m in Sources */,
 				09D5F6042227E4DA00EA681A /* SXMineUserInfoModel.m in Sources */,
 				09F233092223EE4D0086AB35 /* SXXiaoKiController.m in Sources */,
@@ -3259,7 +3184,6 @@
 				092D6D102202DD9400538AC8 /* SXLoginHeaderView.m in Sources */,
 				092D6D1D2202E6EC00538AC8 /* SXForgetConfirmController.m in Sources */,
 				09462ADD2237AAA60063F67E /* SXOnlineFixedIPController.m in Sources */,
-				09B9B8312230ECEF000868D5 /* SXRestoreController.m in Sources */,
 				09D5F654222B88E400EA681A /* SXInputAlertView.m in Sources */,
 				B348F9AB21F71A680000F194 /* UIButton+Extension.m in Sources */,
 				092D6D2F2203F6E100538AC8 /* SXHomeMainHeaderView.m in Sources */,

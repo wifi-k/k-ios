@@ -35,10 +35,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *dns2L;
 @property (weak, nonatomic) IBOutlet UIView *sixthBgView;
 
-@property (weak, nonatomic) IBOutlet UILabel *advancedTitleL;
-@property (weak, nonatomic) IBOutlet UIView *divideLineView;
-@property (weak, nonatomic) IBOutlet UIView *seventhBgView;
-
 @property (weak, nonatomic) IBOutlet UIButton *updateIPBtn;
 
 @end
@@ -69,7 +65,6 @@
     self.fourthBgView.backgroundColor = SXColorWhite;
     self.fifthBgView.backgroundColor = SXColorWhite;
     self.sixthBgView.backgroundColor = SXColorWhite;
-    self.seventhBgView.backgroundColor = SXColorWhite;
     
     self.connectStatusTitleL.textColor = SXColor999999;
     self.ipAddressTitleL.textColor = SXColor999999;
@@ -85,15 +80,9 @@
     self.dnsL.textColor = SXColor333333;
     self.dns2L.textColor = SXColor333333;
     
-    self.divideLineView.backgroundColor = SXColorDivideLine;
-    self.divideLineView.height = 0.5f;
-    
-    self.advancedTitleL.textColor = SXColor333333;
-    self.advancedTitleL.font = SXFontBold18;
-    
     //1.1添加点击手势
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickAdvancedBgView)];
-    [self.seventhBgView addGestureRecognizer:tap];
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickAdvancedBgView)];
+//    [self.seventhBgView addGestureRecognizer:tap];
     
     self.updateIPBtn.backgroundColor = SXColorWhite;
     [self.updateIPBtn setTitleColor:SXColor999999 forState:UIControlStateNormal];
@@ -107,10 +96,10 @@
     }
 }
 
-- (void)clickAdvancedBgView{
-    if (self.clickAdvancedBgViewBlock) {
-        self.clickAdvancedBgViewBlock();
-    }
-}
+//- (void)clickAdvancedBgView{
+//    if (self.clickAdvancedBgViewBlock) {
+//        self.clickAdvancedBgViewBlock();
+//    }
+//}
 
 @end

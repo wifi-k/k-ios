@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) void (^clickUpdateIPBtnBlock)(void);
 
 ///点击高级选项回调
-@property (nonatomic, copy) void (^clickAdvancedBgViewBlock)(void);
+//@property (nonatomic, copy) void (^clickAdvancedBgViewBlock)(void);
 
 
 
