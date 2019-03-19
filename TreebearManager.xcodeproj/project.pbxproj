@@ -36,6 +36,8 @@
 		091BC477223FBCAA00FEBFD1 /* SXTimeControlModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC476223FBCAA00FEBFD1 /* SXTimeControlModel.m */; };
 		091BC47A2240EEC100FEBFD1 /* SXWarningAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC4792240EEC100FEBFD1 /* SXWarningAlertView.m */; };
 		091BC47D2240F21100FEBFD1 /* SXTopImageAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC47C2240F21100FEBFD1 /* SXTopImageAlertView.m */; };
+		091BC4802241010D00FEBFD1 /* SXXiaoKNodeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC47F2241010D00FEBFD1 /* SXXiaoKNodeResult.m */; };
+		091BC4842241037F00FEBFD1 /* SXWifiSettingNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC4832241037F00FEBFD1 /* SXWifiSettingNetTool.m */; };
 		092D6CDE22004FB400538AC8 /* SXRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CDD22004FB400538AC8 /* SXRefreshHeader.m */; };
 		092D6CE12200504100538AC8 /* SXRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CE02200504100538AC8 /* SXRefreshFooter.m */; };
 		092D6CE422005A0C00538AC8 /* SXEmptyDataEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CE322005A0C00538AC8 /* SXEmptyDataEventView.m */; };
@@ -385,6 +387,10 @@
 		091BC4792240EEC100FEBFD1 /* SXWarningAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXWarningAlertView.m; sourceTree = "<group>"; };
 		091BC47B2240F21100FEBFD1 /* SXTopImageAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTopImageAlertView.h; sourceTree = "<group>"; };
 		091BC47C2240F21100FEBFD1 /* SXTopImageAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXTopImageAlertView.m; sourceTree = "<group>"; };
+		091BC47E2241010D00FEBFD1 /* SXXiaoKNodeResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXXiaoKNodeResult.h; sourceTree = "<group>"; };
+		091BC47F2241010D00FEBFD1 /* SXXiaoKNodeResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXXiaoKNodeResult.m; sourceTree = "<group>"; };
+		091BC4822241037F00FEBFD1 /* SXWifiSettingNetTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXWifiSettingNetTool.h; sourceTree = "<group>"; };
+		091BC4832241037F00FEBFD1 /* SXWifiSettingNetTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXWifiSettingNetTool.m; sourceTree = "<group>"; };
 		092D6CDC22004FB400538AC8 /* SXRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXRefreshHeader.h; sourceTree = "<group>"; };
 		092D6CDD22004FB400538AC8 /* SXRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXRefreshHeader.m; sourceTree = "<group>"; };
 		092D6CDF2200504100538AC8 /* SXRefreshFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXRefreshFooter.h; sourceTree = "<group>"; };
@@ -916,6 +922,8 @@
 		0900F511222D31AF00250155 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				091BC47E2241010D00FEBFD1 /* SXXiaoKNodeResult.h */,
+				091BC47F2241010D00FEBFD1 /* SXXiaoKNodeResult.m */,
 				0900F512222D31BD00250155 /* SXNetOptionModel.h */,
 				0900F513222D31BD00250155 /* SXNetOptionModel.m */,
 				09B9B7B9222FBE3F000868D5 /* SXNetStaticParam.h */,
@@ -1038,6 +1046,15 @@
 				091BC476223FBCAA00FEBFD1 /* SXTimeControlModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		091BC4812241036700FEBFD1 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				091BC4822241037F00FEBFD1 /* SXWifiSettingNetTool.h */,
+				091BC4832241037F00FEBFD1 /* SXWifiSettingNetTool.m */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		092D6CDB22004F3800538AC8 /* MJRefresh */ = {
@@ -2071,6 +2088,7 @@
 		09FB47352223C2FD00809273 /* WifiSetting */ = {
 			isa = PBXGroup;
 			children = (
+				091BC4812241036700FEBFD1 /* Helper */,
 				09B9B8112230EC27000868D5 /* Advanced */,
 				09B9B8012230EC26000868D5 /* DHCPServer */,
 				09B9B8152230EC27000868D5 /* LANPort */,
@@ -3095,6 +3113,7 @@
 				09462AF22237DD130063F67E /* SXAdvancedOptionController.m in Sources */,
 				09118702221522BF00938D9F /* GCDAsyncSocketCommunicationManager.m in Sources */,
 				B348F96121F6C50C0000F194 /* SXRootTool.m in Sources */,
+				091BC4802241010D00FEBFD1 /* SXXiaoKNodeResult.m in Sources */,
 				09118704221522BF00938D9F /* GACConnectConfig.m in Sources */,
 				09462B182238F10A0063F67E /* SXMineSettingController.m in Sources */,
 				B3AF300521FB092F001E4E67 /* SXBasePageParam.m in Sources */,
@@ -3157,6 +3176,7 @@
 				B3AF304221FE9BF3001E4E67 /* SXBaseEmptyDataView.m in Sources */,
 				B3AF303F21FE97B1001E4E67 /* SXBaseJSWebController.m in Sources */,
 				0900F51A222D4FAF00250155 /* SXNetStaticController.m in Sources */,
+				091BC4842241037F00FEBFD1 /* SXWifiSettingNetTool.m in Sources */,
 				09B9B8352230EF5D000868D5 /* SXNetPreventCell.m in Sources */,
 				098BA308221AB1B200F58639 /* SXCodeLoginHeaderView.m in Sources */,
 				B348F98121F711B90000F194 /* UIColor+BFKit.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SXXiaoKNodeResult.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -31,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)ssidSettingWithDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
 ///获取节点信息
-+ (void)getNodeWithDataWithSuccess:(void (^)(NSString *node))success failure:(void (^)(NSError *error))failure;
++ (void)getNodeWithDataWithSuccess:(void (^)(SXXiaoKNodeResult *result))success failure:(void (^)(NSError *error))failure;
 
 @end
 

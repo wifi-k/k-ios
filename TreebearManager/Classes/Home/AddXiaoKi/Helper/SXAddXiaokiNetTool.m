@@ -93,16 +93,17 @@
     }];
 }
 
-+ (void)getNodeWithDataWithSuccess:(void (^)(NSString *node))success failure:(void (^)(NSError *error))failure{
++ (void)getNodeWithDataWithSuccess:(void (^)(SXXiaoKNodeResult *result))success failure:(void (^)(NSError *error))failure{
+    
     [XKNetRequestTool POST:node_get parameters:nil success:^(id response) {
         
         if (![response isKindOfClass:NSDictionary.class]) return;
         
-        //获取token，保存单利
-        NSString *node = [response objectForKey:@"id"];
+        //获取节点信息
+        SXXiaoKNodeResult *result = [SXXiaoKNodeResult mj_objectWithKeyValues:response];
         
         if (success){
-            success(node);
+            success(result);
         }
     } failure:^(NSError *error) {
         if (failure) {

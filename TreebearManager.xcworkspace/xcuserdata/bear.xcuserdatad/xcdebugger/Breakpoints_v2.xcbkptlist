@@ -20,12 +20,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TreebearManager/Classes/Login/Regist/Controller/SXRegistSetPwdController.m"
-            timestampString = "572941796.296368"
+            timestampString = "574686938.7677031"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
             endingLineNumber = "55"
-            landmarkName = "-registUserInfoWithPwd"
+            landmarkName = "-resetPasswordData"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,6 +58,70 @@
             startingLineNumber = "69"
             endingLineNumber = "69"
             landmarkName = "+netWorkAbility"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TreebearManager/Classes/Home/WifiSetting/Main/Controller/SXWifiSettingController.m"
+            timestampString = "574687018.0714771"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "-nodeResetWithData"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TreebearManager/Classes/Home/WifiSetting/Main/Controller/SXWifiSettingController.m"
+            timestampString = "574687022.567644"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "-nodeResetWithData"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TreebearManager/Classes/Home/WifiSetting/Main/Controller/SXWifiSettingController.m"
+            timestampString = "574687121.7114511"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "-nodeRestartWithData"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TreebearManager/Classes/Home/WifiSetting/Main/Controller/SXWifiSettingController.m"
+            timestampString = "574687123.127311"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "-nodeRestartWithData"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -34,5 +34,7 @@ NSString *const network_status = @"network/status";
 
 NSString *const ssid_set = @"ssid/set";
 NSString *const node_get = @"node/get";
+NSString *const node_restart = @"node/restart";
+NSString *const node_reset = @"node/reset";
 
 @end

@@ -91,9 +91,10 @@
 
 - (void)getNodeData{
 //    WS(weakSelf);
-    [SXAddXiaokiNetTool getNodeWithDataWithSuccess:^(NSString * _Nonnull node) {
+    [SXAddXiaokiNetTool getNodeWithDataWithSuccess:^(SXXiaoKNodeResult * _Nonnull result) {
         DLog(@"获取节点");
-        DLog(@"node:%@",node);
+        DLog(@"node:%@",result.modelId);
+        DLog(@"result:%@",result.mj_keyValues);
     } failure:^(NSError * _Nonnull error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];

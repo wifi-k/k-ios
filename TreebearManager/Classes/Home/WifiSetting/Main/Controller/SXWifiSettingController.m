@@ -16,6 +16,7 @@
 #import "SXWifiSettingAlertView.h"
 #import "SXTitleAlertView.h"
 #import "SXWarningAlertView.h"
+#import "SXWifiSettingNetTool.h"
 
 @interface SXWifiSettingController ()
 @property (nonatomic, weak) SXWifiSettingHeaderView *headerView;//头部视图
@@ -78,6 +79,7 @@
 
 #pragma mark -页面跳转-
 - (void)jumpToSettingVC:(NSInteger)tag{
+    WS(weakSelf);
     switch (tag) {
         case 0:{
             SXPreventController *preventVC = [[SXPreventController alloc] init];
@@ -95,7 +97,7 @@
             
             SXWarningAlertView *netAlertView = [SXWarningAlertView alertWithTitle:@"请确认是否重启" content:@"路由器重启预计需要几分钟时间，重启过程中，所有已连设备会断开连接" confirmStr:@"确定" cancelStr:@"取消"];
             netAlertView.confirmButtonBlock = ^{
-                
+                [weakSelf nodeRestartWithData];
             };
             netAlertView.cancelButtonBlock = ^{
                 
@@ -106,7 +108,7 @@
         case 3:{
             SXWarningAlertView *netAlertView = [SXWarningAlertView alertWithTitle:@"请确认是否恢复出厂设置" content:@"路由器的所有配置将恢复至出厂时的默认状态" confirmStr:@"确定" cancelStr:@"取消"];
             netAlertView.confirmButtonBlock = ^{
-                
+                [weakSelf nodeResetWithData];
             };
             netAlertView.cancelButtonBlock = ^{
                 
@@ -138,6 +140,35 @@
         default:
             break;
     }
+}
+
+#pragma mark -网络请求-
+- (void)nodeRestartWithData{
+    WS(weakSelf);
+    [MBProgressHUD showWhiteLoadingWithMessage:@"重启中..." toView:self.view];
+    [SXWifiSettingNetTool nodeRestartWithDataSuccess:^{
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        DLog(@"重启节点OK!");
+        [MBProgressHUD showMessage:@"重启节点OK!" toView:weakSelf.view];
+    } failure:^(NSError * _Nonnull error) {
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
+- (void)nodeResetWithData{
+    WS(weakSelf);
+    [MBProgressHUD showWhiteLoadingWithMessage:@"恢复中..." toView:self.view];
+    [SXWifiSettingNetTool nodeResetWithDataSuccess:^{
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        DLog(@"恢复出厂设置OK!");
+        [MBProgressHUD showMessage:@"恢复出厂设置OK!" toView:weakSelf.view];
+    } failure:^(NSError * _Nonnull error) {
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
 
 @end
