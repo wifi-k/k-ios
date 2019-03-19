@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///禁用方案模型
 @property (nonatomic, strong) SXForbiddenAppModel *model;
+///点击确定按钮回调
+@property (nonatomic, copy) void (^selectForbiddenOptionBlock)(SXForbiddenAppModel *model);
 
 @end
 

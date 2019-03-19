@@ -10,6 +10,8 @@
 #import "SXHomeReportReusableView.h"
 #import "SXHomeReportCollectionCell.h"
 
+#define COL 4
+
 @interface SXHomeReportController ()<UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic, weak) UICollectionView *collectionView;//滚动视图
 @end
@@ -31,11 +33,11 @@
     //流水布局
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    float collectionWidth = (SCREEN_WIDTH - 3 * 10)/4;
+    float collectionWidth = (SCREEN_WIDTH - (COL+1)*10)/COL;
     layout.itemSize = CGSizeMake(collectionWidth, collectionWidth);
     
     //设置每一行之间的间距
-    CGFloat inset = (SCREEN_WIDTH - 2 * layout.itemSize.width) / (2 + 1);
+    CGFloat inset = (SCREEN_WIDTH - COL * layout.itemSize.width) / (COL + 1);
     layout.sectionInset = UIEdgeInsetsMake(inset, inset, inset, inset);
     layout.minimumLineSpacing = inset;
     
@@ -45,7 +47,7 @@
     collectV.delegate = self;
     collectV.showsVerticalScrollIndicator = YES;
     collectV.showsHorizontalScrollIndicator = NO;
-    collectV.backgroundColor = SXColorBgViewGray;
+    collectV.backgroundColor = SXColorWhite;
     collectV.alwaysBounceVertical = YES;
     [self.view addSubview:collectV];
     self.collectionView = collectV;
@@ -63,7 +65,7 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 16;
+    return 9;
 }
 
 //定义每个Section的四边间距
@@ -76,7 +78,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        float collectionWidth = (SCREEN_WIDTH - 3 * 10)/4;
+        float collectionWidth = (SCREEN_WIDTH - (COL+1)*10)/COL;
         return CGSizeMake(collectionWidth, collectionWidth);
     }
     return CGSizeZero;
@@ -100,7 +102,7 @@
 
 #pragma mark -UICollectionViewDelegateFlowLayout方法-
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
-    return (CGSize){SCREEN_WIDTH,250};
+    return (CGSize){SCREEN_WIDTH,348};
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
