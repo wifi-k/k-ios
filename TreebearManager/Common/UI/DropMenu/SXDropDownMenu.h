@@ -24,6 +24,6 @@
 - (void)hideDropDownMenuWithBtnFrame:(CGRect)btnFrame;
 
 ///显示选择菜单
-- (void)showDropDownMenuWithButtonFrame:(CGRect)buttonFrame arrayOfTitle:(NSArray *)titleArr;
+- (void)showDropDownMenuWithButtonFrame:(CGRect)buttonFrame titles:(NSArray *)titles;
 
 @end

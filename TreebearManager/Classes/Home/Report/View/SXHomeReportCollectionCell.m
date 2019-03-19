@@ -15,7 +15,10 @@
 @implementation SXHomeReportCollectionCell
 
 + (instancetype)cellWithCollectionView:(UICollectionView *)collectionView atIndexPath:(NSIndexPath *)indexPath{
-    return [collectionView dequeueReusableCellWithReuseIdentifier:SXHomeReportCollectionCellID forIndexPath:indexPath];
+    NSString *identifier = NSStringFromClass(self);
+    UINib *nib = [UINib nibWithNibName:identifier bundle:nil];
+    [collectionView registerNib:nib forCellWithReuseIdentifier:identifier];
+    return [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
 }
 
 - (void)awakeFromNib {

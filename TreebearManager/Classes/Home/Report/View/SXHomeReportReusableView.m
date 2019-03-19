@@ -10,32 +10,11 @@
 
 @implementation SXHomeReportReusableView
 
-+ (instancetype)sectionHeaderWithCollectionView:(UICollectionView *)collectionView atIndexPath:(NSIndexPath *)indexPath{
-    return [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:SXHomeReportReusableViewID forIndexPath:indexPath];
-}
-
-- (instancetype)initWithFrame:(CGRect)frame{
-    self = [super initWithFrame:frame];
-    if (self){
-        [self setUpUI];
-    }
-    return self;
-}
-
-- (instancetype)initWithCoder:(NSCoder *)aDecoder{
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        [self setUpUI];
-    }
-    return self;
-}
-
-- (instancetype)init{
-    self = [super init];
-    if (self) {
-        [self setUpUI];
-    }
-    return self;
++ (instancetype)sectionHeaderAwakeFromNib:(UICollectionView *)collectionView atIndexPath:(NSIndexPath *)indexPath {
+    NSString *identifier = NSStringFromClass(self);
+    UINib *nib = [UINib nibWithNibName:identifier bundle:nil];
+    [collectionView registerNib:nib forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:identifier];
+    return [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:identifier forIndexPath:indexPath];
 }
 
 - (void)awakeFromNib {

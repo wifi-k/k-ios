@@ -124,7 +124,7 @@
 #pragma mark -下拉菜单视图-
 - (void)setUpDropDownMenu{
     SXDropDownMenu *dropDownMenu = [SXDropDownMenu dropMenu];
-    [dropDownMenu showDropDownMenuWithButtonFrame:self.headerView.optionBtn.frame arrayOfTitle:self.titles];
+    [dropDownMenu showDropDownMenuWithButtonFrame:self.headerView.optionBtn.frame titles:self.titles];
     dropDownMenu.delegate = self;
     [self.view addSubview:dropDownMenu];
     self.dropDownMenu = dropDownMenu;

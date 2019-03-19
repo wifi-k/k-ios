@@ -8,14 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-static NSString *const SXHomeReportReusableViewID = @"SXHomeReportReusableViewID";
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXHomeReportReusableView : UICollectionReusableView
 
 ///初始化UI
-+ (instancetype)sectionHeaderWithCollectionView:(UICollectionView *)collectionView atIndexPath:(NSIndexPath *)indexPath;
++ (instancetype)sectionHeaderAwakeFromNib:(UICollectionView *)collectionView atIndexPath:(NSIndexPath *)indexPath;
 
 @end
 

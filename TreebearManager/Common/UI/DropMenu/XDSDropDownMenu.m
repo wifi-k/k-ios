@@ -53,7 +53,7 @@
         [self.menuTableView flashScrollIndicators];//显示滚动条
         
         [UIView beginAnimations:nil context:nil];//动画
-        [UIView setAnimationDuration:0.5];
+        [UIView setAnimationDuration:0.25];
         //菜单视图的最终大小和位置
         self.frame = CGRectMake(btnRect.origin.x, btnRect.origin.y+btnRect.size.height+2, btnRect.size.width, height);
         self.menuTableView.frame = CGRectMake(0, 0, btnRect.size.width, height);
@@ -64,7 +64,7 @@
 
 - (void)hideDropDownMenuWithBtnFrame:(CGRect)btnFrame {
     [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.3];
+    [UIView setAnimationDuration:0.25];
     self.frame = CGRectMake(btnFrame.origin.x, btnFrame.origin.y+btnFrame.size.height+2, btnFrame.size.width, 0);
     self.menuTableView.frame = CGRectMake(0, 0, btnFrame.size.width, 0);
     [UIView commitAnimations];

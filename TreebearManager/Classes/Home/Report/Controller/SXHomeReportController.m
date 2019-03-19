@@ -49,12 +49,6 @@
     collectV.alwaysBounceVertical = YES;
     [self.view addSubview:collectV];
     self.collectionView = collectV;
-    
-    //1.注册Cell
-    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass(SXHomeReportCollectionCell.class) bundle:nil] forCellWithReuseIdentifier:SXHomeReportCollectionCellID];
-    
-    //1.注册分组头部视图(第一分组,头部)
-    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass(SXHomeReportReusableView.class) bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:SXHomeReportReusableViewID];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -112,7 +106,7 @@
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {//头部视图
-        SXHomeReportReusableView *reusableView = [SXHomeReportReusableView sectionHeaderWithCollectionView:collectionView atIndexPath:indexPath];
+        SXHomeReportReusableView *reusableView = [SXHomeReportReusableView sectionHeaderAwakeFromNib:collectionView atIndexPath:indexPath];
         return reusableView;
     }else if ([kind isEqualToString:UICollectionElementKindSectionFooter]){//底部视图
         return nil;

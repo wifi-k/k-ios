@@ -8,8 +8,7 @@
 
 #import "SXDropDownMenu.h"
 
-#define DTMarginX 5
-#define DTMarginY 18
+#define CELL_HEIGHT 40
 
 @interface SXDropDownMenu ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, strong) UITableView *tableView;
@@ -24,7 +23,7 @@
     return [[self alloc] initWithFrame:SXKeyWindow.bounds];
 }
 
-- (void)showDropDownMenuWithButtonFrame:(CGRect)buttonFrame arrayOfTitle:(NSArray *)titleArr{
+- (void)showDropDownMenuWithButtonFrame:(CGRect)buttonFrame titles:(NSArray *)titles{
     
     self.backgroundColor = [UIColor whiteColor];
     self.tableView = (UITableView *)[super init];
@@ -33,13 +32,13 @@
     if (self) {
         CGRect btnRect = buttonFrame;//按钮在视图上的位置
         CGFloat height = 0;//菜单高度
-        if ( titleArr.count <= 4) {
-            height = titleArr.count * 40;
+        if ( titles.count <= 4) {
+            height = titles.count * CELL_HEIGHT;
         }else{
             height = 200;
         }
         
-        self.titles = [NSArray arrayWithArray:titleArr];
+        self.titles = [NSArray arrayWithArray:titles];
         
         //菜单视图的起始大小和位置
         self.frame = CGRectMake(btnRect.origin.x, btnRect.origin.y+btnRect.size.height+2, btnRect.size.width, 0);
@@ -60,22 +59,21 @@
         self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, btnRect.size.width, 0.001)];//最后无分割线
         [self.tableView flashScrollIndicators];//显示滚动条
         
-        [UIView beginAnimations:nil context:nil];//动画
-        [UIView setAnimationDuration:0.5];
-        //菜单视图的最终大小和位置
-        self.frame = CGRectMake(btnRect.origin.x, btnRect.origin.y+btnRect.size.height+2, btnRect.size.width, height);
-        self.tableView.frame = CGRectMake(0, 0, btnRect.size.width, height);
-        [UIView commitAnimations];
-        [self addSubview:self.tableView];
+        [UIView animateWithDuration:0.25 animations:^{
+            //菜单视图的最终大小和位置
+            self.frame = CGRectMake(btnRect.origin.x, btnRect.origin.y+btnRect.size.height+2, btnRect.size.width, height);
+            self.tableView.frame = CGRectMake(0, 0, btnRect.size.width, height);
+        } completion:^(BOOL finished) {
+            [self addSubview:self.tableView];
+        }];
     }
 }
 
 - (void)hideDropDownMenuWithBtnFrame:(CGRect)btnFrame {
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.3];
-    self.frame = CGRectMake(btnFrame.origin.x, btnFrame.origin.y+btnFrame.size.height+2, btnFrame.size.width, 0);
-    self.tableView.frame = CGRectMake(0, 0, btnFrame.size.width, 0);
-    [UIView commitAnimations];
+    [UIView animateWithDuration:0.25 animations:^{
+        self.frame = CGRectMake(btnFrame.origin.x, btnFrame.origin.y+btnFrame.size.height+2, btnFrame.size.width, 0);
+        self.tableView.frame = CGRectMake(0, 0, btnFrame.size.width, 0);    
+    }];
 }
 
 #pragma mark -datasource/delegagte-
@@ -84,7 +82,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 40;
+    return CELL_HEIGHT;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
