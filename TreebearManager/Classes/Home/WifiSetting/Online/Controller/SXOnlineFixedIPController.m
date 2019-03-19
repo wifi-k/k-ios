@@ -23,7 +23,7 @@
 }
 
 - (void)setUpUI{
-    self.view.backgroundColor = SXColorRandom;
+    self.view.backgroundColor = SXColorWhite;
     
 //    self.navigationItem.title = @"固定IP地址";
     
@@ -32,14 +32,15 @@
     headerView.clickSaveBtnBlock = ^{
         [weakSelf saveData];
     };
-    [self.view addSubview:headerView];
+    self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
+    self.headerView.frame = self.view.bounds;
 }
 
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     
-    self.headerView.frame = self.view.bounds;
+//    self.headerView.frame = self.view.bounds;
 }
 
 #pragma mark -Event-

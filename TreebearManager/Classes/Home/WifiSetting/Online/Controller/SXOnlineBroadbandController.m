@@ -23,7 +23,7 @@
 }
 
 - (void)setUpUI{
-    self.view.backgroundColor = SXColorRandom;
+    self.view.backgroundColor = SXColorWhite;
     
 //    self.navigationItem.title = @"宽带拨号上网";
     
@@ -36,14 +36,15 @@
     headerView.clickConnectedBtnBlock = ^{
         [MBProgressHUD showMessage:@"重新连接！" toView:self.view];
     };
-    [self.view addSubview:headerView];
+    self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
+    self.headerView.frame = self.view.bounds;
 }
 
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     
-    self.headerView.frame = self.view.bounds;
+//    self.headerView.frame = self.view.bounds;
 }
 
 @end

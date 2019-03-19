@@ -25,14 +25,14 @@
 
 #pragma mark -初始化UI-
 - (void)setUpUI{
-    self.view.backgroundColor = SXColorRandom;
+    
+    self.view.backgroundColor = SXColorWhite;
     
     //self.navigationItem.title = @"自动获取IP地址";
     WS(weakSelf);
     SXOnlineAutotIPHeaderView *headerView = [SXOnlineAutotIPHeaderView headerView];
     headerView.clickUpdateIPBtnBlock = ^{
-        DLog(@"菜单。。。");
-        [MBProgressHUD showMessage:@"更新成功！" toView:self.view];
+        [weakSelf jumpToOptionVC];
     };
     [self.view addSubview:headerView];
     self.headerView = headerView;
@@ -45,9 +45,8 @@
 }
 
 #pragma mark -点击事件-
-//- (void)jumpToOptionVC{
-//    SXAdvancedOptionController *optionVC = [[SXAdvancedOptionController alloc] init];
-//    [self.navigationController pushViewController:optionVC animated:YES];
-//}
+- (void)jumpToOptionVC{
+    [MBProgressHUD showMessage:@"更新成功！" toView:self.view];
+}
 
 @end
