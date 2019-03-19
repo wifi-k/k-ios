@@ -36,9 +36,7 @@ PODS:
   - SDWebImage/Core (4.1.2)
   - SVProgressHUD (2.0.3)
   - TZImagePickerController (3.2.0)
-  - YYKit (1.0.9):
-    - YYKit/no-arc (= 1.0.9)
-  - YYKit/no-arc (1.0.9)
+  - WYChart (0.3.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
@@ -59,7 +57,7 @@ DEPENDENCIES:
   - SDWebImage (~> 4.1.0)
   - SVProgressHUD (= 2.0.3)
   - TZImagePickerController
-  - YYKit
+  - WYChart
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -81,7 +79,7 @@ SPEC REPOS:
     - SDWebImage
     - SVProgressHUD
     - TZImagePickerController
-    - YYKit
+    - WYChart
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -102,8 +100,8 @@ SPEC CHECKSUMS:
   SDWebImage: cb6f9f266a9977741efcbc21e618e8be3734c774
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   TZImagePickerController: 7850b158d025065b162a1a963d445040b828abc9
-  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+  WYChart: 7523ef7395b4f4c8c88415bf0dd4f8d27a7757ce
 
-PODFILE CHECKSUM: 5ed6a2a2755ac6033efad123bf709299ad396af1
+PODFILE CHECKSUM: 65ecea8aca9e529473cddb16366693217c02fe45
 
 COCOAPODS: 1.5.3
