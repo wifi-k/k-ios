@@ -10,19 +10,25 @@
 
 @interface SXOnlineFixedIPHeaderView ()
 
+@property (weak, nonatomic) IBOutlet UITextField *ipTextField;
 @property (weak, nonatomic) IBOutlet UIView *firstBgView;
 
 
+@property (weak, nonatomic) IBOutlet UITextField *netmaskTextField;
 @property (weak, nonatomic) IBOutlet UIView *secondBgView;
 
+@property (weak, nonatomic) IBOutlet UITextField *gatewayTextField;
 @property (weak, nonatomic) IBOutlet UIView *thirdBgView;
 
 
+@property (weak, nonatomic) IBOutlet UITextField *dnsTextField;
 @property (weak, nonatomic) IBOutlet UIView *fourthBgView;
 
 
+@property (weak, nonatomic) IBOutlet UITextField *dns2TextField;
 @property (weak, nonatomic) IBOutlet UIView *fifthBgView;
 
+@property (weak, nonatomic) IBOutlet UIButton *saveBtn;
 @end
 
 @implementation SXOnlineFixedIPHeaderView
@@ -45,11 +51,26 @@
     
     self.backgroundColor = SXColorWhite;
     
+    self.ipTextField.backgroundColor = SXColorF6F7FB;
+    self.netmaskTextField.backgroundColor = SXColorF6F7FB;
+    self.gatewayTextField.backgroundColor = SXColorF6F7FB;
+    self.dnsTextField.backgroundColor = SXColorF6F7FB;
+    self.dns2TextField.backgroundColor = SXColorF6F7FB;
+    
     self.firstBgView.backgroundColor = SXColorWhite;
     self.secondBgView.backgroundColor = SXColorWhite;
     self.thirdBgView.backgroundColor = SXColorWhite;
     self.fourthBgView.backgroundColor = SXColorWhite;
     self.fifthBgView.backgroundColor = SXColorWhite;
+    
+    [self.saveBtn roundViewWithRadius:6.0f];
+}
+
+#pragma mark -Event-
+- (IBAction)clickSaveBtn:(UIButton *)sender {
+    if (self.clickSaveBtnBlock) {
+        self.clickSaveBtnBlock();
+    }
 }
 
 @end

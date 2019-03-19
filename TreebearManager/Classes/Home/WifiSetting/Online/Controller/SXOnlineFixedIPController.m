@@ -27,8 +27,11 @@
     
 //    self.navigationItem.title = @"固定IP地址";
     
-//    WS(weakSelf);
+    WS(weakSelf);
     SXOnlineFixedIPHeaderView *headerView = [SXOnlineFixedIPHeaderView headerView];
+    headerView.clickSaveBtnBlock = ^{
+        [weakSelf fdfdfdfd];
+    };
     [self.view addSubview:headerView];
     self.headerView = headerView;
 }
@@ -37,6 +40,11 @@
     [super viewDidLayoutSubviews];
     
     self.headerView.frame = self.view.bounds;
+}
+
+#pragma mark -Event-
+- (void)fdfdfdfd{
+    DLog(@"fdfdfdfd");
 }
 
 @end

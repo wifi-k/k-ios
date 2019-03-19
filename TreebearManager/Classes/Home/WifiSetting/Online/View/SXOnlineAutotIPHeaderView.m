@@ -84,9 +84,10 @@
 //    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickAdvancedBgView)];
 //    [self.seventhBgView addGestureRecognizer:tap];
     
-    self.updateIPBtn.backgroundColor = SXColorWhite;
-    [self.updateIPBtn setTitleColor:SXColor999999 forState:UIControlStateNormal];
-    [self.updateIPBtn roundViewWithRadius:22.5f borderColor:SXColorDivideLine borderWidth:1.0f];
+    [self.updateIPBtn roundViewWithRadius:6.0f];
+//    self.updateIPBtn.backgroundColor = SXColorWhite;
+//    [self.updateIPBtn setTitleColor:SXColor999999 forState:UIControlStateNormal];
+//    [self.updateIPBtn roundViewWithRadius:22.5f borderColor:SXColorDivideLine borderWidth:1.0f];
 }
 
 #pragma mark -点击事件-
