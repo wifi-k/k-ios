@@ -15,6 +15,7 @@
 #import "SXWifiSettingHeaderView.h"
 #import "SXWifiSettingAlertView.h"
 #import "SXTitleAlertView.h"
+#import "SXWarningAlertView.h"
 
 @interface SXWifiSettingController ()
 @property (nonatomic, weak) SXWifiSettingHeaderView *headerView;//头部视图
@@ -91,7 +92,8 @@
         }
             break;
         case 2:{
-            SXTitleAlertView *netAlertView = [SXTitleAlertView alertWithTitle:@"请确认是否重启" content:@"路由器重启预计需要几分钟时间，重启 过程中，所有已连设备会断开连接" confirmStr:@"确定" cancelStr:@"取消"];
+            
+            SXWarningAlertView *netAlertView = [SXWarningAlertView alertWithTitle:@"请确认是否重启" content:@"路由器重启预计需要几分钟时间，重启过程中，所有已连设备会断开连接" confirmStr:@"确定" cancelStr:@"取消"];
             netAlertView.confirmButtonBlock = ^{
                 
             };
@@ -102,7 +104,7 @@
         }
             break;
         case 3:{
-            SXTitleAlertView *netAlertView = [SXTitleAlertView alertWithTitle:@"请确认是否恢复出厂设置" content:@"路由器的所有配置将恢复 至出厂时的默认状态" confirmStr:@"确定" cancelStr:@"取消"];
+            SXWarningAlertView *netAlertView = [SXWarningAlertView alertWithTitle:@"请确认是否恢复出厂设置" content:@"路由器的所有配置将恢复至出厂时的默认状态" confirmStr:@"确定" cancelStr:@"取消"];
             netAlertView.confirmButtonBlock = ^{
                 
             };
