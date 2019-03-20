@@ -74,6 +74,8 @@
     SXTitleAlertView *netAlertView = [SXTitleAlertView alertWithTitle:@"连网提示" content:@"请前往手机系统设置,重新连接WiFi" confirmStr:@"确定" cancelStr:@"取消"];
     netAlertView.confirmButtonBlock = ^{
         [SXRootTool jumpToSystemWIFI];
+        //同时跳转
+        [SXRootTool popToVC:@"SXAddXiaoKiController"];
     };
     netAlertView.cancelButtonBlock = ^{
         [SXRootTool popToVC:@"SXAddXiaoKiController"];

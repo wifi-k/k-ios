@@ -62,6 +62,7 @@
 		091BC4D92242207100FEBFD1 /* PYAssetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC4BF2242207100FEBFD1 /* PYAssetModel.m */; };
 		091BC4DA2242207100FEBFD1 /* PYImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC4C22242207100FEBFD1 /* PYImageManager.m */; };
 		091BC4DB2242207100FEBFD1 /* PYAblumHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC4C32242207100FEBFD1 /* PYAblumHeader.m */; };
+		091BC4DE2242371800FEBFD1 /* SXXiaoKInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC4DD2242371800FEBFD1 /* SXXiaoKInfoModel.m */; };
 		092D6CDE22004FB400538AC8 /* SXRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CDD22004FB400538AC8 /* SXRefreshHeader.m */; };
 		092D6CE12200504100538AC8 /* SXRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CE02200504100538AC8 /* SXRefreshFooter.m */; };
 		092D6CE422005A0C00538AC8 /* SXEmptyDataEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CE322005A0C00538AC8 /* SXEmptyDataEventView.m */; };
@@ -463,6 +464,8 @@
 		091BC4C12242207100FEBFD1 /* PYImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYImageManager.h; sourceTree = "<group>"; };
 		091BC4C22242207100FEBFD1 /* PYImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYImageManager.m; sourceTree = "<group>"; };
 		091BC4C32242207100FEBFD1 /* PYAblumHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYAblumHeader.m; sourceTree = "<group>"; };
+		091BC4DC2242371800FEBFD1 /* SXXiaoKInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXXiaoKInfoModel.h; sourceTree = "<group>"; };
+		091BC4DD2242371800FEBFD1 /* SXXiaoKInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXXiaoKInfoModel.m; sourceTree = "<group>"; };
 		092D6CDC22004FB400538AC8 /* SXRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXRefreshHeader.h; sourceTree = "<group>"; };
 		092D6CDD22004FB400538AC8 /* SXRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXRefreshHeader.m; sourceTree = "<group>"; };
 		092D6CDF2200504100538AC8 /* SXRefreshFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXRefreshFooter.h; sourceTree = "<group>"; };
@@ -1641,6 +1644,8 @@
 			children = (
 				09B9B7BD222FC584000868D5 /* SXAddXiaokiNetTool.h */,
 				09B9B7BE222FC584000868D5 /* SXAddXiaokiNetTool.m */,
+				091BC4DC2242371800FEBFD1 /* SXXiaoKInfoModel.h */,
+				091BC4DD2242371800FEBFD1 /* SXXiaoKInfoModel.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -3367,6 +3372,7 @@
 				09B9B7C2222FED88000868D5 /* SXNetBroadbandParam.m in Sources */,
 				09B9B84422310BB2000868D5 /* SXChannelOptionController.m in Sources */,
 				09D5F5FE2227E3D000EA681A /* SXMineNetTool.m in Sources */,
+				091BC4DE2242371800FEBFD1 /* SXXiaoKInfoModel.m in Sources */,
 				09B9B8662231FF42000868D5 /* SXTimeControlCell.m in Sources */,
 				098BA303221A579D00F58639 /* SXMineHeaderView.m in Sources */,
 				098BA31A221BAFD500F58639 /* SXLoginNetTool.m in Sources */,

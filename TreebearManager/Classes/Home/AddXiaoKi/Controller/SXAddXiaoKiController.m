@@ -16,6 +16,8 @@
 #import "SXRootTool.h"
 #import "SXNetBroadbandParam.h"
 #import "NSString+Hash.h"
+#import "SXXiaoKInfoModel.h"
+#import "SXNetReachablityTool.h"
 
 @interface SXAddXiaoKiController ()
 ///头部视图
@@ -93,8 +95,17 @@
 //    WS(weakSelf);
     [SXAddXiaokiNetTool getNodeWithDataWithSuccess:^(SXXiaoKNodeResult * _Nonnull result) {
         DLog(@"获取节点");
-        DLog(@"node:%@",result.modelId);
-        DLog(@"result:%@",result.mj_keyValues);
+        //更新wan信息
+        SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
+        shareInfo.modelId = result.modelId;
+        shareInfo.ip = result.wan.ip;
+        shareInfo.netmask = result.wan.netmask;
+        shareInfo.gateway = result.wan.gateway;
+        shareInfo.dns1 = result.wan.dns1;
+        shareInfo.dns2 = result.wan.dns2;
+        shareInfo.type = result.wan.type;
+        shareInfo.name = result.wan.name;
+        shareInfo.passwd = result.wan.passwd;
     } failure:^(NSError * _Nonnull error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
@@ -112,19 +123,16 @@
     NSString *wifiSSID = [XKGetWifiNetTool getWifiSSID];
     DLog(@"wifi:%@",wifiSSID);
     
-    if (wifiSSID.length > 1) {
+    if (SXNetReachablityTool.status == SXNetworkStatusWifi) {
         self.headerView.title = [NSString stringWithFormat:@"您已连接wifi名称为'%@'的设备，点击立即绑定设备",wifiSSID];
         self.headerView.hidden = NO;
+        
+        //重新连接之后，更新节点信息
+        [self getNodeData];
     } else{
         self.headerView.hidden = YES;
         [self alertOnNetAlertView];
     }
-//    if ([wifiSSID containsString:@"Xiaomi"] || [wifiSSID containsString:@"Office"]) {
-//        self.headerView.hidden = YES;
-//        [self alertOnNetAlertView];
-//    } else{
-//        self.headerView.hidden = NO;
-//    }
 }
 
 #pragma mark -网络选择页面-

@@ -66,9 +66,12 @@ static SXNetworkStatus _networkStatus;
     if (_networkStatus == SXNetworkStatus3G || _networkStatus == SXNetworkStatusWifi) {
         return YES;
     }else{
-        [MBProgressHUD showWarningWithMessage:@"当前网络不可用，请检查您的手机数据/Wifi是否开启！" toView:SXKeyWindow];
         return NO;
     }
+}
+
++ (SXNetworkStatus)status{
+    return _networkStatus;
 }
 
 @end

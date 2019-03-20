@@ -74,6 +74,16 @@
     
     //注册Cell
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass(SXPhotoListCell.class) bundle:nil] forCellWithReuseIdentifier:SXPhotoListCollectionViewCellID];
+    
+    PYAblum *ablumManager = [PYAblum defaultAblum];
+    DLog(@"%ld",ablumManager.allPhotoAblumModelArray.count);
+    NSArray *fdfdfd = [ablumManager sortWithModelArray:ablumManager.allPhotoAblumModelArray andIsASC:YES];
+    DLog(@"dfdf%@",fdfdfd);
+    for (PYAssetModel *model in ablumManager.allPhotoAblumModelArray) {
+        UIImage *img = model.degradedImage;
+        DLog(@"img:%@",img);
+        
+    }
 }
 
 - (void)viewDidLayoutSubviews{
@@ -124,6 +134,11 @@
     NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO];
     options.sortDescriptors = @[sort];
     PHFetchResult *assetsFetchResults = [PHAsset fetchAssetsWithOptions:options];
+    PHFetchResult *images = [PHAsset fetchAssetsWithMediaType:PHAssetMediaTypeImage options:options];
+    
+    NSInteger count = assetsFetchResults.count;
+    NSInteger imgcount = images.count;
+    DLog(@"%ld-%ld",count,imgcount);
     
     // 在资源的集合中获取第一个集合，并获取其中的图片
     PHImageManager *imageManager = [PHImageManager defaultManager];
@@ -244,7 +259,10 @@
 
 #pragma mark -UICollectionViewDelegate/UICollectionViewDataSource-
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 2;//这里很关键，分两组，把banner放在第一组的footer，把分类按钮放在第二组的header
+    PYAblum *ablumManager = [PYAblum defaultAblum];
+    DLog(@"%ld",ablumManager.allPhotoAblumModelArray.count);
+    return 1;
+//    return 2;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
