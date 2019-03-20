@@ -8,7 +8,7 @@
 
 #import "SXOnlineFixedIPHeaderView.h"
 
-@interface SXOnlineFixedIPHeaderView ()
+@interface SXOnlineFixedIPHeaderView ()<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *ipTextField;
 @property (weak, nonatomic) IBOutlet UIView *firstBgView;
@@ -57,6 +57,25 @@
     self.dnsTextField.backgroundColor = SXColorF6F7FB;
     self.dns2TextField.backgroundColor = SXColorF6F7FB;
     
+    self.dnsTextField.delegate = self;
+    self.dns2TextField.delegate = self;
+    
+    
+    self.ipTextField.leftViewMode = UITextFieldViewModeAlways;
+    self.ipTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 24)];
+    
+    self.netmaskTextField.leftViewMode = UITextFieldViewModeAlways;
+    self.netmaskTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 24)];
+    
+    self.gatewayTextField.leftViewMode = UITextFieldViewModeAlways;
+    self.gatewayTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 24)];
+    
+    self.dnsTextField.leftViewMode = UITextFieldViewModeAlways;
+    self.dnsTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 24)];
+    
+    self.dns2TextField.leftViewMode = UITextFieldViewModeAlways;
+    self.dns2TextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 24)];
+    
     self.firstBgView.backgroundColor = SXColorWhite;
     self.secondBgView.backgroundColor = SXColorWhite;
     self.thirdBgView.backgroundColor = SXColorWhite;
@@ -71,6 +90,11 @@
     if (self.clickSaveBtnBlock) {
         self.clickSaveBtnBlock();
     }
+}
+
+#pragma mark -delegate-
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    return NO;
 }
 
 @end

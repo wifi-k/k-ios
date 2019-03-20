@@ -8,7 +8,7 @@
 
 #import "SXOnlineBroadbandHeaderView.h"
 
-@interface SXOnlineBroadbandHeaderView ()
+@interface SXOnlineBroadbandHeaderView ()<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *broadbandTextField;
 @property (weak, nonatomic) IBOutlet UIView *firstBgView;
@@ -25,6 +25,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *disconnectedBtn;
 @property (weak, nonatomic) IBOutlet UIButton *connectedBtn;
 @property (weak, nonatomic) IBOutlet UIView *fifthBgView;
+
+@property (weak, nonatomic) IBOutlet UITextField *dns2TextField;
+@property (weak, nonatomic) IBOutlet UIView *sixthBgView;
 
 @end
 
@@ -52,12 +55,32 @@
     self.bandPwdTextField.backgroundColor = SXColorF6F7FB;
     self.ipTextField.backgroundColor = SXColorF6F7FB;
     self.dnsTextField.backgroundColor = SXColorF6F7FB;
+    self.dns2TextField.backgroundColor = SXColorF6F7FB;
+    
+    self.dnsTextField.delegate = self;
+    self.dns2TextField.delegate = self;
+    
+    self.broadbandTextField.leftViewMode = UITextFieldViewModeAlways;
+    self.broadbandTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 24)];
+    
+    self.bandPwdTextField.leftViewMode = UITextFieldViewModeAlways;
+    self.bandPwdTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 24)];
+    
+    self.ipTextField.leftViewMode = UITextFieldViewModeAlways;
+    self.ipTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 24)];
+    
+    self.dnsTextField.leftViewMode = UITextFieldViewModeAlways;
+    self.dnsTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 24)];
+    
+    self.dns2TextField.leftViewMode = UITextFieldViewModeAlways;
+    self.dns2TextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 24)];
     
     self.firstBgView.backgroundColor = SXColorWhite;
     self.secondBgView.backgroundColor = SXColorWhite;
     self.thirdBgView.backgroundColor = SXColorWhite;
     self.fourthBgView.backgroundColor = SXColorWhite;
     self.fifthBgView.backgroundColor = SXColorWhite;
+    self.sixthBgView.backgroundColor = SXColorWhite;
     
     self.disconnectedBtn.backgroundColor = SXColorBtnDisabled;
     [self.disconnectedBtn setTitleColor:SXColor666666 forState:UIControlStateNormal];
@@ -76,6 +99,11 @@
     if (self.clickConnectedBtnBlock) {
         self.clickConnectedBtnBlock();
     }
+}
+
+#pragma mark -delegate-
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    return NO;
 }
 
 @end

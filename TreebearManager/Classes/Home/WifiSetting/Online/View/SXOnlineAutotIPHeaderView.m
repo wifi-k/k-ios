@@ -106,16 +106,16 @@
     
     switch (netStatus) {
         case 0:
-            self.connectStatusL.text = @"连接成功";
+            self.connectStatusL.text = @"WAN口连接成功";
             break;
         case 1:
-            self.connectStatusL.text = @"连接失败";
+            self.connectStatusL.text = @"WAN口连接失败";
             break;
         case 2:
-            self.connectStatusL.text = @"正在连接";
+            self.connectStatusL.text = @"WAN口正在连接";
             break;
         default:
-            self.connectStatusL.text = @"状态未知";
+            self.connectStatusL.text = @"WAN口状态未知";
             break;
     }
 }
