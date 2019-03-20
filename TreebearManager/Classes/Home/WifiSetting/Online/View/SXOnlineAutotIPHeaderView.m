@@ -90,6 +90,36 @@
 //    [self.updateIPBtn roundViewWithRadius:22.5f borderColor:SXColorDivideLine borderWidth:1.0f];
 }
 
+#pragma mark -setter-
+- (void)setResult:(SXXiaoKNodeResult *)result{
+    _result = result;
+    
+    self.ipAddressL.text = result.wan.ip;
+    self.maskL.text = result.wan.netmask;
+    self.gatewayL.text = result.wan.gateway;
+    self.dnsL.text = result.wan.dns1;
+    self.dns2L.text = result.wan.dns2;
+}
+
+- (void)setNetStatus:(NSInteger)netStatus{
+    _netStatus = netStatus;
+    
+    switch (netStatus) {
+        case 0:
+            self.connectStatusL.text = @"连接成功";
+            break;
+        case 1:
+            self.connectStatusL.text = @"连接失败";
+            break;
+        case 2:
+            self.connectStatusL.text = @"正在连接";
+            break;
+        default:
+            self.connectStatusL.text = @"状态未知";
+            break;
+    }
+}
+
 #pragma mark -点击事件-
 - (IBAction)clickUpdateIPBtn:(UIButton *)sender {
     if (self.clickUpdateIPBtnBlock) {

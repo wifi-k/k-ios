@@ -84,7 +84,6 @@
 
 #pragma mark -跳转网络连接页面-
 - (void)jumpToNetVC:(SXNetOptionModel *)model{
-    WS(weakSelf);
     switch (model.row.integerValue) {
         case 0:{
             SXNetBroadbandController *broadVC = [[SXNetBroadbandController alloc] init];
@@ -97,13 +96,7 @@
         }
             break;
         case 2:{
-            [SXAddXiaokiNetTool dynamicSettingWithDataWithSuccess:^{
-                DLog(@"动态设置校验成功");
-                [weakSelf networkStatusData];
-            } failure:^(NSError * _Nonnull error) {
-                NSString *message = [error.userInfo objectForKey:@"msg"];
-                [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
-            }];
+            [self networkStatusData];
         }
             break;
         default:

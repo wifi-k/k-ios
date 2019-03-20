@@ -91,6 +91,7 @@
     }];
 }
 
+#pragma mark -获取节点数据-
 - (void)getNodeData{
 //    WS(weakSelf);
     [SXAddXiaokiNetTool getNodeWithDataWithSuccess:^(SXXiaoKNodeResult * _Nonnull result) {

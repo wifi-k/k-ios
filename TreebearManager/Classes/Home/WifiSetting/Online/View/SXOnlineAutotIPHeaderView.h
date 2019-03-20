@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXXiaoKNodeResult.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,8 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///点击高级选项回调
 //@property (nonatomic, copy) void (^clickAdvancedBgViewBlock)(void);
+@property (nonatomic, strong) SXXiaoKNodeResult *result;
 
-
+@property (nonatomic, assign) NSInteger netStatus;
 
 @end
 

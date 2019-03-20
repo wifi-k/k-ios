@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)staticSettingWithDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
 ///使用动态IP(校验)
-+ (void)dynamicSettingWithDataWithSuccess:(void (^)(void))success failure:(void (^)(NSError *error))failure;
++ (void)dynamicSettingWithDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
 ///查询网络状态
 + (void)networkStatusWithDataSuccess:(void (^)(void))success failure:(void (^)(NSError *error))failure;
