@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
+@property (nonatomic, copy) NSString *title;
+
 @end
 
 NS_ASSUME_NONNULL_END

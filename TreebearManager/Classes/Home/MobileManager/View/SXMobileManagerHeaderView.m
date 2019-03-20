@@ -9,6 +9,12 @@
 #import "SXMobileManagerHeaderView.h"
 
 @interface SXMobileManagerHeaderView ()
+@property (weak, nonatomic) UILabel *l1;
+@property (weak, nonatomic) UILabel *l11;
+@property (weak, nonatomic) UILabel *l2;
+@property (weak, nonatomic) UILabel *l22;
+@property (weak, nonatomic) UILabel *l3;
+@property (weak, nonatomic) UILabel *l33;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *topBgView;
 
@@ -115,6 +121,7 @@
     l1.textColor = SXColorWhite;
     l1.font = SXFontBold18;
     [imageV1 addSubview:l1];
+    self.l1 = l1;
     [l1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(imageV1).mas_offset(5);
         make.right.mas_equalTo(imageV1).mas_offset(-5);
@@ -127,6 +134,7 @@
     l11.textColor = SXColorWhite;
     l11.font = SXFont16;
     [imageV1 addSubview:l11];
+    self.l11 = l11;
     [l11 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(imageV1).mas_offset(5);
         make.right.mas_equalTo(imageV1).mas_offset(-5);
@@ -139,6 +147,7 @@
     l2.textColor = SXColorWhite;
     l2.font = SXFontBold18;
     [imageV2 addSubview:l2];
+    self.l2 = l2;
     [l2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(imageV2).mas_offset(5);
         make.right.mas_equalTo(imageV2).mas_offset(-5);
@@ -151,6 +160,7 @@
     l22.textColor = SXColorWhite;
     l22.font = SXFont16;
     [imageV2 addSubview:l22];
+    self.l22 = l22;
     [l22 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(imageV2).mas_offset(5);
         make.right.mas_equalTo(imageV2).mas_offset(-5);
@@ -163,6 +173,7 @@
     l3.textColor = SXColorWhite;
     l3.font = SXFontBold18;
     [imageV3 addSubview:l3];
+    self.l3 = l3;
     [l3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(imageV3).mas_offset(5);
         make.right.mas_equalTo(imageV3).mas_offset(-5);
@@ -175,11 +186,24 @@
     l33.textColor = SXColorWhite;
     l33.font = SXFont16;
     [imageV3 addSubview:l33];
+    self.l33 = l33;
     [l33 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(imageV3).mas_offset(5);
         make.right.mas_equalTo(imageV3).mas_offset(-5);
         make.centerY.mas_equalTo(imageV3).mas_offset(12);
     }];
+}
+
+#pragma mark -setter-
+- (void)setTitle:(NSString *)title{
+    _title = title;
+    
+    self.l1.text = title;
+    self.l11.text = title;
+    self.l2.text = title;
+    self.l22.text = title;
+    self.l3.text = title;
+    self.l33.text = title;
 }
 
 @end
