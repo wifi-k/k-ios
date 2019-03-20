@@ -61,13 +61,14 @@
     
     UIImageView *imageV1 = [[UIImageView alloc] init];
     imageV1.contentMode = UIViewContentModeScaleAspectFill;
+    imageV1.image = [UIImage imageNamed:@"img_networking_bg1"];
     //阴影
-    imageV1.backgroundColor = SXColorRandom;
-    imageV1.layer.cornerRadius = 5;
-    imageV1.layer.shadowColor = UIColor.lightGrayColor.CGColor;
-    imageV1.layer.shadowOffset = CGSizeMake(3, 3);
-    imageV1.layer.shadowOpacity = 0.5;
-    imageV1.layer.shadowRadius = 3;
+//    imageV1.backgroundColor = SXColorRandom;
+//    imageV1.layer.cornerRadius = 5;
+//    imageV1.layer.shadowColor = UIColor.lightGrayColor.CGColor;
+//    imageV1.layer.shadowOffset = CGSizeMake(3, 3);
+//    imageV1.layer.shadowOpacity = 0.5;
+//    imageV1.layer.shadowRadius = 3;
     [itemBgV1 addSubview:imageV1];
     [imageV1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(imageW, 100));
@@ -77,13 +78,14 @@
     
     UIImageView *imageV2 = [[UIImageView alloc] init];
     imageV2.contentMode = UIViewContentModeScaleAspectFill;
+    imageV2.image = [UIImage imageNamed:@"img_networking_bg2"];
     //阴影
-    imageV2.backgroundColor = SXColorRandom;
-    imageV2.layer.cornerRadius = 5;
-    imageV2.layer.shadowColor = UIColor.lightGrayColor.CGColor;
-    imageV2.layer.shadowOffset = CGSizeMake(3, 3);
-    imageV2.layer.shadowOpacity = 0.5;
-    imageV2.layer.shadowRadius = 3;
+//    imageV2.backgroundColor = SXColorRandom;
+//    imageV2.layer.cornerRadius = 5;
+//    imageV2.layer.shadowColor = UIColor.lightGrayColor.CGColor;
+//    imageV2.layer.shadowOffset = CGSizeMake(3, 3);
+//    imageV2.layer.shadowOpacity = 0.5;
+//    imageV2.layer.shadowRadius = 3;
     [itemBgV2 addSubview:imageV2];
     [imageV2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(imageW, 100));
@@ -92,13 +94,14 @@
     
     UIImageView *imageV3 = [[UIImageView alloc] init];
     imageV3.contentMode = UIViewContentModeScaleAspectFill;
+    imageV3.image = [UIImage imageNamed:@"img_networking_bg3"];
     //阴影
-    imageV3.backgroundColor = SXColorRandom;
-    imageV3.layer.cornerRadius = 5;
-    imageV3.layer.shadowColor = UIColor.lightGrayColor.CGColor;
-    imageV3.layer.shadowOffset = CGSizeMake(3, 3);
-    imageV3.layer.shadowOpacity = 0.5;
-    imageV3.layer.shadowRadius = 3;
+//    imageV3.backgroundColor = SXColorRandom;
+//    imageV3.layer.cornerRadius = 5;
+//    imageV3.layer.shadowColor = UIColor.lightGrayColor.CGColor;
+//    imageV3.layer.shadowOffset = CGSizeMake(3, 3);
+//    imageV3.layer.shadowOpacity = 0.5;
+//    imageV3.layer.shadowRadius = 3;
     [itemBgV3 addSubview:imageV3];
     [imageV3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(imageW, 100));
