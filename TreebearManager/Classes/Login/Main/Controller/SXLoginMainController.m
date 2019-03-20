@@ -18,6 +18,10 @@
 
 @implementation SXLoginMainController
 
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
 #pragma mark -控制器生命周期方法-
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
