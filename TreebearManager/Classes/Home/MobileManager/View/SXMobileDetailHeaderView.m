@@ -9,6 +9,9 @@
 #import "SXMobileDetailHeaderView.h"
 
 @interface SXMobileDetailHeaderView ()
+
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UILabel *naviTitleL;
 @property (weak, nonatomic) IBOutlet UIImageView *topIconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameL;
 @property (weak, nonatomic) IBOutlet UIButton *editBtn;
@@ -67,6 +70,7 @@
     
     self.backgroundColor = SXColorWhite;
     
+    self.naviTitleL.font = SXFontBold18;
     self.topBgView.backgroundColor = SXColorWhite;
     
     self.centerBgView.backgroundColor = [UIColor whiteColor];
@@ -100,6 +104,12 @@
 }
 
 #pragma mark -点击事件-
+- (IBAction)clickBackBtn:(UIButton *)sender {
+    if (self.clickBackBtnBlock) {
+        self.clickBackBtnBlock();
+    }
+}
+
 - (void)clickCenterFirstBgView{
     if (self.clickCenterFirstBgViewBlock) {
         self.clickCenterFirstBgViewBlock();
@@ -111,5 +121,7 @@
         self.clickEditBtnBlock();
     }
 }
+
+
 
 @end

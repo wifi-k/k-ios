@@ -17,18 +17,22 @@
 
 @implementation SXMobileDetailController
 
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
 #pragma mark -life recycle-
-//- (void)viewWillAppear:(BOOL)animated{
-//    [super viewWillAppear:animated];
-//    //设置当前导航条背景色
-//    [self.navigationController setNavigationBarHidden:YES animated:YES];
-//}
-//
-//-(void)viewWillDisappear:(BOOL)animated{
-//    [super viewWillDisappear:animated];
-//    //设置当前导航条背景色
-//    [self.navigationController setNavigationBarHidden:NO animated:YES];
-//}
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    //设置当前导航条背景色
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    //设置当前导航条背景色
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,12 +48,16 @@
     
     WS(weakSelf);
     SXMobileDetailHeaderView *headerView = [SXMobileDetailHeaderView headerView];
+    headerView.clickBackBtnBlock = ^{
+        [weakSelf.navigationController popViewControllerAnimated:YES];
+    };
     headerView.clickCenterFirstBgViewBlock = ^{
         [weakSelf jumpToMobileInfoVC];
     };
     headerView.clickEditBtnBlock = ^{
         [weakSelf alertRemarkNameView];
     };
+    self.tableView.contentInset = UIEdgeInsetsMake(-22-iPhoneX_top, 0, 0, 0);
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
 }
@@ -63,7 +71,7 @@
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     
-    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 750);
+    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 780);
 }
 
 #pragma mark -弹窗视图-

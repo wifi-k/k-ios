@@ -14,9 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
+///点击返回按钮回调
+@property (nonatomic, copy) void (^clickBackBtnBlock)(void);
 ///点击设备信息回调
 @property (nonatomic, copy) void (^clickCenterFirstBgViewBlock)(void);
-
 ///点击编辑按钮回调
 @property (nonatomic, copy) void (^clickEditBtnBlock)(void);
 

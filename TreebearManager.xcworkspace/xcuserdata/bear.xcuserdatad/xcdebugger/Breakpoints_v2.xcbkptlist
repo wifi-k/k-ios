@@ -68,7 +68,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TreebearManager/Classes/Home/WifiSetting/Main/Controller/SXWifiSettingController.m"
-            timestampString = "574687018.0714771"
+            timestampString = "574738253.1348211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "170"
@@ -84,45 +84,90 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TreebearManager/Classes/Home/WifiSetting/Main/Controller/SXWifiSettingController.m"
-            timestampString = "574687022.567644"
+            timestampString = "574738253.140118"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "167"
             endingLineNumber = "167"
             landmarkName = "-nodeResetWithData"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TreebearManager/Classes/Home/WifiSetting/Main/Controller/SXWifiSettingController.m"
-            timestampString = "574687121.7114511"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
-            landmarkName = "-nodeRestartWithData"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TreebearManager/Classes/Home/WifiSetting/Main/Controller/SXWifiSettingController.m"
-            timestampString = "574687123.127311"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
-            landmarkName = "-nodeRestartWithData"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SXWifiSettingController nodeResetWithData]"
+                  moduleName = "TreebearManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bear/Documents/WorkSpace/TreebearManager/TreebearManager/Classes/Home/WifiSetting/Main/Controller/SXWifiSettingController.m"
+                  timestampString = "574744643.656227"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "167"
+                  endingLineNumber = "167"
+                  offsetFromSymbolStart = "330">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__44-[SXWifiSettingController nodeResetWithData]_block_invoke"
+                  moduleName = "TreebearManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bear/Documents/WorkSpace/TreebearManager/TreebearManager/Classes/Home/WifiSetting/Main/Controller/SXWifiSettingController.m"
+                  timestampString = "574744643.65791"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "167"
+                  endingLineNumber = "167"
+                  offsetFromSymbolStart = "309">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_.157"
+                  moduleName = "TreebearManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bear/Documents/WorkSpace/TreebearManager/TreebearManager/Classes/Home/WifiSetting/Main/Controller/SXWifiSettingController.m"
+                  timestampString = "574744643.659461"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "163"
+                  endingLineNumber = "163"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__44-[SXWifiSettingController nodeResetWithData]_block_invoke.160"
+                  moduleName = "TreebearManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bear/Documents/WorkSpace/TreebearManager/TreebearManager/Classes/Home/WifiSetting/Main/Controller/SXWifiSettingController.m"
+                  timestampString = "574744643.661042"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
+                  offsetFromSymbolStart = "47">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.162"
+                  moduleName = "TreebearManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bear/Documents/WorkSpace/TreebearManager/TreebearManager/Classes/Home/WifiSetting/Main/Controller/SXWifiSettingController.m"
+                  timestampString = "574744643.662631"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "167"
+                  endingLineNumber = "167"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
