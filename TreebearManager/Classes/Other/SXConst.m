@@ -36,5 +36,7 @@ NSString *const ssid_set = @"ssid/set";
 NSString *const node_get = @"node/get";
 NSString *const node_restart = @"node/restart";
 NSString *const node_reset = @"node/reset";
+NSString *const user_qiniu_get = @"user/qiniu/get";
 
+NSString *const user_info_set = @"user/info/set";
 @end

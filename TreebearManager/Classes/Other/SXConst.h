@@ -37,6 +37,9 @@ extern NSString *const ssid_set;
 extern NSString *const node_get;
 extern NSString *const node_restart;
 extern NSString *const node_reset;
+extern NSString *const user_qiniu_get;
+
+extern NSString *const user_info_set;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -7,15 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SXMineUserInfoParam.h"
 #import "SXMineUserInfoModel.h"
-
-NS_ASSUME_NONNULL_BEGIN
 
 @interface SXMineNetTool : NSObject
 
 ///用户信息获取 
 + (void)getUserInfoDataSuccess:(void (^)(SXMineUserInfoModel *model))success failure:(void (^)(NSError *error))failure;
 
+///用户获取七牛token
++ (void)getUserQiniuTokenSuccess:(void (^)(NSString *token))success failure:(void (^)(NSError *error))failure;
+
+///用户信息修改
++ (void)userInfoSetParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
+
 @end
 
-NS_ASSUME_NONNULL_END

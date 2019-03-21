@@ -22,6 +22,7 @@
 @property (nonatomic, weak) UITableView *tableView;//列表视图
 
 @property (nonatomic, strong) NSMutableArray *dataArray;//数据源
+@property (nonatomic, strong) SXMineUserInfoModel *userModel;///个人信息模型
 @end
 
 @implementation SXMineController
@@ -58,7 +59,8 @@
     [self setUpUI];
     
     //用户信息获取
-//    [self getUserinfoData];
+    [self getUserinfoData];
+    [self getUserQiniuTokenData];
 }
 
 - (void)setUpUI{
@@ -117,11 +119,37 @@
 
 #pragma mark -获取用户信息-
 - (void)getUserinfoData{
+    WS(weakSelf);
     [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
     [SXMineNetTool getUserInfoDataSuccess:^(SXMineUserInfoModel * _Nonnull model) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         DLog(@"model:%@",model);
+        weakSelf.userModel = model;
     } failure:^(NSError * _Nonnull error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
+- (void)getUserQiniuTokenData{
+    [SXMineNetTool getUserQiniuTokenSuccess:^(NSString *token) {
+        DLog(@"token:%@",token);
+    } failure:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
+- (void)userInfoSetData{
+    SXMineUserInfoParam *param = [SXMineUserInfoParam param];
+    param.name = self.userModel.name;
+    param.avatar = self.userModel.avatar;
+    [SXMineNetTool userInfoSetParams:nil Success:^{
+        [MBProgressHUD showSuccessWithMessage:@"OK！" toView:SXKeyWindow];
+        
+    } failure:^(NSError *error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];

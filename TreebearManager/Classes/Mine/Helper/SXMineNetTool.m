@@ -28,4 +28,36 @@
     }];
 }
 
++ (void)getUserQiniuTokenSuccess:(void (^)(NSString *token))success failure:(void (^)(NSError *error))failure{
+    
+    [SXNetRequestTool POST:user_qiniu_get parameters:nil success:^(id response) {
+        
+        if (![response isKindOfClass:NSDictionary.class]) return;
+        
+        NSString *token = [response objectForKey:@"token"];
+        
+        if (success){
+            success(token);
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
++ (void)userInfoSetParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure{
+    
+    [SXNetRequestTool POST:user_info_set parameters:params success:^(id response) {
+        
+        if (success){
+            success();
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
 @end
