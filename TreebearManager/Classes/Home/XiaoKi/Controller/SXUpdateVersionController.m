@@ -8,6 +8,7 @@
 
 #import "SXUpdateVersionController.h"
 #import "SXUpdateVersionHeaderView.h"
+#import "SXMineNetTool.h"
 
 @interface SXUpdateVersionController ()
 ///头部视图
@@ -46,7 +47,15 @@
 
 #pragma mark -升级中-
 - (void)updateVersion{
-    DLog(@"升级..."); 
+    [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
+    [SXMineNetTool userNodeFirmwareUpgradeParams:nil Success:^{
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        [MBProgressHUD showSuccessWithMessage:@"OK！" toView:SXKeyWindow];
+    } failure:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
 
 @end

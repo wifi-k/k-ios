@@ -40,6 +40,7 @@ extern NSString *const node_reset;
 extern NSString *const user_qiniu_get;
 
 extern NSString *const user_info_set;
+extern NSString *const user_node_firmware_upgrade;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -21,5 +21,8 @@
 ///用户信息修改
 + (void)userInfoSetParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
+///升级节点固件
++ (void)userNodeFirmwareUpgradeParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
+
 @end
 

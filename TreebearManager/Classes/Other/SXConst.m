@@ -39,4 +39,6 @@ NSString *const node_reset = @"node/reset";
 NSString *const user_qiniu_get = @"user/qiniu/get";
 
 NSString *const user_info_set = @"user/info/set";
+NSString *const user_node_firmware_upgrade = @"user/node/firmware/upgrade";
+
 @end
