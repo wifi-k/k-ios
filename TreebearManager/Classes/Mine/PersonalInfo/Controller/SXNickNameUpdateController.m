@@ -21,6 +21,8 @@
     
     
     [self setUpUI];
+    
+    [self setUpData];
 }
 
 - (void)setUpUI{
@@ -44,6 +46,10 @@
     self.headerView.frame = self.view.bounds;
 }
 
+- (void)setUpData{
+    [self.headerView setUpData];
+}
+
 #pragma mark -Event-
 - (void)rightButtonAction:(UIButton *)btn{
     DLog(@"btn:%@",btn.titleLabel.text);
@@ -60,8 +66,10 @@
     SXMineUserInfoParam *param = [SXMineUserInfoParam param];
     param.name = self.headerView.param.name;
     [SXMineNetTool userInfoSetParams:param.mj_keyValues Success:^{
-        [MBProgressHUD showSuccessWithMessage:@"OK！" toView:SXKeyWindow];
-        
+        [MBProgressHUD showSuccessWithMessage:@"修改成功!" toView:SXKeyWindow];
+        if (self.updateNickNameBlock) {
+            self.updateNickNameBlock();
+        }
         [weakSelf.navigationController popViewControllerAnimated:YES];
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];

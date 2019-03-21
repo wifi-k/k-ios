@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
+- (void)setUpData;
+
 @property (nonatomic, strong) SXMineUserInfoParam *param;
 
 @end

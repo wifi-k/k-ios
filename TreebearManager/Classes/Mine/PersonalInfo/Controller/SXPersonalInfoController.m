@@ -112,7 +112,11 @@
 }
 
 - (void)jumpToNickNameVC{
+    WS(weakSelf);
     SXNickNameUpdateController *nickVC = [[SXNickNameUpdateController alloc] init];
+    nickVC.updateNickNameBlock = ^{
+        [weakSelf.headerView setUpData];
+    };
     [self.navigationController pushViewController:nickVC animated:YES];
 }
 
@@ -152,7 +156,7 @@
 - (void)uploadImageData:(NSData *)data{
     WS(weakSelf);
     NSString *key = [NSString stringWithFormat:@"xiaoki%@",[self getNowTimeTimestamp]];
-    NSString *token = [SXPersonInfoModel sharedSXPersonInfoModel].qnToken;
+    NSString *token = SXPersonInfoModel.sharedSXPersonInfoModel.qnToken;
     QNUploadManager *upManager = [[QNUploadManager alloc] init];
     //NSData *data = [@"Hello, World!" dataUsingEncoding:NSUTF8StringEncoding];
     [upManager putData:data key:key token:token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {

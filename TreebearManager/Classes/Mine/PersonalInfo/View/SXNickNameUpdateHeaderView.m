@@ -48,6 +48,10 @@
     [self.nickTextField becomeFirstResponder];
 }
 
+- (void)setUpData{
+    self.nickTextField.text = SXPersonInfoModel.sharedSXPersonInfoModel.userInfo.name;
+}
+
 #pragma mark -Event-
 - (IBAction)editingNickTextField:(UITextField *)sender {
     DLog(@"sender:%@",sender.text);
