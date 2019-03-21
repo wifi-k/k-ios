@@ -9,7 +9,6 @@
 #import "SXNetBroadbandController.h"
 #import "SXDynamicController.h"
 #import "SXNetBroadbandHeaderView.h"
-#import "SXNetBroadbandParam.h"
 #import "SXAddXiaokiNetTool.h"
 #import "NSString+Hash.h"
 

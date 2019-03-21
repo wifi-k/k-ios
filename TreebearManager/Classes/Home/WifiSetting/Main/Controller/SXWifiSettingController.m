@@ -89,9 +89,9 @@
         }
             break;
         case 1:{
-//            SXOnlineController *advancedVC = [[SXOnlineController alloc] init];
-//            [self.navigationController pushViewController:advancedVC animated:YES];
-            [self getNodeData];
+            SXOnlineController *advancedVC = [[SXOnlineController alloc] init];
+            [self.navigationController pushViewController:advancedVC animated:YES];
+//            [self getNodeData];
         }
             break;
         case 2:{

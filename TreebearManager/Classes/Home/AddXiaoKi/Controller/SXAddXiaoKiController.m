@@ -14,7 +14,6 @@
 #import "XKGetWifiNetTool.h"
 #import "SXAddXiaokiNetTool.h"
 #import "SXRootTool.h"
-#import "SXNetBroadbandParam.h"
 #import "NSString+Hash.h"
 #import "SXXiaoKInfoModel.h"
 #import "SXNetReachablityTool.h"

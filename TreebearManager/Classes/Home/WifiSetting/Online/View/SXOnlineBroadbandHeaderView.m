@@ -33,6 +33,14 @@
 
 @implementation SXOnlineBroadbandHeaderView
 
+#pragma mark -getter-
+- (SXNetBroadbandParam *)param{
+    if (_param == nil) {
+        _param = [[SXNetBroadbandParam alloc] init];
+    }
+    return _param;
+}
+
 + (instancetype)headerView{
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
 }
@@ -105,6 +113,23 @@
 #pragma mark -delegate-
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
     return NO;
+}
+
+#pragma mark -Event-
+- (IBAction)editingBandAccountTextField:(UITextField *)sender {
+    DLog(@"editingBandAccountTextField:%@",sender.text);
+    self.param.name = sender.text.trim.filterSpace;
+//    [self changeConfirmBtnEnabled];
+}
+
+- (IBAction)editingBandPasswordTextField:(UITextField *)sender {
+    DLog(@"editingBandPasswordTextField:%@",sender.text);
+    self.param.passwd = sender.text.trim.filterSpace;
+//    [self changeConfirmBtnEnabled];
+}
+
+- (void)changeConfirmBtnEnabled{
+    self.connectedBtn.enabled = self.broadbandTextField.text.trim.length && self.bandPwdTextField.text.trim.length;
 }
 
 @end

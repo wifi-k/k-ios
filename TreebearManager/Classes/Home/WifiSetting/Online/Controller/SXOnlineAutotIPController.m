@@ -11,7 +11,6 @@
 #import "SXOnlineAutotIPHeaderView.h"
 #import "SXAddXiaokiNetTool.h"
 #import "SXXiaoKInfoModel.h"
-#import "SXNetStaticParam.h"
 
 @interface SXOnlineAutotIPController ()
 ///头部视图
@@ -56,7 +55,7 @@
     WS(weakSelf);
     [MBProgressHUD showWhiteLoadingToView:SXKeyWindow];
     [SXAddXiaokiNetTool getNodeWithDataWithSuccess:^(SXXiaoKNodeResult * _Nonnull result) {
-        [MBProgressHUD hideHUDForView:SXKeyWindow];
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         DLog(@"获取节点");
         //更新wan信息
         SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
@@ -75,7 +74,7 @@
         //调用接口
         [weakSelf dynamicSettingData];
     } failure:^(NSError * _Nonnull error) {
-        [MBProgressHUD hideHUDForView:SXKeyWindow];
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
     }];

@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXNetBroadbandParam.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXOnlineBroadbandHeaderView : UIView
 
 + (instancetype)headerView;
+
+@property (nonatomic, strong) SXNetBroadbandParam *param;
 
 ///点击断开按钮回调
 @property (nonatomic, copy) void (^clickDisconnectedBtnBlock)(void);

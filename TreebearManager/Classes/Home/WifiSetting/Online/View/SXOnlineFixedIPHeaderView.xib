@@ -38,6 +38,9 @@
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            <connections>
+                                <action selector="editingIPTextField:" destination="iN0-l3-epB" eventType="editingChanged" id="rK4-cU-o8F"/>
+                            </connections>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -72,6 +75,9 @@
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            <connections>
+                                <action selector="editingNetmaskTextField:" destination="iN0-l3-epB" eventType="editingChanged" id="shz-A9-E2d"/>
+                            </connections>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -106,6 +112,9 @@
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            <connections>
+                                <action selector="editingGatewayTextField:" destination="iN0-l3-epB" eventType="editingChanged" id="OFW-QH-CnD"/>
+                            </connections>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -140,6 +149,9 @@
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            <connections>
+                                <action selector="editingDnsTextField:" destination="iN0-l3-epB" eventType="editingChanged" id="IFe-7W-mAP"/>
+                            </connections>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -174,6 +186,9 @@
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            <connections>
+                                <action selector="editingDns2TextField:" destination="iN0-l3-epB" eventType="editingChanged" id="MdJ-Po-y3W"/>
+                            </connections>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

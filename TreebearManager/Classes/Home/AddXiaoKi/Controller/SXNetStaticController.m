@@ -55,8 +55,7 @@
     param.dns1 = self.headerView.param.dns1;
     param.dns2 = self.headerView.param.dns2;
     [MBProgressHUD showWhiteLoadingWithMessage:nil toView:self.view];
-    [SXAddXiaokiNetTool loginWithPasswdDataWithParams:param.mj_keyValues Success:^{
-        
+    [SXAddXiaokiNetTool staticSettingWithDataWithParams:param.mj_keyValues Success:^{
         DLog(@"静态IP设置成功");
         //跳转
         [weakSelf networkStatusData];

@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SXNetStaticParam.h"
+#import "SXNetBroadbandParam.h"
 #import "SXXiaoKNodeResult.h"
 
 NS_ASSUME_NONNULL_BEGIN

@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXNetStaticParam.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXOnlineFixedIPHeaderView : UIView
 
 + (instancetype)headerView;
+
+///静态上网参数
+@property (nonatomic, strong) SXNetStaticParam *param;
 
 ///点击保存选项回调
 @property (nonatomic, copy) void (^clickSaveBtnBlock)(void);

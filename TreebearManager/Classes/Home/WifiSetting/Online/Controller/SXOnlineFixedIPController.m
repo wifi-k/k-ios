@@ -8,6 +8,7 @@
 
 #import "SXOnlineFixedIPController.h"
 #import "SXOnlineFixedIPHeaderView.h"
+#import "SXAddXiaokiNetTool.h"
 
 @interface SXOnlineFixedIPController ()
 ///头部视图
@@ -30,7 +31,7 @@
     WS(weakSelf);
     SXOnlineFixedIPHeaderView *headerView = [SXOnlineFixedIPHeaderView headerView];
     headerView.clickSaveBtnBlock = ^{
-        [weakSelf saveData];
+        [weakSelf staticSettingWithData];
     };
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
@@ -44,8 +45,22 @@
 }
 
 #pragma mark -Event-
-- (void)saveData{
-    [MBProgressHUD showMessage:@"保存成功" toView:self.view];
+- (void)staticSettingWithData{
+    SXNetStaticParam *param = [SXNetStaticParam param];
+    param.ip = self.headerView.param.ip;
+    param.netmask = self.headerView.param.netmask;
+    param.gateway = self.headerView.param.gateway;
+    param.dns1 = self.headerView.param.dns1;
+    param.dns2 = self.headerView.param.dns2;
+    [MBProgressHUD showWhiteLoadingWithMessage:nil toView:SXKeyWindow];
+    [SXAddXiaokiNetTool staticSettingWithDataWithParams:param.mj_keyValues Success:^{
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        [MBProgressHUD showFailWithMessage:@"固定IP地址设置成功" toView:SXKeyWindow];
+    } failure:^(NSError * _Nonnull error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
 
 @end

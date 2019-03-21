@@ -8,6 +8,7 @@
 
 #import "SXOnlineBroadbandController.h"
 #import "SXOnlineBroadbandHeaderView.h"
+#import "SXAddXiaokiNetTool.h"
 
 @interface SXOnlineBroadbandController ()
 ///头部视图
@@ -28,13 +29,13 @@
 //    self.navigationItem.title = @"宽带拨号上网";
     
     
-//    WS(weakSelf);
+    WS(weakSelf);
     SXOnlineBroadbandHeaderView *headerView = [SXOnlineBroadbandHeaderView headerView];
     headerView.clickDisconnectedBtnBlock = ^{
         [MBProgressHUD showMessage:@"断开连接！" toView:self.view];
     };
     headerView.clickConnectedBtnBlock = ^{
-        [MBProgressHUD showMessage:@"重新连接！" toView:self.view];
+        [weakSelf broadbandSettingData];
     };
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
@@ -45,6 +46,23 @@
     [super viewDidLayoutSubviews];
     
 //    self.headerView.frame = self.view.bounds;
+}
+
+#pragma mark -跳转动态设置页面-
+- (void)broadbandSettingData{
+    WS(weakSelf);
+    SXNetBroadbandParam *param = [SXNetBroadbandParam param];
+    param.name = self.headerView.param.name;
+    param.passwd = self.headerView.param.passwd;
+    [MBProgressHUD showWhiteLoadingToView:SXKeyWindow];
+    [SXAddXiaokiNetTool broadbandSettingWithDataWithParams:param.mj_keyValues Success:^{
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        [MBProgressHUD showSuccessWithMessage:@"固定IP地址设置成功!" toView:weakSelf.view];
+    } failure:^(NSError * _Nonnull error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
 
 @end

@@ -34,6 +34,14 @@
 
 @implementation SXOnlineFixedIPHeaderView
 
+#pragma mark -getter-
+- (SXNetStaticParam *)param{
+    if (_param == nil) {
+        _param = [[SXNetStaticParam alloc] init];
+    }
+    return _param;
+}
+
 + (instancetype)headerView{
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
 }
@@ -95,6 +103,36 @@
     if (self.clickSaveBtnBlock) {
         self.clickSaveBtnBlock();
     }
+}
+
+- (IBAction)editingIPTextField:(UITextField *)sender {
+    self.param.ip = sender.text.trim.filterSpace;
+//    [self changeConfirmBtnEnabled];
+}
+
+- (IBAction)editingNetmaskTextField:(UITextField *)sender {
+    self.param.netmask = sender.text.trim.filterSpace;
+//    [self changeConfirmBtnEnabled];
+}
+
+- (IBAction)editingGatewayTextField:(UITextField *)sender {
+    self.param.gateway = sender.text.trim.filterSpace;
+//    [self changeConfirmBtnEnabled];
+}
+
+
+- (IBAction)editingDnsTextField:(UITextField *)sender {
+    self.param.dns1 = sender.text.trim.filterSpace;
+//    [self changeConfirmBtnEnabled];
+}
+
+- (IBAction)editingDns2TextField:(UITextField *)sender {
+    self.param.dns2 = sender.text.trim.filterSpace;
+//    [self changeConfirmBtnEnabled];
+}
+
+- (void)changeConfirmBtnEnabled{
+    self.saveBtn.enabled = self.param.ip.length && self.param.netmask.length && self.param.gateway.length && self.param.dns1.length && self.param.dns2.length;
 }
 
 @end

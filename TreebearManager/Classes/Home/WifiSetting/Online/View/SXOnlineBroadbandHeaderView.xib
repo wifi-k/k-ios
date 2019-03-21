@@ -38,6 +38,9 @@
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            <connections>
+                                <action selector="editingBandAccountTextField:" destination="iN0-l3-epB" eventType="editingChanged" id="EKD-QY-tmb"/>
+                            </connections>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -72,6 +75,9 @@
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            <connections>
+                                <action selector="editingBandPasswordTextField:" destination="iN0-l3-epB" eventType="editingChanged" id="fLY-Bf-n4U"/>
+                            </connections>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
