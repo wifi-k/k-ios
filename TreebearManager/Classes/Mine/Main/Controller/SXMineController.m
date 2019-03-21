@@ -113,14 +113,15 @@
 
 #pragma mark -添加移除通知-
 - (void)addNotification{
-    [SXNotificationCenterTool addObserverUdpateNickNameSuccess:self selector:@selector(udpateNickNameSuccess)];
+    [SXNotificationCenterTool addObserverUdpateNickNameSuccess:self selector:@selector(udpateUserInfoSuccess)];
+    [SXNotificationCenterTool addObserverUpdateMobileSuccess:self selector:@selector(udpateUserInfoSuccess)];
 }
 
 - (void)dealloc{
     [SXNotificationCenterTool removeObserverAll:self];
 }
 
-- (void)udpateNickNameSuccess{
+- (void)udpateUserInfoSuccess{
     [self.headerView setUpData];
 }
 

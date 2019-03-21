@@ -33,6 +33,9 @@
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            <connections>
+                                <action selector="editingMobileTextField:" destination="iN0-l3-epB" eventType="editingChanged" id="EmN-fr-n4s"/>
+                            </connections>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJE-PD-5iz">
                             <rect key="frame" x="15" y="59.5" width="329" height="0.5"/>
@@ -86,6 +89,9 @@
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            <connections>
+                                <action selector="editingVCodeTextField:" destination="iN0-l3-epB" eventType="editingChanged" id="DWU-rQ-y4Z"/>
+                            </connections>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkj-b7-6Pd">
                             <rect key="frame" x="15" y="59.5" width="329" height="0.5"/>

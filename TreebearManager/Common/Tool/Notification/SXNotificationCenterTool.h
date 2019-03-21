@@ -15,7 +15,12 @@
 //修改昵称通知
 + (void)postNotificationUdpateNickNameSuccess;
 + (void)addObserverUdpateNickNameSuccess:(id)observer selector:(SEL)selector;
-+ (void)removeObserver:(id)observer;
-    
++ (void)removeObserverUdpateNickName:(id)observer;
+
+//修改手机号通知
++ (void)postNotificationUpdateMobileSuccess;
++ (void)addObserverUpdateMobileSuccess:(id)observer selector:(SEL)selector;
++ (void)removeObserverUpdateMobile:(id)observer;
+
 @end
 

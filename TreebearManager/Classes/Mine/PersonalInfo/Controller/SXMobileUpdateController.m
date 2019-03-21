@@ -8,6 +8,7 @@
 
 #import "SXMobileUpdateController.h"
 #import "SXMobileUpdateHeaderView.h"
+#import "SXNotificationCenterTool.h"
 
 @interface SXMobileUpdateController ()
 @property (nonatomic, weak) SXMobileUpdateHeaderView *headerView;//头部视图
@@ -31,7 +32,7 @@
     WS(weakSelf);
     SXMobileUpdateHeaderView *headerView = [SXMobileUpdateHeaderView headerView];
     headerView.clickConfirmBtnBlock = ^{
-        [weakSelf fdfdfdf];
+        [weakSelf updateMobileData];
     };
     [self.view addSubview:headerView];
     self.headerView = headerView;
@@ -44,8 +45,13 @@
 }
 
 #pragma mark -Event-
-- (void)fdfdfdf{
-    DLog(@"fdfdfdf");
+- (void)updateMobileData{
+    //赋值
+    SXPersonInfoModel.sharedSXPersonInfoModel.userInfo.mobile = @"修改测试";
+    
+    [SXNotificationCenterTool postNotificationUpdateMobileSuccess];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

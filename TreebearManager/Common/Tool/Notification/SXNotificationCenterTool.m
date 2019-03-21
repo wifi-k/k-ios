@@ -9,6 +9,7 @@
 #import "SXNotificationCenterTool.h"
 
 NSString *const SXUpdateNickName = @"SXUpdateNickName";
+NSString *const SXUpdateMobile = @"SXUpdateMobile";
 
 @implementation SXNotificationCenterTool
 
@@ -28,8 +29,20 @@ NSString *const SXUpdateNickName = @"SXUpdateNickName";
     [SXNotificationCenter addObserver:observer selector:selector name:SXUpdateNickName object:nil];
 }
     
-+ (void)removeObserver:(id)observer{
++ (void)removeObserverUdpateNickName:(id)observer{
     [SXNotificationCenter removeObserver:observer name:SXUpdateNickName object:nil];
+}
+
++ (void)postNotificationUpdateMobileSuccess{
+    [SXNotificationCenter postNotificationName:SXUpdateMobile object:self userInfo:nil];
+}
+
++ (void)addObserverUpdateMobileSuccess:(id)observer selector:(SEL)selector{
+    [SXNotificationCenter addObserver:observer selector:selector name:SXUpdateMobile object:nil];
+}
+
++ (void)removeObserverUpdateMobile:(id)observer{
+    [SXNotificationCenter removeObserver:observer name:SXUpdateMobile object:nil];
 }
     
 @end

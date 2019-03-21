@@ -66,4 +66,17 @@
     }
 }
 
+#pragma mark -Event-
+- (IBAction)editingMobileTextField:(UITextField *)sender {
+    [self changeConfirmBtnEnabled];
+}
+
+- (IBAction)editingVCodeTextField:(UITextField *)sender {
+    [self changeConfirmBtnEnabled];
+}
+
+- (void)changeConfirmBtnEnabled{
+    self.confirmBtn.enabled = self.mobileTextField.text.trim.length && self.codeTextField.text.trim.length;
+}
+
 @end
