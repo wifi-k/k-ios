@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FAC0530DC0A8DA1E353A39E6AADB61E5"
+               BlueprintIdentifier = "D518EAE87FAA8746E0D034401D42BD6F"
                BlueprintName = "WYChart"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libWYChart.a">

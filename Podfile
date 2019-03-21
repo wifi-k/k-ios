@@ -20,4 +20,5 @@ target 'TreebearManager' do #工程名称
     pod 'KeyboardToolBar'
     pod 'RKNotificationHub'
     pod 'WYChart'
+    pod 'Qiniu', '~> 7.1'
 end

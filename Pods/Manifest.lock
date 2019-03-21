@@ -20,6 +20,7 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
+  - HappyDNS (0.3.15)
   - JSONModel (1.8.0)
   - KeyboardToolBar (2.0.1)
   - MarqueeLabel (2.2.5)
@@ -27,6 +28,8 @@ PODS:
   - MBProgressHUD (1.0.0)
   - MJExtension (3.0.15.1)
   - MJRefresh (3.1.15.7)
+  - Qiniu (7.2.5):
+    - HappyDNS (~> 0.3)
   - RKNotificationHub (2.0.5)
   - SAMKeychain (1.5.3)
   - SDCycleScrollView (1.75):
@@ -51,6 +54,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.0.0)
   - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.12)
+  - Qiniu (~> 7.1)
   - RKNotificationHub
   - SAMKeychain
   - SDCycleScrollView
@@ -66,6 +70,7 @@ SPEC REPOS:
     - CocoaAsyncSocket
     - DZNEmptyDataSet
     - FMDB
+    - HappyDNS
     - JSONModel
     - KeyboardToolBar
     - MarqueeLabel
@@ -73,6 +78,7 @@ SPEC REPOS:
     - MBProgressHUD
     - MJExtension
     - MJRefresh
+    - Qiniu
     - RKNotificationHub
     - SAMKeychain
     - SDCycleScrollView
@@ -87,6 +93,7 @@ SPEC CHECKSUMS:
   CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  HappyDNS: 00c15e651a347206e58a20503a32a5564589b56a
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   KeyboardToolBar: fdf2a1f2368e4a53965da4c21f9719e77f407b26
   MarqueeLabel: 65ca60ee9ba554be34f35339004c6c9fe6366a31
@@ -94,6 +101,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  Qiniu: 909b408ee489ea54827e9717be90b94bc9dfbc48
   RKNotificationHub: e926748820d719f21ff374657a47fceefa1796b4
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
@@ -102,6 +110,6 @@ SPEC CHECKSUMS:
   TZImagePickerController: 7850b158d025065b162a1a963d445040b828abc9
   WYChart: 7523ef7395b4f4c8c88415bf0dd4f8d27a7757ce
 
-PODFILE CHECKSUM: 65ecea8aca9e529473cddb16366693217c02fe45
+PODFILE CHECKSUM: e31d0452516ad6dd493b93069f24da25a438a1f8
 
 COCOAPODS: 1.5.3
