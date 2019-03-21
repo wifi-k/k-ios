@@ -10,9 +10,11 @@
 
 @interface SXNotificationCenterTool : NSObject
 
-//发送完成，通知刷新
-+ (void)postSignSucccessNotice;
-+ (void)observerNoticeSignSucccess:(id)observer selector:(SEL)selector;
++ (void)removeObserverAll:(id)observer;
+
+//修改昵称通知
++ (void)postNotificationUdpateNickNameSuccess;
++ (void)addObserverUdpateNickNameSuccess:(id)observer selector:(SEL)selector;
 + (void)removeObserver:(id)observer;
     
 @end

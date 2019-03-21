@@ -8,18 +8,28 @@
 
 #import "SXNotificationCenterTool.h"
 
+NSString *const SXUpdateNickName = @"SXUpdateNickName";
+
 @implementation SXNotificationCenterTool
 
-+ (void)postSignSucccessNotice{
-    [SXNotificationCenter postNotificationName:@"signSucccessNotice" object:self userInfo:nil];
++ (void)removeObserverAll:(id)observer{
+    [SXNotificationCenter removeObserver:observer];
+}
+
+//----//----//----//----//----//----
+//----//----//----//----//----//----
+
+
++ (void)postNotificationUdpateNickNameSuccess{
+    [SXNotificationCenter postNotificationName:SXUpdateNickName object:self userInfo:nil];
 }
     
-+ (void)observerNoticeSignSucccess:(id)observer selector:(SEL)selector{
-    [SXNotificationCenter addObserver:observer selector:selector name:@"signSucccessNotice" object:nil];
++ (void)addObserverUdpateNickNameSuccess:(id)observer selector:(SEL)selector{
+    [SXNotificationCenter addObserver:observer selector:selector name:SXUpdateNickName object:nil];
 }
     
 + (void)removeObserver:(id)observer{
-    [SXNotificationCenter removeObserver:observer name:@"signSucccessNotice" object:nil];
+    [SXNotificationCenter removeObserver:observer name:SXUpdateNickName object:nil];
 }
     
 @end

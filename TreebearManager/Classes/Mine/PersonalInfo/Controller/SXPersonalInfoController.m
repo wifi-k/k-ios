@@ -16,6 +16,7 @@
 #import <QiniuSDK.h>
 #import "NSString+Hash.h"
 #import "SXMineNetTool.h"
+#import "SXNotificationCenterTool.h"
 
 @interface SXPersonalInfoController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIScrollViewDelegate>
 @property (nonatomic, strong) UIImagePickerController *imagePickerController;
@@ -42,6 +43,9 @@
     [self setUpUI];
     
     [self.headerView setUpData];
+    
+    //添加通知
+    [self addNotification];
 }
 
 - (void)setUpUI{
@@ -67,6 +71,19 @@
     };
     [self.view addSubview:headerView];
     self.headerView = headerView;
+}
+
+#pragma mark -添加移除通知-
+- (void)addNotification{
+    [SXNotificationCenterTool addObserverUdpateNickNameSuccess:self selector:@selector(udpateNickNameSuccess)];
+}
+
+- (void)dealloc{
+    [SXNotificationCenterTool removeObserverAll:self];
+}
+
+- (void)udpateNickNameSuccess{
+    [self.headerView setUpData];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -112,11 +129,7 @@
 }
 
 - (void)jumpToNickNameVC{
-    WS(weakSelf);
     SXNickNameUpdateController *nickVC = [[SXNickNameUpdateController alloc] init];
-    nickVC.updateNickNameBlock = ^{
-        [weakSelf.headerView setUpData];
-    };
     [self.navigationController pushViewController:nickVC animated:YES];
 }
 

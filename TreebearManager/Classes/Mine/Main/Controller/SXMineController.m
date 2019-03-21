@@ -16,6 +16,7 @@
 #import "SXMineHeaderView.h"
 #import <TZImagePickerController/TZImagePickerController.h>
 #import "SXMineNetTool.h"
+#import "SXNotificationCenterTool.h"
 
 @interface SXMineController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak) SXMineHeaderView *headerView;//头部视图
@@ -62,6 +63,9 @@
     
     //用户信息获取
     [self getUserInfoData];
+    
+    //添加通知
+    [self addNotification];
 }
 
 - (void)setUpUI{
@@ -105,6 +109,19 @@
     self.tableView.frame = self.view.bounds;
     
     self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 120);
+}
+
+#pragma mark -添加移除通知-
+- (void)addNotification{
+    [SXNotificationCenterTool addObserverUdpateNickNameSuccess:self selector:@selector(udpateNickNameSuccess)];
+}
+
+- (void)dealloc{
+    [SXNotificationCenterTool removeObserverAll:self];
+}
+
+- (void)udpateNickNameSuccess{
+    [self.headerView setUpData];
 }
 
 #pragma mark -点击事件-

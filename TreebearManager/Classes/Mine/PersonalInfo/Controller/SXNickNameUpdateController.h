@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) SXMineUserInfoParam *param;
 
 ///修改昵称回调
-@property (nonatomic, copy) void (^updateNickNameBlock)(void);
+//@property (nonatomic, copy) void (^updateNickNameBlock)(void);
 
 @end
 

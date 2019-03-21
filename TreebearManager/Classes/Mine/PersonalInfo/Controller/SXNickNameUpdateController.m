@@ -9,6 +9,7 @@
 #import "SXNickNameUpdateController.h"
 #import "SXNickNameUpdateHeaderView.h"
 #import "SXMineNetTool.h"
+#import "SXNotificationCenterTool.h"
 
 @interface SXNickNameUpdateController ()
 @property (nonatomic, weak) SXNickNameUpdateHeaderView *headerView;//头部视图
@@ -67,9 +68,11 @@
     param.name = self.headerView.param.name;
     [SXMineNetTool userInfoSetParams:param.mj_keyValues Success:^{
         [MBProgressHUD showSuccessWithMessage:@"修改成功!" toView:SXKeyWindow];
-        if (self.updateNickNameBlock) {
-            self.updateNickNameBlock();
-        }
+        //赋值
+        SXPersonInfoModel.sharedSXPersonInfoModel.userInfo.name = weakSelf.headerView.param.name;
+        
+        [SXNotificationCenterTool postNotificationUdpateNickNameSuccess];
+        
         [weakSelf.navigationController popViewControllerAnimated:YES];
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
