@@ -64,6 +64,7 @@
 		091BC4DB2242207100FEBFD1 /* PYAblumHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC4C32242207100FEBFD1 /* PYAblumHeader.m */; };
 		091BC4DE2242371800FEBFD1 /* SXXiaoKInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC4DD2242371800FEBFD1 /* SXXiaoKInfoModel.m */; };
 		091BC4E122433D9300FEBFD1 /* SXMineUserInfoParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC4E022433D9300FEBFD1 /* SXMineUserInfoParam.m */; };
+		091BC4E4224361DC00FEBFD1 /* SXPersonInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC4E3224361DC00FEBFD1 /* SXPersonInfoModel.m */; };
 		092D6CDE22004FB400538AC8 /* SXRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CDD22004FB400538AC8 /* SXRefreshHeader.m */; };
 		092D6CE12200504100538AC8 /* SXRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CE02200504100538AC8 /* SXRefreshFooter.m */; };
 		092D6CE422005A0C00538AC8 /* SXEmptyDataEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CE322005A0C00538AC8 /* SXEmptyDataEventView.m */; };
@@ -468,6 +469,8 @@
 		091BC4DD2242371800FEBFD1 /* SXXiaoKInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXXiaoKInfoModel.m; sourceTree = "<group>"; };
 		091BC4DF22433D9300FEBFD1 /* SXMineUserInfoParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMineUserInfoParam.h; sourceTree = "<group>"; };
 		091BC4E022433D9300FEBFD1 /* SXMineUserInfoParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMineUserInfoParam.m; sourceTree = "<group>"; };
+		091BC4E2224361DC00FEBFD1 /* SXPersonInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPersonInfoModel.h; sourceTree = "<group>"; };
+		091BC4E3224361DC00FEBFD1 /* SXPersonInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPersonInfoModel.m; sourceTree = "<group>"; };
 		092D6CDC22004FB400538AC8 /* SXRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXRefreshHeader.h; sourceTree = "<group>"; };
 		092D6CDD22004FB400538AC8 /* SXRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXRefreshHeader.m; sourceTree = "<group>"; };
 		092D6CDF2200504100538AC8 /* SXRefreshFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXRefreshFooter.h; sourceTree = "<group>"; };
@@ -2691,6 +2694,8 @@
 		B348F96A21F6EACC0000F194 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				091BC4E2224361DC00FEBFD1 /* SXPersonInfoModel.h */,
+				091BC4E3224361DC00FEBFD1 /* SXPersonInfoModel.m */,
 				09D5F6022227E4DA00EA681A /* SXMineUserInfoModel.h */,
 				09D5F6032227E4DA00EA681A /* SXMineUserInfoModel.m */,
 				091BC4DF22433D9300FEBFD1 /* SXMineUserInfoParam.h */,
@@ -3532,6 +3537,7 @@
 				098BA310221B98E200F58639 /* NSString+Extension.m in Sources */,
 				09B9B87F22325729000868D5 /* SXLANPortHeaderView.m in Sources */,
 				B3AF300821FB0956001E4E67 /* SXBaseModel.m in Sources */,
+				091BC4E4224361DC00FEBFD1 /* SXPersonInfoModel.m in Sources */,
 				095540AC221D073D005A5485 /* SXTitleImageCustomButton.m in Sources */,
 				09B9B7D22230BAA6000868D5 /* SXMobileManagerHeaderView.m in Sources */,
 				09462AE02237AAE10063F67E /* SXOnlineBroadbandController.m in Sources */,

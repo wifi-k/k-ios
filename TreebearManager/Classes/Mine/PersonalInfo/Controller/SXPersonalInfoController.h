@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SXPersonalInfoController : UIViewController
 
+///修改头像回调
+@property (nonatomic, copy) void (^updateAvatarImgBlock)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

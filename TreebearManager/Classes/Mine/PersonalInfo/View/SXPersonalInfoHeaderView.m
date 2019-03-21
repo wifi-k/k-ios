@@ -85,10 +85,17 @@
 }
 
 #pragma mark -setter-
-- (void)setImage:(UIImage *)image{
-    _image = image;
+//- (void)setImage:(UIImage *)image{
+//    _image = image;
+//
+//    self.iconImageView.image = image;
+//}
+
+- (void)setUrlStr:(NSString *)urlStr{
+    _urlStr = urlStr;
     
-    self.iconImageView.image = image;
+    NSURL *url = [NSURL URLWithString:urlStr];
+    [self.iconImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"img_user_icon"] options:SDWebImageRetryFailed];
 }
 
 #pragma mark -Event-

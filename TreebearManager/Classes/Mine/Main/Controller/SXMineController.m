@@ -16,6 +16,7 @@
 #import "SXMineHeaderView.h"
 #import <TZImagePickerController/TZImagePickerController.h>
 #import "SXMineNetTool.h"
+#import "SXPersonInfoModel.h"
 
 @interface SXMineController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak) SXMineHeaderView *headerView;//头部视图
@@ -113,7 +114,11 @@
 }
 
 - (void)jumpToPersonVC{
+    WS(weakSelf);
     SXPersonalInfoController *personVC = [[SXPersonalInfoController alloc] init];
+    personVC.updateAvatarImgBlock = ^{
+        [weakSelf getUserinfoData];
+    };
     [self.navigationController pushViewController:personVC animated:YES];
 }
 
@@ -125,6 +130,8 @@
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         DLog(@"model:%@",model);
         weakSelf.userModel = model;
+        //头部赋值
+        weakSelf.headerView.userModel = model;
     } failure:^(NSError * _Nonnull error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         NSString *message = [error.userInfo objectForKey:@"msg"];
@@ -133,8 +140,10 @@
 }
 
 - (void)getUserQiniuTokenData{
+    
     [SXMineNetTool getUserQiniuTokenSuccess:^(NSString *token) {
         DLog(@"token:%@",token);
+        [SXPersonInfoModel sharedSXPersonInfoModel].qnToken = token;
     } failure:^(NSError *error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         NSString *message = [error.userInfo objectForKey:@"msg"];

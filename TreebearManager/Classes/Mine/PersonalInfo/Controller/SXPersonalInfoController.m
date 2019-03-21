@@ -12,7 +12,10 @@
 #import "SXForgetConfirmController.h"
 #import "SXPersonalInfoHeaderView.h"
 #import "SXAlertControllerTool.h"
+#import "SXPersonInfoModel.h"
 #import <MobileCoreServices/UTCoreTypes.h>
+#import <QiniuSDK.h>
+#import "NSString+Hash.h"
 
 @interface SXPersonalInfoController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIScrollViewDelegate>
 @property (nonatomic, strong) UIImagePickerController *imagePickerController;
@@ -121,7 +124,34 @@
     [self.navigationController pushViewController:forgetVC animated:YES];
 }
 
-#pragma mark UIImagePickerControllerDelegate-
+#pragma mark -上传文件-
+- (void)uploadImageData:(NSData *)data{
+    WS(weakSelf);
+    NSString *key = @"user_avatar";
+    NSString *token = [SXPersonInfoModel sharedSXPersonInfoModel].qnToken;
+    QNUploadManager *upManager = [[QNUploadManager alloc] init];
+    //NSData *data = [@"Hello, World!" dataUsingEncoding:NSUTF8StringEncoding];
+    [upManager putData:data key:key token:token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+        if (info.ok) {
+            DLog(@"请求成功");
+            DLog(@"%@", info);
+        } else {
+            DLog(@"请求失败");
+        }
+        DLog(@"%@", resp);
+//        NSString *hostStr = @"http://test.user.famwifi.com/api";
+        NSString *hostStr2 = @"https://test.developer.qiniu.famwifi.com";
+        NSString *urlStr = [hostStr2 stringByAppendingPathComponent:key];
+        weakSelf.headerView.urlStr = urlStr;
+        
+        //回调
+        if (weakSelf.updateAvatarImgBlock) {
+            weakSelf.updateAvatarImgBlock();
+        }
+    } option:nil];
+}
+
+#pragma mark -UIImagePickerControllerDelegate-
 //适用获取所有媒体资源，只需判断资源类型
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info{
     NSLog(@"选择完毕-----info:%@", info);
@@ -133,7 +163,11 @@
         // 先把图片转成NSData
         //UIImage *image = info[UIImagePickerControllerEditedImage];
         UIImage *image = info[UIImagePickerControllerOriginalImage];
-        self.headerView.image = image;
+        NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
+        [self uploadImageData:imageData];
+        
+//        self.headerView.image = image;
+        
         /*
          // 设置image的尺寸
          CGSize imageSize = CGSizeMake(1000, 1000);

@@ -46,6 +46,15 @@
     [self.iconBtn roundViewWithRadius:30.0f];
 }
 
+- (void)setUserModel:(SXMineUserInfoModel *)userModel{
+    _userModel = userModel;
+    
+    self.nameL.text = userModel.name;
+    self.mobileL.text = userModel.mobile;
+    NSURL *url = [NSURL URLWithString:userModel.avatar];
+    [self.iconBtn sd_setBackgroundImageWithURL:url forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"mine_xioaki_default"] options:SDWebImageRetryFailed];
+}
+
 #pragma mark -Event-
 - (void)clickMobile{
     if (self.clickMobileBlock) {
