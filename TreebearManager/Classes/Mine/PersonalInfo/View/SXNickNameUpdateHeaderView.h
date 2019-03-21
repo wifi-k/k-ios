@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXMineUserInfoParam.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXNickNameUpdateHeaderView : UIView
 
 + (instancetype)headerView;
+
+@property (nonatomic, strong) SXMineUserInfoParam *param;
 
 @end
 

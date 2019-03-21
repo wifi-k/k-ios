@@ -16,10 +16,12 @@
 @property (weak, nonatomic) IBOutlet UIView *firstBgView;
 
 @property (weak, nonatomic) IBOutlet UILabel *nickTitleL;
+@property (weak, nonatomic) IBOutlet UILabel *nickL;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView2;
 @property (weak, nonatomic) IBOutlet UIView *secondBgView;
 
 @property (weak, nonatomic) IBOutlet UILabel *mobileTitleL;
+@property (weak, nonatomic) IBOutlet UILabel *mobileL;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView3;
 @property (weak, nonatomic) IBOutlet UIView *thirdBgView;
 
@@ -85,17 +87,13 @@
 }
 
 #pragma mark -setter-
-//- (void)setImage:(UIImage *)image{
-//    _image = image;
-//
-//    self.iconImageView.image = image;
-//}
-
-- (void)setUrlStr:(NSString *)urlStr{
-    _urlStr = urlStr;
-    
-    NSURL *url = [NSURL URLWithString:urlStr];
-    [self.iconImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"img_user_icon"] options:SDWebImageRetryFailed];
+- (void)setUpData{
+    SXMineUserInfoModel *userInfo = SXPersonInfoModel.sharedSXPersonInfoModel.userInfo;
+    self.nickL.text = userInfo.name;
+    self.mobileL.text = userInfo.mobile;
+    NSString *avatar = userInfo.avatar;
+    NSURL *avatarUrl = [NSURL URLWithString:avatar];
+    [self.iconImageView sd_setImageWithURL:avatarUrl placeholderImage:[UIImage imageNamed:@"img_user_icon"] options:SDWebImageRetryFailed];
 }
 
 #pragma mark -Event-

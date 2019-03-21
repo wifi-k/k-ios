@@ -10,6 +10,10 @@
 
 @implementation SXXiaoKInfoModel
 
++ (NSDictionary *)mj_replacedKeyFromPropertyName{
+    return @{@"modelId":@"id"};
+}
+
 SingletonImplementation(SXXiaoKInfoModel)
 
 @end

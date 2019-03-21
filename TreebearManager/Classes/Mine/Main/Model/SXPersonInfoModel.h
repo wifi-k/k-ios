@@ -7,6 +7,7 @@
 //
 
 #import "SXBaseModel.h"
+#import "SXMineUserInfoModel.h"
 
 @interface SXPersonInfoModel : SXBaseModel
 
@@ -16,5 +17,10 @@ SingletonInterface(SXPersonInfoModel)
  * 七牛token
  */
 @property (nonatomic, copy) NSString *qnToken;
+
+/**
+ * 个人中心用户信息
+ */
+@property (nonatomic, strong) SXMineUserInfoModel *userInfo;
 
 @end

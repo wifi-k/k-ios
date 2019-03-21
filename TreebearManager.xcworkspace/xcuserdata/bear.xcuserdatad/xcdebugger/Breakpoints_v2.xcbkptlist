@@ -36,12 +36,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TreebearManager/Classes/Mine/PersonalInfo/Controller/SXPersonalInfoController.m"
-            timestampString = "574847898.291307"
+            timestampString = "574854830.712539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "-uploadImageData:"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "-getUserInfoData"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -51,29 +51,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TreebearManager/Classes/Mine/Main/Controller/SXMineController.m"
-            timestampString = "574847898.291466"
+            filePath = "TreebearManager/Classes/Mine/PersonalInfo/Controller/SXPersonalInfoController.m"
+            timestampString = "574854833.000737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "-getUserinfoData"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TreebearManager/Classes/Mine/Main/Controller/SXMineController.m"
-            timestampString = "574847898.2920901"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "-getUserinfoData"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "-getUserInfoData"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

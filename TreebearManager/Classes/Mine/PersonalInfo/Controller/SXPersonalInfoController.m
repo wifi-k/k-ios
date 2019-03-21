@@ -12,10 +12,10 @@
 #import "SXForgetConfirmController.h"
 #import "SXPersonalInfoHeaderView.h"
 #import "SXAlertControllerTool.h"
-#import "SXPersonInfoModel.h"
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <QiniuSDK.h>
 #import "NSString+Hash.h"
+#import "SXMineNetTool.h"
 
 @interface SXPersonalInfoController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIScrollViewDelegate>
 @property (nonatomic, strong) UIImagePickerController *imagePickerController;
@@ -40,6 +40,8 @@
     [super viewDidLoad];
     
     [self setUpUI];
+    
+    [self.headerView setUpData];
 }
 
 - (void)setUpUI{
@@ -127,28 +129,57 @@
 #pragma mark -上传文件-
 - (void)uploadImageData:(NSData *)data{
     WS(weakSelf);
-    NSString *key = @"user_avatar";
+    NSString *key = @"user_avatar1";
     NSString *token = [SXPersonInfoModel sharedSXPersonInfoModel].qnToken;
     QNUploadManager *upManager = [[QNUploadManager alloc] init];
     //NSData *data = [@"Hello, World!" dataUsingEncoding:NSUTF8StringEncoding];
     [upManager putData:data key:key token:token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
         if (info.ok) {
-            DLog(@"请求成功");
             DLog(@"%@", info);
+            [weakSelf userInfoSetDataWith:key];
         } else {
-            DLog(@"请求失败");
+            [MBProgressHUD showFailWithMessage:@"上传失败!" toView:SXKeyWindow];
         }
         DLog(@"%@", resp);
-//        NSString *hostStr = @"http://test.user.famwifi.com/api";
-        NSString *hostStr2 = @"https://test.developer.qiniu.famwifi.com";
-        NSString *urlStr = [hostStr2 stringByAppendingPathComponent:key];
-        weakSelf.headerView.urlStr = urlStr;
-        
-        //回调
+    } option:nil];
+}
+
+#pragma mark -用户信息修改-
+- (void)userInfoSetDataWith:(NSString *)key{
+    if ([NSString isEmpty:key]) {
+        [MBProgressHUD showFailWithMessage:@"获取Key值为空" toView:SXKeyWindow];
+        return;
+    }
+    
+    WS(weakSelf);
+    SXMineUserInfoParam *param = [SXMineUserInfoParam param];
+    param.avatar = key;
+    [SXMineNetTool userInfoSetParams:param.mj_keyValues Success:^{
+        [MBProgressHUD showSuccessWithMessage:@"OK！" toView:SXKeyWindow];
+        //1.更新用户信息
+        [weakSelf getUserInfoData];
+    } failure:^(NSError *error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
+#pragma mark -获取用户信息-
+- (void)getUserInfoData{
+    WS(weakSelf);
+    [SXMineNetTool getUserInfoDataSuccess:^(SXMineUserInfoModel * _Nonnull model) {
+        DLog(@"model:%@",model);
+        SXPersonInfoModel.sharedSXPersonInfoModel.userInfo = model;
+        //1.更换头像
+        [weakSelf.headerView setUpData];
+        //2.通知上级页面更换头像
         if (weakSelf.updateAvatarImgBlock) {
             weakSelf.updateAvatarImgBlock();
         }
-    } option:nil];
+    } failure:^(NSError * _Nonnull error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
 
 #pragma mark -UIImagePickerControllerDelegate-

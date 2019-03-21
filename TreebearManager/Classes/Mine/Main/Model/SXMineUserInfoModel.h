@@ -8,13 +8,20 @@
 
 #import "SXBaseModel.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface SXMineUserInfoModel : SXBaseModel
+
+/**
+ * id
+ */
+@property (nonatomic, copy) NSString *modelId;
 /**
  * 用户名
  */
 @property (nonatomic, copy) NSString *name;
+/**
+ * passwd
+ */
+@property (nonatomic, copy) NSString *passwd;
 /**
  * 头像
  */
@@ -28,10 +35,33 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, copy) NSString *email;
 /**
+ * 邀请码
+ */
+@property (nonatomic, copy) NSString *inviteCode;
+/**
  * 认证状态 0-未认证 1-认证通过
  */
 @property (nonatomic, copy) NSNumber *authStatus;
+/**
+ * role 用户角色
+ */
+@property (nonatomic, copy) NSNumber *role;
+/**
+ * 性别
+ */
+@property (nonatomic, copy) NSNumber *sex;
+/**
+ * 是否删除
+ */
+@property (nonatomic, copy) NSNumber *isDelete;
+/**
+ * 创建时间
+ */
+@property (nonatomic, copy) NSString *createTime;
+/**
+ * 修改时间
+ */
+@property (nonatomic, copy) NSString *updateTime;
 
 @end
 
-NS_ASSUME_NONNULL_END

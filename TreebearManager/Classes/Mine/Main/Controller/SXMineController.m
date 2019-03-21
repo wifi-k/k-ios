@@ -16,14 +16,12 @@
 #import "SXMineHeaderView.h"
 #import <TZImagePickerController/TZImagePickerController.h>
 #import "SXMineNetTool.h"
-#import "SXPersonInfoModel.h"
 
 @interface SXMineController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak) SXMineHeaderView *headerView;//头部视图
 @property (nonatomic, weak) UITableView *tableView;//列表视图
 
 @property (nonatomic, strong) NSMutableArray *dataArray;//数据源
-@property (nonatomic, strong) SXMineUserInfoModel *userModel;///个人信息模型
 @end
 
 @implementation SXMineController
@@ -59,9 +57,11 @@
     
     [self setUpUI];
     
-    //用户信息获取
-    [self getUserinfoData];
+    //获取七牛云token
     [self getUserQiniuTokenData];
+    
+    //用户信息获取
+    [self getUserInfoData];
 }
 
 - (void)setUpUI{
@@ -117,21 +117,23 @@
     WS(weakSelf);
     SXPersonalInfoController *personVC = [[SXPersonalInfoController alloc] init];
     personVC.updateAvatarImgBlock = ^{
-        [weakSelf getUserinfoData];
+        //1.更新数据
+        [weakSelf.headerView setUpData];
     };
     [self.navigationController pushViewController:personVC animated:YES];
 }
 
 #pragma mark -获取用户信息-
-- (void)getUserinfoData{
+- (void)getUserInfoData{
     WS(weakSelf);
     [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
     [SXMineNetTool getUserInfoDataSuccess:^(SXMineUserInfoModel * _Nonnull model) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         DLog(@"model:%@",model);
-        weakSelf.userModel = model;
-        //头部赋值
-        weakSelf.headerView.userModel = model;
+        //1.单利赋值
+        SXPersonInfoModel.sharedSXPersonInfoModel.userInfo = model;
+        //2.头部赋值
+        [weakSelf.headerView setUpData];
     } failure:^(NSError * _Nonnull error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         NSString *message = [error.userInfo objectForKey:@"msg"];
@@ -139,25 +141,11 @@
     }];
 }
 
+#pragma mark -从服务端获取七牛云token-
 - (void)getUserQiniuTokenData{
-    
     [SXMineNetTool getUserQiniuTokenSuccess:^(NSString *token) {
         DLog(@"token:%@",token);
-        [SXPersonInfoModel sharedSXPersonInfoModel].qnToken = token;
-    } failure:^(NSError *error) {
-        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
-        NSString *message = [error.userInfo objectForKey:@"msg"];
-        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
-    }];
-}
-
-- (void)userInfoSetData{
-    SXMineUserInfoParam *param = [SXMineUserInfoParam param];
-    param.name = self.userModel.name;
-    param.avatar = self.userModel.avatar;
-    [SXMineNetTool userInfoSetParams:nil Success:^{
-        [MBProgressHUD showSuccessWithMessage:@"OK！" toView:SXKeyWindow];
-        
+        SXPersonInfoModel.sharedSXPersonInfoModel.qnToken = token;
     } failure:^(NSError *error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         NSString *message = [error.userInfo objectForKey:@"msg"];

@@ -16,6 +16,14 @@
 
 @implementation SXNickNameUpdateHeaderView
 
+#pragma mark -getter-
+- (SXMineUserInfoParam *)param{
+    if (_param == nil) {
+        _param = [SXMineUserInfoParam param];
+    }
+    return _param;
+}
+
 + (instancetype)headerView{
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
 }
@@ -43,6 +51,7 @@
 #pragma mark -Event-
 - (IBAction)editingNickTextField:(UITextField *)sender {
     DLog(@"sender:%@",sender.text);
+    self.param.name = sender.text.filterSpace;
 }
 
 @end

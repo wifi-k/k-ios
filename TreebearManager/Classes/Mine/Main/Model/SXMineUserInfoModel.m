@@ -10,4 +10,8 @@
 
 @implementation SXMineUserInfoModel
 
++ (NSDictionary *)mj_replacedKeyFromPropertyName{
+    return @{@"modelId":@"id"};
+}
+
 @end

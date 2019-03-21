@@ -32,7 +32,7 @@
                                 <constraint firstAttribute="width" constant="7" id="k7t-Cf-Oxc"/>
                             </constraints>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_user_icon" translatesAutoresizingMaskIntoConstraints="NO" id="9EF-Ph-qOF">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mine_xioaki_default" translatesAutoresizingMaskIntoConstraints="NO" id="9EF-Ph-qOF">
                             <rect key="frame" x="283" y="7.5" width="45" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="FXB-Cd-W5T"/>
@@ -214,7 +214,9 @@
                 <outlet property="firstBgView" destination="BTs-ZP-nga" id="q0S-ZE-sMO"/>
                 <outlet property="fourthBgView" destination="I1z-2m-H0N" id="167-bL-ED8"/>
                 <outlet property="iconImageView" destination="9EF-Ph-qOF" id="FoY-N5-nP9"/>
+                <outlet property="mobileL" destination="Bla-R3-pVi" id="ARd-11-iTD"/>
                 <outlet property="mobileTitleL" destination="C7w-gp-DIv" id="XNQ-Ql-cav"/>
+                <outlet property="nickL" destination="69N-hz-NfC" id="Ceg-pf-9C4"/>
                 <outlet property="nickTitleL" destination="fHP-Ev-TC5" id="IGs-m7-BXl"/>
                 <outlet property="pwdTitleL" destination="ncE-g9-76O" id="hVV-SL-9de"/>
                 <outlet property="secondBgView" destination="Dm2-n4-tlP" id="F8k-U2-C4g"/>
@@ -225,6 +227,6 @@
     </objects>
     <resources>
         <image name="arrow_right" width="7" height="10"/>
-        <image name="img_user_icon" width="50" height="50"/>
+        <image name="mine_xioaki_default" width="52" height="52"/>
     </resources>
 </document>

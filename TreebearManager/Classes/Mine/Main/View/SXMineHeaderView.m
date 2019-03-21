@@ -46,13 +46,14 @@
     [self.iconBtn roundViewWithRadius:30.0f];
 }
 
-- (void)setUserModel:(SXMineUserInfoModel *)userModel{
-    _userModel = userModel;
-    
-    self.nameL.text = userModel.name;
-    self.mobileL.text = userModel.mobile;
-    NSURL *url = [NSURL URLWithString:userModel.avatar];
-    [self.iconBtn sd_setBackgroundImageWithURL:url forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"mine_xioaki_default"] options:SDWebImageRetryFailed];
+#pragma mark -setData-
+- (void)setUpData{
+    SXMineUserInfoModel *userInfo = SXPersonInfoModel.sharedSXPersonInfoModel.userInfo;
+    self.nameL.text = userInfo.name;
+    self.mobileL.text = userInfo.mobile;
+    NSString *avatar = userInfo.avatar;
+    NSURL *avatarUrl = [NSURL URLWithString:avatar];
+    [self.iconBtn sd_setBackgroundImageWithURL:avatarUrl forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"mine_xioaki_default"] options:SDWebImageRetryFailed];
 }
 
 #pragma mark -Event-

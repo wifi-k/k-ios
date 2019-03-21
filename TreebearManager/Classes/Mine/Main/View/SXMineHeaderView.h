@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SXMineUserInfoModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
-@property (nonatomic, strong) SXMineUserInfoModel *userModel;
+- (void)setUpData;
 
 ///点击手机号回调
 @property (nonatomic, copy) void (^clickMobileBlock)(void);
