@@ -25,7 +25,9 @@
     
     [self setUpUI];
     
-    [self getNodeData];
+//    [self getNodeData];
+    
+    [self dynamicSettingData];
 }
 
 #pragma mark -初始化UI-
@@ -71,7 +73,7 @@
         weakSelf.headerView.result = result;
         
         //调用接口
-        [weakSelf dynamicSettingData:result];
+        [weakSelf dynamicSettingData];
     } failure:^(NSError * _Nonnull error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow];
         NSString *message = [error.userInfo objectForKey:@"msg"];
@@ -80,11 +82,12 @@
 }
 
 ///动态设置
-- (void)dynamicSettingData:(SXXiaoKNodeResult *)result{
+- (void)dynamicSettingData{
     WS(weakSelf);
     SXNetStaticParam *param = [SXNetStaticParam param];
-    param.dns1 = result.wan.dns1;
-    param.dns2 = result.wan.dns2;
+    SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
+    param.dns1 = shareInfo.dns1;
+    param.dns2 = shareInfo.dns2;
     [SXAddXiaokiNetTool dynamicSettingWithDataWithParams:param.mj_keyValues Success:^{
         DLog(@"动态校验成功");
         [weakSelf networkStatusData];

@@ -53,10 +53,11 @@
 
     self.broadbandTextField.backgroundColor = SXColorF6F7FB;
     self.bandPwdTextField.backgroundColor = SXColorF6F7FB;
-    self.ipTextField.backgroundColor = SXColorF6F7FB;
-    self.dnsTextField.backgroundColor = SXColorF6F7FB;
-    self.dns2TextField.backgroundColor = SXColorF6F7FB;
+    self.ipTextField.backgroundColor = SXColorWhite;
+    self.dnsTextField.backgroundColor = SXColorWhite;
+    self.dns2TextField.backgroundColor = SXColorWhite;
     
+    self.ipTextField.delegate = self;
     self.dnsTextField.delegate = self;
     self.dns2TextField.delegate = self;
     

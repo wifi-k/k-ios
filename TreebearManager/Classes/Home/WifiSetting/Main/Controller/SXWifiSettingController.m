@@ -17,6 +17,8 @@
 #import "SXTitleAlertView.h"
 #import "SXWarningAlertView.h"
 #import "SXWifiSettingNetTool.h"
+#import "SXAddXiaokiNetTool.h"
+#import "SXXiaoKInfoModel.h"
 
 @interface SXWifiSettingController ()
 @property (nonatomic, weak) SXWifiSettingHeaderView *headerView;//头部视图
@@ -87,10 +89,9 @@
         }
             break;
         case 1:{
-            SXOnlineController *advancedVC = [[SXOnlineController alloc] init];
-            [self.navigationController pushViewController:advancedVC animated:YES];
-//            SXAdvancedController *advancedVC = [[SXAdvancedController alloc] init];
+//            SXOnlineController *advancedVC = [[SXOnlineController alloc] init];
 //            [self.navigationController pushViewController:advancedVC animated:YES];
+            [self getNodeData];
         }
             break;
         case 2:{
@@ -140,6 +141,36 @@
         default:
             break;
     }
+}
+
+#pragma mark -获取节点数据-
+- (void)getNodeData{
+    WS(weakSelf);
+    [MBProgressHUD showWhiteLoadingToView:SXKeyWindow];
+    [SXAddXiaokiNetTool getNodeWithDataWithSuccess:^(SXXiaoKNodeResult * _Nonnull result) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow];
+        DLog(@"获取节点");
+        //1.更新wan信息
+        SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
+        shareInfo.modelId = result.modelId;
+        shareInfo.ip = result.wan.ip;
+        shareInfo.netmask = result.wan.netmask;
+        shareInfo.gateway = result.wan.gateway;
+        shareInfo.dns1 = result.wan.dns1;
+        shareInfo.dns2 = result.wan.dns2;
+        shareInfo.type = result.wan.type;
+        shareInfo.name = result.wan.name;
+        shareInfo.passwd = result.wan.passwd;
+        
+        //2.页面跳转
+        SXOnlineController *advancedVC = [[SXOnlineController alloc] init];
+        [weakSelf.navigationController pushViewController:advancedVC animated:YES];
+        
+    } failure:^(NSError * _Nonnull error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow];
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
 
 #pragma mark -网络请求-

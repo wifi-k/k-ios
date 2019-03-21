@@ -7,6 +7,7 @@
 //
 
 #import "SXOnlineAutotIPHeaderView.h"
+#import "SXXiaoKInfoModel.h"
 
 @interface SXOnlineAutotIPHeaderView ()
 
@@ -52,6 +53,8 @@
     // 不需要跟随父控件的尺寸变化而伸缩
     //self.autoresizingMask = UIViewAutoresizingNone;
     [self setUpUI];
+    
+    [self setUpData];
 }
 
 #pragma mark -初始化UI-
@@ -88,6 +91,15 @@
 //    self.updateIPBtn.backgroundColor = SXColorWhite;
 //    [self.updateIPBtn setTitleColor:SXColor999999 forState:UIControlStateNormal];
 //    [self.updateIPBtn roundViewWithRadius:22.5f borderColor:SXColorDivideLine borderWidth:1.0f];
+}
+
+- (void)setUpData{
+    SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
+    self.ipAddressL.text = shareInfo.ip;
+    self.maskL.text = shareInfo.netmask;
+    self.gatewayL.text = shareInfo.gateway;
+    self.dnsL.text = shareInfo.dns1;
+    self.dns2L.text = shareInfo.dns2;
 }
 
 #pragma mark -setter-

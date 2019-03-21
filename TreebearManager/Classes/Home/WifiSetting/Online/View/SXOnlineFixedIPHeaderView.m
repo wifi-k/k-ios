@@ -7,8 +7,9 @@
 //
 
 #import "SXOnlineFixedIPHeaderView.h"
+#import "SXXiaoKInfoModel.h"
 
-@interface SXOnlineFixedIPHeaderView ()<UITextFieldDelegate>
+@interface SXOnlineFixedIPHeaderView ()
 
 @property (weak, nonatomic) IBOutlet UITextField *ipTextField;
 @property (weak, nonatomic) IBOutlet UIView *firstBgView;
@@ -57,9 +58,6 @@
     self.dnsTextField.backgroundColor = SXColorF6F7FB;
     self.dns2TextField.backgroundColor = SXColorF6F7FB;
     
-    self.dnsTextField.delegate = self;
-    self.dns2TextField.delegate = self;
-    
     
     self.ipTextField.leftViewMode = UITextFieldViewModeAlways;
     self.ipTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 24)];
@@ -85,16 +83,18 @@
     [self.saveBtn roundViewWithRadius:6.0f];
 }
 
+- (void)setUpData{
+    SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
+    self.ipTextField.text = shareInfo.gateway;
+    self.dnsTextField.text = shareInfo.dns1;
+    self.dns2TextField.text = shareInfo.dns2;
+}
+
 #pragma mark -Event-
 - (IBAction)clickSaveBtn:(UIButton *)sender {
     if (self.clickSaveBtnBlock) {
         self.clickSaveBtnBlock();
     }
-}
-
-#pragma mark -delegate-
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    return NO;
 }
 
 @end
