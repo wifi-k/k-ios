@@ -115,7 +115,6 @@
 		09462AEA2237AE9E0063F67E /* SXOnlineFixedIPHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462AE92237AE9E0063F67E /* SXOnlineFixedIPHeaderView.xib */; };
 		09462AED2237AEBE0063F67E /* SXOnlineBroadbandHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462AEC2237AEBE0063F67E /* SXOnlineBroadbandHeaderView.m */; };
 		09462AEF2237AEC80063F67E /* SXOnlineBroadbandHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462AEE2237AEC80063F67E /* SXOnlineBroadbandHeaderView.xib */; };
-		09462AF22237DD130063F67E /* SXAdvancedOptionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462AF12237DD130063F67E /* SXAdvancedOptionController.m */; };
 		09462AF5223896FB0063F67E /* SXOnlineOptionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462AF4223896FB0063F67E /* SXOnlineOptionButton.m */; };
 		09462AF92238A8270063F67E /* SXMobileManagerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462AF72238A8270063F67E /* SXMobileManagerCell.m */; };
 		09462AFA2238A8270063F67E /* SXMobileManagerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462AF82238A8270063F67E /* SXMobileManagerCell.xib */; };
@@ -555,8 +554,6 @@
 		09462AEB2237AEBE0063F67E /* SXOnlineBroadbandHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineBroadbandHeaderView.h; sourceTree = "<group>"; };
 		09462AEC2237AEBE0063F67E /* SXOnlineBroadbandHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineBroadbandHeaderView.m; sourceTree = "<group>"; };
 		09462AEE2237AEC80063F67E /* SXOnlineBroadbandHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXOnlineBroadbandHeaderView.xib; sourceTree = "<group>"; };
-		09462AF02237DD130063F67E /* SXAdvancedOptionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXAdvancedOptionController.h; sourceTree = "<group>"; };
-		09462AF12237DD130063F67E /* SXAdvancedOptionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXAdvancedOptionController.m; sourceTree = "<group>"; };
 		09462AF3223896FB0063F67E /* SXOnlineOptionButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineOptionButton.h; sourceTree = "<group>"; };
 		09462AF4223896FB0063F67E /* SXOnlineOptionButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineOptionButton.m; sourceTree = "<group>"; };
 		09462AF62238A8270063F67E /* SXMobileManagerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMobileManagerCell.h; sourceTree = "<group>"; };
@@ -1832,8 +1829,6 @@
 				09462ADC2237AAA60063F67E /* SXOnlineFixedIPController.m */,
 				09462ADE2237AAE10063F67E /* SXOnlineBroadbandController.h */,
 				09462ADF2237AAE10063F67E /* SXOnlineBroadbandController.m */,
-				09462AF02237DD130063F67E /* SXAdvancedOptionController.h */,
-				09462AF12237DD130063F67E /* SXAdvancedOptionController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3358,7 +3353,6 @@
 				09462B052238DBC00063F67E /* SXMobileInfoHeaderView.m in Sources */,
 				09D5F67C222BC87000EA681A /* SXFamilyMemberCell.m in Sources */,
 				09B9B7BB222FBE3F000868D5 /* SXNetStaticParam.m in Sources */,
-				09462AF22237DD130063F67E /* SXAdvancedOptionController.m in Sources */,
 				09118702221522BF00938D9F /* GCDAsyncSocketCommunicationManager.m in Sources */,
 				B348F96121F6C50C0000F194 /* SXRootTool.m in Sources */,
 				091BC4802241010D00FEBFD1 /* SXXiaoKNodeResult.m in Sources */,

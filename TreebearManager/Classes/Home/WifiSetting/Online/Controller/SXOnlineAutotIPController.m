@@ -7,7 +7,6 @@
 //
 
 #import "SXOnlineAutotIPController.h"
-#import "SXAdvancedOptionController.h"
 #import "SXOnlineAutotIPHeaderView.h"
 #import "SXAddXiaokiNetTool.h"
 #import "SXXiaoKInfoModel.h"

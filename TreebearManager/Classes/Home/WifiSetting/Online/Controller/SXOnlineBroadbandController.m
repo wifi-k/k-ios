@@ -32,7 +32,7 @@
     WS(weakSelf);
     SXOnlineBroadbandHeaderView *headerView = [SXOnlineBroadbandHeaderView headerView];
     headerView.clickDisconnectedBtnBlock = ^{
-        [MBProgressHUD showMessage:@"断开连接！" toView:self.view];
+        [weakSelf broadbandSettingDataError];
     };
     headerView.clickConnectedBtnBlock = ^{
         [weakSelf broadbandSettingData];
@@ -48,11 +48,27 @@
 //    self.headerView.frame = self.view.bounds;
 }
 
-#pragma mark -跳转动态设置页面-
+#pragma mark -宽带设置-
 - (void)broadbandSettingData{
     WS(weakSelf);
     SXNetBroadbandParam *param = [SXNetBroadbandParam param];
     param.name = self.headerView.param.name;
+    param.passwd = self.headerView.param.passwd;
+    [MBProgressHUD showWhiteLoadingToView:SXKeyWindow];
+    [SXAddXiaokiNetTool broadbandSettingWithDataWithParams:param.mj_keyValues Success:^{
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        [MBProgressHUD showSuccessWithMessage:@"固定IP地址设置成功!" toView:weakSelf.view];
+    } failure:^(NSError * _Nonnull error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
+- (void)broadbandSettingDataError{
+    WS(weakSelf);
+    SXNetBroadbandParam *param = [SXNetBroadbandParam param];
+    param.name = [NSString stringWithFormat:@"%@123",self.headerView.param.name];
     param.passwd = self.headerView.param.passwd;
     [MBProgressHUD showWhiteLoadingToView:SXKeyWindow];
     [SXAddXiaokiNetTool broadbandSettingWithDataWithParams:param.mj_keyValues Success:^{
