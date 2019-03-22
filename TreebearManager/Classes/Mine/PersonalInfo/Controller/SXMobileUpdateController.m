@@ -31,8 +31,8 @@
     //2.头部视图
     WS(weakSelf);
     SXMobileUpdateHeaderView *headerView = [SXMobileUpdateHeaderView headerView];
-    headerView.clickConfirmBtnBlock = ^{
-        [weakSelf updateMobileData];
+    headerView.clickConfirmBtnBlock = ^(NSString *mobile) {
+        [weakSelf updateMobileData:mobile];
     };
     [self.view addSubview:headerView];
     self.headerView = headerView;
@@ -45,11 +45,13 @@
 }
 
 #pragma mark -Event-
-- (void)updateMobileData{
+- (void)updateMobileData:(NSString *)mobile{
     //赋值
-    SXPersonInfoModel.sharedSXPersonInfoModel.userInfo.mobile = @"修改测试";
+    SXPersonInfoModel.sharedSXPersonInfoModel.userInfo.mobile = mobile;
     
     [SXNotificationCenterTool postNotificationUpdateMobileSuccess];
+    
+    [MBProgressHUD showSuccessWithMessage:@"更换手机号成功!" toView:SXKeyWindow];
     
     [self.navigationController popViewControllerAnimated:YES];
 }

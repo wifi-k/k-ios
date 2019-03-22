@@ -8,6 +8,8 @@
 
 #import "SXMobileUpdateHeaderView.h"
 #import "SXLoginCertifyCodeButton.h"
+#import "SXLoginNetTool.h"
+#import "SXLoginParam.h"
 
 @interface SXMobileUpdateHeaderView ()
 @property (weak, nonatomic) IBOutlet SXLoginCertifyCodeButton *codeBtn;
@@ -19,9 +21,21 @@
 @property (weak, nonatomic) IBOutlet UITextField *codeTextField;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView2;
 @property (weak, nonatomic) IBOutlet UIView *secondBgView;
+
+///参数
+@property (nonatomic, strong) SXLoginParam *param;
+@property (copy, nonatomic) NSString *vcode;//网络验证码
 @end
 
 @implementation SXMobileUpdateHeaderView
+
+#pragma mark -getter-
+- (SXLoginParam *)param{
+    if (_param == nil) {
+        _param = [SXLoginParam param];
+    }
+    return _param;
+}
 
 + (instancetype)headerView{
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
@@ -60,23 +74,67 @@
 }
 
 #pragma mark -Event-
+- (IBAction)clickCodeBtn:(SXLoginCertifyCodeButton *)sender {
+    WS(weakSelf);
+    SXLoginParam *param = [SXLoginParam param];
+    param.mobile = self.param.mobile;
+    param.type = @3;
+    [SXLoginNetTool getCodeDataWithParams:param.mj_keyValues Success:^(NSString * _Nonnull code) {
+        [MBProgressHUD showSuccessWithMessage:@"发送成功!" toView:SXKeyWindow];
+        //开始计时
+        [sender start];
+        //成为第一响应
+        [weakSelf.codeTextField becomeFirstResponder];
+        //赋值验证码
+        weakSelf.vcode = code;
+    } failure:^(NSError * _Nonnull error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
 - (IBAction)clickConfirmBtn:(UIButton *)sender {
+    if ([NSString isEmpty:self.vcode]) {
+        [MBProgressHUD showWarningWithMessage:@"请点击获取验证码!" toView:SXKeyWindow];
+        return;
+    }
+    
+    if (![self.vcode isEqualToString:self.param.vcode]) {
+        [MBProgressHUD showWarningWithMessage:@"您输入的验证码不对,请重输!" toView:SXKeyWindow];
+        return;
+    }
+    
+    //赋值，保证验证码正确
+    self.param.vcode = self.vcode;
+    
+    //通知回调
     if (self.clickConfirmBtnBlock) {
-        self.clickConfirmBtnBlock();
+        self.clickConfirmBtnBlock(self.param.mobile);
     }
 }
 
 #pragma mark -Event-
 - (IBAction)editingMobileTextField:(UITextField *)sender {
+    DLog(@"editingMobileTextField:%@",sender.text);
+    self.param.mobile = sender.text.filterSpace;
     [self changeConfirmBtnEnabled];
+    if (!self.codeBtn.isCounting) {//非计时状态，改变按钮状态
+        self.codeBtn.enabled = self.param.mobile.isPhoneNumber;
+    }
 }
 
 - (IBAction)editingVCodeTextField:(UITextField *)sender {
+    DLog(@"editingVCodeTextField:%@",sender.text);
+    self.param.vcode = sender.text.filterSpace;
     [self changeConfirmBtnEnabled];
 }
 
 - (void)changeConfirmBtnEnabled{
     self.confirmBtn.enabled = self.mobileTextField.text.trim.length && self.codeTextField.text.trim.length;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self endEditing:YES];
 }
 
 @end

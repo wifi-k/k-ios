@@ -8,15 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface SXMobileUpdateHeaderView : UIView
 
 + (instancetype)headerView;
 
 ///点击完成按钮回调
-@property (nonatomic, copy) void (^clickConfirmBtnBlock)(void);
+@property (nonatomic, copy) void (^clickConfirmBtnBlock)(NSString *mobile);
 
 @end
 
-NS_ASSUME_NONNULL_END

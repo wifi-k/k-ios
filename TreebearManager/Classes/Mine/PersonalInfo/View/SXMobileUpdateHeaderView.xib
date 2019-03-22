@@ -80,6 +80,9 @@
                             <state key="normal" title="获取验证码">
                                 <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="clickCodeBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="2xr-CV-hR1"/>
+                            </connections>
                         </button>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入验证码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DbJ-j1-FMv">
                             <rect key="frame" x="95" y="15" width="129" height="30"/>
