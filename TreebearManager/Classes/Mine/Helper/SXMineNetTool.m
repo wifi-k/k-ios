@@ -148,4 +148,17 @@
     }];
 }
 
++ (void)userNodeInfoSetParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure{
+    [SXNetRequestTool POST:user_node_info_set parameters:params success:^(id response) {
+        if (success){
+            success();
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
+
 @end

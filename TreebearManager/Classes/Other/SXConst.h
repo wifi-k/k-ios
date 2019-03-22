@@ -46,6 +46,7 @@ extern NSString *const user_node_bind;
 extern NSString *const user_node_unbind;
 
 extern NSString *const user_node_list;
+extern NSString *const user_node_info_set;
 
 @end
 

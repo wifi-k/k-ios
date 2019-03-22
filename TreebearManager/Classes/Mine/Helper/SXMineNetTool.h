@@ -39,5 +39,8 @@
 ///节点解绑
 + (void)userNodeUnbindParams:(NSString *)nodeId Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
+///节点信息修改
++ (void)userNodeInfoSetParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
+
 @end
 

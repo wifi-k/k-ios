@@ -56,10 +56,12 @@
 }
 
 #pragma mark -弹窗视图-
-- (void)alertUpdateNameView{
+- (void)alertUpdateNameView:(SXHomeXiaoKiModel *)model{
+    WS(weakSelf);
     SXInputAlertView *nameAlertView = [SXInputAlertView alertWithTitle:@"修改名称" placeholder:@"请输入新的名称" confirmStr:@"确定" cancelStr:@"取消"];
     nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
         DLog(@"text:%@",text);
+        [weakSelf userNodeInfoSetData:model];
     };
     [nameAlertView alert];
 }
@@ -89,6 +91,19 @@
     }];
 }
 
+#pragma mark -节点信息修改-
+- (void)userNodeInfoSetData:(SXHomeXiaoKiModel *)model{
+    SXXiaoKiParam *param = [SXXiaoKiParam param];
+    param.name = model.name;
+    param.nodeId = model.nodeId;
+    [SXMineNetTool userNodeInfoSetParams:param.mj_keyValues Success:^{
+        [MBProgressHUD showSuccessWithMessage:@"修改成功!" toView:SXKeyWindow];
+    } failure:^(NSError *error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
 #pragma mark -页面跳转-
 - (void)jumpToUpdateVersionVC:(SXHomeXiaoKiModel *)model{
     SXUpdateVersionController *updateVC = [[SXUpdateVersionController alloc] init];
@@ -108,8 +123,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     WS(weakSelf);
     SXHomeXiaoKiCell *cell = [SXHomeXiaoKiCell cellWithTableView:tableView];
-    cell.clickUpdateNameBtnBlock = ^{
-        [weakSelf alertUpdateNameView];
+    cell.clickUpdateNameBtnBlock = ^(SXHomeXiaoKiModel * _Nonnull model) {
+        [weakSelf alertUpdateNameView:model];
     };
     cell.clickUnbindBtnBlock = ^(SXHomeXiaoKiModel * _Nonnull model) {
         [weakSelf alertUnbindWithModel:model];

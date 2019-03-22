@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
 ///点击修改名称回调
-@property (nonatomic, copy) void (^clickUpdateNameBtnBlock)(void);
+@property (nonatomic, copy) void (^clickUpdateNameBtnBlock)(SXHomeXiaoKiModel *model);
 ///点击解绑按钮回调
 @property (nonatomic, copy) void (^clickUnbindBtnBlock)(SXHomeXiaoKiModel *model);
 ///点击升级版本回调

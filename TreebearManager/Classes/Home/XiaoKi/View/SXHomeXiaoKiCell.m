@@ -69,7 +69,7 @@ static NSString *SXHomeXiaoKiCellID = @"SXHomeXiaoKiCellID";
 #pragma mark -点击事件-
 - (IBAction)updateNameBtn:(UIButton *)sender {
     if (self.clickUpdateNameBtnBlock) {
-        self.clickUpdateNameBtnBlock();
+        self.clickUpdateNameBtnBlock(self.model);
     }
 }
 
