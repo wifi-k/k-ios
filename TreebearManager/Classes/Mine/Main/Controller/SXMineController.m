@@ -74,7 +74,8 @@
     
 //    self.navigationItem.title = @"我的";
     
-    UIBarButtonItem *right = [UIBarButtonItem barButtonItemWithTitle:@"设置" target:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    //设置icon
+    UIBarButtonItem *right = [UIBarButtonItem barButtonItemWithImage:[UIImage imageNamed:@"img_setting_mine"] highImage:[UIImage imageNamed:@"img_setting_mine"] target:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = right;
     
     //1.创建tableView
