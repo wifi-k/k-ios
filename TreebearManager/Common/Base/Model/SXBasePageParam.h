@@ -12,9 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SXBasePageParam : SXBaseParam
 
-@property (nonatomic, copy) NSNumber *pageNo;//分页参数，第几页：默认1
-@property (nonatomic, copy) NSNumber *pageSize;//分页参数，一页多少条数据：默认20
-@property (nonatomic, copy) NSNumber *totalCount;//总数
+///分页参数，分页号,默认1
+@property (nonatomic, copy) NSNumber *pageNo;
+///分页参数，一页的数据,默认10,最多100
+@property (nonatomic, copy) NSNumber *pageSize;
+///总数
+@property (nonatomic, copy) NSNumber *totalCount;
 
 @end
 

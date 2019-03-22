@@ -34,9 +34,14 @@
     self.navigationItem.title = @"我的小K";
 }
 
+#pragma mark -setData-
 - (void)setUpData{
-    
-    [SXMineNetTool userNodeListParams:nil Success:^(NSArray *array) {
+    SXXiaoKiParam *param = [SXXiaoKiParam param];
+    param.pageNo = @1;
+    param.pageSize = @10;
+//    param.status = @1;
+//    param.nodeId = @"123456754321";
+    [SXMineNetTool userNodeListParams:param.mj_keyValues Success:^(NSArray *array) {
         DLog(@"array:%@",array);
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];

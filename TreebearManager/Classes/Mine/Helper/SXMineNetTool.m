@@ -99,7 +99,7 @@
 }
 
 + (void)userNodeListParams:(NSDictionary *)params Success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure{
-    [SXNetRequestTool POST:user_node_list parameters:nil success:^(id response) {
+    [SXNetRequestTool POST:user_node_list parameters:params success:^(id response) {
         
         if (![response isKindOfClass:NSDictionary.class]) return;
         
