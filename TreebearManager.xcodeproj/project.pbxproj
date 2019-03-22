@@ -2341,13 +2341,13 @@
 		09FB47352223C2FD00809273 /* WifiSetting */ = {
 			isa = PBXGroup;
 			children = (
+				09B9B7E52230EAD2000868D5 /* Main */,
 				091BC4812241036700FEBFD1 /* Helper */,
 				09B9B8112230EC27000868D5 /* Advanced */,
 				09B9B8012230EC26000868D5 /* DHCPServer */,
 				09B9B8152230EC27000868D5 /* LANPort */,
 				09B9B8092230EC27000868D5 /* Online */,
 				09B9B80D2230EC27000868D5 /* Prevent */,
-				09B9B7E52230EAD2000868D5 /* Main */,
 			);
 			path = WifiSetting;
 			sourceTree = "<group>";
