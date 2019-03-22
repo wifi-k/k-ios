@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXHomeXiaoKiModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXUpdateVersionController : UIViewController
-
+@property (nonatomic, strong) SXHomeXiaoKiModel *model;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -33,7 +33,7 @@
     WS(weakSelf);
     SXUpdateVersionHeaderView *headerView = [SXUpdateVersionHeaderView headerView];
     headerView.clickUpdateBtnBlock = ^{
-        [weakSelf updateVersion];
+        [weakSelf userNodeFirmwareUpgrade];
     };
     [self.view addSubview:headerView];
     self.headerView = headerView;
@@ -45,12 +45,17 @@
     self.headerView.frame = self.view.bounds;
 }
 
-#pragma mark -升级中-
-- (void)updateVersion{
+#pragma mark -升级固件-
+- (void)userNodeFirmwareUpgrade{
+    //更新wan信息
+    if ([NSString isEmpty:self.model.nodeId]) {
+        [MBProgressHUD showWarningWithMessage:@"没有获取到节点，请重试!" toView:SXKeyWindow];
+        return;
+    }
     [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
-    [SXMineNetTool userNodeFirmwareUpgradeParams:nil Success:^{
+    [SXMineNetTool userNodeFirmwareUpgradeParams:self.model.nodeId Success:^{
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
-        [MBProgressHUD showSuccessWithMessage:@"OK！" toView:SXKeyWindow];
+        [MBProgressHUD showSuccessWithMessage:@"升级成功!" toView:SXKeyWindow];
     } failure:^(NSError *error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         NSString *message = [error.userInfo objectForKey:@"msg"];

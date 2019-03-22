@@ -83,24 +83,10 @@
     }];
 }
 
-#pragma mark -升级固件-
-- (void)userNodeFirmwareUpgrade:(SXHomeXiaoKiModel *)model{
-    //更新wan信息
-    if ([NSString isEmpty:model.nodeId]) {
-        [MBProgressHUD showWarningWithMessage:@"没有获取到节点，请重试!" toView:SXKeyWindow];
-        return;
-    }
-    [SXMineNetTool userNodeFirmwareUpgradeParams:model.nodeId Success:^{
-        [MBProgressHUD showSuccessWithMessage:@"升级成功!" toView:SXKeyWindow];
-    } failure:^(NSError *error) {
-        NSString *message = [error.userInfo objectForKey:@"msg"];
-        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
-    }];
-}
-
 #pragma mark -页面跳转-
-- (void)jumpToUpdateVersionVC{
+- (void)jumpToUpdateVersionVC:(SXHomeXiaoKiModel *)model{
     SXUpdateVersionController *updateVC = [[SXUpdateVersionController alloc] init];
+    updateVC.model = model;
     [self.navigationController pushViewController:updateVC animated:YES];
 }
 
@@ -122,8 +108,8 @@
     cell.clickUnbindBtnBlock = ^(SXHomeXiaoKiModel * _Nonnull model) {
         [weakSelf alertUnbindWithModel:model];
     };
-    cell.clickUpdateVersionBtnBlock = ^{
-        [weakSelf jumpToUpdateVersionVC];
+    cell.clickUpdateVersionBtnBlock = ^(SXHomeXiaoKiModel * _Nonnull model) {
+        [weakSelf jumpToUpdateVersionVC:model];
     };
     return cell;
 }

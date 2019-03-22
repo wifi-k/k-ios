@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 ///点击解绑按钮回调
 @property (nonatomic, copy) void (^clickUnbindBtnBlock)(SXHomeXiaoKiModel *model);
 ///点击升级版本回调
-@property (nonatomic, copy) void (^clickUpdateVersionBtnBlock)(void);
+@property (nonatomic, copy) void (^clickUpdateVersionBtnBlock)(SXHomeXiaoKiModel *model);
 
 @end
 

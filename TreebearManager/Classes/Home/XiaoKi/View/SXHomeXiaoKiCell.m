@@ -81,7 +81,7 @@ static NSString *SXHomeXiaoKiCellID = @"SXHomeXiaoKiCellID";
 
 - (IBAction)updateVersionBtn:(UIButton *)sender {
     if (self.clickUpdateVersionBtnBlock) {
-        self.clickUpdateVersionBtnBlock();
+        self.clickUpdateVersionBtnBlock(self.model);
     }
 }
 
