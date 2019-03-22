@@ -284,6 +284,7 @@
 		09F23344222538FB0086AB35 /* SXFamilyMemberController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F23343222538FB0086AB35 /* SXFamilyMemberController.m */; };
 		09F76F2D2244D64A008A9048 /* SXHomeXiaoKiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F76F2C2244D64A008A9048 /* SXHomeXiaoKiModel.m */; };
 		09F76F302244DAE9008A9048 /* SXXiaoKiParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F76F2F2244DAE9008A9048 /* SXXiaoKiParam.m */; };
+		09F76F332244E8CA008A9048 /* SXHomeXiaoKiSSIDModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F76F322244E8CA008A9048 /* SXHomeXiaoKiSSIDModel.m */; };
 		09FB472C22239D7B00809273 /* SXMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB472B22239D7B00809273 /* SXMessageController.m */; };
 		09FB473022239E3500809273 /* SXHomeMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB472E22239E3500809273 /* SXHomeMessageCell.m */; };
 		09FB473122239E3500809273 /* SXHomeMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FB472F22239E3500809273 /* SXHomeMessageCell.xib */; };
@@ -857,6 +858,8 @@
 		09F76F2C2244D64A008A9048 /* SXHomeXiaoKiModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeXiaoKiModel.m; sourceTree = "<group>"; };
 		09F76F2E2244DAE9008A9048 /* SXXiaoKiParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXXiaoKiParam.h; sourceTree = "<group>"; };
 		09F76F2F2244DAE9008A9048 /* SXXiaoKiParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXXiaoKiParam.m; sourceTree = "<group>"; };
+		09F76F312244E8CA008A9048 /* SXHomeXiaoKiSSIDModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeXiaoKiSSIDModel.h; sourceTree = "<group>"; };
+		09F76F322244E8CA008A9048 /* SXHomeXiaoKiSSIDModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeXiaoKiSSIDModel.m; sourceTree = "<group>"; };
 		09FB472A22239D7B00809273 /* SXMessageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMessageController.h; sourceTree = "<group>"; };
 		09FB472B22239D7B00809273 /* SXMessageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMessageController.m; sourceTree = "<group>"; };
 		09FB472D22239E3500809273 /* SXHomeMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMessageCell.h; sourceTree = "<group>"; };
@@ -2310,10 +2313,12 @@
 		09F76F2A2244D5FB008A9048 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				09F76F2B2244D64A008A9048 /* SXHomeXiaoKiModel.h */,
-				09F76F2C2244D64A008A9048 /* SXHomeXiaoKiModel.m */,
 				09F76F2E2244DAE9008A9048 /* SXXiaoKiParam.h */,
 				09F76F2F2244DAE9008A9048 /* SXXiaoKiParam.m */,
+				09F76F2B2244D64A008A9048 /* SXHomeXiaoKiModel.h */,
+				09F76F2C2244D64A008A9048 /* SXHomeXiaoKiModel.m */,
+				09F76F312244E8CA008A9048 /* SXHomeXiaoKiSSIDModel.h */,
+				09F76F322244E8CA008A9048 /* SXHomeXiaoKiSSIDModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3412,6 +3417,7 @@
 				B3AF2FF021FAFF34001E4E67 /* SXForgetController.m in Sources */,
 				09FB47342223BD8000809273 /* SXHomeMessageModel.m in Sources */,
 				0936B72C2239F0DB00E68C4C /* SXNickNameUpdateHeaderView.m in Sources */,
+				09F76F332244E8CA008A9048 /* SXHomeXiaoKiSSIDModel.m in Sources */,
 				091BC4D92242207100FEBFD1 /* PYAssetModel.m in Sources */,
 				B3AF302121FE90DA001E4E67 /* SXBaseTableViewGroupController.m in Sources */,
 				095540D222200EB6005A5485 /* SXHomeMainMemberButton.m in Sources */,

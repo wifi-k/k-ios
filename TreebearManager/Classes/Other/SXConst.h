@@ -45,6 +45,8 @@ extern NSString *const user_node_ssid_list;
 extern NSString *const user_node_bind;
 extern NSString *const user_node_unbind;
 
+extern NSString *const user_node_list;
+
 @end
 
 NS_ASSUME_NONNULL_END

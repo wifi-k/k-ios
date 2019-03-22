@@ -151,7 +151,7 @@
     }
     WS(weakSelf);
     [SXMineNetTool userNodeBindParams:shareInfo.modelId Success:^{
-        [MBProgressHUD showSuccessWithMessage:@"解绑成功!" toView:SXKeyWindow];
+        [MBProgressHUD showSuccessWithMessage:@"绑定成功!" toView:SXKeyWindow];
         SXNetOptionController *netVC = [[SXNetOptionController alloc] init];
         [weakSelf.navigationController pushViewController:netVC animated:YES];
     } failure:^(NSError *error) {
@@ -159,6 +159,21 @@
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
     }];
 }
+
+#pragma mark -解绑小K(测试用)-
+//- (void)userNodeUnbindWithModel:(NSString *)nodeId{
+//    //更新wan信息
+//    if ([NSString isEmpty:nodeId]) {
+//        [MBProgressHUD showWarningWithMessage:@"没有获取到节点，请重试!" toView:SXKeyWindow];
+//        return;
+//    }
+//    [SXMineNetTool userNodeUnbindParams:nodeId Success:^{
+//        [MBProgressHUD showSuccessWithMessage:@"解绑成功!" toView:SXKeyWindow];
+//    } failure:^(NSError *error) {
+//        NSString *message = [error.userInfo objectForKey:@"msg"];
+//        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+//    }];
+//}
 
 #pragma mark -查询网络状态-
 //- (void)networkStatusData{

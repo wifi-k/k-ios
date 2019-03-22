@@ -35,7 +35,8 @@
 }
 
 - (void)setUpData{
-    [SXMineNetTool userNodeSsidListSuccess:^(NSArray *array) {
+    
+    [SXMineNetTool userNodeListParams:nil Success:^(NSArray *array) {
         DLog(@"array:%@",array);
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];

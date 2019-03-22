@@ -44,4 +44,6 @@ NSString *const user_node_ssid_list = @"user/node/ssid/list";
 NSString *const user_node_bind = @"user/node/bind";
 NSString *const user_node_unbind = @"user/node/unbind";
 
+NSString *const user_node_list = @"user/node/list";
+
 @end

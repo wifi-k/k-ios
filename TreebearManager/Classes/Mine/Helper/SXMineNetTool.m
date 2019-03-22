@@ -76,9 +76,30 @@
     }];
 }
 
-+ (void)userNodeSsidListSuccess:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure{
++ (void)userNodeSsidListParams:(NSString *)nodeId Success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure{
     
-    [SXNetRequestTool POST:user_node_ssid_list parameters:nil success:^(id response) {
+    SXXiaoKiParam *param = [SXXiaoKiParam param];
+    param.nodeId = nodeId;
+    [SXNetRequestTool POST:user_node_ssid_list parameters:param.mj_keyValues success:^(id response) {
+        
+        if (![response isKindOfClass:NSDictionary.class]) return;
+        
+        NSArray *pageList = [response objectForKey:@"page"];
+        
+        NSArray *modelList = [SXHomeXiaoKiSSIDModel mj_objectArrayWithKeyValuesArray:pageList];
+        
+        if (success){
+            success(modelList);
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
++ (void)userNodeListParams:(NSDictionary *)params Success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure{
+    [SXNetRequestTool POST:user_node_list parameters:nil success:^(id response) {
         
         if (![response isKindOfClass:NSDictionary.class]) return;
         
