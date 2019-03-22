@@ -10,6 +10,7 @@
 #import "SXNickNameUpdateController.h"
 #import "SXMobileUpdateController.h"
 #import "SXForgetConfirmController.h"
+#import "SXUpdatePwdConfirmController.h"
 #import "SXPersonalInfoHeaderView.h"
 #import "SXAlertControllerTool.h"
 #import <MobileCoreServices/UTCoreTypes.h>
@@ -140,8 +141,11 @@
 }
 
 - (void)jumpToPasswordVC{
+    SXUpdatePwdConfirmController *udpatePwdVC = [[SXUpdatePwdConfirmController alloc] init];
+    [self.navigationController pushViewController:udpatePwdVC animated:YES];
+    
     SXForgetConfirmController *forgetVC = [[SXForgetConfirmController alloc] init];
-    [self.navigationController pushViewController:forgetVC animated:YES];
+//    [self.navigationController pushViewController:forgetVC animated:YES];
 }
 
 - (NSString *)getNowTimeTimestamp{

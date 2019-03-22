@@ -65,6 +65,8 @@
 		091BC4DE2242371800FEBFD1 /* SXXiaoKInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC4DD2242371800FEBFD1 /* SXXiaoKInfoModel.m */; };
 		091BC4E122433D9300FEBFD1 /* SXMineUserInfoParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC4E022433D9300FEBFD1 /* SXMineUserInfoParam.m */; };
 		091BC4E4224361DC00FEBFD1 /* SXPersonInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC4E3224361DC00FEBFD1 /* SXPersonInfoModel.m */; };
+		091BC4E8224482B900FEBFD1 /* SXUpdatePwdConfirmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 091BC4E6224482B900FEBFD1 /* SXUpdatePwdConfirmController.m */; };
+		091BC4E9224482B900FEBFD1 /* SXUpdatePwdConfirmController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091BC4E7224482B900FEBFD1 /* SXUpdatePwdConfirmController.xib */; };
 		092D6CDE22004FB400538AC8 /* SXRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CDD22004FB400538AC8 /* SXRefreshHeader.m */; };
 		092D6CE12200504100538AC8 /* SXRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CE02200504100538AC8 /* SXRefreshFooter.m */; };
 		092D6CE422005A0C00538AC8 /* SXEmptyDataEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D6CE322005A0C00538AC8 /* SXEmptyDataEventView.m */; };
@@ -471,6 +473,9 @@
 		091BC4E022433D9300FEBFD1 /* SXMineUserInfoParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMineUserInfoParam.m; sourceTree = "<group>"; };
 		091BC4E2224361DC00FEBFD1 /* SXPersonInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPersonInfoModel.h; sourceTree = "<group>"; };
 		091BC4E3224361DC00FEBFD1 /* SXPersonInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPersonInfoModel.m; sourceTree = "<group>"; };
+		091BC4E5224482B900FEBFD1 /* SXUpdatePwdConfirmController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXUpdatePwdConfirmController.h; sourceTree = "<group>"; };
+		091BC4E6224482B900FEBFD1 /* SXUpdatePwdConfirmController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXUpdatePwdConfirmController.m; sourceTree = "<group>"; };
+		091BC4E7224482B900FEBFD1 /* SXUpdatePwdConfirmController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXUpdatePwdConfirmController.xib; sourceTree = "<group>"; };
 		092D6CDC22004FB400538AC8 /* SXRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXRefreshHeader.h; sourceTree = "<group>"; };
 		092D6CDD22004FB400538AC8 /* SXRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXRefreshHeader.m; sourceTree = "<group>"; };
 		092D6CDF2200504100538AC8 /* SXRefreshFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXRefreshFooter.h; sourceTree = "<group>"; };
@@ -1399,6 +1404,9 @@
 				0936B728223930FA00E68C4C /* SXNickNameUpdateController.m */,
 				0936B72F2239F4F200E68C4C /* SXMobileUpdateController.h */,
 				0936B7302239F4F200E68C4C /* SXMobileUpdateController.m */,
+				091BC4E5224482B900FEBFD1 /* SXUpdatePwdConfirmController.h */,
+				091BC4E6224482B900FEBFD1 /* SXUpdatePwdConfirmController.m */,
+				091BC4E7224482B900FEBFD1 /* SXUpdatePwdConfirmController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3214,6 +3222,7 @@
 				095540BA221E4DCE005A5485 /* SXRegistSetPwdHeaderView.xib in Resources */,
 				092D6D0D2202D78300538AC8 /* SXRegistHeaderView.xib in Resources */,
 				098BA2F82216ADDF00F58639 /* SXPhotoListCell.xib in Resources */,
+				091BC4E9224482B900FEBFD1 /* SXUpdatePwdConfirmController.xib in Resources */,
 				B348F99421F714CC0000F194 /* LaunchScreen.storyboard in Resources */,
 				09D5F5EC2226820B00EA681A /* SXHomeMainSectionFooterView2.xib in Resources */,
 				09D5F622222925C200EA681A /* SXParentControlHeaderView.xib in Resources */,
@@ -3550,6 +3559,7 @@
 				09D5F665222B96B000EA681A /* SXHomeManagerHeaderView.m in Sources */,
 				091BC4D82242207100FEBFD1 /* PYAssetManager.m in Sources */,
 				091BC4E122433D9300FEBFD1 /* SXMineUserInfoParam.m in Sources */,
+				091BC4E8224482B900FEBFD1 /* SXUpdatePwdConfirmController.m in Sources */,
 				091BC4CD2242207100FEBFD1 /* PYImageBrowserCollectionViewCell.m in Sources */,
 				098BA2FF221A559200F58639 /* SXMineListCell.m in Sources */,
 				09B9B794222E4906000868D5 /* SXParentControlButton.m in Sources */,
