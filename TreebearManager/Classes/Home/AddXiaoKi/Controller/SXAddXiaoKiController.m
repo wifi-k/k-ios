@@ -17,6 +17,7 @@
 #import "NSString+Hash.h"
 #import "SXXiaoKInfoModel.h"
 #import "SXNetReachablityTool.h"
+#import "SXMineNetTool.h"
 
 @interface SXAddXiaoKiController ()
 ///头部视图
@@ -137,8 +138,26 @@
 
 #pragma mark -网络选择页面-
 - (void)jumpToNetOptionVC{
-    SXNetOptionController *netVC = [[SXNetOptionController alloc] init];
-    [self.navigationController pushViewController:netVC animated:YES];
+    [self userNodeBindData];
+}
+
+#pragma mark -绑定小K-
+- (void)userNodeBindData{
+    //更新wan信息
+    SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
+    if ([NSString isEmpty:shareInfo.modelId]) {
+        [MBProgressHUD showWarningWithMessage:@"没有获取到节点，请重试!" toView:SXKeyWindow];
+        return;
+    }
+    WS(weakSelf);
+    [SXMineNetTool userNodeBindParams:shareInfo.modelId Success:^{
+        [MBProgressHUD showSuccessWithMessage:@"解绑成功!" toView:SXKeyWindow];
+        SXNetOptionController *netVC = [[SXNetOptionController alloc] init];
+        [weakSelf.navigationController pushViewController:netVC animated:YES];
+    } failure:^(NSError *error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
 
 #pragma mark -查询网络状态-

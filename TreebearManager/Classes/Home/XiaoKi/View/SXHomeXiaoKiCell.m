@@ -59,6 +59,12 @@ static NSString *SXHomeXiaoKiCellID = @"SXHomeXiaoKiCellID";
     [self.upgradeVersionBtn roundViewWithRadius:4.0f borderColor:SXColor333333 borderWidth:1.0f];
 }
 
+#pragma mark -setter-
+- (void)setModel:(SXHomeXiaoKiModel *)model{
+    _model = model;
+    
+    
+}
 
 #pragma mark -点击事件-
 - (IBAction)updateNameBtn:(UIButton *)sender {
@@ -67,10 +73,9 @@ static NSString *SXHomeXiaoKiCellID = @"SXHomeXiaoKiCellID";
     }
 }
 
-
 - (IBAction)clickUnbindBtn:(UIButton *)sender {
     if (self.clickUnbindBtnBlock) {
-        self.clickUnbindBtnBlock();
+        self.clickUnbindBtnBlock(self.model);
     }
 }
 

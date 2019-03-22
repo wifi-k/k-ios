@@ -11,6 +11,7 @@
 #import "SXHomeXiaoKiCell.h"
 #import "SXInputAlertView.h"
 #import "SXTitleAlertView.h"
+#import "SXMineNetTool.h"
 
 @interface SXXiaoKiController ()
 
@@ -22,6 +23,8 @@
     [super viewDidLoad];
     
     [self setUpUI];
+    
+    [self setUpData];
 }
 
 #pragma mark -初始化UI-
@@ -29,6 +32,15 @@
     self.view.backgroundColor = SXColorWhite;
     
     self.navigationItem.title = @"我的小K";
+}
+
+- (void)setUpData{
+    [SXMineNetTool userNodeSsidListSuccess:^(NSArray *array) {
+        DLog(@"array:%@",array);
+    } failure:^(NSError *error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -46,12 +58,44 @@
     [nameAlertView alert];
 }
 
-- (void)alertUnbindAV{
+- (void)alertUnbindWithModel:(SXHomeXiaoKiModel *)model{
+    WS(weakSelf);
     SXTitleAlertView *unbindAV = [SXTitleAlertView alertWithTitle:@"解绑小k" content:@"是否确定解绑小k管家-8341?" confirmStr:@"确定" cancelStr:@"取消"];
     unbindAV.confirmButtonBlock = ^{
         DLog(@"确定...");
+        [weakSelf userNodeUnbindWithModel:model];
     };
     [unbindAV alert];
+}
+
+#pragma mark -解绑小K-
+- (void)userNodeUnbindWithModel:(SXHomeXiaoKiModel *)model{
+    //更新wan信息
+    if ([NSString isEmpty:model.nodeId]) {
+        [MBProgressHUD showWarningWithMessage:@"没有获取到节点，请重试!" toView:SXKeyWindow];
+        return;
+    }
+    [SXMineNetTool userNodeUnbindParams:model.nodeId Success:^{
+        [MBProgressHUD showSuccessWithMessage:@"解绑成功!" toView:SXKeyWindow];
+    } failure:^(NSError *error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
+#pragma mark -升级固件-
+- (void)userNodeFirmwareUpgrade:(SXHomeXiaoKiModel *)model{
+    //更新wan信息
+    if ([NSString isEmpty:model.nodeId]) {
+        [MBProgressHUD showWarningWithMessage:@"没有获取到节点，请重试!" toView:SXKeyWindow];
+        return;
+    }
+    [SXMineNetTool userNodeFirmwareUpgradeParams:model.nodeId Success:^{
+        [MBProgressHUD showSuccessWithMessage:@"升级成功!" toView:SXKeyWindow];
+    } failure:^(NSError *error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
 
 #pragma mark -页面跳转-
@@ -75,8 +119,8 @@
     cell.clickUpdateNameBtnBlock = ^{
         [weakSelf alertUpdateNameView];
     };
-    cell.clickUnbindBtnBlock = ^{
-        [weakSelf alertUnbindAV];
+    cell.clickUnbindBtnBlock = ^(SXHomeXiaoKiModel * _Nonnull model) {
+        [weakSelf alertUnbindWithModel:model];
     };
     cell.clickUpdateVersionBtnBlock = ^{
         [weakSelf jumpToUpdateVersionVC];

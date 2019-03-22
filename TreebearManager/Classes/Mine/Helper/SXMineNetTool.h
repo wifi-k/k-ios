@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "SXMineUserInfoParam.h"
+#import "SXXiaoKiParam.h"
 #import "SXMineUserInfoModel.h"
+#import "SXHomeXiaoKiModel.h"
 
 @interface SXMineNetTool : NSObject
 
@@ -22,7 +24,16 @@
 + (void)userInfoSetParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
 ///升级节点固件
-+ (void)userNodeFirmwareUpgradeParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
++ (void)userNodeFirmwareUpgradeParams:(NSString *)nodeId Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
+
+///获取节点的ssid列表
++ (void)userNodeSsidListSuccess:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure;
+
+///节点绑定
++ (void)userNodeBindParams:(NSString *)nodeId Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
+
+///节点解绑
++ (void)userNodeUnbindParams:(NSString *)nodeId Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
 @end
 

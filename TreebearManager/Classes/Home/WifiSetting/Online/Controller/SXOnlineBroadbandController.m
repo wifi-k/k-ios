@@ -58,6 +58,7 @@
     [SXAddXiaokiNetTool broadbandSettingWithDataWithParams:param.mj_keyValues Success:^{
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         [MBProgressHUD showSuccessWithMessage:@"固定IP地址设置成功!" toView:weakSelf.view];
+        
     } failure:^(NSError * _Nonnull error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         NSString *message = [error.userInfo objectForKey:@"msg"];
@@ -73,7 +74,7 @@
     [MBProgressHUD showWhiteLoadingToView:SXKeyWindow];
     [SXAddXiaokiNetTool broadbandSettingWithDataWithParams:param.mj_keyValues Success:^{
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
-        [MBProgressHUD showSuccessWithMessage:@"固定IP地址设置成功!" toView:weakSelf.view];
+        [MBProgressHUD showSuccessWithMessage:@"断开成功!" toView:weakSelf.view];
     } failure:^(NSError * _Nonnull error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         NSString *message = [error.userInfo objectForKey:@"msg"];
