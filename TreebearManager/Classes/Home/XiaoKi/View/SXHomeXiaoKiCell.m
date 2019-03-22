@@ -10,6 +10,8 @@
 
 @interface SXHomeXiaoKiCell ()
 
+@property (weak, nonatomic) IBOutlet UILabel *deviceNameL;
+@property (weak, nonatomic) IBOutlet UILabel *ssidL;
 @property (weak, nonatomic) IBOutlet UIButton *statusBtn;
 
 @property (weak, nonatomic) IBOutlet UIView *bottomBgView;
@@ -63,7 +65,8 @@ static NSString *SXHomeXiaoKiCellID = @"SXHomeXiaoKiCellID";
 - (void)setModel:(SXHomeXiaoKiModel *)model{
     _model = model;
     
-    
+    self.deviceNameL.text = [NSString stringWithFormat:@"名称:%@",model.name];
+    self.ssidL.text = [NSString stringWithFormat:@"序列号:%@",model.nodeId];
 }
 
 #pragma mark -点击事件-
@@ -84,6 +87,5 @@ static NSString *SXHomeXiaoKiCellID = @"SXHomeXiaoKiCellID";
         self.clickUpdateVersionBtnBlock(self.model);
     }
 }
-
 
 @end

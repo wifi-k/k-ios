@@ -15,9 +15,19 @@
 
 @interface SXXiaoKiController ()
 
+///数据源
+@property (nonatomic, strong) NSMutableArray *dataArray;
 @end
 
 @implementation SXXiaoKiController
+
+#pragma mark -getter-
+- (NSMutableArray *)dataArray{
+    if (_dataArray == nil) {
+        _dataArray = [NSMutableArray array];
+    }
+    return _dataArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,8 +44,9 @@
     self.navigationItem.title = @"我的小K";
 }
 
-#pragma mark -setData-
+#pragma mark -setData(列表)-
 - (void)setUpData{
+    WS(weakSelf);
     SXXiaoKiParam *param = [SXXiaoKiParam param];
     param.pageNo = @1;
     param.pageSize = @10;
@@ -43,6 +54,9 @@
 //    param.nodeId = @"123456754321";
     [SXMineNetTool userNodeListParams:param.mj_keyValues Success:^(NSArray *array) {
         DLog(@"array:%@",array);
+        weakSelf.dataArray = [NSMutableArray arrayWithArray:array];
+        //刷新UI
+        [weakSelf.tableView reloadData];
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
@@ -91,7 +105,7 @@
     }];
 }
 
-#pragma mark -节点信息修改-
+#pragma mark -节点名称修改-
 - (void)userNodeInfoSetData:(SXHomeXiaoKiModel *)model{
     SXXiaoKiParam *param = [SXXiaoKiParam param];
     param.name = model.name;
@@ -113,7 +127,7 @@
 
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return self.dataArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -123,6 +137,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     WS(weakSelf);
     SXHomeXiaoKiCell *cell = [SXHomeXiaoKiCell cellWithTableView:tableView];
+    SXHomeXiaoKiModel *model = self.dataArray[indexPath.row];
+    cell.model = model;
     cell.clickUpdateNameBtnBlock = ^(SXHomeXiaoKiModel * _Nonnull model) {
         [weakSelf alertUpdateNameView:model];
     };

@@ -123,6 +123,8 @@
             <connections>
                 <outlet property="bottomBgView" destination="nbG-HP-8sQ" id="5V2-Bu-IwT"/>
                 <outlet property="bottomLineView" destination="1d4-hM-hTh" id="1xU-cm-d2N"/>
+                <outlet property="deviceNameL" destination="tAl-J0-dN0" id="ni9-nY-EzC"/>
+                <outlet property="ssidL" destination="8fq-mm-R3Q" id="fWx-yc-q3c"/>
                 <outlet property="statusBtn" destination="3VX-Oa-9Y5" id="j5D-XH-RVH"/>
                 <outlet property="untyingXiaoKiBtn" destination="JUs-YW-buO" id="ePU-9f-WkN"/>
                 <outlet property="updateNameBtn" destination="faF-cv-TWX" id="X6s-Ip-GAr"/>
