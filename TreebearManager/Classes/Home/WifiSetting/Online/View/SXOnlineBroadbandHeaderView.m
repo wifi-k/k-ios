@@ -7,6 +7,7 @@
 //
 
 #import "SXOnlineBroadbandHeaderView.h"
+#import "SXXiaoKInfoModel.h"
 
 @interface SXOnlineBroadbandHeaderView ()<UITextFieldDelegate>
 
@@ -52,6 +53,15 @@
     // 不需要跟随父控件的尺寸变化而伸缩
     //self.autoresizingMask = UIViewAutoresizingNone;
     [self setUpUI];
+    
+    [self setUpData];
+}
+
+- (void)setUpData{
+    SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
+    self.ipTextField.text = shareInfo.ip;
+    self.dnsTextField.text = shareInfo.dns1;
+    self.dns2TextField.text = shareInfo.dns2;
 }
 
 #pragma mark -初始化UI-

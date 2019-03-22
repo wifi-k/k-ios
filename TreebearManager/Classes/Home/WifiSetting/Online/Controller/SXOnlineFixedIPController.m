@@ -53,9 +53,10 @@
     param.dns1 = self.headerView.param.dns1;
     param.dns2 = self.headerView.param.dns2;
     [MBProgressHUD showWhiteLoadingWithMessage:nil toView:SXKeyWindow];
+    
     [SXAddXiaokiNetTool staticSettingWithDataWithParams:param.mj_keyValues Success:^{
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
-        [MBProgressHUD showFailWithMessage:@"固定IP地址设置成功" toView:SXKeyWindow];
+        [MBProgressHUD showSuccessWithMessage:@"固定IP地址设置成功" toView:SXKeyWindow];
     } failure:^(NSError * _Nonnull error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         NSString *message = [error.userInfo objectForKey:@"msg"];
