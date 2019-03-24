@@ -86,11 +86,14 @@
 
 #pragma mark -节点名称修改-
 - (void)userNodeInfoSetData:(SXHomeXiaoKiModel *)model{
+    WS(weakSelf);
     SXXiaoKiParam *param = [SXXiaoKiParam param];
     param.name = model.name;
     param.nodeId = model.nodeId;
     [SXMineNetTool userNodeInfoSetParams:param.mj_keyValues Success:^{
         [MBProgressHUD showSuccessWithMessage:@"修改成功!" toView:SXKeyWindow];
+        //刷新表格
+        [weakSelf.tableView reloadData];
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];

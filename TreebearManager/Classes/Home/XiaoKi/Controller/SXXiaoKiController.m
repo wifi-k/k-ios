@@ -52,12 +52,15 @@
     param.pageSize = @10;
 //    param.status = @1;
 //    param.nodeId = @"123456754321";
+    [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
     [SXMineNetTool userNodeListParams:param.mj_keyValues Success:^(NSArray *array) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         DLog(@"array:%@",array);
         weakSelf.dataArray = [NSMutableArray arrayWithArray:array];
         //刷新UI
         [weakSelf.tableView reloadData];
     } failure:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
     }];
@@ -75,6 +78,7 @@
     SXInputAlertView *nameAlertView = [SXInputAlertView alertWithTitle:@"修改名称" placeholder:@"请输入新的名称" confirmStr:@"确定" cancelStr:@"取消"];
     nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
         DLog(@"text:%@",text);
+        model.name = text;
         [weakSelf userNodeInfoSetData:model];
     };
     [nameAlertView alert];
