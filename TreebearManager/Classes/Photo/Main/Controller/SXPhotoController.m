@@ -63,7 +63,7 @@
     UICollectionView *collectV = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
     collectV.dataSource = self;
     collectV.delegate = self;
-    collectV.showsVerticalScrollIndicator = YES;
+    collectV.showsVerticalScrollIndicator = NO;
     collectV.showsHorizontalScrollIndicator = NO;
     collectV.backgroundColor = SXColorGray7;
     collectV.alwaysBounceVertical = YES;

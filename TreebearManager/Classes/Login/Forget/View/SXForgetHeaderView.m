@@ -56,8 +56,8 @@
     self.bottomLineV.height = 0.5;
     self.bottomLineV2.height = 0.5;
     
-    [self.clickNextBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
-    [self.clickNextBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
+//    [self.clickNextBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
+//    [self.clickNextBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
     [self.clickNextBtn roundViewWithRadius:6.0f];
     
     self.clickNextBtn.enabled = NO;

@@ -56,8 +56,8 @@
     self.bottomLineView2.height = 0.5;
     
     //密码登录按钮
-    [self.loginBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
-    [self.loginBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
+//    [self.loginBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
+//    [self.loginBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
     [self.loginBtn roundViewWithRadius:6.0f];
     self.loginBtn.enabled = NO;
     

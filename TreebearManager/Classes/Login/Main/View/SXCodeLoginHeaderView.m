@@ -52,8 +52,8 @@
     self.bottomLineV.height = 0.5;
     self.bottomLineV2.height = 0.5;
     
-    [self.loginBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
-    [self.loginBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
+//    [self.loginBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
+//    [self.loginBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
     [self.loginBtn roundViewWithRadius:6.0f];
     self.loginBtn.enabled = NO;
     
