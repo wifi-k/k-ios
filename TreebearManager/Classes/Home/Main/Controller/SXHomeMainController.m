@@ -78,20 +78,8 @@
     headerView.clickSettingBtnBlock = ^(NSInteger tag) {
         [weakSelf jumpToWifiSettingVC:tag];
     };
-    headerView.clickBackupBtnBlock = ^{
-        [weakSelf jumpToPhotoVC];
-    };
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
-    
-    //3.注册头部视图
-    [self.tableView registerClass:SXHomeMainSectionHeaderView.class forHeaderFooterViewReuseIdentifier:SXHomeMainSectionHeaderViewID];
-    [self.tableView registerClass:SXHomeMainSectionHeaderView2.class forHeaderFooterViewReuseIdentifier:SXHomeMainSectionHeaderView2ID];
-}
-
-#pragma mark -跳转相册-
-- (void)jumpToPhotoVC{
-    [SXRootTool changeToPhotoVC];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -99,7 +87,7 @@
 
     self.tableView.frame = self.view.bounds;
 
-    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 420);
+    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 360);
 }
 
 #pragma mark -页面跳转-
@@ -181,9 +169,11 @@
             [weakSelf alertRemarkNameView];
         };
         tempCell = cell;
-    } else{
+    } else if(indexPath.section == 1){
         SXHomeNetworkingDeviceCell *cell = [SXHomeNetworkingDeviceCell cellWithTableView:tableView];
         tempCell = cell;
+    } else {
+        return nil;
     }
     return tempCell;
 }
@@ -195,8 +185,10 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (section == 0) {
         return 80.0;
-    } else{
+    } else if(section == 1){
         return 50.0f;
+    } else {
+        return 0.01f;
     }
 }
 
@@ -213,17 +205,25 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    if (section == 1) {
-        return 230.0f;
-    } else if (section == 0){
+    if (section == 0) {
         return 80.0f;
+    } else if (section == 1){
+        return 230.0f;
+    } else {
+        return 0.01;
     }
-    return 0.01;
 }
     
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     WS(weakSelf);
-    if (section == 1) {
+    if (section == 0) {
+        SXHomeMainSectionFooterView *footerView = [SXHomeMainSectionFooterView footerView];
+        footerView.clickMoreBtnBlock = ^{
+            SXMobileManagerController *mobileManagerVC = [[SXMobileManagerController alloc] init];
+            [weakSelf.navigationController pushViewController:mobileManagerVC animated:YES];
+        };
+        return footerView;
+    } else if (section == 1){
         SXHomeMainSectionFooterView2 *footerView = [SXHomeMainSectionFooterView2 footerView];
         footerView.clickReportBtnBlock = ^{
             SXHomeReportController *reportVC = [[SXHomeReportController alloc] init];
@@ -231,14 +231,8 @@
         };
         return footerView;
     } else {
-        SXHomeMainSectionFooterView *footerView = [SXHomeMainSectionFooterView footerView];
-        footerView.clickMoreBtnBlock = ^{
-            SXMobileManagerController *mobileManagerVC = [[SXMobileManagerController alloc] init];
-            [weakSelf.navigationController pushViewController:mobileManagerVC animated:YES];
-        };
-        return footerView;
+        return [[UIView alloc] initWithFrame:CGRectZero];
     }
-    return [[UIView alloc] initWithFrame:CGRectZero];
 }
     
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

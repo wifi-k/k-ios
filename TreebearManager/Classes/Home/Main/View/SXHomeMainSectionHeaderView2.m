@@ -17,12 +17,9 @@
 @implementation SXHomeMainSectionHeaderView2
 
 + (instancetype)headerViewWithTableView:(UITableView *)tableView{
-    
-    SXHomeMainSectionHeaderView2 *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:SXHomeMainSectionHeaderView2ID];
-    if (headerView == nil) {
-        headerView = [[self alloc] initWithReuseIdentifier:SXHomeMainSectionHeaderView2ID];
-    }
-    return headerView;
+    NSString *identifier = NSStringFromClass(self);
+    [tableView registerClass:self forHeaderFooterViewReuseIdentifier:identifier];
+    return [tableView dequeueReusableHeaderFooterViewWithIdentifier:identifier];
 }
 
 - (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier{

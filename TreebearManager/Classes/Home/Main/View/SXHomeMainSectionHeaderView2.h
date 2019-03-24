@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-static NSString *SXHomeMainSectionHeaderView2ID = @"SXHomeMainSectionHeaderView2ID";
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXHomeMainSectionHeaderView2 : UITableViewHeaderFooterView
