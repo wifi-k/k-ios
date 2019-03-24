@@ -70,6 +70,9 @@
     [self.view addSubview:collectV];
     self.collectionView = collectV;
     
+    self.collectionView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0);
+//    self.collectionView.backgroundColor = UIColor.redColor;
+    
     PYAblum *ablumManager = [PYAblum defaultAblum];
     DLog(@"%ld",ablumManager.allPhotoAblumModelArray.count);
     NSArray *fdfdfd = [ablumManager sortWithModelArray:ablumManager.allPhotoAblumModelArray andIsASC:YES];
@@ -256,12 +259,16 @@
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     PYAblum *ablumManager = [PYAblum defaultAblum];
     DLog(@"%ld",ablumManager.allPhotoAblumModelArray.count);
-    return 1;
-//    return 2;
+//    return 1;
+    return 3;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.dataArray.count;
+    if (section == 0) {
+        return 0;
+    } else {
+        return self.dataArray.count;
+    }
 }
 
 //- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
@@ -288,11 +295,19 @@
 
 //设置区头高度
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    if (section == 0) {
+        return CGSizeZero;
+    }
     return CGSizeMake(SCREEN_WIDTH,50);
 }
 
 //设置区尾高度
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
+    if (section == 0) {
+        return CGSizeMake(SCREEN_WIDTH,212);
+    } else {
+        return CGSizeZero;
+    }
     return CGSizeZero;
 }
 
@@ -300,11 +315,11 @@
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(nonnull NSString *)kind atIndexPath:(nonnull NSIndexPath *)indexPath{
     if (kind == UICollectionElementKindSectionHeader) {
         SXPhotoSectionHeaderView *headerView = [SXPhotoSectionHeaderView sectionHeaderAwakeFromClass:collectionView atIndexPath:indexPath];
-        headerView.title = [NSString stringWithFormat:@"标题-%ld",indexPath.section];
+        headerView.title = [NSString stringWithFormat:@"标题-%ld",indexPath.section-1];
         return headerView;
-
     } else if(kind == UICollectionElementKindSectionFooter){
-        return nil;
+        SXPhotoHeaderView *reusableView = [SXPhotoHeaderView sectionHeaderAwakeFromNib:collectionView atIndexPath:indexPath];
+        return reusableView;
     }
     return nil;
 }
@@ -313,7 +328,7 @@
 {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     
-    DLog(@"indexPath.item:%ld",indexPath.item);
+    DLog(@"section%ld->item:%ld",indexPath.section,indexPath.item);
 }
 
 @end
