@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///初始化UI
 + (instancetype)sectionHeaderAwakeFromNib:(UICollectionView *)collectionView atIndexPath:(NSIndexPath *)indexPath;
 
+///点击相册按钮
+@property (nonatomic, copy) void (^clickOptionBtnBlock)(NSInteger tag);
+
 @end
 
 NS_ASSUME_NONNULL_END

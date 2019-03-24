@@ -7,6 +7,8 @@
 //
 
 #import "SXPhotoController.h"
+#import "SXPhotoIntelligentController.h"
+#import "SXPhotoShareController.h"
 #import "SXPhotoSectionHeaderView.h"
 #import "SXPhotoListCell.h"
 #import "SXAlbumAuthorizationTool.h"
@@ -33,12 +35,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = SXColorRandom;
-    
-    self.navigationItem.title = @"相册";
-    
-    DLog(@"-SXPhotoController-");
-    
     [self setUpUI];
     
     [self checkAlbumAuthorization];
@@ -46,6 +42,10 @@
 
 #pragma mark -初始化UI-
 - (void)setUpUI{
+    
+    self.view.backgroundColor = SXColorWhite;
+    
+    self.navigationItem.title = @"相册";
     
     //流水布局
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -175,6 +175,27 @@
             DLog(@"models:%@",models);
         }
     }];
+}
+
+#pragma mark -Event-
+- (void)clickOptionBtn:(NSInteger)tag{
+    switch (tag) {
+        case 0:
+            
+            break;
+        case 1:{
+            SXPhotoIntelligentController *intelligentVC = [[SXPhotoIntelligentController alloc] init];
+            [self.navigationController pushViewController:intelligentVC animated:YES];
+        }
+            break;
+        case 2:{
+            SXPhotoShareController *intelligentVC = [[SXPhotoShareController alloc] init];
+            [self.navigationController pushViewController:intelligentVC animated:YES];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma mark -- iOS 8.0 以上获取所有照片用Photos.h这个库
@@ -318,7 +339,11 @@
         headerView.title = [NSString stringWithFormat:@"标题-%ld",indexPath.section-1];
         return headerView;
     } else if(kind == UICollectionElementKindSectionFooter){
+        WS(weakSelf);
         SXPhotoHeaderView *reusableView = [SXPhotoHeaderView sectionHeaderAwakeFromNib:collectionView atIndexPath:indexPath];
+        reusableView.clickOptionBtnBlock = ^(NSInteger tag) {
+            [weakSelf clickOptionBtn:tag];
+        };
         return reusableView;
     }
     return nil;

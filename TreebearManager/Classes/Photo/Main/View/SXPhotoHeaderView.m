@@ -7,8 +7,12 @@
 //
 
 #import "SXPhotoHeaderView.h"
+#import "SXPhotoHeaderButton.h"
 
 @interface SXPhotoHeaderView ()
+@property (weak, nonatomic) IBOutlet SXPhotoHeaderButton *latestBtn;
+@property (weak, nonatomic) IBOutlet SXPhotoHeaderButton *intelligentBtn;
+@property (weak, nonatomic) IBOutlet SXPhotoHeaderButton *shareBtn;
 @property (weak, nonatomic) IBOutlet UIView *topBgView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *backupIconImageView;
@@ -50,6 +54,13 @@
 //    self.backupContentView.textColor = SXColor666666;
 //    [self.backupBtn roundViewWithRadius:15.0f];
 
+}
+
+#pragma mark -Event-
+- (IBAction)clickOptionBtn:(SXPhotoHeaderButton *)sender {
+    if (self.clickOptionBtnBlock) {
+        self.clickOptionBtnBlock(sender.tag);
+    }
 }
 
 @end
