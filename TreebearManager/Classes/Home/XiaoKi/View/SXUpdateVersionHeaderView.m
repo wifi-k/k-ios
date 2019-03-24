@@ -56,6 +56,15 @@
     [self.updateBtn roundViewWithRadius:6.0f];
 }
 
+#pragma mark -setter-
+- (void)setModel:(SXHomeXiaoKiModel *)model{
+    _model = model;
+    
+    self.ssidTitleL.text = model.nodeId;
+    self.currentVersionL.text = model.version;
+    self.latestVersionL.text = model.version;
+}
+
 #pragma mark -点击事件-
 - (IBAction)clickUpdateBtn:(UIButton *)sender {
     if (self.clickUpdateBtnBlock) {

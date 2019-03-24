@@ -32,6 +32,7 @@
     
     WS(weakSelf);
     SXUpdateVersionHeaderView *headerView = [SXUpdateVersionHeaderView headerView];
+    headerView.model = self.model;
     headerView.clickUpdateBtnBlock = ^{
         [weakSelf userNodeFirmwareUpgrade];
     };

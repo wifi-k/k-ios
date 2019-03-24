@@ -16,6 +16,7 @@
 #import "SXMobileManagerController.h"
 #import "SXMobileDetailController.h"
 #import "SXHomeReportController.h"
+#import "SXXiaoKiEquipmentOptionController.h"
 #import "SXHomeMainHeaderView.h"
 #import "SXHomeMainSectionHeaderView.h"
 #import "SXHomeMainSectionFooterView.h"
@@ -60,7 +61,7 @@
     WS(weakSelf);
     SXHomeMainHeaderView *headerView = [SXHomeMainHeaderView headerView];
     headerView.clickNameLabelBlock = ^{
-        [MBProgressHUD showMessage:@"小K列表" toView:weakSelf.view];
+        [weakSelf jumpToEquipVC];
     };
     headerView.clickMangerBtnBlock = ^{
         [weakSelf jumpToManagerVC];
@@ -105,6 +106,11 @@
 - (void)jumpToManagerVC{
     SXFamilyMemberController *managerVC = [[SXFamilyMemberController alloc] init];
     [self.navigationController pushViewController:managerVC animated:YES];
+}
+
+- (void)jumpToEquipVC{
+    SXXiaoKiEquipmentOptionController *equipVC = [[SXXiaoKiEquipmentOptionController alloc] init];
+    [self.navigationController pushViewController:equipVC animated:YES];
 }
 
 - (void)jumpToXiaoKiVC{

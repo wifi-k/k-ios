@@ -1,25 +1,22 @@
 //
-//  SXXiaoKiController.m
+//  SXXiaoKiEquipmentOptionController.m
 //  TreebearManager
 //
-//  Created by bear on 2019/2/25.
+//  Created by bear on 2019/3/24.
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXXiaoKiController.h"
+#import "SXXiaoKiEquipmentOptionController.h"
 #import "SXUpdateVersionController.h"
-#import "SXHomeXiaoKiCell.h"
-#import "SXInputAlertView.h"
-#import "SXTitleAlertView.h"
+#import "SXXiaoKiEquipmentOptionCell.h"
 #import "SXMineNetTool.h"
 
-@interface SXXiaoKiController ()
-
+@interface SXXiaoKiEquipmentOptionController ()
 ///数据源
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @end
 
-@implementation SXXiaoKiController
+@implementation SXXiaoKiEquipmentOptionController
 
 #pragma mark -getter-
 - (NSMutableArray *)dataArray{
@@ -41,7 +38,7 @@
 - (void)setUpUI{
     self.view.backgroundColor = SXColorWhite;
     
-    self.navigationItem.title = @"我的小K";
+    self.navigationItem.title = @"小K列表";
 }
 
 #pragma mark -setData(列表)-
@@ -50,14 +47,17 @@
     SXXiaoKiParam *param = [SXXiaoKiParam param];
     param.pageNo = @1;
     param.pageSize = @10;
-//    param.status = @1;
-//    param.nodeId = @"123456754321";
+    //    param.status = @1;
+    //    param.nodeId = @"123456754321";
+    [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
     [SXMineNetTool userNodeListParams:param.mj_keyValues Success:^(NSArray *array) {
-        DLog(@"array:%@",array);
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        //数据初始化
         weakSelf.dataArray = [NSMutableArray arrayWithArray:array];
         //刷新UI
         [weakSelf.tableView reloadData];
     } failure:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
     }];
@@ -67,28 +67,6 @@
     [super viewDidLayoutSubviews];
     
     self.tableView.frame = self.view.bounds;
-}
-
-#pragma mark -弹窗视图-
-- (void)alertUpdateNameView:(SXHomeXiaoKiModel *)model{
-    WS(weakSelf);
-    SXInputAlertView *nameAlertView = [SXInputAlertView alertWithTitle:@"修改名称" placeholder:@"请输入新的名称" confirmStr:@"确定" cancelStr:@"取消"];
-    nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
-        DLog(@"text:%@",text);
-        [weakSelf userNodeInfoSetData:model];
-    };
-    [nameAlertView alert];
-}
-
-- (void)alertUnbindWithModel:(SXHomeXiaoKiModel *)model{
-    WS(weakSelf);
-    NSString *content = [NSString stringWithFormat:@"是否确定解绑小k管家%@",model.name];
-    SXTitleAlertView *unbindAV = [SXTitleAlertView alertWithTitle:@"解绑小k" content:content confirmStr:@"确定" cancelStr:@"取消"];
-    unbindAV.confirmButtonBlock = ^{
-        DLog(@"确定...");
-        [weakSelf userNodeUnbindWithModel:model];
-    };
-    [unbindAV alert];
 }
 
 #pragma mark -解绑小K-
@@ -132,30 +110,20 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 150.0f;
+    return 100.0f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    WS(weakSelf);
-    SXHomeXiaoKiCell *cell = [SXHomeXiaoKiCell cellWithTableView:tableView];
+    SXXiaoKiEquipmentOptionCell *cell = [SXXiaoKiEquipmentOptionCell cellWithTableView:tableView];
     SXHomeXiaoKiModel *model = self.dataArray[indexPath.row];
     cell.model = model;
-    cell.clickUpdateNameBtnBlock = ^(SXHomeXiaoKiModel * _Nonnull model) {
-        [weakSelf alertUpdateNameView:model];
-    };
-    cell.clickUnbindBtnBlock = ^(SXHomeXiaoKiModel * _Nonnull model) {
-        [weakSelf alertUnbindWithModel:model];
-    };
-    cell.clickUpdateVersionBtnBlock = ^(SXHomeXiaoKiModel * _Nonnull model) {
-        [weakSelf jumpToUpdateVersionVC:model];
-    };
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    [self.navigationController popViewControllerAnimated:YES];
 }
-
 
 @end
