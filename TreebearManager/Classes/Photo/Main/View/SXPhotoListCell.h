@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-static NSString *const SXPhotoListCollectionViewCellID = @"SXPhotoListCollectionViewCellID";
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXPhotoListCell : UICollectionViewCell

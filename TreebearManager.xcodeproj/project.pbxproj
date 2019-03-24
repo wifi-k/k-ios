@@ -288,6 +288,8 @@
 		09F76F3622476ED8008A9048 /* SXXiaoKiEquipmentOptionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F76F3522476ED8008A9048 /* SXXiaoKiEquipmentOptionController.m */; };
 		09F76F3A22477093008A9048 /* SXXiaoKiEquipmentOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F76F3822477093008A9048 /* SXXiaoKiEquipmentOptionCell.m */; };
 		09F76F3B22477093008A9048 /* SXXiaoKiEquipmentOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F76F3922477093008A9048 /* SXXiaoKiEquipmentOptionCell.xib */; };
+		09F76F3F22477FC3008A9048 /* SXPhotoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F76F3D22477FC3008A9048 /* SXPhotoHeaderView.m */; };
+		09F76F4022477FC3008A9048 /* SXPhotoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F76F3E22477FC3008A9048 /* SXPhotoHeaderView.xib */; };
 		09FB472C22239D7B00809273 /* SXMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB472B22239D7B00809273 /* SXMessageController.m */; };
 		09FB473022239E3500809273 /* SXHomeMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FB472E22239E3500809273 /* SXHomeMessageCell.m */; };
 		09FB473122239E3500809273 /* SXHomeMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FB472F22239E3500809273 /* SXHomeMessageCell.xib */; };
@@ -868,6 +870,9 @@
 		09F76F3722477093008A9048 /* SXXiaoKiEquipmentOptionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXXiaoKiEquipmentOptionCell.h; sourceTree = "<group>"; };
 		09F76F3822477093008A9048 /* SXXiaoKiEquipmentOptionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXXiaoKiEquipmentOptionCell.m; sourceTree = "<group>"; };
 		09F76F3922477093008A9048 /* SXXiaoKiEquipmentOptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXXiaoKiEquipmentOptionCell.xib; sourceTree = "<group>"; };
+		09F76F3C22477FC3008A9048 /* SXPhotoHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPhotoHeaderView.h; sourceTree = "<group>"; };
+		09F76F3D22477FC3008A9048 /* SXPhotoHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoHeaderView.m; sourceTree = "<group>"; };
+		09F76F3E22477FC3008A9048 /* SXPhotoHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXPhotoHeaderView.xib; sourceTree = "<group>"; };
 		09FB472A22239D7B00809273 /* SXMessageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMessageController.h; sourceTree = "<group>"; };
 		09FB472B22239D7B00809273 /* SXMessageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMessageController.m; sourceTree = "<group>"; };
 		09FB472D22239E3500809273 /* SXHomeMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMessageCell.h; sourceTree = "<group>"; };
@@ -2707,6 +2712,9 @@
 		B348F96721F6EAC20000F194 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				09F76F3C22477FC3008A9048 /* SXPhotoHeaderView.h */,
+				09F76F3D22477FC3008A9048 /* SXPhotoHeaderView.m */,
+				09F76F3E22477FC3008A9048 /* SXPhotoHeaderView.xib */,
 				098BA2F92216B54100F58639 /* SXPhotoSectionHeaderView.h */,
 				098BA2FA2216B54100F58639 /* SXPhotoSectionHeaderView.m */,
 				098BA2F42216ADDF00F58639 /* SXPhotoListCell.h */,
@@ -3288,6 +3296,7 @@
 				0936B736223A037D00E68C4C /* SXMobileUpdateHeaderView.xib in Resources */,
 				098BA300221A559200F58639 /* SXMineListCell.xib in Resources */,
 				0936B72E2239F0E300E68C4C /* SXNickNameUpdateHeaderView.xib in Resources */,
+				09F76F4022477FC3008A9048 /* SXPhotoHeaderView.xib in Resources */,
 				09462AE52237AE6A0063F67E /* SXOnlineAutotIPHeaderView.xib in Resources */,
 				091BC473223F773500FEBFD1 /* SXHealtyControlFooterView.xib in Resources */,
 				09B9B8672231FF42000868D5 /* SXTimeControlCell.xib in Resources */,
@@ -3634,6 +3643,7 @@
 				09D5F64F222A748E00EA681A /* SXHealthTimeHeaderView.m in Sources */,
 				0900F52A222D517600250155 /* SXDynamicHeaderView.m in Sources */,
 				09B9B857223139AC000868D5 /* SXForbiddenDeviceOptionController.m in Sources */,
+				09F76F3F22477FC3008A9048 /* SXPhotoHeaderView.m in Sources */,
 				09B9B7CF2230BA8A000868D5 /* SXMobileManagerController.m in Sources */,
 				09B9B81F2230EC3F000868D5 /* SXAdvancedController.m in Sources */,
 				09462B112238ED750063F67E /* SXMineChildController.m in Sources */,

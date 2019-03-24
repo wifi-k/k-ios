@@ -14,25 +14,11 @@
 
 @implementation SXPhotoSectionHeaderView
 
-//+ (instancetype)sectionHeaderAwakeFromNib:(UICollectionView *)collectionView atIndexPath:(NSIndexPath *)indexPath {
-//    NSString *identifier = NSStringFromClass(self);
-//    UINib *nib = [UINib nibWithNibName:identifier bundle:nil];
-//    [collectionView registerNib:nib forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:identifier];
-//    return [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:identifier forIndexPath:indexPath];
-//}
-
 + (instancetype)sectionHeaderAwakeFromClass:(UICollectionView *)collectionView atIndexPath:(NSIndexPath *)indexPath {
     NSString *identifier = NSStringFromClass(self);
     [collectionView registerClass:self forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:identifier];
     return [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:identifier forIndexPath:indexPath];
 }
-
-//- (instancetype)initWithCoder:(NSCoder *)aDecoder{
-//    if (self == [super initWithCoder:aDecoder]) {
-//        [self setUpUI];
-//    }
-//    return self;
-//}
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self == [super initWithFrame:frame]) {

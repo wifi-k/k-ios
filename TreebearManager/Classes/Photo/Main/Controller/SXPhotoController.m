@@ -13,6 +13,7 @@
 #import "SXAlertControllerTool.h"
 #import <Photos/Photos.h>
 #import <TZImagePickerController/TZImagePickerController.h>
+#import "SXPhotoHeaderView.h"
 
 @interface SXPhotoController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic, weak) UICollectionView *collectionView;
@@ -68,12 +69,6 @@
     collectV.alwaysBounceVertical = YES;
     [self.view addSubview:collectV];
     self.collectionView = collectV;
-    
-    //注册区头
-//    [_collectionView registerClass:[SXPhotoSectionHeaderView class] forSupplementaryViewOfKind: UICollectionElementKindSectionHeader withReuseIdentifier:@"sectionHeaderView"];
-    
-    //注册Cell
-    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass(SXPhotoListCell.class) bundle:nil] forCellWithReuseIdentifier:SXPhotoListCollectionViewCellID];
     
     PYAblum *ablumManager = [PYAblum defaultAblum];
     DLog(@"%ld",ablumManager.allPhotoAblumModelArray.count);
@@ -269,9 +264,23 @@
     return self.dataArray.count;
 }
 
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+//    return (CGSize){SCREEN_WIDTH,212};
+//}
+//
+//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+//    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {//头部视图
+//        SXPhotoHeaderView *reusableView = [SXPhotoHeaderView sectionHeaderAwakeFromNib:collectionView atIndexPath:indexPath];
+//        return reusableView;
+//    }else if ([kind isEqualToString:UICollectionElementKindSectionFooter]){//底部视图
+//        return nil;
+//    }else{
+//        return nil;
+//    }
+//}
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    SXPhotoListCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SXPhotoListCollectionViewCellID forIndexPath:indexPath];
+    SXPhotoListCell *cell = [SXPhotoListCell cellWithCollectionView:collectionView atIndexPath:indexPath];
     UIImage *image = self.dataArray[indexPath.item];
     cell.image = image;
     return cell;
@@ -290,13 +299,12 @@
 //配置区头
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(nonnull NSString *)kind atIndexPath:(nonnull NSIndexPath *)indexPath{
     if (kind == UICollectionElementKindSectionHeader) {
-        
-//        SXPhotoSectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"sectionHeaderView" forIndexPath:indexPath];
         SXPhotoSectionHeaderView *headerView = [SXPhotoSectionHeaderView sectionHeaderAwakeFromClass:collectionView atIndexPath:indexPath];
-//        headerView.backgroundColor = [UIColor redColor];
         headerView.title = [NSString stringWithFormat:@"标题-%ld",indexPath.section];
         return headerView;
-        
+
+    } else if(kind == UICollectionElementKindSectionFooter){
+        return nil;
     }
     return nil;
 }
