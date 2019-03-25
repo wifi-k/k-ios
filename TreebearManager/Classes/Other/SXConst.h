@@ -42,9 +42,10 @@ extern NSString *const user_qiniu_get;
 extern NSString *const user_info_set;
 extern NSString *const user_node_firmware_upgrade;
 extern NSString *const user_node_ssid_list;
+extern NSString *const user_node_ssid_set;
 extern NSString *const user_node_bind;
-extern NSString *const user_node_unbind;
 
+extern NSString *const user_node_unbind;
 extern NSString *const user_node_list;
 extern NSString *const user_node_info_set;
 

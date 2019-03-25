@@ -30,6 +30,9 @@
 ///获取节点的ssid列表
 + (void)userNodeSsidListParams:(NSString *)nodeId Success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure;
 
+///设置节点ssid信息
++ (void)userNodeSsidSetParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
+
 ///节点信息查询 
 + (void)userNodeListParams:(NSDictionary *)params Success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure;
 

@@ -98,6 +98,20 @@
     }];
 }
 
++ (void)userNodeSsidSetParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure{
+   
+    [SXNetRequestTool POST:user_node_ssid_set parameters:params success:^(id response) {
+        
+        if (success){
+            success();
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
 + (void)userNodeListParams:(NSDictionary *)params Success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure{
     [SXNetRequestTool POST:user_node_list parameters:params success:^(id response) {
         

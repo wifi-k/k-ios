@@ -16,7 +16,7 @@
 
 + (NSString *)getWifiSSID{
     //wifi名称
-    NSString *strWifiName = @"";
+    NSString *strWifiName = @"未知WiFi";
     CFArrayRef wifiInterfaces = CNCopySupportedInterfaces();
     if(wifiInterfaces){
         NSArray *arrInterface = (__bridge NSArray *)wifiInterfaces;
@@ -35,7 +35,7 @@
 
 + (NSString *)getWifiBSSID{
     //wifi名称
-    NSString *strWifiName = @"";
+    NSString *strWifiName = @"未知WiFi";
     CFArrayRef wifiInterfaces = CNCopySupportedInterfaces();
     if(wifiInterfaces){
         NSArray *arrInterface = (__bridge NSArray *)wifiInterfaces;
@@ -54,7 +54,7 @@
 
 + (NSString *)getWifiSSIDDATA{
     //wifi名称
-    NSString *strWifiName = @"";
+    NSString *strWifiName = @"未知WiFi";
     CFArrayRef wifiInterfaces = CNCopySupportedInterfaces();
     if(wifiInterfaces){
         NSArray *arrInterface = (__bridge NSArray *)wifiInterfaces;

@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleL2;
 @property (weak, nonatomic) IBOutlet UILabel *nameContentL;
 @property (weak, nonatomic) IBOutlet UILabel *pwdContentL;
+@property (weak, nonatomic) IBOutlet UILabel *nameTipsL;
 @property (weak, nonatomic) IBOutlet UILabel *pwdTipsL;
 @property (weak, nonatomic) IBOutlet UIButton *nameBtn;
 @property (weak, nonatomic) IBOutlet UIButton *pwdBtn;
@@ -51,6 +52,7 @@
     self.nameContentL.textColor = SXColor333333;
     self.pwdContentL.textColor = SXColor333333;
     self.pwdTipsL.textColor = SXColor999999;
+    self.nameTipsL.textColor = SXColor999999;
     
     [self.nameBtn roundViewWithRadius:4.0f];
     [self.nameBtn setTitleColor:SXColor333333 forState:UIControlStateNormal];

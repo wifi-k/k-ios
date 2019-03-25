@@ -19,6 +19,8 @@
 #import "SXWifiSettingNetTool.h"
 #import "SXAddXiaokiNetTool.h"
 #import "SXXiaoKInfoModel.h"
+#import "SXMineNetTool.h"
+#import "NSString+Hash.h"
 
 @interface SXWifiSettingController ()
 @property (nonatomic, weak) SXWifiSettingHeaderView *headerView;//头部视图
@@ -30,6 +32,9 @@
     [super viewDidLoad];
    
     [self setUpUI];
+    
+    //获取节点数据
+    [self getNodeData];
 }
 
 - (void)setUpUI{
@@ -64,17 +69,29 @@
 
 #pragma mark -视图弹窗-
 - (void)alertUpdateNameView{
+    WS(weakSelf);
     SXWifiSettingAlertView *nameAlertView = [SXWifiSettingAlertView alertWithTitle:@"设置WiFi名称" placeholder:@"请输入新的名称" confirmStr:@"确定" cancelStr:@"取消"];
     nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
         DLog(@"text:%@",text);
+        SXXiaoKiParam *param = [SXXiaoKiParam param];
+        param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
+        param.freq = @0;
+        param.ssid = text;
+        [weakSelf userNodeSsidSetDataWitiParam:param];
     };
     [nameAlertView alert];
 }
 
 - (void)alertUpdatePwdView{
+    WS(weakSelf);
     SXWifiSettingAlertView *pwdAlertV = [SXWifiSettingAlertView alertWithTitle:@"设置WiFi名称" placeholder:@"请输入新的密码" confirmStr:@"确定" cancelStr:@"取消"];
     pwdAlertV.confirmButtonBlock = ^(NSString * _Nonnull text) {
         DLog(@"text:%@",text);
+        SXXiaoKiParam *param = [SXXiaoKiParam param];
+        param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
+        param.freq = @0;
+        param.passwd = text.md5String;
+        [weakSelf userNodeSsidSetDataWitiParam:param];
     };
     [pwdAlertV alert];
 }
@@ -89,7 +106,12 @@
         }
             break;
         case 1:{
-            [self getNodeData];
+            if ([NSString isEmpty:SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId]) {
+                [MBProgressHUD showWarningWithMessage:@"请检查您的WiFi连接" toView:SXKeyWindow];
+                return;
+            }
+            SXOnlineController *advancedVC = [[SXOnlineController alloc] init];
+            [self.navigationController pushViewController:advancedVC animated:YES];
         }
             break;
         case 2:{
@@ -141,12 +163,31 @@
     }
 }
 
+#pragma mark -WiFi设置数据接口-
+- (void)userNodeSsidSetDataWitiParam:(SXXiaoKiParam *)param{
+    if ([NSString isEmpty:SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId]) {
+        [MBProgressHUD showWarningWithMessage:@"没有修改成功，请检查您的WiFi连接" toView:SXKeyWindow];
+        return;
+    }
+    [MBProgressHUD showWhiteLoadingToView:SXKeyWindow];
+    [SXMineNetTool userNodeSsidSetParams:param.mj_keyValues Success:^{
+        [MBProgressHUD hideHUDForView:SXKeyWindow];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [MBProgressHUD showSuccessWithMessage:@"WiFi设置成功!" toView:SXKeyWindow];
+        });
+    } failure:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow];
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
 #pragma mark -获取节点数据-
 - (void)getNodeData{
-    WS(weakSelf);
-    [MBProgressHUD showWhiteLoadingToView:SXKeyWindow];
+//    WS(weakSelf);
+//    [MBProgressHUD showWhiteLoadingToView:SXKeyWindow];
     [SXAddXiaokiNetTool getNodeWithDataWithSuccess:^(SXXiaoKNodeResult * _Nonnull result) {
-        [MBProgressHUD hideHUDForView:SXKeyWindow];
+//        [MBProgressHUD hideHUDForView:SXKeyWindow];
         DLog(@"获取节点");
         //1.更新wan信息
         SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
@@ -159,13 +200,8 @@
         shareInfo.type = result.wan.type;
         shareInfo.name = result.wan.name;
         shareInfo.passwd = result.wan.passwd;
-        
-        //2.页面跳转
-        SXOnlineController *advancedVC = [[SXOnlineController alloc] init];
-        [weakSelf.navigationController pushViewController:advancedVC animated:YES];
-        
     } failure:^(NSError * _Nonnull error) {
-        [MBProgressHUD hideHUDForView:SXKeyWindow];
+//        [MBProgressHUD hideHUDForView:SXKeyWindow];
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
     }];

@@ -32,12 +32,6 @@
                                 <constraint firstAttribute="width" constant="45" id="tqC-xG-sPO"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置WiFi名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nld-Wy-MXK">
-                            <rect key="frame" x="70" y="30.5" width="240" height="19.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rO6-Qs-k4L">
                             <rect key="frame" x="320" y="25" width="70" height="30"/>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -51,17 +45,32 @@
                                 <action selector="clickNameBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Kfl-1g-coK"/>
                             </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置WiFi名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nld-Wy-MXK">
+                            <rect key="frame" x="68" y="17.5" width="242" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前WiFi名称:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8d-eo-iLx">
+                            <rect key="frame" x="68" y="45.5" width="242" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="Nld-Wy-MXK" firstAttribute="top" secondItem="Uv6-qL-yM9" secondAttribute="top" id="0vJ-JS-Xxp"/>
                         <constraint firstItem="rO6-Qs-k4L" firstAttribute="centerY" secondItem="C2m-cL-m08" secondAttribute="centerY" id="C8J-BV-qEP"/>
-                        <constraint firstItem="Nld-Wy-MXK" firstAttribute="centerY" secondItem="C2m-cL-m08" secondAttribute="centerY" id="JDa-AY-os1"/>
-                        <constraint firstItem="Nld-Wy-MXK" firstAttribute="leading" secondItem="Uv6-qL-yM9" secondAttribute="trailing" constant="10" id="KPf-vm-SCE"/>
+                        <constraint firstItem="rO6-Qs-k4L" firstAttribute="leading" secondItem="k8d-eo-iLx" secondAttribute="trailing" constant="10" id="GjJ-k1-vtq"/>
+                        <constraint firstItem="k8d-eo-iLx" firstAttribute="leading" secondItem="Uv6-qL-yM9" secondAttribute="trailing" constant="8" id="JJE-UM-Sxa"/>
+                        <constraint firstItem="rO6-Qs-k4L" firstAttribute="leading" secondItem="Nld-Wy-MXK" secondAttribute="trailing" constant="10" id="WTI-mT-1k3"/>
                         <constraint firstAttribute="height" constant="80" id="WcT-Bi-oVB"/>
                         <constraint firstItem="Uv6-qL-yM9" firstAttribute="centerY" secondItem="C2m-cL-m08" secondAttribute="centerY" id="c9a-0P-bpA"/>
                         <constraint firstAttribute="trailing" secondItem="rO6-Qs-k4L" secondAttribute="trailing" constant="15" id="hJs-LF-PJf"/>
                         <constraint firstItem="Uv6-qL-yM9" firstAttribute="leading" secondItem="C2m-cL-m08" secondAttribute="leading" constant="15" id="iRF-Pj-Sun"/>
-                        <constraint firstItem="rO6-Qs-k4L" firstAttribute="leading" secondItem="Nld-Wy-MXK" secondAttribute="trailing" constant="10" id="odO-Qy-vTH"/>
+                        <constraint firstItem="k8d-eo-iLx" firstAttribute="bottom" secondItem="Uv6-qL-yM9" secondAttribute="bottom" id="icx-Uo-b87"/>
+                        <constraint firstItem="Nld-Wy-MXK" firstAttribute="leading" secondItem="Uv6-qL-yM9" secondAttribute="trailing" constant="8" id="uJb-OS-VBw"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJP-c4-C7S">
@@ -223,6 +232,7 @@
                 <outlet property="firstBgView" destination="C2m-cL-m08" id="tDs-hA-4CN"/>
                 <outlet property="nameBtn" destination="rO6-Qs-k4L" id="wlJ-5f-jMw"/>
                 <outlet property="nameContentL" destination="Nld-Wy-MXK" id="VHy-Ne-mdv"/>
+                <outlet property="nameTipsL" destination="k8d-eo-iLx" id="f2Z-c9-eYY"/>
                 <outlet property="pwdBtn" destination="ze9-ym-gtD" id="ueX-Lp-gpA"/>
                 <outlet property="pwdContentL" destination="SWF-cF-6KP" id="bwa-Fs-bib"/>
                 <outlet property="pwdTipsL" destination="F6E-QX-xrx" id="0hh-ly-DJA"/>

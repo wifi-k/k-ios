@@ -67,6 +67,30 @@ static NSString *SXHomeXiaoKiCellID = @"SXHomeXiaoKiCellID";
     
     self.deviceNameL.text = [NSString stringWithFormat:@"名称:%@",model.name];
     self.ssidL.text = [NSString stringWithFormat:@"序列号:%@",model.nodeId];
+    switch (model.status.integerValue) {
+        case 0:
+            [self.statusBtn setTitle:@"离线" forState:UIControlStateNormal];
+            [self.statusBtn setTitleColor:SXColor666666 forState:UIControlStateNormal];
+            [self.statusBtn setBackgroundColor:SXColorF6F7FB forState:UIControlStateNormal];
+            break;
+        case 1:
+            [self.statusBtn setTitle:@"在线" forState:UIControlStateNormal];
+            [self.statusBtn setTitleColor:SXColorWhite forState:UIControlStateNormal];
+            [self.statusBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg_small"] forState:UIControlStateNormal];
+            break;
+        case 2:
+            [self.statusBtn setTitle:@"警告" forState:UIControlStateNormal];
+            [self.statusBtn setTitleColor:SXColor666666 forState:UIControlStateNormal];
+            [self.statusBtn setBackgroundColor:SXColorF6F7FB forState:UIControlStateNormal];
+            break;
+        case 3:
+            [self.statusBtn setTitle:@"未知" forState:UIControlStateNormal];
+            [self.statusBtn setTitleColor:SXColor666666 forState:UIControlStateNormal];
+            [self.statusBtn setBackgroundColor:SXColorF6F7FB forState:UIControlStateNormal];
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma mark -点击事件-

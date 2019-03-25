@@ -20,7 +20,7 @@
 @property (nonatomic, copy) NSString *manufactory;
 ///型号
 @property (nonatomic, copy) NSString *model;
-///在线状态
+///0-offline 1-normal 2-warn 3-error,status不传或为空时忽略这个条件
 @property (nonatomic, copy) NSNumber *status;
 ///绑定时间
 @property (nonatomic, copy) NSString *bindTime;

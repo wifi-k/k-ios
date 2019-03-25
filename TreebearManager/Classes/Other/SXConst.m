@@ -41,9 +41,10 @@ NSString *const user_qiniu_get = @"user/qiniu/get";
 NSString *const user_info_set = @"user/info/set";
 NSString *const user_node_firmware_upgrade = @"user/node/firmware/upgrade";
 NSString *const user_node_ssid_list = @"user/node/ssid/list";
+NSString *const user_node_ssid_set = @"user/node/ssid/set";
 NSString *const user_node_bind = @"user/node/bind";
-NSString *const user_node_unbind = @"user/node/unbind";
 
+NSString *const user_node_unbind = @"user/node/unbind";
 NSString *const user_node_list = @"user/node/list";
 NSString *const user_node_info_set = @"user/node/info/set";
 
