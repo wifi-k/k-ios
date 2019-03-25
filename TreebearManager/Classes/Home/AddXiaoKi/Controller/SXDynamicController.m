@@ -49,7 +49,7 @@
     self.headerView.frame = self.view.bounds;
 }
 
-#pragma mark -网络设置-
+#pragma mark -网络信息设置-
 - (void)setNetDynamicData{
     WS(weakSelf);
     SXDynamicParam *param = [SXDynamicParam param];

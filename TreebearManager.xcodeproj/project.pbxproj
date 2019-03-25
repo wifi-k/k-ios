@@ -177,7 +177,6 @@
 		09B9B7A5222E555A000868D5 /* XKNetReachablityTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7A4222E555A000868D5 /* XKNetReachablityTool.m */; };
 		09B9B7A9222E56C0000868D5 /* XKUserMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7A8222E56C0000868D5 /* XKUserMember.m */; };
 		09B9B7AD222E667B000868D5 /* XKGetWifiNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7AC222E667B000868D5 /* XKGetWifiNetTool.m */; };
-		09B9B7B0222FA80C000868D5 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B9B7AF222FA80C000868D5 /* ExternalAccessory.framework */; };
 		09B9B7B2222FAB54000868D5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B9B7B1222FAB54000868D5 /* CloudKit.framework */; };
 		09B9B7B5222FAE0C000868D5 /* SXSingleAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7B4222FAE0C000868D5 /* SXSingleAlertView.m */; };
 		09B9B7BB222FBE3F000868D5 /* SXNetStaticParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B7BA222FBE3F000868D5 /* SXNetStaticParam.m */; };
@@ -681,7 +680,6 @@
 		09B9B7AB222E667B000868D5 /* XKGetWifiNetTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XKGetWifiNetTool.h; sourceTree = "<group>"; };
 		09B9B7AC222E667B000868D5 /* XKGetWifiNetTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XKGetWifiNetTool.m; sourceTree = "<group>"; };
 		09B9B7AE222E758E000868D5 /* TreebearManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TreebearManager.entitlements; sourceTree = "<group>"; };
-		09B9B7AF222FA80C000868D5 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		09B9B7B1222FAB54000868D5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		09B9B7B3222FAE0C000868D5 /* SXSingleAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXSingleAlertView.h; sourceTree = "<group>"; };
 		09B9B7B4222FAE0C000868D5 /* SXSingleAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXSingleAlertView.m; sourceTree = "<group>"; };
@@ -1011,7 +1009,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				09B9B7B2222FAB54000868D5 /* CloudKit.framework in Frameworks */,
-				09B9B7B0222FA80C000868D5 /* ExternalAccessory.framework in Frameworks */,
 				327EE8E44A5A7DE11581C0F1 /* libPods-TreebearManager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2506,7 +2503,6 @@
 			isa = PBXGroup;
 			children = (
 				09B9B7B1222FAB54000868D5 /* CloudKit.framework */,
-				09B9B7AF222FA80C000868D5 /* ExternalAccessory.framework */,
 				D77B77B9D44D60B532DDE9D2 /* libPods-TreebearManager.a */,
 			);
 			name = Frameworks;
@@ -3270,7 +3266,7 @@
 								enabled = 1;
 							};
 							com.apple.WAC = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.iCloud = {
 								enabled = 1;

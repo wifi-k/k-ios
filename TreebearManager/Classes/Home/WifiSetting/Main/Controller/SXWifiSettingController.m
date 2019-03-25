@@ -21,6 +21,9 @@
 #import "SXXiaoKInfoModel.h"
 #import "SXMineNetTool.h"
 #import "NSString+Hash.h"
+#import "XKGetWifiNetTool.h"
+#import "SXDynamicParam.h"
+#import "SXRootTool.h"
 
 @interface SXWifiSettingController ()
 @property (nonatomic, weak) SXWifiSettingHeaderView *headerView;//头部视图
@@ -163,6 +166,18 @@
     }
 }
 
+#pragma mark -视图弹窗-
+- (void)alertOnNetAlertView{
+    SXTitleAlertView *netAlertView = [SXTitleAlertView alertWithTitle:@"连网提示" content:@"请前往手机系统设置,重新连接WiFi" confirmStr:@"确定" cancelStr:@"取消"];
+    netAlertView.confirmButtonBlock = ^{
+        [SXRootTool jumpToSystemWIFI];
+    };
+    netAlertView.cancelButtonBlock = ^{
+        DLog(@"点击取消!");
+    };
+    [netAlertView alert];
+}
+
 #pragma mark -WiFi设置数据接口-
 - (void)userNodeSsidSetDataWitiParam:(SXXiaoKiParam *)param{
     if ([NSString isEmpty:SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId]) {
@@ -183,6 +198,26 @@
         });
     } failure:^(NSError *error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow];
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
+#pragma mark -网络信息设置-
+- (void)setNetDynamicData{
+    WS(weakSelf);
+    SXDynamicParam *param = [SXDynamicParam param];
+    param.ssid0 = [XKGetWifiNetTool getWifiSSID];
+    param.ssid = @"";
+    param.passwd = @"".md5String;
+    [SXAddXiaokiNetTool ssidSettingWithDataWithParams:param.mj_keyValues Success:^{
+        //1.指示器
+        [MBProgressHUD showSuccessWithMessage:@"WiFi设置成功!" toView:weakSelf.view];
+        //2.WiFi名称已经更改，前往系统设置重新连接
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf alertOnNetAlertView];
+        });
+    } failure:^(NSError * _Nonnull error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
     }];
