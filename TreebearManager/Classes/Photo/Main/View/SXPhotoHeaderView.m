@@ -15,9 +15,8 @@
 @property (weak, nonatomic) IBOutlet SXPhotoHeaderButton *shareBtn;
 @property (weak, nonatomic) IBOutlet UIView *topBgView;
 
-@property (weak, nonatomic) IBOutlet UIImageView *backupIconImageView;
-@property (weak, nonatomic) IBOutlet UILabel *backupContentView;
-@property (weak, nonatomic) IBOutlet UIButton *backupBtn;
+@property (weak, nonatomic) IBOutlet UILabel *contentL;
+@property (weak, nonatomic) IBOutlet UIButton *confirmBtn;
 @property (weak, nonatomic) IBOutlet UIView *backupBgView;
 @end
 
@@ -51,8 +50,9 @@
     self.backupBgView.layer.shadowRadius = 2;
     self.backupBgView.backgroundColor = SXColorWhite;
     
-//    self.backupContentView.textColor = SXColor666666;
-//    [self.backupBtn roundViewWithRadius:15.0f];
+    self.contentL.textColor = SXColor666666;
+    [self.confirmBtn setTitleColor:SXColorBlue forState:UIControlStateNormal];
+    [self.confirmBtn roundViewWithRadius:15.0f borderColor:SXColorBlue borderWidth:1.0f];
 
 }
 
@@ -60,6 +60,12 @@
 - (IBAction)clickOptionBtn:(SXPhotoHeaderButton *)sender {
     if (self.clickOptionBtnBlock) {
         self.clickOptionBtnBlock(sender.tag);
+    }
+}
+
+- (IBAction)clickBackupBtn:(UIButton *)sender {
+    if (self.clickBackupBtnBlock) {
+        self.clickBackupBtnBlock();
     }
 }
 

@@ -181,7 +181,7 @@
 - (void)clickOptionBtn:(NSInteger)tag{
     switch (tag) {
         case 0:
-            
+            DLog(@"tag:%ld",tag);
             break;
         case 1:{
             SXPhotoIntelligentController *intelligentVC = [[SXPhotoIntelligentController alloc] init];
@@ -292,21 +292,6 @@
     }
 }
 
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
-//    return (CGSize){SCREEN_WIDTH,212};
-//}
-//
-//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-//    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {//头部视图
-//        SXPhotoHeaderView *reusableView = [SXPhotoHeaderView sectionHeaderAwakeFromNib:collectionView atIndexPath:indexPath];
-//        return reusableView;
-//    }else if ([kind isEqualToString:UICollectionElementKindSectionFooter]){//底部视图
-//        return nil;
-//    }else{
-//        return nil;
-//    }
-//}
-
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     SXPhotoListCell *cell = [SXPhotoListCell cellWithCollectionView:collectionView atIndexPath:indexPath];
     UIImage *image = self.dataArray[indexPath.item];
@@ -341,6 +326,9 @@
     } else if(kind == UICollectionElementKindSectionFooter){
         WS(weakSelf);
         SXPhotoHeaderView *reusableView = [SXPhotoHeaderView sectionHeaderAwakeFromNib:collectionView atIndexPath:indexPath];
+        reusableView.clickBackupBtnBlock = ^{
+            [MBProgressHUD showMessage:@"开始备份" toView:SXKeyWindow];
+        };
         reusableView.clickOptionBtnBlock = ^(NSInteger tag) {
             [weakSelf clickOptionBtn:tag];
         };

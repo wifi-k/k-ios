@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///点击相册按钮
 @property (nonatomic, copy) void (^clickOptionBtnBlock)(NSInteger tag);
+///点击备份按钮
+@property (nonatomic, copy) void (^clickBackupBtnBlock)(void);
 
 @end
 
