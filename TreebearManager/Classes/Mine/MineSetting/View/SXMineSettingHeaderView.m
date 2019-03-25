@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIView *firstBgView;
 
 
+@property (weak, nonatomic) IBOutlet UIView *bottomLineView2;
 @property (weak, nonatomic) IBOutlet UIView *secondBgView;
 @end
 
@@ -39,6 +40,9 @@
     
     self.bottomLineView1.backgroundColor = SXColorDivideLine;
     self.bottomLineView1.height = 0.5f;
+    
+    self.bottomLineView2.backgroundColor = SXColorDivideLine;
+    self.bottomLineView2.height = 0.5f;
     
     //添加事件
     UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickAboutUs)];

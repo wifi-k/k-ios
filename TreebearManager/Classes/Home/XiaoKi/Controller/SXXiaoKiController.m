@@ -12,6 +12,7 @@
 #import "SXInputAlertView.h"
 #import "SXTitleAlertView.h"
 #import "SXMineNetTool.h"
+#import "SXRootTool.h"
 
 @interface SXXiaoKiController ()
 
@@ -102,8 +103,16 @@
         [MBProgressHUD showWarningWithMessage:@"没有获取到节点，请重试!" toView:SXKeyWindow];
         return;
     }
+    WS(weakSelf);
     [SXMineNetTool userNodeUnbindParams:model.nodeId Success:^{
         [MBProgressHUD showSuccessWithMessage:@"解绑成功!" toView:SXKeyWindow];
+        //刷新表格显示
+        [weakSelf.dataArray removeObject:model];
+        [weakSelf.tableView reloadData];
+        //如果列表为空，切换根控制器
+        if (weakSelf.dataArray.count == 0) {
+            [SXRootTool changeToHomeVC];
+        }
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
@@ -112,11 +121,14 @@
 
 #pragma mark -节点名称修改-
 - (void)userNodeInfoSetData:(SXHomeXiaoKiModel *)model{
+    WS(weakSelf);
     SXXiaoKiParam *param = [SXXiaoKiParam param];
     param.name = model.name;
     param.nodeId = model.nodeId;
     [SXMineNetTool userNodeInfoSetParams:param.mj_keyValues Success:^{
         [MBProgressHUD showSuccessWithMessage:@"修改成功!" toView:SXKeyWindow];
+        //刷新表格显示
+        [weakSelf.tableView reloadData];
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];

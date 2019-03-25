@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
+///是否隐藏Icons
+- (void)hideIcons:(BOOL)isHidden;
+
 ///点击登录按钮回调
 @property (nonatomic, copy) void (^clickLoginBtnBlock)(void);
 ///点击忘记密码按钮回调

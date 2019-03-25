@@ -10,6 +10,9 @@
 #import "SXLoginMainHeaderView.h"
 #import "SXLoginController.h"
 #import "SXRegistController.h"
+#import "SXMineNetTool.h"
+#import "SXXiaoKiParam.h"
+#import "SXRootTool.h"
 
 @interface SXLoginMainController ()
 ///头部视图
@@ -38,11 +41,21 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
+#pragma -init初始化-
+//- (instancetype)init{
+//    if (self = [super init]) {
+//        [self setUpData];
+//    }
+//    return self;
+//}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     //1.初始化UI
     [self setUpUI];
+    
+    [self setUpData];
 }
 
 - (void)setUpUI{
@@ -78,6 +91,35 @@
 - (void)jumpToRegistVC{
     SXRegistController *forgetVC = [[SXRegistController alloc] init];
     [self.navigationController pushViewController:forgetVC animated:YES];
+}
+
+#pragma mark -setData(列表)-
+- (void)setUpData{
+    WS(weakSelf);
+    [self.headerView hideIcons:YES];
+    SXXiaoKiParam *param = [SXXiaoKiParam param];
+    param.pageNo = @1;
+    param.pageSize = @10;
+    [SXMineNetTool userNodeListParams:param.mj_keyValues Success:^(NSArray *array) {
+        DLog(@"array:%@",array);
+        if (array.count) {//列表有数据
+            [SXRootTool chooseRootWithTabBarVC:SXDelegateWindow];
+            [SXRootTool changeToMainHomeVC];
+        } else {
+            [SXRootTool chooseRootWithTabBarVC:SXDelegateWindow];
+            [SXRootTool changeToHomeVC];
+        }
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf.headerView hideIcons:NO];
+        });
+    } failure:^(NSError *error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        if ([NSString isNotEmpty:message]) {
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        }
+        [weakSelf.headerView hideIcons:NO];
+    }];
 }
 
 @end

@@ -10,4 +10,8 @@
 
 @implementation SXHomeXiaoKiModel
 
+- (BOOL)isEqual:(SXHomeXiaoKiModel *)other{
+    return [self.nodeId isEqual:other.nodeId];
+}
+
 @end

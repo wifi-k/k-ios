@@ -64,9 +64,9 @@
 }
 
 - (IBAction)clickIconBtn:(UIButton *)sender {
-    if (self.clickIconBtnBlock) {
-        self.clickIconBtnBlock();
-    }
+//    if (self.clickIconBtnBlock) {
+//        self.clickIconBtnBlock();
+//    }
 }
 
 @end

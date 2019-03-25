@@ -62,8 +62,8 @@
     self.bottomLineView1.height = 0.5f;
     self.bottomLineView2.height = 0.5f;
     
-    [self.confirmBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
-    [self.confirmBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
+//    [self.confirmBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
+//    [self.confirmBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
     [self.confirmBtn roundViewWithRadius:6.0f];
     self.confirmBtn.enabled = NO;
     

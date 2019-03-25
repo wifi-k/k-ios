@@ -46,6 +46,12 @@
     [self.registBtn roundViewWithRadius:22.5];
 }
 
+- (void)hideIcons:(BOOL)isHidden{
+    self.iconImageV.hidden = isHidden;
+    self.loginBtn.hidden = isHidden;
+    self.registBtn.hidden = isHidden;
+}
+
 #pragma mark -按钮点击事件-
 - (IBAction)clickLoginBtn:(UIButton *)sender {
     if (self.clickLoginBtnBlock) {

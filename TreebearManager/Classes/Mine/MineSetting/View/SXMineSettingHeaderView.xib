@@ -74,13 +74,23 @@
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Q2-qN-FMt">
+                            <rect key="frame" x="15" y="59.5" width="340" height="0.5"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="kIy-5T-cqG"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="pJE-wc-rha" firstAttribute="centerY" secondItem="b7n-Y5-zF0" secondAttribute="centerY" id="0fS-Mq-D8b"/>
                         <constraint firstItem="iY9-rK-g7X" firstAttribute="leading" secondItem="b7n-Y5-zF0" secondAttribute="leading" constant="15" id="2rk-pG-fGo"/>
+                        <constraint firstAttribute="trailing" secondItem="2Q2-qN-FMt" secondAttribute="trailing" id="Af6-rV-igE"/>
                         <constraint firstAttribute="trailing" secondItem="pJE-wc-rha" secondAttribute="trailing" constant="15" id="KUV-EK-eGr"/>
+                        <constraint firstAttribute="bottom" secondItem="2Q2-qN-FMt" secondAttribute="bottom" id="MvH-7d-Lt3"/>
                         <constraint firstItem="pJE-wc-rha" firstAttribute="leading" secondItem="7kb-dN-nAN" secondAttribute="trailing" constant="5" id="TR1-58-9ru"/>
+                        <constraint firstItem="2Q2-qN-FMt" firstAttribute="leading" secondItem="b7n-Y5-zF0" secondAttribute="leading" constant="15" id="e8D-8l-L9L"/>
                         <constraint firstItem="7kb-dN-nAN" firstAttribute="centerY" secondItem="b7n-Y5-zF0" secondAttribute="centerY" id="iCJ-38-GSX"/>
                         <constraint firstAttribute="height" constant="60" id="oza-kB-5L3"/>
                         <constraint firstItem="iY9-rK-g7X" firstAttribute="centerY" secondItem="b7n-Y5-zF0" secondAttribute="centerY" id="sAW-cl-Vek"/>
@@ -102,6 +112,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="bottomLineView1" destination="hJr-zN-X15" id="HN7-sG-uue"/>
+                <outlet property="bottomLineView2" destination="2Q2-qN-FMt" id="bRT-9u-5Aw"/>
                 <outlet property="firstBgView" destination="jLq-Hn-N9O" id="L6K-0J-uh4"/>
                 <outlet property="secondBgView" destination="b7n-Y5-zF0" id="dFY-Ym-KoI"/>
             </connections>

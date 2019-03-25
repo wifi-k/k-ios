@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) void (^clickMobileBlock)(void);
 
 ///点击头像按钮回调
-@property (nonatomic, copy) void (^clickIconBtnBlock)(void);
+//@property (nonatomic, copy) void (^clickIconBtnBlock)(void);
 
 @end
 

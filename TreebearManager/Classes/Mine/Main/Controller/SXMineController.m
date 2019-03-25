@@ -34,7 +34,7 @@
 #pragma mark -getter-
 - (NSMutableArray *)dataArray{
     if (_dataArray == nil) {
-        NSArray *array = @[@{@"name":@"我的小K",@"avatar":@"mine_xiaok_mine"},@{@"name":@"我的孩子",@"avatar":@"mine_xiaok_child"},@{@"name":@"测试使用",@"avatar":@"mine_xiaok_child"}];
+        NSArray *array = @[@{@"name":@"我的小K",@"avatar":@"mine_xiaok_mine"},@{@"name":@"我的孩子",@"avatar":@"mine_xiaok_child"},@{@"name":@"测试使用",@"avatar":@"mine_xiaok_child"},@{@"name":@"退出登录",@"avatar":@"mine_xiaok_child"}];
         _dataArray = [NSMutableArray arrayWithArray:[SXMineUserInfoModel mj_objectArrayWithKeyValuesArray:array]];
     }
     return _dataArray;
@@ -96,9 +96,6 @@
     headerView.clickMobileBlock = ^{
         DLog(@"clickMobileBlock");
         [weakSelf jumpToPersonVC];
-    };
-    headerView.clickIconBtnBlock = ^{
-        [weakSelf jumpToImagePickerVC];
     };
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
@@ -206,20 +203,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-//    if (indexPath.row == 0) {
-//        [SXRootTool changeToHomeVC];
-//    } else{
-//        [SXRootTool chooseRootWithLoginVC:SXDelegateWindow];
-//    }
-    
     if (indexPath.row == 0) {
         SXXiaoKiController *xiaokVC = [[SXXiaoKiController alloc] init];
         [self.navigationController pushViewController:xiaokVC animated:YES];
     } else if(indexPath.row == 1){
         SXMineChildController *childVC = [[SXMineChildController alloc] init];
         [self.navigationController pushViewController:childVC animated:YES];
-    } else {
+    } else if(indexPath.row == 2){
         [SXRootTool changeToHomeVC];
+    } else {
+        [SXRootTool chooseRootWithLoginVC:SXDelegateWindow];
     }
 }
 
