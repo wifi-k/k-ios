@@ -20,6 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
  * 头像
  */
 @property (nonatomic, copy) NSString *avatar;
+/**
+ * 1-包含nodeSize
+ */
+@property (nonatomic, copy) NSNumber *filter;
 
 @end
 

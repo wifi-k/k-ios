@@ -64,6 +64,8 @@
     //用户信息获取
     [self getUserInfoData];
     
+    [self userInfoGetextData];
+    
     //添加通知
     [self addNotification];
 }
@@ -137,6 +139,16 @@
         [weakSelf.headerView setUpData];
     };
     [self.navigationController pushViewController:personVC animated:YES];
+}
+
+#pragma mark -获取用户信息(最新)-
+- (void)userInfoGetextData{
+    [SXMineNetTool userInfoGetextDataWithFilter:@1 Success:^(SXMineUserInfoResult *result) {
+        DLog(@"result:%@",result);
+    } failure:^(NSError *error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
 
 #pragma mark -获取用户信息-

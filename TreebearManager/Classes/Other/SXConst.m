@@ -47,5 +47,6 @@ NSString *const user_node_bind = @"user/node/bind";
 NSString *const user_node_unbind = @"user/node/unbind";
 NSString *const user_node_list = @"user/node/list";
 NSString *const user_node_info_set = @"user/node/info/set";
+NSString *const user_info_getext = @"user/info/getext";
 
 @end
