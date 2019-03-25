@@ -181,7 +181,7 @@ const CGFloat SXWifiSettingAlertViewHeightRatio = 0.216; //高度系统
 - (void)confirmButtonTapped{
     NSString *input = self.textField.text.filterSpace;
     if ([NSString isEmpty:input]) {
-        [MBProgressHUD showMessageToWindow:self.placeholder];
+        [MBProgressHUD showMessageToWindow:@"文本输入不能为空!"];
         return;
     }
     

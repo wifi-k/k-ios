@@ -9,6 +9,7 @@
 
 #import "SXWifiSettingHeaderView.h"
 #import "SXWifiSettingButton.h"
+#import "SXXiaoKInfoModel.h"
 
 @interface SXWifiSettingHeaderView ()
 @property (weak, nonatomic) IBOutlet UILabel *titleL;
@@ -39,6 +40,8 @@
     // 不需要跟随父控件的尺寸变化而伸缩
     //self.autoresizingMask = UIViewAutoresizingNone;
     [self setUpUI];
+    
+    [self setUpData];
 }
 
 #pragma mark -UI-
@@ -65,6 +68,10 @@
     self.firstBgView.backgroundColor = SXColorWhite;
     self.secondBgView.backgroundColor = SXColorWhite;
     self.thirdBgView.backgroundColor = SXColorWhite;
+}
+
+- (void)setUpData{
+    self.nameTipsL.text = [NSString stringWithFormat:@"当前WiFi名称:%@",SXXiaoKInfoModel.sharedSXXiaoKInfoModel.name];
 }
 
 #pragma mark -点击事件-

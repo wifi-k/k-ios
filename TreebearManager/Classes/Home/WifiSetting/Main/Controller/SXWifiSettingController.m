@@ -169,9 +169,15 @@
         [MBProgressHUD showWarningWithMessage:@"没有修改成功，请检查您的WiFi连接" toView:SXKeyWindow];
         return;
     }
+    
+    WS(weakSelf);
     [MBProgressHUD showWhiteLoadingToView:SXKeyWindow];
     [SXMineNetTool userNodeSsidSetParams:param.mj_keyValues Success:^{
         [MBProgressHUD hideHUDForView:SXKeyWindow];
+        //赋值
+        SXXiaoKInfoModel.sharedSXXiaoKInfoModel.name = param.ssid;
+        [weakSelf.headerView setUpData];
+        //设置成功
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [MBProgressHUD showSuccessWithMessage:@"WiFi设置成功!" toView:SXKeyWindow];
         });

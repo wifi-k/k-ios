@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
+- (void)setUpData;
+
 ///更改Wifi名称回调
 @property (nonatomic, copy) void (^clickWifiNameBlock)(void);
 ///更改Wifi密码回调
