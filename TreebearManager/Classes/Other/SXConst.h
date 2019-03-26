@@ -58,6 +58,7 @@ extern NSString *const user_node_share_join;
 extern NSString *const user_node_share_quit;
 
 extern NSString *const user_node_select;
+extern NSString *const user_node_listall;
 
 @end
 

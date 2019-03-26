@@ -46,5 +46,8 @@
 ///节点信息修改
 + (void)userNodeInfoSetParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
+///家庭节点列表 (返回自己的节点和所属家庭的节点)
++ (void)userNodeListallParams:(NSDictionary *)params Success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure;
+
 @end
 

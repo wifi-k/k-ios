@@ -100,7 +100,7 @@
 - (void)userNodeUnbindWithModel:(SXHomeXiaoKiModel *)model{
     //更新wan信息
     if ([NSString isEmpty:model.nodeId]) {
-        [MBProgressHUD showWarningWithMessage:@"没有获取到节点，请重试!" toView:SXKeyWindow];
+        [MBProgressHUD showWarningWithMessage:@"没有获取到节点，请检查系统网络设置!" toView:SXKeyWindow];
         return;
     }
     WS(weakSelf);

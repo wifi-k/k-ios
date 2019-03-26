@@ -50,6 +50,7 @@
     param.pageNo = @1;
     param.pageSize = @10;
     [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
+//    SXMineNetTool userNodeListallParams
     [SXMineNetTool userNodeListParams:param.mj_keyValues Success:^(NSArray *array) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         //数据初始化

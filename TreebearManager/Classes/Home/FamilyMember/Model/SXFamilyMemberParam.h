@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *inviteCode;
 ///节点
 @property (nonatomic, copy) NSString *nodeId;
+///删除的成员ID
+@property (nonatomic, copy) NSString *userId;
 
 @end
 

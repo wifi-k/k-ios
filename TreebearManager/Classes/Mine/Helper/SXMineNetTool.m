@@ -176,5 +176,24 @@
     }];
 }
 
++ (void)userNodeListallParams:(NSDictionary *)params Success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure{
+
+    [SXNetRequestTool POST:user_node_listall parameters:params success:^(id response) {
+        
+        if (![response isKindOfClass:NSDictionary.class]) return;
+        
+        NSArray *pageList = [response objectForKey:@"page"];
+        
+        NSArray *modelList = [SXHomeXiaoKiModel mj_objectArrayWithKeyValuesArray:pageList];
+        
+        if (success){
+            success(modelList);
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
 
 @end

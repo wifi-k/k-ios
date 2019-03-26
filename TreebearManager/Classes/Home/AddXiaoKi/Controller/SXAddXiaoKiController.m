@@ -146,7 +146,7 @@
     //更新wan信息
     SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
     if ([NSString isEmpty:shareInfo.modelId]) {
-        [MBProgressHUD showWarningWithMessage:@"没有获取到节点，请重试!" toView:SXKeyWindow];
+        [MBProgressHUD showWarningWithMessage:@"没有获取到节点，请检查系统网络设置!" toView:SXKeyWindow];
         return;
     }
     [SXMineNetTool userNodeBindParams:shareInfo.modelId Success:^{
@@ -171,7 +171,7 @@
 //- (void)userNodeUnbindWithModel:(NSString *)nodeId{
 //    //更新wan信息
 //    if ([NSString isEmpty:nodeId]) {
-//        [MBProgressHUD showWarningWithMessage:@"没有获取到节点，请重试!" toView:SXKeyWindow];
+//        [MBProgressHUD showWarningWithMessage:@"没有获取到节点，请检查系统网络设置!" toView:SXKeyWindow];
 //        return;
 //    }
 //    [SXMineNetTool userNodeUnbindParams:nodeId Success:^{
@@ -179,22 +179,6 @@
 //    } failure:^(NSError *error) {
 //        NSString *message = [error.userInfo objectForKey:@"msg"];
 //        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
-//    }];
-//}
-
-#pragma mark -查询网络状态-
-//- (void)networkStatusData{
-//    WS(weakSelf);
-//    static NSInteger count = 0;
-//    [SXAddXiaokiNetTool networkStatusWithDataSuccess:^{
-//        DLog(@"网络状态正常");
-//    } failure:^(NSError * _Nonnull error) {
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            //递归方法
-//            if (error.code == 1 && count++ != 5) {
-//                [weakSelf networkStatusData];
-//            }
-//        });
 //    }];
 //}
 

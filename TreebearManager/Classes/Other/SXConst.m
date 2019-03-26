@@ -57,6 +57,7 @@ NSString *const user_node_share_join = @"user/node/share/join";
 NSString *const user_node_share_quit = @"user/node/share/quit";
 
 NSString *const user_node_select = @"user/node/select";
+NSString *const user_node_listall = @"user/node/listall";
 
 
 @end

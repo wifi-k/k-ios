@@ -12,8 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nickNameL;
 @property (weak, nonatomic) IBOutlet UILabel *mobileL;
-@property (weak, nonatomic) IBOutlet UIButton *addBtn;
-@property (weak, nonatomic) IBOutlet UIButton *editBtn;
 @property (weak, nonatomic) IBOutlet UIButton *deleteBtn;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView;
 @end
@@ -47,22 +45,18 @@ static NSString *SXFamilyMemberCellID = @"SXFamilyMemberCellID";
     self.bottomLineView.backgroundColor = SXColorDivideLine;
 }
 
+#pragma mark -setter-
+- (void)setModel:(SXFamilyMemberModel *)model{
+    _model = model;
+    
+    self.nickNameL.text = [NSString stringWithFormat:@"昵称：%@",model.userName];
+    self.mobileL.text = [NSString stringWithFormat:@"手机号：%@",model.userMobile];
+}
+
 #pragma mark -点击事件-
-- (IBAction)clickAddBtn:(UIButton *)sender {
-    if (self.clickAddBtnBlock) {
-        self.clickAddBtnBlock();
-    }
-}
-
-- (IBAction)clickEditBtn:(UIButton *)sender {
-    if (self.clickEditBtnBlock) {
-        self.clickEditBtnBlock();
-    }
-}
-
 - (IBAction)clickDeleteBtn:(UIButton *)sender {
     if (self.clickDeleteBtnBlock) {
-        self.clickDeleteBtnBlock();
+        self.clickDeleteBtnBlock(self.model);
     }
 }
 

@@ -50,7 +50,7 @@
 - (void)userNodeFirmwareUpgrade{
     //更新wan信息
     if ([NSString isEmpty:self.model.nodeId]) {
-        [MBProgressHUD showWarningWithMessage:@"没有获取到节点，请重试!" toView:SXKeyWindow];
+        [MBProgressHUD showWarningWithMessage:@"没有获取到节点，请检查系统网络设置!" toView:SXKeyWindow];
         return;
     }
     [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
