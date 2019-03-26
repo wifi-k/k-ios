@@ -10,6 +10,7 @@
 #import "SXUpdateVersionController.h"
 #import "SXXiaoKiEquipmentOptionCell.h"
 #import "SXMineNetTool.h"
+#import "SXXiaoKiOptionResult.h"
 
 @interface SXXiaoKiEquipmentOptionController ()
 ///数据源
@@ -38,7 +39,7 @@
 - (void)setUpUI{
     self.view.backgroundColor = SXColorWhite;
     
-    self.navigationItem.title = @"小K列表";
+    self.navigationItem.title = @"切换小K";
 }
 
 #pragma mark -setData(列表)-
@@ -113,7 +114,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100.0f;
+    return 120.0f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -126,6 +127,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    SXHomeXiaoKiModel *model = self.dataArray[indexPath.row];
+    SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel = model;
+    if (self.selectOptionModelBlock) {
+        self.selectOptionModelBlock();
+    }
+    //跳转
     [self.navigationController popViewControllerAnimated:YES];
 }
 

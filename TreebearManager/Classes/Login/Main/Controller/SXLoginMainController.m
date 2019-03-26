@@ -55,7 +55,8 @@
     //1.初始化UI
     [self setUpUI];
     
-    [self setUpData];
+    //2.个人用户信息
+    [self userInfoGetextData];
 }
 
 - (void)setUpUI{
@@ -93,23 +94,23 @@
     [self.navigationController pushViewController:forgetVC animated:YES];
 }
 
-#pragma mark -setData(列表)-
-- (void)setUpData{
+#pragma mark -获取用户信息(最新)-
+- (void)userInfoGetextData{
     WS(weakSelf);
     [self.headerView hideIcons:YES];
-    SXXiaoKiParam *param = [SXXiaoKiParam param];
-    param.pageNo = @1;
-    param.pageSize = @10;
-    [SXMineNetTool userNodeListParams:param.mj_keyValues Success:^(NSArray *array) {
-        DLog(@"array:%@",array);
-        if (array.count) {//列表有数据
+    [SXMineNetTool userInfoGetextDataWithFilter:@1 Success:^(SXMineUserInfoResult *result) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        DLog(@"result:%@",result);
+        //1.单利赋值
+        SXPersonInfoModel.sharedSXPersonInfoModel.result = result;
+        //2.头部赋值
+        if (result.nodeSize.integerValue > 0) {//列表有数据
             [SXRootTool chooseRootWithTabBarVC:SXDelegateWindow];
             [SXRootTool changeToMainHomeVC];
         } else {
             [SXRootTool chooseRootWithTabBarVC:SXDelegateWindow];
             [SXRootTool changeToHomeVC];
         }
-        
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [weakSelf.headerView hideIcons:NO];
         });

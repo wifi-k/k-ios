@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
     
 + (instancetype)headerView;
 
+- (void)setUpData;
+
 ///点击管理员按钮回调
 @property (nonatomic, copy) void (^clickMangerBtnBlock)(void);
 ///点击分享家庭码按钮回调

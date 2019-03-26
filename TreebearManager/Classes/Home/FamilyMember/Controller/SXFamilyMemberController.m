@@ -11,6 +11,8 @@
 #import "SXFamilyMemberCell.h"
 #import "SXWifiSettingAlertView.h"
 #import "SXTitleAlertView.h"
+#import "SXFamilyMemberNetTool.h"
+#import "SXXiaoKiOptionResult.h"
 
 @interface SXFamilyMemberController ()
 
@@ -22,6 +24,9 @@
     [super viewDidLoad];
     
     [self setUpUI];
+    
+    //家庭成员列表数据
+    [self userNodeFamilyListData];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -55,9 +60,11 @@
 
 #pragma mark -视图弹窗-
 - (void)alertUpdateNameView{
-    SXWifiSettingAlertView *nameAlertView = [SXWifiSettingAlertView alertWithTitle:@"重命名" placeholder:@"请输入新的名称" confirmStr:@"确定" cancelStr:@"取消"];
+    WS(weakSelf);
+    SXWifiSettingAlertView *nameAlertView = [SXWifiSettingAlertView alertWithTitle:@"重命名" placeholder:@"请输入家庭码" confirmStr:@"确定" cancelStr:@"取消"];
     nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
         DLog(@"text:%@",text);
+        [weakSelf userNodeFamilyJoin:text];
     };
     [nameAlertView alert];
 }
@@ -69,6 +76,33 @@
         DLog(@"确定。。。");
     };
     [deleteAlertView alert];
+}
+
+#pragma mark -网络请求接口-
+- (void)userNodeFamilyListData{
+    [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
+    SXFamilyMemberParam *param = [SXFamilyMemberParam param];
+    SXHomeXiaoKiModel *model = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel;
+    param.nodeId = model.nodeId;
+    [SXFamilyMemberNetTool userNodeFamilyListDataWithParams:param.mj_keyValues Success:^(NSArray *array) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        DLog(@"array:%@",array);
+    } failure:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
+- (void)userNodeFamilyJoin:(NSString *)text{
+    SXFamilyMemberParam *param = [SXFamilyMemberParam param];
+    param.inviteCode = text;
+    [SXFamilyMemberNetTool userNodeFamilyJoinDataWithParams:param.mj_keyValues Success:^{
+        [MBProgressHUD showSuccessWithMessage:@"添加成功!" toView:SXKeyWindow];
+    } failure:^(NSError *error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
 
 #pragma mark -UITableViewDelegate/UITableViewDataSource-

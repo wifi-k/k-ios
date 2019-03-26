@@ -11,6 +11,7 @@
 #import "SXHomeMainGotoUserInfoButton.h"
 #import "SXHomeMainSettingButton.h"
 #import "SXHomeMainMemberButton.h"
+#import "SXXiaoKiOptionResult.h"
 
 @interface SXHomeMainHeaderView ()
 @property (weak, nonatomic) IBOutlet SXImaginaryLineView *horizonDivideView;
@@ -92,6 +93,11 @@
         make.top.mas_equalTo(self.managerBtn.mas_top);
         make.right.mas_equalTo(self.managerBtn.mas_right);
     }];
+}
+
+- (void)setUpData{
+    SXHomeXiaoKiModel *model = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel;
+    self.nameL.text = model.name;
 }
 
 #pragma mark -事件监听-

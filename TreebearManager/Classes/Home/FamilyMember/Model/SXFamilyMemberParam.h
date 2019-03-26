@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///节点的邀请码
 @property (nonatomic, copy) NSString *inviteCode;
+///节点
+@property (nonatomic, copy) NSString *nodeId;
 
 @end
 

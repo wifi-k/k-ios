@@ -27,6 +27,7 @@
 #import "SXInputAlertView.h"
 #import "SXRootTool.h"
 #import "SXNotificationCenterTool.h"
+#import "SXXiaoKiOptionResult.h"
 
 @interface SXHomeMainController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak) SXHomeMainHeaderView *headerView;//头部视图
@@ -117,7 +118,12 @@
 }
 
 - (void)jumpToEquipVC{
+    WS(weakSelf);
     SXXiaoKiEquipmentOptionController *equipVC = [[SXXiaoKiEquipmentOptionController alloc] init];
+    equipVC.selectOptionModelBlock = ^{
+        //刷新数据显示
+        [weakSelf.headerView setUpData];
+    };
     [self.navigationController pushViewController:equipVC animated:YES];
 }
 

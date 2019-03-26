@@ -7,10 +7,14 @@
 //
 
 #import "SXBaseCustomTableViewPlainController.h"
+#import "SXHomeXiaoKiModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXXiaoKiEquipmentOptionController : SXBaseCustomTableViewPlainController
+
+///选中模型回调
+@property (nonatomic, copy) void (^selectOptionModelBlock)(void);
 
 @end
 
