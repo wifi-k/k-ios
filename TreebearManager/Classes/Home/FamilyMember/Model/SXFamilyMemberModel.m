@@ -10,4 +10,8 @@
 
 @implementation SXFamilyMemberModel
 
+- (BOOL)isEqual:(SXFamilyMemberModel *)other{
+    return [self.userId isEqual:other.userId];
+}
+
 @end

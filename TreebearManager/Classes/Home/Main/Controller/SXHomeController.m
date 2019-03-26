@@ -12,6 +12,7 @@
 #import "SXRootTool.h"
 #import "SXHomeHeaderView.h"
 #import "SXCodeInputAlertView.h"
+#import "SXFamilyMemberNetTool.h"
 
 @interface SXHomeController ()
 ///头部视图
@@ -76,12 +77,29 @@
 
 #pragma mark -视图弹窗-
 - (void)alertUpdateNameView{
-    SXCodeInputAlertView *nameAlertView = [SXCodeInputAlertView alertWithTitle:@"重命名" placeholder:@"请输入新的名称" confirmStr:@"确定" cancelStr:@"取消"];
+    WS(weakSelf);
+    SXCodeInputAlertView *nameAlertView = [SXCodeInputAlertView alertWithTitle:@"提示" placeholder:@"请输家庭码" confirmStr:@"确定" cancelStr:@"取消"];
     nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
         DLog(@"text:%@",text);
-        [SXRootTool changeToMainHomeVC];
+        [weakSelf userNodeFamilyJoin:text];
     };
     [nameAlertView alert];
+}
+
+- (void)userNodeFamilyJoin:(NSString *)text{
+    [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
+    SXFamilyMemberParam *param = [SXFamilyMemberParam param];
+    param.inviteCode = text;
+    [SXFamilyMemberNetTool userNodeFamilyJoinDataWithParams:param.mj_keyValues Success:^{
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        [MBProgressHUD showSuccessWithMessage:@"添加成功!" toView:SXKeyWindow];
+        [SXRootTool changeToMainHomeVC];
+    } failure:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        [SXRootTool changeToMainHomeVC];
+    }];
 }
 
 @end

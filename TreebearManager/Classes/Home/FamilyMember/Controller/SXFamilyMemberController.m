@@ -9,7 +9,6 @@
 #import "SXFamilyMemberController.h"
 #import "SXFamilyMemberFooterView.h"
 #import "SXFamilyMemberCell.h"
-#import "SXWifiSettingAlertView.h"
 #import "SXTitleAlertView.h"
 #import "SXFamilyMemberNetTool.h"
 #import "SXXiaoKiOptionResult.h"
@@ -68,13 +67,7 @@
 
 #pragma mark -视图弹窗-
 - (void)alertUpdateNameView{
-    WS(weakSelf);
-    SXWifiSettingAlertView *nameAlertView = [SXWifiSettingAlertView alertWithTitle:@"重命名" placeholder:@"请输入家庭码" confirmStr:@"确定" cancelStr:@"取消"];
-    nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
-        DLog(@"text:%@",text);
-        [weakSelf userNodeFamilyJoin:text];
-    };
-    [nameAlertView alert];
+    [MBProgressHUD showMessage:@"分享家庭码!" toView:SXKeyWindow];
 }
 
 #pragma mark -视图弹窗-
@@ -107,33 +100,23 @@
     }];
 }
 
-- (void)userNodeFamilyJoin:(NSString *)text{
-//    WS(weakSelf);
-    [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
-    SXFamilyMemberParam *param = [SXFamilyMemberParam param];
-    param.inviteCode = text;
-    [SXFamilyMemberNetTool userNodeFamilyJoinDataWithParams:param.mj_keyValues Success:^{
-        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
-        [MBProgressHUD showSuccessWithMessage:@"添加成功!" toView:SXKeyWindow];
-    } failure:^(NSError *error) {
-        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
-        NSString *message = [error.userInfo objectForKey:@"msg"];
-        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
-    }];
-}
-
 - (void)userNodeFamilyQuitData:(SXFamilyMemberModel *)model{
-//    WS(weakSelf);
+    WS(weakSelf);
     [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
     SXFamilyMemberParam *param = [SXFamilyMemberParam param];
     param.nodeId = model.nodeId;
     param.userId = model.userId;
     [SXFamilyMemberNetTool userNodeFamilyQuitDataWithParams:param.mj_keyValues Success:^{
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        [MBProgressHUD showSuccessWithMessage:@"删除成功!" toView:SXKeyWindow];
+        [weakSelf.dataArray removeObject:model];
+        [weakSelf.tableView reloadData];
     } failure:^(NSError *error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
-        NSString *message = [error.userInfo objectForKey:@"msg"];
-        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSString *message = [error.userInfo objectForKey:@"msg"];
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        });
     }];
 }
 

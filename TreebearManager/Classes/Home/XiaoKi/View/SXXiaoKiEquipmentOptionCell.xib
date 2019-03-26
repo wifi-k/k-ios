@@ -37,6 +37,25 @@
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Aw-nO-1nv">
+                        <rect key="frame" x="73.5" y="51.5" width="22" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhG-nC-nDh">
+                        <rect key="frame" x="78" y="78.5" width="22" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_netoption_checked" translatesAutoresizingMaskIntoConstraints="NO" id="xFD-Bf-cOO">
+                        <rect key="frame" x="295" y="49" width="22" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="th2-lC-Ckq"/>
+                            <constraint firstAttribute="width" constant="22" id="uJe-89-sBz"/>
+                        </constraints>
+                    </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ro-aE-9PA">
                         <rect key="frame" x="15" y="119" width="317" height="0.5"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -46,13 +65,19 @@
                     </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="5Aw-nO-1nv" firstAttribute="centerY" secondItem="q6F-kb-GGg" secondAttribute="centerY" id="1vb-ZP-aZ7"/>
+                    <constraint firstAttribute="trailing" secondItem="xFD-Bf-cOO" secondAttribute="trailing" constant="15" id="37h-2k-83l"/>
                     <constraint firstItem="vya-Ku-YFa" firstAttribute="top" secondItem="q6F-kb-GGg" secondAttribute="bottom" constant="10" id="Bjk-aU-RQd"/>
+                    <constraint firstItem="5Aw-nO-1nv" firstAttribute="leading" secondItem="q6F-kb-GGg" secondAttribute="trailing" constant="1" id="BmT-DN-VXw"/>
+                    <constraint firstItem="uhG-nC-nDh" firstAttribute="leading" secondItem="vya-Ku-YFa" secondAttribute="trailing" constant="1" id="Bxd-k6-Trb"/>
                     <constraint firstItem="i6T-Xg-NXY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Dro-UO-exi"/>
                     <constraint firstAttribute="trailing" secondItem="8Ro-aE-9PA" secondAttribute="trailing" id="Nyf-d2-0JD"/>
                     <constraint firstItem="q6F-kb-GGg" firstAttribute="top" secondItem="i6T-Xg-NXY" secondAttribute="bottom" constant="10" id="Pir-g1-Imj"/>
                     <constraint firstItem="vya-Ku-YFa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="b1n-zh-Qar"/>
                     <constraint firstItem="q6F-kb-GGg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="e0g-Mv-767"/>
+                    <constraint firstItem="xFD-Bf-cOO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ko1-Eg-cgU"/>
                     <constraint firstItem="q6F-kb-GGg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="kz0-Jc-x7A"/>
+                    <constraint firstItem="uhG-nC-nDh" firstAttribute="centerY" secondItem="vya-Ku-YFa" secondAttribute="centerY" id="pdB-LN-hzo"/>
                     <constraint firstItem="8Ro-aE-9PA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="wqZ-i0-lY1"/>
                     <constraint firstAttribute="bottom" secondItem="8Ro-aE-9PA" secondAttribute="bottom" id="zVd-QV-6wz"/>
                 </constraints>
@@ -60,11 +85,17 @@
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="bottomLineView" destination="8Ro-aE-9PA" id="Fio-Mg-1P5"/>
+                <outlet property="checkImageView" destination="xFD-Bf-cOO" id="lwO-ek-Qor"/>
                 <outlet property="nameL" destination="i6T-Xg-NXY" id="i4B-cI-zW3"/>
-                <outlet property="ssidL" destination="q6F-kb-GGg" id="qtd-Dx-Rp9"/>
-                <outlet property="statusL" destination="vya-Ku-YFa" id="t82-I4-VLb"/>
+                <outlet property="ssidL" destination="5Aw-nO-1nv" id="VUd-DP-qxU"/>
+                <outlet property="ssidTitleL" destination="q6F-kb-GGg" id="fhD-Pp-b5h"/>
+                <outlet property="statusL" destination="uhG-nC-nDh" id="Gy2-js-QTT"/>
+                <outlet property="statusTitleL" destination="vya-Ku-YFa" id="P6g-wb-I9N"/>
             </connections>
             <point key="canvasLocation" x="147.19999999999999" y="147.52623688155924"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="img_netoption_checked" width="22" height="22"/>
+    </resources>
 </document>

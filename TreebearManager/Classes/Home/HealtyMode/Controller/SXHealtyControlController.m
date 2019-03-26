@@ -65,6 +65,7 @@
     };
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
+    self.tableView.contentInset = UIEdgeInsetsMake(10, 0, 0, 0);
     
     UIBarButtonItem *right = [UIBarButtonItem barButtonItemWithTitle:@"保存" target:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = right;

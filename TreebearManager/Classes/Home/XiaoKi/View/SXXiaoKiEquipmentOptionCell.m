@@ -10,8 +10,11 @@
 
 @interface SXXiaoKiEquipmentOptionCell ()
 @property (weak, nonatomic) IBOutlet UILabel *nameL;
+@property (weak, nonatomic) IBOutlet UILabel *ssidTitleL;
+@property (weak, nonatomic) IBOutlet UILabel *statusTitleL;
 @property (weak, nonatomic) IBOutlet UILabel *ssidL;
 @property (weak, nonatomic) IBOutlet UILabel *statusL;
+@property (weak, nonatomic) IBOutlet UIImageView *checkImageView;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView;
 @end
 
@@ -36,14 +39,14 @@ static NSString *SXXiaoKiEquipmentOptionCellID = @"SXXiaoKiEquipmentOptionCellID
 #pragma mark -初始化UI-
 - (void)setUpUI{
     
-//    self.selectionStyle = UITableViewCellSelectionStyleNone;
-    
     //设置背景色
     self.backgroundColor = SXColorWhite;
     
     self.nameL.textColor = SXColor333333;
-    self.ssidL.textColor = SXColor999999;
-    self.statusL.textColor = SXColor999999;
+    self.ssidTitleL.textColor = SXColor999999;
+    self.statusTitleL.textColor = SXColor999999;
+    self.ssidL.textColor = SXColor666666;
+    self.statusL.textColor = SXColor666666;
     
     self.nameL.font = SXFontBold18;
     self.ssidL.font = SXFont14;
@@ -57,20 +60,20 @@ static NSString *SXXiaoKiEquipmentOptionCellID = @"SXXiaoKiEquipmentOptionCellID
 - (void)setModel:(SXHomeXiaoKiModel *)model{
     _model = model;
     
-    self.nameL.text = [NSString stringWithFormat:@"名称:%@",model.name];
-    self.ssidL.text = [NSString stringWithFormat:@"%@",model.nodeId];
+    self.nameL.text = model.name;
+    self.ssidL.text = model.nodeId;
     switch (model.status.integerValue) {
         case 0:
-            self.statusL.text = [NSString stringWithFormat:@"当前状态：离线"];
+            self.statusL.text = @"离线";
             break;
         case 1:
-            self.statusL.text = [NSString stringWithFormat:@"当前状态：在线"];
+            self.statusL.text = @"在线";
             break;
         case 2:
-            self.statusL.text = [NSString stringWithFormat:@"当前状态：警告"];
+            self.statusL.text = @"警告";
             break;
         case 3:
-            self.statusL.text = [NSString stringWithFormat:@"当前状态：错误"];
+            self.statusL.text = @"错误";
             break;
         default:
             break;

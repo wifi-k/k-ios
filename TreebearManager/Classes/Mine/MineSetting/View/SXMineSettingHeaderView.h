@@ -18,7 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) void (^clickAboutUsBlock)(void);
 ///点击版本更新
 @property (nonatomic, copy) void (^clickUpdateVersionBlock)(void);
-
+///点击退出APP
+@property (nonatomic, copy) void (^clickLogoutBtnBlock)(void);
 @end
 
 NS_ASSUME_NONNULL_END

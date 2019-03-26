@@ -12,9 +12,10 @@
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView1;
 @property (weak, nonatomic) IBOutlet UIView *firstBgView;
 
-
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView2;
 @property (weak, nonatomic) IBOutlet UIView *secondBgView;
+
+@property (weak, nonatomic) IBOutlet UIButton *logoutBtn;
 @end
 
 @implementation SXMineSettingHeaderView
@@ -50,6 +51,10 @@
     
     UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickUpdateVersion)];
     [self.secondBgView addGestureRecognizer:tap2];
+    
+    self.logoutBtn.backgroundColor = SXColorWhite;
+    [self.logoutBtn setTitleColor:SXColor999999 forState:UIControlStateNormal];
+    [self.logoutBtn roundViewWithRadius:22.5f borderColor:SXColorDivideLine borderWidth: 1.0f];
 }
 
 #pragma mark -Event-
@@ -62,6 +67,12 @@
 - (void)clickUpdateVersion{
     if (self.clickUpdateVersionBlock) {
         self.clickUpdateVersionBlock();
+    }
+}
+
+- (IBAction)clickLogoutBtn:(UIButton *)sender {
+    if (self.clickLogoutBtnBlock) {
+        self.clickLogoutBtnBlock();
     }
 }
 

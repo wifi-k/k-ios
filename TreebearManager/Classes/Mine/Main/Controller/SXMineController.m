@@ -34,7 +34,7 @@
 #pragma mark -getter-
 - (NSMutableArray *)dataArray{
     if (_dataArray == nil) {
-        NSArray *array = @[@{@"name":@"我的小K",@"avatar":@"mine_xiaok_mine"},@{@"name":@"我的孩子",@"avatar":@"mine_xiaok_child"},@{@"name":@"测试使用",@"avatar":@"mine_xiaok_child"},@{@"name":@"退出登录",@"avatar":@"mine_xiaok_child"}];
+        NSArray *array = @[@{@"name":@"我的小K",@"avatar":@"mine_xiaok_mine"},@{@"name":@"我的孩子",@"avatar":@"mine_xiaok_child"},@{@"name":@"测试使用",@"avatar":@"mine_xiaok_child"}];
         _dataArray = [NSMutableArray arrayWithArray:[SXMineUserInfoModel mj_objectArrayWithKeyValuesArray:array]];
     }
     return _dataArray;
@@ -212,7 +212,7 @@
     } else if(indexPath.row == 2){
         [SXRootTool changeToHomeVC];
     } else {
-        [SXRootTool chooseRootWithLoginVC:SXDelegateWindow];
+        DLog(@"Ohters");
     }
 }
 
