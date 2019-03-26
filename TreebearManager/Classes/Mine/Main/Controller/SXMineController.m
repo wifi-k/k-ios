@@ -62,8 +62,6 @@
     [self getUserQiniuTokenData];
     
     //用户信息获取
-    [self getUserInfoData];
-    
     [self userInfoGetextData];
     
     //添加通知
@@ -143,26 +141,16 @@
 
 #pragma mark -获取用户信息(最新)-
 - (void)userInfoGetextData{
-    [SXMineNetTool userInfoGetextDataWithFilter:@1 Success:^(SXMineUserInfoResult *result) {
-        DLog(@"result:%@",result);
-    } failure:^(NSError *error) {
-        NSString *message = [error.userInfo objectForKey:@"msg"];
-        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
-    }];
-}
-
-#pragma mark -获取用户信息-
-- (void)getUserInfoData{
     WS(weakSelf);
     [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
-    [SXMineNetTool getUserInfoDataSuccess:^(SXMineUserInfoModel * _Nonnull model) {
+    [SXMineNetTool userInfoGetextDataWithFilter:@1 Success:^(SXMineUserInfoResult *result) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
-        DLog(@"model:%@",model);
+        DLog(@"result:%@",result);
         //1.单利赋值
-        SXPersonInfoModel.sharedSXPersonInfoModel.userInfo = model;
+        SXPersonInfoModel.sharedSXPersonInfoModel.result = result;
         //2.头部赋值
         [weakSelf.headerView setUpData];
-    } failure:^(NSError * _Nonnull error) {
+    } failure:^(NSError *error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];

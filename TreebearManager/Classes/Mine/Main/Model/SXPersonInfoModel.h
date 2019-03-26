@@ -7,7 +7,7 @@
 //
 
 #import "SXBaseModel.h"
-#import "SXMineUserInfoModel.h"
+#import "SXMineUserInfoResult.h"
 
 @interface SXPersonInfoModel : SXBaseModel
 
@@ -21,6 +21,6 @@ SingletonInterface(SXPersonInfoModel)
 /**
  * 个人中心用户信息
  */
-@property (nonatomic, strong) SXMineUserInfoModel *userInfo;
+@property (nonatomic, strong) SXMineUserInfoResult *result;
 
 @end

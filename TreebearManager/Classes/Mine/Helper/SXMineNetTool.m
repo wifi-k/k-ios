@@ -14,7 +14,7 @@
 + (void)userInfoGetextDataWithFilter:(NSNumber *)filter Success:(void (^)(SXMineUserInfoResult *result))success failure:(void (^)(NSError *error))failure{
     SXMineUserInfoParam *param = [SXMineUserInfoParam param];
     param.filter = filter;
-    [SXNetRequestTool POST:user_info_getext parameters:nil success:^(id response) {
+    [SXNetRequestTool POST:user_info_getext parameters:param.mj_keyValues success:^(id response) {
         
         if (![response isKindOfClass:NSDictionary.class]) return;
         
@@ -22,23 +22,6 @@
         
         if (success){
             success(result);
-        }
-    } failure:^(NSError *error) {
-        if (failure) {
-            failure(error);
-        }
-    }];
-}
-
-+ (void)getUserInfoDataSuccess:(void (^)(SXMineUserInfoModel *model))success failure:(void (^)(NSError *error))failure{
-    [SXNetRequestTool POST:user_info_get parameters:nil success:^(id response) {
-        
-        if (![response isKindOfClass:NSDictionary.class]) return;
-        
-        SXMineUserInfoModel *model = [SXMineUserInfoModel mj_objectWithKeyValues:response];
-        
-        if (success){
-            success(model);
         }
     } failure:^(NSError *error) {
         if (failure) {

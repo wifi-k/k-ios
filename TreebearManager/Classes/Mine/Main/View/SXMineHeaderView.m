@@ -48,7 +48,7 @@
 
 #pragma mark -setData-
 - (void)setUpData{
-    SXMineUserInfoModel *userInfo = SXPersonInfoModel.sharedSXPersonInfoModel.userInfo;
+    SXMineUserInfoModel *userInfo = SXPersonInfoModel.sharedSXPersonInfoModel.result.user;
     self.nameL.text = userInfo.name;
     self.mobileL.text = userInfo.mobile;
     NSString *avatar = userInfo.avatar;

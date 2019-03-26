@@ -47,7 +47,7 @@
 #pragma mark -Event-
 - (void)updateMobileData:(NSString *)mobile{
     //赋值
-    SXPersonInfoModel.sharedSXPersonInfoModel.userInfo.mobile = mobile;
+    SXPersonInfoModel.sharedSXPersonInfoModel.result.user.mobile = mobile;
     
     [SXNotificationCenterTool postNotificationUpdateMobileSuccess];
     

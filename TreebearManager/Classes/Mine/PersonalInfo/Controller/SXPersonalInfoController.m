@@ -211,16 +211,16 @@
 #pragma mark -获取用户信息-
 - (void)getUserInfoData{
     WS(weakSelf);
-    [SXMineNetTool getUserInfoDataSuccess:^(SXMineUserInfoModel * _Nonnull model) {
-        DLog(@"model:%@",model);
-        SXPersonInfoModel.sharedSXPersonInfoModel.userInfo = model;
+    [SXMineNetTool userInfoGetextDataWithFilter:@1 Success:^(SXMineUserInfoResult *result) {
+        DLog(@"result:%@",result);
+        SXPersonInfoModel.sharedSXPersonInfoModel.result = result;
         //1.更换头像
         [weakSelf.headerView setUpData];
         //2.通知上级页面更换头像
         if (weakSelf.updateAvatarImgBlock) {
             weakSelf.updateAvatarImgBlock();
         }
-    } failure:^(NSError * _Nonnull error) {
+    } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
     }];

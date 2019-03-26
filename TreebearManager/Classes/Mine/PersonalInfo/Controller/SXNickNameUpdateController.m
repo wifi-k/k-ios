@@ -69,7 +69,7 @@
     [SXMineNetTool userInfoSetParams:param.mj_keyValues Success:^{
         [MBProgressHUD showSuccessWithMessage:@"修改成功!" toView:SXKeyWindow];
         //赋值
-        SXPersonInfoModel.sharedSXPersonInfoModel.userInfo.name = weakSelf.headerView.param.name;
+        SXPersonInfoModel.sharedSXPersonInfoModel.result.user.name = weakSelf.headerView.param.name;
         
         [SXNotificationCenterTool postNotificationUdpateNickNameSuccess];
         

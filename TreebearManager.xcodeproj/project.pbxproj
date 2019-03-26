@@ -2841,12 +2841,12 @@
 			children = (
 				091BC4E2224361DC00FEBFD1 /* SXPersonInfoModel.h */,
 				091BC4E3224361DC00FEBFD1 /* SXPersonInfoModel.m */,
+				09C8CE342248F84000C03F43 /* SXMineUserInfoResult.h */,
+				09C8CE352248F84000C03F43 /* SXMineUserInfoResult.m */,
 				09D5F6022227E4DA00EA681A /* SXMineUserInfoModel.h */,
 				09D5F6032227E4DA00EA681A /* SXMineUserInfoModel.m */,
 				091BC4DF22433D9300FEBFD1 /* SXMineUserInfoParam.h */,
 				091BC4E022433D9300FEBFD1 /* SXMineUserInfoParam.m */,
-				09C8CE342248F84000C03F43 /* SXMineUserInfoResult.h */,
-				09C8CE352248F84000C03F43 /* SXMineUserInfoResult.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";

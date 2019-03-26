@@ -19,9 +19,6 @@
 ///用户信息获取(最新)
 + (void)userInfoGetextDataWithFilter:(NSNumber *)filter Success:(void (^)(SXMineUserInfoResult *result))success failure:(void (^)(NSError *error))failure;
 
-///用户信息获取 
-+ (void)getUserInfoDataSuccess:(void (^)(SXMineUserInfoModel *model))success failure:(void (^)(NSError *error))failure;
-
 ///用户获取七牛token
 + (void)getUserQiniuTokenSuccess:(void (^)(NSString *token))success failure:(void (^)(NSError *error))failure;
 

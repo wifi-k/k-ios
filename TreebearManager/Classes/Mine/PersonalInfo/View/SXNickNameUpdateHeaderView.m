@@ -49,7 +49,7 @@
 }
 
 - (void)setUpData{
-    self.nickTextField.text = SXPersonInfoModel.sharedSXPersonInfoModel.userInfo.name;
+    self.nickTextField.text = SXPersonInfoModel.sharedSXPersonInfoModel.result.user.name;
 }
 
 #pragma mark -Event-
