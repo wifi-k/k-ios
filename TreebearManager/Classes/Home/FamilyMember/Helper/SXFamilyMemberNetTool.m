@@ -101,4 +101,18 @@
     }];
 }
 
++ (void)userNodeSelectDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure{
+    
+    [SXNetRequestTool POST:user_node_select parameters:params success:^(id response) {
+        
+        if (success){
+            success();
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
 @end

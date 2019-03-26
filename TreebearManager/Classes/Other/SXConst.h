@@ -57,6 +57,8 @@ extern NSString *const user_node_family_list;
 extern NSString *const user_node_share_join;
 extern NSString *const user_node_share_quit;
 
+extern NSString *const user_node_select;
+
 @end
 
 NS_ASSUME_NONNULL_END

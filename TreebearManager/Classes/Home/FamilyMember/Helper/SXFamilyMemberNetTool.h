@@ -30,5 +30,8 @@
 ///离开共享计划
 + (void)userNodeShareQuitDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
+///用户选定节点
++ (void)userNodeSelectDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
+
 @end
 

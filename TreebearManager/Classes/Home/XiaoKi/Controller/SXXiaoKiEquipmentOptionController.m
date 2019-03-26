@@ -10,6 +10,7 @@
 #import "SXUpdateVersionController.h"
 #import "SXXiaoKiEquipmentOptionCell.h"
 #import "SXMineNetTool.h"
+#import "SXFamilyMemberNetTool.h"
 #import "SXXiaoKiOptionResult.h"
 
 @interface SXXiaoKiEquipmentOptionController ()
@@ -48,8 +49,6 @@
     SXXiaoKiParam *param = [SXXiaoKiParam param];
     param.pageNo = @1;
     param.pageSize = @10;
-    //    param.status = @1;
-    //    param.nodeId = @"123456754321";
     [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
     [SXMineNetTool userNodeListParams:param.mj_keyValues Success:^(NSArray *array) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
@@ -70,15 +69,14 @@
     self.tableView.frame = self.view.bounds;
 }
 
-#pragma mark -解绑小K-
-- (void)userNodeUnbindWithModel:(SXHomeXiaoKiModel *)model{
-    //更新wan信息
-    if ([NSString isEmpty:model.nodeId]) {
-        [MBProgressHUD showWarningWithMessage:@"没有获取到节点，请重试!" toView:SXKeyWindow];
-        return;
-    }
-    [SXMineNetTool userNodeUnbindParams:model.nodeId Success:^{
-        [MBProgressHUD showSuccessWithMessage:@"解绑成功!" toView:SXKeyWindow];
+#pragma mark -用户选定节点-
+- (void)userNodeSelectData{
+    SXXiaoKiParam *param = [SXXiaoKiParam param];
+    SXHomeXiaoKiModel *model = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel;
+    param.nodeId = model.nodeId;
+    [SXFamilyMemberNetTool userNodeSelectDataWithParams:param.mj_keyValues Success:^{
+        NSString *equipName = [NSString stringWithFormat:@"已为您切换设备:%@",model.name];
+        [MBProgressHUD showSuccessWithMessage:equipName toView:SXKeyWindow];
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
@@ -132,6 +130,10 @@
     if (self.selectOptionModelBlock) {
         self.selectOptionModelBlock();
     }
+    
+    //告诉服务端选中的模型
+    [self userNodeSelectData];
+    
     //跳转
     [self.navigationController popViewControllerAnimated:YES];
 }
