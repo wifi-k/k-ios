@@ -22,5 +22,10 @@
 + (void)addObserverUpdateMobileSuccess:(id)observer selector:(SEL)selector;
 + (void)removeObserverUpdateMobile:(id)observer;
 
+//绑定小K通知
++ (void)postNotificationBindXiaoKiSuccess;
++ (void)addObserverBindXiaoKiSuccess:(id)observer selector:(SEL)selector;
++ (void)removeObserverBindXiaoKi:(id)observer;
+
 @end
 

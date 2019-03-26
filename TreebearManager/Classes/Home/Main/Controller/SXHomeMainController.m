@@ -17,6 +17,7 @@
 #import "SXMobileDetailController.h"
 #import "SXHomeReportController.h"
 #import "SXXiaoKiEquipmentOptionController.h"
+#import "SXNetOptionController.h"
 #import "SXHomeMainHeaderView.h"
 #import "SXHomeMainSectionHeaderView.h"
 #import "SXHomeMainSectionFooterView.h"
@@ -25,6 +26,7 @@
 #import "SXHomeNetworkingDeviceCell.h"
 #import "SXInputAlertView.h"
 #import "SXRootTool.h"
+#import "SXNotificationCenterTool.h"
 
 @interface SXHomeMainController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak) SXHomeMainHeaderView *headerView;//头部视图
@@ -37,6 +39,9 @@
     [super viewDidLoad];
     
     [self setUpUI];
+    
+    //添加通知
+    [self addNotification];
 }
     
 - (void)setUpUI{
@@ -88,6 +93,21 @@
     self.tableView.frame = self.view.bounds;
 
     self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 360);
+}
+
+#pragma mark -添加移除通知-
+- (void)addNotification{
+    [SXNotificationCenterTool addObserverBindXiaoKiSuccess:self selector:@selector(bindXiaoKiSuccess)];
+}
+
+- (void)dealloc{
+    [SXNotificationCenterTool removeObserverAll:self];
+}
+
+- (void)bindXiaoKiSuccess{
+    //跳转下一个页面
+    SXNetOptionController *netVC = [[SXNetOptionController alloc] init];
+    [self.navigationController pushViewController:netVC animated:YES];
 }
 
 #pragma mark -页面跳转-

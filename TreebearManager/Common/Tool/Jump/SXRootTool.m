@@ -10,6 +10,7 @@
 #import "SXTabBarController.h"
 #import "SXNavigationController.h"
 #import "SXLoginMainController.h"
+#import "SXLoginController.h"
 
 @implementation SXRootTool
 
@@ -18,8 +19,14 @@
     window.rootViewController = tabBarVC;
 }
 
-+ (void)chooseRootWithLoginVC:(UIWindow *)window{
++ (void)chooseRootWithMainLoginVC:(UIWindow *)window{
     SXLoginMainController *loginVC = [[SXLoginMainController alloc] init];
+    SXNavigationController *naviVC = [[SXNavigationController alloc] initWithRootViewController:loginVC];
+    window.rootViewController = naviVC;
+}
+
++ (void)chooseRootWithLoginVC:(UIWindow *)window{
+    SXLoginController *loginVC = [[SXLoginController alloc] init];
     SXNavigationController *naviVC = [[SXNavigationController alloc] initWithRootViewController:loginVC];
     window.rootViewController = naviVC;
 }

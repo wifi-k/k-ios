@@ -227,6 +227,9 @@
 		09B9B88422326967000868D5 /* SXDHCPServerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B88322326967000868D5 /* SXDHCPServerHeaderView.m */; };
 		09B9B88622326974000868D5 /* SXDHCPServerHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B9B88522326974000868D5 /* SXDHCPServerHeaderView.xib */; };
 		09C8CE362248F84000C03F43 /* SXMineUserInfoResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE352248F84000C03F43 /* SXMineUserInfoResult.m */; };
+		09C8CE3A224903E600C03F43 /* SXFamilyMemberNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE39224903E600C03F43 /* SXFamilyMemberNetTool.m */; };
+		09C8CE3E2249BADA00C03F43 /* SXFamilyMemberParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE3D2249BADA00C03F43 /* SXFamilyMemberParam.m */; };
+		09C8CE412249BFEF00C03F43 /* SXFamilyMemberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE402249BFEF00C03F43 /* SXFamilyMemberModel.m */; };
 		09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */; };
 		09D5F5EA2226820000EA681A /* SXHomeMainSectionFooterView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E92226820000EA681A /* SXHomeMainSectionFooterView2.m */; };
 		09D5F5EC2226820B00EA681A /* SXHomeMainSectionFooterView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F5EB2226820B00EA681A /* SXHomeMainSectionFooterView2.xib */; };
@@ -769,6 +772,12 @@
 		09B9B88522326974000868D5 /* SXDHCPServerHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXDHCPServerHeaderView.xib; sourceTree = "<group>"; };
 		09C8CE342248F84000C03F43 /* SXMineUserInfoResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMineUserInfoResult.h; sourceTree = "<group>"; };
 		09C8CE352248F84000C03F43 /* SXMineUserInfoResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMineUserInfoResult.m; sourceTree = "<group>"; };
+		09C8CE38224903E600C03F43 /* SXFamilyMemberNetTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXFamilyMemberNetTool.h; sourceTree = "<group>"; };
+		09C8CE39224903E600C03F43 /* SXFamilyMemberNetTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXFamilyMemberNetTool.m; sourceTree = "<group>"; };
+		09C8CE3C2249BADA00C03F43 /* SXFamilyMemberParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXFamilyMemberParam.h; sourceTree = "<group>"; };
+		09C8CE3D2249BADA00C03F43 /* SXFamilyMemberParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXFamilyMemberParam.m; sourceTree = "<group>"; };
+		09C8CE3F2249BFEF00C03F43 /* SXFamilyMemberModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXFamilyMemberModel.h; sourceTree = "<group>"; };
+		09C8CE402249BFEF00C03F43 /* SXFamilyMemberModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXFamilyMemberModel.m; sourceTree = "<group>"; };
 		09D5F5E0222678C000EA681A /* SXHomeMainSectionHeaderView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionHeaderView2.h; sourceTree = "<group>"; };
 		09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSectionHeaderView2.m; sourceTree = "<group>"; };
 		09D5F5E82226820000EA681A /* SXHomeMainSectionFooterView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionFooterView2.h; sourceTree = "<group>"; };
@@ -2027,6 +2036,26 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		09C8CE37224903AB00C03F43 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				09C8CE38224903E600C03F43 /* SXFamilyMemberNetTool.h */,
+				09C8CE39224903E600C03F43 /* SXFamilyMemberNetTool.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		09C8CE3B2249BAC300C03F43 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				09C8CE3C2249BADA00C03F43 /* SXFamilyMemberParam.h */,
+				09C8CE3D2249BADA00C03F43 /* SXFamilyMemberParam.m */,
+				09C8CE3F2249BFEF00C03F43 /* SXFamilyMemberModel.h */,
+				09C8CE402249BFEF00C03F43 /* SXFamilyMemberModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		09D5F5F22226B69F00EA681A /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
@@ -2309,6 +2338,8 @@
 		09F2333F222538C10086AB35 /* FamilyMember */ = {
 			isa = PBXGroup;
 			children = (
+				09C8CE37224903AB00C03F43 /* Helper */,
+				09C8CE3B2249BAC300C03F43 /* Model */,
 				09F23340222538C10086AB35 /* Controller */,
 				09F23341222538C10086AB35 /* View */,
 			);
@@ -3633,6 +3664,7 @@
 				09D5F5EA2226820000EA681A /* SXHomeMainSectionFooterView2.m in Sources */,
 				091BC4C52242207100FEBFD1 /* PYAssetListViewConfiguration.m in Sources */,
 				0936B721223928C200E68C4C /* SXPersonalInfoController.m in Sources */,
+				09C8CE3A224903E600C03F43 /* SXFamilyMemberNetTool.m in Sources */,
 				091BC4CB2242207100FEBFD1 /* PYImageBrowserViewControllerConfiguration.m in Sources */,
 				0900F520222D50DD00250155 /* SXNetBroadbandHeaderView.m in Sources */,
 				09B9B8252230EC8D000868D5 /* SXLANPortController.m in Sources */,
@@ -3684,6 +3716,7 @@
 				09D5F685222D247200EA681A /* SXNetOptionFooterView.m in Sources */,
 				09B9B7BF222FC584000868D5 /* SXAddXiaokiNetTool.m in Sources */,
 				09B9B7A2222E5488000868D5 /* XKNetRequestTool.m in Sources */,
+				09C8CE3E2249BADA00C03F43 /* SXFamilyMemberParam.m in Sources */,
 				09B9B82B2230ECD3000868D5 /* SXPreventController.m in Sources */,
 				09462B282238F6170063F67E /* SXMineVersionUpdateController.m in Sources */,
 				09D5F66E222BC2B900EA681A /* SXAddXiaoKiHeaderView.m in Sources */,
@@ -3703,6 +3736,7 @@
 				092D6D202202E70300538AC8 /* SXForgetConfirmHeaderView.m in Sources */,
 				09D5F646222A615300EA681A /* SXForbiddenAppOptionController.m in Sources */,
 				09D5F673222BC4D200EA681A /* SXNetOptionController.m in Sources */,
+				09C8CE412249BFEF00C03F43 /* SXFamilyMemberModel.m in Sources */,
 				09D5F681222D23C900EA681A /* SXNetOptionCell.m in Sources */,
 				B3AF303921FE9657001E4E67 /* SXBaseCustomTablePlainRrfreshController.m in Sources */,
 				09B9B8222230EC6E000868D5 /* SXDHCPServerController.m in Sources */,

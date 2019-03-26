@@ -7,7 +7,6 @@
 //
 
 #import "SXAddXiaoKiController.h"
-#import "SXNetOptionController.h"
 #import "SXAddXiaoKiHeaderView.h"
 #import "SXSingleAlertView.h"
 #import "SXTitleAlertView.h"
@@ -18,6 +17,7 @@
 #import "SXXiaoKInfoModel.h"
 #import "SXNetReachablityTool.h"
 #import "SXMineNetTool.h"
+#import "SXNotificationCenterTool.h"
 
 @interface SXAddXiaoKiController ()
 ///头部视图
@@ -149,11 +149,18 @@
         [MBProgressHUD showWarningWithMessage:@"没有获取到节点，请重试!" toView:SXKeyWindow];
         return;
     }
-    WS(weakSelf);
     [SXMineNetTool userNodeBindParams:shareInfo.modelId Success:^{
+        //提示
         [MBProgressHUD showSuccessWithMessage:@"绑定成功!" toView:SXKeyWindow];
-        SXNetOptionController *netVC = [[SXNetOptionController alloc] init];
-        [weakSelf.navigationController pushViewController:netVC animated:YES];
+        
+        //切换根控
+        [SXRootTool changeToMainHomeVC];
+        
+        //通知绑定成功
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [SXNotificationCenterTool postNotificationBindXiaoKiSuccess];
+        });
+        
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];

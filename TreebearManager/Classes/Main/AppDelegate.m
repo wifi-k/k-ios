@@ -27,7 +27,7 @@
     [self.window makeKeyAndVisible];
     //选择根控制器
 //    [SXRootTool chooseRootWithTabBarVC:self.window];
-    [SXRootTool chooseRootWithLoginVC:self.window];
+    [SXRootTool chooseRootWithMainLoginVC:self.window];
     
     //监听网络状态
     [self reachablityStatus];

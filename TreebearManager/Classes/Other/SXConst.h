@@ -49,6 +49,13 @@ extern NSString *const user_node_unbind;
 extern NSString *const user_node_list;
 extern NSString *const user_node_info_set;
 extern NSString *const user_info_getext;
+extern NSString *const user_node_family_join;
+
+extern NSString *const user_node_family_set;
+extern NSString *const user_node_family_quit;
+extern NSString *const user_node_family_list;
+extern NSString *const user_node_share_join;
+extern NSString *const user_node_share_quit;
 
 @end
 

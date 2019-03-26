@@ -17,6 +17,8 @@
 @interface SXNetOptionController ()
 ///模型数组
 @property (nonatomic, strong) NSMutableArray *dataArray;
+///底部视图
+@property (nonatomic, weak) SXNetOptionFooterView *footerView;
 @end
 
 @implementation SXNetOptionController
@@ -80,6 +82,7 @@
     };
     [self.tableView.tableFooterView addSubview:footerView];
     footerView.frame = self.tableView.tableFooterView.bounds;
+    self.footerView = footerView;
 }
 
 #pragma mark -跳转网络连接页面-
@@ -106,13 +109,16 @@
 
 #pragma mark -查询网络状态-
 - (void)networkStatusData{
+    [self.footerView setBtnEnabled:NO];
     WS(weakSelf);
     static NSInteger count = 0;
     [SXAddXiaokiNetTool networkStatusWithDataSuccess:^{
+        [weakSelf.footerView setBtnEnabled:YES];
         DLog(@"网络状态正常");
         SXDynamicController *broadVC = [[SXDynamicController alloc] init];
         [weakSelf.navigationController pushViewController:broadVC animated:YES];
     } failure:^(NSError * _Nonnull error) {
+        [weakSelf.footerView setBtnEnabled:NO];
         ++count;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             //递归方法
@@ -156,6 +162,9 @@
     
     //刷新数组
     [self.tableView reloadData];
+    
+    //按钮可点击
+    [self.footerView setBtnEnabled:YES];
 }
 
 @end

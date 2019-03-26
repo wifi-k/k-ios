@@ -37,6 +37,11 @@
     [self.nextBtn roundViewWithRadius:6.0f];
 }
 
+#pragma mark -setter-
+- (void)setBtnEnabled:(BOOL)enabled{
+    self.nextBtn.enabled = enabled;
+}
+
 #pragma mark -点击事件-
 - (IBAction)clickNextBtn:(UIButton *)sender {
     for (SXNetOptionModel *model in self.dataArray) {

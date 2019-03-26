@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)footerView;
 
+- (void)setBtnEnabled:(BOOL)enabled;
+
 ///模型数组
 @property (nonatomic, strong) NSArray *dataArray;
 

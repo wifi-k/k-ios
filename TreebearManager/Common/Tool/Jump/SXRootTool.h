@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark -根控制器切换-
 + (void)chooseRootWithTabBarVC:(UIWindow *)window;
 
++ (void)chooseRootWithMainLoginVC:(UIWindow *)window;
+
 + (void)chooseRootWithLoginVC:(UIWindow *)window;
 
 + (UIViewController *)topViewController;

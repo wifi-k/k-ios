@@ -48,5 +48,13 @@ NSString *const user_node_unbind = @"user/node/unbind";
 NSString *const user_node_list = @"user/node/list";
 NSString *const user_node_info_set = @"user/node/info/set";
 NSString *const user_info_getext = @"user/info/getext";
+NSString *const user_node_family_join = @"user/node/family/join";
+
+NSString *const user_node_family_set = @"user/node/family/set";
+NSString *const user_node_family_quit = @"user/node/family/quit";
+NSString *const user_node_family_list = @"user/node/family/list";
+NSString *const user_node_share_join = @"user/node/share/join";
+NSString *const user_node_share_quit = @"user/node/share/quit";
+
 
 @end
