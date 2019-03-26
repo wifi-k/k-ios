@@ -460,6 +460,31 @@ SOFTWARE.
 
 
 
+## UMCAnalytics
+
+Copyright 2011 - 2019 umeng.com. All rights reserved.
+
+
+## UMCCommon
+
+Copyright 2011 - 2019 umeng.com. All rights reserved.
+
+
+## UMCErrorCatch
+
+Copyright 2011 - 2018 umeng.com. All rights reserved.
+
+
+## UMCPush
+
+Copyright 2011 - 2018 umeng.com. All rights reserved.
+
+
+## UMCSecurityPlugins
+
+Copyright 2011 - 2018 umeng.com. All rights reserved.
+
+
 ## WYChart
 
 Copyright (c) 2016 Ying Wang<GeorgeWang003@gmail.com>.

@@ -27,7 +27,7 @@ PODS:
   - Masonry (1.1.0)
   - MBProgressHUD (1.0.0)
   - MJExtension (3.0.15.1)
-  - MJRefresh (3.1.15.7)
+  - MJRefresh (3.1.16)
   - Qiniu (7.2.5):
     - HappyDNS (~> 0.3)
   - RKNotificationHub (2.0.5)
@@ -39,6 +39,14 @@ PODS:
   - SDWebImage/Core (4.1.2)
   - SVProgressHUD (2.0.3)
   - TZImagePickerController (3.2.0)
+  - UMCAnalytics (6.0.3):
+    - UMCCommon
+  - UMCCommon (2.0.1)
+  - UMCErrorCatch (1.0.0):
+    - UMCCommon
+  - UMCPush (3.2.4):
+    - UMCCommon
+  - UMCSecurityPlugins (1.0.6)
   - WYChart (0.3.1)
 
 DEPENDENCIES:
@@ -61,6 +69,11 @@ DEPENDENCIES:
   - SDWebImage (~> 4.1.0)
   - SVProgressHUD (= 2.0.3)
   - TZImagePickerController
+  - UMCAnalytics
+  - UMCCommon
+  - UMCErrorCatch
+  - UMCPush
+  - UMCSecurityPlugins
   - WYChart
 
 SPEC REPOS:
@@ -85,6 +98,11 @@ SPEC REPOS:
     - SDWebImage
     - SVProgressHUD
     - TZImagePickerController
+    - UMCAnalytics
+    - UMCCommon
+    - UMCErrorCatch
+    - UMCPush
+    - UMCSecurityPlugins
     - WYChart
 
 SPEC CHECKSUMS:
@@ -100,7 +118,7 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
-  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  MJRefresh: 7798e16e53a5ef7f332dd05b27664db4e29530fd
   Qiniu: 909b408ee489ea54827e9717be90b94bc9dfbc48
   RKNotificationHub: e926748820d719f21ff374657a47fceefa1796b4
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
@@ -108,8 +126,13 @@ SPEC CHECKSUMS:
   SDWebImage: cb6f9f266a9977741efcbc21e618e8be3734c774
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   TZImagePickerController: 7850b158d025065b162a1a963d445040b828abc9
+  UMCAnalytics: ff58714ada407682c4a07548156f94bcec92f055
+  UMCCommon: 0263a057a2e1ae1da4c8308541e56904a493ce13
+  UMCErrorCatch: 51f1b68f920233e90a3fa6d51f0456174507ec78
+  UMCPush: 1edd856027dcf905333effb4040ace5d236a7316
+  UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
   WYChart: 7523ef7395b4f4c8c88415bf0dd4f8d27a7757ce
 
-PODFILE CHECKSUM: e31d0452516ad6dd493b93069f24da25a438a1f8
+PODFILE CHECKSUM: cf18e9b9a20c940482346b813d1b63d46db65f14
 
 COCOAPODS: 1.5.3
