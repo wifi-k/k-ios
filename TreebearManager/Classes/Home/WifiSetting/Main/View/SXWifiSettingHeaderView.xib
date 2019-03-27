@@ -40,7 +40,9 @@
                                 <constraint firstAttribute="height" constant="30" id="KKl-Ds-4H4"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <state key="normal" title="编辑"/>
+                            <state key="normal" title="编辑">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
                             <connections>
                                 <action selector="clickNameBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Kfl-1g-coK"/>
                             </connections>
