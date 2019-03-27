@@ -22,19 +22,26 @@
 @property (nonatomic, weak) SXHealtyControlFooterView *footerView;
 
 ///数据源
-@property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) SXHealtyControlResult *result;
+@property (nonatomic, strong) NSMutableArray *timers;
 @end
 
 @implementation SXHealtyControlController
 
 #pragma mark -getter-
-- (NSMutableArray *)dataArray{
-    if (_dataArray == nil) {
-        _dataArray = [NSMutableArray array];
-//        NSArray *array = @[@{@"freq":@0,@"rssi":@5,@"timer":@[@{@"startTime":@"00:00",@"endTime":@"00:01"},@{@"startTime":@"00:01",@"endTime":@"00:02"}]}];
-//        _dataArray = [NSMutableArray arrayWithArray:[SXHealtyControlModel mj_objectArrayWithKeyValuesArray:array]];
+- (SXHealtyControlResult *)result{
+    if (_result == nil) {
+        _result = [[SXHealtyControlResult alloc] init];
+//        _result.wifi = @[@{@"freq":@0,@"rssi":@5,@"timer":@[@{@"startTime":@"00:00",@"endTime":@"00:01"},@{@"startTime":@"00:01",@"endTime":@"00:02"}]}];
     }
-    return _dataArray;
+    return _result;
+}
+
+- (NSMutableArray *)timers{
+    if (_timers == nil) {
+        _timers = [NSMutableArray array];
+    }
+    return _timers;
 }
 
 - (void)viewDidLoad {
@@ -99,7 +106,11 @@
         //赋值视图
         weakSelf.headerView.op = result.op;
         //赋值
-        weakSelf.dataArray = [NSMutableArray arrayWithArray:result.wifi];
+        weakSelf.result = result;
+        //添加
+        SXHealtyControlModel *model = [result.wifi firstObject];
+        weakSelf.timers = [NSMutableArray arrayWithArray:model.timer];
+        //刷新UI
         [weakSelf.tableView reloadData];
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
@@ -113,9 +124,9 @@
     SXHealtyControlParam *param = [SXHealtyControlParam param];
     param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
     param.op = [self.headerView isSwitchOn];
-    if (self.dataArray.count) {
-        param.wifi = [self.dataArray yy_modelToJSONString];
-    }
+    SXHealtyControlModel *model = [self.result.wifi firstObject];
+    model.timer = [self.timers copy];
+    param.wifi = [self.result.wifi yy_modelToJSONString];
     [SXHealtyModeNetTool userNodeWifiTimerSetDataWithParams:param.mj_keyValues Success:^{
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         [MBProgressHUD showMessage:@"保存成功!" toView:self.view];
@@ -134,9 +145,8 @@
     timeVC.model = model;
     timeVC.selectTimeOptionBlock = ^(SXHealtyControlTimeModel * _Nonnull model) {
         if (isAdd) {
-            SXHealtyControlModel *result = [[SXHealtyControlModel alloc] init];
-            result.timer = @[model];
-            [weakSelf.dataArray addObject:result];
+            //添加
+            [weakSelf.timers addObject:model];
         }
         [weakSelf.tableView reloadData];
     };
@@ -144,21 +154,15 @@
 }
 
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.dataArray.count;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    SXHealtyControlModel *model = self.dataArray[section];
-    return model.timer.count;
+    return self.timers.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     WS(weakSelf);
     SXHealtyControlCell *cell = [SXHealtyControlCell cellWithTableView:tableView];
-    SXHealtyControlModel *model = self.dataArray[indexPath.section];
-    SXHealtyControlTimeModel *timeModel = model.timer[indexPath.row];
+    SXHealtyControlTimeModel *timeModel = self.timers[indexPath.row];
     cell.model = timeModel;
     cell.clickEditBtnBlock = ^(SXHealtyControlTimeModel * _Nonnull model) {
         [weakSelf jumpToTimeVC:model];
@@ -191,13 +195,11 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        SXHealtyControlModel *model = self.dataArray[indexPath.section];
-//        SXHealtyControlTimeModel *timeModel = model.timer[indexPath.row];
-        
-//        [self.dataArray removeObjectAtIndex:indexPath.row];
+        DLog(@"self.timers:%ld",self.timers.count);
+        [self.timers removeObjectAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        DLog(@"self.timers:%ld",self.timers.count);
     }
 }
-
-
 
 @end
