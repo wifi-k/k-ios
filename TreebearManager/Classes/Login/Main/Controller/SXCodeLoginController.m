@@ -52,7 +52,7 @@
 //提示跳转注册弹窗
 - (void)alertRegistView{
     WS(weakSelf);
-    SXLoginRegistAlertView *registAlertView = [SXLoginRegistAlertView alertWithTitle:@"提示" content:@"该手机号已注册，请立即登录" confirmStr:@"确定" cancelStr:@"取消"];
+    SXLoginRegistAlertView *registAlertView = [SXLoginRegistAlertView alertWithTitle:@"提示" content:@"该手机号未注册，请立即注册" confirmStr:@"立即注册" cancelStr:@"取消"];
     registAlertView.confirmButtonBlock = ^{
         [weakSelf jumpToRegistVC];
     };
@@ -68,8 +68,13 @@
     [SXLoginNetTool loginWithVCodeDataWithParams:param.mj_keyValues Success:^{
         [weakSelf changeRootVC];
     } failure:^(NSError * _Nonnull error) {
-        NSString *message = [error.userInfo objectForKey:@"msg"];
-        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        if (error.code == 10) {//该手机号未注册，请立即注册
+            [weakSelf.view endEditing:YES];
+            [weakSelf alertRegistView];
+        } else{
+            NSString *message = [error.userInfo objectForKey:@"msg"];
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        }
     }];
 }
 
