@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSNumber *op;
 ///不传时表示无任何任何配置 此时op=0
 @property (nonatomic, copy) NSArray *wifi;
+//@property (nonatomic, copy) NSString *wifi;
 
 @end
 

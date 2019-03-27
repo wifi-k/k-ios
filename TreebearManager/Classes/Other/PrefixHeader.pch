@@ -21,6 +21,7 @@
 /** pod三方 */
 #import <Masonry/Masonry.h>
 #import <MJExtension/MJExtension.h>
+#import <YYModel/YYModel.h>
 #import <SDWebImage/UIImage+GIF.h>
 #import <SDWebImage/UIButton+WebCache.h>
 #import <SDWebImage/UIImageView+WebCache.h>

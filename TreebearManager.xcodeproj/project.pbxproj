@@ -234,6 +234,8 @@
 		09C8CE48224B246500C03F43 /* SXHealtyModeNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE47224B246500C03F43 /* SXHealtyModeNetTool.m */; };
 		09C8CE4B224B25B600C03F43 /* SXHealtyControlResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE4A224B25B600C03F43 /* SXHealtyControlResult.m */; };
 		09C8CE4E224B281700C03F43 /* SXHealtyControlParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE4D224B281700C03F43 /* SXHealtyControlParam.m */; };
+		09C8CE51224B7BC300C03F43 /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE50224B7BC300C03F43 /* NSArray+Extension.m */; };
+		09C8CE54224B7D1F00C03F43 /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE53224B7D1F00C03F43 /* NSDictionary+Extension.m */; };
 		09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */; };
 		09D5F5EA2226820000EA681A /* SXHomeMainSectionFooterView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E92226820000EA681A /* SXHomeMainSectionFooterView2.m */; };
 		09D5F5EC2226820B00EA681A /* SXHomeMainSectionFooterView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F5EB2226820B00EA681A /* SXHomeMainSectionFooterView2.xib */; };
@@ -790,6 +792,10 @@
 		09C8CE4A224B25B600C03F43 /* SXHealtyControlResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHealtyControlResult.m; sourceTree = "<group>"; };
 		09C8CE4C224B281700C03F43 /* SXHealtyControlParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHealtyControlParam.h; sourceTree = "<group>"; };
 		09C8CE4D224B281700C03F43 /* SXHealtyControlParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHealtyControlParam.m; sourceTree = "<group>"; };
+		09C8CE4F224B7BC300C03F43 /* NSArray+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extension.h"; sourceTree = "<group>"; };
+		09C8CE50224B7BC300C03F43 /* NSArray+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extension.m"; sourceTree = "<group>"; };
+		09C8CE52224B7D1F00C03F43 /* NSDictionary+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extension.h"; sourceTree = "<group>"; };
+		09C8CE53224B7D1F00C03F43 /* NSDictionary+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
 		09D5F5E0222678C000EA681A /* SXHomeMainSectionHeaderView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionHeaderView2.h; sourceTree = "<group>"; };
 		09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSectionHeaderView2.m; sourceTree = "<group>"; };
 		09D5F5E82226820000EA681A /* SXHomeMainSectionFooterView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionFooterView2.h; sourceTree = "<group>"; };
@@ -2721,6 +2727,10 @@
 				B348F9A721F71A680000F194 /* UIView+Extension.m */,
 				B348F9A521F71A680000F194 /* UIView+Frame.h */,
 				B348F99E21F71A670000F194 /* UIView+Frame.m */,
+				09C8CE4F224B7BC300C03F43 /* NSArray+Extension.h */,
+				09C8CE50224B7BC300C03F43 /* NSArray+Extension.m */,
+				09C8CE52224B7D1F00C03F43 /* NSDictionary+Extension.h */,
+				09C8CE53224B7D1F00C03F43 /* NSDictionary+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -3532,6 +3542,7 @@
 				09B9B7A5222E555A000868D5 /* XKNetReachablityTool.m in Sources */,
 				092D6D082202AC3200538AC8 /* SXHomeMainController.m in Sources */,
 				09B9B7E12230C64E000868D5 /* SXHomeMobileModel.m in Sources */,
+				09C8CE54224B7D1F00C03F43 /* NSDictionary+Extension.m in Sources */,
 				091BC4D12242207100FEBFD1 /* RunloopManager.m in Sources */,
 				09B9B7AD222E667B000868D5 /* XKGetWifiNetTool.m in Sources */,
 				09D5F6322229298500EA681A /* SXForbiddenAppCell.m in Sources */,
@@ -3545,6 +3556,7 @@
 				09F76F2D2244D64A008A9048 /* SXHomeXiaoKiModel.m in Sources */,
 				B348F96121F6C50C0000F194 /* SXRootTool.m in Sources */,
 				091BC4802241010D00FEBFD1 /* SXXiaoKNodeResult.m in Sources */,
+				09C8CE51224B7BC300C03F43 /* NSArray+Extension.m in Sources */,
 				09118704221522BF00938D9F /* GACConnectConfig.m in Sources */,
 				09462B182238F10A0063F67E /* SXMineSettingController.m in Sources */,
 				B3AF300521FB092F001E4E67 /* SXBasePageParam.m in Sources */,

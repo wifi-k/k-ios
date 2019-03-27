@@ -135,8 +135,10 @@ static const char MJCachedPropertiesKey = '\0';
 + (void)mj_enumerateProperties:(MJPropertiesEnumeration)enumeration
 {
     // 获得成员变量
+    MJExtensionSemaphoreCreate
+    MJExtensionSemaphoreWait
     NSArray *cachedProperties = [self properties];
-    
+    MJExtensionSemaphoreSignal
     // 遍历成员变量
     BOOL stop = NO;
     for (MJProperty *property in cachedProperties) {
@@ -149,11 +151,8 @@ static const char MJCachedPropertiesKey = '\0';
 + (NSMutableArray *)properties
 {
     NSMutableArray *cachedProperties = [self propertyDictForKey:&MJCachedPropertiesKey][NSStringFromClass(self)];
-    
     if (cachedProperties == nil) {
-        MJExtensionSemaphoreCreate
-        MJExtensionSemaphoreWait
-        
+    
         if (cachedProperties == nil) {
             cachedProperties = [NSMutableArray array];
             
@@ -179,8 +178,6 @@ static const char MJCachedPropertiesKey = '\0';
             
             [self propertyDictForKey:&MJCachedPropertiesKey][NSStringFromClass(self)] = cachedProperties;
         }
-        
-        MJExtensionSemaphoreSignal
     }
     
     return cachedProperties;
@@ -199,7 +196,7 @@ static const char MJCachedPropertiesKey = '\0';
     }
     // 兼容旧版本
     if ([self respondsToSelector:@selector(newValueFromOldValue:property:)]) {
-        return [self performSelector:@selector(newValueFromOldValue:property:)  withObject:oldValue  withObject:property];
+        return [self performSelector:@selector(newValueFromOldValue:property:) withObject:oldValue withObject:property];
     }
     
     // 查看静态设置

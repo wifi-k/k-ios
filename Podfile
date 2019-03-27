@@ -21,6 +21,7 @@ target 'TreebearManager' do #工程名称
     pod 'RKNotificationHub'
     pod 'WYChart'
     pod 'Qiniu', '~> 7.1'
+    pod 'YYModel'
     pod 'UMCCommon'
     pod 'UMCSecurityPlugins'
     pod 'UMCAnalytics'

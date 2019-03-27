@@ -13,6 +13,7 @@
 #import "SXHealtyControlCell.h"
 #import "SXHealtyModeNetTool.h"
 #import "SXXiaoKInfoModel.h"
+#import "NSArray+Extension.h"
 
 @interface SXHealtyControlController ()
 ///头部视图
@@ -29,9 +30,9 @@
 #pragma mark -getter-
 - (NSMutableArray *)dataArray{
     if (_dataArray == nil) {
-        //NSArray *array = @[@{@"freq":@0,@"rssi":@5,@"timer":@[@{@"startTime":@"00:00",@"endTime":@"00:01"},@{@"startTime":@"00:01",@"endTime":@"00:02"}]},@{@"freq":@1,@"rssi":@5,@"timer":@[@{@"startTime":@"00:04",@"endTime":@"00:05"}]}];
-        NSArray *array = @[@{@"freq":@0,@"rssi":@5,@"timer":@[@{@"startTime":@"00:00",@"endTime":@"00:01"},@{@"startTime":@"00:01",@"endTime":@"00:02"}]}];
-        _dataArray = [NSMutableArray arrayWithArray:[SXHealtyControlModel mj_objectArrayWithKeyValuesArray:array]];
+        _dataArray = [NSMutableArray array];
+//        NSArray *array = @[@{@"freq":@0,@"rssi":@5,@"timer":@[@{@"startTime":@"00:00",@"endTime":@"00:01"},@{@"startTime":@"00:01",@"endTime":@"00:02"}]}];
+//        _dataArray = [NSMutableArray arrayWithArray:[SXHealtyControlModel mj_objectArrayWithKeyValuesArray:array]];
     }
     return _dataArray;
 }
@@ -97,6 +98,9 @@
         DLog(@"result:%@",result);
         //赋值视图
         weakSelf.headerView.op = result.op;
+        //赋值
+        weakSelf.dataArray = [NSMutableArray arrayWithArray:result.wifi];
+        [weakSelf.tableView reloadData];
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
@@ -110,9 +114,8 @@
     param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
     param.op = [self.headerView isSwitchOn];
     if (self.dataArray.count) {
-        param.wifi = [self.dataArray copy];
+        param.wifi = [self.dataArray yy_modelToJSONString];
     }
-    
     [SXHealtyModeNetTool userNodeWifiTimerSetDataWithParams:param.mj_keyValues Success:^{
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         [MBProgressHUD showMessage:@"保存成功!" toView:self.view];
@@ -131,7 +134,9 @@
     timeVC.model = model;
     timeVC.selectTimeOptionBlock = ^(SXHealtyControlTimeModel * _Nonnull model) {
         if (isAdd) {
-            [weakSelf.dataArray addObject:model];
+            SXHealtyControlModel *result = [[SXHealtyControlModel alloc] init];
+            result.timer = @[model];
+            [weakSelf.dataArray addObject:result];
         }
         [weakSelf.tableView reloadData];
     };
@@ -170,5 +175,29 @@
     
     
 }
+
+#pragma mark -添加滑动删除-
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"删除";
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        SXHealtyControlModel *model = self.dataArray[indexPath.section];
+//        SXHealtyControlTimeModel *timeModel = model.timer[indexPath.row];
+        
+//        [self.dataArray removeObjectAtIndex:indexPath.row];
+    }
+}
+
+
 
 @end
