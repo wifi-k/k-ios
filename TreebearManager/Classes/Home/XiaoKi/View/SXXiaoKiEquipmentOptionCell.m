@@ -60,6 +60,7 @@ static NSString *SXXiaoKiEquipmentOptionCellID = @"SXXiaoKiEquipmentOptionCellID
 - (void)setModel:(SXHomeXiaoKiModel *)model{
     _model = model;
     
+    self.checkImageView.hidden = !model.isSelect.boolValue;
     self.nameL.text = model.name;
     self.ssidL.text = model.nodeId;
     switch (model.status.integerValue) {

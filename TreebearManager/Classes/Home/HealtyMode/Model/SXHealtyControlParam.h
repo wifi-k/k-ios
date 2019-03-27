@@ -7,6 +7,7 @@
 //
 
 #import "SXBaseParam.h"
+#import "SXHealtyControlModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 ///开关 1-开启 0-关闭
 @property (nonatomic, copy) NSNumber *op;
 ///不传时表示无任何任何配置 此时op=0
-@property (nonatomic, copy) NSString *wifi;
+@property (nonatomic, copy) NSArray *wifi;
 
 @end
 

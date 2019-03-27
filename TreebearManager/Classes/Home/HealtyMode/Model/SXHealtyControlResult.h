@@ -22,7 +22,7 @@
 ///是否删除
 @property (nonatomic, copy) NSString *isDelete;
 ///数组
-@property (nonatomic, strong) SXHealtyControlModel *wifi;
+@property (nonatomic, copy) NSArray *wifi;
 
 @end
 

@@ -26,6 +26,8 @@
 @property (nonatomic, copy) NSString *bindTime;
 ///:1-加入共享
 @property (nonatomic, copy) NSNumber *isShare;
+///是否选中
+@property (nonatomic, copy) NSNumber *isSelect;
 ///固件升级版本号 firmwareUpgrade可能为空
 @property (nonatomic, copy) NSString *firmwareUpgrade;
 

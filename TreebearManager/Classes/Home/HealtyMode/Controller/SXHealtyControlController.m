@@ -29,9 +29,9 @@
 #pragma mark -getter-
 - (NSMutableArray *)dataArray{
     if (_dataArray == nil) {
-        NSArray *array = @[@{@"startTime":@"00:00",@"endTime":@"00:01"},
-                           @{@"startTime":@"00:01",@"endTime":@"00:02"}];
-        _dataArray = [NSMutableArray arrayWithArray:[SXHealtyControlTimeModel mj_objectArrayWithKeyValuesArray:array]];
+        //NSArray *array = @[@{@"freq":@0,@"rssi":@5,@"timer":@[@{@"startTime":@"00:00",@"endTime":@"00:01"},@{@"startTime":@"00:01",@"endTime":@"00:02"}]},@{@"freq":@1,@"rssi":@5,@"timer":@[@{@"startTime":@"00:04",@"endTime":@"00:05"}]}];
+        NSArray *array = @[@{@"freq":@0,@"rssi":@5,@"timer":@[@{@"startTime":@"00:00",@"endTime":@"00:01"},@{@"startTime":@"00:01",@"endTime":@"00:02"}]}];
+        _dataArray = [NSMutableArray arrayWithArray:[SXHealtyControlModel mj_objectArrayWithKeyValuesArray:array]];
     }
     return _dataArray;
 }
@@ -109,7 +109,10 @@
     SXHealtyControlParam *param = [SXHealtyControlParam param];
     param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
     param.op = [self.headerView isSwitchOn];
-//    param.wifi = @"";
+    if (self.dataArray.count) {
+        param.wifi = [self.dataArray copy];
+    }
+    
     [SXHealtyModeNetTool userNodeWifiTimerSetDataWithParams:param.mj_keyValues Success:^{
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         [MBProgressHUD showMessage:@"保存成功!" toView:self.view];
@@ -136,16 +139,22 @@
 }
 
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return self.dataArray.count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    SXHealtyControlModel *model = self.dataArray[section];
+    return model.timer.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     WS(weakSelf);
     SXHealtyControlCell *cell = [SXHealtyControlCell cellWithTableView:tableView];
-    SXHealtyControlTimeModel *model = self.dataArray[indexPath.row];
-    cell.model = model;
+    SXHealtyControlModel *model = self.dataArray[indexPath.section];
+    SXHealtyControlTimeModel *timeModel = model.timer[indexPath.row];
+    cell.model = timeModel;
     cell.clickEditBtnBlock = ^(SXHealtyControlTimeModel * _Nonnull model) {
         [weakSelf jumpToTimeVC:model];
     };
@@ -159,7 +168,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-
+    
 }
 
 @end

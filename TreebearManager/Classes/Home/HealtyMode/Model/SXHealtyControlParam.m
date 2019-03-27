@@ -10,4 +10,8 @@
 
 @implementation SXHealtyControlParam
 
++ (NSDictionary *)mj_objectClassInArray{
+    return @{@"wifi":SXHealtyControlModel.class};
+}
+
 @end

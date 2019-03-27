@@ -9,5 +9,7 @@
 #import "SXHealtyControlResult.h"
 
 @implementation SXHealtyControlResult
-
++ (NSDictionary *)mj_objectClassInArray{
+    return @{@"wifi":SXHealtyControlModel.class};
+}
 @end

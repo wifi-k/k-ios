@@ -51,7 +51,8 @@
     param.pageSize = @10;
     [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
 //    SXMineNetTool userNodeListallParams
-    [SXMineNetTool userNodeListParams:param.mj_keyValues Success:^(NSArray *array) {
+//    SXMineNetTool userNodeListParams
+    [SXMineNetTool userNodeListallParams:param.mj_keyValues Success:^(NSArray *array) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         //数据初始化
         weakSelf.dataArray = [NSMutableArray arrayWithArray:array];
