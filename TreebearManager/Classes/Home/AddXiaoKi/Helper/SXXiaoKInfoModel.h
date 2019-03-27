@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SXXiaoKNodeResult.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -33,6 +34,8 @@ SingletonInterface(SXXiaoKInfoModel)
 @property (nonatomic, copy) NSString *name;
 ///账号密码
 @property (nonatomic, copy) NSString *passwd;
+
+- (instancetype)setDataWithResult:(SXXiaoKNodeResult *)result;
 
 @end
 

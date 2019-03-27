@@ -7,8 +7,7 @@
 //
 
 #import "SXBaseModel.h"
-
-NS_ASSUME_NONNULL_BEGIN
+#import "SXHealtyControlModel.h"
 
 @interface SXHealtyControlResult : SXBaseModel
 
@@ -16,9 +15,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *nodeId;
 ///开关
 @property (nonatomic, copy) NSString *op;
+///创建时间
+@property (nonatomic, copy) NSString *createTime;
+///更新时间
+@property (nonatomic, copy) NSString *updateTime;
+///是否删除
+@property (nonatomic, copy) NSString *isDelete;
 ///数组
-@property (nonatomic, copy) id wifi;
+@property (nonatomic, strong) SXHealtyControlModel *wifi;
 
 @end
 
-NS_ASSUME_NONNULL_END

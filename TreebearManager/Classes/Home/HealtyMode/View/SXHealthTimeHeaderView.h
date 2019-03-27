@@ -16,10 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)headerView;
 
 ///模型
-@property (nonatomic, strong) SXHealtyControlModel *model;
+@property (nonatomic, strong) SXHealtyControlTimeModel *model;
 
 ///点击确定按钮回调
-@property (nonatomic, copy) void (^clickConfirmBtnBlock)(SXHealtyControlModel *model);
+@property (nonatomic, copy) void (^clickConfirmBtnBlock)(SXHealtyControlTimeModel *model);
 ///点击开始时间回调
 @property (nonatomic, copy) void (^clickBeginTimeControlBlock)(void);
 ///点击结束时间回调

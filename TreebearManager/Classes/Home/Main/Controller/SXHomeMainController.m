@@ -183,15 +183,16 @@
         DLog(@"获取节点");
         //更新wan信息
         SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
-        shareInfo.modelId = result.modelId;
-        shareInfo.ip = result.wan.ip;
-        shareInfo.netmask = result.wan.netmask;
-        shareInfo.gateway = result.wan.gateway;
-        shareInfo.dns1 = result.wan.dns1;
-        shareInfo.dns2 = result.wan.dns2;
-        shareInfo.type = result.wan.type;
-        shareInfo.name = result.wan.name;
-        shareInfo.passwd = result.wan.passwd;
+        [shareInfo setDataWithResult:result];
+//        shareInfo.modelId = result.modelId;
+//        shareInfo.ip = result.wan.ip;
+//        shareInfo.netmask = result.wan.netmask;
+//        shareInfo.gateway = result.wan.gateway;
+//        shareInfo.dns1 = result.wan.dns1;
+//        shareInfo.dns2 = result.wan.dns2;
+//        shareInfo.type = result.wan.type;
+//        shareInfo.name = result.wan.name;
+//        shareInfo.passwd = result.wan.passwd;
     } failure:^(NSError * _Nonnull error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];

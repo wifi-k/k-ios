@@ -13,9 +13,9 @@
 @interface SXHealtyModeNetTool : NSObject
 
 ///获取信号定时配置
-+ (void)userNodeRssiTimerListDataWithParams:(NSDictionary *)params Success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure;
++ (void)userNodeWifiTimerGetDataWithParams:(NSDictionary *)params Success:(void (^)(SXHealtyControlResult *result))success failure:(void (^)(NSError *error))failure;
 
 ///设置信号当时配置
-+ (void)userNodeRssiTimerSetDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
++ (void)userNodeWifiTimerSetDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
 @end

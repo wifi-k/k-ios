@@ -31,7 +31,7 @@
     if (_dataArray == nil) {
         NSArray *array = @[@{@"startTime":@"00:00",@"endTime":@"00:01"},
                            @{@"startTime":@"00:01",@"endTime":@"00:02"}];
-        _dataArray = [NSMutableArray arrayWithArray:[SXHealtyControlModel mj_objectArrayWithKeyValuesArray:array]];
+        _dataArray = [NSMutableArray arrayWithArray:[SXHealtyControlTimeModel mj_objectArrayWithKeyValuesArray:array]];
     }
     return _dataArray;
 }
@@ -92,8 +92,8 @@
 - (void)setUpData{
     SXHealtyControlParam *param = [SXHealtyControlParam param];
     param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
-    [SXHealtyModeNetTool userNodeRssiTimerListDataWithParams:param.mj_keyValues Success:^(NSArray *array) {
-        DLog(@"array:%@",array);
+    [SXHealtyModeNetTool userNodeWifiTimerGetDataWithParams:param.mj_keyValues Success:^(SXHealtyControlResult *result) {
+        DLog(@"result:%@",result);
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
@@ -104,7 +104,7 @@
 - (void)userNodeRssiTimerSetData{
     SXHealtyControlParam *param = [SXHealtyControlParam param];
     param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
-    [SXHealtyModeNetTool userNodeRssiTimerSetDataWithParams:param.mj_keyValues Success:^{
+    [SXHealtyModeNetTool userNodeWifiTimerSetDataWithParams:param.mj_keyValues Success:^{
         DLog(@"fdfdfdf");
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
@@ -113,12 +113,12 @@
 }
 
 #pragma mark -页面跳转-
-- (void)jumpToTimeVC:(SXHealtyControlModel *)model{
+- (void)jumpToTimeVC:(SXHealtyControlTimeModel *)model{
     WS(weakSelf);
     SXHealtyTimeController *timeVC = [[SXHealtyTimeController alloc] init];
     BOOL isAdd = (model == nil? YES:NO);
     timeVC.model = model;
-    timeVC.selectTimeOptionBlock = ^(SXHealtyControlModel * _Nonnull model) {
+    timeVC.selectTimeOptionBlock = ^(SXHealtyControlTimeModel * _Nonnull model) {
         if (isAdd) {
             [weakSelf.dataArray addObject:model];
         }
@@ -136,9 +136,9 @@
 {
     WS(weakSelf);
     SXHealtyControlCell *cell = [SXHealtyControlCell cellWithTableView:tableView];
-    SXHealtyControlModel *model = self.dataArray[indexPath.row];
+    SXHealtyControlTimeModel *model = self.dataArray[indexPath.row];
     cell.model = model;
-    cell.clickEditBtnBlock = ^(SXHealtyControlModel * _Nonnull model) {
+    cell.clickEditBtnBlock = ^(SXHealtyControlTimeModel * _Nonnull model) {
         [weakSelf jumpToTimeVC:model];
     };
     return cell;

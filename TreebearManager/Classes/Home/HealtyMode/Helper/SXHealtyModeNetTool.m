@@ -11,18 +11,16 @@
 
 @implementation SXHealtyModeNetTool
 
-+ (void)userNodeRssiTimerListDataWithParams:(NSDictionary *)params Success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure{
++ (void)userNodeWifiTimerGetDataWithParams:(NSDictionary *)params Success:(void (^)(SXHealtyControlResult *result))success failure:(void (^)(NSError *error))failure{
     
-    [SXNetRequestTool POST:user_node_rssi_timer_list parameters:params success:^(id response) {
+    [SXNetRequestTool POST:user_node_wifi_timer_get parameters:params success:^(id response) {
         
         if (![response isKindOfClass:NSDictionary.class]) return;
         
-        NSArray *pageList = [response objectForKey:@"page"];
-        
-        NSArray *modelList = [SXHealtyControlResult mj_objectArrayWithKeyValuesArray:pageList];
+        SXHealtyControlResult *result = [SXHealtyControlResult mj_objectWithKeyValues:response];
         
         if (success){
-            success(modelList);
+            success(result);
         }
     } failure:^(NSError *error) {
         if (failure) {
@@ -31,9 +29,9 @@
     }];
 }
 
-+ (void)userNodeRssiTimerSetDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure{
++ (void)userNodeWifiTimerSetDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure{
     
-    [SXNetRequestTool POST:user_node_rssi_timer_set parameters:params success:^(id response) {
+    [SXNetRequestTool POST:user_node_wifi_timer_set parameters:params success:^(id response) {
         
         if (success){
             success();

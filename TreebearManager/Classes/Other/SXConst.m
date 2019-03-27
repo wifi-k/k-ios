@@ -54,7 +54,7 @@ NSString *const user_node_share_quit = @"user/node/share/quit";
 
 NSString *const user_node_select = @"user/node/select";
 NSString *const user_node_listall = @"user/node/listall";
-NSString *const user_node_rssi_timer_list = @"user/node/rssi/timer/list";
-NSString *const user_node_rssi_timer_set = @"user/node/rssi/timer/set";
+NSString *const user_node_wifi_timer_get = @"user/node/wifi/timer/get";
+NSString *const user_node_wifi_timer_set = @"user/node/wifi/timer/set";
 
 @end

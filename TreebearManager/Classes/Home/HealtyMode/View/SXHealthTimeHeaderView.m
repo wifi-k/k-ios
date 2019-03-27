@@ -72,7 +72,7 @@
 }
 
 #pragma mark -setter-
-- (void)setModel:(SXHealtyControlModel *)model{
+- (void)setModel:(SXHealtyControlTimeModel *)model{
     _model = model;
     
     self.beginTimeL.text = model.startTime;

@@ -8,9 +8,7 @@
 
 #import "SXBaseModel.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface SXHealtyControlModel : SXBaseModel
+@interface SXHealtyControlTimeModel : SXBaseModel
 
 ///开始时间
 @property (nonatomic, copy) NSString *startTime;
@@ -19,4 +17,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-NS_ASSUME_NONNULL_END
+@interface SXHealtyControlModel : SXBaseModel
+
+///0-所有
+@property (nonatomic, copy) NSNumber *freq;
+///5-默认
+@property (nonatomic, copy) NSNumber *rssi;
+///数组
+@property (nonatomic, copy) NSArray *timer;
+
+@end

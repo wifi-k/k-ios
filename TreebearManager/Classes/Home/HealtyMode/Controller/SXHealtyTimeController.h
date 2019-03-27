@@ -14,9 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SXHealtyTimeController : UIViewController
 
 ///数据模型
-@property (nonatomic, strong) SXHealtyControlModel *model;
+@property (nonatomic, strong) SXHealtyControlTimeModel *model;
 ///点击确定按钮回调
-@property (nonatomic, copy) void (^selectTimeOptionBlock)(SXHealtyControlModel *model);
+@property (nonatomic, copy) void (^selectTimeOptionBlock)(SXHealtyControlTimeModel *model);
 
 @end
 

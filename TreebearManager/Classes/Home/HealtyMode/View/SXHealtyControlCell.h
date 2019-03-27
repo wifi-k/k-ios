@@ -16,10 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
 ///模型
-@property (nonatomic, strong) SXHealtyControlModel *model;
+@property (nonatomic, strong) SXHealtyControlTimeModel *model;
 
 ///点击编辑按钮回调
-@property (nonatomic, copy) void (^clickEditBtnBlock)(SXHealtyControlModel *model);
+@property (nonatomic, copy) void (^clickEditBtnBlock)(SXHealtyControlTimeModel *model);
 
 @end
 

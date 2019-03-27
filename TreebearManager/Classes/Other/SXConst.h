@@ -56,8 +56,8 @@ extern NSString *const user_node_share_quit;
 
 extern NSString *const user_node_select;
 extern NSString *const user_node_listall;
-extern NSString *const user_node_rssi_timer_list;
-extern NSString *const user_node_rssi_timer_set;
+extern NSString *const user_node_wifi_timer_get;
+extern NSString *const user_node_wifi_timer_set;
 
 @end
 

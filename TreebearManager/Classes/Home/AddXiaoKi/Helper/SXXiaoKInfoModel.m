@@ -10,10 +10,23 @@
 
 @implementation SXXiaoKInfoModel
 
+SingletonImplementation(SXXiaoKInfoModel)
+
 + (NSDictionary *)mj_replacedKeyFromPropertyName{
     return @{@"modelId":@"id"};
 }
 
-SingletonImplementation(SXXiaoKInfoModel)
+- (instancetype)setDataWithResult:(SXXiaoKNodeResult *)result{
+    self.modelId = result.modelId;
+    self.ip = result.wan.ip;
+    self.netmask = result.wan.netmask;
+    self.gateway = result.wan.gateway;
+    self.dns1 = result.wan.dns1;
+    self.dns2 = result.wan.dns2;
+    self.type = result.wan.type;
+    self.name = result.wan.name;
+    self.passwd = result.wan.passwd;
+    return self;
+}
 
 @end

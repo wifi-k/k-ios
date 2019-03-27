@@ -38,7 +38,7 @@
     WS(weakSelf);
     SXHealthTimeHeaderView *headerView = [SXHealthTimeHeaderView headerView];
     if (isAdd) {
-        SXHealtyControlModel *addModel = [[SXHealtyControlModel alloc] init];
+        SXHealtyControlTimeModel *addModel = [[SXHealtyControlTimeModel alloc] init];
         addModel.startTime = @"00:00";
         addModel.endTime = @"00:00";
         headerView.model = addModel;
@@ -60,7 +60,7 @@
         };
         [pickerView showPickerView];
     };
-    headerView.clickConfirmBtnBlock = ^(SXHealtyControlModel * _Nonnull model) {
+    headerView.clickConfirmBtnBlock = ^(SXHealtyControlTimeModel * _Nonnull model) {
         DLog(@"%@-%@",model.startTime,model.endTime);
         if (self.selectTimeOptionBlock) {
             self.selectTimeOptionBlock(model);

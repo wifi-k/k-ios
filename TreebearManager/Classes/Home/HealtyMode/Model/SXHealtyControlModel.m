@@ -8,6 +8,14 @@
 
 #import "SXHealtyControlModel.h"
 
+@implementation SXHealtyControlTimeModel
+
+@end
+
 @implementation SXHealtyControlModel
+
++ (NSDictionary *)mj_objectClassInArray{
+    return @{@"timer":SXHealtyControlTimeModel.class};
+}
 
 @end
