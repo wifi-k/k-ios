@@ -14,6 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
+- (NSNumber *)isSwitchOn;
+
+@property (nonatomic, copy) NSNumber *op;
+
 ///点击健康模式开关回调
 @property (nonatomic, copy) void (^clickSwitchBtnBlock)(BOOL isOn);
 

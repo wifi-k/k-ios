@@ -85,15 +85,18 @@
 }
 
 - (void)rightButtonAction:(UIButton *)button{
-    [MBProgressHUD showMessage:@"保存成功!" toView:self.view];
+    [self userNodeRssiTimerSetData];
 }
 
 #pragma mark -获取网络数据-
 - (void)setUpData{
+    WS(weakSelf);
     SXHealtyControlParam *param = [SXHealtyControlParam param];
     param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
     [SXHealtyModeNetTool userNodeWifiTimerGetDataWithParams:param.mj_keyValues Success:^(SXHealtyControlResult *result) {
         DLog(@"result:%@",result);
+        //赋值视图
+        weakSelf.headerView.op = result.op;
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
@@ -102,11 +105,16 @@
 
 #pragma mark -网络设置-
 - (void)userNodeRssiTimerSetData{
+    [MBProgressHUD showWhiteLoadingWithMessage:@"正在设置..." toView:SXKeyWindow];
     SXHealtyControlParam *param = [SXHealtyControlParam param];
     param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
+    param.op = [self.headerView isSwitchOn];
+//    param.wifi = @"";
     [SXHealtyModeNetTool userNodeWifiTimerSetDataWithParams:param.mj_keyValues Success:^{
-        DLog(@"fdfdfdf");
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        [MBProgressHUD showMessage:@"保存成功!" toView:self.view];
     } failure:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
     }];

@@ -14,7 +14,7 @@
 ///节点
 @property (nonatomic, copy) NSString *nodeId;
 ///开关
-@property (nonatomic, copy) NSString *op;
+@property (nonatomic, copy) NSNumber *op;
 ///创建时间
 @property (nonatomic, copy) NSString *createTime;
 ///更新时间

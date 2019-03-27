@@ -51,6 +51,17 @@
     self.switchBtn.onTintColor = SXColorBlue2;
 }
 
+#pragma mark -setter-
+- (void)setOp:(NSNumber *)op{
+    _op = op;
+    
+    self.switchBtn.on = op.boolValue;
+}
+
+- (NSNumber *)isSwitchOn{
+    return self.switchBtn.isOn ? @1 :@0;
+}
+
 #pragma mark -点击事件-
 - (IBAction)clickSwitchBtn:(UISwitch *)sender {
     if (self.clickSwitchBtnBlock) {
