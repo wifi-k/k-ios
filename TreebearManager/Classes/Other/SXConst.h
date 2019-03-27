@@ -58,6 +58,9 @@ extern NSString *const user_node_select;
 extern NSString *const user_node_listall;
 extern NSString *const user_node_wifi_timer_get;
 extern NSString *const user_node_wifi_timer_set;
+extern NSString *const user_node_wifi_list;
+
+extern NSString *const user_node_wifi_set;
 
 @end
 

@@ -76,7 +76,7 @@ const CGFloat SXInputAlertViewHeightRatio = 0.216; //高度系统
     //标题
     UILabel *titleL = [[UILabel alloc] init];
     titleL.numberOfLines = 2;
-    titleL.textAlignment = NSTextAlignmentLeft;
+    titleL.textAlignment = NSTextAlignmentCenter;
     titleL.font = SXFontBold18;
     titleL.textColor = [UIColor blackColor];
     [self.bgImageView addSubview:titleL];
