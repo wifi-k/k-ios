@@ -12,9 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SXConst : NSObject
 
-//首页消息通知
-extern NSString *const SXHomeMessageName;
-
 //URL统一资源定位符
 extern NSString *const user_vcode_getv2;
 extern NSString *const user_signup_vcode;
@@ -59,6 +56,8 @@ extern NSString *const user_node_share_quit;
 
 extern NSString *const user_node_select;
 extern NSString *const user_node_listall;
+extern NSString *const user_node_rssi_timer_list;
+extern NSString *const user_node_rssi_timer_set;
 
 @end
 

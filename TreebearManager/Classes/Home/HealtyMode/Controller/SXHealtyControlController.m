@@ -11,6 +11,8 @@
 #import "SXHealtyControlHeaderView.h"
 #import "SXHealtyControlFooterView.h"
 #import "SXHealtyControlCell.h"
+#import "SXHealtyModeNetTool.h"
+#import "SXXiaoKInfoModel.h"
 
 @interface SXHealtyControlController ()
 ///头部视图
@@ -38,6 +40,9 @@
     [super viewDidLoad];
    
     [self setUpUI];
+    
+    //初始化数据
+    [self setUpData];
 }
 
 #pragma mark -初始化UI-
@@ -81,6 +86,30 @@
 
 - (void)rightButtonAction:(UIButton *)button{
     [MBProgressHUD showMessage:@"保存成功!" toView:self.view];
+}
+
+#pragma mark -获取网络数据-
+- (void)setUpData{
+    SXHealtyControlParam *param = [SXHealtyControlParam param];
+    param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
+    [SXHealtyModeNetTool userNodeRssiTimerListDataWithParams:param.mj_keyValues Success:^(NSArray *array) {
+        DLog(@"array:%@",array);
+    } failure:^(NSError *error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
+#pragma mark -网络设置-
+- (void)userNodeRssiTimerSetData{
+    SXHealtyControlParam *param = [SXHealtyControlParam param];
+    param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
+    [SXHealtyModeNetTool userNodeRssiTimerSetDataWithParams:param.mj_keyValues Success:^{
+        DLog(@"fdfdfdf");
+    } failure:^(NSError *error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
 
 #pragma mark -页面跳转-

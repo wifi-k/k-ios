@@ -10,6 +10,7 @@
 #import "SXNetStaticParam.h"
 #import "SXNetBroadbandParam.h"
 #import "SXXiaoKNodeResult.h"
+#import "SXXiaoKInfoModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

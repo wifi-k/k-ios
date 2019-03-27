@@ -28,6 +28,7 @@
 #import "SXRootTool.h"
 #import "SXNotificationCenterTool.h"
 #import "SXXiaoKiOptionResult.h"
+#import "SXAddXiaokiNetTool.h"
 
 @interface SXHomeMainController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak) SXHomeMainHeaderView *headerView;//头部视图
@@ -43,6 +44,9 @@
     
     //添加通知
     [self addNotification];
+    
+    //初始数据
+    [self getNodeData];
 }
     
 - (void)setUpUI{
@@ -171,6 +175,27 @@
         DLog(@"text:%@",text);
     };
     [nameAlertView alert];
+}
+
+#pragma mark -获取节点数据-
+- (void)getNodeData{
+    [SXAddXiaokiNetTool getNodeWithDataWithSuccess:^(SXXiaoKNodeResult * _Nonnull result) {
+        DLog(@"获取节点");
+        //更新wan信息
+        SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
+        shareInfo.modelId = result.modelId;
+        shareInfo.ip = result.wan.ip;
+        shareInfo.netmask = result.wan.netmask;
+        shareInfo.gateway = result.wan.gateway;
+        shareInfo.dns1 = result.wan.dns1;
+        shareInfo.dns2 = result.wan.dns2;
+        shareInfo.type = result.wan.type;
+        shareInfo.name = result.wan.name;
+        shareInfo.passwd = result.wan.passwd;
+    } failure:^(NSError * _Nonnull error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
     
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
