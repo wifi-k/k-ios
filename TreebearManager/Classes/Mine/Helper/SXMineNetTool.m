@@ -78,11 +78,11 @@
     }];
 }
 
-+ (void)userNodeSsidListParams:(NSString *)nodeId Success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure{
++ (void)userNodeWifiListParams:(NSString *)nodeId Success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure{
     
     SXXiaoKiParam *param = [SXXiaoKiParam param];
     param.nodeId = nodeId;
-    [SXNetRequestTool POST:user_node_ssid_list parameters:param.mj_keyValues success:^(id response) {
+    [SXNetRequestTool POST:user_node_wifi_list parameters:param.mj_keyValues success:^(id response) {
         
         if (![response isKindOfClass:NSDictionary.class]) return;
         
@@ -100,9 +100,9 @@
     }];
 }
 
-+ (void)userNodeSsidSetParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure{
++ (void)userNodeWifiSetParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure{
    
-    [SXNetRequestTool POST:user_node_ssid_set parameters:params success:^(id response) {
+    [SXNetRequestTool POST:user_node_wifi_set parameters:params success:^(id response) {
         
         if (success){
             success();
@@ -188,6 +188,20 @@
         
         if (success){
             success(modelList);
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
++ (void)userQuitSuccess:(void (^)(void))success failure:(void (^)(NSError *error))failure{
+    
+    [SXNetRequestTool POST:user_quit parameters:nil success:^(id response) {
+        
+        if (success){
+            success();
         }
     } failure:^(NSError *error) {
         if (failure) {

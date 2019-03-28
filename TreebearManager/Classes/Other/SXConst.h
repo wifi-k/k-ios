@@ -38,8 +38,8 @@ extern NSString *const user_qiniu_get;
 
 extern NSString *const user_info_set;
 extern NSString *const user_node_firmware_upgrade;
-extern NSString *const user_node_ssid_list;
-extern NSString *const user_node_ssid_set;
+extern NSString *const user_node_wifi_list;
+extern NSString *const user_node_wifi_set;
 extern NSString *const user_node_bind;
 
 extern NSString *const user_node_unbind;
@@ -58,9 +58,7 @@ extern NSString *const user_node_select;
 extern NSString *const user_node_listall;
 extern NSString *const user_node_wifi_timer_get;
 extern NSString *const user_node_wifi_timer_set;
-extern NSString *const user_node_wifi_list;
-
-extern NSString *const user_node_wifi_set;
+extern NSString *const user_quit;
 
 @end
 

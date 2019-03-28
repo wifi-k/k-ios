@@ -11,6 +11,7 @@
 #import "SXMineVersionUpdateController.h"
 #import "SXMineSettingHeaderView.h"
 #import "SXRootTool.h"
+#import "SXMineNetTool.h"
 
 @interface SXMineSettingController ()
 @property (nonatomic, weak) SXMineSettingHeaderView *headerView;//头部视图
@@ -42,9 +43,7 @@
         [weakSelf.navigationController pushViewController:updateVC animated:YES];
     };
     headerView.clickLogoutBtnBlock = ^{
-        [MBProgressHUD showMessage:@"退出登录!" toView:SXKeyWindow];
-        //切换根控
-        [SXRootTool chooseRootWithLoginVC:SXDelegateWindow];
+        [weakSelf logoutData];
     };
     [self.view addSubview:headerView];
     self.headerView = headerView;
@@ -56,5 +55,19 @@
     self.headerView.frame = self.view.bounds;
 }
 
+#pragma mark -退出登录-
+- (void)logoutData{
+    [MBProgressHUD showWhiteLoadingWithMessage:@"正在退出..." toView:SXKeyWindow];
+    [SXMineNetTool userQuitSuccess:^{
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        [MBProgressHUD showMessage:@"已退出登录!" toView:SXKeyWindow];
+        //切换根控
+        [SXRootTool chooseRootWithLoginVC:SXDelegateWindow];
+    } failure:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
 
 @end

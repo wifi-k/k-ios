@@ -187,7 +187,7 @@
     
     WS(weakSelf);
     [MBProgressHUD showWhiteLoadingToView:SXKeyWindow];
-    [SXMineNetTool userNodeSsidSetParams:param.mj_keyValues Success:^{
+    [SXMineNetTool userNodeWifiSetParams:param.mj_keyValues Success:^{
         [MBProgressHUD hideHUDForView:SXKeyWindow];
         //赋值
         SXXiaoKInfoModel.sharedSXXiaoKInfoModel.name = param.ssid;

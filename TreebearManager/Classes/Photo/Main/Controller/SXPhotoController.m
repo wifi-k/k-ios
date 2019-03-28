@@ -70,7 +70,7 @@
     [self.view addSubview:collectV];
     self.collectionView = collectV;
     
-    self.collectionView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0);
+//    self.collectionView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0);
 //    self.collectionView.backgroundColor = UIColor.redColor;
     
     PYAblum *ablumManager = [PYAblum defaultAblum];

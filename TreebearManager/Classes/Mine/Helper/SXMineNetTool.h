@@ -29,10 +29,10 @@
 + (void)userNodeFirmwareUpgradeParams:(NSString *)nodeId Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
 ///获取节点的ssid列表
-+ (void)userNodeSsidListParams:(NSString *)nodeId Success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure;
++ (void)userNodeWifiListParams:(NSString *)nodeId Success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure;
 
 ///设置节点ssid信息
-+ (void)userNodeSsidSetParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
++ (void)userNodeWifiSetParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
 ///节点信息查询 
 + (void)userNodeListParams:(NSDictionary *)params Success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure;
@@ -48,6 +48,9 @@
 
 ///家庭节点列表 (返回自己的节点和所属家庭的节点)
 + (void)userNodeListallParams:(NSDictionary *)params Success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure;
+
+///用户退出
++ (void)userQuitSuccess:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
 @end
 

@@ -36,8 +36,8 @@ NSString *const user_qiniu_get = @"user/qiniu/get";
 
 NSString *const user_info_set = @"user/info/set";
 NSString *const user_node_firmware_upgrade = @"user/node/firmware/upgrade";
-NSString *const user_node_ssid_list = @"user/node/ssid/list";
-NSString *const user_node_ssid_set = @"user/node/ssid/set";
+NSString *const user_node_wifi_list = @"user/node/wifi/list";
+NSString *const user_node_wifi_set = @"user/node/wifi/set";
 NSString *const user_node_bind = @"user/node/bind";
 
 NSString *const user_node_unbind = @"user/node/unbind";
@@ -56,8 +56,7 @@ NSString *const user_node_select = @"user/node/select";
 NSString *const user_node_listall = @"user/node/listall";
 NSString *const user_node_wifi_timer_get = @"user/node/wifi/timer/get";
 NSString *const user_node_wifi_timer_set = @"user/node/wifi/timer/set";
-NSString *const user_node_wifi_list = @"user/node/wifi/list";
+NSString *const user_quit = @"user/quit";
 
-NSString *const user_node_wifi_set = @"user/node/wifi/set";
 
 @end
