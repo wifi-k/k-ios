@@ -67,10 +67,16 @@
 - (void)setUpUMWithLaunchingWithOptions:(NSDictionary *)launchOptions{
     /* 打开调试日志 */
     [UMConfigure setLogEnabled:true];
+    /* 打开调试日志(分享) */
+    [[UMSocialManager defaultManager] openLog:YES];
     //友盟推送的初始
     [UMConfigure initWithAppkey:UMSocialKey channel:nil];
     [UMErrorCatch initErrorCatch];
-
+    /* 设置友盟AppKey(分享) */
+    [[UMSocialManager defaultManager] setUmSocialAppkey:UMSocialKey];
+    [UMSocialGlobal shareInstance].isUsingHttpsWhenShareContent = NO;
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:WeChatAppID
+                                       appSecret:WeChatAppSecret redirectURL:RedirectURL];
     // Push组件基本功能配置
     //初始化
     if (@available(iOS 10.0, *)) {
@@ -126,6 +132,19 @@
     } fail:^(SXNetworkStatus networkStatus) {
         [MBProgressHUD showWarningWithMessage:@"当前网络不可用，请检查您的手机数据/Wifi是否开启！" toView:weakSelf.window];
     }];
+}
+
+#pragma mark -设置系统回调,支持所有iOS系统-
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options{
+    // 其他app回到自己app的时候回调的方法
+    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url];
+    if (!result){
+        // 其他如支付等SDK的回调
+        //if ([[url absoluteString] rangeOfString:@"wsloanapp://"].location != NSNotFound)
+        //{
+        //}
+    }
+    return result;
 }
 
 #pragma mark -友盟推送-

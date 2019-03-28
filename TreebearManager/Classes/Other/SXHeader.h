@@ -100,4 +100,6 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 #define WeChatAppID     @"wx5056e8618341b094"   // WeChat
 #define WeChatAppSecret @"31da4f1ee530ab9ddf8fe26102afc197"
 
+#define RedirectURL @"https://www.treebear.cn"
+
 #endif /* SXHeader_h */

@@ -29,6 +29,7 @@
 #import "SXNotificationCenterTool.h"
 #import "SXXiaoKiOptionResult.h"
 #import "SXAddXiaokiNetTool.h"
+#import <UMSocialCore/UMSocialCore.h>
 
 @interface SXHomeMainController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak) SXHomeMainHeaderView *headerView;//头部视图
@@ -77,7 +78,7 @@
         [weakSelf jumpToManagerVC];
     };
     headerView.clickShareBtnBlock = ^{
-        [MBProgressHUD showMessage:@"微信分享!" toView:weakSelf.view];
+        [weakSelf shareWebPageToPlatform];
     };
     headerView.clickUserInfoBtnBlock = ^{
         [weakSelf jumpToXiaoKiVC];
@@ -175,6 +176,40 @@
         DLog(@"text:%@",text);
     };
     [nameAlertView alert];
+}
+
+#pragma mark -分享微信-
+- (void)shareWebPageToPlatform{
+    //创建分享消息对象
+    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+    //创建网页内容对象
+    //NSString *thumbURL =  @"https://mobile.umeng.com/images/pic/home/social/img-1.png";
+    NSString *thumbURL =  @"http://jd.shopjian.com/public/logo.png";
+    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"分享家庭码" descr:@"请点击查看!!!!!!!" thumImage:thumbURL];
+    //设置网页地址
+    shareObject.webpageUrl = RedirectURL;
+    //分享消息对象设置分享内容对象
+    messageObject.shareObject = shareObject;
+    
+    //调用分享接口
+    [[UMSocialManager defaultManager] shareToPlatform:UMSocialPlatformType_WechatSession messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
+        if (error) {
+            UMSocialLogInfo(@"************Share fail with error %@*********",error);
+            [MBProgressHUD showWarningWithMessage:@"分享失败!" toView:SXKeyWindow];
+        }else{
+            if ([data isKindOfClass:[UMSocialShareResponse class]]) {
+                UMSocialShareResponse *resp = data;
+                //分享结果消息
+                UMSocialLogInfo(@"response message is %@",resp.message);
+                //第三方原始返回的数据
+                UMSocialLogInfo(@"response originalResponse data is %@",resp.originalResponse);
+                
+                [MBProgressHUD showMessageToWindow:@"分享成功!"];
+            }else{
+                UMSocialLogInfo(@"response data is %@",data);
+            }
+        }
+    }];
 }
 
 #pragma mark -获取节点数据-
