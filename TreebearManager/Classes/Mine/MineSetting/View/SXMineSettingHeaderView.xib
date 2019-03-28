@@ -129,6 +129,7 @@
             <connections>
                 <outlet property="bottomLineView1" destination="hJr-zN-X15" id="HN7-sG-uue"/>
                 <outlet property="bottomLineView2" destination="2Q2-qN-FMt" id="bRT-9u-5Aw"/>
+                <outlet property="currentVersionL" destination="7kb-dN-nAN" id="Dyg-mc-BbS"/>
                 <outlet property="firstBgView" destination="jLq-Hn-N9O" id="L6K-0J-uh4"/>
                 <outlet property="logoutBtn" destination="3wr-GT-aYL" id="rZR-pc-DA2"/>
                 <outlet property="secondBgView" destination="b7n-Y5-zF0" id="dFY-Ym-KoI"/>

@@ -60,7 +60,7 @@
     [MBProgressHUD showWhiteLoadingWithMessage:@"正在退出..." toView:SXKeyWindow];
     [SXMineNetTool userQuitSuccess:^{
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
-        [MBProgressHUD showMessage:@"已退出登录!" toView:SXKeyWindow];
+        [MBProgressHUD showMessage:@"已退出!" toView:SXKeyWindow];
         //切换根控
         [SXRootTool chooseRootWithLoginVC:SXDelegateWindow];
     } failure:^(NSError *error) {

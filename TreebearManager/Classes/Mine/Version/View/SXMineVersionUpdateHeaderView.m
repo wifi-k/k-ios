@@ -37,6 +37,8 @@
     //self.autoresizingMask = UIViewAutoresizingNone;
     
     [self setUpUI];
+    
+    [self setUpData];
 }
 
 #pragma mark -UI-
@@ -62,6 +64,12 @@
     self.updateBtn.backgroundColor = SXColorWhite;
     [self.updateBtn setTitleColor:SXColor999999 forState:UIControlStateNormal];
     [self.updateBtn roundViewWithRadius:22.5f borderColor:SXColorDivideLine borderWidth: 1.0f];
+}
+
+#pragma mark -初始化数据-
+- (void)setUpData{
+    self.currentVersionL.text = [NSString stringWithFormat:@"%@",APP_VERSION];
+    self.lastestVersionL.text = [NSString stringWithFormat:@"%@",APP_VERSION];
 }
 
 #pragma mark -Event-

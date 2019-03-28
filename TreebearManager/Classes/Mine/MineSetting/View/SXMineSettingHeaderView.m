@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView1;
 @property (weak, nonatomic) IBOutlet UIView *firstBgView;
 
+@property (weak, nonatomic) IBOutlet UILabel *currentVersionL;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView2;
 @property (weak, nonatomic) IBOutlet UIView *secondBgView;
 
@@ -32,6 +33,8 @@
     //self.autoresizingMask = UIViewAutoresizingNone;
     
     [self setUpUI];
+    
+    [self setUpData];
 }
 
 #pragma mark -UI-
@@ -45,6 +48,8 @@
     self.bottomLineView2.backgroundColor = SXColorDivideLine;
     self.bottomLineView2.height = 0.5f;
     
+    self.currentVersionL.textColor = SXColor999999;
+    
     //添加事件
     UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickAboutUs)];
     [self.firstBgView addGestureRecognizer:tap1];
@@ -55,6 +60,11 @@
     self.logoutBtn.backgroundColor = SXColorWhite;
     [self.logoutBtn setTitleColor:SXColor999999 forState:UIControlStateNormal];
     [self.logoutBtn roundViewWithRadius:22.5f borderColor:SXColorDivideLine borderWidth: 1.0f];
+}
+
+#pragma mark -初始化数据-
+- (void)setUpData{
+    self.currentVersionL.text = [NSString stringWithFormat:@"当前版本%@",APP_VERSION];
 }
 
 #pragma mark -Event-
