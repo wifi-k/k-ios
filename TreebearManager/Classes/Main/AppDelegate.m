@@ -10,7 +10,6 @@
 #import "SXRootTool.h"
 #import "SXNetReachablityTool.h"
 #import <UMCommon/UMCommon.h>          // 公共组件是所有友盟产品的基础组件，必选
-#import <UMAnalytics/MobClick.h>       // 统计组件
 #import <UMSocialCore/UMSocialCore.h>  // 分享组件
 #import <UMPush/UMessage.h>            // Push组件
 #import <UserNotifications/UserNotifications.h> // Push组件必须的系统库
@@ -65,13 +64,15 @@
 
 #pragma mark -设置友盟-
 - (void)setUpUMWithLaunchingWithOptions:(NSDictionary *)launchOptions{
-    /* 打开调试日志 */
-    [UMConfigure setLogEnabled:true];
-    /* 打开调试日志(分享) */
-    [[UMSocialManager defaultManager] openLog:YES];
+    //关闭Crash收集
+    [MobClick setCrashReportEnabled:YES];
     //友盟推送的初始
+    [UMConfigure setLogEnabled:YES];//设置打开日志
+    [UMConfigure setEncryptEnabled:NO];//打开加密传输
     [UMConfigure initWithAppkey:UMSocialKey channel:nil];
     [UMErrorCatch initErrorCatch];
+    /* 打开调试日志(分享) */
+    [[UMSocialManager defaultManager] openLog:YES];
     /* 设置友盟AppKey(分享) */
     [[UMSocialManager defaultManager] setUmSocialAppkey:UMSocialKey];
     [UMSocialGlobal shareInstance].isUsingHttpsWhenShareContent = NO;

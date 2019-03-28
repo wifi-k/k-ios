@@ -25,6 +25,7 @@
 #import <SDWebImage/UIImage+GIF.h>
 #import <SDWebImage/UIButton+WebCache.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <UMAnalytics/MobClick.h>       // 统计组件
 
 /** 工具类 */
 #import "MBProgressHUD+CL.h"

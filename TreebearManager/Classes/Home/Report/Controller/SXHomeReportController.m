@@ -18,6 +18,17 @@
 
 @implementation SXHomeReportController
 
+#pragma mark -埋点统计示例-
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [MobClick beginLogPageView:NSStringFromClass(self.class)];
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [MobClick endLogPageView:NSStringFromClass(self.class)];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

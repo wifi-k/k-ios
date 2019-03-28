@@ -183,8 +183,7 @@
     //创建分享消息对象
     UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
     //创建网页内容对象
-    //NSString *thumbURL =  @"https://mobile.umeng.com/images/pic/home/social/img-1.png";
-    NSString *thumbURL =  @"http://jd.shopjian.com/public/logo.png";
+    NSString *thumbURL =  @"https://mobile.umeng.com/images/pic/home/social/img-1.png";
     UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"分享家庭码" descr:@"请点击查看!!!!!!!" thumImage:thumbURL];
     //设置网页地址
     shareObject.webpageUrl = RedirectURL;
