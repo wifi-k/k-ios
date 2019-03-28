@@ -93,4 +93,11 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 #define iPhoneX_Add_Top ((IPHONE_X) ? 44 : 0) //顶部
 #define iPhoneX_Add_Bottom ((IPHONE_X) ? 34 : 0) //底部
 
+//第三方key
+#define UMengAppKey @"5c9c2fc23fc195c4c100020b" // UMeng
+#define UMSocialKey @"5c9c2fc23fc195c4c100020b" // UMeng Share
+#define UMSocialSecret @"lpshgbh0wgxlximdeifmkfcrhzhtnqfz" // UMeng Secret
+#define WeChatAppID     @"wx5056e8618341b094"   // WeChat
+#define WeChatAppSecret @"31da4f1ee530ab9ddf8fe26102afc197"
+
 #endif /* SXHeader_h */
