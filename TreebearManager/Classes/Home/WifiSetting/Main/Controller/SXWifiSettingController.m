@@ -38,6 +38,9 @@
     
     //获取节点数据
     [self getNodeData];
+    
+    //获取wifi列表
+    [self userNodeSsidSetData];
 }
 
 - (void)setUpUI{
@@ -178,6 +181,25 @@
     [netAlertView alert];
 }
 
+#pragma mark -WiFi列表数据接口-
+- (void)userNodeSsidSetData{
+    if ([NSString isEmpty:SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId]) {
+        [MBProgressHUD showWarningWithMessage:@"没有获取到设备，请检查您的WiFi连接" toView:SXKeyWindow];
+        return;
+    }
+//    WS(weakSelf);
+    [MBProgressHUD showWhiteLoadingToView:SXKeyWindow];
+    [SXMineNetTool userNodeWifiListParams:SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId Success:^(NSArray *array) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow];
+        //赋值
+        DLog(@"array:%@",array);
+    } failure:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow];
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
 #pragma mark -WiFi设置数据接口-
 - (void)userNodeSsidSetDataWitiParam:(SXXiaoKiParam *)param{
     if ([NSString isEmpty:SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId]) {
@@ -225,25 +247,12 @@
 
 #pragma mark -获取节点数据-
 - (void)getNodeData{
-//    WS(weakSelf);
-//    [MBProgressHUD showWhiteLoadingToView:SXKeyWindow];
     [SXAddXiaokiNetTool getNodeWithDataWithSuccess:^(SXXiaoKNodeResult * _Nonnull result) {
-//        [MBProgressHUD hideHUDForView:SXKeyWindow];
         DLog(@"获取节点");
         //1.更新wan信息
         SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
         [shareInfo setDataWithResult:result];
-//        shareInfo.modelId = result.modelId;
-//        shareInfo.ip = result.wan.ip;
-//        shareInfo.netmask = result.wan.netmask;
-//        shareInfo.gateway = result.wan.gateway;
-//        shareInfo.dns1 = result.wan.dns1;
-//        shareInfo.dns2 = result.wan.dns2;
-//        shareInfo.type = result.wan.type;
-//        shareInfo.name = result.wan.name;
-//        shareInfo.passwd = result.wan.passwd;
     } failure:^(NSError * _Nonnull error) {
-//        [MBProgressHUD hideHUDForView:SXKeyWindow];
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
     }];

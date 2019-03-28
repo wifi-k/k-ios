@@ -13,7 +13,7 @@
 ///节点id
 @property (nonatomic, copy) NSString *nodeId;
 ///节点freq
-@property (nonatomic, copy) NSString *freq;
+@property (nonatomic, copy) NSNumber *freq;
 ///ssid
 @property (nonatomic, copy) NSString *ssid;
 ///passwd
