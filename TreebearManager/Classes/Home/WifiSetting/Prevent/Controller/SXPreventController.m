@@ -31,7 +31,7 @@
     
     [self setUpUI];
     
-    [self setUpData];
+    [self userNodeDeviceListData];
 }
 
 - (void)setUpUI{
@@ -40,7 +40,8 @@
     self.navigationItem.title = @"防蹭网";
 }
 
-- (void)setUpData{
+#pragma mark -网络请求接口-
+- (void)userNodeDeviceListData{
     WS(weakSelf);
     SXPreventPageParam *param = [SXPreventPageParam param];
     param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
@@ -54,6 +55,25 @@
         weakSelf.dataArray = [NSMutableArray arrayWithArray:array];
         //刷新UI
         [weakSelf.tableView reloadData];
+    } failure:^(NSError * _Nonnull error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSString *message = [error.userInfo objectForKey:@"msg"];
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        });
+    }];
+}
+
+- (void)userDodeDeviceSetData{
+    SXPreventPageParam *param = [SXPreventPageParam param];
+    param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
+    param.mac = @"";
+    param.note = @"";
+    param.block = @0;
+    [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
+    [SXWifiSettingNetTool userDodeDeviceSetDataWithParams:param.mj_keyValues success:^{
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        [MBProgressHUD showSuccessWithMessage:@"设置成功!" toView:SXKeyWindow];
     } failure:^(NSError * _Nonnull error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

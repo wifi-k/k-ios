@@ -11,6 +11,7 @@
 #import "SXNavigationController.h"
 #import "SXLoginMainController.h"
 #import "SXLoginController.h"
+#import "SXUserGuideController.h"
 
 @implementation SXRootTool
 
@@ -28,6 +29,12 @@
 + (void)chooseRootWithLoginVC:(UIWindow *)window{
     SXLoginController *loginVC = [[SXLoginController alloc] init];
     SXNavigationController *naviVC = [[SXNavigationController alloc] initWithRootViewController:loginVC];
+    window.rootViewController = naviVC;
+}
+
++ (void)chooseRootWithGuideVC:(UIWindow *)window{
+    SXUserGuideController *guideVC = [[SXUserGuideController alloc] init];
+    SXNavigationController *naviVC = [[SXNavigationController alloc] initWithRootViewController:guideVC];
     window.rootViewController = naviVC;
 }
 

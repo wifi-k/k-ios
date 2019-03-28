@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)chooseRootWithLoginVC:(UIWindow *)window;
 
++ (void)chooseRootWithGuideVC:(UIWindow *)window;
+
 + (UIViewController *)topViewController;
     
 + (UIViewController *)rootViewController;

@@ -13,6 +13,7 @@
 #import "SXMineNetTool.h"
 #import "SXXiaoKiParam.h"
 #import "SXRootTool.h"
+#import "SXUserGuideController.h"
 
 @interface SXLoginMainController ()
 ///头部视图
@@ -40,14 +41,6 @@
 //    self.navigationController.navigationBar.barTintColor = UIColor.whiteColor;
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
-
-#pragma -init初始化-
-//- (instancetype)init{
-//    if (self = [super init]) {
-//        [self setUpData];
-//    }
-//    return self;
-//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -90,8 +83,10 @@
 }
 
 - (void)jumpToRegistVC{
-    SXRegistController *forgetVC = [[SXRegistController alloc] init];
-    [self.navigationController pushViewController:forgetVC animated:YES];
+//    SXRegistController *forgetVC = [[SXRegistController alloc] init];
+//    [self.navigationController pushViewController:forgetVC animated:YES];
+    SXUserGuideController *guideVC = [[SXUserGuideController alloc] init];
+    [self.navigationController pushViewController:guideVC animated:YES];
 }
 
 #pragma mark -获取用户信息(最新)-

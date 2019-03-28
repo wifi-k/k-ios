@@ -12,6 +12,7 @@
 #import "SXLoginRegistAlertView.h"
 #import "SXLoginNetTool.h"
 #import "SXRootTool.h"
+#import "SXUserDefaultsTool.h"
 
 @interface SXCodeLoginController ()
 ///头部视图
@@ -90,8 +91,11 @@
     [MBProgressHUD showWhiteLoadingWithMessage:@"即将登录..." toView:self.view];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [MBProgressHUD hideHUDForView:weakSelf.view];
-        
-        [SXRootTool chooseRootWithTabBarVC:SXKeyWindow];
+        if (![SXUserDefaultsTool isShowGuide]) {
+            [SXRootTool chooseRootWithGuideVC:SXDelegateWindow];
+        } else {
+            [SXRootTool chooseRootWithTabBarVC:SXDelegateWindow];
+        }
     });
 }
 

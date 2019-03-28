@@ -15,5 +15,11 @@
     
 ///取出版本号
 + (NSString *)version;
+
+///保存引导记录
++ (void)saveShowGuide:(BOOL)isShowGuide;
+
+///取出记录
++ (BOOL)isShowGuide;
     
 @end

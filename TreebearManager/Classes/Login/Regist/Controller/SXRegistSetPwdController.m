@@ -11,6 +11,7 @@
 #import "SXLoginNetTool.h"
 #import "SXRootTool.h"
 #import "NSString+Hash.h"
+#import "SXUserDefaultsTool.h"
 
 @interface SXRegistSetPwdController ()
 ///头部视图
@@ -65,8 +66,11 @@
     [MBProgressHUD showWhiteLoadingWithMessage:@"即将登录..." toView:SXKeyWindow];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [MBProgressHUD hideHUDForView:SXKeyWindow];
-        
-        [SXRootTool chooseRootWithTabBarVC:SXDelegateWindow];
+        if (![SXUserDefaultsTool isShowGuide]) {
+            [SXRootTool chooseRootWithGuideVC:SXDelegateWindow];
+        } else {
+            [SXRootTool chooseRootWithTabBarVC:SXDelegateWindow];
+        }
     });
 }
 
