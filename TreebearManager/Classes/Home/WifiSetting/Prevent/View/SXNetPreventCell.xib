@@ -69,6 +69,9 @@
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="bottomLineView" destination="ACL-xS-UNU" id="zYY-4R-bEy"/>
+                <outlet property="iconImageView" destination="AUE-yw-qxc" id="NYl-d7-5ph"/>
+                <outlet property="nameL" destination="4Dn-Md-ppS" id="tDc-P2-CS8"/>
+                <outlet property="statusL" destination="upa-Ow-UFe" id="TGo-QX-C31"/>
                 <outlet property="switchBtn" destination="sKh-aR-YkO" id="lYa-Y5-GMu"/>
             </connections>
             <point key="canvasLocation" x="155.19999999999999" y="172.26386806596702"/>

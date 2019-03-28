@@ -60,6 +60,9 @@ extern NSString *const user_node_wifi_timer_get;
 extern NSString *const user_node_wifi_timer_set;
 extern NSString *const user_quit;
 
+extern NSString *const user_node_device_list;
+extern NSString *const user_node_device_set;
+
 @end
 
 NS_ASSUME_NONNULL_END

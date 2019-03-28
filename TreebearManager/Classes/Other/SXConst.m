@@ -58,5 +58,7 @@ NSString *const user_node_wifi_timer_get = @"user/node/wifi/timer/get";
 NSString *const user_node_wifi_timer_set = @"user/node/wifi/timer/set";
 NSString *const user_quit = @"user/quit";
 
+NSString *const user_node_device_list = @"user/node/device/list";
+NSString *const user_node_device_set = @"user/node/device/set";
 
 @end
