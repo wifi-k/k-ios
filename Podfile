@@ -27,4 +27,5 @@ target 'TreebearManager' do #工程名称
     pod 'UMCAnalytics'
     pod 'UMCPush'
     pod 'UMCErrorCatch'
+    pod 'UMengUShare/Social/ReducedWeChat'
 end

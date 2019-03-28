@@ -9,8 +9,10 @@
 #import "AppDelegate.h"
 #import "SXRootTool.h"
 #import "SXNetReachablityTool.h"
-#import <UMCommon/UMCommon.h> // 公共组件是所有友盟产品的基础组件，必选
-#import <UMPush/UMessage.h> // Push组件
+#import <UMCommon/UMCommon.h>          // 公共组件是所有友盟产品的基础组件，必选
+#import <UMAnalytics/MobClick.h>       // 统计组件
+#import <UMSocialCore/UMSocialCore.h>  // 分享组件
+#import <UMPush/UMessage.h>            // Push组件
 #import <UserNotifications/UserNotifications.h> // Push组件必须的系统库
 #import <UMErrorCatch/UMErrorCatch.h>
 
@@ -66,18 +68,16 @@
     /* 打开调试日志 */
     [UMConfigure setLogEnabled:true];
     //友盟推送的初始
-    [UMConfigure initWithAppkey:UMSocialKey channel:ChannelId];
+    [UMConfigure initWithAppkey:UMSocialKey channel:nil];
     [UMErrorCatch initErrorCatch];
-    
+
     // Push组件基本功能配置
     //初始化
     if (@available(iOS 10.0, *)) {
         [UNUserNotificationCenter currentNotificationCenter].delegate = self;
     }
     UMessageRegisterEntity * entity = [[UMessageRegisterEntity alloc] init];
-    //type是对推送的几个参数的选择，可以选择一个或者多个。默认是三个全部打开，即：声音，弹窗，角标等
     entity.types = UMessageAuthorizationOptionBadge|UMessageAuthorizationOptionAlert|UMessageAuthorizationOptionSound;
-
     [UMessage registerForRemoteNotificationsWithLaunchOptions:launchOptions Entity:entity completionHandler:^(BOOL granted, NSError * _Nullable error) {
         if (granted) {
             // 用户选择了接收Push消息

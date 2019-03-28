@@ -485,6 +485,11 @@ Copyright 2011 - 2018 umeng.com. All rights reserved.
 Copyright 2011 - 2018 umeng.com. All rights reserved.
 
 
+## UMengUShare
+
+Copyright 2011 - 2018 UMeng.com. All rights reserved.
+
+
 ## WYChart
 
 Copyright (c) 2016 Ying Wang<GeorgeWang003@gmail.com>.
