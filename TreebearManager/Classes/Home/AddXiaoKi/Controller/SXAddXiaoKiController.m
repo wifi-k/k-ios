@@ -99,15 +99,6 @@
         //更新wan信息
         SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
         [shareInfo setDataWithResult:result];
-//        shareInfo.modelId = result.modelId;
-//        shareInfo.ip = result.wan.ip;
-//        shareInfo.netmask = result.wan.netmask;
-//        shareInfo.gateway = result.wan.gateway;
-//        shareInfo.dns1 = result.wan.dns1;
-//        shareInfo.dns2 = result.wan.dns2;
-//        shareInfo.type = result.wan.type;
-//        shareInfo.name = result.wan.name;
-//        shareInfo.passwd = result.wan.passwd;
     } failure:^(NSError * _Nonnull error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
@@ -167,21 +158,6 @@
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
     }];
 }
-
-#pragma mark -解绑小K(测试用)-
-//- (void)userNodeUnbindWithModel:(NSString *)nodeId{
-//    //更新wan信息
-//    if ([NSString isEmpty:nodeId]) {
-//        [MBProgressHUD showWarningWithMessage:@"没有获取到节点，请检查系统网络设置!" toView:SXKeyWindow];
-//        return;
-//    }
-//    [SXMineNetTool userNodeUnbindParams:nodeId Success:^{
-//        [MBProgressHUD showSuccessWithMessage:@"解绑成功!" toView:SXKeyWindow];
-//    } failure:^(NSError *error) {
-//        NSString *message = [error.userInfo objectForKey:@"msg"];
-//        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
-//    }];
-//}
 
 #pragma mark -视图弹窗-
 - (void)alertOnNetAlertView{

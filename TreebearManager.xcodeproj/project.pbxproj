@@ -110,6 +110,8 @@
 		093C12A2224CC9B7005682C8 /* SXPreventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12A1224CC9B7005682C8 /* SXPreventModel.m */; };
 		093C12A9224CE755005682C8 /* SXUserGuideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12A7224CE755005682C8 /* SXUserGuideController.m */; };
 		093C12AA224CE755005682C8 /* SXUserGuideController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093C12A8224CE755005682C8 /* SXUserGuideController.xib */; };
+		093C12B6224DC1D8005682C8 /* SXXiaoKiAddBindController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12B4224DC1D8005682C8 /* SXXiaoKiAddBindController.m */; };
+		093C12B7224DC1D8005682C8 /* SXXiaoKiAddBindController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093C12B5224DC1D8005682C8 /* SXXiaoKiAddBindController.xib */; };
 		09462ACB22375DEE0063F67E /* SXOnlineOptionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */; };
 		09462ACD22375DF90063F67E /* SXOnlineOptionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */; };
 		09462AD12237898C0063F67E /* XDSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACF2237898C0063F67E /* XDSDropDownMenu.m */; };
@@ -574,6 +576,9 @@
 		093C12A6224CE755005682C8 /* SXUserGuideController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXUserGuideController.h; sourceTree = "<group>"; };
 		093C12A7224CE755005682C8 /* SXUserGuideController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXUserGuideController.m; sourceTree = "<group>"; };
 		093C12A8224CE755005682C8 /* SXUserGuideController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXUserGuideController.xib; sourceTree = "<group>"; };
+		093C12B3224DC1D8005682C8 /* SXXiaoKiAddBindController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXXiaoKiAddBindController.h; sourceTree = "<group>"; };
+		093C12B4224DC1D8005682C8 /* SXXiaoKiAddBindController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXXiaoKiAddBindController.m; sourceTree = "<group>"; };
+		093C12B5224DC1D8005682C8 /* SXXiaoKiAddBindController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXXiaoKiAddBindController.xib; sourceTree = "<group>"; };
 		09462AC922375DEE0063F67E /* SXOnlineOptionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineOptionHeaderView.h; sourceTree = "<group>"; };
 		09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineOptionHeaderView.m; sourceTree = "<group>"; };
 		09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXOnlineOptionHeaderView.xib; sourceTree = "<group>"; };
@@ -2385,6 +2390,9 @@
 				09F76F3522476ED8008A9048 /* SXXiaoKiEquipmentOptionController.m */,
 				09F233072223EE4D0086AB35 /* SXXiaoKiController.h */,
 				09F233082223EE4D0086AB35 /* SXXiaoKiController.m */,
+				093C12B3224DC1D8005682C8 /* SXXiaoKiAddBindController.h */,
+				093C12B4224DC1D8005682C8 /* SXXiaoKiAddBindController.m */,
+				093C12B5224DC1D8005682C8 /* SXXiaoKiAddBindController.xib */,
 				09D5F655222B8BD600EA681A /* SXUpdateVersionController.h */,
 				09D5F656222B8BD600EA681A /* SXUpdateVersionController.m */,
 			);
@@ -3471,6 +3479,7 @@
 				098BA305221A57A700F58639 /* SXMineHeaderView.xib in Resources */,
 				0936B736223A037D00E68C4C /* SXMobileUpdateHeaderView.xib in Resources */,
 				098BA300221A559200F58639 /* SXMineListCell.xib in Resources */,
+				093C12B7224DC1D8005682C8 /* SXXiaoKiAddBindController.xib in Resources */,
 				0936B72E2239F0E300E68C4C /* SXNickNameUpdateHeaderView.xib in Resources */,
 				09F76F4022477FC3008A9048 /* SXPhotoHeaderView.xib in Resources */,
 				09462AE52237AE6A0063F67E /* SXOnlineAutotIPHeaderView.xib in Resources */,
@@ -3757,6 +3766,7 @@
 				09B9B8252230EC8D000868D5 /* SXLANPortController.m in Sources */,
 				B348F9B321F71E2D0000F194 /* SXUploadParam.m in Sources */,
 				098BA313221B997000F58639 /* SXRegistParam.m in Sources */,
+				093C12B6224DC1D8005682C8 /* SXXiaoKiAddBindController.m in Sources */,
 				091BC4D62242207100FEBFD1 /* PYAblumModel.m in Sources */,
 				09B9B84122310B99000868D5 /* SXWorkModeOptionController.m in Sources */,
 				09D5F662222B961600EA681A /* SXHomeManagerController.m in Sources */,

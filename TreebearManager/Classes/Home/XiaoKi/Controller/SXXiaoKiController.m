@@ -8,6 +8,7 @@
 
 #import "SXXiaoKiController.h"
 #import "SXUpdateVersionController.h"
+#import "SXXiaoKiAddBindController.h"
 #import "SXHomeXiaoKiCell.h"
 #import "SXInputAlertView.h"
 #import "SXTitleAlertView.h"
@@ -43,6 +44,19 @@
     self.view.backgroundColor = SXColorWhite;
     
     self.navigationItem.title = @"我的小K";
+    
+    UIBarButtonItem *right = [UIBarButtonItem barButtonItemWithTitle:@"添加" target:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = right;
+}
+
+- (void)rightButtonAction:(UIButton *)btn{
+    DLog(@"btn:%@",btn.titleLabel.text);
+    WS(weakSelf);
+    SXXiaoKiAddBindController *addVC = [[SXXiaoKiAddBindController alloc] init];
+    addVC.addBindSuccessBlock = ^{
+        [weakSelf setUpData];
+    };
+    [self.navigationController pushViewController:addVC animated:YES];
 }
 
 #pragma mark -setData(列表)-
