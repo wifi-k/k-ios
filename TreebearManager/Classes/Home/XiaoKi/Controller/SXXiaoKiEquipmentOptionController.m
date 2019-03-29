@@ -58,6 +58,12 @@
     [self userNodeListallMoreData];
 }
 
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    self.tableView.frame = self.view.bounds;
+}
+
 #pragma mark -setData(列表)-
 - (void)userNodeListallData{
     WS(weakSelf);
@@ -109,12 +115,6 @@
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
     }];
-}
-
-- (void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
-    
-    self.tableView.frame = self.view.bounds;
 }
 
 #pragma mark -用户选定节点-

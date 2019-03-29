@@ -29,6 +29,7 @@
 #import "SXNotificationCenterTool.h"
 #import "SXXiaoKiOptionResult.h"
 #import "SXAddXiaokiNetTool.h"
+#import "SXMineNetTool.h"
 #import <UMSocialCore/UMSocialCore.h>
 
 @interface SXHomeMainController ()<UITableViewDelegate,UITableViewDataSource>
@@ -46,8 +47,10 @@
     //添加通知
     [self addNotification];
     
-    //初始数据
+    //获取节点数据
     [self getNodeData];
+    //选中家庭成员
+    [self userNodeListallData];
 }
     
 - (void)setUpUI{
@@ -218,16 +221,22 @@
         //更新wan信息
         SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
         [shareInfo setDataWithResult:result];
-//        shareInfo.modelId = result.modelId;
-//        shareInfo.ip = result.wan.ip;
-//        shareInfo.netmask = result.wan.netmask;
-//        shareInfo.gateway = result.wan.gateway;
-//        shareInfo.dns1 = result.wan.dns1;
-//        shareInfo.dns2 = result.wan.dns2;
-//        shareInfo.type = result.wan.type;
-//        shareInfo.name = result.wan.name;
-//        shareInfo.passwd = result.wan.passwd;
     } failure:^(NSError * _Nonnull error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
+#pragma mark -家庭节点列表-
+- (void)userNodeListallData{
+    SXXiaoKiParam *param = [SXXiaoKiParam param];
+    param.pageNo = @1;
+    param.pageSize = @10;
+    [SXMineNetTool userNodeListallParams:param.mj_keyValues Success:^(SXHomeXiaoKiResult *result) {
+        if (!result.page.count) return;
+        //默认选中第一个
+        SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel = result.page.firstObject;
+    } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
     }];
