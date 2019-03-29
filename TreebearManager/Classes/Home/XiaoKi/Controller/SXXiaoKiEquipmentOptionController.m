@@ -75,6 +75,10 @@
         weakSelf.dataArray = [NSMutableArray arrayWithArray:result.page];
         //刷新UI
         [weakSelf.tableView reloadData];
+        //判断是否到底
+        if (weakSelf.dataArray.count >= result.total.integerValue) {
+            [weakSelf showNoMoreDataFooterView];
+        }
     } failure:^(NSError *error) {
         [weakSelf endHeaderRefresh];
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];

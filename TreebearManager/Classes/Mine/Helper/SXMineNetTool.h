@@ -35,7 +35,7 @@
 + (void)userNodeWifiSetParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
 ///节点信息查询 
-+ (void)userNodeListParams:(NSDictionary *)params Success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure;
++ (void)userNodeListParams:(NSDictionary *)params Success:(void (^)(SXHomeXiaoKiResult *result))success failure:(void (^)(NSError *error))failure;
 
 ///节点绑定
 + (void)userNodeBindParams:(NSString *)nodeId Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;

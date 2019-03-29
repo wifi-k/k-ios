@@ -31,7 +31,8 @@
             
             UILabel *titleL = [[UILabel alloc]initWithFrame:self.noMoreDataView.bounds];
             titleL.textAlignment = NSTextAlignmentCenter;
-            titleL.text = @"我是有底线的";
+//            titleL.text = @"我是有底线的";
+            titleL.text = @"没有更多数据";
             titleL.font = SXFont(13);
             titleL.textColor = UIColor.grayColor;
             [self.noMoreDataView addSubview:titleL];
