@@ -16,6 +16,8 @@
 @interface SXXiaoKiEquipmentOptionController ()
 ///数据源
 @property (nonatomic, strong) NSMutableArray *dataArray;
+///页码
+@property (nonatomic, assign) NSInteger pageIndex;
 @end
 
 @implementation SXXiaoKiEquipmentOptionController
@@ -33,7 +35,8 @@
     
     [self setUpUI];
     
-    [self setUpData];
+    //开始下拉刷新
+    [self refresh];
 }
 
 #pragma mark -初始化UI-
@@ -43,23 +46,62 @@
     self.navigationItem.title = @"切换小K";
 }
 
+#pragma mark -下拉动画-
+- (void)dropRefresh{
+    DLog(@"dropRefresh");
+    [self userNodeListallData];
+}
+
+#pragma mark -上拉动画-
+- (void)pullRefresh{
+    DLog(@"pullRefresh");
+    [self userNodeListallMoreData];
+}
+
 #pragma mark -setData(列表)-
-- (void)setUpData{
+- (void)userNodeListallData{
     WS(weakSelf);
     SXXiaoKiParam *param = [SXXiaoKiParam param];
-    param.pageNo = @1;
+    self.pageIndex = 1;
+    param.pageNo = @(self.pageIndex);
     param.pageSize = @10;
     [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
 //    SXMineNetTool userNodeListallParams
 //    SXMineNetTool userNodeListParams
-    [SXMineNetTool userNodeListallParams:param.mj_keyValues Success:^(NSArray *array) {
+    [SXMineNetTool userNodeListallParams:param.mj_keyValues Success:^(SXHomeXiaoKiResult *result) {
+        [weakSelf endHeaderRefresh];
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         //数据初始化
-        weakSelf.dataArray = [NSMutableArray arrayWithArray:array];
+        weakSelf.dataArray = [NSMutableArray arrayWithArray:result.page];
         //刷新UI
         [weakSelf.tableView reloadData];
     } failure:^(NSError *error) {
+        [weakSelf endHeaderRefresh];
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
+#pragma mark -更多家庭节点列表-
+- (void)userNodeListallMoreData{
+    WS(weakSelf);
+    SXXiaoKiParam *param = [SXXiaoKiParam param];
+    param.pageNo = @(++self.pageIndex);
+    param.pageSize = @10;
+    [SXMineNetTool userNodeListallParams:param.mj_keyValues Success:^(SXHomeXiaoKiResult *result) {
+        [weakSelf endFooterRefresh];
+        //数据初始化//刷新UI
+        if (result.page.count) {
+            [weakSelf.dataArray addObjectsFromArray:result.page];
+            [weakSelf.tableView reloadData];
+        } else {
+            if (weakSelf.dataArray.count >= result.total.integerValue) {
+                [weakSelf showNoMoreDataFooterView];
+            }
+        }
+    } failure:^(NSError *error) {
+        [weakSelf endFooterRefresh];
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
     }];

@@ -113,7 +113,6 @@
     //更新wan信息
     WS(weakSelf);
     if ([NSString isEmpty:self.currentResult.modelId]) {
-        [MBProgressHUD showWarningWithMessage:@"没有获取到节点，请检查系统网络设置!" toView:SXKeyWindow];
         [self alertOnNetAlertView];
         return;
     }
@@ -160,7 +159,7 @@
             [SXRootTool jumpToSystemWIFI];
         };
         netAlertView.cancelButtonBlock = ^{
-            [SXRootTool popToPrevious];
+            
         };
         [netAlertView alert];
     }

@@ -112,6 +112,7 @@
 		093C12AA224CE755005682C8 /* SXUserGuideController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093C12A8224CE755005682C8 /* SXUserGuideController.xib */; };
 		093C12B6224DC1D8005682C8 /* SXXiaoKiAddBindController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12B4224DC1D8005682C8 /* SXXiaoKiAddBindController.m */; };
 		093C12B7224DC1D8005682C8 /* SXXiaoKiAddBindController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093C12B5224DC1D8005682C8 /* SXXiaoKiAddBindController.xib */; };
+		093C12BA224E0CDD005682C8 /* SXHomeXiaoKiResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12B9224E0CDD005682C8 /* SXHomeXiaoKiResult.m */; };
 		09462ACB22375DEE0063F67E /* SXOnlineOptionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */; };
 		09462ACD22375DF90063F67E /* SXOnlineOptionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */; };
 		09462AD12237898C0063F67E /* XDSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACF2237898C0063F67E /* XDSDropDownMenu.m */; };
@@ -579,6 +580,8 @@
 		093C12B3224DC1D8005682C8 /* SXXiaoKiAddBindController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXXiaoKiAddBindController.h; sourceTree = "<group>"; };
 		093C12B4224DC1D8005682C8 /* SXXiaoKiAddBindController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXXiaoKiAddBindController.m; sourceTree = "<group>"; };
 		093C12B5224DC1D8005682C8 /* SXXiaoKiAddBindController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXXiaoKiAddBindController.xib; sourceTree = "<group>"; };
+		093C12B8224E0CDD005682C8 /* SXHomeXiaoKiResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeXiaoKiResult.h; sourceTree = "<group>"; };
+		093C12B9224E0CDD005682C8 /* SXHomeXiaoKiResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeXiaoKiResult.m; sourceTree = "<group>"; };
 		09462AC922375DEE0063F67E /* SXOnlineOptionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineOptionHeaderView.h; sourceTree = "<group>"; };
 		09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineOptionHeaderView.m; sourceTree = "<group>"; };
 		09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXOnlineOptionHeaderView.xib; sourceTree = "<group>"; };
@@ -2455,6 +2458,8 @@
 				09F76F2F2244DAE9008A9048 /* SXXiaoKiParam.m */,
 				09C8CE42224A040500C03F43 /* SXXiaoKiOptionResult.h */,
 				09C8CE43224A040500C03F43 /* SXXiaoKiOptionResult.m */,
+				093C12B8224E0CDD005682C8 /* SXHomeXiaoKiResult.h */,
+				093C12B9224E0CDD005682C8 /* SXHomeXiaoKiResult.m */,
 				09F76F2B2244D64A008A9048 /* SXHomeXiaoKiModel.h */,
 				09F76F2C2244D64A008A9048 /* SXHomeXiaoKiModel.m */,
 				09F76F312244E8CA008A9048 /* SXHomeXiaoKiSSIDModel.h */,
@@ -3632,6 +3637,7 @@
 				09F76F4F2247CB29008A9048 /* SXPhotoIntelligentController.m in Sources */,
 				0936B72C2239F0DB00E68C4C /* SXNickNameUpdateHeaderView.m in Sources */,
 				09F76F332244E8CA008A9048 /* SXHomeXiaoKiSSIDModel.m in Sources */,
+				093C12BA224E0CDD005682C8 /* SXHomeXiaoKiResult.m in Sources */,
 				091BC4D92242207100FEBFD1 /* PYAssetModel.m in Sources */,
 				B3AF302121FE90DA001E4E67 /* SXBaseTableViewGroupController.m in Sources */,
 				095540D222200EB6005A5485 /* SXHomeMainMemberButton.m in Sources */,

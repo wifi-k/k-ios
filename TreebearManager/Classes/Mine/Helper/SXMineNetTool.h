@@ -10,7 +10,7 @@
 #import "SXMineUserInfoParam.h"
 #import "SXXiaoKiParam.h"
 #import "SXMineUserInfoModel.h"
-#import "SXHomeXiaoKiModel.h"
+#import "SXHomeXiaoKiResult.h"
 #import "SXHomeXiaoKiSSIDModel.h"
 #import "SXMineUserInfoResult.h"
 
@@ -47,7 +47,7 @@
 + (void)userNodeInfoSetParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
 ///家庭节点列表 (返回自己的节点和所属家庭的节点)
-+ (void)userNodeListallParams:(NSDictionary *)params Success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure;
++ (void)userNodeListallParams:(NSDictionary *)params Success:(void (^)(SXHomeXiaoKiResult *result))success failure:(void (^)(NSError *error))failure;
 
 ///用户退出
 + (void)userQuitSuccess:(void (^)(void))success failure:(void (^)(NSError *error))failure;

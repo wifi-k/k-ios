@@ -176,18 +176,16 @@
     }];
 }
 
-+ (void)userNodeListallParams:(NSDictionary *)params Success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure{
++ (void)userNodeListallParams:(NSDictionary *)params Success:(void (^)(SXHomeXiaoKiResult *result))success failure:(void (^)(NSError *error))failure{
 
     [SXNetRequestTool POST:user_node_listall parameters:params success:^(id response) {
         
         if (![response isKindOfClass:NSDictionary.class]) return;
         
-        NSArray *pageList = [response objectForKey:@"page"];
-        
-        NSArray *modelList = [SXHomeXiaoKiModel mj_objectArrayWithKeyValuesArray:pageList];
+        SXHomeXiaoKiResult *result = [SXHomeXiaoKiResult mj_objectWithKeyValues:response];
         
         if (success){
-            success(modelList);
+            success(result);
         }
     } failure:^(NSError *error) {
         if (failure) {

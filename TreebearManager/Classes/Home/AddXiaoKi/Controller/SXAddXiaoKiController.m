@@ -93,7 +93,6 @@
 
 #pragma mark -获取节点数据-
 - (void)getNodeData{
-//    WS(weakSelf);
     [SXAddXiaokiNetTool getNodeWithDataWithSuccess:^(SXXiaoKNodeResult * _Nonnull result) {
         DLog(@"获取节点");
         //更新wan信息
@@ -138,7 +137,7 @@
     //更新wan信息
     SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
     if ([NSString isEmpty:shareInfo.modelId]) {
-        [MBProgressHUD showWarningWithMessage:@"没有获取到节点，请检查系统网络设置!" toView:SXKeyWindow];
+        [self alertOnNetAlertView];
         return;
     }
     [SXMineNetTool userNodeBindParams:shareInfo.modelId Success:^{
