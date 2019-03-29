@@ -164,21 +164,13 @@
     
     BOOL isContainsAlert = NO;
     for (UIView *v in SXDelegateWindow.subviews) {
-        if ([v isKindOfClass:SXSingleAlertView.class]) {
+        if ([v isKindOfClass:SXTitleAlertView.class]) {
             isContainsAlert = YES;
             break;
         }
     }
     
     if (!isContainsAlert) {
-        /*
-        SXSingleAlertView *singleAV = [SXSingleAlertView alertWithTitle:@"连网提示" content:@"请立即连接wifi名称为'xiaoki-xxxx',然后再绑定设备" confirmStr:@"确定"];
-        singleAV.confirmButtonBlock = ^{
-            [SXRootTool jumpToSystemWIFI];
-        };
-        [singleAV alert];
-         */
-        
         SXTitleAlertView *netAlertView = [SXTitleAlertView alertWithTitle:@"连网提示" content:@"请立即连接wifi名称为'xiaoki-xxxx',然后再绑定设备" confirmStr:@"确定" cancelStr:@"取消"];
         netAlertView.confirmButtonBlock = ^{
             [SXRootTool jumpToSystemWIFI];

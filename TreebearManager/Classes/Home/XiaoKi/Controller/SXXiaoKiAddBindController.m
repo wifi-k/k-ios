@@ -7,23 +7,60 @@
 //
 
 #import "SXXiaoKiAddBindController.h"
-#import "SXXiaoKInfoModel.h"
 #import "SXMineNetTool.h"
+#import "SXAddXiaokiNetTool.h"
+#import "XKGetWifiNetTool.h"
+#import "SXNetReachablityTool.h"
+#import "SXTitleAlertView.h"
+#import "SXRootTool.h"
 
 @interface SXXiaoKiAddBindController ()
-
 @property (weak, nonatomic) IBOutlet UILabel *titleL;
 @property (weak, nonatomic) IBOutlet UIButton *bindBtn;
 
+//当前节点信息
+@property (strong, nonatomic) SXXiaoKNodeResult *currentResult;
 @end
 
 @implementation SXXiaoKiAddBindController
 
+#pragma mark -getter-
+- (SXXiaoKNodeResult *)currentResult{
+    if (_currentResult == nil) {
+        _currentResult = [[SXXiaoKNodeResult alloc] init];
+    }
+    return _currentResult;
+}
+
+#pragma mark -life recycle-
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    //1.获取当前连接wifi信息
+    [self getWifiInfo];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     [self setUpUI];
+    
+    [self addNotification];
+}
+
+- (void)addNotification{
+    // app从后台进入前台都会调用这个方法
+    [SXNotificationCenter addObserver:self selector:@selector(applicationBecomeActive) name:UIApplicationWillEnterForegroundNotification object:nil];
+}
+
+- (void)dealloc{
+    [SXNotificationCenter removeObserver:self];
+}
+
+#pragma mark -事件监听-
+- (void)applicationBecomeActive{
+    //1.获取当前连接wifi信息
+    [self getWifiInfo];
 }
 
 #pragma mark -初始化UI-
@@ -37,35 +74,96 @@
     [self.bindBtn roundViewWithRadius:6.0f];
 }
 
+#pragma mark -是否隐藏-
+- (void)hideSubviews:(BOOL)isHidden{
+    self.titleL.hidden = isHidden;
+    self.bindBtn.hidden = isHidden;
+}
+
+#pragma mark -获取节点数据-
+- (void)getNodeData{
+    WS(weakSelf);
+    [SXAddXiaokiNetTool getNodeWithDataWithSuccess:^(SXXiaoKNodeResult * _Nonnull result) {
+        DLog(@"获取节点:%@",result.modelId);
+        //更新wan信息
+        weakSelf.currentResult = result;
+    } failure:^(NSError * _Nonnull error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
+#pragma mark -获取当前连接wifi信息-
+- (void)getWifiInfo{
+    NSString *wifiSSID = [XKGetWifiNetTool getWifiSSID];
+    DLog(@"wifi:%@",wifiSSID);
+    if (SXNetReachablityTool.status == SXNetworkStatusWifi) {
+        self.titleL.text = [NSString stringWithFormat:@"您已连接wifi名称为'%@'的设备，点击立即绑定设备",wifiSSID];
+        [self hideSubviews:NO];
+        //重新连接之后，更新节点信息
+        [self getNodeData];
+    } else{
+        [self hideSubviews:YES];
+        [self alertOnNetAlertView];
+    }
+}
+
 #pragma mark -绑定小K-
 - (void)userNodeBindData{
     //更新wan信息
     WS(weakSelf);
-    SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
-    if ([NSString isEmpty:shareInfo.modelId]) {
+    if ([NSString isEmpty:self.currentResult.modelId]) {
         [MBProgressHUD showWarningWithMessage:@"没有获取到节点，请检查系统网络设置!" toView:SXKeyWindow];
+        [self alertOnNetAlertView];
         return;
     }
     [MBProgressHUD showWhiteLoadingWithMessage:@"绑定中..." toView:SXKeyWindow];
-    [SXMineNetTool userNodeBindParams:shareInfo.modelId Success:^{
+    [SXMineNetTool userNodeBindParams:self.currentResult.modelId Success:^{
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
-        //提示
-        [MBProgressHUD showSuccessWithMessage:@"绑定成功!" toView:SXKeyWindow];
         
         if (weakSelf.addBindSuccessBlock) {
             weakSelf.addBindSuccessBlock();
         }
         
         //通知绑定成功
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            //提示
+            [MBProgressHUD showSuccessWithMessage:@"绑定成功!" toView:SXKeyWindow];
+            
             [weakSelf.navigationController popViewControllerAnimated:YES];
         });
         
     } failure:^(NSError *error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
-        NSString *message = [error.userInfo objectForKey:@"msg"];
-        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSString *message = [error.userInfo objectForKey:@"msg"];
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        });
     }];
+}
+
+#pragma mark -视图弹窗-
+- (void)alertOnNetAlertView{
+    
+    BOOL isContainsAlert = NO;
+    for (UIView *v in SXDelegateWindow.subviews) {
+        if ([v isKindOfClass:SXTitleAlertView.class]) {
+            isContainsAlert = YES;
+            break;
+        }
+    }
+    
+    if (!isContainsAlert) {
+        
+        SXTitleAlertView *netAlertView = [SXTitleAlertView alertWithTitle:@"连网提示" content:@"请立即连接wifi名称为'xiaoki-xxxx',然后再绑定设备" confirmStr:@"确定" cancelStr:@"取消"];
+        netAlertView.confirmButtonBlock = ^{
+            [SXRootTool jumpToSystemWIFI];
+        };
+        netAlertView.cancelButtonBlock = ^{
+            [SXRootTool popToPrevious];
+        };
+        [netAlertView alert];
+    }
 }
 
 #pragma mark -Event-

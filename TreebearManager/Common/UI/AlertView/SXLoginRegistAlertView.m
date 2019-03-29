@@ -188,16 +188,17 @@ const CGFloat SXLoginRegistAlertViewHeightRatio = 0.206; //高度系统
 
 - (void)cancleButtonTapped{
     [self performSelector:@selector(removeSelf) withObject:nil afterDelay:0.12];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (self.cancelButtonBlock) {
+            self.cancelButtonBlock();
+        }
+    });
 }
 
 - (void)removeSelf{
     [UIView animateWithDuration:0.3 animations:^{
         self.bgView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.0];
     } completion:^(BOOL finished) {
-        if (self.cancelButtonBlock) {
-            self.cancelButtonBlock();
-        }
-        
         [self removeFromSuperview];
     }];
 }

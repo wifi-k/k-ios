@@ -180,7 +180,11 @@ const CGFloat SXFamilyCodeFailureAlertViewHeightRatio = 0.206; //高度系统
 }
 
 - (void)removeSelf{
-    [self removeFromSuperview];
+    [UIView animateWithDuration:0.3 animations:^{
+        self.bgView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.0];
+    } completion:^(BOOL finished) {
+        [self removeFromSuperview];
+    }];
 }
 
 - (void)setTopImageName:(NSString *)topImageName{
