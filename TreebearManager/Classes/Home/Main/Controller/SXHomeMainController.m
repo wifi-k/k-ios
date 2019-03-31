@@ -229,13 +229,26 @@
 
 #pragma mark -家庭节点列表-
 - (void)userNodeListallData{
+    WS(weakSelf);
     SXXiaoKiParam *param = [SXXiaoKiParam param];
     param.pageNo = @1;
     param.pageSize = @10;
     [SXMineNetTool userNodeListallParams:param.mj_keyValues Success:^(SXHomeXiaoKiResult *result) {
         if (!result.page.count) return;
-        //默认选中第一个
-        SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel = result.page.firstObject;
+        BOOL hasSelected = NO;
+        for (SXHomeXiaoKiModel *model in result.page) {
+            if (model.isSelect.boolValue) {
+                SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel = model;
+                [weakSelf.headerView setUpData];
+                hasSelected = YES;
+                break;
+            }
+        }
+        //如果第一分页没有选中，默认选中第一个
+        if (!hasSelected) {
+            SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel = result.page.firstObject;
+            [weakSelf.headerView setUpData];
+        }
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
