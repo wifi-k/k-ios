@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet SXImaginaryLineView *horizonDivideView;
 @property (weak, nonatomic) IBOutlet UIView *verticalDivideView;
 @property (weak, nonatomic) IBOutlet UIImageView *topCardBgImageView;
+@property (weak, nonatomic) IBOutlet UILabel *welcomeL;
+@property (weak, nonatomic) IBOutlet UIButton *statusBtn;
 @property (weak, nonatomic) IBOutlet UILabel *nameL;
 @property (weak, nonatomic) IBOutlet SXHomeMainMemberButton *managerBtn;
 @property (weak, nonatomic) IBOutlet SXHomeMainMemberButton *inviteMemberBtn;
@@ -70,6 +72,14 @@
     
     self.bottomBgView.backgroundColor = SXColorWhite;
     
+    //欢迎提示
+    self.welcomeL.textColor = SXColorWhite;
+    self.welcomeL.font = SXFontBold20;
+    
+    //状态标签
+    [self.statusBtn roundViewWithRadius:10.0f borderColor:SXColorWhite borderWidth:1.0f];
+    [self.statusBtn setTitle:@"状态" forState:UIControlStateNormal];
+    
     //开启交互
     self.nameL.userInteractionEnabled = YES;
     //添加手势
@@ -98,6 +108,23 @@
 - (void)setUpData{
     SXHomeXiaoKiModel *model = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel;
     self.nameL.text = model.name;
+    switch (model.status.integerValue) {
+        case 0:
+            [self.statusBtn setTitle:@"离线" forState:UIControlStateNormal];
+            break;
+        case 1:
+            [self.statusBtn setTitle:@"在线" forState:UIControlStateNormal];
+            break;
+        case 2:
+            [self.statusBtn setTitle:@"警告" forState:UIControlStateNormal];
+            break;
+        case 3:
+            [self.statusBtn setTitle:@"错误" forState:UIControlStateNormal];
+            break;
+        default:
+            [self.statusBtn setTitle:@"状态" forState:UIControlStateNormal];
+            break;
+    }
 }
 
 #pragma mark -事件监听-

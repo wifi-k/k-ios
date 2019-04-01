@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SXHomeMobileModel.h"
+#import "SXMobileManagerModel.h"
 
 @interface SXMobileManagerCell : UITableViewCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
-@property (nonatomic, strong) SXHomeMobileModel *model;
+@property (nonatomic, strong) SXMobileManagerModel *model;
 
 ///点击备注按钮回调
 @property (nonatomic, copy) void (^clickRemarkBtnBlock)(void);

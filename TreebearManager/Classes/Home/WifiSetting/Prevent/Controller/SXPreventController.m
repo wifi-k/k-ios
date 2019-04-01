@@ -48,11 +48,11 @@
     param.pageNo = @1;
     param.pageSize = @10;
     [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
-    [SXWifiSettingNetTool userNodeDeviceListDataWithParams:param.mj_keyValues success:^(NSArray * _Nonnull array) {
+    [SXWifiSettingNetTool userNodeDeviceListDataWithParams:param.mj_keyValues success:^(SXMobileManagerResult * _Nonnull result) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         
         //数据初始化
-        weakSelf.dataArray = [NSMutableArray arrayWithArray:array];
+        weakSelf.dataArray = [NSMutableArray arrayWithArray:result.page];
         //刷新UI
         [weakSelf.tableView reloadData];
     } failure:^(NSError * _Nonnull error) {
@@ -94,8 +94,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     SXNetPreventCell *cell = [SXNetPreventCell cellWithTableView:tableView];
-    SXPreventModel *model = self.dataArray[indexPath.row];
-    cell.model = model;
+//    SXPreventModel *model = self.dataArray[indexPath.row];
+//    cell.model = model;
     return cell;
 }
 

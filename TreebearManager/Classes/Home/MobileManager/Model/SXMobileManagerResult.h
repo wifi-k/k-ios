@@ -1,15 +1,15 @@
 //
-//  SXHomeXiaoKiResult.h
+//  SXMobileManagerResult.h
 //  TreebearManager
 //
-//  Created by bear on 2019/3/29.
+//  Created by bear on 2019/4/1.
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
 #import "SXBaseModel.h"
-#import "SXHomeXiaoKiModel.h"
+#import "SXMobileManagerModel.h"
 
-@interface SXHomeXiaoKiResult : SXBaseModel
+@interface SXMobileManagerResult : SXBaseModel
 
 ///总数
 @property (nonatomic, copy) NSNumber *total;
@@ -17,4 +17,3 @@
 @property (nonatomic, copy) NSArray *page;
 
 @end
-

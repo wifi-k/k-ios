@@ -69,6 +69,7 @@
 /** 颜色转换 */
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
+
 #define SXColorClear UIColor.clearColor       // 透明色
 #define SXColorCCCCC UIColorFromRGB(0xCCCCCC) // 深灰色
 #define SXColorWhite UIColorFromRGB(0xffffff) // 白色
@@ -84,6 +85,7 @@
 #define SXColorOrange UIColorFromRGB(0xff9900) // 辅色(橙色)
 #define SXColorPlaceholder UIColorFromRGB(0xc9c9cf) // 用于表单 输入框等提示文字
 #define SXColorRed   UIColorFromRGB(0xe64340) // 红色
+#define SXColorSystemBlue   UIColorFromRGB(0x038CFF) // 系统蓝
 
 #pragma mark -字体大小-
 //文本字体大小

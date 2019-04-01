@@ -36,17 +36,16 @@
     }];
 }
 
-+ (void)userNodeDeviceListDataWithParams:(NSDictionary *)params success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure{
++ (void)userNodeDeviceListDataWithParams:(NSDictionary *)params success:(void (^)(SXMobileManagerResult *result))success failure:(void (^)(NSError *error))failure{
     
     [SXNetRequestTool POST:user_node_device_list parameters:params success:^(id response) {
         
         if (![response isKindOfClass:NSDictionary.class]) return;
         
-        //获取设备列表
-        NSArray *list = [SXPreventModel mj_objectArrayWithKeyValuesArray:response];
+        SXMobileManagerResult *result = [SXMobileManagerResult mj_objectWithKeyValues:response];
         
         if (success){
-            success(list);
+            success(result);
         }
     } failure:^(NSError *error) {
         if (failure) {

@@ -113,6 +113,9 @@
 		093C12B6224DC1D8005682C8 /* SXXiaoKiAddBindController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12B4224DC1D8005682C8 /* SXXiaoKiAddBindController.m */; };
 		093C12B7224DC1D8005682C8 /* SXXiaoKiAddBindController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093C12B5224DC1D8005682C8 /* SXXiaoKiAddBindController.xib */; };
 		093C12BA224E0CDD005682C8 /* SXHomeXiaoKiResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12B9224E0CDD005682C8 /* SXHomeXiaoKiResult.m */; };
+		093C12BD2251AF65005682C8 /* SXMobileManagerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12BC2251AF65005682C8 /* SXMobileManagerModel.m */; };
+		093C12C02251AF90005682C8 /* SXMobileManagerResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12BF2251AF90005682C8 /* SXMobileManagerResult.m */; };
+		093C12C32251B1F7005682C8 /* SXMobilePageParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12C22251B1F7005682C8 /* SXMobilePageParam.m */; };
 		09462ACB22375DEE0063F67E /* SXOnlineOptionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */; };
 		09462ACD22375DF90063F67E /* SXOnlineOptionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */; };
 		09462AD12237898C0063F67E /* XDSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACF2237898C0063F67E /* XDSDropDownMenu.m */; };
@@ -582,6 +585,12 @@
 		093C12B5224DC1D8005682C8 /* SXXiaoKiAddBindController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXXiaoKiAddBindController.xib; sourceTree = "<group>"; };
 		093C12B8224E0CDD005682C8 /* SXHomeXiaoKiResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeXiaoKiResult.h; sourceTree = "<group>"; };
 		093C12B9224E0CDD005682C8 /* SXHomeXiaoKiResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeXiaoKiResult.m; sourceTree = "<group>"; };
+		093C12BB2251AF65005682C8 /* SXMobileManagerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMobileManagerModel.h; sourceTree = "<group>"; };
+		093C12BC2251AF65005682C8 /* SXMobileManagerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMobileManagerModel.m; sourceTree = "<group>"; };
+		093C12BE2251AF90005682C8 /* SXMobileManagerResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMobileManagerResult.h; sourceTree = "<group>"; };
+		093C12BF2251AF90005682C8 /* SXMobileManagerResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMobileManagerResult.m; sourceTree = "<group>"; };
+		093C12C12251B1F7005682C8 /* SXMobilePageParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMobilePageParam.h; sourceTree = "<group>"; };
+		093C12C22251B1F7005682C8 /* SXMobilePageParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMobilePageParam.m; sourceTree = "<group>"; };
 		09462AC922375DEE0063F67E /* SXOnlineOptionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineOptionHeaderView.h; sourceTree = "<group>"; };
 		09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineOptionHeaderView.m; sourceTree = "<group>"; };
 		09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXOnlineOptionHeaderView.xib; sourceTree = "<group>"; };
@@ -1794,6 +1803,12 @@
 		09B9B7CB2230BA38000868D5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				093C12C12251B1F7005682C8 /* SXMobilePageParam.h */,
+				093C12C22251B1F7005682C8 /* SXMobilePageParam.m */,
+				093C12BE2251AF90005682C8 /* SXMobileManagerResult.h */,
+				093C12BF2251AF90005682C8 /* SXMobileManagerResult.m */,
+				093C12BB2251AF65005682C8 /* SXMobileManagerModel.h */,
+				093C12BC2251AF65005682C8 /* SXMobileManagerModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3623,6 +3638,7 @@
 				B3AF2FF321FAFF45001E4E67 /* SXRegistController.m in Sources */,
 				098BA316221BA75900F58639 /* SXLoginParam.m in Sources */,
 				092D6CF7220062C700538AC8 /* NSString+Hash.m in Sources */,
+				093C12C02251AF90005682C8 /* SXMobileManagerResult.m in Sources */,
 				09B9B7C2222FED88000868D5 /* SXNetBroadbandParam.m in Sources */,
 				09B9B84422310BB2000868D5 /* SXChannelOptionController.m in Sources */,
 				09F76F432247C42F008A9048 /* SXPhotoHeaderButton.m in Sources */,
@@ -3747,6 +3763,7 @@
 				098BA2F0221660BD00F58639 /* SXFamilyCodeFailureAlertView.m in Sources */,
 				092D6CF5220062C700538AC8 /* MyBase64.m in Sources */,
 				091186EE22151D5F00938D9F /* SGSocketConfigM.m in Sources */,
+				093C12BD2251AF65005682C8 /* SXMobileManagerModel.m in Sources */,
 				092D6D022200745500538AC8 /* SXUserModel.m in Sources */,
 				09D5F676222BC6D800EA681A /* SXFamilyMemberFooterView.m in Sources */,
 				0936B734223A037400E68C4C /* SXMobileUpdateHeaderView.m in Sources */,
@@ -3860,6 +3877,7 @@
 				09462B1B2238F20B0063F67E /* SXMineSettingHeaderView.m in Sources */,
 				09462AE32237AE5F0063F67E /* SXOnlineAutotIPHeaderView.m in Sources */,
 				095540C2221EC059005A5485 /* SXHomeFamilyCodeButton.m in Sources */,
+				093C12C32251B1F7005682C8 /* SXMobilePageParam.m in Sources */,
 				B348F9B621F71E960000F194 /* SXNetRequestTool.m in Sources */,
 				B3AF2FED21FAFF24001E4E67 /* SXLoginController.m in Sources */,
 				0900F517222D4F2700250155 /* SXNetBroadbandController.m in Sources */,
