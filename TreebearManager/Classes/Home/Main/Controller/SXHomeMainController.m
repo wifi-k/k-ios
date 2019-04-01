@@ -21,6 +21,7 @@
 #import "SXHomeMainHeaderView.h"
 #import "SXHomeMainSectionHeaderView.h"
 #import "SXHomeMainSectionFooterView.h"
+#import "SXHomeMainSectionEmptyFooterView.h"
 #import "SXHomeMainSectionHeaderView2.h"
 #import "SXHomeMainSectionFooterView2.h"
 #import "SXHomeNetworkingDeviceCell.h"
@@ -377,7 +378,11 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     if (section == 0) {
-        return 80.0f;
+        if (self.dataArray.count) {
+            return 80.0f;
+        } else {
+            return 200.0f;
+        }
     } else if (section == 1){
         return 230.0f;
     } else {
@@ -388,12 +393,17 @@
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     WS(weakSelf);
     if (section == 0) {
-        SXHomeMainSectionFooterView *footerView = [SXHomeMainSectionFooterView footerView];
-        footerView.clickMoreBtnBlock = ^{
-            SXMobileManagerController *mobileManagerVC = [[SXMobileManagerController alloc] init];
-            [weakSelf.navigationController pushViewController:mobileManagerVC animated:YES];
-        };
-        return footerView;
+        if (self.dataArray.count) {
+            SXHomeMainSectionFooterView *footerView = [SXHomeMainSectionFooterView footerView];
+            footerView.clickMoreBtnBlock = ^{
+                SXMobileManagerController *mobileManagerVC = [[SXMobileManagerController alloc] init];
+                [weakSelf.navigationController pushViewController:mobileManagerVC animated:YES];
+            };
+            return footerView;
+        } else {
+            SXHomeMainSectionEmptyFooterView *footerView = [SXHomeMainSectionEmptyFooterView footerView];
+            return footerView;
+        }
     } else if (section == 1){
         SXHomeMainSectionFooterView2 *footerView = [SXHomeMainSectionFooterView2 footerView];
         footerView.clickReportBtnBlock = ^{
