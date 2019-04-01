@@ -56,7 +56,7 @@ static NSString *SXHomeNetworkingDeviceCellID = @"SXHomeNetworkingDeviceCellID";
     self.statusBtn.layer.shadowOpacity = 0.5;
     self.statusBtn.layer.shadowRadius = 2;
     
-    [self.remarkBtn setTitleColor:SXColorBlue2 forState:UIControlStateNormal];
+    [self.remarkBtn setTitleColor:SXColorSystemBlue forState:UIControlStateNormal];
 }
 
 #pragma mark -setter-
@@ -86,7 +86,7 @@ static NSString *SXHomeNetworkingDeviceCellID = @"SXHomeNetworkingDeviceCellID";
 #pragma mark -点击事件-
 - (IBAction)clickRemarkBtn:(UIButton *)sender {
     if (self.clickRemarkBtnBlock) {
-        self.clickRemarkBtnBlock();
+        self.clickRemarkBtnBlock(self.model);
     }
 }
     

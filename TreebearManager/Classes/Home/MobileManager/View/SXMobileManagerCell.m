@@ -86,7 +86,7 @@ static NSString *SXMobileManagerCellID = @"SXMobileManagerCellID";
 #pragma mark -点击事件-
 - (IBAction)clickRemarkBtn:(UIButton *)sender {
     if (self.clickRemarkBtnBlock) {
-        self.clickRemarkBtnBlock();
+        self.clickRemarkBtnBlock(self.model);
     }
 }
 

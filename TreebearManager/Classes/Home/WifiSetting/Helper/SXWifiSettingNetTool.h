@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 ///获取上网设备列表
 + (void)userNodeDeviceListDataWithParams:(NSDictionary *)params success:(void (^)(SXMobileManagerResult *result))success failure:(void (^)(NSError *error))failure;
 
-///获取上网设备列表
+///修改设备信息
 + (void)userDodeDeviceSetDataWithParams:(NSDictionary *)params success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
 

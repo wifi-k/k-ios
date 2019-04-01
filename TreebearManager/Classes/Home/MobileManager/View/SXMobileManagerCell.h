@@ -16,6 +16,6 @@
 @property (nonatomic, strong) SXMobileManagerModel *model;
 
 ///点击备注按钮回调
-@property (nonatomic, copy) void (^clickRemarkBtnBlock)(void);
+@property (nonatomic, copy) void (^clickRemarkBtnBlock)(SXMobileManagerModel *model);
 
 @end

@@ -143,6 +143,8 @@
     equipVC.selectOptionModelBlock = ^{
         //刷新数据显示
         [weakSelf.headerView setUpData];
+        //获取手机设备列表
+        [weakSelf userNodeDeviceListData];
     };
     [self.navigationController pushViewController:equipVC animated:YES];
 }
@@ -185,10 +187,12 @@
 }
 
 #pragma mark -弹窗视图-
-- (void)alertRemarkNameView{
+- (void)alertRemarkNameView:(SXMobileManagerModel *)model{
+    WS(weakSelf);
     SXInputAlertView *nameAlertView = [SXInputAlertView alertWithTitle:@"备注名称" placeholder:@"请输入名称" confirmStr:@"确定" cancelStr:@"取消"];
     nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
         DLog(@"text:%@",text);
+        [weakSelf userDodeDeviceSetData:model note:text];
     };
     [nameAlertView alert];
 }
@@ -288,6 +292,26 @@
         });
     }];
 }
+
+#pragma mark -修改设备信息数据接口-
+- (void)userDodeDeviceSetData:(SXMobileManagerModel *)model note:(NSString *)note{
+    WS(weakSelf);
+    SXMobilePageParam *param = [SXMobilePageParam param];
+    param.nodeId = model.nodeId;
+    param.mac = model.mac;
+    param.isBlock = model.isBlock;
+    param.note = note;
+    [SXWifiSettingNetTool userDodeDeviceSetDataWithParams:param.mj_keyValues success:^{
+        [MBProgressHUD showSuccessWithMessage:@"修改成功!" toView:SXKeyWindow];
+        model.note = note;//如果修改成功，直接模型赋值
+        [weakSelf.tableView reloadData];
+    } failure:^(NSError * _Nonnull error) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSString *message = [error.userInfo objectForKey:@"msg"];
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        });
+    }];
+}
     
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -297,7 +321,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        return self.dataArray.count;
+        NSInteger count = (self.dataArray.count > 3 ? 3:self.dataArray.count);
+        return count;
     }
     return 0;
 }
@@ -309,12 +334,9 @@
         SXHomeNetworkingDeviceCell *cell = [SXHomeNetworkingDeviceCell cellWithTableView:tableView];
         SXMobileManagerModel *model = self.dataArray[indexPath.row];
         cell.model = model;
-        cell.clickRemarkBtnBlock = ^{
-            [weakSelf alertRemarkNameView];
+        cell.clickRemarkBtnBlock = ^(SXMobileManagerModel * _Nonnull model) {
+            [weakSelf alertRemarkNameView:model];
         };
-        tempCell = cell;
-    } else if(indexPath.section == 1){
-        SXHomeNetworkingDeviceCell *cell = [SXHomeNetworkingDeviceCell cellWithTableView:tableView];
         tempCell = cell;
     } else {
         return nil;

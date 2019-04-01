@@ -76,10 +76,12 @@
 }
 
 #pragma mark -弹窗视图-
-- (void)alertRemarkNameView{
+- (void)alertRemarkNameView:(SXMobileManagerModel *)model{
+    WS(weakSelf);
     SXInputAlertView *nameAlertView = [SXInputAlertView alertWithTitle:@"备注名称" placeholder:@"请输入名称" confirmStr:@"确定" cancelStr:@"取消"];
     nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
         DLog(@"text:%@",text);
+        [weakSelf userDodeDeviceSetData:model note:text];
     };
     [nameAlertView alert];
 }
@@ -144,6 +146,26 @@
     }];
 }
 
+#pragma mark -修改设备信息数据接口-
+- (void)userDodeDeviceSetData:(SXMobileManagerModel *)model note:(NSString *)note{
+    WS(weakSelf);
+    SXMobilePageParam *param = [SXMobilePageParam param];
+    param.nodeId = model.nodeId;
+    param.mac = model.mac;
+    param.isBlock = model.isBlock;
+    param.note = note;
+    [SXWifiSettingNetTool userDodeDeviceSetDataWithParams:param.mj_keyValues success:^{
+        [MBProgressHUD showSuccessWithMessage:@"修改成功!" toView:SXKeyWindow];
+        model.note = note;//如果修改成功，直接模型赋值
+        [weakSelf.tableView reloadData];
+    } failure:^(NSError * _Nonnull error) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSString *message = [error.userInfo objectForKey:@"msg"];
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        });
+    }];
+}
+
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -155,8 +177,8 @@
     SXMobileManagerCell *cell = [SXMobileManagerCell cellWithTableView:tableView];
     SXMobileManagerModel *model = self.dataArray[indexPath.row];
     cell.model = model;
-    cell.clickRemarkBtnBlock = ^{
-        [weakSelf alertRemarkNameView];
+    cell.clickRemarkBtnBlock = ^(SXMobileManagerModel *model) {
+        [weakSelf alertRemarkNameView:model];
     };
     return cell;
 }

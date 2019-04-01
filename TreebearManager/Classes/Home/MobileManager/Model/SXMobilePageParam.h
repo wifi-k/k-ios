@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 ///备注名
 @property (nonatomic, copy) NSString *note;
 ///0-allow or 1-block
-@property (nonatomic, copy) NSNumber *block;
+@property (nonatomic, copy) NSNumber *isBlock;
 
 @end
 
