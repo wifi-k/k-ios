@@ -10,6 +10,7 @@
 #import "SXNetPreventCell.h"
 #import "SXWifiSettingNetTool.h"
 #import "SXXiaoKInfoModel.h"
+#import "SXXiaoKiOptionResult.h"
 
 @interface SXPreventController ()
 ///数据源
@@ -44,7 +45,8 @@
 - (void)userNodeDeviceListData{
     WS(weakSelf);
     SXPreventPageParam *param = [SXPreventPageParam param];
-    param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
+    param.nodeId = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel
+    .nodeId;
     param.pageNo = @1;
     param.pageSize = @10;
     [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
@@ -66,7 +68,8 @@
 
 - (void)userDodeDeviceSetData{
     SXPreventPageParam *param = [SXPreventPageParam param];
-    param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
+    param.nodeId = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel
+    .nodeId;
     param.mac = @"";
     param.note = @"";
     param.block = @0;

@@ -26,7 +26,7 @@
 
 - (void)setUpUI{
     
-    self.backgroundColor = SXColorRandom;
+    self.backgroundColor = SXColorWhite;
 }
 
 @end

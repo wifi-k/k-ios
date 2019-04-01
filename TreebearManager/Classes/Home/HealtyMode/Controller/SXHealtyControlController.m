@@ -13,6 +13,7 @@
 #import "SXHealtyControlCell.h"
 #import "SXHealtyModeNetTool.h"
 #import "SXXiaoKInfoModel.h"
+#import "SXXiaoKiOptionResult.h"
 #import "NSArray+Extension.h"
 
 @interface SXHealtyControlController ()
@@ -96,11 +97,11 @@
     [self userNodeRssiTimerSetData];
 }
 
-#pragma mark -获取网络数据-
+#pragma mark -获取信号定时配置列表-
 - (void)setUpData{
     WS(weakSelf);
     SXHealtyControlParam *param = [SXHealtyControlParam param];
-    param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
+    param.nodeId = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel.nodeId;
     [SXHealtyModeNetTool userNodeWifiTimerGetDataWithParams:param.mj_keyValues Success:^(SXHealtyControlResult *result) {
         DLog(@"result:%@",result);
         //赋值视图
@@ -122,7 +123,8 @@
 - (void)userNodeRssiTimerSetData{
     [MBProgressHUD showWhiteLoadingWithMessage:@"正在设置..." toView:SXKeyWindow];
     SXHealtyControlParam *param = [SXHealtyControlParam param];
-    param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
+    param.nodeId = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel
+.nodeId;
     param.op = [self.headerView isSwitchOn];
     SXHealtyControlModel *model = [self.result.wifi firstObject];
     model.timer = [self.timers copy];
