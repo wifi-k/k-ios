@@ -30,8 +30,8 @@
 #import "SXXiaoKiOptionResult.h"
 #import "SXAddXiaokiNetTool.h"
 #import "SXMineNetTool.h"
-#import <UMSocialCore/UMSocialCore.h>
 #import "SXWifiSettingNetTool.h"
+#import <UMSocialCore/UMSocialCore.h>
 
 @interface SXHomeMainController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak) SXHomeMainHeaderView *headerView;//头部视图

@@ -14,9 +14,10 @@
 #import "SXMineListCell.h"
 #import "SXRootTool.h"
 #import "SXMineHeaderView.h"
-#import <TZImagePickerController/TZImagePickerController.h>
+#import "SXCodeInputAlertView.h"
 #import "SXMineNetTool.h"
 #import "SXNotificationCenterTool.h"
+#import "SXFamilyMemberNetTool.h"
 
 @interface SXMineController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak) SXMineHeaderView *headerView;//头部视图
@@ -34,7 +35,7 @@
 #pragma mark -getter-
 - (NSMutableArray *)dataArray{
     if (_dataArray == nil) {
-        NSArray *array = @[@{@"name":@"我的小K",@"avatar":@"mine_xiaok_mine"},@{@"name":@"我的孩子",@"avatar":@"mine_xiaok_child"},@{@"name":@"测试使用",@"avatar":@"mine_xiaok_child"}];
+        NSArray *array = @[@{@"name":@"我的小K",@"avatar":@"mine_xiaok_mine"},@{@"name":@"我的孩子",@"avatar":@"mine_xiaok_child"},@{@"name":@"加入新家庭",@"avatar":@"mine_xiaok_add"},@{@"name":@"测试使用",@"avatar":@"mine_xiaok_child"}];
         _dataArray = [NSMutableArray arrayWithArray:[SXMineUserInfoModel mj_objectArrayWithKeyValuesArray:array]];
     }
     return _dataArray;
@@ -169,18 +170,31 @@
     }];
 }
 
-- (void)jumpToImagePickerVC{
-    
-    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:9 delegate:self];
-    
-    // You can get the photos by block, the same as by delegate.
-    // 你可以通过block或者代理，来得到用户选择的照片.
-    [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
-        DLog(@"photos:%@,",photos);
-        DLog(@"assets:%@,",assets);
-        DLog(@"isSelectOriginalPhoto:%d,",isSelectOriginalPhoto);
+#pragma mark -视图弹窗-
+- (void)alertUpdateNameView{
+    WS(weakSelf);
+    SXCodeInputAlertView *nameAlertView = [SXCodeInputAlertView alertWithTitle:@"提示" placeholder:@"请输家庭码" confirmStr:@"确定" cancelStr:@"取消"];
+    nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
+        DLog(@"text:%@",text);
+        [weakSelf userNodeFamilyJoin:text];
+    };
+    [nameAlertView alert];
+}
+
+- (void)userNodeFamilyJoin:(NSString *)text{
+    [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
+    SXFamilyMemberParam *param = [SXFamilyMemberParam param];
+    param.inviteCode = text;
+    [SXFamilyMemberNetTool userNodeFamilyJoinDataWithParams:param.mj_keyValues Success:^{
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        [MBProgressHUD showSuccessWithMessage:@"添加成功!" toView:SXKeyWindow];
+    } failure:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSString *message = [error.userInfo objectForKey:@"msg"];
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        });
     }];
-    [self presentViewController:imagePickerVc animated:YES completion:nil];
 }
 
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
@@ -210,8 +224,9 @@
         SXMineChildController *childVC = [[SXMineChildController alloc] init];
         [self.navigationController pushViewController:childVC animated:YES];
     } else if(indexPath.row == 2){
-        [SXRootTool changeToHomeVC];
+        [self alertUpdateNameView];
     } else {
+        [SXRootTool changeToHomeVC];
         DLog(@"Ohters");
     }
 }
