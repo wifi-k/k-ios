@@ -60,21 +60,25 @@ static NSString *SXHomeNetworkingDeviceCellID = @"SXHomeNetworkingDeviceCellID";
 }
 
 #pragma mark -setter-
-- (void)setModel:(SXHomeMobileModel *)model{
+- (void)setModel:(SXMobileManagerModel *)model{
     _model = model;
     
-    switch (model.mobileType.integerValue) {
+    self.mobileNameL.text = model.name;
+    switch (model.status.integerValue) {
         case 0:
-            self.iconImageV.image = [UIImage imageNamed:@"img_mobile_icon"];
+            [self.statusBtn setTitle:@"离线" forState:UIControlStateNormal];
+            [self.statusBtn setTitleColor:SXColor666666 forState:UIControlStateNormal];
+            self.timeL.text = [NSString stringWithFormat:@"离线时间:%@",model.offTime];
             break;
         case 1:
-            self.iconImageV.image = [UIImage imageNamed:@"img_iphone_icon"];
-            break;
-        case 2:
-            self.iconImageV.image = [UIImage imageNamed:@"img_android_icon"];
+            [self.statusBtn setTitle:@"在线" forState:UIControlStateNormal];
+            [self.statusBtn setTitleColor:SXColorBlue forState:UIControlStateNormal];
+            self.timeL.text = [NSString stringWithFormat:@"在线时间:%@",model.onTime];
             break;
         default:
-            self.iconImageV.image = [UIImage imageNamed:@"img_mobile_icon"];
+            [self.statusBtn setTitle:@"状态" forState:UIControlStateNormal];
+            [self.statusBtn setTitleColor:SXColor666666 forState:UIControlStateNormal];
+            self.timeL.text = [NSString stringWithFormat:@"在线时间:%@",@"未知"];
             break;
     }
 }

@@ -31,13 +31,25 @@
 #import "SXAddXiaokiNetTool.h"
 #import "SXMineNetTool.h"
 #import <UMSocialCore/UMSocialCore.h>
+#import "SXWifiSettingNetTool.h"
 
 @interface SXHomeMainController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak) SXHomeMainHeaderView *headerView;//头部视图
 @property (nonatomic, weak) UITableView *tableView;//列表视图
+
+///数据源
+@property (nonatomic, strong) NSMutableArray *dataArray;
 @end
 
 @implementation SXHomeMainController
+
+#pragma mark -getter-
+- (NSMutableArray *)dataArray{
+    if (_dataArray == nil) {
+        _dataArray = [NSMutableArray array];
+    }
+    return _dataArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -249,9 +261,31 @@
             SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel = result.page.firstObject;
             [weakSelf.headerView setUpData];
         }
+        
+        //获取手机设备列表
+        [weakSelf userNodeDeviceListData];
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
+#pragma mark -获取上网设备列表数据接口-
+- (void)userNodeDeviceListData{
+    WS(weakSelf);
+    SXMobilePageParam *param = [SXMobilePageParam param];
+    SXHomeXiaoKiModel *model = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel;
+    param.nodeId = model.nodeId;
+    param.pageNo = @1;
+    param.pageSize = @10;
+    [SXWifiSettingNetTool userNodeDeviceListDataWithParams:param.mj_keyValues success:^(SXMobileManagerResult * _Nonnull result) {
+        weakSelf.dataArray = [NSMutableArray arrayWithArray:result.page];
+        [weakSelf.tableView reloadData];
+    } failure:^(NSError * _Nonnull error) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSString *message = [error.userInfo objectForKey:@"msg"];
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        });
     }];
 }
     
@@ -263,7 +297,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        return 3;
+        return self.dataArray.count;
     }
     return 0;
 }
@@ -273,6 +307,8 @@
     if (indexPath.section == 0) {
         WS(weakSelf);
         SXHomeNetworkingDeviceCell *cell = [SXHomeNetworkingDeviceCell cellWithTableView:tableView];
+        SXMobileManagerModel *model = self.dataArray[indexPath.row];
+        cell.model = model;
         cell.clickRemarkBtnBlock = ^{
             [weakSelf alertRemarkNameView];
         };

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SXPreventPageParam.h"
+#import "SXMobilePageParam.h"
 #import "SXPreventModel.h"
 #import "SXMobileManagerResult.h"
 
