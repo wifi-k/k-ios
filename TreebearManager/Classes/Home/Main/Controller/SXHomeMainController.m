@@ -58,7 +58,6 @@
     
     //添加通知
     [self addNotification];
-    
     //获取节点数据
     [self getNodeData];
     //选中家庭成员
@@ -119,6 +118,7 @@
 #pragma mark -添加移除通知-
 - (void)addNotification{
     [SXNotificationCenterTool addObserverBindXiaoKiSuccess:self selector:@selector(bindXiaoKiSuccess)];
+    [SXNotificationCenterTool addObserverDeviceUpdateRemarkSuccess:self selector:@selector(deviceUpdateRemarkSuccess)];
 }
 
 - (void)dealloc{
@@ -129,6 +129,10 @@
     //跳转下一个页面
     SXNetOptionController *netVC = [[SXNetOptionController alloc] init];
     [self.navigationController pushViewController:netVC animated:YES];
+}
+
+- (void)deviceUpdateRemarkSuccess{
+    [self userNodeDeviceListData];
 }
 
 #pragma mark -页面跳转-
@@ -304,6 +308,7 @@
     [SXWifiSettingNetTool userDodeDeviceSetDataWithParams:param.mj_keyValues success:^{
         [MBProgressHUD showSuccessWithMessage:@"修改成功!" toView:SXKeyWindow];
         model.note = note;//如果修改成功，直接模型赋值
+        model.name = note;
         [weakSelf.tableView reloadData];
     } failure:^(NSError * _Nonnull error) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

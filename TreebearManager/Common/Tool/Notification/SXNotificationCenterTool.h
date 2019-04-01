@@ -27,5 +27,10 @@
 + (void)addObserverBindXiaoKiSuccess:(id)observer selector:(SEL)selector;
 + (void)removeObserverBindXiaoKi:(id)observer;
 
+//更改手机备注通知
++ (void)postNotificationDeviceUpdateRemarkSuccess;
++ (void)addObserverDeviceUpdateRemarkSuccess:(id)observer selector:(SEL)selector;
++ (void)removeObserverDeviceUpdateRemark:(id)observer;
+
 @end
 

@@ -14,6 +14,7 @@
 #import "SXXiaoKiOptionResult.h"
 #import "SXMobilePageParam.h"
 #import "SXWifiSettingNetTool.h"
+#import "SXNotificationCenterTool.h"
 
 @interface SXMobileManagerController ()
 //头部视图
@@ -157,7 +158,10 @@
     [SXWifiSettingNetTool userDodeDeviceSetDataWithParams:param.mj_keyValues success:^{
         [MBProgressHUD showSuccessWithMessage:@"修改成功!" toView:SXKeyWindow];
         model.note = note;//如果修改成功，直接模型赋值
+        model.name = note;
         [weakSelf.tableView reloadData];
+        //通知刷新
+        [SXNotificationCenterTool postNotificationDeviceUpdateRemarkSuccess];
     } failure:^(NSError * _Nonnull error) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             NSString *message = [error.userInfo objectForKey:@"msg"];

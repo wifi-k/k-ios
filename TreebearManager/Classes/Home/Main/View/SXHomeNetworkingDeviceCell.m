@@ -63,7 +63,7 @@ static NSString *SXHomeNetworkingDeviceCellID = @"SXHomeNetworkingDeviceCellID";
 - (void)setModel:(SXMobileManagerModel *)model{
     _model = model;
     
-    self.mobileNameL.text = model.name;
+    self.mobileNameL.text = ([NSString isEmpty:model.note] ? model.name : model.note);
     switch (model.status.integerValue) {
         case 0:
             [self.statusBtn setTitle:@"离线" forState:UIControlStateNormal];

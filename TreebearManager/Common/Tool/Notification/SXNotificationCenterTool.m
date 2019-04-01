@@ -11,6 +11,7 @@
 NSString *const SXUpdateNickName = @"SXUpdateNickName";
 NSString *const SXUpdateMobile = @"SXUpdateMobile";
 NSString *const SXBindXiaoKi = @"SXBindXiaoKi";
+NSString *const SXDeviceUpdateRemark = @"SXDeviceUpdateRemark";
 
 @implementation SXNotificationCenterTool
 
@@ -54,6 +55,16 @@ NSString *const SXBindXiaoKi = @"SXBindXiaoKi";
 }
 + (void)removeObserverBindXiaoKi:(id)observer{
     [SXNotificationCenter removeObserver:observer name:SXBindXiaoKi object:nil];
+}
+
++ (void)postNotificationDeviceUpdateRemarkSuccess{
+    [SXNotificationCenter postNotificationName:SXDeviceUpdateRemark object:self userInfo:nil];
+}
++ (void)addObserverDeviceUpdateRemarkSuccess:(id)observer selector:(SEL)selector{
+    [SXNotificationCenter addObserver:observer selector:selector name:SXDeviceUpdateRemark object:nil];
+}
++ (void)removeObserverDeviceUpdateRemark:(id)observer{
+    [SXNotificationCenter removeObserver:observer name:SXDeviceUpdateRemark object:nil];
 }
     
 @end
