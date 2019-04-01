@@ -71,6 +71,8 @@ static NSString *SXForbiddenAppCellID = @"SXForbiddenAppCellID";
     self.titleL.text = model.title;
     NSInteger index = model.row.integerValue % 3;
     self.iconImageView.image = [UIImage imageNamed:_imageNameArr[index]];
+    
+//    self.titleL.text = model.name;
 }
 
 #pragma mark -点击事件-

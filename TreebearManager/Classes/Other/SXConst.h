@@ -62,6 +62,9 @@ extern NSString *const user_quit;
 
 extern NSString *const user_node_device_list;
 extern NSString *const user_node_device_set;
+extern NSString *const user_node_device_allow_list;
+extern NSString *const user_node_device_allow_set;
+extern NSString *const user_node_device_allow_del;
 
 @end
 

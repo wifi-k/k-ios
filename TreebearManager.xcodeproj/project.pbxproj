@@ -116,6 +116,9 @@
 		093C12BD2251AF65005682C8 /* SXMobileManagerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12BC2251AF65005682C8 /* SXMobileManagerModel.m */; };
 		093C12C02251AF90005682C8 /* SXMobileManagerResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12BF2251AF90005682C8 /* SXMobileManagerResult.m */; };
 		093C12C32251B1F7005682C8 /* SXMobilePageParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12C22251B1F7005682C8 /* SXMobilePageParam.m */; };
+		093C12C722520526005682C8 /* SXParentControlNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12C622520526005682C8 /* SXParentControlNetTool.m */; };
+		093C12CA22520614005682C8 /* SXForbiddenAppResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12C922520614005682C8 /* SXForbiddenAppResult.m */; };
+		093C12CD22520745005682C8 /* SXForbiddenAppParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12CC22520745005682C8 /* SXForbiddenAppParam.m */; };
 		09462ACB22375DEE0063F67E /* SXOnlineOptionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */; };
 		09462ACD22375DF90063F67E /* SXOnlineOptionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */; };
 		09462AD12237898C0063F67E /* XDSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACF2237898C0063F67E /* XDSDropDownMenu.m */; };
@@ -591,6 +594,12 @@
 		093C12BF2251AF90005682C8 /* SXMobileManagerResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMobileManagerResult.m; sourceTree = "<group>"; };
 		093C12C12251B1F7005682C8 /* SXMobilePageParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMobilePageParam.h; sourceTree = "<group>"; };
 		093C12C22251B1F7005682C8 /* SXMobilePageParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMobilePageParam.m; sourceTree = "<group>"; };
+		093C12C522520526005682C8 /* SXParentControlNetTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXParentControlNetTool.h; sourceTree = "<group>"; };
+		093C12C622520526005682C8 /* SXParentControlNetTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXParentControlNetTool.m; sourceTree = "<group>"; };
+		093C12C822520614005682C8 /* SXForbiddenAppResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForbiddenAppResult.h; sourceTree = "<group>"; };
+		093C12C922520614005682C8 /* SXForbiddenAppResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForbiddenAppResult.m; sourceTree = "<group>"; };
+		093C12CB22520745005682C8 /* SXForbiddenAppParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForbiddenAppParam.h; sourceTree = "<group>"; };
+		093C12CC22520745005682C8 /* SXForbiddenAppParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForbiddenAppParam.m; sourceTree = "<group>"; };
 		09462AC922375DEE0063F67E /* SXOnlineOptionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineOptionHeaderView.h; sourceTree = "<group>"; };
 		09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineOptionHeaderView.m; sourceTree = "<group>"; };
 		09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXOnlineOptionHeaderView.xib; sourceTree = "<group>"; };
@@ -1550,6 +1559,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		093C12C4225204F4005682C8 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				093C12C522520526005682C8 /* SXParentControlNetTool.h */,
+				093C12C622520526005682C8 /* SXParentControlNetTool.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		09462ACE223789680063F67E /* DropMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -1723,6 +1741,10 @@
 		09B9B795222E4F14000868D5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				093C12CB22520745005682C8 /* SXForbiddenAppParam.h */,
+				093C12CC22520745005682C8 /* SXForbiddenAppParam.m */,
+				093C12C822520614005682C8 /* SXForbiddenAppResult.h */,
+				093C12C922520614005682C8 /* SXForbiddenAppResult.m */,
 				09B9B796222E4F1F000868D5 /* SXForbiddenAppModel.h */,
 				09B9B797222E4F1F000868D5 /* SXForbiddenAppModel.m */,
 				09B9B85D22313F6C000868D5 /* SXForbiddenAppOptionModel.h */,
@@ -2267,8 +2289,8 @@
 		09D5F61A222925C200EA681A /* Forbidden */ = {
 			isa = PBXGroup;
 			children = (
-				09B9B795222E4F14000868D5 /* Model */,
 				09D5F61B222925C200EA681A /* Controller */,
+				09B9B795222E4F14000868D5 /* Model */,
 				09D5F61E222925C200EA681A /* View */,
 			);
 			path = Forbidden;
@@ -2629,6 +2651,7 @@
 		09FB47412223E50400809273 /* ParentControl */ = {
 			isa = PBXGroup;
 			children = (
+				093C12C4225204F4005682C8 /* Helper */,
 				09D5F609222925C200EA681A /* Main */,
 				09D5F61A222925C200EA681A /* Forbidden */,
 				09D5F617222925C200EA681A /* Time */,
@@ -3611,6 +3634,7 @@
 				09D5F6082227ECB700EA681A /* SXDatePickerView.m in Sources */,
 				091187362215689E00938D9F /* SXTitleAlertView.m in Sources */,
 				091BC4C72242207100FEBFD1 /* PYCamera.m in Sources */,
+				093C12CA22520614005682C8 /* SXForbiddenAppResult.m in Sources */,
 				09462B022238D6600063F67E /* SXMobileInfoController.m in Sources */,
 				09B9B8392230F590000868D5 /* SXAdvancedHeaderView.m in Sources */,
 				09B9B7A5222E555A000868D5 /* XKNetReachablityTool.m in Sources */,
@@ -3643,6 +3667,7 @@
 				09B9B84422310BB2000868D5 /* SXChannelOptionController.m in Sources */,
 				09F76F432247C42F008A9048 /* SXPhotoHeaderButton.m in Sources */,
 				09D5F5FE2227E3D000EA681A /* SXMineNetTool.m in Sources */,
+				093C12C722520526005682C8 /* SXParentControlNetTool.m in Sources */,
 				091BC4DE2242371800FEBFD1 /* SXXiaoKInfoModel.m in Sources */,
 				09B9B8662231FF42000868D5 /* SXTimeControlCell.m in Sources */,
 				098BA303221A579D00F58639 /* SXMineHeaderView.m in Sources */,
@@ -3696,6 +3721,7 @@
 				091BC4CC2242207100FEBFD1 /* PYImageBrowserViewController.m in Sources */,
 				09B9B7FB2230EAD2000868D5 /* SXWifiSettingButton.m in Sources */,
 				092D6CDE22004FB400538AC8 /* SXRefreshHeader.m in Sources */,
+				093C12CD22520745005682C8 /* SXForbiddenAppParam.m in Sources */,
 				095540AF221D076C005A5485 /* SXTitleImageButton.m in Sources */,
 				099CEFEB223B44100077DE42 /* SXHomeReportCollectionCell.m in Sources */,
 				09D5F65A222B8D6100EA681A /* SXUpdateVersionHeaderView.m in Sources */,

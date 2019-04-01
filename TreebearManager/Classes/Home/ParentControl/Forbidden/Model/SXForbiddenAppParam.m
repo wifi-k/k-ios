@@ -1,14 +1,14 @@
 //
-//  SXForbiddenAppModel.m
+//  SXForbiddenAppParam.m
 //  TreebearManager
 //
-//  Created by bear on 2019/3/5.
+//  Created by bear on 2019/4/1.
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXForbiddenAppModel.h"
+#import "SXForbiddenAppParam.h"
 
-@implementation SXForbiddenAppModel
+@implementation SXForbiddenAppParam
 
 + (NSDictionary *)mj_replacedKeyFromPropertyName{
     return @{@"modelId":@"id"};

@@ -12,6 +12,8 @@
 #import "SXForbiddenAppCell.h"
 #import "SXTitleAlertView.h"
 #import "SXForbiddenAppModel.h"
+#import "SXParentControlNetTool.h"
+#import "SXXiaoKiOptionResult.h"
 
 @interface SXForbiddenAppController ()
 ///模型数组
@@ -50,6 +52,9 @@
     
     //1.初始化UI
     [self setUpUI];
+    
+    //2.数据接口
+    [self userNodeDeviceAllowListData];
 }
 
 #pragma mark -初始化UI-
@@ -110,6 +115,46 @@
         [weakSelf.tableView reloadData];
     };
     [self.navigationController pushViewController:updateVC animated:YES];
+}
+
+#pragma mark -获取设备上网配置列表接口-
+- (void)userNodeDeviceAllowListData{
+    SXForbiddenAppParam *param = [SXForbiddenAppParam param];
+    SXHomeXiaoKiModel *model = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel;
+    param.nodeId = model.nodeId;
+    [SXParentControlNetTool userNodeDeviceAllowListParams:param.mj_keyValues Success:^(SXForbiddenAppResult *result) {
+        DLog(@"result:%@",result);
+    } failure:^(NSError *error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
+#pragma mark -设置设备允许上网配置接口-
+- (void)userNodeDeviceAllowSetData{
+    SXForbiddenAppParam *param = [SXForbiddenAppParam param];
+    SXHomeXiaoKiModel *model = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel;
+    param.nodeId = model.nodeId;
+    [SXParentControlNetTool userNodeDeviceAllowSetParams:param.mj_keyValues Success:^{
+        [MBProgressHUD showSuccessWithMessage:@"设置成功!" toView:SXKeyWindow];
+    } failure:^(NSError *error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
+#pragma mark -删除设备上网配置接口-
+- (void)userNodeDeviceAllowDelData{
+    SXForbiddenAppParam *param = [SXForbiddenAppParam param];
+    SXHomeXiaoKiModel *model = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel;
+    param.nodeId = model.nodeId;
+    param.modelId = @"";
+    [SXParentControlNetTool userNodeDeviceAllowDelParams:param.mj_keyValues Success:^{
+        [MBProgressHUD showSuccessWithMessage:@"删除成功!" toView:SXKeyWindow];
+    } failure:^(NSError *error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
 
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
