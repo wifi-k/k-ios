@@ -66,26 +66,6 @@
     }];
 }
 
-- (void)userDodeDeviceSetData{
-    SXPreventPageParam *param = [SXPreventPageParam param];
-    param.nodeId = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel
-    .nodeId;
-    param.mac = @"";
-    param.note = @"";
-    param.block = @0;
-    [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
-    [SXWifiSettingNetTool userDodeDeviceSetDataWithParams:param.mj_keyValues success:^{
-        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
-        [MBProgressHUD showSuccessWithMessage:@"设置成功!" toView:SXKeyWindow];
-    } failure:^(NSError * _Nonnull error) {
-        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            NSString *message = [error.userInfo objectForKey:@"msg"];
-            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
-        });
-    }];
-}
-
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataArray.count;

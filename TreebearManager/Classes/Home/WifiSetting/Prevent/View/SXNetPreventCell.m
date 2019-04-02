@@ -66,19 +66,22 @@ static NSString *SXNetWallCellID = @"SXNetWallCellID";
             self.statusL.text = [NSString stringWithFormat:@"在线时间:%@",@"未知"];
             break;
     }
-    self.switchBtn.on = model.isBlock.boolValue;
+    self.switchBtn.on = !model.isBlock.boolValue;
 }
 
 #pragma mark -Event-
 - (IBAction)clickSwitchBtn:(UISwitch *)sender {
+    WS(weakSelf);
     SXPreventPageParam *param = [SXPreventPageParam param];
-    param.nodeId = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel
-    .nodeId;
+    param.nodeId = self.model.nodeId;
     param.mac = self.model.mac;
     param.note = self.model.note;
-    param.block = @(!sender.isOn);
+    NSNumber *isBlock = (sender.isOn? @0:@1);
+    param.isBlock = isBlock;
     [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
     [SXWifiSettingNetTool userDodeDeviceSetDataWithParams:param.mj_keyValues success:^{
+        //weakSelf.switchBtn.on = !param.isBlock.boolValue;
+        weakSelf.model.isBlock = param.isBlock;
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         [MBProgressHUD showSuccessWithMessage:@"设置成功!" toView:SXKeyWindow];
     } failure:^(NSError * _Nonnull error) {
