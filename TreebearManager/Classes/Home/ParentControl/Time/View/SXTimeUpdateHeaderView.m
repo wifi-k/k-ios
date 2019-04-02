@@ -9,8 +9,8 @@
 #import "SXTimeUpdateHeaderView.h"
 
 @interface SXTimeUpdateHeaderView ()
+@property (weak, nonatomic) IBOutlet UILabel *schemeL;
 @property (weak, nonatomic) IBOutlet UIButton *updateNameBtn;
-
 @property (weak, nonatomic) IBOutlet UILabel *contentL;
 @property (weak, nonatomic) IBOutlet UIView *firstBgView;
 
@@ -67,8 +67,8 @@
     self.thirdBgView.layer.shadowOpacity = 0.5;
     self.thirdBgView.layer.shadowRadius = 3;
     
-    [self.updateNameBtn setTitleColor:SXColorBlue forState:UIControlStateNormal];
-    [self.updateNameBtn roundViewWithRadius:15.0f borderColor:SXColorBlue borderWidth:1.0f];
+    [self.updateNameBtn setTitleColor:SXColorSystemBlue forState:UIControlStateNormal];
+    [self.updateNameBtn roundViewWithRadius:15.0f borderColor:SXColorSystemBlue borderWidth:1.0f];
     
     //添加事件
     UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickTimeControlAppControl:)];
@@ -85,6 +85,10 @@
     
     self.timeContentL.text = model.name;
     self.deviceContentL.text = model.name;
+}
+
+- (void)setUpData{
+    self.schemeL.text = self.model.name;
 }
 
 #pragma mark -点击事件-

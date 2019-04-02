@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 ///时间模型
 @property (nonatomic, strong) SXTimeControlModel *model;
 
+- (void)setUpData;
+
 ///点击更新名称回调
 @property (nonatomic, copy) void (^clickUpdateNameBtnBlock)(void);
 

@@ -68,21 +68,21 @@ static NSString *SXTimeControlCellID = @"SXTimeControlCellID";
 - (void)setModel:(SXTimeControlModel *)model{
     _model = model;
     
-    self.titleL.text = model.name;
     NSInteger index = model.row.integerValue % 3;
     self.iconImageView.image = [UIImage imageNamed:_imageNameArr[index]];
+    self.titleL.text = model.name;
 }
 
 #pragma mark -点击事件-
 - (IBAction)clickEditBtn:(UIButton *)sender {
     if (self.clickEditBtnBlock) {
-        self.clickEditBtnBlock();
+        self.clickEditBtnBlock(self.model);
     }
 }
 
 - (IBAction)clickDeleteBtn:(UIButton *)sender {
     if (self.clickDeleteBtnBlock) {
-        self.clickDeleteBtnBlock();
+        self.clickDeleteBtnBlock(self.model);
     }
 }
 

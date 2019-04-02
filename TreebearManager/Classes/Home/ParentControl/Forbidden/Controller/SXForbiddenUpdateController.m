@@ -126,7 +126,6 @@
     param.name = text;
     [SXParentControlNetTool userNodeDeviceAllowSetParams:param.mj_keyValues Success:^{
         [MBProgressHUD showSuccessWithMessage:@"设置成功!" toView:SXKeyWindow];
-        
         //更改赋值
         weakSelf.model.name = text;
         [weakSelf.headerView setUpData];

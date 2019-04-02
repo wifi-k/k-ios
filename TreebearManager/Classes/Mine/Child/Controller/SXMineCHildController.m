@@ -6,7 +6,7 @@
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXMineChildController.h"
+#import "SXMineCHildController.h"
 #import "SXMineAddChildController.h"
 #import "SXForbiddenAppFooterView.h"
 #import "SXMineChildCell.h"

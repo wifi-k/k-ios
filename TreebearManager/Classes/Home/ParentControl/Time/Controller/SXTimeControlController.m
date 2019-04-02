@@ -8,7 +8,7 @@
 
 #import "SXTimeControlController.h"
 #import "SXTimeUpdateController.h"
-#import "SXForbiddenAppFooterView.h"
+#import "SXTimeControlFooterView.h"
 #import "SXTimeControlCell.h"
 #import "SXWifiSettingAlertView.h"
 #import "SXTitleAlertView.h"
@@ -54,9 +54,9 @@
     
     //2.添加底部视图
     WS(weakSelf);
-    SXForbiddenAppFooterView *footerView = [SXForbiddenAppFooterView
+    SXTimeControlFooterView *footerView = [SXTimeControlFooterView
                                             footerView];
-    footerView.clickAddForbiddenBlock = ^{
+    footerView.clickAddTimeControlBlock = ^{
         [weakSelf jumpToUpdateVC:nil];
     };
     [self.tableView.tableFooterView addSubview:footerView];
@@ -77,10 +77,11 @@
 }
 
 #pragma mark -视图弹窗-
-- (void)alertDeleteAlertView{
+- (void)alertDeleteAlertView:(SXTimeControlModel *)model{
+    WS(weakSelf);
     SXTitleAlertView *deleteAlertView = [SXTitleAlertView alertWithTitle:@"提示" content:@"您确定要删除此方案吗?" confirmStr:@"确定" cancelStr:@"取消"];
     deleteAlertView.confirmButtonBlock = ^{
-        DLog(@"确定。。。");
+        [weakSelf userNodeDeviceAllowDelData:model];
     };
     [deleteAlertView alert];
 }
@@ -102,14 +103,13 @@
 }
 
 #pragma mark -删除设备上网配置接口-
-- (void)userNodeDeviceAllowDelData:(SXForbiddenAppModel *)model{
+- (void)userNodeDeviceAllowDelData:(SXTimeControlModel *)model{
     WS(weakSelf);
     SXForbiddenAppParam *param = [SXForbiddenAppParam param];
     param.modelId = model.modelId;
     param.nodeId = model.nodeId;
     [SXParentControlNetTool userNodeDeviceAllowDelParams:param.mj_keyValues Success:^{
         [MBProgressHUD showSuccessWithMessage:@"删除成功!" toView:SXKeyWindow];
-        
         //刷新显示
         [weakSelf.dataArray removeObject:model];
         [weakSelf.tableView reloadData];
@@ -132,12 +132,13 @@
     WS(weakSelf);
     SXTimeControlCell *cell = [SXTimeControlCell cellWithTableView:tableView];
     SXTimeControlModel *model = self.dataArray[indexPath.row];
+    model.row = @(indexPath.row);
     cell.model = model;
-    cell.clickEditBtnBlock = ^{
-        [weakSelf jumpToUpdateVC:nil];
+    cell.clickEditBtnBlock = ^(SXTimeControlModel * _Nonnull model) {
+        [weakSelf jumpToUpdateVC:model];
     };
-    cell.clickDeleteBtnBlock = ^{
-        [weakSelf alertDeleteAlertView];
+    cell.clickDeleteBtnBlock = ^(SXTimeControlModel * _Nonnull model) {
+        [weakSelf alertDeleteAlertView:model];
     };
     return cell;
 }
