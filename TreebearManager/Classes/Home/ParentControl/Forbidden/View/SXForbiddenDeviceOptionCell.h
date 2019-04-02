@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXMobileManagerModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXForbiddenDeviceOptionCell : UITableViewCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
+
+@property (nonatomic, strong) SXMobileManagerModel *model;
 
 @end
 

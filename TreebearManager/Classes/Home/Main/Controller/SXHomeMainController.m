@@ -421,6 +421,8 @@
     
     if (indexPath.section == 0) {
         SXMobileDetailController *detailVC = [[SXMobileDetailController alloc] init];
+        SXMobileManagerModel *model = self.dataArray[indexPath.row];
+        detailVC.model = model;
         [self.navigationController pushViewController:detailVC animated:YES];
     }
 }

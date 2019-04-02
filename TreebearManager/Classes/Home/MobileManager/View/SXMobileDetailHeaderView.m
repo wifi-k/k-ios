@@ -103,6 +103,24 @@
     self.downSlider.tintColor = SXColorBlue2;
 }
 
+#pragma mark -setter-
+- (void)setModel:(SXMobileManagerModel *)model{
+    _model = model;
+    
+    [self.topIconImageView sd_setImageWithURL:[NSURL URLWithString:model.macIcon] placeholderImage:[UIImage imageNamed:@"img_android_icon"] options:SDWebImageRetryFailed];
+    self.nameL.text = model.name;
+    switch (model.status.integerValue) {
+        case 0://离线
+            self.statusL.text = [NSString stringWithFormat:@"%@ 离线",model.offTime];
+            break;
+        case 1://在线
+            self.statusL.text = [NSString stringWithFormat:@"%@ 在线",model.onTime];
+            break;
+        default:
+            break;
+    }
+}
+
 #pragma mark -点击事件-
 - (IBAction)clickBackBtn:(UIButton *)sender {
     if (self.clickBackBtnBlock) {
@@ -121,7 +139,5 @@
         self.clickEditBtnBlock();
     }
 }
-
-
 
 @end

@@ -48,6 +48,7 @@
     
     WS(weakSelf);
     SXMobileDetailHeaderView *headerView = [SXMobileDetailHeaderView headerView];
+    headerView.model = self.model;
     headerView.clickBackBtnBlock = ^{
         [weakSelf.navigationController popViewControllerAnimated:YES];
     };

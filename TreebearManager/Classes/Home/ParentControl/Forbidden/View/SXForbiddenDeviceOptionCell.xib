@@ -40,6 +40,9 @@
                     </label>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kW7-Re-4WG">
                         <rect key="frame" x="281" y="30.5" width="51" height="31"/>
+                        <connections>
+                            <action selector="clickSwitchBtn:" destination="KGk-i7-Jjw" eventType="valueChanged" id="zzJ-xW-Kim"/>
+                        </connections>
                     </switch>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HQQ-qf-yWW">
                         <rect key="frame" x="15" y="91" width="330" height="0.5"/>

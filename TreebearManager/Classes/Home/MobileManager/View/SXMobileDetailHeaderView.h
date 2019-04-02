@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXMobileManagerModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXMobileDetailHeaderView : UIView
 
 + (instancetype)headerView;
+
+///数据模型
+@property (nonatomic, strong) SXMobileManagerModel *model;
 
 ///点击返回按钮回调
 @property (nonatomic, copy) void (^clickBackBtnBlock)(void);

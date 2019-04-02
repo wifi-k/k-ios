@@ -6,11 +6,11 @@
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXBaseCustomTableViewPlainController.h"
+#import "SXBaseCustomTablePlainRrfreshController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SXForbiddenDeviceOptionController : SXBaseCustomTableViewPlainController
+@interface SXForbiddenDeviceOptionController : SXBaseCustomTablePlainRrfreshController
 
 ///点击回调
 @property (nonatomic, copy) void (^selectForbiddenOptionBlock)(NSString *model);

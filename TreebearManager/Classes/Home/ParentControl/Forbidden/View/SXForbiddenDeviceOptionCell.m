@@ -50,4 +50,29 @@ static NSString *SXDeviceControlCellID = @"SXDeviceControlCellID";
     self.switchBtn.onTintColor = SXColorBlue2;
 }
 
+#pragma mark -setter-
+- (void)setModel:(SXMobileManagerModel *)model{
+    _model = model;
+    
+    self.deviceNameL.text = model.name;
+    switch (model.status.integerValue) {
+        case 0:
+            self.timeL.text = [NSString stringWithFormat:@"离线时间:%@",model.offTime];
+            break;
+        case 1:
+            self.timeL.text = [NSString stringWithFormat:@"在线时间:%@",model.onTime];
+            break;
+        default:
+            self.timeL.text = [NSString stringWithFormat:@"在线时间:%@",@"未知"];
+            break;
+    }
+    self.switchBtn.on = !model.isBlock.boolValue;
+}
+
+#pragma mark -Event-
+- (IBAction)clickSwitchBtn:(UISwitch *)sender {
+    NSNumber *isBlock = (sender.isOn?@0:@1);
+    self.model.isBlock = isBlock;
+}
+
 @end

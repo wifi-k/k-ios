@@ -14,6 +14,10 @@
 @property (nonatomic, copy) NSString *nodeId;
 ///Mac地址
 @property (nonatomic, copy) NSString *mac;
+///icon地址
+@property (nonatomic, copy) NSString *macIcon;
+///品牌商
+@property (nonatomic, copy) NSString *macVendor;
 ///主机名
 @property (nonatomic, copy) NSString *name;
 ///最近在线时间戳
@@ -26,5 +30,7 @@
 @property (nonatomic, copy) NSNumber *status;
 ///0-allow or 1-block
 @property (nonatomic, copy) NSNumber *isBlock;
+///是否删除
+@property (nonatomic, copy) NSNumber *isDelete;
 
 @end
