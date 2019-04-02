@@ -92,6 +92,14 @@
     self.schemeL.text = self.model.name;
 }
 
+- (void)selectTime{
+    self.forbiddenContentL.text = @"已选择";
+}
+
+- (void)selectDevice{
+    self.deviceContentL.text = @"已选择";
+}
+
 #pragma mark -点击事件-
 - (IBAction)updateNameBtn:(UIButton *)sender {
     if (self.clickUpdateNameBtnBlock) {

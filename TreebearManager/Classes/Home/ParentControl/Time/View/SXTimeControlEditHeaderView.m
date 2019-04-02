@@ -101,6 +101,9 @@
         [btn addTarget:self action:@selector(clickWeekBtn:) forControlEvents:UIControlEventTouchUpInside];
         [btn roundViewWithRadius:20.0f];
         [self.weekBgView addSubview:btn];
+        if (i==0) {//默认选中第一个
+            btn.selected = YES;
+        }
     }
     self.weekBgView.backgroundColor = SXColorClear;
     
@@ -123,11 +126,6 @@
     }
 }
 
-- (IBAction)clickRecycleBtn:(UIButton *)sender {
-    
-}
-
-
 #pragma mark -setter-
 - (void)setBeginTimeStr:(NSString *)beginTimeStr{
     _beginTimeStr = beginTimeStr;
@@ -143,8 +141,24 @@
 
 #pragma mark -点击事件-
 - (IBAction)clickConfirmBtn:(UIButton *)sender {
+    BOOL hasSelected = NO;
+    for (UIButton *subBtn in self.weekBgView.subviews) {
+        if (subBtn.isSelected) {
+            hasSelected = YES;
+            break;
+        }
+    }
+    if (!hasSelected) {
+        [MBProgressHUD showWarningWithMessage:@"至少选中某一重复选项!" toView:SXKeyWindow];
+        return;
+    }
+    
+    SXTimeControlParam *param = [SXTimeControlParam param];
+    param.st = self.beginTimeStr;
+    param.et = self.endTimeStr;
+    param.wt = @1;
     if (self.clickConfirmBtnBlock) {
-        self.clickConfirmBtnBlock(self.beginTimeStr,self.endTimeStr);
+        self.clickConfirmBtnBlock(param);
     }
 }
 

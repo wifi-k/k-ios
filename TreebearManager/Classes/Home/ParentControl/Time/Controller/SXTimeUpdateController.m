@@ -95,9 +95,12 @@
 - (void)jumpTimeControlVC{
     WS(weakSelf);
     SXTimeControlEditController *timeVC = [[SXTimeControlEditController alloc] init];
-    timeVC.selectTimeBlock = ^(NSString * _Nonnull time) {
-        weakSelf.model.name = time;
+    timeVC.selectTimeBlock = ^(SXTimeControlParam * _Nonnull param) {
+        weakSelf.model.st = param.st;
+        weakSelf.model.et = param.et;
+        weakSelf.model.wt = param.wt;
         weakSelf.headerView.model = weakSelf.model;
+        [weakSelf.headerView selectTime];
     };
     [self.navigationController pushViewController:timeVC animated:YES];
 }
@@ -105,9 +108,10 @@
 - (void)jumpToDeviceVC{
     WS(weakSelf);
     SXForbiddenDeviceOptionController *deviceVC = [[SXForbiddenDeviceOptionController alloc] init];
-    deviceVC.selectForbiddenOptionBlock = ^(NSString * _Nonnull model) {
-        weakSelf.model.name = model;
+    deviceVC.selectForbiddenOptionBlock = ^(NSArray * _Nonnull selectedList) {
+        weakSelf.model.mac = selectedList;
         weakSelf.headerView.model = weakSelf.model;
+        [weakSelf.headerView selectDevice];
     };
     [self.navigationController pushViewController:deviceVC animated:YES];
 }

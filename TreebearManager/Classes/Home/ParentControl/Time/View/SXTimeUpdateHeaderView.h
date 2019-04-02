@@ -20,6 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setUpData;
 
+- (void)selectTime;
+
+- (void)selectDevice;
+
 ///点击更新名称回调
 @property (nonatomic, copy) void (^clickUpdateNameBtnBlock)(void);
 

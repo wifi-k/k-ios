@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXTimeControlParam.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 ///点击结束时间回调
 @property (nonatomic, copy) void (^clickEndTimeControlBlock)(void);
 ///点击确定按钮回调
-@property (nonatomic, copy) void (^clickConfirmBtnBlock)(NSString *beginTimeStr,NSString *endTimeStr);
+@property (nonatomic, copy) void (^clickConfirmBtnBlock)(SXTimeControlParam *param);
 
 ///开始时间
 @property (nonatomic, copy) NSString *beginTimeStr;

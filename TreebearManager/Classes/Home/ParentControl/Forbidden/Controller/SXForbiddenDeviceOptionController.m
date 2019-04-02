@@ -54,16 +54,20 @@
 
 - (void)rightButtonAction:(UIButton *)button{
     [MBProgressHUD showMessage:@"保存成功!" toView:self.view];
+    NSMutableArray *selectedArr = [NSMutableArray array];
     NSInteger count = 0;
     for (SXMobileManagerModel *model in self.dataArray) {
         if (!model.isBlock.boolValue) {
             ++ count;
+            if ([NSString isNotEmpty:model.mac]) {
+                [selectedArr addObject:model.mac];
+            }
         }
     }
     
+    //回调出去
     if (self.selectForbiddenOptionBlock) {
-        NSString *fdfdf = [NSString stringWithFormat:@"%ld个",count];
-        self.selectForbiddenOptionBlock(fdfdf);
+        self.selectForbiddenOptionBlock(selectedArr);
     }
     
     [self.navigationController popViewControllerAnimated:YES];

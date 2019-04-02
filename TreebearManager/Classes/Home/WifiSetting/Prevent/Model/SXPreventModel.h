@@ -13,7 +13,7 @@
 ///节点号
 @property (nonatomic, copy) NSString *nodeId;
 ///Mac地址
-@property (nonatomic, copy) NSString *mac;
+@property (nonatomic, copy) NSArray *mac;
 ///主机名
 @property (nonatomic, copy) NSString *name;
 ///最近在线时间戳

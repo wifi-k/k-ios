@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SXForbiddenDeviceOptionController : SXBaseCustomTablePlainRrfreshController
 
 ///点击回调
-@property (nonatomic, copy) void (^selectForbiddenOptionBlock)(NSString *model);
+@property (nonatomic, copy) void (^selectForbiddenOptionBlock)(NSArray *selectedList);
 
 @end
 

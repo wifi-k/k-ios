@@ -27,9 +27,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///结束时间
 @property (nonatomic, copy) NSString *et;
 ///周几
-@property (nonatomic, copy) NSString *wt;
+@property (nonatomic, copy) NSNumber *wt;
 ///mac列表,json字符串列表
-@property (nonatomic, copy) NSString *mac;
+@property (nonatomic, copy) NSArray *mac;
 ///开关
 @property (nonatomic, copy) NSString *op;
 

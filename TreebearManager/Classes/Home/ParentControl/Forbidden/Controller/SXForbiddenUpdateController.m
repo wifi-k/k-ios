@@ -110,9 +110,10 @@
 - (void)jumpToDeviceVC{
     WS(weakSelf);
     SXForbiddenDeviceOptionController *deviceVC = [[SXForbiddenDeviceOptionController alloc] init];
-    deviceVC.selectForbiddenOptionBlock = ^(NSString * _Nonnull model) {
-        weakSelf.model.name = model;
+    deviceVC.selectForbiddenOptionBlock = ^(NSArray * _Nonnull selectedList) {
+        weakSelf.model.mac = selectedList;
         weakSelf.headerView.model = weakSelf.model;
+        [weakSelf.headerView selectDevice];
     };
     [self.navigationController pushViewController:deviceVC animated:YES];
 }

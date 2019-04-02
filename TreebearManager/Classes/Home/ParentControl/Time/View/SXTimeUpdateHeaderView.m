@@ -77,6 +77,10 @@
     
     UITapGestureRecognizer *tap3 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickDeviceControl:)];
     [self.thirdBgView addGestureRecognizer:tap3];
+    
+    //默认赋空值
+    self.timeContentL.text = @"";
+    self.deviceContentL.text = @"";
 }
 
 #pragma mark -setter方法-
@@ -84,12 +88,18 @@
     _model = model;
     
     self.schemeL.text = model.name;
-    self.timeContentL.text = model.name;
-    self.deviceContentL.text = model.name;
 }
 
 - (void)setUpData{
     self.schemeL.text = self.model.name;
+}
+
+- (void)selectTime{
+    self.timeContentL.text = @"已选择";
+}
+
+- (void)selectDevice{
+    self.deviceContentL.text = @"已选择";
 }
 
 #pragma mark -点击事件-

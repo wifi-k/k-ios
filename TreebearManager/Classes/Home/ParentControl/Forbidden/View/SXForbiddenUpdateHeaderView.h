@@ -17,6 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setUpData;
 
+- (void)selectTime;
+
+- (void)selectDevice;
+
 ///禁用方案模型
 @property (nonatomic, strong) SXForbiddenAppModel *model;
 
