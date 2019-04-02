@@ -24,6 +24,7 @@
 #import "XKGetWifiNetTool.h"
 #import "SXDynamicParam.h"
 #import "SXRootTool.h"
+#import "SXXiaoKiOptionResult.h"
 
 @interface SXWifiSettingController ()
 @property (nonatomic, weak) SXWifiSettingHeaderView *headerView;//头部视图
@@ -40,7 +41,7 @@
     [self getNodeData];
     
     //获取wifi列表
-    [self userNodeSsidSetData];
+    [self userNodeWifiListData];
 }
 
 - (void)setUpUI{
@@ -182,14 +183,14 @@
 }
 
 #pragma mark -WiFi列表数据接口-
-- (void)userNodeSsidSetData{
-    if ([NSString isEmpty:SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId]) {
+- (void)userNodeWifiListData{
+    NSString *nodeId = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel.nodeId;
+    if ([NSString isEmpty:nodeId]) {
         [MBProgressHUD showWarningWithMessage:@"没有获取到设备，请检查您的WiFi连接" toView:SXKeyWindow];
         return;
     }
-//    WS(weakSelf);
     [MBProgressHUD showWhiteLoadingToView:SXKeyWindow];
-    [SXMineNetTool userNodeWifiListParams:SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId Success:^(NSArray *array) {
+    [SXMineNetTool userNodeWifiListParams:nodeId Success:^(NSArray *array) {
         [MBProgressHUD hideHUDForView:SXKeyWindow];
         //赋值
         DLog(@"array:%@",array);
@@ -258,7 +259,7 @@
     }];
 }
 
-#pragma mark -网络请求-
+#pragma mark -重启节点设置-
 - (void)nodeRestartWithData{
     WS(weakSelf);
     [MBProgressHUD showWhiteLoadingWithMessage:@"重启中..." toView:self.view];
@@ -273,6 +274,7 @@
     }];
 }
 
+#pragma mark -恢复出厂设置-
 - (void)nodeResetWithData{
     WS(weakSelf);
     [MBProgressHUD showWhiteLoadingWithMessage:@"恢复中..." toView:self.view];

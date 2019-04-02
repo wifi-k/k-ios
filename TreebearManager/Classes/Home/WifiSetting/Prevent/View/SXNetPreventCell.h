@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SXPreventModel.h"
+#import "SXMobileManagerModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
 ///模型
-@property (nonatomic, strong) SXPreventModel *model;
+@property (nonatomic, strong) SXMobileManagerModel *model;
 
 @end
 

@@ -25,7 +25,7 @@
 ///0-在线 or 1-离线
 @property (nonatomic, copy) NSNumber *status;
 ///0-allow or 1-block
-@property (nonatomic, copy) NSNumber *block;
+@property (nonatomic, copy) NSNumber *isBlock;
 
 @end
 

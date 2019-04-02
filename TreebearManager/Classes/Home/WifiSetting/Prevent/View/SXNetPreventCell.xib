@@ -43,6 +43,9 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="31" id="2ep-Rk-xcX"/>
                         </constraints>
+                        <connections>
+                            <action selector="clickSwitchBtn:" destination="KGk-i7-Jjw" eventType="valueChanged" id="vmK-VC-vGy"/>
+                        </connections>
                     </switch>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ACL-xS-UNU">
                         <rect key="frame" x="15" y="96" width="333" height="0.5"/>

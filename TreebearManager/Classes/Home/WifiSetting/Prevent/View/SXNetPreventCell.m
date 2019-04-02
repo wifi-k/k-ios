@@ -7,6 +7,8 @@
 //
 
 #import "SXNetPreventCell.h"
+#import "SXWifiSettingNetTool.h"
+#import "SXXiaoKiOptionResult.h"
 
 @interface SXNetPreventCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
@@ -49,21 +51,44 @@ static NSString *SXNetWallCellID = @"SXNetWallCellID";
 }
 
 #pragma mark -setter-
-- (void)setModel:(SXPreventModel *)model{
+- (void)setModel:(SXMobileManagerModel *)model{
     _model = model;
     
-    self.nameL.text = [NSString stringWithFormat:@"设备名称：%@",model.name];
+    self.nameL.text = ([NSString isEmpty:model.note] ? model.name : model.note);
     switch (model.status.integerValue) {
         case 0:
-            self.statusL.text = [NSString stringWithFormat:@"设备状态：离线"];
+            self.statusL.text = [NSString stringWithFormat:@"离线时间:%@",model.offTime];
             break;
         case 1:
-            self.statusL.text = [NSString stringWithFormat:@"设备状态：在线"];
+            self.statusL.text = [NSString stringWithFormat:@"在线时间:%@",model.onTime];
             break;
         default:
-            self.statusL.text = [NSString stringWithFormat:@"设备状态：未知"];
+            self.statusL.text = [NSString stringWithFormat:@"在线时间:%@",@"未知"];
             break;
     }
+    self.switchBtn.on = model.isBlock.boolValue;
+}
+
+#pragma mark -Event-
+- (IBAction)clickSwitchBtn:(UISwitch *)sender {
+    SXPreventPageParam *param = [SXPreventPageParam param];
+    param.nodeId = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel
+    .nodeId;
+    param.mac = self.model.mac;
+    param.note = self.model.note;
+    param.block = @(!sender.isOn);
+    [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
+    [SXWifiSettingNetTool userDodeDeviceSetDataWithParams:param.mj_keyValues success:^{
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        [MBProgressHUD showSuccessWithMessage:@"设置成功!" toView:SXKeyWindow];
+    } failure:^(NSError * _Nonnull error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        sender.on = !sender.isOn;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSString *message = [error.userInfo objectForKey:@"msg"];
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        });
+    }];
 }
 
 @end

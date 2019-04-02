@@ -97,8 +97,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     SXNetPreventCell *cell = [SXNetPreventCell cellWithTableView:tableView];
-//    SXPreventModel *model = self.dataArray[indexPath.row];
-//    cell.model = model;
+    SXMobileManagerModel *model = self.dataArray[indexPath.row];
+    cell.model = model;
     return cell;
 }
 
