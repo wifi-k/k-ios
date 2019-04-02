@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///时间控制模型
 @property (nonatomic, strong) SXTimeControlModel *model;
+///点击确定按钮回调
+@property (nonatomic, copy) void (^selectTimeControlOptionBlock)(SXTimeControlModel *model);
 
 @end
 

@@ -81,8 +81,16 @@
 
 #pragma mark -页面跳转-
 - (void)jumpToUpdateVC:(SXTimeControlModel *)model{
+    WS(weakSelf);
     SXTimeUpdateController *updateVC = [[SXTimeUpdateController alloc] init];
+    BOOL isAdd = (model == nil? YES:NO);
     updateVC.model = model;
+    updateVC.selectTimeControlOptionBlock = ^(SXTimeControlModel * _Nonnull model) {
+        if (isAdd) {
+            [weakSelf.dataArray addObject:model];
+        }
+        [weakSelf.tableView reloadData];
+    };
     [self.navigationController pushViewController:updateVC animated:YES];
 }
 
