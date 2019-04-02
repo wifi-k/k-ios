@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 ///点击编辑按钮回调
 @property (nonatomic, copy) void (^clickEditBtnBlock)(SXForbiddenAppModel *model);
 ///点击删除按钮回调
-@property (nonatomic, copy) void (^clickDeleteBtnBlock)(void);
+@property (nonatomic, copy) void (^clickDeleteBtnBlock)(SXForbiddenAppModel *model);
 
 @end
 

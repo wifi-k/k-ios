@@ -83,9 +83,9 @@
 - (void)setModel:(SXForbiddenAppModel *)model{
     _model = model;
     
-    self.contentL.text = model.content;
-    self.forbiddenContentL.text = model.content1;
-    self.deviceContentL.text = model.content2;
+    self.contentL.text = model.name;
+    self.forbiddenContentL.text = model.name;
+    self.deviceContentL.text = model.name;
 }
 
 #pragma mark -点击事件-

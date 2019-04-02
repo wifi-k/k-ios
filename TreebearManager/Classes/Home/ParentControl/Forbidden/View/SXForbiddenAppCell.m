@@ -68,11 +68,9 @@ static NSString *SXForbiddenAppCellID = @"SXForbiddenAppCellID";
 - (void)setModel:(SXForbiddenAppModel *)model{
     _model = model;
     
-    self.titleL.text = model.title;
     NSInteger index = model.row.integerValue % 3;
     self.iconImageView.image = [UIImage imageNamed:_imageNameArr[index]];
-    
-//    self.titleL.text = model.name;
+    self.titleL.text = model.name;
 }
 
 #pragma mark -点击事件-
@@ -84,7 +82,7 @@ static NSString *SXForbiddenAppCellID = @"SXForbiddenAppCellID";
 
 - (IBAction)clickDeleteBtn:(UIButton *)sender {
     if (self.clickDeleteBtnBlock) {
-        self.clickDeleteBtnBlock();
+        self.clickDeleteBtnBlock(self.model);
     }
 }
 

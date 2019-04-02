@@ -14,4 +14,8 @@
     return @{@"modelId":@"id"};
 }
 
+- (BOOL)isEqual:(SXForbiddenAppModel *)other{
+    return [self.modelId isEqual:other.modelId];
+}
+
 @end

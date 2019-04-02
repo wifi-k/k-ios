@@ -44,7 +44,7 @@
     SXForbiddenUpdateHeaderView *headerView = [SXForbiddenUpdateHeaderView headerView];
     if (isAdd) {
         SXForbiddenAppModel *addModel = [[SXForbiddenAppModel alloc] init];
-        addModel.content = @"新增新增新增新增新增新增新增新增新增新增新增新增新增新增新增新增新增";
+        addModel.name = @"新增新增新增新增新增新增新增新增新增新增新增新增新增新增新增新增新增";
         headerView.model = addModel;
         self.model = addModel;
     } else {
@@ -97,7 +97,7 @@
     WS(weakSelf);
     SXForbiddenAppOptionController *appVC = [[SXForbiddenAppOptionController alloc] init];
     appVC.selectForbiddenOptionBlock = ^(NSString * _Nonnull model) {
-        weakSelf.model.content1 = model;
+        weakSelf.model.name = model;
         weakSelf.headerView.model = weakSelf.model;
     };
     [self.navigationController pushViewController:appVC animated:YES];
@@ -107,7 +107,7 @@
     WS(weakSelf);
     SXForbiddenDeviceOptionController *deviceVC = [[SXForbiddenDeviceOptionController alloc] init];
     deviceVC.selectForbiddenOptionBlock = ^(NSString * _Nonnull model) {
-        weakSelf.model.content2 = model;
+        weakSelf.model.name = model;
         weakSelf.headerView.model = weakSelf.model;
     };
     [self.navigationController pushViewController:deviceVC animated:YES];

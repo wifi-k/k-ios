@@ -26,23 +26,6 @@
 - (NSMutableArray *)dataArray{
     if (_dataArray == nil) {
         _dataArray = [NSMutableArray array];
-        SXForbiddenAppModel *model0 = [[SXForbiddenAppModel alloc] init];
-        model0.title = @"禁用APP方案1";
-        model0.content = @"禁用APP方案1&禁用APP方案1&禁用APP方案1&禁用APP方案1&禁用APP方案1&禁用APP方案1&禁用APP方案1&禁用APP方案1";
-        model0.row= @(0);
-        [_dataArray addObject:model0];
-        
-        SXForbiddenAppModel *model1 = [[SXForbiddenAppModel alloc] init];
-        model1.title = @"禁用APP方案2";
-        model1.content = @"禁用APP方案2&禁用APP方案2&禁用APP方案2&禁用APP方案2&禁用APP方案2&禁用APP方案2&禁用APP方案2&禁用APP方案2";
-        model1.row= @(1);
-        [_dataArray addObject:model1];
-        
-        SXForbiddenAppModel *model2 = [[SXForbiddenAppModel alloc] init];
-        model2.title = @"禁用APP方案3";
-        model2.content = @"禁用APP方案3&禁用APP方案3&禁用APP方案3&禁用APP方案3&禁用APP方案3&禁用APP方案3&禁用APP方案3&禁用APP方案3&禁用APP方案3";
-        model2.row= @(2);
-        [_dataArray addObject:model2];
     }
     return _dataArray;
 }
@@ -94,10 +77,11 @@
 }
 
 #pragma mark -视图弹窗-
-- (void)alertDeleteAlertView{
+- (void)alertDeleteAlertView:(SXForbiddenAppModel *)model{
+    WS(weakSelf);
     SXTitleAlertView *deleteAlertView = [SXTitleAlertView alertWithTitle:@"提示" content:@"您确定要删除此方案吗?" confirmStr:@"确定" cancelStr:@"取消"];
     deleteAlertView.confirmButtonBlock = ^{
-        DLog(@"确定。。。");
+        [weakSelf userNodeDeviceAllowDelData:model];
     };
     [deleteAlertView alert];
 }
@@ -119,11 +103,14 @@
 
 #pragma mark -获取设备上网配置列表接口-
 - (void)userNodeDeviceAllowListData{
+    WS(weakSelf);
     SXForbiddenAppParam *param = [SXForbiddenAppParam param];
     SXHomeXiaoKiModel *model = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel;
     param.nodeId = model.nodeId;
     [SXParentControlNetTool userNodeDeviceAllowListParams:param.mj_keyValues Success:^(SXForbiddenAppResult *result) {
         DLog(@"result:%@",result);
+        weakSelf.dataArray = [NSMutableArray arrayWithArray:result.page];
+        [weakSelf.tableView reloadData];
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
@@ -144,13 +131,17 @@
 }
 
 #pragma mark -删除设备上网配置接口-
-- (void)userNodeDeviceAllowDelData{
+- (void)userNodeDeviceAllowDelData:(SXForbiddenAppModel *)model{
+    WS(weakSelf);
     SXForbiddenAppParam *param = [SXForbiddenAppParam param];
-    SXHomeXiaoKiModel *model = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel;
+    param.modelId = model.modelId;
     param.nodeId = model.nodeId;
-    param.modelId = @"";
     [SXParentControlNetTool userNodeDeviceAllowDelParams:param.mj_keyValues Success:^{
         [MBProgressHUD showSuccessWithMessage:@"删除成功!" toView:SXKeyWindow];
+        
+        //刷新显示
+        [weakSelf.dataArray removeObject:model];
+        [weakSelf.tableView reloadData];
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
@@ -170,12 +161,13 @@
     WS(weakSelf);
     SXForbiddenAppCell *cell = [SXForbiddenAppCell cellWithTableView:tableView];
     SXForbiddenAppModel *model = self.dataArray[indexPath.row];
+    model.row = @(indexPath.row);
     cell.model = model;
     cell.clickEditBtnBlock = ^(SXForbiddenAppModel * _Nonnull model) {
         [weakSelf jumpToUpdateVC:model];
     };
-    cell.clickDeleteBtnBlock = ^{
-        [weakSelf alertDeleteAlertView];
+    cell.clickDeleteBtnBlock = ^(SXForbiddenAppModel * _Nonnull model) {
+        [weakSelf alertDeleteAlertView:model];
     };
     return cell;
 }

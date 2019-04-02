@@ -12,15 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SXForbiddenAppModel : NSObject
 
-///禁用方案
-@property (nonatomic, copy) NSString *title;
-///描述
-@property (nonatomic, copy) NSString *content;
-///描述1
-@property (nonatomic, copy) NSString *content1;
-///描述2
-@property (nonatomic, copy) NSString *content2;
-///行
 @property (nonatomic, copy) NSNumber *row;
 
 //----//----
