@@ -87,6 +87,7 @@
 #pragma mark -点击事件-
 - (void)jumpToMobileInfoVC{
     SXMobileInfoController *infoVC = [[SXMobileInfoController alloc] init];
+    infoVC.model = self.model;
     [self.navigationController pushViewController:infoVC animated:YES];
 }
 

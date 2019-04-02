@@ -7,11 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-NS_ASSUME_NONNULL_BEGIN
+#import "SXMobileManagerModel.h"
 
 @interface SXMobileInfoController : UIViewController
-
+@property (nonatomic, strong) SXMobileManagerModel *model;
 @end
-
-NS_ASSUME_NONNULL_END

@@ -30,6 +30,7 @@
     
 //    WS(weakSelf);
     SXMobileInfoHeaderView *headerView = [SXMobileInfoHeaderView headerView];
+    headerView.model = self.model;
     [self.view addSubview:headerView];
     self.headerView = headerView;
 }

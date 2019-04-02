@@ -195,6 +195,8 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     SXMobileDetailController *detailVC = [[SXMobileDetailController alloc] init];
+    SXMobileManagerModel *model = self.dataArray[indexPath.row];
+    detailVC.model = model;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 

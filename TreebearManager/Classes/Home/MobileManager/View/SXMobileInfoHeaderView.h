@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXMobileManagerModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXMobileInfoHeaderView : UIView
 
 + (instancetype)headerView;
+
+@property (nonatomic, strong) SXMobileManagerModel *model;
 
 @end
 

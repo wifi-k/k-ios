@@ -10,15 +10,19 @@
 
 @interface SXMobileInfoHeaderView ()
 
-@property (weak, nonatomic) IBOutlet UIView *bottomLineView1;
-@property (weak, nonatomic) IBOutlet UIView *firstBgView;
 
+@property (weak, nonatomic) IBOutlet UILabel *vendorTitleL;
+@property (weak, nonatomic) IBOutlet UILabel *vendorL;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView2;
 @property (weak, nonatomic) IBOutlet UIView *secondBgView;
 
+@property (weak, nonatomic) IBOutlet UILabel *macTitleL;
+@property (weak, nonatomic) IBOutlet UILabel *macL;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView3;
 @property (weak, nonatomic) IBOutlet UIView *thirdBgView;
 
+@property (weak, nonatomic) IBOutlet UILabel *ipTitleL;
+@property (weak, nonatomic) IBOutlet UILabel *ipL;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView4;
 @property (weak, nonatomic) IBOutlet UIView *fourthBgView;
 
@@ -44,20 +48,34 @@
     
     self.backgroundColor = SXColorWhite;
     
-    self.firstBgView.backgroundColor = SXColorWhite;
     self.secondBgView.backgroundColor = SXColorWhite;
     self.thirdBgView.backgroundColor = SXColorWhite;
     self.fourthBgView.backgroundColor = SXColorWhite;
     
-    self.bottomLineView1.backgroundColor = SXColorDivideLine;
     self.bottomLineView2.backgroundColor = SXColorDivideLine;
     self.bottomLineView3.backgroundColor = SXColorDivideLine;
     self.bottomLineView4.backgroundColor = SXColorDivideLine;
     
-    self.bottomLineView1.height = 0.5f;
     self.bottomLineView2.height = 0.5f;
     self.bottomLineView3.height = 0.5f;
     self.bottomLineView4.height = 0.5f;
+    
+    self.vendorTitleL.textColor = SXColor333333;
+    self.macTitleL.textColor = SXColor333333;
+    self.ipTitleL.textColor = SXColor333333;
+    
+    self.vendorL.textColor = SXColor999999;
+    self.macL.textColor = SXColor999999;
+    self.ipL.textColor = SXColor999999;
+}
+
+#pragma mark -setter-
+- (void)setModel:(SXMobileManagerModel *)model{
+    _model = model;
+    
+    self.vendorL.text = model.macVendor;
+    self.macL.text = model.mac;
+    self.ipL.text = model.mac;
 }
 
 @end
