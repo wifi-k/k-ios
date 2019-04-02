@@ -8,6 +8,7 @@
 
 #import "SXTimeControlController.h"
 #import "SXTimeUpdateController.h"
+#import "SXTimeControllHeaderView.h"
 #import "SXTimeControlFooterView.h"
 #import "SXTimeControlCell.h"
 #import "SXWifiSettingAlertView.h"
@@ -46,13 +47,22 @@
     
     self.navigationItem.title = @"上网时间控制";
     
+    //3.添加头部视图
+    UIView *headerBgView = [[UIView alloc] init];
+    headerBgView.backgroundColor = SXColorWhite;
+    headerBgView.height = 80;
+    self.tableView.tableHeaderView = headerBgView;
+    
+    SXTimeControllHeaderView *headerV = [SXTimeControllHeaderView headerView];
+    [self.tableView.tableHeaderView addSubview:headerV];
+    headerV.frame = self.tableView.tableHeaderView.bounds;
+    
     //4.添加底部视图
     UIView *footerBgView = [[UIView alloc] init];
     footerBgView.backgroundColor = SXColorWhite;
     footerBgView.height = 120;
     self.tableView.tableFooterView = footerBgView;
     
-    //2.添加底部视图
     WS(weakSelf);
     SXTimeControlFooterView *footerView = [SXTimeControlFooterView
                                             footerView];

@@ -11,6 +11,24 @@
 
 @implementation SXParentControlNetTool
 
++ (void)forbiddenUserNodeDeviceAllowListParams:(NSDictionary *)params Success:(void (^)(SXForbiddenAppResult *result))success failure:(void (^)(NSError *error))failure{
+    
+    [SXNetRequestTool POST:user_node_device_allow_list parameters:params success:^(id response) {
+        
+        if (![response isKindOfClass:NSDictionary.class]) return;
+        
+        SXForbiddenAppResult *result = [SXForbiddenAppResult mj_objectWithKeyValues:response];
+        
+        if (success){
+            success(result);
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
 + (void)userNodeDeviceAllowListParams:(NSDictionary *)params Success:(void (^)(SXTimeControlResult *result))success failure:(void (^)(NSError *error))failure{
     
     [SXNetRequestTool POST:user_node_device_allow_list parameters:params success:^(id response) {

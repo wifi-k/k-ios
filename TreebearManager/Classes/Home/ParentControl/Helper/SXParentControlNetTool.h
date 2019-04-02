@@ -14,6 +14,9 @@
 
 @interface SXParentControlNetTool : NSObject
 
+///测试禁用APP用
++ (void)forbiddenUserNodeDeviceAllowListParams:(NSDictionary *)params Success:(void (^)(SXForbiddenAppResult *result))success failure:(void (^)(NSError *error))failure;
+
 ///获取设备上网配置列表
 + (void)userNodeDeviceAllowListParams:(NSDictionary *)params Success:(void (^)(SXTimeControlResult *result))success failure:(void (^)(NSError *error))failure;
 

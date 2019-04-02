@@ -83,6 +83,7 @@
 - (void)setModel:(SXTimeControlModel *)model{
     _model = model;
     
+    self.schemeL.text = model.name;
     self.timeContentL.text = model.name;
     self.deviceContentL.text = model.name;
 }

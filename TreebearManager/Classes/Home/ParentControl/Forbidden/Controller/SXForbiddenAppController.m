@@ -8,6 +8,7 @@
 
 #import "SXForbiddenAppController.h"
 #import "SXForbiddenUpdateController.h"
+#import "SXForbiddenAppHeaderView.h"
 #import "SXForbiddenAppFooterView.h"
 #import "SXForbiddenAppCell.h"
 #import "SXTitleAlertView.h"
@@ -46,13 +47,22 @@
     
     self.navigationItem.title = @"禁用";
     
+    //3.添加头部视图
+    UIView *headerBgView = [[UIView alloc] init];
+    headerBgView.backgroundColor = SXColorWhite;
+    headerBgView.height = 80;
+    self.tableView.tableHeaderView = headerBgView;
+    
+    SXForbiddenAppHeaderView *headerV = [SXForbiddenAppHeaderView headerView];
+    [self.tableView.tableHeaderView addSubview:headerV];
+    headerV.frame = self.tableView.tableHeaderView.bounds;
+    
     //4.添加底部视图
     UIView *footerBgView = [[UIView alloc] init];
     footerBgView.backgroundColor = SXColorWhite;
     footerBgView.height = 120;
     self.tableView.tableFooterView = footerBgView;
     
-    //2.添加底部视图
     WS(weakSelf);
     SXForbiddenAppFooterView *footerView = [SXForbiddenAppFooterView
                                             footerView];
@@ -100,14 +110,14 @@
     SXForbiddenAppParam *param = [SXForbiddenAppParam param];
     SXHomeXiaoKiModel *model = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel;
     param.nodeId = model.nodeId;
-//    [SXParentControlNetTool userNodeDeviceAllowListParams:param.mj_keyValues Success:^(SXForbiddenAppResult *result) {
-//        DLog(@"result:%@",result);
-//        weakSelf.dataArray = [NSMutableArray arrayWithArray:result.page];
-//        [weakSelf.tableView reloadData];
-//    } failure:^(NSError *error) {
-//        NSString *message = [error.userInfo objectForKey:@"msg"];
-//        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
-//    }];
+    [SXParentControlNetTool forbiddenUserNodeDeviceAllowListParams:param.mj_keyValues Success:^(SXForbiddenAppResult *result) {
+        DLog(@"result:%@",result);
+        weakSelf.dataArray = [NSMutableArray arrayWithArray:result.page];
+        [weakSelf.tableView reloadData];
+    } failure:^(NSError *error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
 
 #pragma mark -删除设备上网配置接口-
