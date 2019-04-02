@@ -108,7 +108,7 @@
     _model = model;
     
     [self.topIconImageView sd_setImageWithURL:[NSURL URLWithString:model.macIcon] placeholderImage:[UIImage imageNamed:@"img_android_icon"] options:SDWebImageRetryFailed];
-    self.nameL.text = model.name;
+    self.nameL.text = ([NSString isEmpty:model.note] ? model.name : model.note);
     switch (model.status.integerValue) {
         case 0://离线
             self.statusL.text = [NSString stringWithFormat:@"%@ 离线",model.offTime];

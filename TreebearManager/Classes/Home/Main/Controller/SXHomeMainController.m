@@ -368,6 +368,7 @@
     UIView *sectionHeaderV = nil;
     if (section == 0) {
         SXHomeMainSectionHeaderView *headerView = [SXHomeMainSectionHeaderView headerViewWithTableView:tableView];
+        [headerView setUpData:self.dataArray];
         sectionHeaderV = headerView;
     } else {
         SXHomeMainSectionHeaderView2 *headerView = [SXHomeMainSectionHeaderView2 headerViewWithTableView:tableView];

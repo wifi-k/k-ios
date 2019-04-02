@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SXHomeMainSectionHeaderView : UITableViewHeaderFooterView
     
 + (instancetype)headerViewWithTableView:(UITableView *)tableView;
+
+- (void)setUpData:(NSArray *)devices;
     
 @end
 

@@ -63,6 +63,7 @@ static NSString *SXHomeNetworkingDeviceCellID = @"SXHomeNetworkingDeviceCellID";
 - (void)setModel:(SXMobileManagerModel *)model{
     _model = model;
     
+    [self.iconImageV sd_setImageWithURL:[NSURL URLWithString:model.macIcon] placeholderImage:[UIImage imageNamed:@"img_mobile_icon"] options:SDWebImageRetryFailed];
     self.mobileNameL.text = ([NSString isEmpty:model.note] ? model.name : model.note);
     switch (model.status.integerValue) {
         case 0:

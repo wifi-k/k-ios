@@ -7,6 +7,7 @@
 //
 
 #import "SXHomeMainSectionHeaderView.h"
+#import "SXMobileManagerModel.h"
 
 @interface SXHomeMainSectionHeaderView ()
 @property (weak, nonatomic) UILabel *titleL;
@@ -48,7 +49,7 @@
     self.contentL = contentL;
     
     self.titleL.text = @"连网设备";
-    self.contentL.text = @"前在线2台/上行网速1000k/下行";
+    self.contentL.text = @"当前在线2台";
 }
 
 - (void)layoutSubviews{
@@ -63,6 +64,16 @@
         make.left.mas_equalTo(self.contentView).mas_offset(15);
         make.centerY.mas_equalTo(self.contentView).mas_offset(15);
     }];
+}
+
+- (void)setUpData:(NSArray *)devices{
+    NSInteger count = 0;
+    for (SXMobileManagerModel *model in devices) {
+        if (model.status.boolValue) {
+            ++ count;
+        }
+    }
+    self.contentL.text = [NSString stringWithFormat:@"当前在线%ld台",count];
 }
     
 @end
