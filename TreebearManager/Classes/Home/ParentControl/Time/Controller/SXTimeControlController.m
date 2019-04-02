@@ -12,6 +12,8 @@
 #import "SXTimeControlCell.h"
 #import "SXWifiSettingAlertView.h"
 #import "SXTitleAlertView.h"
+#import "SXXiaoKiOptionResult.h"
+#import "SXParentControlNetTool.h"
 
 @interface SXTimeControlController ()
 ///模型数组
@@ -24,20 +26,6 @@
 - (NSMutableArray *)dataArray{
     if (_dataArray == nil) {
         _dataArray = [NSMutableArray array];
-        SXTimeControlModel *model0 = [[SXTimeControlModel alloc] init];
-        model0.title = @"上网时间控制1";
-        model0.row= @(0);
-        [_dataArray addObject:model0];
-        
-        SXTimeControlModel *model1 = [[SXTimeControlModel alloc] init];
-        model1.title = @"上网时间控制2";
-        model1.row= @(1);
-        [_dataArray addObject:model1];
-        
-        SXTimeControlModel *model2 = [[SXTimeControlModel alloc] init];
-        model2.title = @"上网时间控制3";
-        model2.row= @(2);
-        [_dataArray addObject:model2];
     }
     return _dataArray;
 }
@@ -47,6 +35,9 @@
     
     //1.初始化UI
     [self setUpUI];
+    
+    //2.上网时间列表
+    [self userNodeDeviceAllowListData];
 }
 
 #pragma mark -初始化UI-
@@ -92,6 +83,40 @@
         DLog(@"确定。。。");
     };
     [deleteAlertView alert];
+}
+
+#pragma mark -获取设备上网配置列表接口-
+- (void)userNodeDeviceAllowListData{
+    WS(weakSelf);
+    SXForbiddenAppParam *param = [SXForbiddenAppParam param];
+    SXHomeXiaoKiModel *model = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel;
+    param.nodeId = model.nodeId;
+    [SXParentControlNetTool userNodeDeviceAllowListParams:param.mj_keyValues Success:^(SXTimeControlResult *result) {
+        DLog(@"result:%@",result);
+        weakSelf.dataArray = [NSMutableArray arrayWithArray:result.page];
+        [weakSelf.tableView reloadData];
+    } failure:^(NSError *error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
+#pragma mark -删除设备上网配置接口-
+- (void)userNodeDeviceAllowDelData:(SXForbiddenAppModel *)model{
+    WS(weakSelf);
+    SXForbiddenAppParam *param = [SXForbiddenAppParam param];
+    param.modelId = model.modelId;
+    param.nodeId = model.nodeId;
+    [SXParentControlNetTool userNodeDeviceAllowDelParams:param.mj_keyValues Success:^{
+        [MBProgressHUD showSuccessWithMessage:@"删除成功!" toView:SXKeyWindow];
+        
+        //刷新显示
+        [weakSelf.dataArray removeObject:model];
+        [weakSelf.tableView reloadData];
+    } failure:^(NSError *error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
 
 #pragma mark -UITableViewDelegate/UITableViewDataSource-

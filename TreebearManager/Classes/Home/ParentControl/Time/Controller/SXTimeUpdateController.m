@@ -49,7 +49,7 @@
     SXTimeUpdateHeaderView *headerView = [SXTimeUpdateHeaderView headerView];
     if (isAdd) {
         SXTimeControlModel *addModel = [[SXTimeControlModel alloc] init];
-        addModel.content = @"新增新增新增新增新增新增新增新增新增新增新增新增新增新增新增新增新增";
+        addModel.name = @"新增新增新增新增新增新增新增新增新增新增新增新增新增新增新增新增新增";
         headerView.model = addModel;
         self.model = addModel;
     } else {
@@ -91,7 +91,7 @@
     WS(weakSelf);
     SXTimeControlEditController *timeVC = [[SXTimeControlEditController alloc] init];
     timeVC.selectTimeBlock = ^(NSString * _Nonnull time) {
-        weakSelf.model.content1 = time;
+        weakSelf.model.name = time;
         weakSelf.headerView.model = weakSelf.model;
     };
     [self.navigationController pushViewController:timeVC animated:YES];
@@ -101,7 +101,7 @@
     WS(weakSelf);
     SXForbiddenDeviceOptionController *deviceVC = [[SXForbiddenDeviceOptionController alloc] init];
     deviceVC.selectForbiddenOptionBlock = ^(NSString * _Nonnull model) {
-        weakSelf.model.content2 = model;
+        weakSelf.model.name = model;
         weakSelf.headerView.model = weakSelf.model;
     };
     [self.navigationController pushViewController:deviceVC animated:YES];

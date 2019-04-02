@@ -11,6 +11,8 @@
 #import "SXForbiddenAppOptionController.h"
 #import "SXForbiddenUpdateHeaderView.h"
 #import "SXWifiSettingAlertView.h"
+#import "SXXiaoKiOptionResult.h"
+#import "SXParentControlNetTool.h"
 
 @interface SXForbiddenUpdateController ()
 ///头部视图
@@ -85,9 +87,11 @@
 
 #pragma mark -视图弹窗-
 - (void)alertUpdateNameView{
+    WS(weakSelf);
     SXWifiSettingAlertView *nameAlertView = [SXWifiSettingAlertView alertWithTitle:@"重命名" placeholder:@"请输入新的名称" confirmStr:@"确定" cancelStr:@"取消"];
     nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
         DLog(@"text:%@",text);
+        [weakSelf userNodeDeviceAllowSetData:text];
     };
     [nameAlertView alert];
 }
@@ -111,6 +115,25 @@
         weakSelf.headerView.model = weakSelf.model;
     };
     [self.navigationController pushViewController:deviceVC animated:YES];
+}
+
+#pragma mark -设置设备允许上网配置接口-
+- (void)userNodeDeviceAllowSetData:(NSString *)text{
+    WS(weakSelf);
+    SXForbiddenAppParam *param = [SXForbiddenAppParam param];
+    param.nodeId = self.model.nodeId;
+    param.modelId = self.model.modelId;
+    param.name = text;
+    [SXParentControlNetTool userNodeDeviceAllowSetParams:param.mj_keyValues Success:^{
+        [MBProgressHUD showSuccessWithMessage:@"设置成功!" toView:SXKeyWindow];
+        
+        //更改赋值
+        weakSelf.model.name = text;
+        [weakSelf.headerView setUpData];
+    } failure:^(NSError *error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
 }
 
 @end

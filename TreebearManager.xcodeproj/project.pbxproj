@@ -121,6 +121,8 @@
 		093C12CD22520745005682C8 /* SXForbiddenAppParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12CC22520745005682C8 /* SXForbiddenAppParam.m */; };
 		093C12D022521C2B005682C8 /* SXHomeMainSectionEmptyFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12CF22521C2B005682C8 /* SXHomeMainSectionEmptyFooterView.m */; };
 		093C12D222521C3C005682C8 /* SXHomeMainSectionEmptyFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093C12D122521C3C005682C8 /* SXHomeMainSectionEmptyFooterView.xib */; };
+		093C12D522533FAA005682C8 /* SXTimeControlResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12D422533FAA005682C8 /* SXTimeControlResult.m */; };
+		093C12D822534013005682C8 /* SXTimeControlParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12D722534013005682C8 /* SXTimeControlParam.m */; };
 		09462ACB22375DEE0063F67E /* SXOnlineOptionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */; };
 		09462ACD22375DF90063F67E /* SXOnlineOptionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */; };
 		09462AD12237898C0063F67E /* XDSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACF2237898C0063F67E /* XDSDropDownMenu.m */; };
@@ -605,6 +607,10 @@
 		093C12CE22521C2B005682C8 /* SXHomeMainSectionEmptyFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionEmptyFooterView.h; sourceTree = "<group>"; };
 		093C12CF22521C2B005682C8 /* SXHomeMainSectionEmptyFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSectionEmptyFooterView.m; sourceTree = "<group>"; };
 		093C12D122521C3C005682C8 /* SXHomeMainSectionEmptyFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXHomeMainSectionEmptyFooterView.xib; sourceTree = "<group>"; };
+		093C12D322533FAA005682C8 /* SXTimeControlResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTimeControlResult.h; sourceTree = "<group>"; };
+		093C12D422533FAA005682C8 /* SXTimeControlResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXTimeControlResult.m; sourceTree = "<group>"; };
+		093C12D622534013005682C8 /* SXTimeControlParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTimeControlParam.h; sourceTree = "<group>"; };
+		093C12D722534013005682C8 /* SXTimeControlParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXTimeControlParam.m; sourceTree = "<group>"; };
 		09462AC922375DEE0063F67E /* SXOnlineOptionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineOptionHeaderView.h; sourceTree = "<group>"; };
 		09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineOptionHeaderView.m; sourceTree = "<group>"; };
 		09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXOnlineOptionHeaderView.xib; sourceTree = "<group>"; };
@@ -1229,6 +1235,10 @@
 		091BC474223FBC7900FEBFD1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				093C12D622534013005682C8 /* SXTimeControlParam.h */,
+				093C12D722534013005682C8 /* SXTimeControlParam.m */,
+				093C12D322533FAA005682C8 /* SXTimeControlResult.h */,
+				093C12D422533FAA005682C8 /* SXTimeControlResult.m */,
 				091BC475223FBCAA00FEBFD1 /* SXTimeControlModel.h */,
 				091BC476223FBCAA00FEBFD1 /* SXTimeControlModel.m */,
 			);
@@ -3747,6 +3757,7 @@
 				091BC4842241037F00FEBFD1 /* SXWifiSettingNetTool.m in Sources */,
 				09B9B8352230EF5D000868D5 /* SXNetPreventCell.m in Sources */,
 				098BA308221AB1B200F58639 /* SXCodeLoginHeaderView.m in Sources */,
+				093C12D522533FAA005682C8 /* SXTimeControlResult.m in Sources */,
 				B348F98121F711B90000F194 /* UIColor+BFKit.m in Sources */,
 				B348F97821F6EB170000F194 /* SXPhotoController.m in Sources */,
 				B348F97D21F711450000F194 /* SXConst.m in Sources */,
@@ -3884,6 +3895,7 @@
 				09B9B7DE2230BE2F000868D5 /* SXHomeReportController.m in Sources */,
 				095540CF221FEF5D005A5485 /* SXHomeMainGotoUserInfoButton.m in Sources */,
 				091BC4DB2242207100FEBFD1 /* PYAblumHeader.m in Sources */,
+				093C12D822534013005682C8 /* SXTimeControlParam.m in Sources */,
 				095540C9221FEB91005A5485 /* SXHomeMainSettingButton.m in Sources */,
 				09118706221522BF00938D9F /* GACErrorManager.m in Sources */,
 				B3AF2FDA21F9C8BD001E4E67 /* UIView+AutoLayout.m in Sources */,

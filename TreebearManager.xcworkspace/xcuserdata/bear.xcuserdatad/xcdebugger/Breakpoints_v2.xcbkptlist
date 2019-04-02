@@ -51,13 +51,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TreebearManager/Classes/Home/ParentControl/Forbidden/Controller/SXForbiddenAppController.m"
-            timestampString = "575870319.554741"
+            filePath = "TreebearManager/Classes/Home/ParentControl/Forbidden/Controller/SXForbiddenUpdateController.m"
+            timestampString = "575881645.408152"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "-userNodeDeviceAllowDelData:"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "-userNodeDeviceAllowSetData:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -67,13 +67,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TreebearManager/Classes/Home/ParentControl/Forbidden/Controller/SXForbiddenAppController.m"
-            timestampString = "575870319.555126"
+            filePath = "TreebearManager/Classes/Home/ParentControl/Forbidden/Controller/SXForbiddenUpdateController.m"
+            timestampString = "575881645.408257"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
-            landmarkName = "-userNodeDeviceAllowDelData:"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "-userNodeDeviceAllowSetData:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

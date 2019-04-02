@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "SXForbiddenAppParam.h"
 #import "SXForbiddenAppResult.h"
+#import "SXTimeControlParam.h"
+#import "SXTimeControlResult.h"
 
 @interface SXParentControlNetTool : NSObject
 
 ///获取设备上网配置列表
-+ (void)userNodeDeviceAllowListParams:(NSDictionary *)params Success:(void (^)(SXForbiddenAppResult *result))success failure:(void (^)(NSError *error))failure;
++ (void)userNodeDeviceAllowListParams:(NSDictionary *)params Success:(void (^)(SXTimeControlResult *result))success failure:(void (^)(NSError *error))failure;
 
 ///设置设备允许上网配置
 + (void)userNodeDeviceAllowSetParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;

@@ -46,9 +46,6 @@
     
     self.navigationItem.title = @"禁用";
     
-    UIBarButtonItem *right = [UIBarButtonItem barButtonItemWithTitle:@"保存" target:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = right;
-    
     //4.添加底部视图
     UIView *footerBgView = [[UIView alloc] init];
     footerBgView.backgroundColor = SXColorWhite;
@@ -70,10 +67,6 @@
     [super viewDidLayoutSubviews];
     
     self.tableView.frame = self.view.bounds;
-}
-
-- (void)rightButtonAction:(UIButton *)button{
-    [MBProgressHUD showMessage:@"保存成功!" toView:self.view];
 }
 
 #pragma mark -视图弹窗-
@@ -107,27 +100,14 @@
     SXForbiddenAppParam *param = [SXForbiddenAppParam param];
     SXHomeXiaoKiModel *model = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel;
     param.nodeId = model.nodeId;
-    [SXParentControlNetTool userNodeDeviceAllowListParams:param.mj_keyValues Success:^(SXForbiddenAppResult *result) {
-        DLog(@"result:%@",result);
-        weakSelf.dataArray = [NSMutableArray arrayWithArray:result.page];
-        [weakSelf.tableView reloadData];
-    } failure:^(NSError *error) {
-        NSString *message = [error.userInfo objectForKey:@"msg"];
-        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
-    }];
-}
-
-#pragma mark -设置设备允许上网配置接口-
-- (void)userNodeDeviceAllowSetData{
-    SXForbiddenAppParam *param = [SXForbiddenAppParam param];
-    SXHomeXiaoKiModel *model = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel;
-    param.nodeId = model.nodeId;
-    [SXParentControlNetTool userNodeDeviceAllowSetParams:param.mj_keyValues Success:^{
-        [MBProgressHUD showSuccessWithMessage:@"设置成功!" toView:SXKeyWindow];
-    } failure:^(NSError *error) {
-        NSString *message = [error.userInfo objectForKey:@"msg"];
-        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
-    }];
+//    [SXParentControlNetTool userNodeDeviceAllowListParams:param.mj_keyValues Success:^(SXForbiddenAppResult *result) {
+//        DLog(@"result:%@",result);
+//        weakSelf.dataArray = [NSMutableArray arrayWithArray:result.page];
+//        [weakSelf.tableView reloadData];
+//    } failure:^(NSError *error) {
+//        NSString *message = [error.userInfo objectForKey:@"msg"];
+//        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+//    }];
 }
 
 #pragma mark -删除设备上网配置接口-

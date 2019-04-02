@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
+- (void)setUpData;
+
 ///禁用方案模型
 @property (nonatomic, strong) SXForbiddenAppModel *model;
 

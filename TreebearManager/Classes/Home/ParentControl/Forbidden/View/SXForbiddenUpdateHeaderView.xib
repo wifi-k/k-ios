@@ -177,6 +177,7 @@
                 <outlet property="deviceContentL" destination="CqH-Bz-EZR" id="zqM-zv-clm"/>
                 <outlet property="firstBgView" destination="KqG-8z-6zA" id="bAa-Z8-ToE"/>
                 <outlet property="forbiddenContentL" destination="zYL-WB-mb8" id="WQn-JT-Vt2"/>
+                <outlet property="schemeL" destination="wWM-Lc-s08" id="mS6-ks-x23"/>
                 <outlet property="secondBgView" destination="Zm6-8Q-5gB" id="Nie-3s-747"/>
                 <outlet property="thirdBgView" destination="Scr-qT-SmU" id="mZp-d0-vWJ"/>
                 <outlet property="updateNameBtn" destination="Pw2-7O-Lge" id="Asc-Mx-H9l"/>

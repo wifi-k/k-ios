@@ -83,9 +83,8 @@
 - (void)setModel:(SXTimeControlModel *)model{
     _model = model;
     
-    self.contentL.text = model.content;
-    self.timeContentL.text = model.content1;
-    self.deviceContentL.text = model.content2;
+    self.timeContentL.text = model.name;
+    self.deviceContentL.text = model.name;
 }
 
 #pragma mark -点击事件-
