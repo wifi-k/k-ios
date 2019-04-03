@@ -88,6 +88,14 @@
     _model = model;
     
     self.schemeL.text = model.name;
+    
+    if ([NSString isNotEmpty:model.st] && [NSString isNotEmpty:model.et]) {
+        [self selectTime];
+    }
+    
+    if (model.mac.count) {
+        [self selectDevice];
+    }
 }
 
 - (void)setUpData{
@@ -95,11 +103,11 @@
 }
 
 - (void)selectTime{
-    self.timeContentL.text = @"已选择";
+    self.timeContentL.text = @"已设置";
 }
 
 - (void)selectDevice{
-    self.deviceContentL.text = @"已选择";
+    self.deviceContentL.text = @"已设置";
 }
 
 #pragma mark -点击事件-

@@ -149,6 +149,16 @@
     self.endTimeL.text = endTimeStr;
 }
 
+- (void)setModel:(SXTimeControlModel *)model{
+    _model = model;
+    
+    self.beginTimeL.text = model.st;
+    self.endTimeL.text = model.et;
+    if (model.wt.integerValue) {
+        
+    }
+}
+
 #pragma mark -点击事件-
 - (IBAction)clickConfirmBtn:(UIButton *)sender {
     

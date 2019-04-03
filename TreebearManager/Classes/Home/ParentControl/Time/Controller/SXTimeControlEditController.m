@@ -26,6 +26,7 @@
 
     WS(weakSelf);
     SXTimeControlEditHeaderView *headerView = [SXTimeControlEditHeaderView headerView];
+    headerView.model = self.model;
     headerView.clickBeginTimeControlBlock = ^{
         SXDatePickerView *pickerView = [SXDatePickerView pickerView];
         pickerView.confirmBtnBlock = ^(NSString * _Nonnull timeStr) {

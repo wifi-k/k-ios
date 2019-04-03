@@ -90,6 +90,7 @@
 - (void)jumpTimeControlVC{
     WS(weakSelf);
     SXTimeControlEditController *timeVC = [[SXTimeControlEditController alloc] init];
+    timeVC.model = self.model;
     timeVC.selectTimeBlock = ^(SXTimeControlParam * _Nonnull param) {
         weakSelf.model.st = param.st;
         weakSelf.model.et = param.et;

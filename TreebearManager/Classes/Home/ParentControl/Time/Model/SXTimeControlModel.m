@@ -10,4 +10,8 @@
 
 @implementation SXTimeControlModel
 
++ (NSDictionary *)mj_replacedKeyFromPropertyName{
+    return @{@"modelId":@"id"};
+}
+
 @end

@@ -9,5 +9,7 @@
 #import "SXTimeControlParam.h"
 
 @implementation SXTimeControlParam
-
++ (NSDictionary *)mj_replacedKeyFromPropertyName{
+    return @{@"modelId":@"id"};
+}
 @end
