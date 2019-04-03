@@ -129,6 +129,14 @@
 		093C12E2225348F3005682C8 /* SXTimeControllHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12E1225348F3005682C8 /* SXTimeControllHeaderView.m */; };
 		093C12E522534D56005682C8 /* SXForbiddenAppHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12E422534D56005682C8 /* SXForbiddenAppHeaderView.m */; };
 		093C12E722534D5C005682C8 /* SXForbiddenAppHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093C12E622534D5C005682C8 /* SXForbiddenAppHeaderView.xib */; };
+		093C12F52254A660005682C8 /* UIButton+EnlargeTouchArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12EB2254A65F005682C8 /* UIButton+EnlargeTouchArea.m */; };
+		093C12F62254A660005682C8 /* circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 093C12EE2254A65F005682C8 /* circle@2x.png */; };
+		093C12F72254A660005682C8 /* circle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 093C12EF2254A65F005682C8 /* circle@3x.png */; };
+		093C12F82254A660005682C8 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 093C12F02254A65F005682C8 /* circle.png */; };
+		093C12F92254A660005682C8 /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = 093C12F12254A65F005682C8 /* point.png */; };
+		093C12FA2254A660005682C8 /* point@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 093C12F22254A65F005682C8 /* point@2x.png */; };
+		093C12FB2254A660005682C8 /* point@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 093C12F32254A65F005682C8 /* point@3x.png */; };
+		093C12FC2254A660005682C8 /* ORChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12F42254A65F005682C8 /* ORChartView.m */; };
 		09462ACB22375DEE0063F67E /* SXOnlineOptionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */; };
 		09462ACD22375DF90063F67E /* SXOnlineOptionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */; };
 		09462AD12237898C0063F67E /* XDSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACF2237898C0063F67E /* XDSDropDownMenu.m */; };
@@ -626,6 +634,16 @@
 		093C12E322534D56005682C8 /* SXForbiddenAppHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXForbiddenAppHeaderView.h; sourceTree = "<group>"; };
 		093C12E422534D56005682C8 /* SXForbiddenAppHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXForbiddenAppHeaderView.m; sourceTree = "<group>"; };
 		093C12E622534D5C005682C8 /* SXForbiddenAppHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXForbiddenAppHeaderView.xib; sourceTree = "<group>"; };
+		093C12EA2254A65F005682C8 /* UIButton+EnlargeTouchArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+EnlargeTouchArea.h"; sourceTree = "<group>"; };
+		093C12EB2254A65F005682C8 /* UIButton+EnlargeTouchArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EnlargeTouchArea.m"; sourceTree = "<group>"; };
+		093C12EC2254A65F005682C8 /* ORChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORChartView.h; sourceTree = "<group>"; };
+		093C12EE2254A65F005682C8 /* circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle@2x.png"; sourceTree = "<group>"; };
+		093C12EF2254A65F005682C8 /* circle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle@3x.png"; sourceTree = "<group>"; };
+		093C12F02254A65F005682C8 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		093C12F12254A65F005682C8 /* point.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point.png; sourceTree = "<group>"; };
+		093C12F22254A65F005682C8 /* point@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "point@2x.png"; sourceTree = "<group>"; };
+		093C12F32254A65F005682C8 /* point@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "point@3x.png"; sourceTree = "<group>"; };
+		093C12F42254A65F005682C8 /* ORChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORChartView.m; sourceTree = "<group>"; };
 		09462AC922375DEE0063F67E /* SXOnlineOptionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineOptionHeaderView.h; sourceTree = "<group>"; };
 		09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineOptionHeaderView.m; sourceTree = "<group>"; };
 		09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXOnlineOptionHeaderView.xib; sourceTree = "<group>"; };
@@ -1596,6 +1614,39 @@
 				093C12C622520526005682C8 /* SXParentControlNetTool.m */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		093C12E82254A65F005682C8 /* ORChartView */ = {
+			isa = PBXGroup;
+			children = (
+				093C12EC2254A65F005682C8 /* ORChartView.h */,
+				093C12F42254A65F005682C8 /* ORChartView.m */,
+				093C12E92254A65F005682C8 /* categary */,
+				093C12ED2254A65F005682C8 /* image */,
+			);
+			path = ORChartView;
+			sourceTree = "<group>";
+		};
+		093C12E92254A65F005682C8 /* categary */ = {
+			isa = PBXGroup;
+			children = (
+				093C12EA2254A65F005682C8 /* UIButton+EnlargeTouchArea.h */,
+				093C12EB2254A65F005682C8 /* UIButton+EnlargeTouchArea.m */,
+			);
+			path = categary;
+			sourceTree = "<group>";
+		};
+		093C12ED2254A65F005682C8 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				093C12EE2254A65F005682C8 /* circle@2x.png */,
+				093C12EF2254A65F005682C8 /* circle@3x.png */,
+				093C12F02254A65F005682C8 /* circle.png */,
+				093C12F12254A65F005682C8 /* point.png */,
+				093C12F22254A65F005682C8 /* point@2x.png */,
+				093C12F32254A65F005682C8 /* point@3x.png */,
+			);
+			path = image;
 			sourceTree = "<group>";
 		};
 		09462ACE223789680063F67E /* DropMenu */ = {
@@ -2880,6 +2931,7 @@
 		B348F95C21F6C4E10000F194 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				093C12E82254A65F005682C8 /* ORChartView */,
 				091BC4852242207100FEBFD1 /* PYAblum */,
 				091186E5221516A600938D9F /* GCDSocket */,
 				092D6CDB22004F3800538AC8 /* MJRefresh */,
@@ -3520,6 +3572,7 @@
 				09B9B7FC2230EAD2000868D5 /* SXWifiSettingHeaderView.xib in Resources */,
 				09F76F3B22477093008A9048 /* SXXiaoKiEquipmentOptionCell.xib in Resources */,
 				092D6D122202DD9B00538AC8 /* SXLoginHeaderView.xib in Resources */,
+				093C12FA2254A660005682C8 /* point@2x.png in Resources */,
 				0900F52C222D517C00250155 /* SXDynamicHeaderView.xib in Resources */,
 				093C12D222521C3C005682C8 /* SXHomeMainSectionEmptyFooterView.xib in Resources */,
 				091BC46A223F6E2100FEBFD1 /* SXHealtyControlCell.xib in Resources */,
@@ -3528,6 +3581,7 @@
 				09D5F687222D24B700EA681A /* SXNetOptionFooterView.xib in Resources */,
 				09EEC0CF223A25DA00F519E4 /* SXMineChildCell.xib in Resources */,
 				09B9B87C22321542000868D5 /* SXTimeControlEditHeaderView.xib in Resources */,
+				093C12F72254A660005682C8 /* circle@3x.png in Resources */,
 				093C12AA224CE755005682C8 /* SXUserGuideController.xib in Resources */,
 				09D5F643222A5BE100EA681A /* SXForbiddenDeviceOptionCell.xib in Resources */,
 				09FB473122239E3500809273 /* SXHomeMessageCell.xib in Resources */,
@@ -3581,7 +3635,10 @@
 				09D5F6332229298500EA681A /* SXForbiddenAppCell.xib in Resources */,
 				B3AF2FF821FB0180001E4E67 /* SXLoginMainHeaderView.xib in Resources */,
 				09462AFA2238A8270063F67E /* SXMobileManagerCell.xib in Resources */,
+				093C12F62254A660005682C8 /* circle@2x.png in Resources */,
 				09462B072238DBC60063F67E /* SXMobileInfoHeaderView.xib in Resources */,
+				093C12F92254A660005682C8 /* point.png in Resources */,
+				093C12FB2254A660005682C8 /* point@3x.png in Resources */,
 				09D5F5F1222689E300EA681A /* SXHomeMainSectionFooterView.xib in Resources */,
 				09D5F67D222BC87000EA681A /* SXFamilyMemberCell.xib in Resources */,
 				09B9B88622326974000868D5 /* SXDHCPServerHeaderView.xib in Resources */,
@@ -3590,6 +3647,7 @@
 				092D6CE622005A1A00538AC8 /* SXEmptyDataEventView.xib in Resources */,
 				09D5F65C222B8D6A00EA681A /* SXUpdateVersionHeaderView.xib in Resources */,
 				09B9B83B2230F5A3000868D5 /* SXAdvancedHeaderView.xib in Resources */,
+				093C12F82254A660005682C8 /* circle.png in Resources */,
 				09462AEA2237AE9E0063F67E /* SXOnlineFixedIPHeaderView.xib in Resources */,
 				09D5F651222A749E00EA681A /* SXHealthTimeHeaderView.xib in Resources */,
 			);
@@ -3735,6 +3793,7 @@
 				09462B222238F5930063F67E /* SXMineAboutUsController.m in Sources */,
 				09D5F5EF222689CE00EA681A /* SXHomeMainSectionFooterView.m in Sources */,
 				09FB472C22239D7B00809273 /* SXMessageController.m in Sources */,
+				093C12FC2254A660005682C8 /* ORChartView.m in Sources */,
 				091BC4D52242207100FEBFD1 /* UITableView+PYAblumScroll.m in Sources */,
 				091BC4D42242207100FEBFD1 /* UIImage+zip.m in Sources */,
 				09118705221522BF00938D9F /* GCKeyChainManager.m in Sources */,
@@ -3808,6 +3867,7 @@
 				09D5F649222A73AD00EA681A /* SXHealtyTimeController.m in Sources */,
 				0900F51D222D4FC600250155 /* SXDynamicController.m in Sources */,
 				B348F98821F713A80000F194 /* main.m in Sources */,
+				093C12F52254A660005682C8 /* UIButton+EnlargeTouchArea.m in Sources */,
 				09D5F625222925C200EA681A /* SXParentControlHeaderView.m in Sources */,
 				092D6D0B2202D76000538AC8 /* SXRegistHeaderView.m in Sources */,
 				091BC47D2240F21100FEBFD1 /* SXTopImageAlertView.m in Sources */,

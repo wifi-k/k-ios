@@ -7,7 +7,6 @@
 //
 
 #import "SXTimeControlEditHeaderView.h"
-#import "NSString+Extension.h"
 
 @interface SXTimeControlEditHeaderView ()
 @property (weak, nonatomic) IBOutlet UILabel *beginTimeL;
