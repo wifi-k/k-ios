@@ -7,6 +7,7 @@
 //
 
 #import "SXTimeControlEditHeaderView.h"
+#import "NSString+Extension.h"
 
 @interface SXTimeControlEditHeaderView ()
 @property (weak, nonatomic) IBOutlet UILabel *beginTimeL;
@@ -158,8 +159,24 @@
     if ([NSString isNotEmpty:model.et]) {
         self.endTimeL.text = model.et;
     }
-    if (model.wt.integerValue) {
-        
+    NSInteger index = 0;
+    NSInteger decimal = model.wt.integerValue;
+    if (decimal >= 128) return;//安全判断
+    while (decimal) {
+        if (index == 0) {//默认选中第一个
+            UIButton *firstBtn = self.weekBgView.subviews.firstObject;
+            firstBtn.selected = NO;
+        }
+        if (decimal%2 == 1) {
+            DLog(@"decimal:%ld",decimal);
+            UIButton *subBtn = self.weekBgView.subviews[index];
+            subBtn.selected = YES;
+        }
+        decimal = decimal / 2 ;
+        ++index;
+        if (decimal < 1) {
+            break;
+        }
     }
 }
 

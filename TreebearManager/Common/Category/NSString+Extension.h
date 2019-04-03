@@ -47,5 +47,13 @@
 + (instancetype)stringWithTimestamp:(NSNumber *)timestamp;
 //版本号
 - (instancetype)currentVersion;
+/**
+ 十进制转换为二进制
+ @param decimal 十进制数
+ @return 二进制数
+ */
++ (NSString *)getBinaryByDecimal:(NSInteger)decimal;
+#pragma mark 十进制转二进制
++ (NSString *)convertBinarySystemFromDecimalSystem:(NSString *)decimal;
 
 @end

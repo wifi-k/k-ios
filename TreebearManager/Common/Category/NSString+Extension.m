@@ -231,4 +231,54 @@
     return [NSString stringWithFormat:@"%0.f",version];
 }
 
++ (NSString *)getBinaryByDecimal:(NSInteger)decimal{
+    NSString *binary = @"";
+    while (decimal) {
+        binary = [[NSString stringWithFormat:@"%ld", decimal % 2] stringByAppendingString:binary];
+        if (decimal / 2 < 1) {
+            break;
+        }
+        decimal = decimal / 2 ;
+    }
+    if (binary.length % 4 != 0) {
+        NSMutableString *mStr = [[NSMutableString alloc]init];;
+        for (int i = 0; i < 4 - binary.length % 4; i++) {
+            [mStr appendString:@"0"];
+        }
+        binary = [mStr stringByAppendingString:binary];
+    }
+    return binary;
+}
+
++ (NSString *)convertBinarySystemFromDecimalSystem:(NSString *)decimal{
+    NSInteger num = [decimal intValue];
+    NSInteger remainder = 0;      //余数
+    NSInteger divisor = 0;        //除数
+    
+    NSString * prepare = @"";
+    
+    while (true){
+        
+        remainder = num%2;
+        divisor = num/2;
+        num = divisor;
+        prepare = [prepare stringByAppendingFormat:@"%ld",remainder];
+        
+        if (divisor == 0){
+            
+            break;
+        }
+    }
+    
+    NSString * result = @"";
+    
+    for (NSInteger i = prepare.length - 1; i >= 0; i --){
+        
+        result = [result stringByAppendingFormat:@"%@",
+                  [prepare substringWithRange:NSMakeRange(i , 1)]];
+    }
+    
+    return result;
+}
+
 @end
