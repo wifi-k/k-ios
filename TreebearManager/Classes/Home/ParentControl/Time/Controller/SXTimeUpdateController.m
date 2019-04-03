@@ -11,6 +11,7 @@
 #import "SXTimeControlEditController.h"
 #import "SXTimeUpdateHeaderView.h"
 #import "SXWifiSettingAlertView.h"
+#import "SXXiaoKiOptionResult.h"
 #import "SXParentControlNetTool.h"
 
 @interface SXTimeUpdateController ()
@@ -50,7 +51,10 @@
     SXTimeUpdateHeaderView *headerView = [SXTimeUpdateHeaderView headerView];
     if (isAdd) {
         SXTimeControlModel *addModel = [[SXTimeControlModel alloc] init];
-        addModel.name = @"新增新增新增新增新增新增新增新增新增新增新增新增新增新增新增新增新增";
+        SXHomeXiaoKiModel *model = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel;
+        addModel.modelId = @"0";
+        addModel.nodeId = model.nodeId;
+        addModel.name = @"上网时间控制";
         headerView.model = addModel;
         self.model = addModel;
     } else {

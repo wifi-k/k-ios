@@ -152,8 +152,12 @@
 - (void)setModel:(SXTimeControlModel *)model{
     _model = model;
     
-    self.beginTimeL.text = model.st;
-    self.endTimeL.text = model.et;
+    if ([NSString isNotEmpty:model.st]) {
+        self.beginTimeL.text = model.st;
+    }
+    if ([NSString isNotEmpty:model.et]) {
+        self.endTimeL.text = model.et;
+    }
     if (model.wt.integerValue) {
         
     }

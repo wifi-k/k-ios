@@ -87,9 +87,11 @@
     updateVC.model = model;
     updateVC.selectTimeControlOptionBlock = ^(SXTimeControlModel * _Nonnull model) {
         if (isAdd) {
-            [weakSelf.dataArray addObject:model];
+            //[weakSelf.dataArray addObject:model];
+            [weakSelf userNodeDeviceAllowListData];
+        } else{
+            [weakSelf.tableView reloadData];
         }
-        [weakSelf.tableView reloadData];
     };
     [self.navigationController pushViewController:updateVC animated:YES];
 }
