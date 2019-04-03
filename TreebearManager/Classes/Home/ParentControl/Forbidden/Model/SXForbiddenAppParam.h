@@ -23,7 +23,7 @@
 ///周几
 @property (nonatomic, assign) NSNumber *wt;
 ///mac列表,json字符串列表
-@property (nonatomic, copy) NSString *mac;
+@property (nonatomic, copy) NSArray *mac;
 
 @end
 

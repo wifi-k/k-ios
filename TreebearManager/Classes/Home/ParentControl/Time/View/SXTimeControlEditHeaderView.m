@@ -22,6 +22,8 @@
 
 ///模型数组
 @property (nonatomic, strong) NSMutableArray *dataArray;
+///选中周几，记录值
+@property (nonatomic, assign) NSInteger week;
 @end
 
 @implementation SXTimeControlEditHeaderView
@@ -110,20 +112,28 @@
     self.recycleBtn.titleLabel.font = SXFontBold18;
     [self.recycleBtn setTitleColor:SXColor333333 forState:UIControlStateNormal];
     
+    self.beginTimeL.font = SXFontBold18;
+    self.endTimeL.font = SXFontBold18;
+    
     //默认值
     self.endTimeStr = @"00:00";
     self.beginTimeStr = @"00:00";
+    self.week = 1;
 }
 
 #pragma mark -点击事件-
 - (void)clickWeekBtn:(UIButton *)btn{
     btn.selected = !btn.isSelected;
     
+    NSInteger week = 0;
     for (UIButton *subBtn in self.weekBgView.subviews) {
-        if (subBtn.isSelected) {//打印已选中
-            DLog(@"text:%@",subBtn.titleLabel.text);
+        if (subBtn.isSelected) {
+            NSInteger pow2 = (NSInteger)pow(2, subBtn.tag);
+            week = week | pow2;
         }
     }
+    self.week = week;
+    DLog(@"self.week:%ld",week);
 }
 
 #pragma mark -setter-
@@ -141,6 +151,7 @@
 
 #pragma mark -点击事件-
 - (IBAction)clickConfirmBtn:(UIButton *)sender {
+    
     BOOL hasSelected = NO;
     for (UIButton *subBtn in self.weekBgView.subviews) {
         if (subBtn.isSelected) {
@@ -156,7 +167,7 @@
     SXTimeControlParam *param = [SXTimeControlParam param];
     param.st = self.beginTimeStr;
     param.et = self.endTimeStr;
-    param.wt = @1;
+    param.wt = @(self.week);
     if (self.clickConfirmBtnBlock) {
         self.clickConfirmBtnBlock(param);
     }

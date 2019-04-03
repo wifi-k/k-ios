@@ -71,14 +71,7 @@
 }
 
 - (void)rightButtonAction:(UIButton *)button{
-    [MBProgressHUD showMessage:@"保存成功!" toView:self.view];
-    if (self.selectTimeControlOptionBlock) {
-        self.selectTimeControlOptionBlock(self.model);
-    }
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.navigationController popViewControllerAnimated:YES];
-    });
+    [self userNodeDeviceAllowSetData];
 }
 
 #pragma mark -视图弹窗-
@@ -86,7 +79,9 @@
     WS(weakSelf);
     SXWifiSettingAlertView *nameAlertView = [SXWifiSettingAlertView alertWithTitle:@"重命名" placeholder:@"请输入新的名称" confirmStr:@"确定" cancelStr:@"取消"];
     nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
-        [weakSelf userNodeDeviceAllowSetData:text];
+        //更改赋值
+        weakSelf.model.name = text;
+        [weakSelf.headerView setUpData];
     };
     [nameAlertView alert];
 }
@@ -117,17 +112,26 @@
 }
 
 #pragma mark -设置设备允许上网配置接口-
-- (void)userNodeDeviceAllowSetData:(NSString *)text{
+- (void)userNodeDeviceAllowSetData{
     WS(weakSelf);
     SXForbiddenAppParam *param = [SXForbiddenAppParam param];
     param.nodeId = self.model.nodeId;
     param.modelId = self.model.modelId;
-    param.name = text;
+    param.name = self.model.name;
+    param.mac = self.model.mac;
+    param.st = self.model.st;
+    param.et = self.model.et;
+    param.wt = self.model.wt;
     [SXParentControlNetTool userNodeDeviceAllowSetParams:param.mj_keyValues Success:^{
         [MBProgressHUD showSuccessWithMessage:@"设置成功!" toView:SXKeyWindow];
-        //更改赋值
-        weakSelf.model.name = text;
-        [weakSelf.headerView setUpData];
+        
+        if (weakSelf.selectTimeControlOptionBlock) {
+            weakSelf.selectTimeControlOptionBlock(weakSelf.model);
+        }
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        });
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
