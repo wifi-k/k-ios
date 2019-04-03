@@ -4,6 +4,7 @@
 //
 //  Created by 欧阳荣 on 2017/9/7.
 //  Copyright © 2017年 欧阳荣. All rights reserved.
+//  https://www.jianshu.com/p/a571ae110ba5
 //  https://github.com/SunriseOYR/ORChartView
 
 #import <UIKit/UIKit.h>

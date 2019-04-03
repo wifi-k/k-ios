@@ -363,7 +363,8 @@
         CGSize textSize = [str boundingRectWithSize:CGSizeMake(200, 100) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16.0]} context:nil].size;;
         [detailLabel setFrame:CGRectMake((_xMargin)*i-_xMargin*0.7-textSize.width/2+btnW/2, height *(1 - percent)-30 , textSize.width, textSize.height)];
         detailLabel.text = str;
-        detailLabel.backgroundColor = [UIColor colorWithRed:0.94f green:0.64f blue:0.27f alpha:1.00f];
+        //detailLabel.backgroundColor = [UIColor colorWithRed:0.94f green:0.64f blue:0.27f alpha:1.00f];
+        detailLabel.backgroundColor = [UIColor colorWithRed:54/255.0 green:210/255.0 blue:243/255.0 alpha:1.00f];
         detailLabel.textAlignment = NSTextAlignmentCenter;
         detailLabel.layer.cornerRadius =5;
         detailLabel.layer.masksToBounds = YES;
@@ -442,6 +443,7 @@
     }
     UILabel *label = [self viewWithTag:1000+sender.tag-1];
     label.textColor = [UIColor colorWithRed:0.98f green:0.31f blue:0.29f alpha:1.00f];
+    //label.textColor = [UIColor colorWithRed:54/255.0 green:210/255.0 blue:243/255.0 alpha:1.00f];
     [self showDetailLabel:sender];
     
     if (_block) {

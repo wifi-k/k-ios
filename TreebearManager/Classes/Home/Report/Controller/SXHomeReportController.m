@@ -76,7 +76,7 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 9;
+    return 8;
 }
 
 //定义每个Section的四边间距
@@ -113,7 +113,7 @@
 
 #pragma mark -UICollectionViewDelegateFlowLayout方法-
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
-    return (CGSize){SCREEN_WIDTH,348};
+    return (CGSize){SCREEN_WIDTH,388};
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{

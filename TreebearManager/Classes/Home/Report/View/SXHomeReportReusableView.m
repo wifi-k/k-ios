@@ -75,15 +75,16 @@
     self.chartBgView.layer.shadowRadius = 5;
     
     //2.添加图表
-    ORChartView *lineChart = [[ORChartView alloc]initWithFrame:CGRectMake(10, 10, SCREEN_WIDTH - 60, 160) dataSource:@[@"123",@"88", @"45",@"33"] countFoyY:7];
+    ORChartView *lineChart = [[ORChartView alloc] initWithFrame:CGRectMake(10, 10, SCREEN_WIDTH - 60, 200) dataSource:@[@"6",@"10", @"12",@"10",@"8",@"4",@"20"] countFoyY:7];
     lineChart.titleForX = @"日期/日";
-    lineChart.titleForY = @"收益/元";
+    lineChart.titleForY = @"时长/小时";
+    lineChart.lineColor = SXColorBlue;
+    lineChart.style = ChatViewStyleSingleCurve;
     [lineChart pointDidTapedCompletion:^(NSString *value, NSInteger index) {
         NSLog(@"....%@....%ld", value, (long)index);
     }];
     [self.chartBgView addSubview:lineChart];
     self.lineChart = lineChart;
-    
     //3.刷新表格
     [self updateGraph];
 }
