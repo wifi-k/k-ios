@@ -8,6 +8,13 @@
 
 #import "SXHomeReportTableCell.h"
 
+@interface SXHomeReportTableCell ()
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *mobileNameL;
+@property (weak, nonatomic) IBOutlet UILabel *contentL;
+@property (weak, nonatomic) IBOutlet UIView *bottomLineView;
+@end
+
 @implementation SXHomeReportTableCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableView{
@@ -30,7 +37,17 @@
     
     //设置背景色
     self.backgroundColor = SXColorWhite;
+    self.bottomLineView.backgroundColor = SXColorDivideLine;
+    self.bottomLineView.height = 0.5f;
+}
+
+#pragma mark -setter-
+- (void)setModel:(SXHomeReportModel *)model{
+    _model = model;
     
+    self.mobileNameL.text = model.hostName;
+    self.contentL.text = model.remark;
+    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:model.macIcon] placeholderImage:[UIImage imageNamed:@"img_mobile_icon"] options:SDWebImageRetryFailed];
 }
 
 @end

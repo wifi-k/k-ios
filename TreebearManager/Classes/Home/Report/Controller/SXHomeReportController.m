@@ -83,6 +83,7 @@
     self.pageIndex = 1;
     param.pageNo = @(self.pageIndex);
     param.pageSize = @10;
+    [MBProgressHUD showGaryLoadingWithMessage:@"" toView:SXKeyWindow];
     [SXHomeReportNetTool userNodeDeviceWeekListParams:param.mj_keyValues Success:^(SXHomeReportResult *result) {
         [weakSelf endHeaderRefresh];
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
@@ -134,8 +135,7 @@
 
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-//    return self.dataArray.count;
-    return 10;
+    return self.dataArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -144,6 +144,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     SXHomeReportTableCell *cell = [SXHomeReportTableCell cellWithTableView:tableView];
+    SXHomeReportModel *model = self.dataArray[indexPath.row];
+    cell.model = model;
     return cell;
 }
 

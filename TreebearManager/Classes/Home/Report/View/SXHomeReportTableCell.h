@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXHomeReportModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXHomeReportTableCell : UITableViewCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
+
+///数据模型
+@property (nonatomic, strong) SXHomeReportModel *model;
 
 @end
 

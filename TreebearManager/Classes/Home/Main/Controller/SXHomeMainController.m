@@ -33,6 +33,7 @@
 #import "SXAddXiaokiNetTool.h"
 #import "SXMineNetTool.h"
 #import "SXWifiSettingNetTool.h"
+#import "SXHomeReportNetTool.h"
 #import <UMSocialCore/UMSocialCore.h>
 
 @interface SXHomeMainController ()<UITableViewDelegate,UITableViewDataSource>
@@ -41,6 +42,8 @@
 
 ///数据源
 @property (nonatomic, strong) NSMutableArray *dataArray;
+///儿童数据
+@property (nonatomic, strong) NSMutableArray *reportArray;
 @end
 
 @implementation SXHomeMainController
@@ -51,6 +54,13 @@
         _dataArray = [NSMutableArray array];
     }
     return _dataArray;
+}
+
+- (NSMutableArray *)reportArray{
+    if (_reportArray == nil) {
+        _reportArray = [NSMutableArray array];
+    }
+    return _reportArray;
 }
 
 - (void)viewDidLoad {
@@ -64,6 +74,8 @@
     [self getNodeData];
     //选中家庭成员
     [self userNodeListallData];
+    //获取设备一周上网时长
+    [self userNodeDeviceWeekListData];
 }
     
 - (void)setUpUI{
@@ -319,6 +331,27 @@
         });
     }];
 }
+
+#pragma mark -获取设备一周上网时长-
+- (void)userNodeDeviceWeekListData{
+    WS(weakSelf);
+    SXHomeReportPageParam *param = [SXHomeReportPageParam param];
+    SXHomeXiaoKiModel *model = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel;
+    param.nodeId = model.nodeId;
+    param.pageNo = @1;
+    param.pageSize = @10;
+    [SXHomeReportNetTool userNodeDeviceWeekListParams:param.mj_keyValues Success:^(SXHomeReportResult *result) {
+        //数据初始化
+        weakSelf.reportArray = [NSMutableArray arrayWithArray:result.page];
+        //刷新UI
+        [weakSelf.tableView reloadData];
+    } failure:^(NSError *error) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSString *message = [error.userInfo objectForKey:@"msg"];
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        });
+    }];
+}
     
 #pragma mark -UITableViewDelegate/UITableViewDataSource-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -331,7 +364,8 @@
         NSInteger count = (self.dataArray.count > 3 ? 3:self.dataArray.count);
         return count;
     } else if (section == 1){
-        return 3;
+        NSInteger count = (self.reportArray.count > 3 ? 3:self.reportArray.count);
+        return count;
     }
     return 0;
 }
@@ -391,7 +425,7 @@
             return 200.0f;
         }
     } else if (section == 1){
-        if (self.dataArray.count) {
+        if (self.reportArray.count) {
             return 80.0f;
         } else {
             return 200.0f;
@@ -416,7 +450,7 @@
             return footerView;
         }
     } else if (section == 1){
-        if (self.dataArray.count) {
+        if (self.reportArray.count) {
             SXHomeMainSectionFooterView *footerView = [SXHomeMainSectionFooterView footerView];
             footerView.clickMoreBtnBlock = ^{
                 SXHomeReportController *reportVC = [[SXHomeReportController alloc] init];
