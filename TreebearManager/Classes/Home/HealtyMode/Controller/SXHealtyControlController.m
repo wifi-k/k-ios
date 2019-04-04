@@ -111,6 +111,10 @@
         //添加
         SXHealtyControlModel *model = [result.wifi firstObject];
         weakSelf.timers = [NSMutableArray arrayWithArray:model.timer];
+        //防止服务端返回空
+        if (result.wifi == nil) {
+            weakSelf.result.wifi = @[@{@"time":@[]},@{}];
+        }
         //刷新UI
         [weakSelf.tableView reloadData];
     } failure:^(NSError *error) {

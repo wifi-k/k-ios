@@ -100,7 +100,7 @@
             NSString *message = [error.userInfo objectForKey:@"msg"];
             [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
         });
-        //测试使用
+#warning mark -测试使用-
         [SXRootTool changeToMainHomeVC];
     }];
 }

@@ -13,14 +13,17 @@
 #import "SXPhotoListCell.h"
 #import "SXAlbumAuthorizationTool.h"
 #import "SXAlertControllerTool.h"
-#import <Photos/Photos.h>
-#import <TZImagePickerController/TZImagePickerController.h>
 #import "SXPhotoHeaderView.h"
+#import <Photos/Photos.h>
+
+#define COL 3
 
 @interface SXPhotoController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic, weak) UICollectionView *collectionView;
 
+///数据源
 @property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) NSMutableArray *titles;
 @end
 
 @implementation SXPhotoController
@@ -30,6 +33,13 @@
         _dataArray = [NSMutableArray array];
     }
     return _dataArray;
+}
+
+- (NSMutableArray *)titles{
+    if (_titles == nil) {
+        _titles = [NSMutableArray array];
+    }
+    return _titles;
 }
 
 - (void)viewDidLoad {
@@ -45,17 +55,17 @@
     
     self.view.backgroundColor = SXColorWhite;
     
-    self.navigationItem.title = @"相册";
+    self.navigationItem.title = @"照片库";
     
     //流水布局
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     layout.sectionHeadersPinToVisibleBounds = YES;//头视图悬浮
-    float collectionWidth = (SCREEN_WIDTH - 5 * 10)/4;
+    float collectionWidth = (SCREEN_WIDTH - (COL+1) * 10)/COL;
     layout.itemSize = CGSizeMake(collectionWidth, collectionWidth);
     
     //设置每一行之间的间距
-    CGFloat inset = (SCREEN_WIDTH - 4 * layout.itemSize.width) / (4 + 1) - 1;
+    CGFloat inset = (SCREEN_WIDTH - COL * layout.itemSize.width) / (COL + 1) - 1;
     layout.sectionInset = UIEdgeInsetsMake(inset, inset, inset, inset);
     layout.minimumLineSpacing = inset;
     
@@ -132,24 +142,30 @@
     NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO];
     options.sortDescriptors = @[sort];
     PHFetchResult *assetsFetchResults = [PHAsset fetchAssetsWithOptions:options];
-    PHFetchResult *images = [PHAsset fetchAssetsWithMediaType:PHAssetMediaTypeImage options:options];
+    //PHFetchResult *imagesAssetsResults = [PHAsset fetchAssetsWithMediaType:PHAssetMediaTypeImage options:options];
     
-    NSInteger count = assetsFetchResults.count;
-    NSInteger imgcount = images.count;
-    DLog(@"%ld-%ld",count,imgcount);
-    
-    // 在资源的集合中获取第一个集合，并获取其中的图片
-    PHImageManager *imageManager = [PHImageManager defaultManager];
-    //    PHAsset *asset = assetsFetchResults[0];
-    
-    for (PHAsset *asset in assetsFetchResults) {
-        [imageManager requestImageForAsset:asset targetSize:CGSizeMake(100, 100) contentMode:PHImageContentModeAspectFit options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-            // 得到一张 UIImage，展示到界面上
-            DLog(@"%@-%@",result,info);
-            [self.dataArray addObject:result];
-        }];
-    }
-    
+    //遍历之前先清空
+    [self.dataArray removeAllObjects];
+    [self.titles removeAllObjects];
+    WS(weakSelf);
+    __block NSMutableArray *sectionArr;
+    [assetsFetchResults enumerateObjectsUsingBlock:^(PHAsset  * _Nonnull asset, NSUInteger idx, BOOL * _Nonnull stop) {
+        DLog(@"asset:%@",asset);
+        
+        NSDate *date = asset.creationDate;
+        NSDateFormatter *dateformatter  = [[NSDateFormatter alloc] init];
+        [dateformatter setDateFormat:@"yyyy年MM月dd日"];
+        NSString *dateString = [dateformatter stringFromDate:date];
+        if ([self.titles containsObject:dateString]) {
+            [sectionArr addObject:asset];
+        } else {//创建分组
+            [self.titles addObject:dateString];
+            
+            sectionArr = [NSMutableArray array];
+            [weakSelf.dataArray addObject:sectionArr];
+            [sectionArr addObject:asset];
+        }
+    }];
     [self.collectionView reloadData];
 }
 
@@ -165,23 +181,16 @@
     }];
 }
 
-- (void)readData{
-    
-    [[TZImageManager manager] getAllAlbums:YES allowPickingImage:YES needFetchAssets:YES completion:^(NSArray<TZAlbumModel *> *models) {
-        
-        for (TZAlbumModel *model in models) {
-            PHFetchResult *result = model.result;
-            NSArray *models = model.models;
-            DLog(@"models:%@",models);
-        }
-    }];
-}
-
 #pragma mark -Event-
 - (void)clickOptionBtn:(NSInteger)tag{
     switch (tag) {
         case 0:
-            DLog(@"tag:%ld",tag);
+            [MBProgressHUD showWhiteLoadingWithMessage:@"" toView:SXKeyWindow];
+#warning mark -测试使用-
+            [self readDataHome];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+            });
             break;
         case 1:{
             SXPhotoIntelligentController *intelligentVC = [[SXPhotoIntelligentController alloc] init];
@@ -278,24 +287,23 @@
 
 #pragma mark -UICollectionViewDelegate/UICollectionViewDataSource-
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    PYAblum *ablumManager = [PYAblum defaultAblum];
-    DLog(@"%ld",ablumManager.allPhotoAblumModelArray.count);
-//    return 1;
-    return 3;
+    return self.dataArray.count + 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     if (section == 0) {
         return 0;
     } else {
-        return self.dataArray.count;
+        NSArray *sectionArr = self.dataArray[section-1];
+        return sectionArr.count;
     }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     SXPhotoListCell *cell = [SXPhotoListCell cellWithCollectionView:collectionView atIndexPath:indexPath];
-    UIImage *image = self.dataArray[indexPath.item];
-    cell.image = image;
+    NSArray *sectionArr = self.dataArray[indexPath.section-1];
+    PHAsset *asset = sectionArr[indexPath.item];
+    cell.asset = asset;
     return cell;
 }
 
@@ -321,7 +329,7 @@
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(nonnull NSString *)kind atIndexPath:(nonnull NSIndexPath *)indexPath{
     if (kind == UICollectionElementKindSectionHeader) {
         SXPhotoSectionHeaderView *headerView = [SXPhotoSectionHeaderView sectionHeaderAwakeFromClass:collectionView atIndexPath:indexPath];
-        headerView.title = [NSString stringWithFormat:@"标题-%ld",indexPath.section-1];
+        headerView.title = self.titles[indexPath.section-1];
         return headerView;
     } else if(kind == UICollectionElementKindSectionFooter){
         WS(weakSelf);
