@@ -12,7 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *topBgView;
 
-@property (weak, nonatomic) IBOutlet UIButton *reportBtn;
 @property (weak, nonatomic) IBOutlet UIView *bottomBgView;
 @end
 
@@ -40,15 +39,6 @@
     self.topBgView.backgroundColor = SXColorWhite;
     
     self.bottomBgView.backgroundColor = SXColorWhite;
-    
-    [self.reportBtn roundViewWithRadius:15.0f];
-}
-
-#pragma mark -点击事件-
-- (IBAction)clickReportBtn:(UIButton *)sender {
-    if (self.clickReportBtnBlock) {
-        self.clickReportBtnBlock();
-    }
 }
 
 @end

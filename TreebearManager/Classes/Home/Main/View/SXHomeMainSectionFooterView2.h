@@ -16,9 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)footerView;
 
-///点击周报按钮回调
-@property (nonatomic,copy) void(^clickReportBtnBlock)(void);
-
 @end
 
 NS_ASSUME_NONNULL_END

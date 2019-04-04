@@ -44,8 +44,8 @@
     
     [self setUpUI];
     
-    //获取设备一周上网时长
-    [self userNodeDeviceWeekListData];
+    //开始下拉刷新
+    [self refresh];
 }
 
 #pragma mark -初始化UI-
@@ -61,14 +61,65 @@
     self.tableView.frame = self.view.bounds;
 }
 
+#pragma mark -下拉动画-
+- (void)dropRefresh{
+    DLog(@"dropRefresh");
+    [self userNodeDeviceWeekListData];
+}
+
+#pragma mark -上拉动画-
+- (void)pullRefresh{
+    DLog(@"pullRefresh");
+    [self userNodeDeviceWeekListMoreData];
+}
+
 #pragma mark -获取设备一周上网时长-
 - (void)userNodeDeviceWeekListData{
+    WS(weakSelf);
     SXHomeReportPageParam *param = [SXHomeReportPageParam param];
-    param.pageNo = @1;
+    self.pageIndex = 1;
+    param.pageNo = @(self.pageIndex);
     param.pageSize = @10;
     [SXHomeReportNetTool userNodeDeviceWeekListParams:param.mj_keyValues Success:^(SXHomeReportResult *result) {
-        DLog(@"result:%@",result.mj_keyValues);
+        [weakSelf endHeaderRefresh];
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        
+        //数据初始化
+        weakSelf.dataArray = [NSMutableArray arrayWithArray:result.page];
+        //刷新UI
+        [weakSelf.tableView reloadData];
+        //判断是否到底
+        if (weakSelf.dataArray.count >= result.total.integerValue) {
+            [weakSelf showNoMoreDataFooterView];
+        }
     } failure:^(NSError *error) {
+        [weakSelf endHeaderRefresh];
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSString *message = [error.userInfo objectForKey:@"msg"];
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        });
+    }];
+}
+
+- (void)userNodeDeviceWeekListMoreData{
+    WS(weakSelf);
+    SXHomeReportPageParam *param = [SXHomeReportPageParam param];
+    param.pageNo = @(++self.pageIndex);
+    param.pageSize = @10;
+    [SXHomeReportNetTool userNodeDeviceWeekListParams:param.mj_keyValues Success:^(SXHomeReportResult *result) {
+        [weakSelf endFooterRefresh];
+        //数据初始化//刷新UI
+        if (result.page.count) {
+            [weakSelf.dataArray addObjectsFromArray:result.page];
+            [weakSelf.tableView reloadData];
+        } else {
+            if (weakSelf.dataArray.count >= result.total.integerValue) {
+                [weakSelf showNoMoreDataFooterView];
+            }
+        }
+    } failure:^(NSError *error) {
+        [weakSelf endFooterRefresh];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             NSString *message = [error.userInfo objectForKey:@"msg"];
             [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];

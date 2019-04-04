@@ -14,8 +14,9 @@
 #import "SXWifiSettingController.h"
 #import "SXFamilyMemberController.h"
 #import "SXMobileManagerController.h"
-#import "SXMobileDetailController.h"
 #import "SXHomeReportController.h"
+#import "SXMobileDetailController.h"
+#import "SXHomeReportDetailController.h"
 #import "SXXiaoKiEquipmentOptionController.h"
 #import "SXNetOptionController.h"
 #import "SXHomeMainHeaderView.h"
@@ -407,10 +408,6 @@
         }
     } else if (section == 1){
         SXHomeMainSectionFooterView2 *footerView = [SXHomeMainSectionFooterView2 footerView];
-        footerView.clickReportBtnBlock = ^{
-            SXHomeReportController *reportVC = [[SXHomeReportController alloc] init];
-            [weakSelf.navigationController pushViewController:reportVC animated:YES];
-        };
         return footerView;
     } else {
         return [[UIView alloc] initWithFrame:CGRectZero];
@@ -424,6 +421,9 @@
         SXMobileDetailController *detailVC = [[SXMobileDetailController alloc] init];
         SXMobileManagerModel *model = self.dataArray[indexPath.row];
         detailVC.model = model;
+        [self.navigationController pushViewController:detailVC animated:YES];
+    } else if(indexPath.section == 1){
+        SXHomeReportDetailController *detailVC = [[SXHomeReportDetailController alloc] init];
         [self.navigationController pushViewController:detailVC animated:YES];
     }
 }

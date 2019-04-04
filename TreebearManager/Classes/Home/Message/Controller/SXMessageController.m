@@ -46,7 +46,6 @@
     
     self.navigationItem.title = @"消息中心";
     
-    
     //2.头部视图
     SXMessageHeaderView *headerView = [SXMessageHeaderView headerView];
     self.tableView.tableHeaderView = headerView;
@@ -87,13 +86,6 @@
         
         //数据初始化
         weakSelf.dataArray = [NSMutableArray arrayWithArray:result.page];
-
-#warning mark -测试使用-
-//        SXHomeMessageModel *textModel = [[SXHomeMessageModel alloc] init];
-//        textModel.title = @"【奋斗的观点】";
-//        textModel.content = @"梵蒂冈的官方大哥大哥大哥大哥大哥大";
-//        textModel.createTime = @"2018-424-2323";
-//        [weakSelf.dataArray addObject:textModel];
         //刷新UI
         [weakSelf.tableView reloadData];
         //判断是否到底
