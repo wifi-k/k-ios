@@ -28,6 +28,7 @@
 
 @implementation SXPhotoController
 
+#pragma mark -getter-
 - (NSMutableArray *)dataArray{
     if (_dataArray == nil) {
         _dataArray = [NSMutableArray array];
@@ -61,13 +62,14 @@
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     layout.sectionHeadersPinToVisibleBounds = YES;//头视图悬浮
-    float collectionWidth = (SCREEN_WIDTH - (COL+1) * 10)/COL;
+    float collectionWidth = (SCREEN_WIDTH - (COL+1) * 1)/COL;
     layout.itemSize = CGSizeMake(collectionWidth, collectionWidth);
     
     //设置每一行之间的间距
-    CGFloat inset = (SCREEN_WIDTH - COL * layout.itemSize.width) / (COL + 1) - 1;
-    layout.sectionInset = UIEdgeInsetsMake(inset, inset, inset, inset);
-    layout.minimumLineSpacing = inset;
+//    CGFloat inset = (SCREEN_WIDTH - COL * layout.itemSize.width) / (COL + 1);
+//    layout.sectionInset = UIEdgeInsetsMake(inset, 0, inset, 0);
+    layout.minimumLineSpacing = 2;
+    layout.minimumInteritemSpacing = 2;
     
     //创建collectionView
     UICollectionView *collectV = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
@@ -80,8 +82,8 @@
     [self.view addSubview:collectV];
     self.collectionView = collectV;
     
+    self.collectionView.backgroundColor = SXColorWhite;
 //    self.collectionView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0);
-//    self.collectionView.backgroundColor = UIColor.redColor;
     
     PYAblum *ablumManager = [PYAblum defaultAblum];
     DLog(@"%ld",ablumManager.allPhotoAblumModelArray.count);
@@ -116,7 +118,7 @@
                 DLog(@"请求成功");
                 //直接读取
                 DLog(@"读取数据");
-                [self readDataHome];
+                [weakSelf readDataHome];
             } failure:^{
                 DLog(@"请求失败");
                 [weakSelf alertSettingView];
@@ -124,7 +126,7 @@
         } else{
             //直接读取
             DLog(@"读取数据");
-            [self readDataHome];
+            [weakSelf readDataHome];
         }
     }];
 }

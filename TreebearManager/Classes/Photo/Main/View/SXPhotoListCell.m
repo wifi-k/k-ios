@@ -27,11 +27,13 @@
     [self setUpUI];
 }
 
+#pragma mark -UI-
 - (void)setUpUI{
     
     self.contentView.backgroundColor = SXColorWhite;
 }
 
+#pragma mark -setter-
 - (void)setAsset:(PHAsset *)asset{
     _asset = asset;
  

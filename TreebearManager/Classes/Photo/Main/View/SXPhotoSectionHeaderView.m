@@ -32,7 +32,7 @@
 
 - (void)setUpUI{
     UILabel *titleL = [[UILabel alloc] init];
-    titleL.font = SXFontBold23;
+    titleL.font = SXFontBold20;
     titleL.textColor = SXColor333333;
     [self addSubview:titleL];
     self.titleL = titleL;

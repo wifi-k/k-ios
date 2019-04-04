@@ -113,7 +113,15 @@
         weakSelf.timers = [NSMutableArray arrayWithArray:model.timer];
         //防止服务端返回空
         if (result.wifi == nil) {
-            weakSelf.result.wifi = @[@{@"time":@[]},@{}];
+            weakSelf.result.wifi = @[@{@"freq":@0,@"rssi":@5,@"time":@[]},@{}];
+        }
+        //添加默认值
+        if (result.wifi.count) {
+            SXHealtyControlModel *model = result.wifi.firstObject;
+            if (model.rssi == nil || model.freq == nil) {
+                model.rssi = @5;
+                model.freq = @0;
+            }
         }
         //刷新UI
         [weakSelf.tableView reloadData];
