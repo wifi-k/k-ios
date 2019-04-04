@@ -280,8 +280,6 @@
 		09C8CE51224B7BC300C03F43 /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE50224B7BC300C03F43 /* NSArray+Extension.m */; };
 		09C8CE54224B7D1F00C03F43 /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE53224B7D1F00C03F43 /* NSDictionary+Extension.m */; };
 		09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */; };
-		09D5F5EA2226820000EA681A /* SXHomeMainSectionFooterView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E92226820000EA681A /* SXHomeMainSectionFooterView2.m */; };
-		09D5F5EC2226820B00EA681A /* SXHomeMainSectionFooterView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F5EB2226820B00EA681A /* SXHomeMainSectionFooterView2.xib */; };
 		09D5F5EF222689CE00EA681A /* SXHomeMainSectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5EE222689CE00EA681A /* SXHomeMainSectionFooterView.m */; };
 		09D5F5F1222689E300EA681A /* SXHomeMainSectionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F5F0222689E300EA681A /* SXHomeMainSectionFooterView.xib */; };
 		09D5F5F62226B6AF00EA681A /* SXAlbumAuthorizationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5F52226B6AF00EA681A /* SXAlbumAuthorizationTool.m */; };
@@ -913,9 +911,6 @@
 		09C8CE53224B7D1F00C03F43 /* NSDictionary+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
 		09D5F5E0222678C000EA681A /* SXHomeMainSectionHeaderView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionHeaderView2.h; sourceTree = "<group>"; };
 		09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSectionHeaderView2.m; sourceTree = "<group>"; };
-		09D5F5E82226820000EA681A /* SXHomeMainSectionFooterView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionFooterView2.h; sourceTree = "<group>"; };
-		09D5F5E92226820000EA681A /* SXHomeMainSectionFooterView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSectionFooterView2.m; sourceTree = "<group>"; };
-		09D5F5EB2226820B00EA681A /* SXHomeMainSectionFooterView2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXHomeMainSectionFooterView2.xib; sourceTree = "<group>"; };
 		09D5F5ED222689CE00EA681A /* SXHomeMainSectionFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionFooterView.h; sourceTree = "<group>"; };
 		09D5F5EE222689CE00EA681A /* SXHomeMainSectionFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSectionFooterView.m; sourceTree = "<group>"; };
 		09D5F5F0222689E300EA681A /* SXHomeMainSectionFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXHomeMainSectionFooterView.xib; sourceTree = "<group>"; };
@@ -3218,9 +3213,6 @@
 				093C12D122521C3C005682C8 /* SXHomeMainSectionEmptyFooterView.xib */,
 				09D5F5E0222678C000EA681A /* SXHomeMainSectionHeaderView2.h */,
 				09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */,
-				09D5F5E82226820000EA681A /* SXHomeMainSectionFooterView2.h */,
-				09D5F5E92226820000EA681A /* SXHomeMainSectionFooterView2.m */,
-				09D5F5EB2226820B00EA681A /* SXHomeMainSectionFooterView2.xib */,
 				098BA2EB221660A400F58639 /* SXFamilyCodeSuccessAlertView.h */,
 				098BA2EC221660A400F58639 /* SXFamilyCodeSuccessAlertView.m */,
 				098BA2EE221660BD00F58639 /* SXFamilyCodeFailureAlertView.h */,
@@ -3666,7 +3658,6 @@
 				098BA2F82216ADDF00F58639 /* SXPhotoListCell.xib in Resources */,
 				091BC4E9224482B900FEBFD1 /* SXUpdatePwdConfirmController.xib in Resources */,
 				B348F99421F714CC0000F194 /* LaunchScreen.storyboard in Resources */,
-				09D5F5EC2226820B00EA681A /* SXHomeMainSectionFooterView2.xib in Resources */,
 				09D5F622222925C200EA681A /* SXParentControlHeaderView.xib in Resources */,
 				09B9B8362230EF5D000868D5 /* SXNetPreventCell.xib in Resources */,
 				09D5F678222BC71200EA681A /* SXFamilyMemberFooterView.xib in Resources */,
@@ -3995,7 +3986,6 @@
 				09462ADA2237AA660063F67E /* SXOnlineAutotIPController.m in Sources */,
 				09D5F66B222BC24700EA681A /* SXAddXiaoKiController.m in Sources */,
 				B348F99D21F719850000F194 /* UIImage+Extension.m in Sources */,
-				09D5F5EA2226820000EA681A /* SXHomeMainSectionFooterView2.m in Sources */,
 				091BC4C52242207100FEBFD1 /* PYAssetListViewConfiguration.m in Sources */,
 				0936B721223928C200E68C4C /* SXPersonalInfoController.m in Sources */,
 				09C8CE3A224903E600C03F43 /* SXFamilyMemberNetTool.m in Sources */,

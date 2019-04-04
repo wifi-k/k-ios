@@ -24,7 +24,7 @@
 #import "SXHomeMainSectionFooterView.h"
 #import "SXHomeMainSectionEmptyFooterView.h"
 #import "SXHomeMainSectionHeaderView2.h"
-#import "SXHomeMainSectionFooterView2.h"
+#import "SXHomeReportTableCell.h"
 #import "SXHomeNetworkingDeviceCell.h"
 #import "SXInputAlertView.h"
 #import "SXRootTool.h"
@@ -330,6 +330,8 @@
     if (section == 0) {
         NSInteger count = (self.dataArray.count > 3 ? 3:self.dataArray.count);
         return count;
+    } else if (section == 1){
+        return 3;
     }
     return 0;
 }
@@ -345,6 +347,9 @@
             [weakSelf alertRemarkNameView:model];
         };
         tempCell = cell;
+    } else if(indexPath.section == 1){
+        SXHomeReportTableCell *cell = [SXHomeReportTableCell cellWithTableView:tableView];
+        return cell;
     } else {
         return nil;
     }
@@ -386,9 +391,13 @@
             return 200.0f;
         }
     } else if (section == 1){
-        return 230.0f;
+        if (self.dataArray.count) {
+            return 80.0f;
+        } else {
+            return 200.0f;
+        }
     } else {
-        return 0.01;
+        return 0.01f;
     }
 }
     
@@ -407,8 +416,17 @@
             return footerView;
         }
     } else if (section == 1){
-        SXHomeMainSectionFooterView2 *footerView = [SXHomeMainSectionFooterView2 footerView];
-        return footerView;
+        if (self.dataArray.count) {
+            SXHomeMainSectionFooterView *footerView = [SXHomeMainSectionFooterView footerView];
+            footerView.clickMoreBtnBlock = ^{
+                SXHomeReportController *reportVC = [[SXHomeReportController alloc] init];
+                [weakSelf.navigationController pushViewController:reportVC animated:YES];
+            };
+            return footerView;
+        } else {
+            SXHomeMainSectionEmptyFooterView *footerView = [SXHomeMainSectionEmptyFooterView footerView];
+            return footerView;
+        }
     } else {
         return [[UIView alloc] initWithFrame:CGRectZero];
     }
