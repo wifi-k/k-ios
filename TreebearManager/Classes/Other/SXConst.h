@@ -67,6 +67,7 @@ extern NSString *const user_node_device_allow_set;
 extern NSString *const user_node_device_allow_del;
 
 extern NSString *const user_message_list;
+extern NSString *const user_node_device_week_list;
 
 @end
 

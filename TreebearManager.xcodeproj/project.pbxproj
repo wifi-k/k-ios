@@ -142,6 +142,13 @@
 		093C13062255D718005682C8 /* SXHomeMessagePageParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C13052255D718005682C8 /* SXHomeMessagePageParam.m */; };
 		093C13092255DA93005682C8 /* SXMessageHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C13082255DA93005682C8 /* SXMessageHeaderView.m */; };
 		093C130B2255DA9A005682C8 /* SXMessageHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093C130A2255DA9A005682C8 /* SXMessageHeaderView.xib */; };
+		093C130F2255ECA0005682C8 /* SXHomeReportNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C130E2255ECA0005682C8 /* SXHomeReportNetTool.m */; };
+		093C13122255ECF8005682C8 /* SXHomeReportResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C13112255ECF8005682C8 /* SXHomeReportResult.m */; };
+		093C13152255ED05005682C8 /* SXHomeReportModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C13142255ED05005682C8 /* SXHomeReportModel.m */; };
+		093C13182255ED27005682C8 /* SXHomeReportPageParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C13172255ED27005682C8 /* SXHomeReportPageParam.m */; };
+		093C131B2255EFD6005682C8 /* SXHomeReportDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C131A2255EFD6005682C8 /* SXHomeReportDetailController.m */; };
+		093C131F2255F266005682C8 /* SXHomeReportTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C131D2255F266005682C8 /* SXHomeReportTableCell.m */; };
+		093C13202255F266005682C8 /* SXHomeReportTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093C131E2255F266005682C8 /* SXHomeReportTableCell.xib */; };
 		09462ACB22375DEE0063F67E /* SXOnlineOptionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */; };
 		09462ACD22375DF90063F67E /* SXOnlineOptionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */; };
 		09462AD12237898C0063F67E /* XDSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACF2237898C0063F67E /* XDSDropDownMenu.m */; };
@@ -658,6 +665,19 @@
 		093C13072255DA93005682C8 /* SXMessageHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMessageHeaderView.h; sourceTree = "<group>"; };
 		093C13082255DA93005682C8 /* SXMessageHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMessageHeaderView.m; sourceTree = "<group>"; };
 		093C130A2255DA9A005682C8 /* SXMessageHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXMessageHeaderView.xib; sourceTree = "<group>"; };
+		093C130D2255ECA0005682C8 /* SXHomeReportNetTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeReportNetTool.h; sourceTree = "<group>"; };
+		093C130E2255ECA0005682C8 /* SXHomeReportNetTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeReportNetTool.m; sourceTree = "<group>"; };
+		093C13102255ECF8005682C8 /* SXHomeReportResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeReportResult.h; sourceTree = "<group>"; };
+		093C13112255ECF8005682C8 /* SXHomeReportResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeReportResult.m; sourceTree = "<group>"; };
+		093C13132255ED05005682C8 /* SXHomeReportModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeReportModel.h; sourceTree = "<group>"; };
+		093C13142255ED05005682C8 /* SXHomeReportModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeReportModel.m; sourceTree = "<group>"; };
+		093C13162255ED27005682C8 /* SXHomeReportPageParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeReportPageParam.h; sourceTree = "<group>"; };
+		093C13172255ED27005682C8 /* SXHomeReportPageParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeReportPageParam.m; sourceTree = "<group>"; };
+		093C13192255EFD6005682C8 /* SXHomeReportDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeReportDetailController.h; sourceTree = "<group>"; };
+		093C131A2255EFD6005682C8 /* SXHomeReportDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeReportDetailController.m; sourceTree = "<group>"; };
+		093C131C2255F266005682C8 /* SXHomeReportTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeReportTableCell.h; sourceTree = "<group>"; };
+		093C131D2255F266005682C8 /* SXHomeReportTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeReportTableCell.m; sourceTree = "<group>"; };
+		093C131E2255F266005682C8 /* SXHomeReportTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXHomeReportTableCell.xib; sourceTree = "<group>"; };
 		09462AC922375DEE0063F67E /* SXOnlineOptionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineOptionHeaderView.h; sourceTree = "<group>"; };
 		09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineOptionHeaderView.m; sourceTree = "<group>"; };
 		09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXOnlineOptionHeaderView.xib; sourceTree = "<group>"; };
@@ -1672,6 +1692,15 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		093C130C2255EC8B005682C8 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				093C130D2255ECA0005682C8 /* SXHomeReportNetTool.h */,
+				093C130E2255ECA0005682C8 /* SXHomeReportNetTool.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		09462ACE223789680063F67E /* DropMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -1961,6 +1990,7 @@
 		09B9B7D82230BE11000868D5 /* Report */ = {
 			isa = PBXGroup;
 			children = (
+				093C130C2255EC8B005682C8 /* Helper */,
 				09B9B7D92230BE11000868D5 /* Controller */,
 				09B9B7DA2230BE11000868D5 /* Model */,
 				09B9B7DB2230BE11000868D5 /* View */,
@@ -1973,6 +2003,8 @@
 			children = (
 				09B9B7DC2230BE2F000868D5 /* SXHomeReportController.h */,
 				09B9B7DD2230BE2F000868D5 /* SXHomeReportController.m */,
+				093C13192255EFD6005682C8 /* SXHomeReportDetailController.h */,
+				093C131A2255EFD6005682C8 /* SXHomeReportDetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1980,6 +2012,12 @@
 		09B9B7DA2230BE11000868D5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				093C13162255ED27005682C8 /* SXHomeReportPageParam.h */,
+				093C13172255ED27005682C8 /* SXHomeReportPageParam.m */,
+				093C13102255ECF8005682C8 /* SXHomeReportResult.h */,
+				093C13112255ECF8005682C8 /* SXHomeReportResult.m */,
+				093C13132255ED05005682C8 /* SXHomeReportModel.h */,
+				093C13142255ED05005682C8 /* SXHomeReportModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1987,6 +2025,9 @@
 		09B9B7DB2230BE11000868D5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				093C131C2255F266005682C8 /* SXHomeReportTableCell.h */,
+				093C131D2255F266005682C8 /* SXHomeReportTableCell.m */,
+				093C131E2255F266005682C8 /* SXHomeReportTableCell.xib */,
 				099CEFE3223B43000077DE42 /* SXHomeReportHeaderView.h */,
 				099CEFE4223B43000077DE42 /* SXHomeReportHeaderView.m */,
 				099CEFE6223B43070077DE42 /* SXHomeReportHeaderView.xib */,
@@ -3646,6 +3687,7 @@
 				09D5F670222BC2F200EA681A /* SXAddXiaoKiHeaderView.xib in Resources */,
 				09462AFF2238A88C0063F67E /* SXMobileDetailHeaderView.xib in Resources */,
 				0900F522222D50EB00250155 /* SXNetBroadbandHeaderView.xib in Resources */,
+				093C13202255F266005682C8 /* SXHomeReportTableCell.xib in Resources */,
 				09D5F62E2229297000EA681A /* SXForbiddenAppFooterView.xib in Resources */,
 				B3AF2FD521F9C8A3001E4E67 /* MBProgressHUD.bundle in Resources */,
 				098BA305221A57A700F58639 /* SXMineHeaderView.xib in Resources */,
@@ -3774,6 +3816,7 @@
 				09462B022238D6600063F67E /* SXMobileInfoController.m in Sources */,
 				09B9B8392230F590000868D5 /* SXAdvancedHeaderView.m in Sources */,
 				09B9B7A5222E555A000868D5 /* XKNetReachablityTool.m in Sources */,
+				093C130F2255ECA0005682C8 /* SXHomeReportNetTool.m in Sources */,
 				092D6D082202AC3200538AC8 /* SXHomeMainController.m in Sources */,
 				09B9B7E12230C64E000868D5 /* SXHomeMobileModel.m in Sources */,
 				09C8CE54224B7D1F00C03F43 /* NSDictionary+Extension.m in Sources */,
@@ -3820,7 +3863,9 @@
 				095540D222200EB6005A5485 /* SXHomeMainMemberButton.m in Sources */,
 				B348F98921F713A80000F194 /* AppDelegate.m in Sources */,
 				09462AE82237AE930063F67E /* SXOnlineFixedIPHeaderView.m in Sources */,
+				093C13182255ED27005682C8 /* SXHomeReportPageParam.m in Sources */,
 				09B9B7B5222FAE0C000868D5 /* SXSingleAlertView.m in Sources */,
+				093C131F2255F266005682C8 /* SXHomeReportTableCell.m in Sources */,
 				09D5F5F92226C22B00EA681A /* SXAlertControllerTool.m in Sources */,
 				09462B222238F5930063F67E /* SXMineAboutUsController.m in Sources */,
 				09D5F5EF222689CE00EA681A /* SXHomeMainSectionFooterView.m in Sources */,
@@ -3903,6 +3948,7 @@
 				09D5F625222925C200EA681A /* SXParentControlHeaderView.m in Sources */,
 				092D6D0B2202D76000538AC8 /* SXRegistHeaderView.m in Sources */,
 				091BC47D2240F21100FEBFD1 /* SXTopImageAlertView.m in Sources */,
+				093C13152255ED05005682C8 /* SXHomeReportModel.m in Sources */,
 				09EEC0CE223A25DA00F519E4 /* SXMineChildCell.m in Sources */,
 				09B9B85B22313C7B000868D5 /* SXForbiddenAppOptionCell.m in Sources */,
 				B3AF300221FB08D1001E4E67 /* SXUtil.m in Sources */,
@@ -3912,6 +3958,7 @@
 				091BC4D22242207100FEBFD1 /* PYAblum.m in Sources */,
 				098BA30D221AD98400F58639 /* SXLoginCertifyCodeButton.m in Sources */,
 				093C13002255D54C005682C8 /* SXMessageNetTool.m in Sources */,
+				093C13122255ECF8005682C8 /* SXHomeReportResult.m in Sources */,
 				091186EF22151D5F00938D9F /* SGSocketManager.m in Sources */,
 				092D6CFF220073A600538AC8 /* SXUserDefaultsTool.m in Sources */,
 				093C12A2224CC9B7005682C8 /* SXPreventModel.m in Sources */,
@@ -3975,6 +4022,7 @@
 				09B9B88422326967000868D5 /* SXDHCPServerHeaderView.m in Sources */,
 				093C12D022521C2B005682C8 /* SXHomeMainSectionEmptyFooterView.m in Sources */,
 				093C12DB225345A6005682C8 /* SXTimeControlFooterView.m in Sources */,
+				093C131B2255EFD6005682C8 /* SXHomeReportDetailController.m in Sources */,
 				0936B7312239F4F200E68C4C /* SXMobileUpdateController.m in Sources */,
 				091BC4CE2242207100FEBFD1 /* PYImageBrowserCollectionViewFlowLayout.m in Sources */,
 				09D5F5F62226B6AF00EA681A /* SXAlbumAuthorizationTool.m in Sources */,

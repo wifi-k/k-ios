@@ -6,11 +6,11 @@
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SXBaseCustomTablePlainRrfreshController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SXHomeReportController : UIViewController
+@interface SXHomeReportController : SXBaseCustomTablePlainRrfreshController
 
 @end
 
