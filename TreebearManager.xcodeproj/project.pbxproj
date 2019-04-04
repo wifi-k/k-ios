@@ -140,6 +140,8 @@
 		093C13002255D54C005682C8 /* SXMessageNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12FF2255D54C005682C8 /* SXMessageNetTool.m */; };
 		093C13032255D5C0005682C8 /* SXHomeMessageResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C13022255D5C0005682C8 /* SXHomeMessageResult.m */; };
 		093C13062255D718005682C8 /* SXHomeMessagePageParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C13052255D718005682C8 /* SXHomeMessagePageParam.m */; };
+		093C13092255DA93005682C8 /* SXMessageHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C13082255DA93005682C8 /* SXMessageHeaderView.m */; };
+		093C130B2255DA9A005682C8 /* SXMessageHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093C130A2255DA9A005682C8 /* SXMessageHeaderView.xib */; };
 		09462ACB22375DEE0063F67E /* SXOnlineOptionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */; };
 		09462ACD22375DF90063F67E /* SXOnlineOptionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */; };
 		09462AD12237898C0063F67E /* XDSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACF2237898C0063F67E /* XDSDropDownMenu.m */; };
@@ -653,6 +655,9 @@
 		093C13022255D5C0005682C8 /* SXHomeMessageResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMessageResult.m; sourceTree = "<group>"; };
 		093C13042255D718005682C8 /* SXHomeMessagePageParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMessagePageParam.h; sourceTree = "<group>"; };
 		093C13052255D718005682C8 /* SXHomeMessagePageParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMessagePageParam.m; sourceTree = "<group>"; };
+		093C13072255DA93005682C8 /* SXMessageHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMessageHeaderView.h; sourceTree = "<group>"; };
+		093C13082255DA93005682C8 /* SXMessageHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMessageHeaderView.m; sourceTree = "<group>"; };
+		093C130A2255DA9A005682C8 /* SXMessageHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXMessageHeaderView.xib; sourceTree = "<group>"; };
 		09462AC922375DEE0063F67E /* SXOnlineOptionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineOptionHeaderView.h; sourceTree = "<group>"; };
 		09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineOptionHeaderView.m; sourceTree = "<group>"; };
 		09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXOnlineOptionHeaderView.xib; sourceTree = "<group>"; };
@@ -2702,6 +2707,9 @@
 				09FB472D22239E3500809273 /* SXHomeMessageCell.h */,
 				09FB472E22239E3500809273 /* SXHomeMessageCell.m */,
 				09FB472F22239E3500809273 /* SXHomeMessageCell.xib */,
+				093C13072255DA93005682C8 /* SXMessageHeaderView.h */,
+				093C13082255DA93005682C8 /* SXMessageHeaderView.m */,
+				093C130A2255DA9A005682C8 /* SXMessageHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3660,6 +3668,7 @@
 				09462AFA2238A8270063F67E /* SXMobileManagerCell.xib in Resources */,
 				093C12F62254A660005682C8 /* circle@2x.png in Resources */,
 				09462B072238DBC60063F67E /* SXMobileInfoHeaderView.xib in Resources */,
+				093C130B2255DA9A005682C8 /* SXMessageHeaderView.xib in Resources */,
 				093C12F92254A660005682C8 /* point.png in Resources */,
 				093C12FB2254A660005682C8 /* point@3x.png in Resources */,
 				09D5F5F1222689E300EA681A /* SXHomeMainSectionFooterView.xib in Resources */,
@@ -4029,6 +4038,7 @@
 				09D5F681222D23C900EA681A /* SXNetOptionCell.m in Sources */,
 				B3AF303921FE9657001E4E67 /* SXBaseCustomTablePlainRrfreshController.m in Sources */,
 				09B9B8222230EC6E000868D5 /* SXDHCPServerController.m in Sources */,
+				093C13092255DA93005682C8 /* SXMessageHeaderView.m in Sources */,
 				099CEFE5223B43000077DE42 /* SXHomeReportHeaderView.m in Sources */,
 				09D5F64F222A748E00EA681A /* SXHealthTimeHeaderView.m in Sources */,
 				0900F52A222D517600250155 /* SXDynamicHeaderView.m in Sources */,

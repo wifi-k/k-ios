@@ -7,10 +7,14 @@
 //
 
 #import "SXMessageController.h"
+#import "SXMessageHeaderView.h"
 #import "SXHomeMessageCell.h"
 #import "SXMessageNetTool.h"
 
 @interface SXMessageController ()
+//头部视图
+@property (nonatomic, weak) SXMessageHeaderView *headerView;
+
 ///数据源
 @property (nonatomic, strong) NSMutableArray *dataArray;
 ///页码
@@ -41,12 +45,20 @@
     self.view.backgroundColor = SXColorRandom;
     
     self.navigationItem.title = @"消息中心";
+    
+    
+    //2.头部视图
+    SXMessageHeaderView *headerView = [SXMessageHeaderView headerView];
+    self.tableView.tableHeaderView = headerView;
+    self.headerView = headerView;
 }
 
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     
     self.tableView.frame = self.view.bounds;
+    
+    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 100);
 }
 
 #pragma mark -下拉动画-
@@ -75,6 +87,13 @@
         
         //数据初始化
         weakSelf.dataArray = [NSMutableArray arrayWithArray:result.page];
+
+#warning mark -测试使用-
+//        SXHomeMessageModel *textModel = [[SXHomeMessageModel alloc] init];
+//        textModel.title = @"【奋斗的观点】";
+//        textModel.content = @"梵蒂冈的官方大哥大哥大哥大哥大哥大";
+//        textModel.createTime = @"2018-424-2323";
+//        [weakSelf.dataArray addObject:textModel];
         //刷新UI
         [weakSelf.tableView reloadData];
         //判断是否到底
