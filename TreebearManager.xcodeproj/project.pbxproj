@@ -149,6 +149,8 @@
 		093C131B2255EFD6005682C8 /* SXHomeReportDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C131A2255EFD6005682C8 /* SXHomeReportDetailController.m */; };
 		093C131F2255F266005682C8 /* SXHomeReportTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C131D2255F266005682C8 /* SXHomeReportTableCell.m */; };
 		093C13202255F266005682C8 /* SXHomeReportTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093C131E2255F266005682C8 /* SXHomeReportTableCell.xib */; };
+		093C13242256008C005682C8 /* SXHomeMainReportCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C13222256008C005682C8 /* SXHomeMainReportCell.m */; };
+		093C13252256008C005682C8 /* SXHomeMainReportCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093C13232256008C005682C8 /* SXHomeMainReportCell.xib */; };
 		09462ACB22375DEE0063F67E /* SXOnlineOptionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */; };
 		09462ACD22375DF90063F67E /* SXOnlineOptionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */; };
 		09462AD12237898C0063F67E /* XDSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACF2237898C0063F67E /* XDSDropDownMenu.m */; };
@@ -676,6 +678,9 @@
 		093C131C2255F266005682C8 /* SXHomeReportTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeReportTableCell.h; sourceTree = "<group>"; };
 		093C131D2255F266005682C8 /* SXHomeReportTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeReportTableCell.m; sourceTree = "<group>"; };
 		093C131E2255F266005682C8 /* SXHomeReportTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXHomeReportTableCell.xib; sourceTree = "<group>"; };
+		093C13212256008C005682C8 /* SXHomeMainReportCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainReportCell.h; sourceTree = "<group>"; };
+		093C13222256008C005682C8 /* SXHomeMainReportCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainReportCell.m; sourceTree = "<group>"; };
+		093C13232256008C005682C8 /* SXHomeMainReportCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXHomeMainReportCell.xib; sourceTree = "<group>"; };
 		09462AC922375DEE0063F67E /* SXOnlineOptionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineOptionHeaderView.h; sourceTree = "<group>"; };
 		09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineOptionHeaderView.m; sourceTree = "<group>"; };
 		09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXOnlineOptionHeaderView.xib; sourceTree = "<group>"; };
@@ -3213,6 +3218,9 @@
 				093C12D122521C3C005682C8 /* SXHomeMainSectionEmptyFooterView.xib */,
 				09D5F5E0222678C000EA681A /* SXHomeMainSectionHeaderView2.h */,
 				09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */,
+				093C13212256008C005682C8 /* SXHomeMainReportCell.h */,
+				093C13222256008C005682C8 /* SXHomeMainReportCell.m */,
+				093C13232256008C005682C8 /* SXHomeMainReportCell.xib */,
 				098BA2EB221660A400F58639 /* SXFamilyCodeSuccessAlertView.h */,
 				098BA2EC221660A400F58639 /* SXFamilyCodeSuccessAlertView.m */,
 				098BA2EE221660BD00F58639 /* SXFamilyCodeFailureAlertView.h */,
@@ -3711,6 +3719,7 @@
 				0936B72622392B5900E68C4C /* SXPersonalInfoHeaderView.xib in Resources */,
 				092D6CE622005A1A00538AC8 /* SXEmptyDataEventView.xib in Resources */,
 				09D5F65C222B8D6A00EA681A /* SXUpdateVersionHeaderView.xib in Resources */,
+				093C13252256008C005682C8 /* SXHomeMainReportCell.xib in Resources */,
 				09B9B83B2230F5A3000868D5 /* SXAdvancedHeaderView.xib in Resources */,
 				093C12F82254A660005682C8 /* circle.png in Resources */,
 				09462AEA2237AE9E0063F67E /* SXOnlineFixedIPHeaderView.xib in Resources */,
@@ -3979,6 +3988,7 @@
 				09B9B8622231528E000868D5 /* SXTimeUpdateController.m in Sources */,
 				09D5F626222925C200EA681A /* SXForbiddenAppController.m in Sources */,
 				09B9B84722310BCA000868D5 /* SXFrequencyOptionController.m in Sources */,
+				093C13242256008C005682C8 /* SXHomeMainReportCell.m in Sources */,
 				092D6D3722041C4900538AC8 /* SXHomeHeaderView.m in Sources */,
 				098BA2FB2216B54100F58639 /* SXPhotoSectionHeaderView.m in Sources */,
 				09B9B85022311126000868D5 /* SXAdvancedOptionCell.m in Sources */,

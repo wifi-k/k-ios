@@ -24,7 +24,7 @@
 #import "SXHomeMainSectionFooterView.h"
 #import "SXHomeMainSectionEmptyFooterView.h"
 #import "SXHomeMainSectionHeaderView2.h"
-#import "SXHomeReportTableCell.h"
+#import "SXHomeMainReportCell.h"
 #import "SXHomeNetworkingDeviceCell.h"
 #import "SXInputAlertView.h"
 #import "SXRootTool.h"
@@ -348,7 +348,7 @@
         };
         tempCell = cell;
     } else if(indexPath.section == 1){
-        SXHomeReportTableCell *cell = [SXHomeReportTableCell cellWithTableView:tableView];
+        SXHomeMainReportCell *cell = [SXHomeMainReportCell cellWithTableView:tableView];
         return cell;
     } else {
         return nil;

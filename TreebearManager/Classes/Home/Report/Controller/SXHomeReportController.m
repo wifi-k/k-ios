@@ -9,6 +9,7 @@
 #import "SXHomeReportController.h"
 #import "SXHomeReportDetailController.h"
 #import "SXHomeReportTableCell.h"
+#import "SXXiaoKiOptionResult.h"
 #import "SXHomeReportNetTool.h"
 
 @interface SXHomeReportController ()
@@ -77,6 +78,8 @@
 - (void)userNodeDeviceWeekListData{
     WS(weakSelf);
     SXHomeReportPageParam *param = [SXHomeReportPageParam param];
+    SXHomeXiaoKiModel *model = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel;
+    param.nodeId = model.nodeId;
     self.pageIndex = 1;
     param.pageNo = @(self.pageIndex);
     param.pageSize = @10;
@@ -105,6 +108,8 @@
 - (void)userNodeDeviceWeekListMoreData{
     WS(weakSelf);
     SXHomeReportPageParam *param = [SXHomeReportPageParam param];
+    SXHomeXiaoKiModel *model = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel;
+    param.nodeId = model.nodeId;
     param.pageNo = @(++self.pageIndex);
     param.pageSize = @10;
     [SXHomeReportNetTool userNodeDeviceWeekListParams:param.mj_keyValues Success:^(SXHomeReportResult *result) {
