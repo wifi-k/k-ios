@@ -90,6 +90,7 @@
     self.bottomBgView.layer.shadowOffset = CGSizeMake(0, 5);
     self.bottomBgView.layer.shadowOpacity = 0.5;
     self.bottomBgView.layer.shadowRadius = 5;
+    self.bottomBgView.hidden = YES;
     
     
     //缩放

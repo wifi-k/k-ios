@@ -10,6 +10,7 @@
 #import "SXMobileInfoController.h"
 #import "SXMobileDetailHeaderView.h"
 #import "SXInputAlertView.h"
+#import "SXWifiSettingNetTool.h"
 
 @interface SXMobileDetailController ()
 @property (nonatomic, weak) SXMobileDetailHeaderView *headerView;//头部视图
@@ -89,6 +90,24 @@
     SXMobileInfoController *infoVC = [[SXMobileInfoController alloc] init];
     infoVC.model = self.model;
     [self.navigationController pushViewController:infoVC animated:YES];
+}
+
+#pragma mark -修改设备信息-
+- (void)userDodeDeviceSetData{
+    SXMobilePageParam *param = [SXMobilePageParam param];
+    param.nodeId = @"";
+    param.mac = @"";
+    param.note = @"";
+    param.isBlock = @0;
+    param.isRecord = @1;
+    [SXWifiSettingNetTool userDodeDeviceSetDataWithParams:param.mj_keyValues success:^{
+        [MBProgressHUD showSuccessWithMessage:@"修改成功!" toView:SXKeyWindow];
+    } failure:^(NSError * _Nonnull error) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSString *message = [error.userInfo objectForKey:@"msg"];
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        });
+    }];
 }
 
 @end
