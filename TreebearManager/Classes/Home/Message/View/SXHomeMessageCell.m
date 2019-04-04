@@ -51,7 +51,7 @@ static NSString *SXHomeMessageCellID = @"SXHomeMessageCellID";
     
     self.titleL.text = model.title;
     self.contentL.text = model.content;
-    self.timeL.text = @"2018-12-14 12:00";
+    self.timeL.text = model.createTime;
 }
 
 @end

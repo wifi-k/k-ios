@@ -137,6 +137,9 @@
 		093C12FA2254A660005682C8 /* point@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 093C12F22254A65F005682C8 /* point@2x.png */; };
 		093C12FB2254A660005682C8 /* point@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 093C12F32254A65F005682C8 /* point@3x.png */; };
 		093C12FC2254A660005682C8 /* ORChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12F42254A65F005682C8 /* ORChartView.m */; };
+		093C13002255D54C005682C8 /* SXMessageNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C12FF2255D54C005682C8 /* SXMessageNetTool.m */; };
+		093C13032255D5C0005682C8 /* SXHomeMessageResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C13022255D5C0005682C8 /* SXHomeMessageResult.m */; };
+		093C13062255D718005682C8 /* SXHomeMessagePageParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C13052255D718005682C8 /* SXHomeMessagePageParam.m */; };
 		09462ACB22375DEE0063F67E /* SXOnlineOptionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */; };
 		09462ACD22375DF90063F67E /* SXOnlineOptionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */; };
 		09462AD12237898C0063F67E /* XDSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 09462ACF2237898C0063F67E /* XDSDropDownMenu.m */; };
@@ -644,6 +647,12 @@
 		093C12F22254A65F005682C8 /* point@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "point@2x.png"; sourceTree = "<group>"; };
 		093C12F32254A65F005682C8 /* point@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "point@3x.png"; sourceTree = "<group>"; };
 		093C12F42254A65F005682C8 /* ORChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORChartView.m; sourceTree = "<group>"; };
+		093C12FE2255D54C005682C8 /* SXMessageNetTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMessageNetTool.h; sourceTree = "<group>"; };
+		093C12FF2255D54C005682C8 /* SXMessageNetTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMessageNetTool.m; sourceTree = "<group>"; };
+		093C13012255D5C0005682C8 /* SXHomeMessageResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMessageResult.h; sourceTree = "<group>"; };
+		093C13022255D5C0005682C8 /* SXHomeMessageResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMessageResult.m; sourceTree = "<group>"; };
+		093C13042255D718005682C8 /* SXHomeMessagePageParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMessagePageParam.h; sourceTree = "<group>"; };
+		093C13052255D718005682C8 /* SXHomeMessagePageParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMessagePageParam.m; sourceTree = "<group>"; };
 		09462AC922375DEE0063F67E /* SXOnlineOptionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXOnlineOptionHeaderView.h; sourceTree = "<group>"; };
 		09462ACA22375DEE0063F67E /* SXOnlineOptionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXOnlineOptionHeaderView.m; sourceTree = "<group>"; };
 		09462ACC22375DF90063F67E /* SXOnlineOptionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXOnlineOptionHeaderView.xib; sourceTree = "<group>"; };
@@ -1649,6 +1658,15 @@
 			path = image;
 			sourceTree = "<group>";
 		};
+		093C12FD2255D52D005682C8 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				093C12FE2255D54C005682C8 /* SXMessageNetTool.h */,
+				093C12FF2255D54C005682C8 /* SXMessageNetTool.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		09462ACE223789680063F67E /* DropMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -2648,6 +2666,7 @@
 		09FB472622239D6C00809273 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				093C12FD2255D52D005682C8 /* Helper */,
 				09FB472722239D6C00809273 /* Controller */,
 				09FB472822239D6C00809273 /* Model */,
 				09FB472922239D6C00809273 /* View */,
@@ -2667,6 +2686,10 @@
 		09FB472822239D6C00809273 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				093C13042255D718005682C8 /* SXHomeMessagePageParam.h */,
+				093C13052255D718005682C8 /* SXHomeMessagePageParam.m */,
+				093C13012255D5C0005682C8 /* SXHomeMessageResult.h */,
+				093C13022255D5C0005682C8 /* SXHomeMessageResult.m */,
 				09FB47322223BD8000809273 /* SXHomeMessageModel.h */,
 				09FB47332223BD8000809273 /* SXHomeMessageModel.m */,
 			);
@@ -3879,6 +3902,7 @@
 				093C12E522534D56005682C8 /* SXForbiddenAppHeaderView.m in Sources */,
 				091BC4D22242207100FEBFD1 /* PYAblum.m in Sources */,
 				098BA30D221AD98400F58639 /* SXLoginCertifyCodeButton.m in Sources */,
+				093C13002255D54C005682C8 /* SXMessageNetTool.m in Sources */,
 				091186EF22151D5F00938D9F /* SGSocketManager.m in Sources */,
 				092D6CFF220073A600538AC8 /* SXUserDefaultsTool.m in Sources */,
 				093C12A2224CC9B7005682C8 /* SXPreventModel.m in Sources */,
@@ -3890,6 +3914,7 @@
 				092D6D1D2202E6EC00538AC8 /* SXForgetConfirmController.m in Sources */,
 				09462ADD2237AAA60063F67E /* SXOnlineFixedIPController.m in Sources */,
 				09D5F654222B88E400EA681A /* SXInputAlertView.m in Sources */,
+				093C13032255D5C0005682C8 /* SXHomeMessageResult.m in Sources */,
 				B348F9AB21F71A680000F194 /* UIButton+Extension.m in Sources */,
 				092D6D2F2203F6E100538AC8 /* SXHomeMainHeaderView.m in Sources */,
 				B3AF2FFE21FB085C001E4E67 /* SXBaseParam.m in Sources */,
@@ -3961,6 +3986,7 @@
 				093C129F224CC878005682C8 /* SXPreventPageParam.m in Sources */,
 				B3AF300F21FB0A20001E4E67 /* SXBaseTableViewCell.m in Sources */,
 				09462B2B2238F72D0063F67E /* SXMineVersionUpdateHeaderView.m in Sources */,
+				093C13062255D718005682C8 /* SXHomeMessagePageParam.m in Sources */,
 				091BC4C92242207100FEBFD1 /* PYImageBrowserViewViewControllerAnimater.m in Sources */,
 				095540B5221E4B9A005A5485 /* SXRegistSetPwdController.m in Sources */,
 				09D5F665222B96B000EA681A /* SXHomeManagerHeaderView.m in Sources */,

@@ -12,8 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SXHomeMessageModel : SXBaseModel
 
-@property (nonatomic, copy) NSString *title;//title
-@property (nonatomic, copy) NSString *content;//content
+///类型
+@property (nonatomic, copy) NSNumber *type;
+///title
+@property (nonatomic, copy) NSString *title;
+///content
+@property (nonatomic, copy) NSString *content;
+///消息时间戳
+@property (nonatomic, copy) NSString *createTime;
 
 @end
 

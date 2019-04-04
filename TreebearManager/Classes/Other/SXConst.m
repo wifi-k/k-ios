@@ -64,4 +64,6 @@ NSString *const user_node_device_allow_list = @"user/node/device/allow/list";
 NSString *const user_node_device_allow_set = @"user/node/device/allow/set";
 NSString *const user_node_device_allow_del = @"user/node/device/allow/del";
 
+NSString *const user_message_list = @"user/message/list";
+
 @end
