@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSNumber *isBlock;
 ///0-不开启 or 1-开启时间记录, 比如儿童关爱
 @property (nonatomic, copy) NSNumber *isRecord;
+///0-关闭 or 1-上线提醒
+@property (nonatomic, copy) NSNumber *isOnline;
 
 @end
 

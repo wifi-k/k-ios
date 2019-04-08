@@ -7,6 +7,9 @@
 //
 
 #import "SXMobileDetailHeaderView.h"
+#import "SXInputAlertView.h"
+#import "SXWifiSettingNetTool.h"
+#import "SXNotificationCenterTool.h"
 
 @interface SXMobileDetailHeaderView ()
 
@@ -120,6 +123,9 @@
         default:
             break;
     }
+    self.blackSwitchBtn.on = !model.isBlock.boolValue;
+    self.careSwitchBtn.on = model.isRecord.boolValue;
+    self.remindSwitchBtn.on = model.isOnline.boolValue;
 }
 
 #pragma mark -点击事件-
@@ -136,9 +142,62 @@
 }
 
 - (IBAction)clickEditBtn:(UIButton *)sender {
-    if (self.clickEditBtnBlock) {
-        self.clickEditBtnBlock();
-    }
+    WS(weakSelf);
+    SXInputAlertView *nameAlertView = [SXInputAlertView alertWithTitle:@"备注名称" placeholder:@"请输入名称" confirmStr:@"确定" cancelStr:@"取消"];
+    nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
+        DLog(@"text:%@",text);
+        SXMobilePageParam *param = [SXMobilePageParam param];
+        param.nodeId = self.model.nodeId;
+        param.mac = self.model.mac;
+        param.note = text;
+        [weakSelf userDodeDeviceSetDataWithParam:param];
+    };
+    [nameAlertView alert];
+}
+
+#pragma mark -Switch Event-
+- (IBAction)clickCareSwitchBtn:(UISwitch *)sender {
+    SXMobilePageParam *param = [SXMobilePageParam param];
+    param.nodeId = self.model.nodeId;
+    param.mac = self.model.mac;
+    param.note = self.model.note;
+    param.isRecord = @(sender.isOn);
+    [self userDodeDeviceSetDataWithParam:param];
+}
+
+- (IBAction)clickRemindSwitchBtn:(UISwitch *)sender {
+    SXMobilePageParam *param = [SXMobilePageParam param];
+    param.nodeId = self.model.nodeId;
+    param.mac = self.model.mac;
+    param.note = self.model.note;
+    param.isOnline = @(sender.isOn);
+    [self userDodeDeviceSetDataWithParam:param];
+}
+
+- (IBAction)clickBlackSwitchBtn:(UISwitch *)sender {
+    SXMobilePageParam *param = [SXMobilePageParam param];
+    param.nodeId = self.model.nodeId;
+    param.mac = self.model.mac;
+    param.note = self.model.note;
+    param.isBlock = @(!sender.isOn);
+    [self userDodeDeviceSetDataWithParam:param];
+}
+
+#pragma mark -修改设备信息-
+- (void)userDodeDeviceSetDataWithParam:(SXMobilePageParam *)param{
+    WS(weakSelf);
+    [SXWifiSettingNetTool userDodeDeviceSetDataWithParams:param.mj_keyValues success:^{
+        [MBProgressHUD showSuccessWithMessage:@"修改成功!" toView:SXKeyWindow];
+        weakSelf.nameL.text = param.note;
+        weakSelf.model.note = param.note;
+        //通知刷新
+        [SXNotificationCenterTool postNotificationDeviceUpdateRemarkSuccess];
+    } failure:^(NSError * _Nonnull error) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSString *message = [error.userInfo objectForKey:@"msg"];
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        });
+    }];
 }
 
 @end

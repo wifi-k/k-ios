@@ -30,6 +30,10 @@
 @property (nonatomic, copy) NSNumber *status;
 ///0-allow or 1-block
 @property (nonatomic, copy) NSNumber *isBlock;
+///0-关闭 or 1-上线提醒
+@property (nonatomic, copy) NSNumber *isOnline;
+///0-关闭 or 1-开启时间记录, 比如儿童关爱
+@property (nonatomic, copy) NSNumber *isRecord;
 ///是否删除
 @property (nonatomic, copy) NSNumber *isDelete;
 
