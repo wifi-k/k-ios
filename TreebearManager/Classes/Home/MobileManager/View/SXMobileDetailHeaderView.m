@@ -162,7 +162,17 @@
     param.mac = self.model.mac;
     param.note = self.model.note;
     param.isRecord = @(sender.isOn);
-    [self userDodeDeviceSetDataWithParam:param];
+    WS(weakSelf);
+    [SXWifiSettingNetTool userDodeDeviceSetDataWithParams:param.mj_keyValues success:^{
+        [MBProgressHUD showSuccessWithMessage:@"修改成功!" toView:SXKeyWindow];
+        //模型赋值
+        weakSelf.model.isRecord = param.isRecord;
+    } failure:^(NSError * _Nonnull error) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSString *message = [error.userInfo objectForKey:@"msg"];
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        });
+    }];
 }
 
 - (IBAction)clickRemindSwitchBtn:(UISwitch *)sender {
@@ -171,7 +181,17 @@
     param.mac = self.model.mac;
     param.note = self.model.note;
     param.isOnline = @(sender.isOn);
-    [self userDodeDeviceSetDataWithParam:param];
+    WS(weakSelf);
+    [SXWifiSettingNetTool userDodeDeviceSetDataWithParams:param.mj_keyValues success:^{
+        [MBProgressHUD showSuccessWithMessage:@"修改成功!" toView:SXKeyWindow];
+        //模型赋值
+        weakSelf.model.isOnline = param.isOnline;
+    } failure:^(NSError * _Nonnull error) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSString *message = [error.userInfo objectForKey:@"msg"];
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        });
+    }];
 }
 
 - (IBAction)clickBlackSwitchBtn:(UISwitch *)sender {
@@ -180,7 +200,17 @@
     param.mac = self.model.mac;
     param.note = self.model.note;
     param.isBlock = @(!sender.isOn);
-    [self userDodeDeviceSetDataWithParam:param];
+    WS(weakSelf);
+    [SXWifiSettingNetTool userDodeDeviceSetDataWithParams:param.mj_keyValues success:^{
+        [MBProgressHUD showSuccessWithMessage:@"修改成功!" toView:SXKeyWindow];
+        //模型赋值
+        weakSelf.model.isBlock = param.isBlock;
+    } failure:^(NSError * _Nonnull error) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSString *message = [error.userInfo objectForKey:@"msg"];
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        });
+    }];
 }
 
 #pragma mark -修改设备信息-
