@@ -18,6 +18,37 @@
 
 @implementation SXPhotoBrowserController
 
+#pragma mark -life recycle-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    //设置当前导航条背景色
+    self.navigationController.navigationBar.barTintColor = UIColor.blackColor;
+    
+    //设置导航条文字颜色和大小
+    NSMutableDictionary *barAttr = [NSMutableDictionary dictionary];
+    barAttr[NSForegroundColorAttributeName] = UIColor.whiteColor;
+    barAttr[NSFontAttributeName] = [UIFont boldSystemFontOfSize:17.0];
+    [self.navigationController.navigationBar setTitleTextAttributes:barAttr];
+    
+    // 设置导航条的按钮
+    [self.navigationItem.leftBarButtonItem.customButton setImage:[UIImage imageNamed:@"navi_left_white"] forState:UIControlStateNormal];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    //设置当前导航条背景色
+    self.navigationController.navigationBar.barTintColor = UIColor.whiteColor;
+    
+    //设置导航条文字颜色和大小
+    NSMutableDictionary *barAttr = [NSMutableDictionary dictionary];
+    barAttr[NSForegroundColorAttributeName] = UIColor.blackColor;
+    barAttr[NSFontAttributeName] = [UIFont boldSystemFontOfSize:17.0];
+    [self.navigationController.navigationBar setTitleTextAttributes:barAttr];
+    
+    // 设置导航条的按钮
+    [self.navigationItem.leftBarButtonItem.customButton setImage:[UIImage imageNamed:@"arrow_left"] forState:UIControlStateNormal];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -27,7 +58,8 @@
 #pragma mark -初始化UI-
 - (void)setUpUI{
     
-    self.view.backgroundColor = SXColorWhite;
+    self.view.backgroundColor = UIColor.blackColor;
+//    self.view.backgroundColor = SXColorWhite;
     
     self.navigationItem.title = @"图片浏览";
     
@@ -36,12 +68,12 @@
     
     //流水布局
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    layout.itemSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT);
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    layout.itemSize = CGSizeMake(SCREEN_WIDTH, SCREEN_WIDTH);
     
     //设置每一行之间的间距
-        CGFloat inset = (SCREEN_WIDTH - COL * layout.itemSize.width) / (COL + 1);
-        layout.sectionInset = UIEdgeInsetsMake(inset, 0, inset, 0);
+//        CGFloat inset = (SCREEN_WIDTH - COL * layout.itemSize.width) / (COL + 1);
+        layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
 //    layout.minimumLineSpacing = 2;
 //    layout.minimumInteritemSpacing = 2;
     
@@ -64,6 +96,12 @@
 //    self.collectionView.delegate = self;//设置代理
 //    self.collectionView.dataSource = self;//设置代理
 //    [self.collectionView registerClass:[DTNewFeatureCell class] forCellWithReuseIdentifier:reuseIdentifier];
+}
+
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    self.collectionView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH);
 }
 
 #pragma mark -UICollectionViewDelegate/UICollectionViewDataSource-

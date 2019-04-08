@@ -118,6 +118,12 @@
 
 #pragma mark -设置设备允许上网配置接口-
 - (void)userNodeDeviceAllowSetData{
+    
+    if (![self.headerView isSelectedAll]) {
+        [MBProgressHUD showWarningWithMessage:@"时间和设备选择缺一不可!" toView:SXKeyWindow];
+        return;
+    }
+    
     WS(weakSelf);
     SXForbiddenAppParam *param = [SXForbiddenAppParam param];
     param.nodeId = self.model.nodeId;

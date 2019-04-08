@@ -110,6 +110,10 @@
     self.deviceContentL.text = @"已设置";
 }
 
+- (BOOL)isSelectedAll{
+    return [NSString isNotEmpty:self.timeContentL.text] && [NSString isNotEmpty:self.deviceContentL.text];
+}
+
 #pragma mark -点击事件-
 - (IBAction)updateNameBtn:(UIButton *)sender {
     if (self.clickUpdateNameBtnBlock) {
