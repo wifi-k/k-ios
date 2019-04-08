@@ -7,8 +7,10 @@
 //
 
 #import "SXPhotoController.h"
+#import "SXPhotoBackupController.h"
 #import "SXPhotoIntelligentController.h"
 #import "SXPhotoShareController.h"
+#import "SXPhotoBrowserController.h"
 #import "SXPhotoSectionHeaderView.h"
 #import "SXPhotoListCell.h"
 #import "SXAlbumAuthorizationTool.h"
@@ -22,25 +24,25 @@
 @property (nonatomic, weak) UICollectionView *collectionView;
 
 ///数据源
-@property (nonatomic, strong) NSMutableArray *dataArray;
-@property (nonatomic, strong) NSMutableArray *titles;
+@property (nonatomic, strong) NSMutableArray *assetArray;
+@property (nonatomic, strong) NSMutableArray *titleArray;
 @end
 
 @implementation SXPhotoController
 
 #pragma mark -getter-
-- (NSMutableArray *)dataArray{
-    if (_dataArray == nil) {
-        _dataArray = [NSMutableArray array];
+- (NSMutableArray *)assetArray{
+    if (_assetArray == nil) {
+        _assetArray = [NSMutableArray array];
     }
-    return _dataArray;
+    return _assetArray;
 }
 
-- (NSMutableArray *)titles{
-    if (_titles == nil) {
-        _titles = [NSMutableArray array];
+- (NSMutableArray *)titleArray{
+    if (_titleArray == nil) {
+        _titleArray = [NSMutableArray array];
     }
-    return _titles;
+    return _titleArray;
 }
 
 - (void)viewDidLoad {
@@ -57,6 +59,9 @@
     self.view.backgroundColor = SXColorWhite;
     
     self.navigationItem.title = @"照片库";
+    
+    UIBarButtonItem *right = [UIBarButtonItem barButtonItemWithTitle:@"备份" target:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = right;
     
     //流水布局
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -109,6 +114,11 @@
     self.collectionView.frame = self.view.bounds;
 }
 
+- (void)rightButtonAction:(UIButton *)btn{
+    SXPhotoBackupController *backVC = [[SXPhotoBackupController alloc] init];
+    [self.navigationController pushViewController:backVC animated:YES];
+}
+
 #pragma mark -相册授权-
 - (void)checkAlbumAuthorization{
     WS(weakSelf);
@@ -147,8 +157,8 @@
     //PHFetchResult *imagesAssetsResults = [PHAsset fetchAssetsWithMediaType:PHAssetMediaTypeImage options:options];
     
     //遍历之前先清空
-    [self.dataArray removeAllObjects];
-    [self.titles removeAllObjects];
+    [self.assetArray removeAllObjects];
+    [self.titleArray removeAllObjects];
     WS(weakSelf);
     __block NSMutableArray *sectionArr;
     [assetsFetchResults enumerateObjectsUsingBlock:^(PHAsset  * _Nonnull asset, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -158,13 +168,13 @@
         NSDateFormatter *dateformatter  = [[NSDateFormatter alloc] init];
         [dateformatter setDateFormat:@"yyyy年MM月dd日"];
         NSString *dateString = [dateformatter stringFromDate:date];
-        if ([self.titles containsObject:dateString]) {
+        if ([weakSelf.titleArray containsObject:dateString]) {
             [sectionArr addObject:asset];
         } else {//创建分组
-            [self.titles addObject:dateString];
+            [weakSelf.titleArray addObject:dateString];
             
             sectionArr = [NSMutableArray array];
-            [weakSelf.dataArray addObject:sectionArr];
+            [weakSelf.assetArray addObject:sectionArr];
             [sectionArr addObject:asset];
         }
     }];
@@ -289,21 +299,21 @@
 
 #pragma mark -UICollectionViewDelegate/UICollectionViewDataSource-
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return self.dataArray.count + 1;
+    return self.assetArray.count + 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     if (section == 0) {
         return 0;
     } else {
-        NSArray *sectionArr = self.dataArray[section-1];
+        NSArray *sectionArr = self.assetArray[section-1];
         return sectionArr.count;
     }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     SXPhotoListCell *cell = [SXPhotoListCell cellWithCollectionView:collectionView atIndexPath:indexPath];
-    NSArray *sectionArr = self.dataArray[indexPath.section-1];
+    NSArray *sectionArr = self.assetArray[indexPath.section-1];
     PHAsset *asset = sectionArr[indexPath.item];
     cell.asset = asset;
     return cell;
@@ -331,7 +341,7 @@
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(nonnull NSString *)kind atIndexPath:(nonnull NSIndexPath *)indexPath{
     if (kind == UICollectionElementKindSectionHeader) {
         SXPhotoSectionHeaderView *headerView = [SXPhotoSectionHeaderView sectionHeaderAwakeFromClass:collectionView atIndexPath:indexPath];
-        headerView.title = self.titles[indexPath.section-1];
+        headerView.title = self.titleArray[indexPath.section-1];
         return headerView;
     } else if(kind == UICollectionElementKindSectionFooter){
         WS(weakSelf);
@@ -351,7 +361,12 @@
 {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     
-    DLog(@"section%ld->item:%ld",indexPath.section,indexPath.item);
+    DLog(@"section%ld->item:%ld",indexPath.section-1,indexPath.item);
+    
+    SXPhotoBrowserController *browserVC = [[SXPhotoBrowserController alloc] init];
+    browserVC.assetArray = self.assetArray;
+    browserVC.indexPath = indexPath;
+    [self.navigationController pushViewController:browserVC animated:YES];
 }
 
 @end

@@ -154,9 +154,9 @@
     SXTimeControlModel *model = self.dataArray[indexPath.row];
     model.row = @(indexPath.row);
     cell.model = model;
-    cell.clickEditBtnBlock = ^(SXTimeControlModel * _Nonnull model) {
-        [weakSelf jumpToUpdateVC:model];
-    };
+//    cell.clickEditBtnBlock = ^(SXTimeControlModel * _Nonnull model) {
+//        [weakSelf jumpToUpdateVC:model];
+//    };
     cell.clickDeleteBtnBlock = ^(SXTimeControlModel * _Nonnull model) {
         [weakSelf alertDeleteAlertView:model];
     };
@@ -166,7 +166,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    
+    SXTimeControlModel *model = self.dataArray[indexPath.row];
+    [self jumpToUpdateVC:model];
 }
 
 @end

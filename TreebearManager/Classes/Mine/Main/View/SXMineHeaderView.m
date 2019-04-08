@@ -7,6 +7,8 @@
 //
 
 #import "SXMineHeaderView.h"
+#import "SXRootTool.h"
+#import <TZImagePickerController/TZImagePickerController.h>
 
 @interface SXMineHeaderView ()
 @property (weak, nonatomic) IBOutlet UILabel *nameL;
@@ -67,6 +69,11 @@
 //    if (self.clickIconBtnBlock) {
 //        self.clickIconBtnBlock();
 //    }
+    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:9 delegate:self];
+    [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
+        DLog(@"photos->assets:",photos,assets);
+    }];
+    [[SXRootTool topViewController] presentViewController:imagePickerVc animated:YES completion:nil];
 }
 
 @end

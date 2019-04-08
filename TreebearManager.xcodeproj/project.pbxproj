@@ -330,6 +330,10 @@
 		09EEC0CF223A25DA00F519E4 /* SXMineChildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09EEC0CD223A25DA00F519E4 /* SXMineChildCell.xib */; };
 		09EEC0D2223A25FD00F519E4 /* SXMineChildModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EEC0D1223A25FD00F519E4 /* SXMineChildModel.m */; };
 		09EEC0D5223A2B2600F519E4 /* SXMineAddChildController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EEC0D4223A2B2600F519E4 /* SXMineAddChildController.m */; };
+		09EF2FAE225B266E00C2C17C /* SXPhotoBackupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FAD225B266E00C2C17C /* SXPhotoBackupController.m */; };
+		09EF2FB4225B3A6300C2C17C /* SXPhotoBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FB3225B3A6300C2C17C /* SXPhotoBrowserController.m */; };
+		09EF2FB8225B501500C2C17C /* SXPhotoBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FB6225B501500C2C17C /* SXPhotoBrowserCell.m */; };
+		09EF2FB9225B501500C2C17C /* SXPhotoBrowserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09EF2FB7225B501500C2C17C /* SXPhotoBrowserCell.xib */; };
 		09F233092223EE4D0086AB35 /* SXXiaoKiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233082223EE4D0086AB35 /* SXXiaoKiController.m */; };
 		09F233182223F03C0086AB35 /* SXHomeXiaoKiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233162223F03C0086AB35 /* SXHomeXiaoKiCell.m */; };
 		09F233192223F03C0086AB35 /* SXHomeXiaoKiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F233172223F03C0086AB35 /* SXHomeXiaoKiCell.xib */; };
@@ -998,6 +1002,13 @@
 		09EEC0D1223A25FD00F519E4 /* SXMineChildModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMineChildModel.m; sourceTree = "<group>"; };
 		09EEC0D3223A2B2600F519E4 /* SXMineAddChildController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMineAddChildController.h; sourceTree = "<group>"; };
 		09EEC0D4223A2B2600F519E4 /* SXMineAddChildController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMineAddChildController.m; sourceTree = "<group>"; };
+		09EF2FAC225B266E00C2C17C /* SXPhotoBackupController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPhotoBackupController.h; sourceTree = "<group>"; };
+		09EF2FAD225B266E00C2C17C /* SXPhotoBackupController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoBackupController.m; sourceTree = "<group>"; };
+		09EF2FB2225B3A6300C2C17C /* SXPhotoBrowserController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPhotoBrowserController.h; sourceTree = "<group>"; };
+		09EF2FB3225B3A6300C2C17C /* SXPhotoBrowserController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoBrowserController.m; sourceTree = "<group>"; };
+		09EF2FB5225B501500C2C17C /* SXPhotoBrowserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPhotoBrowserCell.h; sourceTree = "<group>"; };
+		09EF2FB6225B501500C2C17C /* SXPhotoBrowserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoBrowserCell.m; sourceTree = "<group>"; };
+		09EF2FB7225B501500C2C17C /* SXPhotoBrowserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXPhotoBrowserCell.xib; sourceTree = "<group>"; };
 		09F233072223EE4D0086AB35 /* SXXiaoKiController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXXiaoKiController.h; sourceTree = "<group>"; };
 		09F233082223EE4D0086AB35 /* SXXiaoKiController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXXiaoKiController.m; sourceTree = "<group>"; };
 		09F233152223F03C0086AB35 /* SXHomeXiaoKiCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeXiaoKiCell.h; sourceTree = "<group>"; };
@@ -2567,6 +2578,59 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		09EF2FA9225B264500C2C17C /* Backup */ = {
+			isa = PBXGroup;
+			children = (
+				09EF2FAA225B264500C2C17C /* Controller */,
+				09EF2FAB225B264500C2C17C /* View */,
+			);
+			path = Backup;
+			sourceTree = "<group>";
+		};
+		09EF2FAA225B264500C2C17C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				09EF2FAC225B266E00C2C17C /* SXPhotoBackupController.h */,
+				09EF2FAD225B266E00C2C17C /* SXPhotoBackupController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		09EF2FAB225B264500C2C17C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		09EF2FAF225B3A4300C2C17C /* Browser */ = {
+			isa = PBXGroup;
+			children = (
+				09EF2FB0225B3A4300C2C17C /* Controller */,
+				09EF2FB1225B3A4300C2C17C /* View */,
+			);
+			path = Browser;
+			sourceTree = "<group>";
+		};
+		09EF2FB0225B3A4300C2C17C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				09EF2FB2225B3A6300C2C17C /* SXPhotoBrowserController.h */,
+				09EF2FB3225B3A6300C2C17C /* SXPhotoBrowserController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		09EF2FB1225B3A4300C2C17C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				09EF2FB5225B501500C2C17C /* SXPhotoBrowserCell.h */,
+				09EF2FB6225B501500C2C17C /* SXPhotoBrowserCell.m */,
+				09EF2FB7225B501500C2C17C /* SXPhotoBrowserCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		09F233042223EE3B0086AB35 /* XiaoKi */ = {
 			isa = PBXGroup;
 			children = (
@@ -2930,6 +2994,8 @@
 			isa = PBXGroup;
 			children = (
 				09D5F5FA2227E3A600EA681A /* Helper */,
+				09EF2FAF225B3A4300C2C17C /* Browser */,
+				09EF2FA9225B264500C2C17C /* Backup */,
 				09F76F472247CABC008A9048 /* Intelligent */,
 				09F76F442247CABC008A9048 /* Share */,
 				B348F96421F6EAC20000F194 /* Main */,
@@ -3697,6 +3763,7 @@
 				09F76F4022477FC3008A9048 /* SXPhotoHeaderView.xib in Resources */,
 				09462AE52237AE6A0063F67E /* SXOnlineAutotIPHeaderView.xib in Resources */,
 				091BC473223F773500FEBFD1 /* SXHealtyControlFooterView.xib in Resources */,
+				09EF2FB9225B501500C2C17C /* SXPhotoBrowserCell.xib in Resources */,
 				09B9B8672231FF42000868D5 /* SXTimeControlCell.xib in Resources */,
 				092D6D1A2202E51C00538AC8 /* SXForgetHeaderView.xib in Resources */,
 				092D6D312203F6EA00538AC8 /* SXHomeMainHeaderView.xib in Resources */,
@@ -3806,6 +3873,7 @@
 				091BC4D72242207100FEBFD1 /* PYAblumManager.m in Sources */,
 				09EEC0D2223A25FD00F519E4 /* SXMineChildModel.m in Sources */,
 				0900F514222D31BD00250155 /* SXNetOptionModel.m in Sources */,
+				09EF2FAE225B266E00C2C17C /* SXPhotoBackupController.m in Sources */,
 				B3AF2FEA21FAFF10001E4E67 /* SXLoginMainController.m in Sources */,
 				092D6CE92200625700538AC8 /* Foundation+Log.m in Sources */,
 				B3AF301521FB0A92001E4E67 /* SXBaseSectionHeaderCollectionView.m in Sources */,
@@ -3863,6 +3931,7 @@
 				095540D222200EB6005A5485 /* SXHomeMainMemberButton.m in Sources */,
 				B348F98921F713A80000F194 /* AppDelegate.m in Sources */,
 				09462AE82237AE930063F67E /* SXOnlineFixedIPHeaderView.m in Sources */,
+				09EF2FB4225B3A6300C2C17C /* SXPhotoBrowserController.m in Sources */,
 				093C13182255ED27005682C8 /* SXHomeReportPageParam.m in Sources */,
 				09B9B7B5222FAE0C000868D5 /* SXSingleAlertView.m in Sources */,
 				093C131F2255F266005682C8 /* SXHomeReportTableCell.m in Sources */,
@@ -4067,6 +4136,7 @@
 				B3AF301221FB0A5D001E4E67 /* SXBaseCollectionViewCell.m in Sources */,
 				09B9B7DE2230BE2F000868D5 /* SXHomeReportController.m in Sources */,
 				095540CF221FEF5D005A5485 /* SXHomeMainGotoUserInfoButton.m in Sources */,
+				09EF2FB8225B501500C2C17C /* SXPhotoBrowserCell.m in Sources */,
 				091BC4DB2242207100FEBFD1 /* PYAblumHeader.m in Sources */,
 				093C12D822534013005682C8 /* SXTimeControlParam.m in Sources */,
 				095540C9221FEB91005A5485 /* SXHomeMainSettingButton.m in Sources */,

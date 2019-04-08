@@ -62,6 +62,8 @@ static NSString *SXTimeControlCellID = @"SXTimeControlCellID";
     self.contentBgView.layer.shadowOpacity = 0.5;
     self.contentBgView.layer.shadowRadius = 3;
     [self.contentBgView borderColor:UIColor.lightGrayColor borderWidth:0.1];
+    
+    self.editBtn.userInteractionEnabled = NO;
 }
 
 #pragma mark -setter方法-
