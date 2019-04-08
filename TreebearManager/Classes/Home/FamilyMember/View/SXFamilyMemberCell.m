@@ -51,6 +51,13 @@ static NSString *SXFamilyMemberCellID = @"SXFamilyMemberCellID";
     
     self.nickNameL.text = [NSString stringWithFormat:@"昵称：%@",model.userName];
     self.mobileL.text = [NSString stringWithFormat:@"手机号：%@",model.userMobile];
+    if (model.role.integerValue == 0) {//超级管理员
+        [self.deleteBtn setImage:[UIImage imageNamed:@"home_manager_super2"] forState:UIControlStateNormal];
+        self.deleteBtn.enabled = NO;
+    } else {//普通
+        [self.deleteBtn setImage:[UIImage imageNamed:@"home_manager_delete"] forState:UIControlStateNormal];
+        self.deleteBtn.enabled = YES;
+    }
 }
 
 #pragma mark -点击事件-

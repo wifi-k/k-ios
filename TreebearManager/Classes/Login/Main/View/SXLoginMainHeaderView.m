@@ -31,8 +31,8 @@
 
 - (void)setUpUI{
     
-    self.iconImageV.backgroundColor = SXColorBtnHighlight;
-    [self.iconImageV roundViewWithRadius:40.0f];
+//    self.iconImageV.backgroundColor = SXColorBtnHighlight;
+//    [self.iconImageV roundViewWithRadius:40.0f];
     
     //登录按钮
     [self.loginBtn setTitleColor:SXColor666666 forState:UIControlStateNormal];

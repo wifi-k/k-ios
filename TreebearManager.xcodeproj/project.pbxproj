@@ -2015,9 +2015,9 @@
 				093C13162255ED27005682C8 /* SXHomeReportPageParam.h */,
 				093C13172255ED27005682C8 /* SXHomeReportPageParam.m */,
 				093C13102255ECF8005682C8 /* SXHomeReportResult.h */,
-				093C13112255ECF8005682C8 /* SXHomeReportResult.m */,
 				093C13132255ED05005682C8 /* SXHomeReportModel.h */,
 				093C13142255ED05005682C8 /* SXHomeReportModel.m */,
+				093C13112255ECF8005682C8 /* SXHomeReportResult.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
