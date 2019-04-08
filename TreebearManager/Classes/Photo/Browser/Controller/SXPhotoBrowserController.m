@@ -7,11 +7,15 @@
 //
 
 #import "SXPhotoBrowserController.h"
+#import "SXPhotoBrowserBottomView.h"
 #import "SXPhotoBrowserCell.h"
 
 #define COL 3
 
-@interface SXPhotoBrowserController ()<UICollectionViewDelegate,UICollectionViewDataSource>
+@interface SXPhotoBrowserController ()<UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate>
+///底部视图
+@property (nonatomic, weak) SXPhotoBrowserBottomView *bottomView;
+
 ///滚动视图
 @property (nonatomic, weak) UICollectionView *collectionView;
 @end
@@ -63,19 +67,18 @@
     
     self.navigationItem.title = @"图片浏览";
     
-//    NSArray *sectionArr = self.assetArray[self.indexPath.section];
-//    PHAsset *asset = sectionArr[self.indexPath.row];
+    //2.创建底部视图
+    SXPhotoBrowserBottomView *bottomView = [SXPhotoBrowserBottomView bottomView];
+    [self.view addSubview:bottomView];
+    self.bottomView = bottomView;
     
     //流水布局
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     layout.itemSize = CGSizeMake(SCREEN_WIDTH, SCREEN_WIDTH);
-    
-    //设置每一行之间的间距
-//        CGFloat inset = (SCREEN_WIDTH - COL * layout.itemSize.width) / (COL + 1);
-        layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
-//    layout.minimumLineSpacing = 2;
-//    layout.minimumInteritemSpacing = 2;
+    layout.minimumInteritemSpacing = 0; //定义左右cell的最小间距
+    layout.minimumLineSpacing = 0;//定义上下cell的最小间距
+    layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);//设置其边界
     
     //创建collectionView
     UICollectionView *collectV = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
@@ -89,17 +92,23 @@
     [self.view addSubview:collectV];
     self.collectionView = collectV;
     
-//    self.collectionView.pagingEnabled = YES;
-//    self.collectionView.bounces = NO;
-//    self.collectionView.showsHorizontalScrollIndicator = NO;
-//    self.collectionView.backgroundColor = [UIColor whiteColor];
-//    self.collectionView.delegate = self;//设置代理
-//    self.collectionView.dataSource = self;//设置代理
-//    [self.collectionView registerClass:[DTNewFeatureCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    //    NSArray *sectionArr = self.assetArray[self.indexPath.section];
+    //    PHAsset *asset = sectionArr[self.indexPath.row];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:self.indexPath.row inSection:self.indexPath.section-1];
+        [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+    });
 }
 
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
+    
+    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view);
+        make.right.mas_equalTo(self.view.mas_right);
+        make.bottom.mas_equalTo(self.view.mas_bottom);
+        make.height.mas_equalTo(50);
+    }];
     
     self.collectionView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH);
 }
@@ -118,7 +127,6 @@
 
 //返回cell长啥样
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-
     SXPhotoBrowserCell *cell = [SXPhotoBrowserCell cellWithCollectionView:collectionView atIndexPath:indexPath];
     NSArray *sectionArr = self.assetArray[indexPath.section];
     PHAsset *asset = sectionArr[indexPath.item];
@@ -126,14 +134,20 @@
     return cell;
 }
 
-//设置区头高度
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
-    return CGSizeZero;
+//控制缩放是在中心
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView{
+    
+    
 }
 
-//设置区尾高度
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
-    return CGSizeZero;
-}
+//设置区头高度
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+//    return CGSizeZero;
+//}
+//
+////设置区尾高度
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
+//    return CGSizeZero;
+//}
 
 @end

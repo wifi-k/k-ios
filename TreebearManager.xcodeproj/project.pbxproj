@@ -334,6 +334,8 @@
 		09EF2FB4225B3A6300C2C17C /* SXPhotoBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FB3225B3A6300C2C17C /* SXPhotoBrowserController.m */; };
 		09EF2FB8225B501500C2C17C /* SXPhotoBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FB6225B501500C2C17C /* SXPhotoBrowserCell.m */; };
 		09EF2FB9225B501500C2C17C /* SXPhotoBrowserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09EF2FB7225B501500C2C17C /* SXPhotoBrowserCell.xib */; };
+		09EF2FBC225B6F0F00C2C17C /* SXPhotoBrowserBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FBB225B6F0F00C2C17C /* SXPhotoBrowserBottomView.m */; };
+		09EF2FBE225B6F1900C2C17C /* SXPhotoBrowserBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09EF2FBD225B6F1900C2C17C /* SXPhotoBrowserBottomView.xib */; };
 		09F233092223EE4D0086AB35 /* SXXiaoKiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233082223EE4D0086AB35 /* SXXiaoKiController.m */; };
 		09F233182223F03C0086AB35 /* SXHomeXiaoKiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233162223F03C0086AB35 /* SXHomeXiaoKiCell.m */; };
 		09F233192223F03C0086AB35 /* SXHomeXiaoKiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F233172223F03C0086AB35 /* SXHomeXiaoKiCell.xib */; };
@@ -1009,6 +1011,9 @@
 		09EF2FB5225B501500C2C17C /* SXPhotoBrowserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPhotoBrowserCell.h; sourceTree = "<group>"; };
 		09EF2FB6225B501500C2C17C /* SXPhotoBrowserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoBrowserCell.m; sourceTree = "<group>"; };
 		09EF2FB7225B501500C2C17C /* SXPhotoBrowserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXPhotoBrowserCell.xib; sourceTree = "<group>"; };
+		09EF2FBA225B6F0F00C2C17C /* SXPhotoBrowserBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPhotoBrowserBottomView.h; sourceTree = "<group>"; };
+		09EF2FBB225B6F0F00C2C17C /* SXPhotoBrowserBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoBrowserBottomView.m; sourceTree = "<group>"; };
+		09EF2FBD225B6F1900C2C17C /* SXPhotoBrowserBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXPhotoBrowserBottomView.xib; sourceTree = "<group>"; };
 		09F233072223EE4D0086AB35 /* SXXiaoKiController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXXiaoKiController.h; sourceTree = "<group>"; };
 		09F233082223EE4D0086AB35 /* SXXiaoKiController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXXiaoKiController.m; sourceTree = "<group>"; };
 		09F233152223F03C0086AB35 /* SXHomeXiaoKiCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeXiaoKiCell.h; sourceTree = "<group>"; };
@@ -2627,6 +2632,9 @@
 				09EF2FB5225B501500C2C17C /* SXPhotoBrowserCell.h */,
 				09EF2FB6225B501500C2C17C /* SXPhotoBrowserCell.m */,
 				09EF2FB7225B501500C2C17C /* SXPhotoBrowserCell.xib */,
+				09EF2FBA225B6F0F00C2C17C /* SXPhotoBrowserBottomView.h */,
+				09EF2FBB225B6F0F00C2C17C /* SXPhotoBrowserBottomView.m */,
+				09EF2FBD225B6F1900C2C17C /* SXPhotoBrowserBottomView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3724,6 +3732,7 @@
 				09D5F643222A5BE100EA681A /* SXForbiddenDeviceOptionCell.xib in Resources */,
 				09FB473122239E3500809273 /* SXHomeMessageCell.xib in Resources */,
 				09462AEF2237AEC80063F67E /* SXOnlineBroadbandHeaderView.xib in Resources */,
+				09EF2FBE225B6F1900C2C17C /* SXPhotoBrowserBottomView.xib in Resources */,
 				099CEFEC223B44100077DE42 /* SXHomeReportCollectionCell.xib in Resources */,
 				092D6D2C2203011800538AC8 /* SXHomeNetworkingDeviceCell.xib in Resources */,
 				095540BA221E4DCE005A5485 /* SXRegistSetPwdHeaderView.xib in Resources */,
@@ -4170,6 +4179,7 @@
 				09462AE32237AE5F0063F67E /* SXOnlineAutotIPHeaderView.m in Sources */,
 				095540C2221EC059005A5485 /* SXHomeFamilyCodeButton.m in Sources */,
 				093C12C32251B1F7005682C8 /* SXMobilePageParam.m in Sources */,
+				09EF2FBC225B6F0F00C2C17C /* SXPhotoBrowserBottomView.m in Sources */,
 				B348F9B621F71E960000F194 /* SXNetRequestTool.m in Sources */,
 				B3AF2FED21FAFF24001E4E67 /* SXLoginController.m in Sources */,
 				0900F517222D4F2700250155 /* SXNetBroadbandController.m in Sources */,
