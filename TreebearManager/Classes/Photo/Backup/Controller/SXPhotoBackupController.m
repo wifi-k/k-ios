@@ -8,7 +8,9 @@
 //
 
 #import "SXPhotoBackupController.h"
-#import "SXPhotoListCell.h"
+#import "SXPhotoSectionHeaderView.h"
+#import "SXPhotoBackupSectionFooterView.h"
+#import "SXPhotoBackupCollectionCell.h"
 
 #define COL 3
 
@@ -64,23 +66,61 @@
 }
 
 #pragma mark -UICollectionViewDelegate/UICollectionViewDataSource-
-#pragma mark -UICollectionViewDelegate/UICollectionViewDataSource-
 //分组
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;
+    return 1+1;
 }
 
 //第section组中有几个cell
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.dataArray.count;
+    if (section == 0) {
+        return 0;
+    } else {
+        return self.dataArray.count;
+    }
 }
 
 //返回cell长啥样
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    SXPhotoListCell *cell = [SXPhotoListCell cellWithCollectionView:collectionView atIndexPath:indexPath];
-    PHAsset *asset = self.dataArray[indexPath.item];
-    cell.asset = asset;
-    return cell;
+    if (indexPath.section == 0) {
+        return 0;
+    } else {
+        SXPhotoBackupCollectionCell *cell = [SXPhotoBackupCollectionCell cellWithCollectionView:collectionView atIndexPath:indexPath];
+        PHAsset *asset = self.dataArray[indexPath.item];
+        cell.asset = asset;
+        return cell;
+    }
+}
+
+//设置区头高度
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    if (section == 0) {
+        return CGSizeZero;
+    }
+    return CGSizeMake(SCREEN_WIDTH,50);
+}
+
+//设置区尾高度
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
+    if (section == 0) {
+        return CGSizeMake(SCREEN_WIDTH,212);
+    } else {
+        return CGSizeZero;
+    }
+    return CGSizeZero;
+}
+
+//配置区头
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(nonnull NSString *)kind atIndexPath:(nonnull NSIndexPath *)indexPath{
+    if (kind == UICollectionElementKindSectionHeader) {
+        SXPhotoSectionHeaderView *headerView = [SXPhotoSectionHeaderView sectionHeaderAwakeFromClass:collectionView atIndexPath:indexPath];
+        headerView.title = @"正在备份";
+        return headerView;
+    } else if(kind == UICollectionElementKindSectionFooter){
+        SXPhotoBackupSectionFooterView *reusableView = [SXPhotoBackupSectionFooterView sectionHeaderAwakeFromNib:collectionView atIndexPath:indexPath];
+        return reusableView;
+    }
+    return nil;
 }
 
 @end

@@ -77,8 +77,9 @@
                 DLog(@"tag:%ld",tag);
                 break;
             case 1:{
-//                NSArray *indexPaths = [weakSelf.collectionView indexPathsForVisibleItems];
+                NSArray *indexPaths = [weakSelf.collectionView indexPathsForVisibleItems];
 //                [weakSelf.collectionView deleteItemsAtIndexPaths:indexPaths];
+                [weakSelf collectionView:weakSelf.collectionView didSelectItemAtIndexPath:indexPaths[0]];
             }
                 break;
             case 2:

@@ -337,6 +337,10 @@
 		09EF2FBC225B6F0F00C2C17C /* SXPhotoBrowserBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FBB225B6F0F00C2C17C /* SXPhotoBrowserBottomView.m */; };
 		09EF2FBE225B6F1900C2C17C /* SXPhotoBrowserBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09EF2FBD225B6F1900C2C17C /* SXPhotoBrowserBottomView.xib */; };
 		09EF2FC1225C430D00C2C17C /* DeviceUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FC0225C430D00C2C17C /* DeviceUtils.m */; };
+		09EF2FC4225CBA6400C2C17C /* SXPhotoBackupSectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FC3225CBA6400C2C17C /* SXPhotoBackupSectionFooterView.m */; };
+		09EF2FC6225CBA9800C2C17C /* SXPhotoBackupSectionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09EF2FC5225CBA9800C2C17C /* SXPhotoBackupSectionFooterView.xib */; };
+		09EF2FCA225CBB6500C2C17C /* SXPhotoBackupCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FC8225CBB6500C2C17C /* SXPhotoBackupCollectionCell.m */; };
+		09EF2FCB225CBB6500C2C17C /* SXPhotoBackupCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09EF2FC9225CBB6500C2C17C /* SXPhotoBackupCollectionCell.xib */; };
 		09F233092223EE4D0086AB35 /* SXXiaoKiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233082223EE4D0086AB35 /* SXXiaoKiController.m */; };
 		09F233182223F03C0086AB35 /* SXHomeXiaoKiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233162223F03C0086AB35 /* SXHomeXiaoKiCell.m */; };
 		09F233192223F03C0086AB35 /* SXHomeXiaoKiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F233172223F03C0086AB35 /* SXHomeXiaoKiCell.xib */; };
@@ -1017,6 +1021,12 @@
 		09EF2FBD225B6F1900C2C17C /* SXPhotoBrowserBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXPhotoBrowserBottomView.xib; sourceTree = "<group>"; };
 		09EF2FBF225C430D00C2C17C /* DeviceUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceUtils.h; sourceTree = "<group>"; };
 		09EF2FC0225C430D00C2C17C /* DeviceUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceUtils.m; sourceTree = "<group>"; };
+		09EF2FC2225CBA6400C2C17C /* SXPhotoBackupSectionFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPhotoBackupSectionFooterView.h; sourceTree = "<group>"; };
+		09EF2FC3225CBA6400C2C17C /* SXPhotoBackupSectionFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoBackupSectionFooterView.m; sourceTree = "<group>"; };
+		09EF2FC5225CBA9800C2C17C /* SXPhotoBackupSectionFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXPhotoBackupSectionFooterView.xib; sourceTree = "<group>"; };
+		09EF2FC7225CBB6500C2C17C /* SXPhotoBackupCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPhotoBackupCollectionCell.h; sourceTree = "<group>"; };
+		09EF2FC8225CBB6500C2C17C /* SXPhotoBackupCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoBackupCollectionCell.m; sourceTree = "<group>"; };
+		09EF2FC9225CBB6500C2C17C /* SXPhotoBackupCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXPhotoBackupCollectionCell.xib; sourceTree = "<group>"; };
 		09F233072223EE4D0086AB35 /* SXXiaoKiController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXXiaoKiController.h; sourceTree = "<group>"; };
 		09F233082223EE4D0086AB35 /* SXXiaoKiController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXXiaoKiController.m; sourceTree = "<group>"; };
 		09F233152223F03C0086AB35 /* SXHomeXiaoKiCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeXiaoKiCell.h; sourceTree = "<group>"; };
@@ -2607,6 +2617,12 @@
 		09EF2FAB225B264500C2C17C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				09EF2FC2225CBA6400C2C17C /* SXPhotoBackupSectionFooterView.h */,
+				09EF2FC3225CBA6400C2C17C /* SXPhotoBackupSectionFooterView.m */,
+				09EF2FC5225CBA9800C2C17C /* SXPhotoBackupSectionFooterView.xib */,
+				09EF2FC7225CBB6500C2C17C /* SXPhotoBackupCollectionCell.h */,
+				09EF2FC8225CBB6500C2C17C /* SXPhotoBackupCollectionCell.m */,
+				09EF2FC9225CBB6500C2C17C /* SXPhotoBackupCollectionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3743,6 +3759,7 @@
 				095540BA221E4DCE005A5485 /* SXRegistSetPwdHeaderView.xib in Resources */,
 				093C12DD225345B2005682C8 /* SXTimeControlFooterView.xib in Resources */,
 				092D6D0D2202D78300538AC8 /* SXRegistHeaderView.xib in Resources */,
+				09EF2FCB225CBB6500C2C17C /* SXPhotoBackupCollectionCell.xib in Resources */,
 				098BA2F82216ADDF00F58639 /* SXPhotoListCell.xib in Resources */,
 				091BC4E9224482B900FEBFD1 /* SXUpdatePwdConfirmController.xib in Resources */,
 				B348F99421F714CC0000F194 /* LaunchScreen.storyboard in Resources */,
@@ -3795,6 +3812,7 @@
 				093C12FB2254A660005682C8 /* point@3x.png in Resources */,
 				09D5F5F1222689E300EA681A /* SXHomeMainSectionFooterView.xib in Resources */,
 				09D5F67D222BC87000EA681A /* SXFamilyMemberCell.xib in Resources */,
+				09EF2FC6225CBA9800C2C17C /* SXPhotoBackupSectionFooterView.xib in Resources */,
 				09B9B88622326974000868D5 /* SXDHCPServerHeaderView.xib in Resources */,
 				09B9B85122311126000868D5 /* SXAdvancedOptionCell.xib in Resources */,
 				0936B72622392B5900E68C4C /* SXPersonalInfoHeaderView.xib in Resources */,
@@ -3947,6 +3965,7 @@
 				09462AE82237AE930063F67E /* SXOnlineFixedIPHeaderView.m in Sources */,
 				09EF2FB4225B3A6300C2C17C /* SXPhotoBrowserController.m in Sources */,
 				093C13182255ED27005682C8 /* SXHomeReportPageParam.m in Sources */,
+				09EF2FC4225CBA6400C2C17C /* SXPhotoBackupSectionFooterView.m in Sources */,
 				09B9B7B5222FAE0C000868D5 /* SXSingleAlertView.m in Sources */,
 				093C131F2255F266005682C8 /* SXHomeReportTableCell.m in Sources */,
 				09D5F5F92226C22B00EA681A /* SXAlertControllerTool.m in Sources */,
@@ -4162,6 +4181,7 @@
 				09B9B7F92230EAD2000868D5 /* SXWifiSettingController.m in Sources */,
 				099CEFF0223B452D0077DE42 /* SXHomeReportReusableView.m in Sources */,
 				0936B729223930FA00E68C4C /* SXNickNameUpdateController.m in Sources */,
+				09EF2FCA225CBB6500C2C17C /* SXPhotoBackupCollectionCell.m in Sources */,
 				09F23344222538FB0086AB35 /* SXFamilyMemberController.m in Sources */,
 				092D6D202202E70300538AC8 /* SXForgetConfirmHeaderView.m in Sources */,
 				09D5F646222A615300EA681A /* SXForbiddenAppOptionController.m in Sources */,
