@@ -10,14 +10,16 @@
 #import "SXPhotoBrowserBottomView.h"
 #import "SXPhotoBrowserCell.h"
 
-#define COL 3
-
 @interface SXPhotoBrowserController ()<UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate>
 ///底部视图
 @property (nonatomic, weak) SXPhotoBrowserBottomView *bottomView;
 
 ///滚动视图
 @property (nonatomic, weak) UICollectionView *collectionView;
+///当前Cell
+@property (nonatomic, strong) UICollectionViewCell *currentCell;
+///当前索引
+//@property (nonatomic, strong) NSIndexPath *currentIndexPath;
 @end
 
 @implementation SXPhotoBrowserController
@@ -63,19 +65,37 @@
 - (void)setUpUI{
     
     self.view.backgroundColor = UIColor.blackColor;
-//    self.view.backgroundColor = SXColorWhite;
     
     self.navigationItem.title = @"图片浏览";
     
     //2.创建底部视图
+    WS(weakSelf);
     SXPhotoBrowserBottomView *bottomView = [SXPhotoBrowserBottomView bottomView];
+    bottomView.clickOptionBtnBlock = ^(NSInteger tag) {
+        switch (tag) {
+            case 0:
+                DLog(@"tag:%ld",tag);
+                break;
+            case 1:{
+//                NSArray *indexPaths = [weakSelf.collectionView indexPathsForVisibleItems];
+//                [weakSelf.collectionView deleteItemsAtIndexPaths:indexPaths];
+            }
+                break;
+            case 2:
+                DLog(@"tag:%ld",tag);
+                break;
+            default:
+                break;
+        }
+    };
     [self.view addSubview:bottomView];
     self.bottomView = bottomView;
     
     //流水布局
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    layout.itemSize = CGSizeMake(SCREEN_WIDTH, SCREEN_WIDTH);
+    
+    layout.itemSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - SafeAreaTopHeight - iPhoneX_Add_Bottom - 50);
     layout.minimumInteritemSpacing = 0; //定义左右cell的最小间距
     layout.minimumLineSpacing = 0;//定义上下cell的最小间距
     layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);//设置其边界
@@ -88,21 +108,21 @@
     collectV.bounces = NO;
     collectV.showsVerticalScrollIndicator = NO;
     collectV.showsHorizontalScrollIndicator = NO;
-    collectV.backgroundColor = [UIColor whiteColor];
+    collectV.backgroundColor = UIColor.blackColor;
     [self.view addSubview:collectV];
     self.collectionView = collectV;
     
-    //    NSArray *sectionArr = self.assetArray[self.indexPath.section];
-    //    PHAsset *asset = sectionArr[self.indexPath.row];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    PHAsset *asset = self.dataArray[self.indexPath.item];
+    NSDate *date = asset.creationDate;
+    NSDateFormatter *dateformatter  = [[NSDateFormatter alloc] init];
+    [dateformatter setDateFormat:@"yyyy年MM月dd日"];
+    NSString *dateString = [dateformatter stringFromDate:date];
+    self.navigationItem.title = dateString;
+    
+    [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.collectionView scrollToItemAtIndexPath:self.indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
-        
-        PHAsset *asset = self.dataArray[self.indexPath.item];
-        NSDate *date = asset.creationDate;
-        NSDateFormatter *dateformatter  = [[NSDateFormatter alloc] init];
-        [dateformatter setDateFormat:@"yyyy年MM月dd日"];
-        NSString *dateString = [dateformatter stringFromDate:date];
-        self.navigationItem.title = dateString;
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
     });
 }
 
@@ -112,11 +132,16 @@
     [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.view);
         make.right.mas_equalTo(self.view.mas_right);
-        make.bottom.mas_equalTo(self.view.mas_bottom);
+        make.bottom.mas_equalTo(self.view.mas_bottom).mas_offset(-iPhoneX_Add_Bottom);
         make.height.mas_equalTo(50);
     }];
     
-    self.collectionView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH);
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view);
+        make.right.mas_equalTo(self.view.mas_right);
+        make.top.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.bottomView.mas_top);
+    }];
 }
 
 #pragma mark -UICollectionViewDelegate/UICollectionViewDataSource-
@@ -138,17 +163,15 @@
     return cell;
 }
 
-#pragma mark -UIScrollViewDelegate 代理方法-
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-//
-//    CGPoint offset = scrollView.contentOffset;
-//    if(offset.x<=0){
-//        offset.x = 0;
-//        scrollView.contentOffset = offset;
-//    }
-//    NSUInteger index = round(offset.x / scrollView.frame.size.width);
-//}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    // 删除模型数据
+    [self.dataArray removeObjectAtIndex:indexPath.item];
+    // 删UI(刷新UI)
+    [collectionView deleteItemsAtIndexPaths:@[indexPath]];
+}
 
+
+#pragma mark -UIScrollViewDelegate 代理方法-
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     CGPoint offset = scrollView.contentOffset;
     if(offset.x<=0){
@@ -166,4 +189,5 @@
     NSString *dateString = [dateformatter stringFromDate:date];
     self.navigationItem.title = dateString;
 }
+
 @end

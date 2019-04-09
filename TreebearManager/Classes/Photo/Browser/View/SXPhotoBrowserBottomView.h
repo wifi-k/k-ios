@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)bottomView;
 
+///点击操作按钮回调
+@property (nonatomic, copy) void (^clickOptionBtnBlock)(NSInteger tag);
+
 @end
 
 NS_ASSUME_NONNULL_END

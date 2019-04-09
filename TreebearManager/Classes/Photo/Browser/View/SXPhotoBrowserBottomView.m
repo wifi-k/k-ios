@@ -30,4 +30,11 @@
 
 }
 
+- (IBAction)clickOptionBtn:(UIButton *)sender {
+    if (self.clickOptionBtnBlock) {
+        self.clickOptionBtnBlock(sender.tag);
+    }
+}
+
+
 @end

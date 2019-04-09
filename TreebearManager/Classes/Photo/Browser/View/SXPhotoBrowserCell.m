@@ -30,8 +30,8 @@
 #pragma mark -UI-
 - (void)setUpUI{
     
-    self.contentView.backgroundColor = SXColorWhite;
-    self.contentView.contentMode = UIViewContentModeScaleToFill;
+    self.contentView.backgroundColor = UIColor.blackColor;
+    self.contentView.contentMode = UIViewContentModeScaleAspectFill;
 }
 
 #pragma mark -setter-
