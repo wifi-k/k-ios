@@ -98,7 +98,7 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 #define UMSocialKey @"5c9c2fc23fc195c4c100020b" // UMeng Share
 #define UMSocialSecret @"lpshgbh0wgxlximdeifmkfcrhzhtnqfz" // UMeng Secret
 #define WeChatAppID     @"wxa62e4e12f7d59b51"   // WeChat
-#define WeChatAppSecret @"40c3896b188cca0960fb0ab61548caa8"
+#define WeChatAppSecret @"4a37cd29b146bf2a20bb95ad13486233" // WeChat Secret
 
 #define RedirectURL @"https://www.treebear.cn"
 
