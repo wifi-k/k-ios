@@ -94,10 +94,9 @@
     
     //    NSArray *sectionArr = self.assetArray[self.indexPath.section];
     //    PHAsset *asset = sectionArr[self.indexPath.row];
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:self.indexPath.row inSection:self.indexPath.section-1];
-//        [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
-//    });
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.collectionView scrollToItemAtIndexPath:self.indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+    });
 }
 
 - (void)viewDidLayoutSubviews{

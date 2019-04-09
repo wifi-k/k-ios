@@ -372,7 +372,7 @@
     }
     NSInteger row = 0;
     for (int i=0; i<indexPath.section-1; i++) {
-        NSArray *sectionArr = self.assetArray[indexPath.section-1];
+        NSArray *sectionArr = self.assetArray[i];
         row += sectionArr.count;
     }
     row += indexPath.item;
