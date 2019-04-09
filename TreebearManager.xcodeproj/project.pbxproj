@@ -336,6 +336,7 @@
 		09EF2FB9225B501500C2C17C /* SXPhotoBrowserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09EF2FB7225B501500C2C17C /* SXPhotoBrowserCell.xib */; };
 		09EF2FBC225B6F0F00C2C17C /* SXPhotoBrowserBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FBB225B6F0F00C2C17C /* SXPhotoBrowserBottomView.m */; };
 		09EF2FBE225B6F1900C2C17C /* SXPhotoBrowserBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09EF2FBD225B6F1900C2C17C /* SXPhotoBrowserBottomView.xib */; };
+		09EF2FC1225C430D00C2C17C /* DeviceUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FC0225C430D00C2C17C /* DeviceUtils.m */; };
 		09F233092223EE4D0086AB35 /* SXXiaoKiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233082223EE4D0086AB35 /* SXXiaoKiController.m */; };
 		09F233182223F03C0086AB35 /* SXHomeXiaoKiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233162223F03C0086AB35 /* SXHomeXiaoKiCell.m */; };
 		09F233192223F03C0086AB35 /* SXHomeXiaoKiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F233172223F03C0086AB35 /* SXHomeXiaoKiCell.xib */; };
@@ -1014,6 +1015,8 @@
 		09EF2FBA225B6F0F00C2C17C /* SXPhotoBrowserBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPhotoBrowserBottomView.h; sourceTree = "<group>"; };
 		09EF2FBB225B6F0F00C2C17C /* SXPhotoBrowserBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoBrowserBottomView.m; sourceTree = "<group>"; };
 		09EF2FBD225B6F1900C2C17C /* SXPhotoBrowserBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXPhotoBrowserBottomView.xib; sourceTree = "<group>"; };
+		09EF2FBF225C430D00C2C17C /* DeviceUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceUtils.h; sourceTree = "<group>"; };
+		09EF2FC0225C430D00C2C17C /* DeviceUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceUtils.m; sourceTree = "<group>"; };
 		09F233072223EE4D0086AB35 /* SXXiaoKiController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXXiaoKiController.h; sourceTree = "<group>"; };
 		09F233082223EE4D0086AB35 /* SXXiaoKiController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXXiaoKiController.m; sourceTree = "<group>"; };
 		09F233152223F03C0086AB35 /* SXHomeXiaoKiCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeXiaoKiCell.h; sourceTree = "<group>"; };
@@ -3540,6 +3543,8 @@
 			children = (
 				B3AF300021FB08D1001E4E67 /* SXUtil.h */,
 				B3AF300121FB08D1001E4E67 /* SXUtil.m */,
+				09EF2FBF225C430D00C2C17C /* DeviceUtils.h */,
+				09EF2FC0225C430D00C2C17C /* DeviceUtils.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -4160,6 +4165,7 @@
 				09F23344222538FB0086AB35 /* SXFamilyMemberController.m in Sources */,
 				092D6D202202E70300538AC8 /* SXForgetConfirmHeaderView.m in Sources */,
 				09D5F646222A615300EA681A /* SXForbiddenAppOptionController.m in Sources */,
+				09EF2FC1225C430D00C2C17C /* DeviceUtils.m in Sources */,
 				09D5F673222BC4D200EA681A /* SXNetOptionController.m in Sources */,
 				09C8CE412249BFEF00C03F43 /* SXFamilyMemberModel.m in Sources */,
 				09D5F681222D23C900EA681A /* SXNetOptionCell.m in Sources */,

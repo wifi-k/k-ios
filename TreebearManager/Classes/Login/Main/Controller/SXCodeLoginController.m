@@ -66,6 +66,9 @@
     SXLoginParam *param = [SXLoginParam param];
     param.mobile = self.headerView.param.mobile;
     param.vcode = self.headerView.param.vcode;
+    param.devType = @1;
+    param.devToken = SXUserDefaultsTool.deviceToken;
+    param.devOs = DEVICE_MODEL;
     [SXLoginNetTool loginWithVCodeDataWithParams:param.mj_keyValues Success:^{
         [weakSelf changeRootVC];
     } failure:^(NSError * _Nonnull error) {

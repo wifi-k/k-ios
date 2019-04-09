@@ -28,6 +28,18 @@ NS_ASSUME_NONNULL_BEGIN
  密码
  */
 @property (nonatomic, copy) NSString *passwd;
+/**
+ 推送token
+ */
+@property (nonatomic, copy) NSString *devToken;
+/**
+ 设备操作系统信息
+ */
+@property (nonatomic, copy) NSString *devOs;
+/**
+ 1-iOS,2-Andriod
+ */
+@property (nonatomic, copy) NSNumber *devType;
 
 @end
 

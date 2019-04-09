@@ -49,6 +49,9 @@
     WS(weakSelf);
     SXRegistParam *param = [SXRegistParam param];
     param.passwd = self.headerView.param.passwd.md5String;
+    param.devType = @1;
+    param.devToken = SXUserDefaultsTool.deviceToken;
+    param.devOs = DEVICE_MODEL;
     [SXLoginNetTool setPasswdDataWithParams:param.mj_keyValues Success:^{
         [MBProgressHUD showSuccessWithMessage:@"设置成功!" toView:SXKeyWindow];
         

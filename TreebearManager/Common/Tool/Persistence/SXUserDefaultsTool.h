@@ -21,5 +21,10 @@
 
 ///取出记录
 + (BOOL)isShowGuide;
+
+///保存deviceToken到本地(推送)
++ (void)saveDeviceToken:(NSString *)deviceToken;
+///取出deviceToken(推送)
++ (NSString *)deviceToken;
     
 @end

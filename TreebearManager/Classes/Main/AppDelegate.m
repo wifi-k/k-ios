@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "SXRootTool.h"
 #import "SXNetReachablityTool.h"
+#import "SXUserDefaultsTool.h"
 #import <UMCommon/UMCommon.h>          // 公共组件是所有友盟产品的基础组件，必选
 #import <UMSocialCore/UMSocialCore.h>  // 分享组件
 #import <UMPush/UMessage.h>            // Push组件
@@ -153,6 +154,7 @@
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
     NSString *deviceTokenStr = [[deviceToken.description stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""];
     DLog(@"deviceTokenStr:%@",deviceTokenStr);
+    [SXUserDefaultsTool saveDeviceToken:deviceToken.description];
     [UMessage registerDeviceToken:deviceToken];
 }
 

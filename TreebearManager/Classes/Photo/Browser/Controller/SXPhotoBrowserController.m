@@ -96,6 +96,13 @@
     //    PHAsset *asset = sectionArr[self.indexPath.row];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.collectionView scrollToItemAtIndexPath:self.indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+        
+        PHAsset *asset = self.dataArray[self.indexPath.item];
+        NSDate *date = asset.creationDate;
+        NSDateFormatter *dateformatter  = [[NSDateFormatter alloc] init];
+        [dateformatter setDateFormat:@"yyyy年MM月dd日"];
+        NSString *dateString = [dateformatter stringFromDate:date];
+        self.navigationItem.title = dateString;
     });
 }
 
