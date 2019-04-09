@@ -26,8 +26,8 @@
 //初始化UI
 - (void)setUpUI{
     
-//    self.backgroundColor = SXColorWhite;
-    self.backgroundColor = SXColorRandom;
+    self.backgroundColor = SXColorWhite;
+//    self.backgroundColor = SXColorRandom;
 }
 
 @end
