@@ -364,8 +364,21 @@
     DLog(@"section%ld->item:%ld",indexPath.section-1,indexPath.item);
     
     SXPhotoBrowserController *browserVC = [[SXPhotoBrowserController alloc] init];
-    browserVC.assetArray = self.assetArray;
-    browserVC.indexPath = indexPath;
+    NSMutableArray *dataArray = [NSMutableArray array];
+    for (NSArray *sectionArr in self.assetArray) {
+        for (PHAsset *asset in sectionArr) {
+            [dataArray addObject:asset];
+        }
+    }
+    NSInteger row = 0;
+    for (int i=0; i<indexPath.section-1; i++) {
+        NSArray *sectionArr = self.assetArray[indexPath.section-1];
+        row += sectionArr.count;
+    }
+    row += indexPath.item;
+    NSIndexPath *indexPath0 = [NSIndexPath indexPathForItem:row inSection:0];
+    browserVC.dataArray = dataArray;
+    browserVC.indexPath = indexPath0;
     [self.navigationController pushViewController:browserVC animated:YES];
 }
 

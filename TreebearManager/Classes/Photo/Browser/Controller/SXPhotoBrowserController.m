@@ -94,10 +94,10 @@
     
     //    NSArray *sectionArr = self.assetArray[self.indexPath.section];
     //    PHAsset *asset = sectionArr[self.indexPath.row];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:self.indexPath.row inSection:self.indexPath.section-1];
-        [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
-    });
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:self.indexPath.row inSection:self.indexPath.section-1];
+//        [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+//    });
 }
 
 - (void)viewDidLayoutSubviews{
@@ -116,38 +116,48 @@
 #pragma mark -UICollectionViewDelegate/UICollectionViewDataSource-
 //分组
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return self.assetArray.count;
+    return 1;
 }
 
 //第section组中有几个cell
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    NSArray *sectionArr = self.assetArray[section];
-    return sectionArr.count;
+    return self.dataArray.count;
 }
 
 //返回cell长啥样
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SXPhotoBrowserCell *cell = [SXPhotoBrowserCell cellWithCollectionView:collectionView atIndexPath:indexPath];
-    NSArray *sectionArr = self.assetArray[indexPath.section];
-    PHAsset *asset = sectionArr[indexPath.item];
+    PHAsset *asset = self.dataArray[indexPath.item];
     cell.asset = asset;
     return cell;
 }
 
-//控制缩放是在中心
-- (void)scrollViewDidZoom:(UIScrollView *)scrollView{
-    
-    
-}
-
-//设置区头高度
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
-//    return CGSizeZero;
-//}
+#pragma mark -UIScrollViewDelegate 代理方法-
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
 //
-////设置区尾高度
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
-//    return CGSizeZero;
+//    CGPoint offset = scrollView.contentOffset;
+//    if(offset.x<=0){
+//        offset.x = 0;
+//        scrollView.contentOffset = offset;
+//    }
+//    NSUInteger index = round(offset.x / scrollView.frame.size.width);
 //}
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    CGPoint offset = scrollView.contentOffset;
+    if(offset.x<=0){
+        offset.x = 0;
+        scrollView.contentOffset = offset;
+    }
+    NSUInteger index = round(offset.x / scrollView.frame.size.width);
+    
+    DLog(@"index:%lu",(unsigned long)index);
+    
+    PHAsset *asset = self.dataArray[index];
+    NSDate *date = asset.creationDate;
+    NSDateFormatter *dateformatter  = [[NSDateFormatter alloc] init];
+    [dateformatter setDateFormat:@"yyyy年MM月dd日"];
+    NSString *dateString = [dateformatter stringFromDate:date];
+    self.navigationItem.title = dateString;
+}
 @end
