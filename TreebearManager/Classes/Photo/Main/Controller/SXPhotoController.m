@@ -115,7 +115,14 @@
 }
 
 - (void)rightButtonAction:(UIButton *)btn{
+    NSMutableArray *dataArray = [NSMutableArray array];
+    for (NSArray *sectionArr in self.assetArray) {
+        for (PHAsset *asset in sectionArr) {
+            [dataArray addObject:asset];
+        }
+    }
     SXPhotoBackupController *backVC = [[SXPhotoBackupController alloc] init];
+    backVC.dataArray = dataArray;
     [self.navigationController pushViewController:backVC animated:YES];
 }
 
