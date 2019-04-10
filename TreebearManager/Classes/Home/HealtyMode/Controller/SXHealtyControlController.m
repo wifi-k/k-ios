@@ -113,7 +113,8 @@
         weakSelf.timers = [NSMutableArray arrayWithArray:model.timer];
         //防止服务端返回空
         if (result.wifi == nil) {
-            weakSelf.result.wifi = @[@{@"freq":@0,@"rssi":@5,@"time":@[]},@{}];
+            NSArray *wifiArr = @[@{@"freq":@0,@"rssi":@5,@"time":@[]},@{}];
+            weakSelf.result.wifi = [SXHealtyControlModel mj_objectArrayWithKeyValuesArray:wifiArr];
         }
         //添加默认值
         if (result.wifi.count) {
