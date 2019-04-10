@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SXHomeMainSectionEmptyFooterView : UIView
 
-+ (instancetype)footerView;
++ (instancetype)footerViewWithImageName:(NSString *)imageName title:(NSString *)title subTitle:(NSString *)subTitle;
 
 @end
 

@@ -57,8 +57,10 @@
 #pragma mark -setter-
 - (void)setModel:(SXHomeReportModel *)model{
     _model = model;
-    
+ 
+    self.timeL.text = [NSString stringWithFormat:@"上周平均每日活跃时长:%@",model.totalTime];
     self.mobileNameL.text = model.hostName;
+    [self.mobileImageView sd_setImageWithURL:[NSURL URLWithString:model.macIcon] placeholderImage:[UIImage imageNamed:@"img_android_icon"] options:SDWebImageRetryFailed];
 }
 
 @end

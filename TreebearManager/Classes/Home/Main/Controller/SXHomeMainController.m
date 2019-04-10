@@ -346,13 +346,6 @@
     [SXHomeReportNetTool userNodeDeviceWeekListParams:param.mj_keyValues Success:^(SXHomeReportResult *result) {
         //数据初始化
         weakSelf.reportArray = [NSMutableArray arrayWithArray:result.page];
-#warning mark -测试使用-
-        for (int i=0; i<3; i++) {
-            SXHomeReportModel *model = [[SXHomeReportModel alloc] init];
-            model.hostName = [NSString stringWithFormat:@"测试%d",i];
-            model.macVendor = [NSString stringWithFormat:@"test%d",i];
-            [weakSelf.reportArray addObject:model];
-        }
         //刷新UI
         [weakSelf.tableView reloadData];
     } failure:^(NSError *error) {
@@ -437,13 +430,13 @@
         if (self.mobileArray.count) {
             return 80.0f;
         } else {
-            return 200.0f;
+            return 220.0f;
         }
     } else if (section == 1){
         if (self.reportArray.count) {
             return 80.0f;
         } else {
-            return 200.0f;
+            return 220.0f;
         }
     } else {
         return 0.01f;
@@ -461,7 +454,7 @@
             };
             return footerView;
         } else {
-            SXHomeMainSectionEmptyFooterView *footerView = [SXHomeMainSectionEmptyFooterView footerView];
+            SXHomeMainSectionEmptyFooterView *footerView = [SXHomeMainSectionEmptyFooterView footerViewWithImageName:@"img_empty_mobile" title:@"暂无设备" subTitle:@"请绑定设备进行设置"];
             return footerView;
         }
     } else if (section == 1){
@@ -473,7 +466,7 @@
             };
             return footerView;
         } else {
-            SXHomeMainSectionEmptyFooterView *footerView = [SXHomeMainSectionEmptyFooterView footerView];
+            SXHomeMainSectionEmptyFooterView *footerView = [SXHomeMainSectionEmptyFooterView footerViewWithImageName:@"img_empty_report" title:@"暂无周报" subTitle:@"开启儿童上网关爱查看周报"];
             return footerView;
         }
     } else {
