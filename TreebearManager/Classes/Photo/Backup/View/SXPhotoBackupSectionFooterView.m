@@ -8,6 +8,17 @@
 
 #import "SXPhotoBackupSectionFooterView.h"
 
+@interface SXPhotoBackupSectionFooterView ()
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *photoCountL;
+@property (weak, nonatomic) IBOutlet UILabel *speedL;
+@property (weak, nonatomic) IBOutlet UIView *devideLineView;
+
+@property (weak, nonatomic) IBOutlet UILabel *diskL;
+@property (weak, nonatomic) IBOutlet UILabel *diskCountL;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
+@end
+
 @implementation SXPhotoBackupSectionFooterView
 
 + (instancetype)sectionHeaderAwakeFromNib:(UICollectionView *)collectionView atIndexPath:(NSIndexPath *)indexPath {
@@ -27,7 +38,18 @@
 - (void)setUpUI{
     
     self.backgroundColor = SXColorWhite;
-//    self.backgroundColor = SXColorRandom;
+    
+    self.photoCountL.textColor = SXColor666666;
+    self.speedL.textColor = SXColor666666;
+    
+    self.devideLineView.backgroundColor = SXColorDivideLine;
+    self.devideLineView.height = 0.5;
+    
+    self.diskL.textColor = SXColor333333;
+    self.diskCountL.textColor = SXColor999999;
+    
+    self.progressView.tintColor = SXColorBlue;
+    self.progressView.trackTintColor = [UIColor hex:@"EEEEEE"];
 }
 
 @end

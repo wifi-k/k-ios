@@ -8,7 +8,7 @@
 //
 
 #import "SXPhotoBackupController.h"
-#import "SXPhotoSectionHeaderView.h"
+#import "SXPhotoBackupSectionHeaderView.h"
 #import "SXPhotoBackupSectionFooterView.h"
 #import "SXPhotoBackupCollectionCell.h"
 
@@ -103,7 +103,7 @@
 //设置区尾高度
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
     if (section == 0) {
-        return CGSizeMake(SCREEN_WIDTH,212);
+        return CGSizeMake(SCREEN_WIDTH,170);
     } else {
         return CGSizeZero;
     }
@@ -113,8 +113,11 @@
 //配置区头
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(nonnull NSString *)kind atIndexPath:(nonnull NSIndexPath *)indexPath{
     if (kind == UICollectionElementKindSectionHeader) {
-        SXPhotoSectionHeaderView *headerView = [SXPhotoSectionHeaderView sectionHeaderAwakeFromClass:collectionView atIndexPath:indexPath];
-        headerView.title = @"正在备份";
+        SXPhotoBackupSectionHeaderView *headerView = [SXPhotoBackupSectionHeaderView sectionHeaderAwakeFromNib:collectionView atIndexPath:indexPath];
+        headerView.clickBackupBtnBlock = ^{
+            DLog("暂停备份...");
+            [MBProgressHUD showWarningWithMessage:@"备份中..." toView:SXKeyWindow];
+        };
         return headerView;
     } else if(kind == UICollectionElementKindSectionFooter){
         SXPhotoBackupSectionFooterView *reusableView = [SXPhotoBackupSectionFooterView sectionHeaderAwakeFromNib:collectionView atIndexPath:indexPath];
