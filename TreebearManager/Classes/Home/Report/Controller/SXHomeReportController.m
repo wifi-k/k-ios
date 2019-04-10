@@ -90,6 +90,14 @@
         
         //数据初始化
         weakSelf.dataArray = [NSMutableArray arrayWithArray:result.page];
+#warning mark -测试数据-
+        for (int i=0; i<3; i++) {
+            SXHomeReportModel *model = [[SXHomeReportModel alloc] init];
+            model.hostName = [NSString stringWithFormat:@"测试%d",i];
+            model.macVendor = [NSString stringWithFormat:@"test%d",i];
+            [weakSelf.dataArray addObject:model];
+        }
+        
         //刷新UI
         [weakSelf.tableView reloadData];
         //判断是否到底
@@ -139,7 +147,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100.0f;
+    return 180.0f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

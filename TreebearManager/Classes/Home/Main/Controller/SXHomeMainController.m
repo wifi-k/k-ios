@@ -74,8 +74,6 @@
     [self getNodeData];
     //选中家庭成员
     [self userNodeListallData];
-    //获取设备一周上网时长
-    [self userNodeDeviceWeekListData];
 }
     
 - (void)setUpUI{
@@ -147,6 +145,7 @@
 
 - (void)deviceUpdateRemarkSuccess{
     [self userNodeDeviceListData];
+    [self userNodeDeviceWeekListData];
 }
 
 #pragma mark -页面跳转-
@@ -163,6 +162,8 @@
         [weakSelf.headerView setUpData];
         //获取手机设备列表
         [weakSelf userNodeDeviceListData];
+        //获取设备一周上网时长
+        [weakSelf userNodeDeviceWeekListData];
     };
     [self.navigationController pushViewController:equipVC animated:YES];
 }
@@ -286,6 +287,8 @@
         
         //获取手机设备列表
         [weakSelf userNodeDeviceListData];
+        //获取设备一周上网时长
+        [weakSelf userNodeDeviceWeekListData];
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
@@ -343,13 +346,6 @@
     [SXHomeReportNetTool userNodeDeviceWeekListParams:param.mj_keyValues Success:^(SXHomeReportResult *result) {
         //数据初始化
         weakSelf.reportArray = [NSMutableArray arrayWithArray:result.page];
-        //刷新UI
-        [weakSelf.tableView reloadData];
-    } failure:^(NSError *error) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            NSString *message = [error.userInfo objectForKey:@"msg"];
-            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
-        });
 #warning mark -测试使用-
         for (int i=0; i<3; i++) {
             SXHomeReportModel *model = [[SXHomeReportModel alloc] init];
@@ -359,6 +355,11 @@
         }
         //刷新UI
         [weakSelf.tableView reloadData];
+    } failure:^(NSError *error) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSString *message = [error.userInfo objectForKey:@"msg"];
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        });
     }];
 }
     
