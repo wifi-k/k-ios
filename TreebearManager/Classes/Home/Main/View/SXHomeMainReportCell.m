@@ -7,12 +7,11 @@
 //
 
 #import "SXHomeMainReportCell.h"
-#import "SXHomeMainReportCornerView.h"
 
 @interface SXHomeMainReportCell ()
 @property (weak, nonatomic) IBOutlet UILabel *timeL;
 @property (weak, nonatomic) IBOutlet UIImageView *contentBgImageView;
-@property (weak, nonatomic) IBOutlet SXHomeMainReportCornerView *bottomView;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (weak, nonatomic) IBOutlet UIImageView *mobileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *mobileNameL;
 @property (weak, nonatomic) IBOutlet UIButton *reportBtn;
