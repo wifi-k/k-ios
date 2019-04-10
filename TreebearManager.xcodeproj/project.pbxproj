@@ -346,6 +346,7 @@
 		09EF2FD4225DC30D00C2C17C /* SXTopCornerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FD3225DC30D00C2C17C /* SXTopCornerView.m */; };
 		09EF2FD7225DC31E00C2C17C /* SXBottomCornerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FD6225DC31E00C2C17C /* SXBottomCornerView.m */; };
 		09EF2FDA225DC39C00C2C17C /* SXHomeMainReportCornerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FD9225DC39C00C2C17C /* SXHomeMainReportCornerView.m */; };
+		09EF2FDD225E0B6100C2C17C /* SXAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FDC225E0B6100C2C17C /* SXAsset.m */; };
 		09F233092223EE4D0086AB35 /* SXXiaoKiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233082223EE4D0086AB35 /* SXXiaoKiController.m */; };
 		09F233182223F03C0086AB35 /* SXHomeXiaoKiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233162223F03C0086AB35 /* SXHomeXiaoKiCell.m */; };
 		09F233192223F03C0086AB35 /* SXHomeXiaoKiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F233172223F03C0086AB35 /* SXHomeXiaoKiCell.xib */; };
@@ -1041,6 +1042,8 @@
 		09EF2FD6225DC31E00C2C17C /* SXBottomCornerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXBottomCornerView.m; sourceTree = "<group>"; };
 		09EF2FD8225DC39C00C2C17C /* SXHomeMainReportCornerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainReportCornerView.h; sourceTree = "<group>"; };
 		09EF2FD9225DC39C00C2C17C /* SXHomeMainReportCornerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainReportCornerView.m; sourceTree = "<group>"; };
+		09EF2FDB225E0B6100C2C17C /* SXAsset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXAsset.h; sourceTree = "<group>"; };
+		09EF2FDC225E0B6100C2C17C /* SXAsset.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXAsset.m; sourceTree = "<group>"; };
 		09F233072223EE4D0086AB35 /* SXXiaoKiController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXXiaoKiController.h; sourceTree = "<group>"; };
 		09F233082223EE4D0086AB35 /* SXXiaoKiController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXXiaoKiController.m; sourceTree = "<group>"; };
 		09F233152223F03C0086AB35 /* SXHomeXiaoKiCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeXiaoKiCell.h; sourceTree = "<group>"; };
@@ -3212,6 +3215,8 @@
 		B348F96621F6EAC20000F194 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				09EF2FDB225E0B6100C2C17C /* SXAsset.h */,
+				09EF2FDC225E0B6100C2C17C /* SXAsset.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4136,6 +4141,7 @@
 				09C8CE3A224903E600C03F43 /* SXFamilyMemberNetTool.m in Sources */,
 				091BC4CB2242207100FEBFD1 /* PYImageBrowserViewControllerConfiguration.m in Sources */,
 				0900F520222D50DD00250155 /* SXNetBroadbandHeaderView.m in Sources */,
+				09EF2FDD225E0B6100C2C17C /* SXAsset.m in Sources */,
 				09B9B8252230EC8D000868D5 /* SXLANPortController.m in Sources */,
 				B348F9B321F71E2D0000F194 /* SXUploadParam.m in Sources */,
 				09EF2FDA225DC39C00C2C17C /* SXHomeMainReportCornerView.m in Sources */,

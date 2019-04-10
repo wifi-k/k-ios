@@ -66,7 +66,7 @@ static NSString *SXNetWallCellID = @"SXNetWallCellID";
             self.statusL.text = [NSString stringWithFormat:@"在线时间:%@",@"未知"];
             break;
     }
-    self.switchBtn.on = !model.isBlock.boolValue;
+    self.switchBtn.on = model.isBlock.boolValue;
 }
 
 #pragma mark -Event-
@@ -76,14 +76,16 @@ static NSString *SXNetWallCellID = @"SXNetWallCellID";
     param.nodeId = self.model.nodeId;
     param.mac = self.model.mac;
     param.note = self.model.note;
-    NSNumber *isBlock = (sender.isOn? @0:@1);
+    NSNumber *isBlock = (sender.isOn? @1:@0);
     param.isBlock = isBlock;
     [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
     [SXWifiSettingNetTool userDodeDeviceSetDataWithParams:param.mj_keyValues success:^{
         //weakSelf.switchBtn.on = !param.isBlock.boolValue;
         weakSelf.model.isBlock = param.isBlock;
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
-        [MBProgressHUD showSuccessWithMessage:@"设置成功!" toView:SXKeyWindow];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{        
+            [MBProgressHUD showSuccessWithMessage:@"设置成功!" toView:SXKeyWindow];
+        });
     } failure:^(NSError * _Nonnull error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         sender.on = !sender.isOn;

@@ -16,7 +16,7 @@
 #import "SXAlbumAuthorizationTool.h"
 #import "SXAlertControllerTool.h"
 #import "SXPhotoHeaderView.h"
-#import <Photos/Photos.h>
+#import "SXAsset.h"
 
 #define COL 3
 
@@ -26,6 +26,8 @@
 ///数据源
 @property (nonatomic, strong) NSMutableArray *assetArray;
 @property (nonatomic, strong) NSMutableArray *titleArray;
+///是否编辑状态
+@property (nonatomic, assign) BOOL isEditing;
 @end
 
 @implementation SXPhotoController
@@ -170,19 +172,23 @@
     __block NSMutableArray *sectionArr;
     [assetsFetchResults enumerateObjectsUsingBlock:^(PHAsset  * _Nonnull asset, NSUInteger idx, BOOL * _Nonnull stop) {
         DLog(@"asset:%@",asset);
+        //类型转换
+        SXAsset *asset0 = [[SXAsset alloc] init];
+        asset0.asset = asset;
+        asset0.isChecked = NO;
         
-        NSDate *date = asset.creationDate;
+        NSDate *date = asset0.asset.creationDate;
         NSDateFormatter *dateformatter  = [[NSDateFormatter alloc] init];
         [dateformatter setDateFormat:@"yyyy年MM月dd日"];
         NSString *dateString = [dateformatter stringFromDate:date];
         if ([weakSelf.titleArray containsObject:dateString]) {
-            [sectionArr addObject:asset];
+            [sectionArr addObject:asset0];
         } else {//创建分组
             [weakSelf.titleArray addObject:dateString];
             
             sectionArr = [NSMutableArray array];
             [weakSelf.assetArray addObject:sectionArr];
-            [sectionArr addObject:asset];
+            [sectionArr addObject:asset0];
         }
     }];
     [self.collectionView reloadData];
@@ -319,14 +325,24 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    WS(weakSelf);
     SXPhotoListCell *cell = [SXPhotoListCell cellWithCollectionView:collectionView atIndexPath:indexPath];
     NSArray *sectionArr = self.assetArray[indexPath.section-1];
-    PHAsset *asset = sectionArr[indexPath.item];
+    SXAsset *asset = sectionArr[indexPath.item];
     cell.asset = asset;
+    cell.longPressBlock = ^{
+        DLog(@"长按手势...");
+        weakSelf.isEditing = YES;
+        
+        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
+        [collectionView reloadSections:indexSet];
+        
+        [weakSelf.tabBarController.tabBar setHidden:YES];
+    };
     return cell;
 }
 
-//设置区头高度
+//设置分组头部高度
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
     if (section == 0) {
         return CGSizeZero;
@@ -334,17 +350,21 @@
     return CGSizeMake(SCREEN_WIDTH,50);
 }
 
-//设置区尾高度
+//设置分组尾部高度
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
     if (section == 0) {
-        return CGSizeMake(SCREEN_WIDTH,212);
+        if (self.isEditing) {
+            return CGSizeZero;
+        } else {
+            return CGSizeMake(SCREEN_WIDTH,212);
+        }
     } else {
         return CGSizeZero;
     }
     return CGSizeZero;
 }
 
-//配置区头
+//设置分组头部视图
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(nonnull NSString *)kind atIndexPath:(nonnull NSIndexPath *)indexPath{
     if (kind == UICollectionElementKindSectionHeader) {
         SXPhotoSectionHeaderView *headerView = [SXPhotoSectionHeaderView sectionHeaderAwakeFromClass:collectionView atIndexPath:indexPath];
@@ -370,10 +390,38 @@
     
     DLog(@"section%ld->item:%ld",indexPath.section-1,indexPath.item);
     
+    NSArray *sectionArr = self.assetArray[indexPath.section-1];
+    SXAsset *asset = sectionArr[indexPath.item];
+    if (asset.isChecked || self.isEditing == YES) {
+        asset.isChecked = !asset.isChecked;
+        [collectionView reloadItemsAtIndexPaths:@[indexPath]];
+    
+        NSInteger count = 0;
+        NSInteger noCheckCount = 0;
+        for (NSArray *sectionArr in self.assetArray) {
+            for (SXAsset *asset in sectionArr) {
+                ++count;
+                if (asset.isChecked) {
+                    return;
+                } else {
+                    ++noCheckCount;
+                }
+            }
+        }
+        
+        if (noCheckCount == count) {
+            self.isEditing = NO;
+            NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
+            [collectionView reloadSections:indexSet];
+            [self.tabBarController.tabBar setHidden:NO];
+        }
+        return;
+    }
+    
     SXPhotoBrowserController *browserVC = [[SXPhotoBrowserController alloc] init];
     NSMutableArray *dataArray = [NSMutableArray array];
     for (NSArray *sectionArr in self.assetArray) {
-        for (PHAsset *asset in sectionArr) {
+        for (SXAsset *asset in sectionArr) {
             [dataArray addObject:asset];
         }
     }

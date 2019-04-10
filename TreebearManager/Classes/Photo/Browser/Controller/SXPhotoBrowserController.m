@@ -9,6 +9,7 @@
 #import "SXPhotoBrowserController.h"
 #import "SXPhotoBrowserBottomView.h"
 #import "SXPhotoBrowserCell.h"
+#import "SXAsset.h"
 
 @interface SXPhotoBrowserController ()<UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate>
 ///底部视图
@@ -113,8 +114,8 @@
     [self.view addSubview:collectV];
     self.collectionView = collectV;
     
-    PHAsset *asset = self.dataArray[self.indexPath.item];
-    NSDate *date = asset.creationDate;
+    SXAsset *asset = self.dataArray[self.indexPath.item];
+    NSDate *date = asset.asset.creationDate;
     NSDateFormatter *dateformatter  = [[NSDateFormatter alloc] init];
     [dateformatter setDateFormat:@"yyyy年MM月dd日"];
     NSString *dateString = [dateformatter stringFromDate:date];
@@ -159,8 +160,8 @@
 //返回cell长啥样
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SXPhotoBrowserCell *cell = [SXPhotoBrowserCell cellWithCollectionView:collectionView atIndexPath:indexPath];
-    PHAsset *asset = self.dataArray[indexPath.item];
-    cell.asset = asset;
+    SXAsset *asset = self.dataArray[indexPath.item];
+    cell.asset = asset.asset;
     return cell;
 }
 
@@ -183,8 +184,8 @@
     
     DLog(@"index:%lu",(unsigned long)index);
     
-    PHAsset *asset = self.dataArray[index];
-    NSDate *date = asset.creationDate;
+    SXAsset *asset = self.dataArray[index];
+    NSDate *date = asset.asset.creationDate;
     NSDateFormatter *dateformatter  = [[NSDateFormatter alloc] init];
     [dateformatter setDateFormat:@"yyyy年MM月dd日"];
     NSString *dateString = [dateformatter stringFromDate:date];

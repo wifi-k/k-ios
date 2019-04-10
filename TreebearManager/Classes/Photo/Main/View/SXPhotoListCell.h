@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXAsset.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,7 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)cellWithCollectionView:(UICollectionView *)collectionView atIndexPath:(NSIndexPath *)indexPath;
 
-@property (nonatomic, strong) PHAsset  *asset;
+@property (nonatomic, strong) SXAsset *asset;
+
+///长按手势
+@property (nonatomic, copy) void (^longPressBlock)(void);
 
 @end
 
