@@ -40,7 +40,7 @@
     
     WS(weakSelf);
     PHImageManager *imageManager = [PHImageManager defaultManager];
-    [imageManager requestImageForAsset:asset targetSize:CGSizeMake(100, 100) contentMode:PHImageContentModeDefault options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+    [imageManager requestImageForAsset:asset targetSize:CGSizeMake(SCREEN_WIDTH, SCREEN_WIDTH) contentMode:PHImageContentModeDefault options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
         weakSelf.photoImageView.image = result;
     }];
 }

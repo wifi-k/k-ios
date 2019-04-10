@@ -90,15 +90,15 @@
     self.collectionView.backgroundColor = SXColorWhite;
 //    self.collectionView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0);
     
-    PYAblum *ablumManager = [PYAblum defaultAblum];
-    DLog(@"%ld",ablumManager.allPhotoAblumModelArray.count);
-    NSArray *fdfdfd = [ablumManager sortWithModelArray:ablumManager.allPhotoAblumModelArray andIsASC:YES];
-    DLog(@"dfdf%@",fdfdfd);
-    for (PYAssetModel *model in ablumManager.allPhotoAblumModelArray) {
-        UIImage *img = model.degradedImage;
-        DLog(@"img:%@",img);
-        
-    }
+//    PYAblum *ablumManager = [PYAblum defaultAblum];
+//    DLog(@"%ld",ablumManager.allPhotoAblumModelArray.count);
+//    NSArray *fdfdfd = [ablumManager sortWithModelArray:ablumManager.allPhotoAblumModelArray andIsASC:YES];
+//    DLog(@"dfdf%@",fdfdfd);
+//    for (PYAssetModel *model in ablumManager.allPhotoAblumModelArray) {
+//        UIImage *img = model.degradedImage;
+//        DLog(@"img:%@",img);
+//
+//    }
 }
 
 - (void)viewDidLayoutSubviews{

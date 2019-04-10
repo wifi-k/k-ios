@@ -15,6 +15,7 @@
 #import "SXLoginNetTool.h"
 #import "NSString+Hash.h"
 #import "SXUserDefaultsTool.h"
+#import "SXMineNetTool.h"
 
 @interface SXLoginController ()
 ///头部视图
@@ -80,9 +81,29 @@
         if (![SXUserDefaultsTool isShowGuide]) {
             [SXRootTool chooseRootWithGuideVC:SXDelegateWindow];
         } else {
-            [SXRootTool chooseRootWithTabBarVC:SXDelegateWindow];
+            [self userInfoGetextData];
         }
     });
+}
+
+#pragma mark -获取用户信息数据接口-
+- (void)userInfoGetextData{
+    [SXMineNetTool userInfoGetextDataWithFilter:@1 Success:^(SXMineUserInfoResult *result) {
+        //1.单利赋值
+        SXPersonInfoModel.sharedSXPersonInfoModel.result = result;
+        //2.头部赋值
+        if (result.nodeSize.integerValue > 0) {//列表有数据
+            [SXRootTool chooseRootWithTabBarVC:SXDelegateWindow];
+            [SXRootTool changeToMainHomeVC];
+        } else {
+            [SXRootTool chooseRootWithTabBarVC:SXDelegateWindow];
+        }
+    } failure:^(NSError *error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        if ([NSString isNotEmpty:message]) {
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        }
+    }];
 }
     
 - (void)jumpToForgetVC{
