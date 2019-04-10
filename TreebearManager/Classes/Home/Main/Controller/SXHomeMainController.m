@@ -40,20 +40,20 @@
 @property (nonatomic, weak) SXHomeMainHeaderView *headerView;//头部视图
 @property (nonatomic, weak) UITableView *tableView;//列表视图
 
-///数据源
-@property (nonatomic, strong) NSMutableArray *dataArray;
-///儿童数据
+///手机数据
+@property (nonatomic, strong) NSMutableArray *mobileArray;
+///周报数据
 @property (nonatomic, strong) NSMutableArray *reportArray;
 @end
 
 @implementation SXHomeMainController
 
 #pragma mark -getter-
-- (NSMutableArray *)dataArray{
-    if (_dataArray == nil) {
-        _dataArray = [NSMutableArray array];
+- (NSMutableArray *)mobileArray{
+    if (_mobileArray == nil) {
+        _mobileArray = [NSMutableArray array];
     }
-    return _dataArray;
+    return _mobileArray;
 }
 
 - (NSMutableArray *)reportArray{
@@ -301,7 +301,7 @@
     param.pageNo = @1;
     param.pageSize = @10;
     [SXWifiSettingNetTool userNodeDeviceListDataWithParams:param.mj_keyValues success:^(SXMobileManagerResult * _Nonnull result) {
-        weakSelf.dataArray = [NSMutableArray arrayWithArray:result.page];
+        weakSelf.mobileArray = [NSMutableArray arrayWithArray:result.page];
         [weakSelf.tableView reloadData];
     } failure:^(NSError * _Nonnull error) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -350,6 +350,15 @@
             NSString *message = [error.userInfo objectForKey:@"msg"];
             [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
         });
+#warning mark -测试使用-
+        for (int i=0; i<3; i++) {
+            SXHomeReportModel *model = [[SXHomeReportModel alloc] init];
+            model.hostName = [NSString stringWithFormat:@"测试%d",i];
+            model.macVendor = [NSString stringWithFormat:@"test%d",i];
+            [weakSelf.reportArray addObject:model];
+        }
+        //刷新UI
+        [weakSelf.tableView reloadData];
     }];
 }
     
@@ -361,7 +370,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        NSInteger count = (self.dataArray.count > 3 ? 3:self.dataArray.count);
+        NSInteger count = (self.mobileArray.count > 3 ? 3:self.mobileArray.count);
         return count;
     } else if (section == 1){
         NSInteger count = (self.reportArray.count > 3 ? 3:self.reportArray.count);
@@ -375,7 +384,7 @@
     if (indexPath.section == 0) {
         WS(weakSelf);
         SXHomeNetworkingDeviceCell *cell = [SXHomeNetworkingDeviceCell cellWithTableView:tableView];
-        SXMobileManagerModel *model = self.dataArray[indexPath.row];
+        SXMobileManagerModel *model = self.mobileArray[indexPath.row];
         cell.model = model;
         cell.clickRemarkBtnBlock = ^(SXMobileManagerModel * _Nonnull model) {
             [weakSelf alertRemarkNameView:model];
@@ -383,6 +392,8 @@
         tempCell = cell;
     } else if(indexPath.section == 1){
         SXHomeMainReportCell *cell = [SXHomeMainReportCell cellWithTableView:tableView];
+        SXHomeReportModel *model = self.reportArray[indexPath.row];
+        cell.model = model;
         return cell;
     } else {
         return nil;
@@ -391,7 +402,10 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100.0f;
+    if (indexPath.section == 0) {
+        return 100.0f;
+    }
+    return 180.0f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -408,7 +422,7 @@
     UIView *sectionHeaderV = nil;
     if (section == 0) {
         SXHomeMainSectionHeaderView *headerView = [SXHomeMainSectionHeaderView headerViewWithTableView:tableView];
-        [headerView setUpData:self.dataArray];
+        [headerView setUpData:self.mobileArray];
         sectionHeaderV = headerView;
     } else {
         SXHomeMainSectionHeaderView2 *headerView = [SXHomeMainSectionHeaderView2 headerViewWithTableView:tableView];
@@ -419,7 +433,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     if (section == 0) {
-        if (self.dataArray.count) {
+        if (self.mobileArray.count) {
             return 80.0f;
         } else {
             return 200.0f;
@@ -438,7 +452,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     WS(weakSelf);
     if (section == 0) {
-        if (self.dataArray.count) {
+        if (self.mobileArray.count) {
             SXHomeMainSectionFooterView *footerView = [SXHomeMainSectionFooterView footerView];
             footerView.clickMoreBtnBlock = ^{
                 SXMobileManagerController *mobileManagerVC = [[SXMobileManagerController alloc] init];
@@ -468,14 +482,15 @@
     
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
     if (indexPath.section == 0) {
         SXMobileDetailController *detailVC = [[SXMobileDetailController alloc] init];
-        SXMobileManagerModel *model = self.dataArray[indexPath.row];
+        SXMobileManagerModel *model = self.mobileArray[indexPath.row];
         detailVC.model = model;
         [self.navigationController pushViewController:detailVC animated:YES];
     } else if(indexPath.section == 1){
         SXHomeReportDetailController *detailVC = [[SXHomeReportDetailController alloc] init];
+        SXHomeReportModel *model = self.reportArray[indexPath.row];
+        detailVC.model = model;
         [self.navigationController pushViewController:detailVC animated:YES];
     }
 }

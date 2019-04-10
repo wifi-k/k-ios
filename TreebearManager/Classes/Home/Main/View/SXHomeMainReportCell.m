@@ -7,6 +7,16 @@
 //
 
 #import "SXHomeMainReportCell.h"
+#import "SXHomeMainReportCornerView.h"
+
+@interface SXHomeMainReportCell ()
+@property (weak, nonatomic) IBOutlet UILabel *timeL;
+@property (weak, nonatomic) IBOutlet UIImageView *contentBgImageView;
+@property (weak, nonatomic) IBOutlet SXHomeMainReportCornerView *bottomView;
+@property (weak, nonatomic) IBOutlet UIImageView *mobileImageView;
+@property (weak, nonatomic) IBOutlet UILabel *mobileNameL;
+@property (weak, nonatomic) IBOutlet UIButton *reportBtn;
+@end
 
 @implementation SXHomeMainReportCell
 
@@ -31,6 +41,25 @@
     //设置背景色
     self.backgroundColor = SXColorWhite;
     
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    self.bottomView.backgroundColor = SXColorClear;
+    
+    self.timeL.font = SXFontBold16;
+    
+    [self.mobileImageView roundViewWithRadius:35.0f borderColor:SXColorWhite borderWidth:10.f];
+    
+    self.mobileNameL.textColor = SXColor333333;
+    self.reportBtn.userInteractionEnabled = NO;
+    [self.reportBtn setTitleColor:SXColorBlue forState:UIControlStateNormal];
+    [self.reportBtn roundViewWithRadius:15.0f borderColor:SXColorBlue borderWidth:1.0f];
+}
+
+#pragma mark -setter-
+- (void)setModel:(SXHomeReportModel *)model{
+    _model = model;
+    
+    self.mobileNameL.text = model.hostName;
 }
 
 @end

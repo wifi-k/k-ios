@@ -343,6 +343,9 @@
 		09EF2FCB225CBB6500C2C17C /* SXPhotoBackupCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09EF2FC9225CBB6500C2C17C /* SXPhotoBackupCollectionCell.xib */; };
 		09EF2FCE225D8BCB00C2C17C /* SXPhotoBackupSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FCD225D8BCB00C2C17C /* SXPhotoBackupSectionHeaderView.m */; };
 		09EF2FD0225D8BE000C2C17C /* SXPhotoBackupSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09EF2FCF225D8BE000C2C17C /* SXPhotoBackupSectionHeaderView.xib */; };
+		09EF2FD4225DC30D00C2C17C /* SXTopCornerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FD3225DC30D00C2C17C /* SXTopCornerView.m */; };
+		09EF2FD7225DC31E00C2C17C /* SXBottomCornerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FD6225DC31E00C2C17C /* SXBottomCornerView.m */; };
+		09EF2FDA225DC39C00C2C17C /* SXHomeMainReportCornerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FD9225DC39C00C2C17C /* SXHomeMainReportCornerView.m */; };
 		09F233092223EE4D0086AB35 /* SXXiaoKiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233082223EE4D0086AB35 /* SXXiaoKiController.m */; };
 		09F233182223F03C0086AB35 /* SXHomeXiaoKiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233162223F03C0086AB35 /* SXHomeXiaoKiCell.m */; };
 		09F233192223F03C0086AB35 /* SXHomeXiaoKiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F233172223F03C0086AB35 /* SXHomeXiaoKiCell.xib */; };
@@ -1032,6 +1035,12 @@
 		09EF2FCC225D8BCB00C2C17C /* SXPhotoBackupSectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPhotoBackupSectionHeaderView.h; sourceTree = "<group>"; };
 		09EF2FCD225D8BCB00C2C17C /* SXPhotoBackupSectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoBackupSectionHeaderView.m; sourceTree = "<group>"; };
 		09EF2FCF225D8BE000C2C17C /* SXPhotoBackupSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXPhotoBackupSectionHeaderView.xib; sourceTree = "<group>"; };
+		09EF2FD2225DC30D00C2C17C /* SXTopCornerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXTopCornerView.h; sourceTree = "<group>"; };
+		09EF2FD3225DC30D00C2C17C /* SXTopCornerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXTopCornerView.m; sourceTree = "<group>"; };
+		09EF2FD5225DC31E00C2C17C /* SXBottomCornerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXBottomCornerView.h; sourceTree = "<group>"; };
+		09EF2FD6225DC31E00C2C17C /* SXBottomCornerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXBottomCornerView.m; sourceTree = "<group>"; };
+		09EF2FD8225DC39C00C2C17C /* SXHomeMainReportCornerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainReportCornerView.h; sourceTree = "<group>"; };
+		09EF2FD9225DC39C00C2C17C /* SXHomeMainReportCornerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainReportCornerView.m; sourceTree = "<group>"; };
 		09F233072223EE4D0086AB35 /* SXXiaoKiController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXXiaoKiController.h; sourceTree = "<group>"; };
 		09F233082223EE4D0086AB35 /* SXXiaoKiController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXXiaoKiController.m; sourceTree = "<group>"; };
 		09F233152223F03C0086AB35 /* SXHomeXiaoKiCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeXiaoKiCell.h; sourceTree = "<group>"; };
@@ -2666,6 +2675,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		09EF2FD1225DC2EF00C2C17C /* RoundCorner */ = {
+			isa = PBXGroup;
+			children = (
+				09EF2FD2225DC30D00C2C17C /* SXTopCornerView.h */,
+				09EF2FD3225DC30D00C2C17C /* SXTopCornerView.m */,
+				09EF2FD5225DC31E00C2C17C /* SXBottomCornerView.h */,
+				09EF2FD6225DC31E00C2C17C /* SXBottomCornerView.m */,
+			);
+			path = RoundCorner;
+			sourceTree = "<group>";
+		};
 		09F233042223EE3B0086AB35 /* XiaoKi */ = {
 			isa = PBXGroup;
 			children = (
@@ -3054,6 +3074,7 @@
 		B348F95921F6C4E10000F194 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				09EF2FD1225DC2EF00C2C17C /* RoundCorner */,
 				09462ACE223789680063F67E /* DropMenu */,
 				09D5F6052227EC9F00EA681A /* PickerView */,
 				095540C3221F90A3005A5485 /* ImaginaryView */,
@@ -3322,6 +3343,8 @@
 				093C13212256008C005682C8 /* SXHomeMainReportCell.h */,
 				093C13222256008C005682C8 /* SXHomeMainReportCell.m */,
 				093C13232256008C005682C8 /* SXHomeMainReportCell.xib */,
+				09EF2FD8225DC39C00C2C17C /* SXHomeMainReportCornerView.h */,
+				09EF2FD9225DC39C00C2C17C /* SXHomeMainReportCornerView.m */,
 				098BA2EB221660A400F58639 /* SXFamilyCodeSuccessAlertView.h */,
 				098BA2EC221660A400F58639 /* SXFamilyCodeSuccessAlertView.m */,
 				098BA2EE221660BD00F58639 /* SXFamilyCodeFailureAlertView.h */,
@@ -3976,6 +3999,7 @@
 				093C13182255ED27005682C8 /* SXHomeReportPageParam.m in Sources */,
 				09EF2FC4225CBA6400C2C17C /* SXPhotoBackupSectionFooterView.m in Sources */,
 				09B9B7B5222FAE0C000868D5 /* SXSingleAlertView.m in Sources */,
+				09EF2FD7225DC31E00C2C17C /* SXBottomCornerView.m in Sources */,
 				093C131F2255F266005682C8 /* SXHomeReportTableCell.m in Sources */,
 				09D5F5F92226C22B00EA681A /* SXAlertControllerTool.m in Sources */,
 				09462B222238F5930063F67E /* SXMineAboutUsController.m in Sources */,
@@ -4114,6 +4138,7 @@
 				0900F520222D50DD00250155 /* SXNetBroadbandHeaderView.m in Sources */,
 				09B9B8252230EC8D000868D5 /* SXLANPortController.m in Sources */,
 				B348F9B321F71E2D0000F194 /* SXUploadParam.m in Sources */,
+				09EF2FDA225DC39C00C2C17C /* SXHomeMainReportCornerView.m in Sources */,
 				098BA313221B997000F58639 /* SXRegistParam.m in Sources */,
 				093C12B6224DC1D8005682C8 /* SXXiaoKiAddBindController.m in Sources */,
 				091BC4D62242207100FEBFD1 /* PYAblumModel.m in Sources */,
@@ -4181,6 +4206,7 @@
 				09EF2FB8225B501500C2C17C /* SXPhotoBrowserCell.m in Sources */,
 				091BC4DB2242207100FEBFD1 /* PYAblumHeader.m in Sources */,
 				093C12D822534013005682C8 /* SXTimeControlParam.m in Sources */,
+				09EF2FD4225DC30D00C2C17C /* SXTopCornerView.m in Sources */,
 				095540C9221FEB91005A5485 /* SXHomeMainSettingButton.m in Sources */,
 				09118706221522BF00938D9F /* GACErrorManager.m in Sources */,
 				B3AF2FDA21F9C8BD001E4E67 /* UIView+AutoLayout.m in Sources */,

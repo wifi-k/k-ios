@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXHomeReportModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXHomeReportDetailController : UIViewController
-
+///周报模型
+@property (nonatomic, strong) SXHomeReportModel *model;
 @end
 
 NS_ASSUME_NONNULL_END
