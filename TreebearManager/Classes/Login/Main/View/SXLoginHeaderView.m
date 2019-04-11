@@ -52,6 +52,7 @@
 - (void)setUpUI{
     
     self.naviTitleL.font = SXFontBold24;
+    self.naviTitleL.textColor = SXColor333333;
     
     self.bottomLineView1.backgroundColor = SXColorDivideLine;
     self.bottomLineView2.backgroundColor = SXColorDivideLine;
@@ -61,17 +62,21 @@
     
     //密码登录按钮
 //    [self.loginBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
-//    [self.loginBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
+    [self.loginBtn setTitleColor:SXColorTextDisabled forState:UIControlStateDisabled];
+    [self.loginBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateDisabled];
     [self.loginBtn roundViewWithRadius:6.0f];
     self.loginBtn.enabled = NO;
     
     //快捷登录按钮
-    [self.codeLoginBtn setTitleColor:SXColor2F2F2F forState:UIControlStateNormal];
+    [self.codeLoginBtn setTitleColor:SXColor2B3852 forState:UIControlStateNormal];
     //忘记密码按钮
-    [self.forgetBtn setTitleColor:SXColor2F2F2F forState:UIControlStateNormal];
+    [self.forgetBtn setTitleColor:SXColor2B3852 forState:UIControlStateNormal];
     
     //成为第一响应
     [self.phoneTextField becomeFirstResponder];
+    
+    self.phoneTextField.tintColor = SXColorBlue;
+    self.pwdTextField.tintColor = SXColorBlue;
 }
 
 #pragma mark -按钮点击事件-
@@ -109,7 +114,7 @@
 
 - (IBAction)endPhoneTextField:(UITextField *)sender {
     DLog(@"endPhoneTextField:%@",sender.text);
-    self.bottomLineView1.backgroundColor = UIColor.lightGrayColor;
+    self.bottomLineView1.backgroundColor = SXColorDivideLine;
     self.bottomLineView1.height = 0.5;
 }
 
@@ -123,7 +128,7 @@
 
 - (IBAction)endPasswordTextField:(UITextField *)sender {
     DLog(@"endPasswordTextField:%@",sender.text);
-    self.bottomLineView2.backgroundColor = UIColor.lightGrayColor;
+    self.bottomLineView2.backgroundColor = SXColorDivideLine;
     self.bottomLineView2.height = 0.5;
 }
 

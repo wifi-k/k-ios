@@ -44,6 +44,7 @@
 #define SXColorGray8  [UIColor hex:@"FFFFFF"]
 
 //文本灰色
+#define SXColor2B3852  [UIColor hex:@"2B3852"]
 #define SXColorB2B2B2  [UIColor hex:@"B2B2B2"]
 #define SXColor2F2F2F  [UIColor hex:@"2F2F2F"]
 #define SXColor2E2E2E  [UIColor hex:@"2E2E2E"]//深灰
@@ -53,6 +54,7 @@
 #define SXColorBtnNormal [UIColor hex:@"F5F5F5"]
 #define SXColorBtnDisabled [UIColor hex:@"D5D5D5"]
 #define SXColorBtnHighlight [UIColor hex:@"D8D8D8"]
+#define SXColorTextDisabled [UIColor colorWithColor:[UIColor hex:@"80FFFF"] alpha:0.5]
 
 //导航两边字体颜色
 #define SXColorNavigationItemText [UIColor hex:@"141414"]
@@ -60,7 +62,7 @@
 //灰色视图背景颜色
 #define SXColorBgViewGray [UIColor hex:@"f5f5f5"]
 //视图间隔线颜色
-#define SXColorDivideLine [UIColor hex:@"dde1f1"]
+#define SXColorDivideLine [UIColor hex:@"EBEEF2"]
 
 /** 颜色相关 */
 #define SC_RGBColor(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)] // RGB
