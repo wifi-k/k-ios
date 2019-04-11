@@ -51,6 +51,7 @@
 #define SXColor9B9B9B  [UIColor hex:@"9B9B9B"]//灰色
 #define SXColorC5C5C5  UIColorFromRGB(0xC5C5C5) // 浅灰
 
+#define SXColor47D5ED  [UIColor hex:@"47D5ED"]//蓝色浅灰
 #define SXColor37EDA3  [UIColor hex:@"37EDA3"]//蓝色浅灰
 #define SXColor2BCBE8  [UIColor hex:@"2BCBE8"]//蓝色深灰
 #define SXColorE85F51  [UIColor hex:@"E85F51"]//红色

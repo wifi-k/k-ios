@@ -124,7 +124,7 @@
 
     self.tableView.frame = self.view.bounds;
 
-    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 360);
+    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 330);
 }
 
 #pragma mark -添加移除通知-
@@ -404,7 +404,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (section == 0) {
-        return 60.0;
+        return 80.0;
     } else if(section == 1){
         return 50.0f;
     } else {

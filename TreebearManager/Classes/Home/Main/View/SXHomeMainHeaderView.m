@@ -69,7 +69,7 @@
     
     self.horizonDivideView.backgroundColor = SXColorClear;
     self.verticalDivideView.backgroundColor = SXColorTextDisabled;
-    self.verticalDivideView.width = 1;
+    self.verticalDivideView.width = 0.5f;
     
     self.noticeBgView.backgroundColor = [UIColor colorWithColor:SXColorF1F5FF alpha:0.5];
     [self.noticeBgView roundViewWithRadius:8.0f];

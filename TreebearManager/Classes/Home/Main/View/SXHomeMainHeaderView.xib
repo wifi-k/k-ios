@@ -13,14 +13,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SXHomeMainHeaderView">
-            <rect key="frame" x="0.0" y="0.0" width="369" height="354"/>
+            <rect key="frame" x="0.0" y="0.0" width="369" height="330"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2t5-Mq-nO8">
                     <rect key="frame" x="15" y="3" width="339" height="170"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_top_card" translatesAutoresizingMaskIntoConstraints="NO" id="4FV-Lp-QQY">
-                            <rect key="frame" x="0.0" y="0.0" width="339.00000000000006" height="170"/>
+                            <rect key="frame" x="0.0" y="0.0" width="339" height="170"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gS-uE-jad">
                             <rect key="frame" x="15" y="15" width="50" height="50"/>
@@ -70,15 +70,15 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gc7-yo-8x3">
-                            <rect key="frame" x="168.5" y="135" width="2" height="15"/>
+                            <rect key="frame" x="169.5" y="135" width="0.5" height="15"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="15" id="B10-ig-u8c"/>
-                                <constraint firstAttribute="width" constant="2" id="yeK-g5-QuO"/>
+                                <constraint firstAttribute="width" constant="0.5" id="yeK-g5-QuO"/>
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3j-Bz-cOD" customClass="SXHomeMainMemberButton">
-                            <rect key="frame" x="10" y="98" width="148.5" height="67"/>
+                            <rect key="frame" x="10" y="98" width="149.5" height="67"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="我是小熊" image="home_member_manager"/>
                             <connections>
@@ -86,7 +86,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeO-QJ-QvV" customClass="SXHomeMainMemberButton">
-                            <rect key="frame" x="180.5" y="98" width="148.5" height="67"/>
+                            <rect key="frame" x="180" y="98" width="149" height="67"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="邀请成员" image="home_member_add"/>
                             <connections>
@@ -260,7 +260,7 @@
                 <outlet property="welcomeL" destination="AEy-bu-6lr" id="4cW-Ps-IN6"/>
                 <outlet property="wifiSettingBtn" destination="g8B-Dk-4po" id="6cs-Zr-Ups"/>
             </connections>
-            <point key="canvasLocation" x="127.2" y="11.694152923538232"/>
+            <point key="canvasLocation" x="127.2" y="0.44977511244377816"/>
         </view>
     </objects>
     <resources>

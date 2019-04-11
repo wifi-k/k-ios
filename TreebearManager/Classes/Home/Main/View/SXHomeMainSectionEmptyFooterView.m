@@ -12,8 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *topImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleL;
 @property (weak, nonatomic) IBOutlet UILabel *subTitleL;
-
-
 @end
 
 @implementation SXHomeMainSectionEmptyFooterView
@@ -40,9 +38,9 @@
     
     self.backgroundColor = SXColorWhite;
     
-    self.titleL.textColor = SXColor333333;
-    self.titleL.font = SXFontBold18;
-    self.subTitleL.textColor = SXColor999999;
+    self.titleL.textColor = SXColor7383A2;
+    self.titleL.font = SXFontBold14;
+    self.subTitleL.textColor = SXColorB6C0CB;
 }
 
 @end

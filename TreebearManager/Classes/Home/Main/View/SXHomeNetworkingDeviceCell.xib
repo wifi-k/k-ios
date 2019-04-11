@@ -42,11 +42,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yrq-Xj-Go7">
-                                <rect key="frame" x="230" y="38" width="50" height="25"/>
+                                <rect key="frame" x="220" y="35.5" width="60" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="lhE-Jw-T8d"/>
-                                    <constraint firstAttribute="width" constant="50" id="xOL-Yz-VPn"/>
+                                    <constraint firstAttribute="height" constant="30" id="lhE-Jw-T8d"/>
+                                    <constraint firstAttribute="width" constant="60" id="xOL-Yz-VPn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="状态">
@@ -54,10 +54,10 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxt-xS-uM6">
-                                <rect key="frame" x="160" y="23.5" width="50" height="25"/>
+                                <rect key="frame" x="160" y="25" width="40" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="3cY-XO-2Yj"/>
-                                    <constraint firstAttribute="height" constant="25" id="ddI-bO-CE5"/>
+                                    <constraint firstAttribute="width" constant="40" id="3cY-XO-2Yj"/>
+                                    <constraint firstAttribute="height" constant="22" id="ddI-bO-CE5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="备注">
