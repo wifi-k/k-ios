@@ -31,7 +31,7 @@
 
 - (void)setUpUI{
     
-    self.navigationItem.title = @"快捷登录";
+//    self.navigationItem.title = @"快捷登录";
     
     self.view.backgroundColor = SXColorWhite;
     

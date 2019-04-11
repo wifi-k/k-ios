@@ -11,6 +11,8 @@
 #import "SXLoginNetTool.h"
 
 @interface SXCodeLoginHeaderView ()
+@property (weak, nonatomic) IBOutlet UILabel *naviTitleL;
+
 @property (weak, nonatomic) IBOutlet SXLoginCertifyCodeButton *codeBtn;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineV;
@@ -46,6 +48,9 @@
 
 - (void)setUpUI{
     
+    self.naviTitleL.font = SXFontBold24;
+    self.naviTitleL.textColor = SXColor333333;
+    
     self.bottomLineV.backgroundColor = SXColorDivideLine;
     self.bottomLineV2.backgroundColor = SXColorDivideLine;
     
@@ -54,6 +59,8 @@
     
 //    [self.loginBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
 //    [self.loginBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
+    [self.loginBtn setTitleColor:SXColorTextDisabled forState:UIControlStateDisabled];
+    [self.loginBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateDisabled];
     [self.loginBtn roundViewWithRadius:6.0f];
     self.loginBtn.enabled = NO;
     
@@ -61,6 +68,9 @@
     
     //成为第一响应
     [self.phoneTextField becomeFirstResponder];
+    
+    self.phoneTextField.tintColor = SXColorBlue2;
+    self.codeTextField.tintColor = SXColorBlue2;
 }
 
 #pragma mark -按钮点击事件-
@@ -91,7 +101,7 @@
 #pragma mark -文本输入框编辑-
 - (IBAction)editingPhoneTextField:(UITextField *)sender {
     DLog(@"editingPhoneTextField:%@",sender.text);
-    self.bottomLineV.backgroundColor = SXColorBlue;
+    self.bottomLineV.backgroundColor = SXColorBlue2;
     self.bottomLineV.height = 1;
     self.param.mobile = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];
@@ -102,13 +112,13 @@
 
 - (IBAction)endPhoneTextField:(UITextField *)sender {
     DLog(@"endPhoneTextField:%@",sender.text);
-    self.bottomLineV.backgroundColor = UIColor.lightGrayColor;
+    self.bottomLineV.backgroundColor = SXColorDivideLine;
     self.bottomLineV.height = 0.5;
 }
 
 - (IBAction)editingCodeTextField:(UITextField *)sender {
     DLog(@"editingCodeTextField:%@",sender.text);
-    self.bottomLineV2.backgroundColor = SXColorBlue;
+    self.bottomLineV2.backgroundColor = SXColorBlue2;
     self.bottomLineV2.height = 1;
     self.param.vcode = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];
@@ -116,7 +126,7 @@
 
 - (IBAction)endCodeTextField:(UITextField *)sender {
     DLog(@"endCodeTextField:%@",sender.text);
-    self.bottomLineV2.backgroundColor = UIColor.lightGrayColor;
+    self.bottomLineV2.backgroundColor = SXColorDivideLine;
     self.bottomLineV2.height = 0.5;
 }
 

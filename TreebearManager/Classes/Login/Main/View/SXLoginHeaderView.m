@@ -75,8 +75,8 @@
     //成为第一响应
     [self.phoneTextField becomeFirstResponder];
     
-    self.phoneTextField.tintColor = SXColorBlue;
-    self.pwdTextField.tintColor = SXColorBlue;
+    self.phoneTextField.tintColor = SXColorBlue2;
+    self.pwdTextField.tintColor = SXColorBlue2;
 }
 
 #pragma mark -按钮点击事件-
@@ -106,7 +106,7 @@
 #pragma mark -文本输入框编辑-
 - (IBAction)editingPhoneTextField:(UITextField *)sender {
     DLog(@"editingPhoneTextField:%@",sender.text);
-    self.bottomLineView1.backgroundColor = SXColorBlue;
+    self.bottomLineView1.backgroundColor = SXColorBlue2;
     self.bottomLineView1.height = 1;
     self.param.mobile = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];
@@ -120,7 +120,7 @@
 
 - (IBAction)editingPasswordTextField:(UITextField *)sender {
     DLog(@"editingPasswordTextField:%@",sender.text);
-    self.bottomLineView2.backgroundColor = SXColorBlue;
+    self.bottomLineView2.backgroundColor = SXColorBlue2;
     self.bottomLineView2.height = 1;
     self.param.passwd = sender.text.trim.filterSpace;
     [self changeConfirmBtnEnabled];

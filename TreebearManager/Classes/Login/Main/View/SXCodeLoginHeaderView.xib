@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,16 +13,16 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SXCodeLoginHeaderView">
-            <rect key="frame" x="0.0" y="0.0" width="285" height="393"/>
+            <rect key="frame" x="0.0" y="0.0" width="338" height="468"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NKT-b2-orZ">
-                    <rect key="frame" x="30" y="90" width="225" height="30"/>
+                    <rect key="frame" x="30" y="105" width="278" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="EC4-nG-YNo"/>
                     </constraints>
                     <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                     <connections>
                         <action selector="editingPhoneTextField:" destination="iN0-l3-epB" eventType="editingChanged" id="bXb-rw-C6J"/>
@@ -31,7 +31,7 @@
                     </connections>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tvC-Kn-vc0">
-                    <rect key="frame" x="30" y="128" width="225" height="1"/>
+                    <rect key="frame" x="30" y="143" width="278" height="1"/>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="Rfg-q7-0no"/>
@@ -39,12 +39,12 @@
                     </constraints>
                 </view>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入验证码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="m2j-2h-hXp">
-                    <rect key="frame" x="30" y="149" width="115" height="30"/>
+                    <rect key="frame" x="30" y="164" width="168" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="gSB-EO-E7g"/>
                     </constraints>
                     <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
                         <action selector="editingCodeTextField:" destination="iN0-l3-epB" eventType="editingDidBegin" id="7Aa-tV-vtE"/>
@@ -53,7 +53,7 @@
                     </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pFI-tk-hsE" customClass="SXLoginCertifyCodeButton">
-                    <rect key="frame" x="155" y="149" width="100" height="30"/>
+                    <rect key="frame" x="208" y="164" width="100" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="p0x-zR-ohz"/>
                         <constraint firstAttribute="width" constant="100" id="uG1-VZ-Gg3"/>
@@ -67,14 +67,14 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vrs-dN-2Fq">
-                    <rect key="frame" x="30" y="187" width="225" height="1"/>
+                    <rect key="frame" x="30" y="202" width="278" height="1"/>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="54O-MA-jCh"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqd-y3-mnk">
-                    <rect key="frame" x="30" y="258" width="225" height="45"/>
+                    <rect key="frame" x="30" y="245" width="278" height="45"/>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="Ak7-aS-NFX"/>
@@ -85,22 +85,30 @@
                         <action selector="clickLoginBtnBlock:" destination="iN0-l3-epB" eventType="touchUpInside" id="z7T-Nb-aZY"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎来到小K管家" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gpa-3v-iHv">
+                    <rect key="frame" x="30" y="24" width="185.5" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="tvC-Kn-vc0" firstAttribute="top" secondItem="NKT-b2-orZ" secondAttribute="bottom" constant="8" id="1Tg-gG-Joc"/>
-                <constraint firstItem="NKT-b2-orZ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="90" id="B2P-Cv-Iz0"/>
+                <constraint firstItem="Gpa-3v-iHv" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="24" id="4zQ-ob-pJb"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nqd-y3-mnk" secondAttribute="trailing" constant="30" id="Cae-c1-czO"/>
                 <constraint firstItem="Vrs-dN-2Fq" firstAttribute="top" secondItem="m2j-2h-hXp" secondAttribute="bottom" constant="8" id="Ecu-EJ-yAZ"/>
                 <constraint firstItem="NKT-b2-orZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="Iju-2b-vtD"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="NKT-b2-orZ" secondAttribute="trailing" constant="30" id="JuF-ik-R5O"/>
+                <constraint firstItem="NKT-b2-orZ" firstAttribute="top" secondItem="Gpa-3v-iHv" secondAttribute="bottom" constant="52" id="LuT-L4-J32"/>
                 <constraint firstItem="tvC-Kn-vc0" firstAttribute="top" secondItem="NKT-b2-orZ" secondAttribute="bottom" constant="8" id="WOc-Rz-S1w"/>
+                <constraint firstItem="Gpa-3v-iHv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="WnU-BE-63C"/>
                 <constraint firstItem="pFI-tk-hsE" firstAttribute="leading" secondItem="m2j-2h-hXp" secondAttribute="trailing" constant="10" id="a5O-KY-nLV"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pFI-tk-hsE" secondAttribute="trailing" constant="30" id="dGQ-uL-oca"/>
                 <constraint firstAttribute="trailing" secondItem="tvC-Kn-vc0" secondAttribute="trailing" constant="30" id="dj5-Ue-Alw"/>
                 <constraint firstItem="m2j-2h-hXp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="hWJ-Io-RpW"/>
                 <constraint firstAttribute="trailing" secondItem="Vrs-dN-2Fq" secondAttribute="trailing" constant="30" id="jZ6-Tw-RJ7"/>
-                <constraint firstItem="nqd-y3-mnk" firstAttribute="top" secondItem="Vrs-dN-2Fq" secondAttribute="bottom" constant="70" id="nmV-sp-Zcl"/>
+                <constraint firstItem="nqd-y3-mnk" firstAttribute="top" secondItem="Vrs-dN-2Fq" secondAttribute="bottom" constant="42" id="nmV-sp-Zcl"/>
                 <constraint firstItem="Vrs-dN-2Fq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="riF-YP-F0d"/>
                 <constraint firstItem="m2j-2h-hXp" firstAttribute="top" secondItem="tvC-Kn-vc0" secondAttribute="bottom" constant="20" id="x8o-Zx-VTG"/>
                 <constraint firstItem="tvC-Kn-vc0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="yEj-UY-zb6"/>
@@ -117,9 +125,10 @@
                 <outlet property="codeBtn" destination="pFI-tk-hsE" id="fhv-q8-IXS"/>
                 <outlet property="codeTextField" destination="m2j-2h-hXp" id="uze-8e-LLy"/>
                 <outlet property="loginBtn" destination="nqd-y3-mnk" id="rpV-HQ-Tan"/>
+                <outlet property="naviTitleL" destination="Gpa-3v-iHv" id="42D-bN-DHq"/>
                 <outlet property="phoneTextField" destination="NKT-b2-orZ" id="Ojq-vf-q7f"/>
             </connections>
-            <point key="canvasLocation" x="60" y="15.742128935532236"/>
+            <point key="canvasLocation" x="275.19999999999999" y="39.580209895052477"/>
         </view>
     </objects>
     <resources>
