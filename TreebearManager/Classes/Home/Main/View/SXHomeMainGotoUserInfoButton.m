@@ -29,9 +29,8 @@
     self.imageView.contentMode = UIViewContentModeCenter;
     
     [self setTitle:@"我的小K" forState:UIControlStateNormal];
-    self.titleLabel.font = [UIFont boldSystemFontOfSize:15];
+    self.titleLabel.font = [UIFont boldSystemFontOfSize:13];
     [self setTitleColor:SXColorWhite forState:UIControlStateNormal];
-    //[self setTitleColor:SXColor666666 forState:UIControlStateHighlighted];
 }
 
 //- (void)setHighlighted:(BOOL)highlighted{

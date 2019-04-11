@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet SXImaginaryLineView *horizonDivideView;
 @property (weak, nonatomic) IBOutlet UIView *verticalDivideView;
 @property (weak, nonatomic) IBOutlet UIImageView *topCardBgImageView;
+@property (weak, nonatomic) IBOutlet UIButton *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *welcomeL;
 @property (weak, nonatomic) IBOutlet UIButton *statusBtn;
 @property (weak, nonatomic) IBOutlet UILabel *nameL;
@@ -56,19 +57,23 @@
     self.backgroundColor = SXColorWhite;
     
     self.topBgView.backgroundColor = [UIColor whiteColor];
-    self.topBgView.layer.cornerRadius = 5;
+    self.topBgView.layer.cornerRadius = 8;
     self.topBgView.layer.shadowColor = UIColor.lightGrayColor.CGColor;
     self.topBgView.layer.shadowOffset = CGSizeMake(0, 5);
     self.topBgView.layer.shadowOpacity = 0.5;
     self.topBgView.layer.shadowRadius = 5;
     
-    [self.topCardBgImageView roundViewWithRadius:5.0f];
+    [self.iconImageView roundViewWithRadius:25.0f borderColor:SXColorWhite borderWidth:1.0f];
+    
+    [self.topCardBgImageView roundViewWithRadius:8.0f];
     
     self.horizonDivideView.backgroundColor = SXColorClear;
+    self.verticalDivideView.backgroundColor = SXColorTextDisabled;
     self.verticalDivideView.width = 1;
     
-    self.noticeBgView.backgroundColor = SXColorGray8;
-    [self.noticeBgView roundViewWithRadius:5.0f];
+    self.noticeBgView.backgroundColor = [UIColor colorWithColor:SXColorF1F5FF alpha:0.5];
+    [self.noticeBgView roundViewWithRadius:8.0f];
+    self.messageL.textColor = SXColor7383A2;
     
     self.bottomBgView.backgroundColor = SXColorWhite;
     

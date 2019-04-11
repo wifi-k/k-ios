@@ -26,7 +26,7 @@
     // 设置虚线绘制起点
     CGContextMoveToPoint(context, 3.0, self.frame.size.height/2);
     // lengths的值｛10,10｝表示先绘制10个点，再跳过10个点，如此反复
-    CGFloat lengths[] = {7,3};
+    CGFloat lengths[] = {4,6};
     // 虚线的起始点
     CGContextSetLineDash(context, 0, lengths,2);
     // 绘制虚线的终点

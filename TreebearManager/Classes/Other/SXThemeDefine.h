@@ -86,6 +86,7 @@
 
 
 #define SXColorClear UIColor.clearColor       // 透明色
+#define SXColorF1F5FF UIColorFromRGB(0xF1F5FF)// 浅浅浅
 #define SXColorCCCCC UIColorFromRGB(0xCCCCCC) // 深灰色
 #define SXColorWhite UIColorFromRGB(0xffffff) // 白色
 #define SXColorBlue UIColorFromRGB(0x1AD0CE) // 主题蓝色

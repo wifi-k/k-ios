@@ -50,13 +50,14 @@ static NSString *SXHomeNetworkingDeviceCellID = @"SXHomeNetworkingDeviceCellID";
     [self.statusBtn setTitleColor:SXColorBlue2 forState:UIControlStateNormal];
     [self.statusBtn setBackgroundColor:SXColorWhite];
     self.statusBtn.backgroundColor = [UIColor whiteColor];
-    self.statusBtn.layer.cornerRadius = 15;
+    self.statusBtn.layer.cornerRadius = 12.5f;
     self.statusBtn.layer.shadowColor = UIColor.lightGrayColor.CGColor;
     self.statusBtn.layer.shadowOffset = CGSizeMake(0, 2);
     self.statusBtn.layer.shadowOpacity = 0.5;
     self.statusBtn.layer.shadowRadius = 2;
     
-    [self.remarkBtn setTitleColor:SXColorSystemBlue forState:UIControlStateNormal];
+    [self.remarkBtn setTitleColor:SXColorBlue2 forState:UIControlStateNormal];
+    [self.remarkBtn roundViewWithRadius:4.0f borderColor:SXColorBlue2 borderWidth:1.0f];
 }
 
 #pragma mark -setter-
