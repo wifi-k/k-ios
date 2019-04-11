@@ -10,6 +10,8 @@
 #import "NSString+Hash.h"
 
 @interface SXForgetConfirmHeaderView ()
+@property (weak, nonatomic) IBOutlet UILabel *naviTitleL;
+
 @property (weak, nonatomic) IBOutlet UITextField *pwdTextField;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView;
     
@@ -35,6 +37,9 @@
 }
     
 - (void)setUpUI{
+    
+    self.naviTitleL.font = SXFontBold24;
+    self.naviTitleL.textColor = SXColor333333;
     
     self.bottomLineView.backgroundColor = SXColorDivideLine;
     self.bottomLineView2.backgroundColor = SXColorDivideLine;
