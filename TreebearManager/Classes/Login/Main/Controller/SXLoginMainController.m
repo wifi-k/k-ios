@@ -10,10 +10,10 @@
 #import "SXLoginMainHeaderView.h"
 #import "SXLoginController.h"
 #import "SXRegistController.h"
+#import "SXUserGuideController.h"
 #import "SXMineNetTool.h"
 #import "SXXiaoKiParam.h"
 #import "SXRootTool.h"
-#import "SXUserGuideController.h"
 
 @interface SXLoginMainController ()
 ///头部视图
@@ -83,10 +83,8 @@
 }
 
 - (void)jumpToRegistVC{
-//    SXRegistController *forgetVC = [[SXRegistController alloc] init];
-//    [self.navigationController pushViewController:forgetVC animated:YES];
-    SXUserGuideController *guideVC = [[SXUserGuideController alloc] init];
-    [self.navigationController pushViewController:guideVC animated:YES];
+    SXRegistController *forgetVC = [[SXRegistController alloc] init];
+    [self.navigationController pushViewController:forgetVC animated:YES];
 }
 
 #pragma mark -获取用户信息(最新)-

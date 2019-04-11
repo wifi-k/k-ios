@@ -27,7 +27,7 @@
     
     self.view.backgroundColor = SXColorWhite;
     
-    self.navigationItem.title = @"找回密码";
+//    self.navigationItem.title = @"找回密码";
     
     WS(weakSelf);
     SXForgetHeaderView *headerView = [SXForgetHeaderView headerView];

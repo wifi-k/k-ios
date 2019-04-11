@@ -28,7 +28,7 @@
                         <constraint firstAttribute="height" constant="30" id="IIu-39-UgY"/>
                     </constraints>
                     <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                     <connections>
                         <action selector="editingPhoneTextField:" destination="iN0-l3-epB" eventType="editingDidBegin" id="9Gc-rM-vbN"/>
@@ -50,7 +50,7 @@
                         <constraint firstAttribute="height" constant="30" id="73H-QG-ztr"/>
                     </constraints>
                     <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
                         <action selector="editingCodeTextField:" destination="iN0-l3-epB" eventType="editingDidBegin" id="RgB-kp-dBc"/>
