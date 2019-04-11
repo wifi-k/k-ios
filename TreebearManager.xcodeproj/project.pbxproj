@@ -347,6 +347,8 @@
 		09EF2FD7225DC31E00C2C17C /* SXBottomCornerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FD6225DC31E00C2C17C /* SXBottomCornerView.m */; };
 		09EF2FDA225DC39C00C2C17C /* SXHomeMainReportCornerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FD9225DC39C00C2C17C /* SXHomeMainReportCornerView.m */; };
 		09EF2FDD225E0B6100C2C17C /* SXAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FDC225E0B6100C2C17C /* SXAsset.m */; };
+		09EF2FE0225F143C00C2C17C /* SXPhotoBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FDF225F143B00C2C17C /* SXPhotoBottomView.m */; };
+		09EF2FE2225F144700C2C17C /* SXPhotoBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09EF2FE1225F144700C2C17C /* SXPhotoBottomView.xib */; };
 		09F233092223EE4D0086AB35 /* SXXiaoKiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233082223EE4D0086AB35 /* SXXiaoKiController.m */; };
 		09F233182223F03C0086AB35 /* SXHomeXiaoKiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233162223F03C0086AB35 /* SXHomeXiaoKiCell.m */; };
 		09F233192223F03C0086AB35 /* SXHomeXiaoKiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F233172223F03C0086AB35 /* SXHomeXiaoKiCell.xib */; };
@@ -1044,6 +1046,9 @@
 		09EF2FD9225DC39C00C2C17C /* SXHomeMainReportCornerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainReportCornerView.m; sourceTree = "<group>"; };
 		09EF2FDB225E0B6100C2C17C /* SXAsset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXAsset.h; sourceTree = "<group>"; };
 		09EF2FDC225E0B6100C2C17C /* SXAsset.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXAsset.m; sourceTree = "<group>"; };
+		09EF2FDE225F143B00C2C17C /* SXPhotoBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPhotoBottomView.h; sourceTree = "<group>"; };
+		09EF2FDF225F143B00C2C17C /* SXPhotoBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoBottomView.m; sourceTree = "<group>"; };
+		09EF2FE1225F144700C2C17C /* SXPhotoBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXPhotoBottomView.xib; sourceTree = "<group>"; };
 		09F233072223EE4D0086AB35 /* SXXiaoKiController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXXiaoKiController.h; sourceTree = "<group>"; };
 		09F233082223EE4D0086AB35 /* SXXiaoKiController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXXiaoKiController.m; sourceTree = "<group>"; };
 		09F233152223F03C0086AB35 /* SXHomeXiaoKiCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeXiaoKiCell.h; sourceTree = "<group>"; };
@@ -3234,6 +3239,9 @@
 				098BA2F62216ADDF00F58639 /* SXPhotoListCell.xib */,
 				09F76F412247C42F008A9048 /* SXPhotoHeaderButton.h */,
 				09F76F422247C42F008A9048 /* SXPhotoHeaderButton.m */,
+				09EF2FDE225F143B00C2C17C /* SXPhotoBottomView.h */,
+				09EF2FDF225F143B00C2C17C /* SXPhotoBottomView.m */,
+				09EF2FE1225F144700C2C17C /* SXPhotoBottomView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3815,6 +3823,7 @@
 				092D6D222202E71A00538AC8 /* SXForgetConfirmHeaderView.xib in Resources */,
 				09B9B86C223202DB000868D5 /* SXTimeUpdateHeaderView.xib in Resources */,
 				09D5F63B22292F3900EA681A /* SXForbiddenUpdateHeaderView.xib in Resources */,
+				09EF2FE2225F144700C2C17C /* SXPhotoBottomView.xib in Resources */,
 				099CEFF1223B452D0077DE42 /* SXHomeReportReusableView.xib in Resources */,
 				09D5F670222BC2F200EA681A /* SXAddXiaoKiHeaderView.xib in Resources */,
 				09462AFF2238A88C0063F67E /* SXMobileDetailHeaderView.xib in Resources */,
@@ -3954,6 +3963,7 @@
 				09B9B8392230F590000868D5 /* SXAdvancedHeaderView.m in Sources */,
 				09B9B7A5222E555A000868D5 /* XKNetReachablityTool.m in Sources */,
 				093C130F2255ECA0005682C8 /* SXHomeReportNetTool.m in Sources */,
+				09EF2FE0225F143C00C2C17C /* SXPhotoBottomView.m in Sources */,
 				092D6D082202AC3200538AC8 /* SXHomeMainController.m in Sources */,
 				09B9B7E12230C64E000868D5 /* SXHomeMobileModel.m in Sources */,
 				09C8CE54224B7D1F00C03F43 /* NSDictionary+Extension.m in Sources */,

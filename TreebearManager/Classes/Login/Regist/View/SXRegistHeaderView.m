@@ -50,8 +50,8 @@
 }
     
 - (void)setUpUI{
+    self.titleL.font = SXFontBold24;
     self.titleL.textColor = SXColor333333;
-    self.titleL.font = SXFontBold20;
     
     self.bottomLineV.backgroundColor = SXColorDivideLine;
     self.bottomLineV2.backgroundColor = SXColorDivideLine;
@@ -61,8 +61,8 @@
     
     self.codeBtn.enabled = NO;
     
-//    [self.registBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
-//    [self.registBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
+    [self.registBtn setTitleColor:SXColorTextDisabled forState:UIControlStateDisabled];
+    [self.registBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateDisabled];
     [self.registBtn roundViewWithRadius:6.0f];
     self.registBtn.enabled = NO;
     
@@ -70,6 +70,9 @@
     
     //成为第一响应
     [self.phoneTextField becomeFirstResponder];
+    
+    self.phoneTextField.tintColor = SXColorBlue2;
+    self.codeTextField.tintColor = SXColorBlue2;
 }
 
 #pragma mark -按钮点击事件-
@@ -149,7 +152,7 @@
 
 - (IBAction)endPhoneTextField:(UITextField *)sender {
     DLog(@"endPhoneTextField:%@",sender.text);
-    self.bottomLineV.backgroundColor = UIColor.lightGrayColor;
+    self.bottomLineV.backgroundColor = SXColorDivideLine;
     self.bottomLineV.height = 0.5;
 }
 
@@ -163,7 +166,7 @@
 
 - (IBAction)endCodeTextField:(UITextField *)sender {
     DLog(@"endCodeTextField:%@",sender.text);
-    self.bottomLineV2.backgroundColor = UIColor.lightGrayColor;
+    self.bottomLineV2.backgroundColor = SXColorDivideLine;
     self.bottomLineV2.height = 0.5;
 }
 

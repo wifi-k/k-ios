@@ -128,6 +128,8 @@ const CGFloat SXWifiSettingAlertViewHeightRatio = 0.216; //高度系统
     
     //成为第一响应
     [self.textField becomeFirstResponder];
+    
+    self.textField.tintColor = SXColorBlue2;
 }
 
 - (void)layoutSubviews{

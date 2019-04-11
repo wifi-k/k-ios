@@ -16,6 +16,7 @@
 #import "SXAlbumAuthorizationTool.h"
 #import "SXAlertControllerTool.h"
 #import "SXPhotoHeaderView.h"
+#import "SXPhotoBottomView.h"
 #import "SXAsset.h"
 
 #define COL 3
@@ -91,14 +92,14 @@
     
     self.collectionView.backgroundColor = SXColorWhite;
 
-//    UIView *bottomView = [[UIView alloc] init];
-//    bottomView.backgroundColor = SXColorRandom;
-//    [self.view addSubview:bottomView];
-//    [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.mas_equalTo(self.view);
-//        make.bottom.mas_equalTo(self.view.mas_bottom);
-//        make.size.mas_equalTo(self.tabBarController.tabBar.bounds.size);
-//    }];
+    //底部视图
+    SXPhotoBottomView *bottomView = [SXPhotoBottomView bottomView];
+    [self.view addSubview:bottomView];
+    [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.view.mas_bottom);
+        make.size.mas_equalTo(self.tabBarController.tabBar.bounds.size);
+    }];
 }
 
 - (void)viewDidLayoutSubviews{

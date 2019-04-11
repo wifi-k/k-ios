@@ -42,14 +42,17 @@
     self.bottomLineView.height = 0.5;
     self.bottomLineView2.height = 0.5;
     
-//    [self.confirmBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
-//    [self.confirmBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
+    [self.confirmBtn setTitleColor:SXColorTextDisabled forState:UIControlStateDisabled];
+    [self.confirmBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateDisabled];
     [self.confirmBtn roundViewWithRadius:6.0f];
     
     self.confirmBtn.enabled = NO;
     
     //成为第一响应
     [self.pwdTextField becomeFirstResponder];
+    
+    self.pwdTextField.tintColor = SXColorBlue2;
+    self.pwd2TextField.tintColor = SXColorBlue2;
 }
 
 #pragma mark -按钮点击事件-
@@ -86,7 +89,7 @@
 
 - (IBAction)endPasswordTextField:(UITextField *)sender {
     DLog(@"endPasswordTextField:%@",sender.text);
-    self.bottomLineView.backgroundColor = UIColor.lightGrayColor;
+    self.bottomLineView.backgroundColor = SXColorDivideLine;
     self.bottomLineView.height = 0.5;
 }
 
@@ -100,7 +103,7 @@
 
 - (IBAction)endPassword2TextField:(UITextField *)sender {
     DLog(@"endPassword2TextField:%@",sender.text);
-    self.bottomLineView2.backgroundColor = UIColor.lightGrayColor;
+    self.bottomLineView2.backgroundColor = SXColorDivideLine;
     self.bottomLineView2.height = 0.5;
 }
 
