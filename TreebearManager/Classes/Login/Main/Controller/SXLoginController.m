@@ -38,7 +38,7 @@
 }
     
 - (void)setUpUI{
-    self.navigationItem.title = @"登录小K管家";
+//    self.navigationItem.title = @"登录小K管家";
     
     self.view.backgroundColor = SXColorWhite;
     

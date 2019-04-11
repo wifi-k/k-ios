@@ -11,6 +11,8 @@
 #import "NSString+Hash.h"
 
 @interface SXLoginHeaderView ()
+@property (weak, nonatomic) IBOutlet UILabel *naviTitleL;
+
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView1;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLine1H;
@@ -48,6 +50,8 @@
 }
     
 - (void)setUpUI{
+    
+    self.naviTitleL.font = SXFontBold24;
     
     self.bottomLineView1.backgroundColor = SXColorDivideLine;
     self.bottomLineView2.backgroundColor = SXColorDivideLine;

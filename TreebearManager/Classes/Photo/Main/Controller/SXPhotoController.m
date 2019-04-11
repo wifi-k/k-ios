@@ -90,17 +90,15 @@
     self.collectionView = collectV;
     
     self.collectionView.backgroundColor = SXColorWhite;
-//    self.collectionView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0);
-    
-//    PYAblum *ablumManager = [PYAblum defaultAblum];
-//    DLog(@"%ld",ablumManager.allPhotoAblumModelArray.count);
-//    NSArray *fdfdfd = [ablumManager sortWithModelArray:ablumManager.allPhotoAblumModelArray andIsASC:YES];
-//    DLog(@"dfdf%@",fdfdfd);
-//    for (PYAssetModel *model in ablumManager.allPhotoAblumModelArray) {
-//        UIImage *img = model.degradedImage;
-//        DLog(@"img:%@",img);
-//
-//    }
+
+//    UIView *bottomView = [[UIView alloc] init];
+//    bottomView.backgroundColor = SXColorRandom;
+//    [self.view addSubview:bottomView];
+//    [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(self.view);
+//        make.bottom.mas_equalTo(self.view.mas_bottom);
+//        make.size.mas_equalTo(self.tabBarController.tabBar.bounds.size);
+//    }];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -338,6 +336,8 @@
         [collectionView reloadSections:indexSet];
         
         [weakSelf.tabBarController.tabBar setHidden:YES];
+        
+        
     };
     return cell;
 }

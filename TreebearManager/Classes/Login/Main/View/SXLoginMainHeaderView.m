@@ -31,19 +31,16 @@
 
 - (void)setUpUI{
     
-//    self.iconImageV.backgroundColor = SXColorBtnHighlight;
-//    [self.iconImageV roundViewWithRadius:40.0f];
-    
     //登录按钮
     [self.loginBtn setTitleColor:SXColor666666 forState:UIControlStateNormal];
     [self.loginBtn setBackgroundColor:SXColorGray8 forState:UIControlStateNormal];
     [self.loginBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
-    [self.loginBtn roundViewWithRadius:22.5];
+    [self.loginBtn roundViewWithRadius:27.0f];
     
     //注册按钮
 //    [self.registBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
-//    [self.registBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
-    [self.registBtn roundViewWithRadius:22.5];
+    [self.registBtn setBackgroundColor:[UIColor hex:@"1FEAE7"] forState:UIControlStateNormal];
+    [self.registBtn roundViewWithRadius:27.0f];
 }
 
 - (void)hideIcons:(BOOL)isHidden{
