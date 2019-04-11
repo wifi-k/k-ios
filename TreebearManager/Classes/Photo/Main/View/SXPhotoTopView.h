@@ -14,6 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)topView;
 
+///选中张数
+@property (nonatomic, assign) NSInteger count;
+
+///点击关闭按钮
+@property (nonatomic, copy) void (^clickCloseBtnBlock)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -94,14 +94,28 @@
     
     self.collectionView.backgroundColor = SXColorWhite;
 
-    //顶部视图
+    WS(weakSelf);
+    //3.顶部视图
     SXPhotoTopView *topView = [SXPhotoTopView topView];
+    topView.clickCloseBtnBlock = ^{
+        DLog(@"关闭...");
+        weakSelf.isEditing = NO;
+        [weakSelf.tabBarController.tabBar setHidden:NO];
+        weakSelf.topView.hidden = YES;
+        
+        for (NSArray *sectionArr in weakSelf.assetArray) {
+            for (SXAsset *asset in sectionArr) {
+                asset.isChecked = NO;
+            }
+        }
+        [weakSelf.collectionView reloadData];
+    };
     topView.frame = self.navigationController.navigationBar.bounds;
     [self.navigationController.navigationBar addSubview:topView];
     self.topView = topView;
     self.topView.hidden = YES;
     
-    //底部视图
+    //4.底部视图
     SXPhotoBottomView *bottomView = [SXPhotoBottomView bottomView];
     [self.view addSubview:bottomView];
     [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -405,25 +419,26 @@
         asset.isChecked = !asset.isChecked;
         [collectionView reloadItemsAtIndexPaths:@[indexPath]];
     
-        NSInteger count = 0;
-        NSInteger noCheckCount = 0;
+        NSInteger totalCount = 0;
+        NSInteger checkCount = 0;
         for (NSArray *sectionArr in self.assetArray) {
             for (SXAsset *asset in sectionArr) {
-                ++count;
+                ++totalCount;
                 if (asset.isChecked) {
-                    return;
-                } else {
-                    ++noCheckCount;
+                    ++checkCount;
                 }
             }
         }
         
-        if (noCheckCount == count) {
+        if (checkCount == 0) {
             self.isEditing = NO;
             NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
             [collectionView reloadSections:indexSet];
             [self.tabBarController.tabBar setHidden:NO];
             self.topView.hidden = YES;
+        } else {
+            //选中张数
+            self.topView.count = checkCount;
         }
         return;
     }

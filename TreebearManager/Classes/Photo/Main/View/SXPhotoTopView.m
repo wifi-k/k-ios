@@ -9,7 +9,7 @@
 #import "SXPhotoTopView.h"
 
 @interface SXPhotoTopView ()
-
+@property (weak, nonatomic) IBOutlet UILabel *titleL;
 @end
 
 @implementation SXPhotoTopView
@@ -30,7 +30,21 @@
 
 - (void)setUpUI{
     
-    self.backgroundColor = SXColorRandom;
+    self.backgroundColor = SXColorWhite;
+}
+
+#pragma mark -setter-
+- (void)setCount:(NSInteger)count{
+    _count = count;
+    
+    self.titleL.text = [NSString stringWithFormat:@"已选中%ld张照片",count];
+}
+
+#pragma mark -Event-
+- (IBAction)clickCloseBtn:(UIButton *)sender {
+    if (self.clickCloseBtnBlock){
+        self.clickCloseBtnBlock();
+    }
 }
 
 
