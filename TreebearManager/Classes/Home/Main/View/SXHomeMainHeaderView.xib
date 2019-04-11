@@ -43,7 +43,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎回家" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEy-bu-6lr">
-                            <rect key="frame" x="90" y="15" width="82" height="24"/>
+                            <rect key="frame" x="90" y="20" width="82" height="24"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -78,6 +78,7 @@
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3j-Bz-cOD" customClass="SXHomeMainMemberButton">
                             <rect key="frame" x="10" y="113" width="148.5" height="52"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="我是小熊" image="home_member_manager"/>
                             <connections>
                                 <action selector="clickManagerBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="SWV-2b-h3D"/>
@@ -85,18 +86,19 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeO-QJ-QvV" customClass="SXHomeMainMemberButton">
                             <rect key="frame" x="180.5" y="113" width="148.5" height="52"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="邀请成员" image="home_member_add"/>
                             <connections>
                                 <action selector="shareBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="rRP-gy-kea"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6i8-Og-6Ap">
-                            <rect key="frame" x="177" y="17" width="40" height="20"/>
+                            <rect key="frame" x="177" y="22" width="40" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="1on-bw-NrW"/>
                                 <constraint firstAttribute="height" constant="20" id="iPJ-wE-8r0"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <state key="normal" title="状态"/>
                         </button>
                     </subviews>
@@ -112,7 +114,7 @@
                         <constraint firstAttribute="bottom" secondItem="qeO-QJ-QvV" secondAttribute="bottom" constant="5" id="9FC-Gm-JaY"/>
                         <constraint firstItem="6i8-Og-6Ap" firstAttribute="centerY" secondItem="AEy-bu-6lr" secondAttribute="centerY" id="9Yh-Lk-vNd"/>
                         <constraint firstItem="4FV-Lp-QQY" firstAttribute="top" secondItem="2t5-Mq-nO8" secondAttribute="top" id="E7i-Iu-NFn"/>
-                        <constraint firstItem="AEy-bu-6lr" firstAttribute="top" secondItem="7gS-uE-jad" secondAttribute="top" id="GKh-5u-cuw"/>
+                        <constraint firstItem="AEy-bu-6lr" firstAttribute="top" secondItem="7gS-uE-jad" secondAttribute="top" constant="5" id="GKh-5u-cuw"/>
                         <constraint firstItem="qeO-QJ-QvV" firstAttribute="leading" secondItem="gc7-yo-8x3" secondAttribute="trailing" constant="10" id="Hvz-B4-2FG"/>
                         <constraint firstAttribute="trailing" secondItem="4FV-Lp-QQY" secondAttribute="trailing" id="I7V-B6-38D"/>
                         <constraint firstItem="qeO-QJ-QvV" firstAttribute="top" secondItem="EHk-L8-Xve" secondAttribute="bottom" constant="5" id="PzU-vn-1fC"/>
@@ -145,8 +147,8 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公告正文广告内容公告正文广告内容公告正文广告内容" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfZ-Rd-v6w">
-                            <rect key="frame" x="48" y="16.5" width="281" height="17"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <rect key="frame" x="48" y="18" width="281" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -166,6 +168,7 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0iZ-Xa-eGq" customClass="SXHomeMainSettingButton">
                             <rect key="frame" x="0.0" y="0.0" width="85" height="100"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="家长控制" image="home_parent_control"/>
                             <connections>
                                 <action selector="clickSettingBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="aDq-BZ-jrj"/>
@@ -173,6 +176,7 @@
                         </button>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CoV-T5-tty" customClass="SXHomeMainSettingButton">
                             <rect key="frame" x="85" y="0.0" width="84.5" height="100"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="健康模式" image="home_healthy_mode"/>
                             <connections>
                                 <action selector="clickSettingBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="JeF-fP-dOs"/>
@@ -180,6 +184,7 @@
                         </button>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byT-gb-Roy" customClass="SXHomeMainSettingButton">
                             <rect key="frame" x="169.5" y="0.0" width="85" height="100"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="查看周报" image="home_check_report"/>
                             <connections>
                                 <action selector="clickSettingBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="WG0-jV-qLm"/>
@@ -187,6 +192,7 @@
                         </button>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8B-Dk-4po" customClass="SXHomeMainSettingButton">
                             <rect key="frame" x="254.5" y="0.0" width="84.5" height="100"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="WiFi设置" image="home_wifi_setting"/>
                             <connections>
                                 <action selector="clickSettingBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="K9d-nI-FCF"/>

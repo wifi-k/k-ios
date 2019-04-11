@@ -20,7 +20,7 @@
     // 绘制线的宽度
     CGContextSetLineWidth(context, 1.0);
     // 线的颜色
-    CGContextSetStrokeColorWithColor(context, SXColorGray7.CGColor);
+    CGContextSetStrokeColorWithColor(context, SXColorTextDisabled.CGColor);
     // 开始绘制
     CGContextBeginPath(context);
     // 设置虚线绘制起点

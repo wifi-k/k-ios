@@ -77,7 +77,7 @@
     self.welcomeL.font = SXFontBold20;
     
     //状态标签
-    [self.statusBtn roundViewWithRadius:10.0f borderColor:SXColorWhite borderWidth:1.0f];
+    [self.statusBtn roundViewWithRadius:10.0f borderColor:SXColorWhite borderWidth:0.5f];
     [self.statusBtn setTitle:@"状态" forState:UIControlStateNormal];
     
     //开启交互
@@ -91,17 +91,17 @@
     
     //添加标签
     UILabel *managerL = [[UILabel alloc] init];
-    managerL.backgroundColor = SXColorOrange;
+    managerL.backgroundColor = SXColorEFB925;
     managerL.textColor = SXColorWhite;
     managerL.textAlignment = NSTextAlignmentCenter;
-    managerL.font = SXFont14;
+    managerL.font = SXFont10;
     managerL.text = @"管理员";
-    [managerL roundViewWithRadius:12.5f];
+    [managerL roundViewWithRadius:10.0f];
     [self.managerBtn addSubview:managerL];
     [managerL mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(60, 25));
-        make.top.mas_equalTo(self.managerBtn.mas_top);
-        make.right.mas_equalTo(self.managerBtn.mas_right);
+        make.size.mas_equalTo(CGSizeMake(40, 20));
+        make.centerX.mas_equalTo(self.managerBtn).mas_offset(25);
+        make.centerY.mas_equalTo(self.managerBtn).mas_offset(-20);
     }];
 }
 

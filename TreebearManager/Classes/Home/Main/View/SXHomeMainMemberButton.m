@@ -25,8 +25,8 @@
 
 - (void)setUpUI{
     
-    [self setTitleColor:SXColorWhite forState:UIControlStateNormal];
-    [self setTitleColor:SXColor999999 forState:UIControlStateHighlighted];
+    [self setTitleColor:SXColorTextDisabled forState:UIControlStateNormal];
+    [self setTitleColor:SXColorTextDisabled forState:UIControlStateHighlighted];
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.imageView.contentMode = UIViewContentModeCenter;
 }
