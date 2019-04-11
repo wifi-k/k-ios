@@ -33,9 +33,9 @@
     [self setTitle:@"输入家庭码" forState:UIControlStateNormal];
     self.titleLabel.font = [UIFont boldSystemFontOfSize:14];
     [self setTitleColor:SXColor666666 forState:UIControlStateHighlighted];
-    [self setTitleColor:SXColor999999 forState:UIControlStateNormal];
+    [self setTitleColor:SXColor4A5A78 forState:UIControlStateNormal];
     
-    [self roundViewWithRadius:15.0f borderColor:SXColor999999 borderWidth:1.5f];
+    [self roundViewWithRadius:15.0f borderColor:SXColor4A5A78 borderWidth:1.5f];
 }
 
 - (void)setHighlighted:(BOOL)highlighted{
@@ -44,16 +44,16 @@
     if (highlighted) {
         [self borderColor:SXColor666666 borderWidth:1.0f];
     } else{
-        [self borderColor:SXColor999999 borderWidth:1.0f];
+        [self borderColor:SXColor4A5A78 borderWidth:1.0f];
     }
 }
 
 #pragma mark - 调整内部ImageView的frame
 - (CGRect)imageRectForContentRect:(CGRect)contentRect{
     
-    CGFloat imageX = contentRect.size.width - 30;
+    CGFloat imageX = contentRect.size.width - 25;
     CGFloat imageY = 0;
-    CGFloat imageW = 30 - 10;
+    CGFloat imageW = 25 - 10;
     CGFloat imageH = contentRect.size.height;
     return CGRectMake(imageX, imageY, imageW, imageH);
 }
@@ -63,7 +63,7 @@
     
     CGFloat titleX = 0;
     CGFloat titleY = 0;
-    CGFloat titleW = contentRect.size.width - 30;
+    CGFloat titleW = contentRect.size.width - 25;
     CGFloat titleH = contentRect.size.height;
     return CGRectMake(titleX, titleY, titleW, titleH);
 }

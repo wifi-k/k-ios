@@ -46,22 +46,24 @@
     //1.家庭码背景视图
     //self.familyCodeBgView.layer.masksToBounds=YES;这行去掉
     self.familyCodeBgView.backgroundColor = [UIColor whiteColor];
-    self.familyCodeBgView.layer.cornerRadius = 5;
-    self.familyCodeBgView.layer.shadowColor = UIColor.lightGrayColor.CGColor;
+    self.familyCodeBgView.layer.cornerRadius = 8;
+    self.familyCodeBgView.layer.shadowColor = [UIColor colorWithColor:UIColor.lightGrayColor alpha:0.5].CGColor;
     self.familyCodeBgView.layer.shadowOffset = CGSizeMake(0, 5);
     self.familyCodeBgView.layer.shadowOpacity = 0.5;
     self.familyCodeBgView.layer.shadowRadius = 5;
     
     self.titleL.font = SXFontBold20;
+    self.titleL.textColor = SXColorWhite;
     self.topImageV.backgroundColor = SXColorWhite;
     
-    self.bindingDeviceL.textColor = UIColor.whiteColor;
-    self.bindingDeviceL.font = SXFontBold20;
+    self.bindingDeviceL.textColor = SXColorWhite;
+    self.bindingDeviceL.font = SXFontBold22;
     
-    self.productL.font = SXFontBold18;
-    self.productL.textColor = SXColor333333;
-    self.addFamilyCodeL.font = SXFontBold18;
-    self.addFamilyCodeL.textColor = SXColor333333;
+    self.productL.font = SXFontBold20;
+    self.productL.textColor = SXColor2B3852;
+    self.addContentL.textColor = SXColor2B3852;
+    self.addFamilyCodeL.font = SXFontBold20;
+    self.addFamilyCodeL.textColor = SXColor2B3852;
 }
 
 #pragma mark -事件监听-

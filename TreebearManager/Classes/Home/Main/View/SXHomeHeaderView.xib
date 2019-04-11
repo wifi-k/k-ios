@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,13 +23,13 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小K管家" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEZ-md-J3f">
-                    <rect key="frame" x="146" y="40" width="63" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="144.5" y="35" width="66.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIp-om-REx">
-                    <rect key="frame" x="157.5" y="81" width="40" height="40"/>
+                    <rect key="frame" x="157.5" y="86" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="6wf-lj-uA8"/>
                         <constraint firstAttribute="width" constant="40" id="dG6-qi-BMj"/>
@@ -43,13 +43,13 @@
                     <rect key="frame" x="20" y="220" width="315" height="130"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="加入家庭码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDj-L1-uek">
-                            <rect key="frame" x="15" y="15" width="97" height="23"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <rect key="frame" x="15" y="15" width="102" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登录家庭码，立即加入某个家庭" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3z-rs-mmG">
-                            <rect key="frame" x="15" y="43" width="200" height="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入家庭码，立即加入某个家庭" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3z-rs-mmG">
+                            <rect key="frame" x="15" y="49" width="200" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -84,7 +84,7 @@
                         <constraint firstItem="RDj-L1-uek" firstAttribute="leading" secondItem="2xs-Nk-c3k" secondAttribute="leading" constant="15" id="cfI-m7-9F5"/>
                         <constraint firstAttribute="trailing" secondItem="oDf-aN-WSR" secondAttribute="trailing" constant="15" id="jPm-lH-gcW"/>
                         <constraint firstAttribute="bottom" secondItem="DNX-XB-gnm" secondAttribute="bottom" constant="15" id="n70-92-15q"/>
-                        <constraint firstItem="H3z-rs-mmG" firstAttribute="top" secondItem="RDj-L1-uek" secondAttribute="bottom" constant="5" id="pdn-DJ-MQH"/>
+                        <constraint firstItem="H3z-rs-mmG" firstAttribute="top" secondItem="RDj-L1-uek" secondAttribute="bottom" constant="10" id="pdn-DJ-MQH"/>
                         <constraint firstItem="DNX-XB-gnm" firstAttribute="leading" secondItem="2xs-Nk-c3k" secondAttribute="leading" constant="15" id="sKk-Me-3Km"/>
                     </constraints>
                 </view>
@@ -106,8 +106,8 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="绑定小K管家" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cto-R2-vHh">
-                    <rect key="frame" x="120" y="146" width="115" height="24"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <rect key="frame" x="115" y="151" width="125.5" height="26.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -118,11 +118,11 @@
                 <constraint firstItem="9Wa-ky-4pp" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="3KO-xS-Xqt"/>
                 <constraint firstItem="QEZ-md-J3f" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="6Wp-bS-gpu"/>
                 <constraint firstItem="RDD-o3-ppr" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Adl-Xe-56L"/>
-                <constraint firstItem="QEZ-md-J3f" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="EQN-x2-u9j"/>
+                <constraint firstItem="QEZ-md-J3f" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15" id="EQN-x2-u9j"/>
                 <constraint firstItem="cto-R2-vHh" firstAttribute="top" secondItem="uIp-om-REx" secondAttribute="bottom" constant="25" id="EeN-pZ-wJD"/>
                 <constraint firstItem="4ER-QV-Qz5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="HVV-eE-6Nh"/>
                 <constraint firstItem="2xs-Nk-c3k" firstAttribute="bottom" secondItem="RDD-o3-ppr" secondAttribute="bottom" constant="100" id="IZ0-N4-cmj"/>
-                <constraint firstItem="uIp-om-REx" firstAttribute="top" secondItem="QEZ-md-J3f" secondAttribute="bottom" constant="20" id="LPk-39-xVM"/>
+                <constraint firstItem="uIp-om-REx" firstAttribute="top" secondItem="QEZ-md-J3f" secondAttribute="bottom" constant="30" id="LPk-39-xVM"/>
                 <constraint firstItem="RDD-o3-ppr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="LdT-3E-gDD"/>
                 <constraint firstItem="uIp-om-REx" firstAttribute="centerX" secondItem="QEZ-md-J3f" secondAttribute="centerX" id="QMI-z7-Coq"/>
                 <constraint firstItem="2xs-Nk-c3k" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="XJM-jj-gBf"/>

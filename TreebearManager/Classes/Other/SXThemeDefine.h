@@ -51,6 +51,18 @@
 #define SXColor9B9B9B  [UIColor hex:@"9B9B9B"]//灰色
 #define SXColorC5C5C5  UIColorFromRGB(0xC5C5C5) // 浅灰
 
+#define SXColor37EDA3  [UIColor hex:@"37EDA3"]//蓝色浅灰
+#define SXColor2BCBE8  [UIColor hex:@"2BCBE8"]//蓝色深灰
+#define SXColorE85F51  [UIColor hex:@"E85F51"]//红色
+#define SXColorEFB925  [UIColor hex:@"EFB925"]//黄色
+
+#define SXColor2B3852  [UIColor hex:@"2B3852"]//标题文字
+#define SXColor4A5A78  [UIColor hex:@"4A5A78"]//内容文字
+#define SXColor7383A2  [UIColor hex:@"7383A2"]//注释文字
+#define SXColorB6C0CB  [UIColor hex:@"B6C0CB"]//日期等等
+#define SXColorEBEEF2  [UIColor hex:@"EBEEF2"]//分割线
+#define SXColorFFFFFF  [UIColor hex:@"FFFFFF"]//背景色
+
 //按钮状态颜色
 #define SXColorBtnNormal [UIColor hex:@"F5F5F5"]
 #define SXColorBtnDisabled [UIColor hex:@"D5D5D5"]
