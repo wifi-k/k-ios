@@ -11,6 +11,7 @@
 #import "SXLoginNetTool.h"
 
 @interface SXForgetHeaderView ()
+@property (weak, nonatomic) IBOutlet UILabel *naviTitleL;
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineV;
@@ -49,6 +50,9 @@
 }
     
 - (void)setUpUI{
+    
+    self.naviTitleL.font = SXFontBold24;
+    self.naviTitleL.textColor = SXColor333333;
     
     self.bottomLineV.backgroundColor = SXColorDivideLine;
     self.bottomLineV2.backgroundColor = SXColorDivideLine;

@@ -126,6 +126,7 @@
                 <outlet property="clickNextBtn" destination="nsr-qC-KNZ" id="5rX-7E-VVw"/>
                 <outlet property="codeBtn" destination="OBg-X9-NyI" id="R76-P0-MBV"/>
                 <outlet property="codeTextField" destination="mFb-d4-phS" id="GIt-qx-KCC"/>
+                <outlet property="naviTitleL" destination="P1x-up-f4P" id="5lI-0y-eIl"/>
                 <outlet property="phoneTextField" destination="rqR-Jm-xHh" id="SXD-5W-CQQ"/>
             </connections>
             <point key="canvasLocation" x="77.599999999999994" y="35.082458770614693"/>
