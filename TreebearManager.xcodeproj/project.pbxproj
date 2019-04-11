@@ -349,6 +349,8 @@
 		09EF2FDD225E0B6100C2C17C /* SXAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FDC225E0B6100C2C17C /* SXAsset.m */; };
 		09EF2FE0225F143C00C2C17C /* SXPhotoBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FDF225F143B00C2C17C /* SXPhotoBottomView.m */; };
 		09EF2FE2225F144700C2C17C /* SXPhotoBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09EF2FE1225F144700C2C17C /* SXPhotoBottomView.xib */; };
+		09EF2FE5225F157C00C2C17C /* SXPhotoTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EF2FE4225F157C00C2C17C /* SXPhotoTopView.m */; };
+		09EF2FE7225F159100C2C17C /* SXPhotoTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09EF2FE6225F159000C2C17C /* SXPhotoTopView.xib */; };
 		09F233092223EE4D0086AB35 /* SXXiaoKiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233082223EE4D0086AB35 /* SXXiaoKiController.m */; };
 		09F233182223F03C0086AB35 /* SXHomeXiaoKiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F233162223F03C0086AB35 /* SXHomeXiaoKiCell.m */; };
 		09F233192223F03C0086AB35 /* SXHomeXiaoKiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F233172223F03C0086AB35 /* SXHomeXiaoKiCell.xib */; };
@@ -1049,6 +1051,9 @@
 		09EF2FDE225F143B00C2C17C /* SXPhotoBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPhotoBottomView.h; sourceTree = "<group>"; };
 		09EF2FDF225F143B00C2C17C /* SXPhotoBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoBottomView.m; sourceTree = "<group>"; };
 		09EF2FE1225F144700C2C17C /* SXPhotoBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXPhotoBottomView.xib; sourceTree = "<group>"; };
+		09EF2FE3225F157C00C2C17C /* SXPhotoTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPhotoTopView.h; sourceTree = "<group>"; };
+		09EF2FE4225F157C00C2C17C /* SXPhotoTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoTopView.m; sourceTree = "<group>"; };
+		09EF2FE6225F159000C2C17C /* SXPhotoTopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXPhotoTopView.xib; sourceTree = "<group>"; };
 		09F233072223EE4D0086AB35 /* SXXiaoKiController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXXiaoKiController.h; sourceTree = "<group>"; };
 		09F233082223EE4D0086AB35 /* SXXiaoKiController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXXiaoKiController.m; sourceTree = "<group>"; };
 		09F233152223F03C0086AB35 /* SXHomeXiaoKiCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeXiaoKiCell.h; sourceTree = "<group>"; };
@@ -3239,6 +3244,9 @@
 				098BA2F62216ADDF00F58639 /* SXPhotoListCell.xib */,
 				09F76F412247C42F008A9048 /* SXPhotoHeaderButton.h */,
 				09F76F422247C42F008A9048 /* SXPhotoHeaderButton.m */,
+				09EF2FE3225F157C00C2C17C /* SXPhotoTopView.h */,
+				09EF2FE4225F157C00C2C17C /* SXPhotoTopView.m */,
+				09EF2FE6225F159000C2C17C /* SXPhotoTopView.xib */,
 				09EF2FDE225F143B00C2C17C /* SXPhotoBottomView.h */,
 				09EF2FDF225F143B00C2C17C /* SXPhotoBottomView.m */,
 				09EF2FE1225F144700C2C17C /* SXPhotoBottomView.xib */,
@@ -3860,6 +3868,7 @@
 				09D5F67D222BC87000EA681A /* SXFamilyMemberCell.xib in Resources */,
 				09EF2FC6225CBA9800C2C17C /* SXPhotoBackupSectionFooterView.xib in Resources */,
 				09B9B88622326974000868D5 /* SXDHCPServerHeaderView.xib in Resources */,
+				09EF2FE7225F159100C2C17C /* SXPhotoTopView.xib in Resources */,
 				09B9B85122311126000868D5 /* SXAdvancedOptionCell.xib in Resources */,
 				0936B72622392B5900E68C4C /* SXPersonalInfoHeaderView.xib in Resources */,
 				092D6CE622005A1A00538AC8 /* SXEmptyDataEventView.xib in Resources */,
@@ -4079,6 +4088,7 @@
 				09F76F522247CB48008A9048 /* SXPhotoShareController.m in Sources */,
 				B3AF302421FE9113001E4E67 /* SXBaseTablePlainRrfreshController.m in Sources */,
 				09D5F63622292C1500EA681A /* SXForbiddenUpdateController.m in Sources */,
+				09EF2FE5225F157C00C2C17C /* SXPhotoTopView.m in Sources */,
 				09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */,
 				092D6CF6220062C700538AC8 /* DES3EncryptUtil.m in Sources */,
 				09118703221522BF00938D9F /* GACSocketModel.m in Sources */,

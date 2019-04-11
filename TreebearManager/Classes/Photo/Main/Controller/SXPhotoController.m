@@ -16,12 +16,14 @@
 #import "SXAlbumAuthorizationTool.h"
 #import "SXAlertControllerTool.h"
 #import "SXPhotoHeaderView.h"
+#import "SXPhotoTopView.h"
 #import "SXPhotoBottomView.h"
 #import "SXAsset.h"
 
 #define COL 3
 
 @interface SXPhotoController ()<UICollectionViewDelegate,UICollectionViewDataSource>
+@property (nonatomic, weak) SXPhotoTopView *topView;
 @property (nonatomic, weak) UICollectionView *collectionView;
 
 ///数据源
@@ -92,6 +94,13 @@
     
     self.collectionView.backgroundColor = SXColorWhite;
 
+    //顶部视图
+    SXPhotoTopView *topView = [SXPhotoTopView topView];
+    topView.frame = self.navigationController.navigationBar.bounds;
+    [self.navigationController.navigationBar addSubview:topView];
+    self.topView = topView;
+    self.topView.hidden = YES;
+    
     //底部视图
     SXPhotoBottomView *bottomView = [SXPhotoBottomView bottomView];
     [self.view addSubview:bottomView];
@@ -337,8 +346,7 @@
         [collectionView reloadSections:indexSet];
         
         [weakSelf.tabBarController.tabBar setHidden:YES];
-        
-        
+        weakSelf.topView.hidden = NO;
     };
     return cell;
 }
@@ -415,6 +423,7 @@
             NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
             [collectionView reloadSections:indexSet];
             [self.tabBarController.tabBar setHidden:NO];
+            self.topView.hidden = YES;
         }
         return;
     }
