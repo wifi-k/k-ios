@@ -30,6 +30,8 @@
 @property (nonatomic, copy) NSNumber *isSelect;
 ///固件升级版本号 firmwareUpgrade可能为空
 @property (nonatomic, copy) NSString *firmwareUpgrade;
+///节点的邀请码
+@property (nonatomic, copy) NSString *inviteCode;
 
 @end
 

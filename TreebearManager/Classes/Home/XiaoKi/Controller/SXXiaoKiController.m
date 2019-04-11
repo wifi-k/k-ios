@@ -146,8 +146,8 @@
 
 - (void)alertUnbindWithModel:(SXHomeXiaoKiModel *)model{
     WS(weakSelf);
-    NSString *content = [NSString stringWithFormat:@"是否确定解绑小k管家%@",model.name];
-    SXTitleAlertView *unbindAV = [SXTitleAlertView alertWithTitle:@"解绑小k" content:content confirmStr:@"确定" cancelStr:@"取消"];
+    NSString *content = [NSString stringWithFormat:@"是否确定解绑小K云管家%@",model.name];
+    SXTitleAlertView *unbindAV = [SXTitleAlertView alertWithTitle:@"解绑小K" content:content confirmStr:@"确定" cancelStr:@"取消"];
     unbindAV.confirmButtonBlock = ^{
         DLog(@"确定...");
         [weakSelf userNodeUnbindWithModel:model];

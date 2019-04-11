@@ -80,7 +80,7 @@
     
     self.view.backgroundColor = UIColor.redColor;
     
-    self.navigationItem.title = @"小K管家";
+    self.navigationItem.title = @"小K云管家";
     
     //1.创建tableView
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
@@ -218,11 +218,13 @@
 
 #pragma mark -分享微信-
 - (void)shareWebPageToPlatform{
+    NSString *inviteCode = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel.inviteCode;
+    NSString *descStr = [NSString stringWithFormat:@"快来加入我的小K家庭吧，家庭码:%@",inviteCode];
     //创建分享消息对象
     UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
     //创建网页内容对象
     NSString *thumbURL =  @"https://mobile.umeng.com/images/pic/home/social/img-1.png";
-    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"邀请家庭成员" descr:@"快来加入我的小K家庭吧，家庭码:8888" thumImage:thumbURL];
+    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"邀请家庭成员" descr:descStr thumImage:thumbURL];
     //设置网页地址
     shareObject.webpageUrl = RedirectURL;
     //分享消息对象设置分享内容对象
