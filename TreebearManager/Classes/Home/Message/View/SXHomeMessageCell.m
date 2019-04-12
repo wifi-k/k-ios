@@ -46,12 +46,13 @@ static NSString *SXHomeMessageCellID = @"SXHomeMessageCellID";
     self.bottomLineView.height = 0.5f;
 }
 
+#pragma mark -setter-
 - (void)setModel:(SXHomeMessageModel *)model{
     _model = model;
     
     self.titleL.text = model.title;
     self.contentL.text = model.content;
-    self.timeL.text = model.createTime;
+    self.timeL.text = [NSString stringWithTimestamp3:model.createTime];
 }
 
 @end

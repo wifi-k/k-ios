@@ -231,6 +231,16 @@
     return timeString;
 }
 
++ (instancetype)stringWithTimestamp3:(NSString *)timestamp{
+    long long time = [timestamp longLongValue] / 1000;
+    NSDate *timestampDate = [NSDate dateWithTimeIntervalSince1970:time];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"zh"]];
+    NSString *timeString = [formatter stringFromDate:timestampDate];
+    return timeString;
+}
+
 - (instancetype)currentVersion{
     if ([NSString isEmpty:self]) {
         return 0;

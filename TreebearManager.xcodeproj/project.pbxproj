@@ -283,6 +283,7 @@
 		09C8CE54224B7D1F00C03F43 /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE53224B7D1F00C03F43 /* NSDictionary+Extension.m */; };
 		09C9092C22603D8C00BFF67C /* SXPhotoChooseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C9092B22603D8C00BFF67C /* SXPhotoChooseController.m */; };
 		09C9092F226064C700BFF67C /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C9092E226064C700BFF67C /* NSDate+Extension.m */; };
+		09C909332260723300BFF67C /* LMJScrollTextView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C909312260723300BFF67C /* LMJScrollTextView2.m */; };
 		09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */; };
 		09D5F5EF222689CE00EA681A /* SXHomeMainSectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5EE222689CE00EA681A /* SXHomeMainSectionFooterView.m */; };
 		09D5F5F1222689E300EA681A /* SXHomeMainSectionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F5F0222689E300EA681A /* SXHomeMainSectionFooterView.xib */; };
@@ -941,6 +942,8 @@
 		09C9092B22603D8C00BFF67C /* SXPhotoChooseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoChooseController.m; sourceTree = "<group>"; };
 		09C9092D226064C700BFF67C /* NSDate+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
 		09C9092E226064C700BFF67C /* NSDate+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		09C909312260723300BFF67C /* LMJScrollTextView2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJScrollTextView2.m; sourceTree = "<group>"; };
+		09C909322260723300BFF67C /* LMJScrollTextView2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJScrollTextView2.h; sourceTree = "<group>"; };
 		09D5F5E0222678C000EA681A /* SXHomeMainSectionHeaderView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionHeaderView2.h; sourceTree = "<group>"; };
 		09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSectionHeaderView2.m; sourceTree = "<group>"; };
 		09D5F5ED222689CE00EA681A /* SXHomeMainSectionFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionFooterView.h; sourceTree = "<group>"; };
@@ -2405,6 +2408,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		09C909302260723300BFF67C /* LMJScrollTextView2 */ = {
+			isa = PBXGroup;
+			children = (
+				09C909322260723300BFF67C /* LMJScrollTextView2.h */,
+				09C909312260723300BFF67C /* LMJScrollTextView2.m */,
+			);
+			path = LMJScrollTextView2;
+			sourceTree = "<group>";
+		};
 		09D5F5F22226B69F00EA681A /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
@@ -3119,6 +3131,7 @@
 		B348F95921F6C4E10000F194 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				09C909302260723300BFF67C /* LMJScrollTextView2 */,
 				09EF2FD1225DC2EF00C2C17C /* RoundCorner */,
 				09462ACE223789680063F67E /* DropMenu */,
 				09D5F6052227EC9F00EA681A /* PickerView */,
@@ -4138,6 +4151,7 @@
 				09D5F649222A73AD00EA681A /* SXHealtyTimeController.m in Sources */,
 				0900F51D222D4FC600250155 /* SXDynamicController.m in Sources */,
 				09C9092C22603D8C00BFF67C /* SXPhotoChooseController.m in Sources */,
+				09C909332260723300BFF67C /* LMJScrollTextView2.m in Sources */,
 				B348F98821F713A80000F194 /* main.m in Sources */,
 				093C12F52254A660005682C8 /* UIButton+EnlargeTouchArea.m in Sources */,
 				09D5F625222925C200EA681A /* SXParentControlHeaderView.m in Sources */,

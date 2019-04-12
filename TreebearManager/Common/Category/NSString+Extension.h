@@ -47,6 +47,8 @@
 + (instancetype)stringWithTimestamp:(NSNumber *)timestamp;
 //时间戳转成日期格式(MM月dd日 HH:mm)
 + (instancetype)stringWithTimestamp2:(NSString *)timestamp;
+//时间戳转成日期格式(2018-12-08 10:00)
++ (instancetype)stringWithTimestamp3:(NSString *)timestamp;
 
 //版本号
 - (instancetype)currentVersion;
