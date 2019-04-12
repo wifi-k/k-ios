@@ -136,6 +136,11 @@
     self.headerView.optionStr = self.titles[row];
     
     [self.pageViewController setViewControllers:@[[self.controllers objectAtIndex:row]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    
+    if (row ==  0) {
+        SXOnlineAutotIPController *autoVC = [self.controllers objectAtIndex:row];
+        [autoVC getNodeData];
+    }
 }
 
 #pragma mark -UIPageViewControllerDelegate/UIPageViewControllerDelegate-

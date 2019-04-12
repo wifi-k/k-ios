@@ -23,9 +23,7 @@
     
     [self setUpUI];
     
-//    [self getNodeData];
-    
-    [self dynamicSettingData];
+    [self getNodeData];
 }
 
 #pragma mark -初始化UI-
@@ -37,7 +35,7 @@
     WS(weakSelf);
     SXOnlineAutotIPHeaderView *headerView = [SXOnlineAutotIPHeaderView headerView];
     headerView.clickUpdateIPBtnBlock = ^{
-        [weakSelf getNodeData];
+        [weakSelf dynamicSettingData];
     };
     [self.view addSubview:headerView];
     self.headerView = headerView;
@@ -59,34 +57,22 @@
         //更新wan信息
         SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
         [shareInfo setDataWithResult:result];
-//        shareInfo.modelId = result.modelId;
-//        shareInfo.ip = result.wan.ip;
-//        shareInfo.netmask = result.wan.netmask;
-//        shareInfo.gateway = result.wan.gateway;
-//        shareInfo.dns1 = result.wan.dns1;
-//        shareInfo.dns2 = result.wan.dns2;
-//        shareInfo.type = result.wan.type;
-//        shareInfo.name = result.wan.name;
-//        shareInfo.passwd = result.wan.passwd;
         //更新UI
         weakSelf.headerView.result = result;
-        
-        //调用接口
-        [weakSelf dynamicSettingData];
+        //网络状态
+        [weakSelf networkStatusData];
     } failure:^(NSError * _Nonnull error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
-        NSString *message = [error.userInfo objectForKey:@"msg"];
-        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
     }];
 }
 
-///动态设置
+#pragma mark -动态设置接口-
 - (void)dynamicSettingData{
     WS(weakSelf);
     SXNetStaticParam *param = [SXNetStaticParam param];
-    SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
-    param.dns1 = shareInfo.dns1;
-    param.dns2 = shareInfo.dns2;
+//    SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
+//    param.dns1 = shareInfo.dns1;
+//    param.dns2 = shareInfo.dns2;
     [SXAddXiaokiNetTool dynamicSettingWithDataWithParams:param.mj_keyValues Success:^{
         DLog(@"动态校验成功");
         [weakSelf networkStatusData];

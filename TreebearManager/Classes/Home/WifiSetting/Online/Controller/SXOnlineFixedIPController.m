@@ -55,7 +55,9 @@
     [MBProgressHUD showWhiteLoadingWithMessage:nil toView:SXKeyWindow];
     [SXAddXiaokiNetTool staticSettingWithDataWithParams:param.mj_keyValues Success:^{
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
-        [MBProgressHUD showSuccessWithMessage:@"固定IP地址设置成功" toView:SXKeyWindow];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [MBProgressHUD showSuccessWithMessage:@"固定IP地址设置成功" toView:SXKeyWindow];
+        });
     } failure:^(NSError * _Nonnull error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         NSString *message = [error.userInfo objectForKey:@"msg"];

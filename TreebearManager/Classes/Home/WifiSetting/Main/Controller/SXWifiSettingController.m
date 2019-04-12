@@ -190,8 +190,9 @@
         SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
         [shareInfo setDataWithResult:result];
     } failure:^(NSError * _Nonnull error) {
-        NSString *message = [error.userInfo objectForKey:@"msg"];
-        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        if (error.code != 0) {
+            DLog(@"token失效");
+        }
     }];
 }
 
@@ -254,8 +255,9 @@
             [weakSelf alertOnNetAlertView];
         });
     } failure:^(NSError * _Nonnull error) {
-        NSString *message = [error.userInfo objectForKey:@"msg"];
-        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        if (error.code != 0) {
+            DLog(@"token失效");
+        }
     }];
 }
 
