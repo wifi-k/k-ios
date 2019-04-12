@@ -7,6 +7,7 @@
 //
 
 #import "SXPhotoIntelligentController.h"
+#import "SXPhotoChooseController.h"
 
 @interface SXPhotoIntelligentController ()
 
@@ -26,6 +27,11 @@
     self.view.backgroundColor = SXColorWhite;
     
     self.navigationItem.title = @"智能相册";    
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    SXPhotoChooseController *chooseVC = [[SXPhotoChooseController alloc] init];
+    [self.navigationController pushViewController:chooseVC animated:YES];
 }
 
 @end

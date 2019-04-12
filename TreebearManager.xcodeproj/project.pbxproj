@@ -281,6 +281,8 @@
 		09C8CE4E224B281700C03F43 /* SXHealtyControlParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE4D224B281700C03F43 /* SXHealtyControlParam.m */; };
 		09C8CE51224B7BC300C03F43 /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE50224B7BC300C03F43 /* NSArray+Extension.m */; };
 		09C8CE54224B7D1F00C03F43 /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE53224B7D1F00C03F43 /* NSDictionary+Extension.m */; };
+		09C9092C22603D8C00BFF67C /* SXPhotoChooseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C9092B22603D8C00BFF67C /* SXPhotoChooseController.m */; };
+		09C9092F226064C700BFF67C /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C9092E226064C700BFF67C /* NSDate+Extension.m */; };
 		09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */; };
 		09D5F5EF222689CE00EA681A /* SXHomeMainSectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5EE222689CE00EA681A /* SXHomeMainSectionFooterView.m */; };
 		09D5F5F1222689E300EA681A /* SXHomeMainSectionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F5F0222689E300EA681A /* SXHomeMainSectionFooterView.xib */; };
@@ -935,6 +937,10 @@
 		09C8CE50224B7BC300C03F43 /* NSArray+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extension.m"; sourceTree = "<group>"; };
 		09C8CE52224B7D1F00C03F43 /* NSDictionary+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extension.h"; sourceTree = "<group>"; };
 		09C8CE53224B7D1F00C03F43 /* NSDictionary+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
+		09C9092A22603D8C00BFF67C /* SXPhotoChooseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPhotoChooseController.h; sourceTree = "<group>"; };
+		09C9092B22603D8C00BFF67C /* SXPhotoChooseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoChooseController.m; sourceTree = "<group>"; };
+		09C9092D226064C700BFF67C /* NSDate+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		09C9092E226064C700BFF67C /* NSDate+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
 		09D5F5E0222678C000EA681A /* SXHomeMainSectionHeaderView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionHeaderView2.h; sourceTree = "<group>"; };
 		09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSectionHeaderView2.m; sourceTree = "<group>"; };
 		09D5F5ED222689CE00EA681A /* SXHomeMainSectionFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionFooterView.h; sourceTree = "<group>"; };
@@ -2374,6 +2380,31 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		09C9092722603D7200BFF67C /* Choose */ = {
+			isa = PBXGroup;
+			children = (
+				09C9092822603D7200BFF67C /* Controller */,
+				09C9092922603D7200BFF67C /* View */,
+			);
+			path = Choose;
+			sourceTree = "<group>";
+		};
+		09C9092822603D7200BFF67C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				09C9092A22603D8C00BFF67C /* SXPhotoChooseController.h */,
+				09C9092B22603D8C00BFF67C /* SXPhotoChooseController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		09C9092922603D7200BFF67C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		09D5F5F22226B69F00EA681A /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
@@ -3062,6 +3093,7 @@
 			isa = PBXGroup;
 			children = (
 				09D5F5FA2227E3A600EA681A /* Helper */,
+				09C9092722603D7200BFF67C /* Choose */,
 				09EF2FAF225B3A4300C2C17C /* Browser */,
 				09EF2FA9225B264500C2C17C /* Backup */,
 				09F76F472247CABC008A9048 /* Intelligent */,
@@ -3121,6 +3153,8 @@
 				09C8CE50224B7BC300C03F43 /* NSArray+Extension.m */,
 				09C8CE52224B7D1F00C03F43 /* NSDictionary+Extension.h */,
 				09C8CE53224B7D1F00C03F43 /* NSDictionary+Extension.m */,
+				09C9092D226064C700BFF67C /* NSDate+Extension.h */,
+				09C9092E226064C700BFF67C /* NSDate+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -4103,6 +4137,7 @@
 				09B9B7A9222E56C0000868D5 /* XKUserMember.m in Sources */,
 				09D5F649222A73AD00EA681A /* SXHealtyTimeController.m in Sources */,
 				0900F51D222D4FC600250155 /* SXDynamicController.m in Sources */,
+				09C9092C22603D8C00BFF67C /* SXPhotoChooseController.m in Sources */,
 				B348F98821F713A80000F194 /* main.m in Sources */,
 				093C12F52254A660005682C8 /* UIButton+EnlargeTouchArea.m in Sources */,
 				09D5F625222925C200EA681A /* SXParentControlHeaderView.m in Sources */,
@@ -4276,6 +4311,7 @@
 				B348F97521F6EB070000F194 /* SXMineController.m in Sources */,
 				09EEC0D5223A2B2600F519E4 /* SXMineAddChildController.m in Sources */,
 				091BC4CF2242207100FEBFD1 /* PYImageBrowserView.m in Sources */,
+				09C9092F226064C700BFF67C /* NSDate+Extension.m in Sources */,
 				095540C6221F90BA005A5485 /* SXImaginaryLineView.m in Sources */,
 				B3AF302D21FE9249001E4E67 /* SXBaseCustomTableViewPlainController.m in Sources */,
 				09F76F3622476ED8008A9048 /* SXXiaoKiEquipmentOptionController.m in Sources */,

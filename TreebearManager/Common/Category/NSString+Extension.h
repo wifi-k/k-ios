@@ -45,6 +45,9 @@
 + (instancetype)stringWithCityName:(NSString *)cityNameStr;
 //时间戳转成固定格式字符串
 + (instancetype)stringWithTimestamp:(NSNumber *)timestamp;
+//时间戳转成日期格式(MM月dd日 HH:mm)
++ (instancetype)stringWithTimestamp2:(NSString *)timestamp;
+
 //版本号
 - (instancetype)currentVersion;
 /**
