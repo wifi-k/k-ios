@@ -20,13 +20,12 @@
 @end
 
 @implementation SXHomeNetworkingDeviceCell
-
-static NSString *SXHomeNetworkingDeviceCellID = @"SXHomeNetworkingDeviceCellID";
     
 + (instancetype)cellWithTableView:(UITableView *)tableView{
-    id cell = [tableView dequeueReusableCellWithIdentifier:SXHomeNetworkingDeviceCellID];
+    NSString *identifer = NSStringFromClass(self);
+    id cell = [tableView dequeueReusableCellWithIdentifier:identifer];
     if (!cell) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
+        cell = [[[NSBundle mainBundle] loadNibNamed:identifer owner:nil options:nil] lastObject];
     }
     return cell;
 }
@@ -34,17 +33,14 @@ static NSString *SXHomeNetworkingDeviceCellID = @"SXHomeNetworkingDeviceCellID";
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    //设置背样式
-    self.contentView.backgroundColor = SXColorWhite;
-    
     [self setUpUI];
 }
 
 #pragma mark -初始化UI-
 - (void)setUpUI{
     
-    //[self.iconImageV roundViewWithRadius:30.0f];
-    
+    //设置背样式
+    self.contentView.backgroundColor = SXColorWhite;
     self.contentBgView.backgroundColor = SXColorClear;
     
     self.timeL.textColor = SXColor7383A2;

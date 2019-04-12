@@ -493,45 +493,71 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    /*
-    if (indexPath.section == 0) {//第一分组
-        //圆率
-        CGFloat cornerRadius = 10.0;
-        //大小
-        CGRect bounds = cell.bounds;
-        bounds.origin.x += 15;
-        bounds.size.width -= 30;
-        //行数
-        NSInteger numberOfRows = [tableView numberOfRowsInSection:indexPath.section];
-        //绘制曲线
-        UIBezierPath *bezierPath = nil;
-        
-        if (indexPath.row == 0 && numberOfRows == 1) {
-            //一个为一组时,四个角都为圆角
-            bezierPath = [UIBezierPath bezierPathWithRoundedRect:bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
-        } else if (indexPath.row == 0) {
-            //为组的第一行时,左上、右上角为圆角
-            bezierPath = [UIBezierPath bezierPathWithRoundedRect:bounds byRoundingCorners:(UIRectCornerTopLeft|UIRectCornerTopRight) cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
-        } else if (indexPath.row == numberOfRows - 1) {
-            //为组的最后一行,左下、右下角为圆角
-            bezierPath = [UIBezierPath bezierPathWithRoundedRect:bounds byRoundingCorners:(UIRectCornerBottomLeft|UIRectCornerBottomRight) cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
-        } else {
-            //中间的都为矩形
-            bezierPath = [UIBezierPath bezierPathWithRect:bounds];
-        }
-        //cell的背景色透明
-        cell.backgroundColor = [UIColor clearColor];
-        //新建一个图层
-        CAShapeLayer *layer = [CAShapeLayer layer];
-        //图层边框路径
-        layer.path = bezierPath.CGPath;
-        //图层填充色,也就是cell的底色
-        layer.fillColor = SXColorWhite.CGColor;
-        //图层边框线条颜色
-        //layer.strokeColor = SXColorRandom.CGColor;
-        //将图层添加到cell的图层中,并插到最底层
-        [cell.contentView.layer insertSublayer:layer atIndex:0];
-    }*/
+    if (indexPath.section == 0) {
+//        CGFloat cornerRadius = 8.f;
+//        cell.backgroundColor = UIColor.clearColor;
+//
+//        CAShapeLayer *layer = [[CAShapeLayer alloc] init];
+//        layer.cornerRadius = 15;
+//        layer.shadowColor = UIColor.lightGrayColor.CGColor;
+//        layer.shadowOffset = CGSizeMake(2, 0);
+//        layer.shadowOpacity = 0.5;
+//        layer.shadowRadius = 2;
+//        CAShapeLayer *backgroundLayer = [[CAShapeLayer alloc] init];
+//        CGMutablePathRef pathRef = CGPathCreateMutable();
+//
+//        CGRect bounds = CGRectMake(15, 0, cell.bounds.size.width - 15*2, cell.bounds.size.height);
+//
+//
+//        NSInteger numberOfRows = tableView.numberOfSections;
+//        BOOL needSeparator = NO;
+//
+//        if (indexPath.row == 0 && numberOfRows == 1) {
+//            CGPathAddRoundedRect(pathRef, nil, bounds, cornerRadius, cornerRadius);
+//        }else if (indexPath.row == 0) {
+//            // 初始起点为cell的左下角坐标
+//            CGPathMoveToPoint(pathRef, nil, CGRectGetMinX(bounds), CGRectGetMaxY(bounds));
+//            CGPathAddArcToPoint(pathRef, nil, CGRectGetMinX(bounds), CGRectGetMinY(bounds), CGRectGetMidX(bounds), CGRectGetMinY(bounds), cornerRadius);
+//            CGPathAddArcToPoint(pathRef, nil, CGRectGetMaxX(bounds), CGRectGetMinY(bounds), CGRectGetMaxX(bounds), CGRectGetMidY(bounds), cornerRadius);
+//            CGPathAddLineToPoint(pathRef, nil, CGRectGetMaxX(bounds), CGRectGetMaxY(bounds));
+//
+//            needSeparator = NO;
+//
+//        } else if (indexPath.row == numberOfRows -1) {
+//            // 初始起点为cell的左上角坐标
+//            CGPathMoveToPoint(pathRef, nil, CGRectGetMinX(bounds), CGRectGetMinY(bounds));
+//            CGPathAddArcToPoint(pathRef, nil, CGRectGetMinX(bounds), CGRectGetMaxY(bounds), CGRectGetMidX(bounds), CGRectGetMaxY(bounds), cornerRadius);
+//            CGPathAddArcToPoint(pathRef, nil, CGRectGetMaxX(bounds), CGRectGetMaxY(bounds), CGRectGetMaxX(bounds), CGRectGetMidY(bounds), cornerRadius);
+//            CGPathAddLineToPoint(pathRef, nil, CGRectGetMaxX(bounds), CGRectGetMinY(bounds));
+//        } else {
+//            CGPathAddRect(pathRef, nil, bounds);
+//            needSeparator = NO;
+//        }
+//
+//        layer.path = pathRef;
+//        backgroundLayer.path = pathRef;
+//        CFRelease(pathRef);
+//        layer.fillColor = [UIColor whiteColor].CGColor;
+//        if (needSeparator) {
+//            CALayer *lineLayer = [[CALayer alloc] init];
+//            CGFloat lineHeight = (1.f / [UIScreen mainScreen].scale);
+//            lineLayer.frame = CGRectMake(tableView.separatorInset.left, bounds.size.height - lineHeight, bounds.size.width - (tableView.separatorInset.left + tableView.separatorInset.right), lineHeight);
+//            lineLayer.backgroundColor = tableView.separatorColor.CGColor;
+//            [layer addSublayer:lineLayer];
+//        }
+//
+//        UIView *roundView = [[UIView alloc] initWithFrame:bounds];
+//        [roundView.layer insertSublayer:layer atIndex:0];
+//        roundView.backgroundColor = UIColor.whiteColor;
+//        cell.backgroundView = roundView;
+//
+//        UIView *selectedBackgroundView = [[UIView alloc] initWithFrame:cell.bounds];
+//        backgroundLayer.fillColor = [UIColor groupTableViewBackgroundColor].CGColor;
+//        [selectedBackgroundView.layer insertSublayer:backgroundLayer below:cell.layer];
+//        selectedBackgroundView.backgroundColor = UIColor.clearColor;
+//        cell.selectedBackgroundView = selectedBackgroundView;
+    }
+
 }
     
 @end

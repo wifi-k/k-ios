@@ -66,6 +66,8 @@
     } else {
         self.checkImageView.image = [UIImage imageNamed:@"home_netoption_uncheck"];
     }
+    
+    self.checkImageView.hidden = !asset.isShow;
 }
 
 @end

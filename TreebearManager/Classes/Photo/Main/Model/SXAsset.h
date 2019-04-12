@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) PHAsset *asset;
 ///是否选中
 @property (nonatomic, assign) BOOL isChecked;
+///是否显示
+@property (nonatomic, assign) BOOL isShow;
 
 @end
 
