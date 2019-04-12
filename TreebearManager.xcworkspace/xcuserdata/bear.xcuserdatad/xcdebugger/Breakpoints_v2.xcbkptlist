@@ -45,5 +45,117 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TreebearManager/Classes/Home/WifiSetting/Online/Controller/SXOnlineAutotIPController.m"
+            timestampString = "576751749.4729151"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "-setUpUI"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TreebearManager/Classes/Home/XiaoKi/Controller/SXXiaoKiAddBindController.m"
+            timestampString = "576752077.492856"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "-getNodeData"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SXXiaoKiAddBindController getNodeData]"
+                  moduleName = "TreebearManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bear/Documents/WorkSpace/TreebearManager/TreebearManager/Classes/Home/XiaoKi/Controller/SXXiaoKiAddBindController.m"
+                  timestampString = "576752872.463468"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__40-[SXXiaoKiAddBindController getNodeData]_block_invoke"
+                  moduleName = "TreebearManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bear/Documents/WorkSpace/TreebearManager/TreebearManager/Classes/Home/XiaoKi/Controller/SXXiaoKiAddBindController.m"
+                  timestampString = "576752872.465487"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TreebearManager/Classes/Home/WifiSetting/Online/Controller/SXOnlineAutotIPController.m"
+            timestampString = "576752080.920891"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "-getNodeData"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SXOnlineAutotIPController getNodeData]"
+                  moduleName = "TreebearManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bear/Documents/WorkSpace/TreebearManager/TreebearManager/Classes/Home/WifiSetting/Online/Controller/SXOnlineAutotIPController.m"
+                  timestampString = "576752872.4699351"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "220">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__40-[SXOnlineAutotIPController getNodeData]_block_invoke"
+                  moduleName = "TreebearManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bear/Documents/WorkSpace/TreebearManager/TreebearManager/Classes/Home/WifiSetting/Online/Controller/SXOnlineAutotIPController.m"
+                  timestampString = "576752872.4716671"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

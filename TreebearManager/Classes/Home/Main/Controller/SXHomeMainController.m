@@ -34,6 +34,7 @@
 #import "SXMineNetTool.h"
 #import "SXWifiSettingNetTool.h"
 #import "SXHomeReportNetTool.h"
+#import "NSString+Hash.h"
 #import <UMSocialCore/UMSocialCore.h>
 
 @interface SXHomeMainController ()<UITableViewDelegate,UITableViewDataSource>
@@ -70,6 +71,8 @@
     
     //添加通知
     [self addNotification];
+    //重新登录
+    [self loginWithData];
     //获取节点数据
     [self getNodeData];
     //选中家庭成员
@@ -258,6 +261,22 @@
         //更新wan信息
         SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
         [shareInfo setDataWithResult:result];
+    } failure:^(NSError * _Nonnull error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
+#pragma mark -登录设备-
+- (void)loginWithData{
+    //1.尝试登录
+    WS(weakSelf);
+    SXNetBroadbandParam *param = [SXNetBroadbandParam param];
+    param.name = @"admin";
+    param.passwd = @"123456".md5String;
+    [SXAddXiaokiNetTool loginWithPasswdDataWithParams:param.mj_keyValues Success:^{
+        DLog(@"登录成功!");
+        [weakSelf getNodeData];
     } failure:^(NSError * _Nonnull error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];

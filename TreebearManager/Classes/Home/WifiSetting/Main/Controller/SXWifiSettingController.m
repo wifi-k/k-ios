@@ -182,6 +182,19 @@
     [netAlertView alert];
 }
 
+#pragma mark -获取节点数据-
+- (void)getNodeData{
+    [SXAddXiaokiNetTool getNodeWithDataWithSuccess:^(SXXiaoKNodeResult * _Nonnull result) {
+        DLog(@"获取节点");
+        //更新wan信息
+        SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
+        [shareInfo setDataWithResult:result];
+    } failure:^(NSError * _Nonnull error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
 #pragma mark -WiFi列表数据接口-
 - (void)userNodeWifiListData{
     NSString *nodeId = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel.nodeId;
@@ -240,19 +253,6 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [weakSelf alertOnNetAlertView];
         });
-    } failure:^(NSError * _Nonnull error) {
-        NSString *message = [error.userInfo objectForKey:@"msg"];
-        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
-    }];
-}
-
-#pragma mark -获取节点数据-
-- (void)getNodeData{
-    [SXAddXiaokiNetTool getNodeWithDataWithSuccess:^(SXXiaoKNodeResult * _Nonnull result) {
-        DLog(@"获取节点");
-        //1.更新wan信息
-        SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
-        [shareInfo setDataWithResult:result];
     } failure:^(NSError * _Nonnull error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
