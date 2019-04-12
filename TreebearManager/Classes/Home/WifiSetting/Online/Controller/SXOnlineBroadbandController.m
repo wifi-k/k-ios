@@ -82,4 +82,6 @@
     }];
 }
 
+#warning mark -测试数据,设置成功->网络状态成功->node/info接口请求 -
+
 @end

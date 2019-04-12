@@ -99,6 +99,7 @@
         }
             break;
         case 2:{
+            #warning mark -测试数据,动态设置成功之后，检查网络状态，之后才跳转下个页面，设置用户名和密码-
             [self networkStatusData];
         }
             break;
@@ -106,6 +107,8 @@
             break;
     }
 }
+
+#warning mark -测试数据-
 
 #pragma mark -查询网络状态-
 - (void)networkStatusData{

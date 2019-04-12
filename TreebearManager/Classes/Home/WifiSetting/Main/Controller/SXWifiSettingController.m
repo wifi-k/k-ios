@@ -79,6 +79,10 @@
     WS(weakSelf);
     SXWifiSettingAlertView *nameAlertView = [SXWifiSettingAlertView alertWithTitle:@"设置WiFi名称" placeholder:@"请输入新的名称" confirmStr:@"确定" cancelStr:@"取消"];
     nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
+        if (text.length < 8) {
+            [MBProgressHUD showWarningWithMessage:@"密码长度不得低于8位!" toView:SXKeyWindow];
+            return;
+        }
         DLog(@"text:%@",text);
         SXDynamicParam *param = [SXDynamicParam param];
         param.ssid0 = [XKGetWifiNetTool getWifiSSID];
