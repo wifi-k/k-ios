@@ -100,6 +100,23 @@
 
 #pragma mark -Event-
 - (IBAction)clickSaveBtn:(UIButton *)sender {
+    if ([NSString isEmpty:self.param.ip]) {
+        [MBProgressHUD showWarningWithMessage:@"IP地址填写不能为空" toView:SXKeyWindow];
+        return;
+    }
+    if ([NSString isEmpty:self.param.netmask]) {
+        [MBProgressHUD showWarningWithMessage:@"子网掩码填写不能为空" toView:SXKeyWindow];
+        return;
+    }
+    if ([NSString isEmpty:self.param.gateway]) {
+        [MBProgressHUD showWarningWithMessage:@"网关填写不能为空!" toView:SXKeyWindow];
+        return;
+    }
+    if ([NSString isEmpty:self.param.dns1]) {
+        [MBProgressHUD showWarningWithMessage:@"首选DNS服务器填写不能为空!" toView:SXKeyWindow];
+        return;
+    }
+    
     if (self.clickSaveBtnBlock) {
         self.clickSaveBtnBlock();
     }

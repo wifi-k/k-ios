@@ -73,13 +73,15 @@
 //    SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
 //    param.dns1 = shareInfo.dns1;
 //    param.dns2 = shareInfo.dns2;
+    [MBProgressHUD showWhiteLoadingToView:SXKeyWindow];
     [SXAddXiaokiNetTool dynamicSettingWithDataWithParams:param.mj_keyValues Success:^{
-        DLog(@"动态校验成功");
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [MBProgressHUD showSuccessWithMessage:@"动态校验成功" toView:SXKeyWindow];
         });
         [weakSelf networkStatusData];
     } failure:^(NSError * _Nonnull error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         NSString *message = [error.userInfo objectForKey:@"msg"];
         [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
     }];
