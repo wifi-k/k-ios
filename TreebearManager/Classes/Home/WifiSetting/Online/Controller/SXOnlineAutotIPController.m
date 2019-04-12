@@ -75,6 +75,9 @@
 //    param.dns2 = shareInfo.dns2;
     [SXAddXiaokiNetTool dynamicSettingWithDataWithParams:param.mj_keyValues Success:^{
         DLog(@"动态校验成功");
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [MBProgressHUD showSuccessWithMessage:@"动态校验成功" toView:SXKeyWindow];
+        });
         [weakSelf networkStatusData];
     } failure:^(NSError * _Nonnull error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
