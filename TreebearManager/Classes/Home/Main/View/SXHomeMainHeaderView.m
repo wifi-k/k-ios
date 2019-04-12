@@ -12,8 +12,9 @@
 #import "SXHomeMainSettingButton.h"
 #import "SXHomeMainMemberButton.h"
 #import "SXXiaoKiOptionResult.h"
+#import "LMJScrollTextView2.h"
 
-@interface SXHomeMainHeaderView ()
+@interface SXHomeMainHeaderView ()<LMJScrollTextView2Delegate>
 @property (weak, nonatomic) IBOutlet SXImaginaryLineView *horizonDivideView;
 @property (weak, nonatomic) IBOutlet UIView *verticalDivideView;
 @property (weak, nonatomic) IBOutlet UIImageView *topCardBgImageView;
@@ -28,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *messageImageView;
 @property (weak, nonatomic) IBOutlet UILabel *messageL;
 @property (weak, nonatomic) IBOutlet UIView *noticeBgView;
+@property (nonatomic, weak) LMJScrollTextView2 *scrollTextView;
 
 @property (weak, nonatomic) IBOutlet SXHomeMainSettingButton *parentControlBtn;
 @property (weak, nonatomic) IBOutlet SXHomeMainSettingButton *healthyModeBtn;
@@ -74,6 +76,16 @@
     self.noticeBgView.backgroundColor = [UIColor colorWithColor:SXColorF1F5FF alpha:0.5];
     [self.noticeBgView roundViewWithRadius:8.0f];
     self.messageL.textColor = SXColor7383A2;
+    
+    LMJScrollTextView2 *scrollTextView = [[LMJScrollTextView2 alloc] init];
+    scrollTextView.delegate = self;
+    scrollTextView.backgroundColor = [UIColor whiteColor];
+    scrollTextView.textColor = [UIColor grayColor];
+    scrollTextView.textFont = [UIFont systemFontOfSize:13.0f];
+    [self.noticeBgView addSubview:scrollTextView];
+    self.scrollTextView = scrollTextView;
+    self.scrollTextView.hidden = YES;
+    [self.scrollTextView startScrollBottomToTopWithSpace];
     
     self.bottomBgView.backgroundColor = SXColorWhite;
     
@@ -167,6 +179,15 @@
     if (self.clickSettingBtnBlock) {
         self.clickSettingBtnBlock(sender.tag);
     }
+}
+
+#pragma mark -LMJScrollTextView2Delegate-
+- (void)scrollTextView2:(LMJScrollTextView2 *)scrollTextView currentTextIndex:(NSInteger)index{
+    //    DLog(@"当前是信息%ld",index);
+}
+
+- (void)setUpMsgArray:(NSArray *)msgArray{
+    self.scrollTextView.textDataArr = msgArray;
 }
 
 @end
