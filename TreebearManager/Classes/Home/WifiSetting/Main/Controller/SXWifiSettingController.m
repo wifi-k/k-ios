@@ -80,11 +80,17 @@
     SXWifiSettingAlertView *nameAlertView = [SXWifiSettingAlertView alertWithTitle:@"设置WiFi名称" placeholder:@"请输入新的名称" confirmStr:@"确定" cancelStr:@"取消"];
     nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
         DLog(@"text:%@",text);
-        SXXiaoKiParam *param = [SXXiaoKiParam param];
-        param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
-        param.freq = @0;
+        SXDynamicParam *param = [SXDynamicParam param];
+        param.ssid0 = [XKGetWifiNetTool getWifiSSID];
         param.ssid = text;
-        [weakSelf userNodeSsidSetDataWitiParam:param];
+        param.passwd = @"123456";
+        [weakSelf setNetDynamicData:param];
+#warning mark -测试数据-
+//        SXXiaoKiParam *param = [SXXiaoKiParam param];
+//        param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
+//        param.freq = @0;
+//        param.ssid = text;
+//        [weakSelf userNodeSsidSetDataWitiParam:param];
     };
     [nameAlertView alert];
 }
@@ -94,11 +100,17 @@
     SXWifiSettingAlertView *pwdAlertV = [SXWifiSettingAlertView alertWithTitle:@"设置WiFi名称" placeholder:@"请输入新的密码" confirmStr:@"确定" cancelStr:@"取消"];
     pwdAlertV.confirmButtonBlock = ^(NSString * _Nonnull text) {
         DLog(@"text:%@",text);
-        SXXiaoKiParam *param = [SXXiaoKiParam param];
-        param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
-        param.freq = @0;
-        param.passwd = text.md5String;
-        [weakSelf userNodeSsidSetDataWitiParam:param];
+        SXDynamicParam *param = [SXDynamicParam param];
+        param.ssid0 = [XKGetWifiNetTool getWifiSSID];
+        param.ssid = @"123456";
+        param.passwd = text;
+        [weakSelf setNetDynamicData:param];
+#warning mark -测试数据-
+//        SXXiaoKiParam *param = [SXXiaoKiParam param];
+//        param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
+//        param.freq = @0;
+//        param.passwd = text.md5String;
+//        [weakSelf userNodeSsidSetDataWitiParam:param];
     };
     [pwdAlertV alert];
 }
@@ -218,7 +230,7 @@
 #pragma mark -WiFi设置数据接口-
 - (void)userNodeSsidSetDataWitiParam:(SXXiaoKiParam *)param{
     if ([NSString isEmpty:SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId]) {
-        [MBProgressHUD showWarningWithMessage:@"没有修改成功，请检查您的WiFi连接" toView:SXKeyWindow];
+        [MBProgressHUD showWarningWithMessage:@"修改失败，请检查您的WiFi连接!" toView:SXKeyWindow];
         return;
     }
     
@@ -241,12 +253,8 @@
 }
 
 #pragma mark -网络信息设置-
-- (void)setNetDynamicData{
+- (void)setNetDynamicData:(SXDynamicParam *)param{
     WS(weakSelf);
-    SXDynamicParam *param = [SXDynamicParam param];
-    param.ssid0 = [XKGetWifiNetTool getWifiSSID];
-    param.ssid = @"";
-    param.passwd = @"".md5String;
     [SXAddXiaokiNetTool ssidSettingWithDataWithParams:param.mj_keyValues Success:^{
         //1.指示器
         [MBProgressHUD showSuccessWithMessage:@"WiFi设置成功!" toView:weakSelf.view];

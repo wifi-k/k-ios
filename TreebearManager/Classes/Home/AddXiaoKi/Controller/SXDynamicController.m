@@ -55,7 +55,7 @@
     SXDynamicParam *param = [SXDynamicParam param];
     param.ssid0 = [XKGetWifiNetTool getWifiSSID];
     param.ssid = self.headerView.param.ssid;
-    param.passwd = self.headerView.param.passwd.md5String;
+    param.passwd = self.headerView.param.passwd;
     [SXAddXiaokiNetTool ssidSettingWithDataWithParams:param.mj_keyValues Success:^{
         //1.指示器
         [MBProgressHUD showSuccessWithMessage:@"WiFi设置成功!" toView:weakSelf.view];
