@@ -23,6 +23,7 @@
     
     [self setUpUI];
     
+    //1.获取节点数据
     [self getNodeData];
 }
 
@@ -59,8 +60,6 @@
         [shareInfo setDataWithResult:result];
         //更新UI
         weakSelf.headerView.result = result;
-        //网络状态
-        [weakSelf networkStatusData];
     } failure:^(NSError * _Nonnull error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
     }];
@@ -70,15 +69,13 @@
 - (void)dynamicSettingData{
     WS(weakSelf);
     SXNetStaticParam *param = [SXNetStaticParam param];
-//    SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
-//    param.dns1 = shareInfo.dns1;
-//    param.dns2 = shareInfo.dns2;
     [MBProgressHUD showWhiteLoadingToView:SXKeyWindow];
     [SXAddXiaokiNetTool dynamicSettingWithDataWithParams:param.mj_keyValues Success:^{
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [MBProgressHUD showSuccessWithMessage:@"动态校验成功" toView:SXKeyWindow];
         });
+        //网络状态->获取节点
         [weakSelf networkStatusData];
     } failure:^(NSError * _Nonnull error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
@@ -94,12 +91,14 @@
     [SXAddXiaokiNetTool networkStatusWithDataSuccess:^{
         DLog(@"网络状态正常");
         weakSelf.headerView.netStatus = 0;
+        //获取节点信息
+        [weakSelf getNodeData];
     } failure:^(NSError * _Nonnull error) {
         weakSelf.headerView.netStatus = error.code;
         ++count;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             //递归方法
-            if (error.code == 1 && count%3 != 0) {
+            if (error.code == 1 && count%5 != 0) {
                 [weakSelf networkStatusData];
             } else{
                 [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
@@ -110,8 +109,5 @@
         });
     }];
 }
-
-#warning mark -测试数据,设置成功->网络状态成功->node/info接口请求 -
-
 
 @end

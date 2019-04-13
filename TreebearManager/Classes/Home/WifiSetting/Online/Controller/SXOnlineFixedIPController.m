@@ -46,6 +46,7 @@
 
 #pragma mark -Event-
 - (void)staticSettingWithData{
+    WS(weakSelf);
     SXNetStaticParam *param = [SXNetStaticParam param];
     param.ip = self.headerView.param.ip;
     param.netmask = self.headerView.param.netmask;
@@ -58,6 +59,8 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [MBProgressHUD showSuccessWithMessage:@"固定IP地址设置成功" toView:SXKeyWindow];
         });
+        //网络状态->获取节点
+        [weakSelf networkStatusData];
     } failure:^(NSError * _Nonnull error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         NSString *message = [error.userInfo objectForKey:@"msg"];
@@ -65,6 +68,42 @@
     }];
 }
 
-#warning mark -测试数据,设置成功->网络状态成功->node/info接口请求 -
+#pragma mark -查询网络状态-
+- (void)networkStatusData{
+    WS(weakSelf);
+    static NSInteger count = 0;
+    [SXAddXiaokiNetTool networkStatusWithDataSuccess:^{
+        DLog(@"网络状态正常");
+        //获取节点信息
+        [weakSelf getNodeData];
+    } failure:^(NSError * _Nonnull error) {
+        ++count;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            //递归方法
+            if (error.code == 1 && count%5 != 0) {
+                [weakSelf networkStatusData];
+            } else{
+                [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [MBProgressHUD showMessage:@"请检查配置参数，然后重试!" toView:weakSelf.view];
+                });
+            }
+        });
+    }];
+}
+
+#pragma mark -获取节点数据-
+- (void)getNodeData{
+    [MBProgressHUD showWhiteLoadingToView:SXKeyWindow];
+    [SXAddXiaokiNetTool getNodeWithDataWithSuccess:^(SXXiaoKNodeResult * _Nonnull result) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        DLog(@"获取节点");
+        //更新wan信息
+        SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
+        [shareInfo setDataWithResult:result];
+    } failure:^(NSError * _Nonnull error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+    }];
+}
 
 @end
