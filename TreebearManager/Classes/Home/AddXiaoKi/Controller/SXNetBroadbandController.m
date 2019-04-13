@@ -95,19 +95,11 @@
 #pragma mark -节点绑定-
 - (void)userNodeBindData{
     //更新wan信息
-    [MBProgressHUD showWhiteLoadingWithMessage:@"绑定中..." toView:SXKeyWindow];
     SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
     [SXMineNetTool userNodeBindParams:shareInfo.modelId Success:^{
-        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
-        
-        //通知绑定成功
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            //提示
-            [MBProgressHUD showSuccessWithMessage:@"绑定成功!" toView:SXKeyWindow];
-        });
-        
+        DLog(@"绑定成功!");
     } failure:^(NSError *error) {
-        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        DLog("error:%@",error.userInfo);
     }];
 }
 
