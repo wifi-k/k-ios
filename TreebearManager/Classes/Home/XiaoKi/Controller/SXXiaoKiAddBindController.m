@@ -117,7 +117,6 @@
         return;
     }
     [MBProgressHUD showWhiteLoadingWithMessage:@"绑定中..." toView:SXKeyWindow];
-#warning mark -测试数据，要改逻辑-
     [SXMineNetTool userNodeBindParams:self.currentResult.modelId Success:^{
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         

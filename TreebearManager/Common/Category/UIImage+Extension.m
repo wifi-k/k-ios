@@ -123,7 +123,7 @@
     // 算水印的位置和大小
     // 一般会通过一个比例来缩小水印图片
     UIImage *waterImage = [UIImage imageNamed:waterImageName];
-#warning 水印的比例，根据需求而定
+#pragma mark -水印的比例，根据需求而定-
     CGFloat waterScale = 0.4;
     CGFloat waterW = waterImage.size.width * waterScale;
     CGFloat waterH = waterImage.size.height * waterScale;

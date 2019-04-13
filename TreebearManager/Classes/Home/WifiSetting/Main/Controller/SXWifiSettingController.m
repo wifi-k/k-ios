@@ -79,22 +79,20 @@
     WS(weakSelf);
     SXWifiSettingAlertView *nameAlertView = [SXWifiSettingAlertView alertWithTitle:@"设置WiFi名称" placeholder:@"请输入新的名称" confirmStr:@"确定" cancelStr:@"取消"];
     nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
-        if (text.length < 8) {
-            [MBProgressHUD showWarningWithMessage:@"密码长度不得低于8位!" toView:SXKeyWindow];
-            return;
-        }
         DLog(@"text:%@",text);
-        SXDynamicParam *param = [SXDynamicParam param];
-        param.ssid0 = [XKGetWifiNetTool getWifiSSID];
-        param.ssid = text;
-        param.passwd = @"123456";
-        [weakSelf setNetDynamicData:param];
-#warning mark -测试数据-
-//        SXXiaoKiParam *param = [SXXiaoKiParam param];
-//        param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
-//        param.freq = @0;
-//        param.ssid = text;
-//        [weakSelf userNodeSsidSetDataWitiParam:param];
+        if ([weakSelf isNearWifi]) {
+            SXDynamicParam *param = [SXDynamicParam param];
+            param.ssid0 = [XKGetWifiNetTool getWifiSSID];
+            param.ssid = text;
+            param.passwd = @"123456";
+            [weakSelf setNetDynamicData:param];
+        } else {
+            SXXiaoKiParam *param = [SXXiaoKiParam param];
+            param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
+            param.freq = @0;
+            param.ssid = text;
+            [weakSelf userNodeSsidSetDataWitiParam:param];
+        }
     };
     [nameAlertView alert];
 }
@@ -104,19 +102,33 @@
     SXWifiSettingAlertView *pwdAlertV = [SXWifiSettingAlertView alertWithTitle:@"设置WiFi名称" placeholder:@"请输入新的密码" confirmStr:@"确定" cancelStr:@"取消"];
     pwdAlertV.confirmButtonBlock = ^(NSString * _Nonnull text) {
         DLog(@"text:%@",text);
-        SXDynamicParam *param = [SXDynamicParam param];
-        param.ssid0 = [XKGetWifiNetTool getWifiSSID];
-        param.ssid = @"123456";
-        param.passwd = text;
-        [weakSelf setNetDynamicData:param];
-#warning mark -测试数据-
-//        SXXiaoKiParam *param = [SXXiaoKiParam param];
-//        param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
-//        param.freq = @0;
-//        param.passwd = text.md5String;
-//        [weakSelf userNodeSsidSetDataWitiParam:param];
+        if (text.length < 8) {
+            [MBProgressHUD showWarningWithMessage:@"密码长度不得低于8位!" toView:SXKeyWindow];
+            return;
+        }
+        if ([weakSelf isNearWifi]) {
+            SXDynamicParam *param = [SXDynamicParam param];
+            param.ssid0 = [XKGetWifiNetTool getWifiSSID];
+            param.ssid = @"123456";
+            param.passwd = text;
+            [weakSelf setNetDynamicData:param];
+        } else {
+            SXXiaoKiParam *param = [SXXiaoKiParam param];
+            param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
+            param.freq = @0;
+            param.passwd = text.md5String;
+            [weakSelf userNodeSsidSetDataWitiParam:param];
+        }
     };
     [pwdAlertV alert];
+}
+
+#warning mark -测试数据-
+#pragma mark -判断是否使用近网通信-
+- (BOOL)isNearWifi{
+    NSString *nearNodeId = [SXXiaoKInfoModel sharedSXXiaoKInfoModel].modelId;
+    NSString *farNodeId = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel.nodeId;
+    return [nearNodeId isEqualToString:farNodeId];
 }
 
 #pragma mark -页面跳转-

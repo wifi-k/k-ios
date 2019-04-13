@@ -86,8 +86,6 @@
     self.pageIndex = 1;
     param.pageNo = @(self.pageIndex);
     param.pageSize = @10;
-//    param.status = @1;
-//    param.nodeId = @"123456754321";
     [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
     [SXMineNetTool userNodeListParams:param.mj_keyValues Success:^(SXHomeXiaoKiResult *result) {
         [weakSelf endHeaderRefresh];
