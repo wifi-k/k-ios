@@ -11,6 +11,7 @@
 #import "SXNetBroadbandHeaderView.h"
 #import "SXAddXiaokiNetTool.h"
 #import "NSString+Hash.h"
+#import "SXMineNetTool.h"
 
 @interface SXNetBroadbandController ()
 ///头部视图
@@ -70,13 +71,16 @@
     [SXAddXiaokiNetTool networkStatusWithDataSuccess:^{
         [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
         DLog(@"网络状态正常");
+        //页面跳转
         SXDynamicController *dynamicVC = [[SXDynamicController alloc] init];
         [weakSelf.navigationController pushViewController:dynamicVC animated:YES];
+        //获取节点信息
+        [weakSelf userNodeBindData];
     } failure:^(NSError * _Nonnull error) {
         ++count;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             //递归方法
-            if (error.code == 1 && count%3 != 0) {
+            if (error.code == 1 && count%5 != 0) {
                 [weakSelf networkStatusData];
             } else{
                 [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
@@ -88,6 +92,23 @@
     }];
 }
 
-#warn mark -测试数据,给服务端发绑定接口-
+#pragma mark -节点绑定-
+- (void)userNodeBindData{
+    //更新wan信息
+    [MBProgressHUD showWhiteLoadingWithMessage:@"绑定中..." toView:SXKeyWindow];
+    SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
+    [SXMineNetTool userNodeBindParams:shareInfo.modelId Success:^{
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        
+        //通知绑定成功
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            //提示
+            [MBProgressHUD showSuccessWithMessage:@"绑定成功!" toView:SXKeyWindow];
+        });
+        
+    } failure:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+    }];
+}
 
 @end

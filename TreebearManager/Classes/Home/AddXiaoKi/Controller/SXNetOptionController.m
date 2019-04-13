@@ -13,6 +13,7 @@
 #import "SXNetOptionCell.h"
 #import "SXNetOptionFooterView.h"
 #import "SXAddXiaokiNetTool.h"
+#import "SXMineNetTool.h"
 
 @interface SXNetOptionController ()
 ///模型数组
@@ -99,8 +100,7 @@
         }
             break;
         case 2:{
-            #warning mark -测试数据,动态设置成功之后，检查网络状态，之后才跳转下个页面，设置用户名和密码-
-            [self networkStatusData];
+            [self dynamicSettingData];
         }
             break;
         default:
@@ -108,7 +108,24 @@
     }
 }
 
-#warning mark -测试数据-
+#pragma mark -动态设置接口-
+- (void)dynamicSettingData{
+    WS(weakSelf);
+    SXNetStaticParam *param = [SXNetStaticParam param];
+    [MBProgressHUD showWhiteLoadingToView:SXKeyWindow];
+    [SXAddXiaokiNetTool dynamicSettingWithDataWithParams:param.mj_keyValues Success:^{
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [MBProgressHUD showSuccessWithMessage:@"动态校验成功" toView:SXKeyWindow];
+        });
+        [weakSelf networkStatusData];
+    } failure:^(NSError * _Nonnull error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+    }];
+}
+
 
 #pragma mark -查询网络状态-
 - (void)networkStatusData{
@@ -118,14 +135,17 @@
     [SXAddXiaokiNetTool networkStatusWithDataSuccess:^{
         [weakSelf.footerView setBtnEnabled:YES];
         DLog(@"网络状态正常");
+        //页面跳转
         SXDynamicController *broadVC = [[SXDynamicController alloc] init];
         [weakSelf.navigationController pushViewController:broadVC animated:YES];
+        //获取节点信息
+        [weakSelf userNodeBindData];
     } failure:^(NSError * _Nonnull error) {
         [weakSelf.footerView setBtnEnabled:NO];
         ++count;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             //递归方法
-            if (error.code == 1 && count%3 != 0) {
+            if (error.code == 1 && count%5 != 0) {
                 [weakSelf networkStatusData];
             } else{
                 [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
@@ -134,6 +154,25 @@
                 });
             }
         });
+    }];
+}
+
+#pragma mark -节点绑定-
+- (void)userNodeBindData{
+    //更新wan信息
+    [MBProgressHUD showWhiteLoadingWithMessage:@"绑定中..." toView:SXKeyWindow];
+    SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
+    [SXMineNetTool userNodeBindParams:shareInfo.modelId Success:^{
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        
+        //通知绑定成功
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            //提示
+            [MBProgressHUD showSuccessWithMessage:@"绑定成功!" toView:SXKeyWindow];
+        });
+        
+    } failure:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
     }];
 }
 

@@ -36,12 +36,12 @@
                   moduleName = "TreebearManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/bear/Documents/WorkSpace/TreebearManager/TreebearManager/Classes/Home/XiaoKi/Controller/SXXiaoKiAddBindController.m"
-                  timestampString = "576765739.15036"
+                  timestampString = "576837871.141497"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "86"
                   endingLineNumber = "86"
-                  offsetFromSymbolStart = "40">
+                  offsetFromSymbolStart = "33">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -51,12 +51,12 @@
                   moduleName = "TreebearManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/bear/Documents/WorkSpace/TreebearManager/TreebearManager/Classes/Home/XiaoKi/Controller/SXXiaoKiAddBindController.m"
-                  timestampString = "576765739.152024"
+                  timestampString = "576837871.144568"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "87"
                   endingLineNumber = "87"
-                  offsetFromSymbolStart = "56">
+                  offsetFromSymbolStart = "44">
                </Location>
             </Locations>
          </BreakpointContent>

@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 SingletonInterface(SXXiaoKInfoModel)
 
-///id
+///节点id(=nodeId)
 @property (nonatomic, copy) NSString *modelId;
 
 ///IP地址
