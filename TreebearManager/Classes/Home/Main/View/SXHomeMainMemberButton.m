@@ -25,8 +25,8 @@
 
 - (void)setUpUI{
     
-    [self setTitleColor:SXColorTextDisabled forState:UIControlStateNormal];
-    [self setTitleColor:SXColorTextDisabled forState:UIControlStateHighlighted];
+    [self setTitleColor:[UIColor colorWithColor:[UIColor hex:@"FFFFFF"] alpha:0.7] forState:UIControlStateNormal];
+    [self setTitleColor:[UIColor colorWithColor:[UIColor hex:@"FFFFFF"] alpha:0.7] forState:UIControlStateHighlighted];
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.imageView.contentMode = UIViewContentModeCenter;
 }
@@ -35,7 +35,7 @@
 - (CGRect)imageRectForContentRect:(CGRect)contentRect{
     
     CGFloat imageX = 0;
-    CGFloat imageY = 0;
+    CGFloat imageY = 5;
     CGFloat imageW = contentRect.size.width;
     CGFloat imageH = contentRect.size.height - 20;
     return CGRectMake(imageX, imageY, imageW, imageH);

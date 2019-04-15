@@ -56,10 +56,10 @@
     self.thirdBgView.backgroundColor = SXColorWhite;
     self.fourthBgView.backgroundColor = SXColorWhite;
     
-    self.avatarTitleL.textColor = SXColor333333;
-    self.nickTitleL.textColor = SXColor333333;
-    self.mobileTitleL.textColor = SXColor333333;
-    self.pwdTitleL.textColor = SXColor333333;
+    self.avatarTitleL.textColor = SXColor2B3852;
+    self.nickTitleL.textColor = SXColor2B3852;
+    self.mobileTitleL.textColor = SXColor2B3852;
+    self.pwdTitleL.textColor = SXColor2B3852;
     
     self.bottomLineView1.backgroundColor = SXColorDivideLine;
     self.bottomLineView2.backgroundColor = SXColorDivideLine;
@@ -69,6 +69,9 @@
     self.bottomLineView2.height = 0.5f;
     self.bottomLineView3.height = 0.5f;
     self.bottomLineView4.height = 0.5f;
+    
+    self.mobileL.textColor = SXColor7383A2;
+    self.nickL.textColor = SXColor7383A2;
     
     [self.iconImageView roundViewWithRadius:22.5f];
     
@@ -89,11 +92,17 @@
 #pragma mark -setter-
 - (void)setUpData{
     SXMineUserInfoModel *userInfo = SXPersonInfoModel.sharedSXPersonInfoModel.result.user;
-    self.nickL.text = userInfo.name;
+    NSString *nameStr = @"";
+    if ([NSString isNotEmpty:userInfo.mobile] && userInfo.mobile.length > 4) {
+        NSRange range = NSMakeRange(userInfo.mobile.length-4, 4);
+        NSString *subMobile = [userInfo.mobile substringWithRange:range];
+        nameStr = [NSString isEmpty:userInfo.name] ? [NSString stringWithFormat:@"用户%@",subMobile] : userInfo.name;
+    }
+    self.nickL.text = nameStr;
     self.mobileL.text = userInfo.mobile;
     NSString *avatar = userInfo.avatar;
     NSURL *avatarUrl = [NSURL URLWithString:avatar];
-    [self.iconImageView sd_setImageWithURL:avatarUrl placeholderImage:[UIImage imageNamed:@"img_user_icon"] options:SDWebImageRetryFailed];
+    [self.iconImageView sd_setImageWithURL:avatarUrl placeholderImage:[UIImage imageNamed:@"mine_xioaki_default2"] options:SDWebImageRetryFailed];
 }
 
 #pragma mark -Event-

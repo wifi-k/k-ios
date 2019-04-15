@@ -45,26 +45,27 @@
     
     self.backgroundColor = SXColorWhite;
     
-    self.naviTitleL.font = SXFontBold24;
+    self.naviTitleL.font = SXFontBold17;
     
-    self.ssidTitleL.textColor = SXColorB6C0CB;
-    self.currentVersionTitleL.textColor = SXColorB6C0CB;
-    self.latestVersionTitleL.textColor = SXColorB6C0CB;
+    self.ssidTitleL.textColor = SXColor7383A2;
+    self.currentVersionTitleL.textColor = SXColor7383A2;
+    self.latestVersionTitleL.textColor = SXColor7383A2;
     
-    self.ssidL.textColor = SXColor7383A2;
-    self.currentVersionL.textColor = SXColor7383A2;
-    self.latestVersionL.textColor = SXColor7383A2;
+    self.ssidL.textColor = SXColor2B3852;
+    self.currentVersionL.textColor = SXColor2B3852;
+    self.latestVersionL.textColor = SXColor2B3852;
     
     [self.statusBtn roundViewWithRadius:4.0f];
     
-    [self.updateBtn roundViewWithRadius:22.5f borderColor:SXColor4A5A78 borderWidth:1.0f];
+    [self.updateBtn roundViewWithRadius:22.5f borderColor:SXColorEBEEF2 borderWidth:1.0f];
+    [self.updateBtn setTitleColor:SXColor2B3852 forState:UIControlStateNormal];
 }
 
 #pragma mark -setter-
 - (void)setModel:(SXHomeXiaoKiModel *)model{
     _model = model;
     
-    self.ssidTitleL.text = model.nodeId;
+    self.ssidL.text = model.nodeId;
     self.currentVersionL.text = model.version.description;
     self.latestVersionL.text = model.version.description;
 }

@@ -33,7 +33,7 @@
     
     self.backgroundColor = SXColorWhite;
     [self.moreBtn roundViewWithRadius:4.0f];
-    [self.moreBtn setTitleColor:SXColor666666 forState:UIControlStateNormal];
+    [self.moreBtn setTitleColor:SXColor7383A2 forState:UIControlStateNormal];
     [self.moreBtn setBackgroundColor:SXColorF6F7FB];
 }
 

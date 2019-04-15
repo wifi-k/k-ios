@@ -22,7 +22,7 @@
     
     
     //1.创建tabBar
-    self.tabBar.tintColor = SXColorBlue;
+    self.tabBar.tintColor = SXColorBlue2;
     self.tabBar.barTintColor = SXColorWhite;
     
     //2.添加子控制器

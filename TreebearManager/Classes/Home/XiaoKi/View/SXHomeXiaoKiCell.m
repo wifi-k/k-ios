@@ -48,9 +48,12 @@ static NSString *SXHomeXiaoKiCellID = @"SXHomeXiaoKiCellID";
     //设置背景色
     self.backgroundColor = SXColorWhite;
     
+    
     self.deviceNameL.font = SXFontBold17;
     self.ssidTitleL.textColor = SXColor7383A2;
-    self.ssidL.textColor = SXColor7383A2;
+    self.ssidL.textColor = SXColor2B3852;
+    
+    self.deviceNameL.font = SXFontBold17;
     
     [self.statusBtn roundViewWithRadius:4.0f];
     
@@ -58,13 +61,13 @@ static NSString *SXHomeXiaoKiCellID = @"SXHomeXiaoKiCellID";
     self.bottomLineView.height = 0.5f;
     self.bottomBgView.backgroundColor = SXColorWhite;
     
-    [self.updateNameBtn roundViewWithRadius:4.0f borderColor:SXColor4A5A78 borderWidth:1.0f];
-    [self.untyingXiaoKiBtn roundViewWithRadius:4.0f borderColor:SXColor4A5A78 borderWidth:1.0f];
-    [self.upgradeVersionBtn roundViewWithRadius:4.0f borderColor:SXColor4A5A78 borderWidth:1.0f];
+    [self.updateNameBtn roundViewWithRadius:4.0f borderColor:SXColor7383A2 borderWidth:1.0f];
+    [self.untyingXiaoKiBtn roundViewWithRadius:4.0f borderColor:SXColor7383A2 borderWidth:1.0f];
+    [self.upgradeVersionBtn roundViewWithRadius:4.0f borderColor:SXColor7383A2 borderWidth:1.0f];
     
-    [self.updateNameBtn setTitleColor:SXColor4A5A78 forState:UIControlStateNormal];
-    [self.untyingXiaoKiBtn setTitleColor:SXColor4A5A78 forState:UIControlStateNormal];
-    [self.upgradeVersionBtn setTitleColor:SXColor4A5A78 forState:UIControlStateNormal];
+    [self.updateNameBtn setTitleColor:SXColor7383A2 forState:UIControlStateNormal];
+    [self.untyingXiaoKiBtn setTitleColor:SXColor7383A2 forState:UIControlStateNormal];
+    [self.upgradeVersionBtn setTitleColor:SXColor7383A2 forState:UIControlStateNormal];
 }
 
 #pragma mark -setter-
@@ -72,7 +75,7 @@ static NSString *SXHomeXiaoKiCellID = @"SXHomeXiaoKiCellID";
     _model = model;
     
     self.deviceNameL.text = [NSString stringWithFormat:@"名称:%@",model.name];
-    self.ssidL.text = [NSString stringWithFormat:@"序列号:%@",model.nodeId];
+    self.ssidL.text = model.nodeId;
     switch (model.status.integerValue) {
         case 0:
             [self.statusBtn setTitle:@"离线" forState:UIControlStateNormal];

@@ -45,7 +45,7 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickMobile)];
     [self.mobileL addGestureRecognizer:tap];
     
-    [self.iconBtn roundViewWithRadius:30.0f];
+    [self.iconBtn roundViewWithRadius:30.0f borderColor:SXColorWhite borderWidth:1.0f];
 }
 
 #pragma mark -setData-
@@ -61,7 +61,7 @@
     self.mobileL.text = userInfo.mobile;
     NSString *avatar = userInfo.avatar;
     NSURL *avatarUrl = [NSURL URLWithString:avatar];
-    [self.iconBtn sd_setBackgroundImageWithURL:avatarUrl forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"mine_xioaki_default"] options:SDWebImageRetryFailed];
+    [self.iconBtn sd_setBackgroundImageWithURL:avatarUrl forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"mine_xioaki_default2"] options:SDWebImageRetryFailed];
 }
 
 #pragma mark -Event-
