@@ -45,6 +45,13 @@
     
     vc.tabBarItem.title = title;
     
+    //位置
+    [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -1)];
+    //Normal
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:11]} forState:UIControlStateNormal];
+    //Selected
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:11]} forState:UIControlStateSelected];
+    
     vc.tabBarItem.image = image;
     
     vc.tabBarItem.badgeValue = nil;

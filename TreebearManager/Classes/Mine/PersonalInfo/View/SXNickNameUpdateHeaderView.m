@@ -46,6 +46,8 @@
     self.firstBgView.backgroundColor = SXColorF6F7FB;
     
     [self.nickTextField becomeFirstResponder];
+    
+    self.nickTextField.tintColor = SXColorBlue2;
 }
 
 - (void)setUpData{

@@ -58,8 +58,13 @@
     self.bottomLineView.height = 0.5;
     self.bottomLineView2.height = 0.5;
     
+    [self.confirmBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
+    [self.confirmBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateDisabled];
     [self.confirmBtn roundViewWithRadius:6.0f];
     self.confirmBtn.enabled = NO;
+    
+    self.pwdTextField.tintColor = SXColorBlue2;
+    self.pwd2TextField.tintColor = SXColorBlue2;
 }
 
 #pragma mark -Event-

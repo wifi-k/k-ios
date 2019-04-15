@@ -48,8 +48,8 @@ static NSString *SXMobileManagerCellID = @"SXMobileManagerCellID";
     
     self.timeL.textColor = SXColor7383A2;
     
-    [self.remarkBtn setTitleColor:SXColor47D5ED forState:UIControlStateNormal];
-    [self.remarkBtn roundViewWithRadius:4.0f borderColor:SXColor47D5ED borderWidth:0.5f];
+    [self.remarkBtn setTitleColor:SXColorBlue2 forState:UIControlStateNormal];
+    [self.remarkBtn roundViewWithRadius:4.0f borderColor:SXColorBlue2 borderWidth:0.5f];
     
     [self.statusBtn setTitleColor:SXColor7383A2 forState:UIControlStateNormal];
     [self.statusBtn setBackgroundColor:SXColorWhite];

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,7 +30,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1K-VT-Run">
-                    <rect key="frame" x="0.0" y="70" width="375" height="60"/>
+                    <rect key="frame" x="0.0" y="50" width="375" height="60"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUm-Ze-9gJ">
                             <rect key="frame" x="330" y="15" width="30" height="30"/>
@@ -53,7 +53,7 @@
                                 <constraint firstAttribute="height" constant="30" id="w5p-Lf-cSg"/>
                             </constraints>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             <connections>
                                 <action selector="editingPwdTextField:" destination="-1" eventType="editingChanged" id="9xK-3Q-A8i"/>
@@ -81,7 +81,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8hy-dc-hyF">
-                    <rect key="frame" x="0.0" y="130" width="375" height="60"/>
+                    <rect key="frame" x="0.0" y="110" width="375" height="60"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azM-fD-6Lo">
                             <rect key="frame" x="330" y="15" width="30" height="30"/>
@@ -104,7 +104,7 @@
                                 <constraint firstAttribute="height" constant="30" id="nZm-f2-WjT"/>
                             </constraints>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             <connections>
                                 <action selector="editingPwd2TextField:" destination="-1" eventType="editingChanged" id="sxF-Cn-dBX"/>
@@ -132,7 +132,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gge-PM-E62">
-                    <rect key="frame" x="15" y="290" width="345" height="45"/>
+                    <rect key="frame" x="15" y="222" width="345" height="45"/>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="MMp-Fg-cX8"/>
@@ -146,7 +146,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="gge-PM-E62" firstAttribute="top" secondItem="8hy-dc-hyF" secondAttribute="bottom" constant="100" id="4hX-An-0Mf"/>
+                <constraint firstItem="gge-PM-E62" firstAttribute="top" secondItem="8hy-dc-hyF" secondAttribute="bottom" constant="52" id="4hX-An-0Mf"/>
                 <constraint firstItem="8hy-dc-hyF" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="6A5-UR-c77"/>
                 <constraint firstItem="e1K-VT-Run" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="GhL-5F-uck"/>
                 <constraint firstItem="8hy-dc-hyF" firstAttribute="top" secondItem="e1K-VT-Run" secondAttribute="bottom" id="JvF-Vd-pX3"/>
@@ -154,7 +154,7 @@
                 <constraint firstItem="8hy-dc-hyF" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="MgA-Dm-HKL"/>
                 <constraint firstItem="e1K-VT-Run" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="WEp-LK-eJq"/>
                 <constraint firstItem="gge-PM-E62" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="gXE-qh-XhU"/>
-                <constraint firstItem="e1K-VT-Run" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="50" id="l5C-EN-WNb"/>
+                <constraint firstItem="e1K-VT-Run" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="30" id="l5C-EN-WNb"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
