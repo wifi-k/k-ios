@@ -60,13 +60,13 @@
     self.bottomLineView3.height = 0.5f;
     self.bottomLineView4.height = 0.5f;
     
-    self.vendorTitleL.textColor = SXColor333333;
-    self.macTitleL.textColor = SXColor333333;
-    self.ipTitleL.textColor = SXColor333333;
+    self.vendorTitleL.textColor = SXColor2B3852;
+    self.macTitleL.textColor = SXColor2B3852;
+    self.ipTitleL.textColor = SXColor2B3852;
     
-    self.vendorL.textColor = SXColor999999;
-    self.macL.textColor = SXColor999999;
-    self.ipL.textColor = SXColor999999;
+    self.vendorL.textColor = SXColor7383A2;
+    self.macL.textColor = SXColor7383A2;
+    self.ipL.textColor = SXColor7383A2;
 }
 
 #pragma mark -setter-

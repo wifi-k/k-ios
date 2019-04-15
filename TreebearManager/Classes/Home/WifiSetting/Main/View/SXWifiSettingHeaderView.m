@@ -52,18 +52,18 @@
     self.titleL.font = SXFontBold20;
     self.titleL2.font = SXFontBold20;
     
-    self.nameContentL.textColor = SXColor333333;
-    self.pwdContentL.textColor = SXColor333333;
-    self.pwdTipsL.textColor = SXColor999999;
-    self.nameTipsL.textColor = SXColor999999;
+    self.nameContentL.textColor = SXColor2B3852;
+    self.pwdContentL.textColor = SXColor2B3852;
+    self.pwdTipsL.textColor = SXColor7383A2;
+    self.nameTipsL.textColor = SXColor7383A2;
     
     [self.nameBtn roundViewWithRadius:4.0f];
-    [self.nameBtn setTitleColor:SXColor333333 forState:UIControlStateNormal];
-    [self.nameBtn setBackgroundColor:SXColorBtnDisabled forState:UIControlStateNormal];
+    [self.nameBtn setTitleColor:SXColor2B3852 forState:UIControlStateNormal];
+    [self.nameBtn setBackgroundColor:SXColorF7F7F7 forState:UIControlStateNormal];
     
     [self.pwdBtn roundViewWithRadius:4.0f];
-    [self.pwdBtn setTitleColor:SXColor333333 forState:UIControlStateNormal];
-    [self.pwdBtn setBackgroundColor:SXColorBtnDisabled forState:UIControlStateNormal];
+    [self.pwdBtn setTitleColor:SXColor2B3852 forState:UIControlStateNormal];
+    [self.pwdBtn setBackgroundColor:SXColorF7F7F7 forState:UIControlStateNormal];
     
     self.firstBgView.backgroundColor = SXColorWhite;
     self.secondBgView.backgroundColor = SXColorWhite;

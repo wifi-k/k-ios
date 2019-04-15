@@ -34,7 +34,7 @@
     
     self.backgroundColor = SXColorWhite;
     
-    self.tipsL.textColor = SXColor666666;
+    self.tipsL.textColor = SXColor2B3852;
     
     [self.confirmBtn roundViewWithRadius:6.0f];
 }

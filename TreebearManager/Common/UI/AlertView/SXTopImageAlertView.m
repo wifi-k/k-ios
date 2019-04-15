@@ -93,7 +93,7 @@ const CGFloat SXTopImageAlertViewHeightRatio = 0.206; //高度系统
     UILabel *contentL = [[UILabel alloc] init];
     contentL.numberOfLines = 2;
     contentL.textAlignment = NSTextAlignmentCenter;
-    contentL.textColor = SXColor999999;
+    contentL.textColor = SXColor7383A2;
     contentL.font = SXFont14;
     [self.contentBgView addSubview:contentL];
     self.contentL = contentL;

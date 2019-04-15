@@ -51,7 +51,7 @@
     
 - (void)setUpUI{
     self.titleL.font = SXFontBold24;
-    self.titleL.textColor = SXColor333333;
+    self.titleL.textColor = SXColor2B3852;
     
     self.bottomLineV.backgroundColor = SXColorDivideLine;
     self.bottomLineV2.backgroundColor = SXColorDivideLine;

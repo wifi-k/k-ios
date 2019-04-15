@@ -32,7 +32,7 @@
 - (void)setUpUI{
     
     //登录按钮
-    [self.loginBtn setTitleColor:SXColor666666 forState:UIControlStateNormal];
+    [self.loginBtn setTitleColor:SXColor2B3852 forState:UIControlStateNormal];
     [self.loginBtn setBackgroundColor:SXColorGray8 forState:UIControlStateNormal];
     [self.loginBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
     [self.loginBtn roundViewWithRadius:27.0f];

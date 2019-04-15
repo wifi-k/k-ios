@@ -32,8 +32,8 @@
     
     [self setTitle:@"自动获取IP地址" forState:UIControlStateNormal];
     self.titleLabel.font = [UIFont boldSystemFontOfSize:14];
-    [self setTitleColor:SXColor333333 forState:UIControlStateHighlighted];
-    [self setTitleColor:SXColor333333 forState:UIControlStateNormal];
+    [self setTitleColor:SXColor2B3852 forState:UIControlStateHighlighted];
+    [self setTitleColor:SXColor2B3852 forState:UIControlStateNormal];
 }
 
 #pragma mark - 调整内部ImageView的frame

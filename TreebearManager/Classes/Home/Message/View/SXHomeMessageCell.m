@@ -39,9 +39,9 @@ static NSString *SXHomeMessageCellID = @"SXHomeMessageCellID";
     
     //设置背景色
     self.backgroundColor = SXColorWhite;
-    self.titleL.textColor = SXColor333333;
-    self.contentL.textColor = SXColor999999;
-    self.timeL.textColor = SXColor999999;
+    self.titleL.textColor = SXColor2B3852;
+    self.contentL.textColor = SXColor7383A2;
+    self.timeL.textColor = SXColor7383A2;
     self.bottomLineView.backgroundColor = SXColorDivideLine;
     self.bottomLineView.height = 0.5f;
 }

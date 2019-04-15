@@ -57,10 +57,10 @@
     self.thirdBgView.backgroundColor = SXColorWhite;
     self.fourthBgView.backgroundColor = SXColorWhite;
     
-    self.macTitleL.textColor = SXColor999999;
-    self.dnsTitleL.textColor = SXColor999999;
-    self.ipTitleL.textColor = SXColor999999;
-    self.maskTitleL.textColor = SXColor999999;
+    self.macTitleL.textColor = SXColor7383A2;
+    self.dnsTitleL.textColor = SXColor7383A2;
+    self.ipTitleL.textColor = SXColor7383A2;
+    self.maskTitleL.textColor = SXColor7383A2;
     
     self.macTextField.backgroundColor = SXColorF6F7FB;
     self.dnsTextField.backgroundColor = SXColorF6F7FB;

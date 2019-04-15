@@ -96,7 +96,7 @@
         btn.frame = CGRectMake(btnX, btnY, btnW, btnH);
         NSString *title = self.dataArray[i];
         [btn setTitle:title forState:UIControlStateNormal];
-        [btn setTitleColor:SXColor999999 forState:UIControlStateNormal];
+        [btn setTitleColor:SXColor7383A2 forState:UIControlStateNormal];
         [btn setTitleColor:SXColorWhite forState:UIControlStateSelected];
         [btn setBackgroundImage:[UIImage imageNamed:@"img_timeoption_normal"] forState:UIControlStateNormal];
         [btn setBackgroundImage:[UIImage imageNamed:@"img_timeoption_selected"] forState:UIControlStateSelected];
@@ -110,7 +110,7 @@
     self.weekBgView.backgroundColor = SXColorClear;
     
     self.recycleBtn.titleLabel.font = SXFontBold18;
-    [self.recycleBtn setTitleColor:SXColor333333 forState:UIControlStateNormal];
+    [self.recycleBtn setTitleColor:SXColor2B3852 forState:UIControlStateNormal];
     
     self.beginTimeL.font = SXFontBold18;
     self.endTimeL.font = SXFontBold18;

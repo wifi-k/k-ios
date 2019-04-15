@@ -69,19 +69,19 @@
     self.fifthBgView.backgroundColor = SXColorWhite;
     self.sixthBgView.backgroundColor = SXColorWhite;
     
-    self.connectStatusTitleL.textColor = SXColor999999;
-    self.ipAddressTitleL.textColor = SXColor999999;
-    self.maskTitleL.textColor = SXColor999999;
-    self.gatewayTitleL.textColor = SXColor999999;
-    self.dnsTitleL.textColor = SXColor999999;
-    self.dns2TitleL.textColor = SXColor999999;
+    self.connectStatusTitleL.textColor = SXColor7383A2;
+    self.ipAddressTitleL.textColor = SXColor7383A2;
+    self.maskTitleL.textColor = SXColor7383A2;
+    self.gatewayTitleL.textColor = SXColor7383A2;
+    self.dnsTitleL.textColor = SXColor7383A2;
+    self.dns2TitleL.textColor = SXColor7383A2;
     
-    self.connectStatusL.textColor = SXColor333333;
-    self.ipAddressL.textColor = SXColor333333;
-    self.maskL.textColor = SXColor333333;
-    self.gatewayL.textColor = SXColor333333;
-    self.dnsL.textColor = SXColor333333;
-    self.dns2L.textColor = SXColor333333;
+    self.connectStatusL.textColor = SXColor2B3852;
+    self.ipAddressL.textColor = SXColor2B3852;
+    self.maskL.textColor = SXColor2B3852;
+    self.gatewayL.textColor = SXColor2B3852;
+    self.dnsL.textColor = SXColor2B3852;
+    self.dns2L.textColor = SXColor2B3852;
     
     //1.1添加点击手势
 //    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickAdvancedBgView)];
@@ -89,7 +89,7 @@
     
     [self.updateIPBtn roundViewWithRadius:6.0f];
 //    self.updateIPBtn.backgroundColor = SXColorWhite;
-//    [self.updateIPBtn setTitleColor:SXColor999999 forState:UIControlStateNormal];
+//    [self.updateIPBtn setTitleColor:SXColor7383A2 forState:UIControlStateNormal];
 //    [self.updateIPBtn roundViewWithRadius:22.5f borderColor:SXColorDivideLine borderWidth:1.0f];
 }
 

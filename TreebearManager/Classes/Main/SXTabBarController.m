@@ -17,9 +17,20 @@
 
 @implementation SXTabBarController
 
+//第一次使用这个类或者这个类的子类的时候
++ (void)initialize{
+    if (self == [SXTabBarController class]) {//保证只调用一次
+        //位置
+        [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -1)];
+        //Normal
+        [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:11]} forState:UIControlStateNormal];
+        //Selected
+        [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:11]} forState:UIControlStateSelected];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     
     //1.创建tabBar
     self.tabBar.tintColor = SXColorBlue2;
@@ -28,6 +39,14 @@
     //2.添加子控制器
     [self setUpChildViewController];
 }
+
+//改变tabbar高度
+//- (void)viewWillLayoutSubviews{
+//    CGRect tabFrame = self.tabBar.frame;
+//    tabFrame.size.height = 49;
+//    tabFrame.origin.y = self.view.frame.size.height - 49;
+//    self.tabBar.frame = tabFrame;
+//}
 
 - (void)setUpChildViewController{
     
@@ -44,13 +63,6 @@
 - (void)setUpChildController:(UIViewController *)vc image:(UIImage *)image selectImage:(UIImage *)selectImage title:(NSString *)title{
     
     vc.tabBarItem.title = title;
-    
-    //位置
-    [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -1)];
-    //Normal
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:11]} forState:UIControlStateNormal];
-    //Selected
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:11]} forState:UIControlStateSelected];
     
     vc.tabBarItem.image = image;
     

@@ -42,8 +42,8 @@
     
     self.backgroundColor = SXColorWhite;
     
-    self.healthTitleL.textColor = SXColor333333;
-    self.timeL.textColor = SXColor333333;
+    self.healthTitleL.textColor = SXColor2B3852;
+    self.timeL.textColor = SXColor2B3852;
     self.bottomLineView.backgroundColor = SXColorDivideLine;
     
     //缩放

@@ -32,7 +32,7 @@
 - (void)setUpUI{
     
     self.backgroundColor = SXColorWhite;
-    self.titleL.textColor = SXColor333333;
+    self.titleL.textColor = SXColor2B3852;
     [self.backupBtn setTitleColor:SXColorBlue forState:UIControlStateNormal];
 }
 

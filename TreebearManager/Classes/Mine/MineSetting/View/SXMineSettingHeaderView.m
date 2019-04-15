@@ -9,9 +9,12 @@
 #import "SXMineSettingHeaderView.h"
 
 @interface SXMineSettingHeaderView ()
+
+@property (weak, nonatomic) IBOutlet UILabel *aboutUsTitleL;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView1;
 @property (weak, nonatomic) IBOutlet UIView *firstBgView;
 
+@property (weak, nonatomic) IBOutlet UILabel *currentVersionTitleL;
 @property (weak, nonatomic) IBOutlet UILabel *currentVersionL;
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView2;
 @property (weak, nonatomic) IBOutlet UIView *secondBgView;
@@ -48,7 +51,10 @@
     self.bottomLineView2.backgroundColor = SXColorDivideLine;
     self.bottomLineView2.height = 0.5f;
     
-    self.currentVersionL.textColor = SXColor999999;
+    self.currentVersionL.textColor = SXColor7383A2;
+    
+    self.aboutUsTitleL.textColor = SXColor2B3852;
+    self.currentVersionTitleL.textColor = SXColor2B3852;
     
     //添加事件
     UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickAboutUs)];
@@ -58,7 +64,7 @@
     [self.secondBgView addGestureRecognizer:tap2];
     
     self.logoutBtn.backgroundColor = SXColorWhite;
-    [self.logoutBtn setTitleColor:SXColor999999 forState:UIControlStateNormal];
+    [self.logoutBtn setTitleColor:SXColor2B3852 forState:UIControlStateNormal];
     [self.logoutBtn roundViewWithRadius:22.5f borderColor:SXColorDivideLine borderWidth: 1.0f];
 }
 

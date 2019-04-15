@@ -30,7 +30,7 @@
     
     self.contentView.backgroundColor = SXColorClear;
     
-    self.appNameL.textColor = SXColor333333;
+    self.appNameL.textColor = SXColor2B3852;
 }
 
 #pragma mark -setter-

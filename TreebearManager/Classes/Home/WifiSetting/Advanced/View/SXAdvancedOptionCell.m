@@ -44,7 +44,7 @@ static NSString *SXAdvancedOptionCellID = @"SXAdvancedOptionCellID";
     self.bottomLineView.backgroundColor = SXColorDivideLine;
     self.bottomLineView.height = 0.5;
     
-    self.titleL.textColor = SXColor666666;
+    self.titleL.textColor = SXColor2B3852;
 }
 
 #pragma mark -setter-

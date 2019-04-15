@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -127,9 +127,11 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="aboutUsTitleL" destination="8xC-vd-tK3" id="W0L-nh-9Ck"/>
                 <outlet property="bottomLineView1" destination="hJr-zN-X15" id="HN7-sG-uue"/>
                 <outlet property="bottomLineView2" destination="2Q2-qN-FMt" id="bRT-9u-5Aw"/>
                 <outlet property="currentVersionL" destination="7kb-dN-nAN" id="Dyg-mc-BbS"/>
+                <outlet property="currentVersionTitleL" destination="iY9-rK-g7X" id="JFE-Te-NW1"/>
                 <outlet property="firstBgView" destination="jLq-Hn-N9O" id="L6K-0J-uh4"/>
                 <outlet property="logoutBtn" destination="3wr-GT-aYL" id="rZR-pc-DA2"/>
                 <outlet property="secondBgView" destination="b7n-Y5-zF0" id="dFY-Ym-KoI"/>

@@ -52,7 +52,7 @@
 - (void)setUpUI{
     
     self.naviTitleL.font = SXFontBold24;
-    self.naviTitleL.textColor = SXColor333333;
+    self.naviTitleL.textColor = SXColor2B3852;
     
     self.bottomLineView1.backgroundColor = SXColorDivideLine;
     self.bottomLineView2.backgroundColor = SXColorDivideLine;

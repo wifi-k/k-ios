@@ -68,14 +68,14 @@
     self.thirdLineView.height = 0.5;
     self.fourthLineView.height = 0.1;
 
-    self.broadcastTitleL.textColor = SXColor333333;
-    self.channelTitleL.textColor = SXColor333333;
-    self.workModelTitleL.textColor = SXColor333333;
-    self.frequencyTitleL.textColor = SXColor333333;
+    self.broadcastTitleL.textColor = SXColor2B3852;
+    self.channelTitleL.textColor = SXColor2B3852;
+    self.workModelTitleL.textColor = SXColor2B3852;
+    self.frequencyTitleL.textColor = SXColor2B3852;
     
-    self.channelL.textColor = SXColor999999;
-    self.workModeL.textColor = SXColor999999;
-    self.frequencyL.textColor = SXColor999999;
+    self.channelL.textColor = SXColor7383A2;
+    self.workModeL.textColor = SXColor7383A2;
+    self.frequencyL.textColor = SXColor7383A2;
     
     //缩放
     //self.switchBtn.transform = CGAffineTransformMakeScale( 0.8, 0.8);

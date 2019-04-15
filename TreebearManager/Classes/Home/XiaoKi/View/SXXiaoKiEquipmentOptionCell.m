@@ -42,11 +42,11 @@ static NSString *SXXiaoKiEquipmentOptionCellID = @"SXXiaoKiEquipmentOptionCellID
     //设置背景色
     self.backgroundColor = SXColorWhite;
     
-    self.nameL.textColor = SXColor333333;
-    self.ssidTitleL.textColor = SXColor999999;
-    self.statusTitleL.textColor = SXColor999999;
-    self.ssidL.textColor = SXColor666666;
-    self.statusL.textColor = SXColor666666;
+    self.nameL.textColor = SXColor2B3852;
+    self.ssidTitleL.textColor = SXColor7383A2;
+    self.statusTitleL.textColor = SXColor7383A2;
+    self.ssidL.textColor = SXColor2B3852;
+    self.statusL.textColor = SXColor2B3852;
     
     self.nameL.font = SXFontBold18;
     self.ssidL.font = SXFont14;

@@ -141,7 +141,6 @@
 }
 
 - (void)bindXiaoKiSuccess{
-    //跳转下一个页面
     SXDynamicController *netVC = [[SXDynamicController alloc] init];
     [self.navigationController pushViewController:netVC animated:YES];
 }

@@ -76,6 +76,16 @@
     self.naviTitleL.font = SXFontBold18;
     self.topBgView.backgroundColor = SXColorWhite;
     
+    self.mobileInfoTitleL.textColor = SXColor2B3852;
+    self.childCareTitleL.textColor = SXColor2B3852;
+    self.remindTitleL.textColor = SXColor2B3852;
+    self.blacklistTitleL.textColor = SXColor2B3852;
+    
+    self.mobileInfoTitleL.font = SXFontBold17;
+    self.childCareTitleL.font = SXFontBold17;
+    self.remindTitleL.font = SXFontBold17;
+    self.blacklistTitleL.font = SXFontBold17;
+    
     self.centerBgView.backgroundColor = [UIColor whiteColor];
     self.centerBgView.layer.cornerRadius = 5;
     self.centerBgView.layer.shadowColor = UIColor.lightGrayColor.CGColor;

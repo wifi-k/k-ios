@@ -69,7 +69,7 @@
     
     self.navigationItem.title = @"小K添加";
     
-    self.titleL.textColor = SXColor666666;
+    self.titleL.textColor = SXColor2B3852;
     
     [self.bindBtn roundViewWithRadius:6.0f];
 }

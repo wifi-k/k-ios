@@ -32,7 +32,7 @@
     
     [self setTitle:@"输入家庭码" forState:UIControlStateNormal];
     self.titleLabel.font = [UIFont boldSystemFontOfSize:14];
-    [self setTitleColor:SXColor666666 forState:UIControlStateHighlighted];
+    [self setTitleColor:SXColor2B3852 forState:UIControlStateHighlighted];
     [self setTitleColor:SXColor4A5A78 forState:UIControlStateNormal];
     
     [self roundViewWithRadius:15.0f borderColor:SXColor4A5A78 borderWidth:1.5f];
@@ -42,7 +42,7 @@
     [super setHighlighted:highlighted];
     
     if (highlighted) {
-        [self borderColor:SXColor666666 borderWidth:1.0f];
+        [self borderColor:SXColor2B3852 borderWidth:1.0f];
     } else{
         [self borderColor:SXColor4A5A78 borderWidth:1.0f];
     }

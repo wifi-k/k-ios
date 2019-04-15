@@ -82,7 +82,7 @@ const CGFloat SXSingleAlertViewHeightRatio = 0.206; //高度系统
     UILabel *contentL = [[UILabel alloc] init];
     contentL.numberOfLines = 2;
     contentL.textAlignment = NSTextAlignmentCenter;
-    contentL.textColor = SXColor333333;
+    contentL.textColor = SXColor2B3852;
     [self.contentBgView addSubview:contentL];
     self.contentL = contentL;
     

@@ -50,7 +50,7 @@
     self.backupBgView.layer.shadowRadius = 2;
     self.backupBgView.backgroundColor = SXColorWhite;
     
-    self.contentL.textColor = SXColor666666;
+    self.contentL.textColor = SXColor2B3852;
     [self.confirmBtn setTitleColor:SXColorBlue forState:UIControlStateNormal];
     [self.confirmBtn roundViewWithRadius:15.0f borderColor:SXColorBlue borderWidth:1.0f];
 

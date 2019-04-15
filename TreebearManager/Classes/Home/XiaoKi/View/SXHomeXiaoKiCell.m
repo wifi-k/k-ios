@@ -79,7 +79,7 @@ static NSString *SXHomeXiaoKiCellID = @"SXHomeXiaoKiCellID";
     switch (model.status.integerValue) {
         case 0:
             [self.statusBtn setTitle:@"离线" forState:UIControlStateNormal];
-            [self.statusBtn setTitleColor:SXColor666666 forState:UIControlStateNormal];
+            [self.statusBtn setTitleColor:SXColor2B3852 forState:UIControlStateNormal];
             [self.statusBtn setBackgroundColor:SXColorF6F7FB forState:UIControlStateNormal];
             break;
         case 1:
@@ -89,12 +89,12 @@ static NSString *SXHomeXiaoKiCellID = @"SXHomeXiaoKiCellID";
             break;
         case 2:
             [self.statusBtn setTitle:@"警告" forState:UIControlStateNormal];
-            [self.statusBtn setTitleColor:SXColor666666 forState:UIControlStateNormal];
+            [self.statusBtn setTitleColor:SXColor2B3852 forState:UIControlStateNormal];
             [self.statusBtn setBackgroundColor:SXColorF6F7FB forState:UIControlStateNormal];
             break;
         case 3:
             [self.statusBtn setTitle:@"未知" forState:UIControlStateNormal];
-            [self.statusBtn setTitleColor:SXColor666666 forState:UIControlStateNormal];
+            [self.statusBtn setTitleColor:SXColor2B3852 forState:UIControlStateNormal];
             [self.statusBtn setBackgroundColor:SXColorF6F7FB forState:UIControlStateNormal];
             break;
         default:

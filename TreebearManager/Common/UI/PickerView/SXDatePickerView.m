@@ -152,7 +152,7 @@ const CGFloat SXDatePickerViewHeight = 350;
     
     //7.选择日期
     UILabel *titleL = [[UILabel alloc] init];
-    titleL.textColor = SXColor333333;
+    titleL.textColor = SXColor2B3852;
     titleL.font = SXFontBold16;
     titleL.text = @"选择时间";
     [self.topBgView addSubview:titleL];
@@ -260,7 +260,7 @@ const CGFloat SXDatePickerViewHeight = 350;
         [pickerLabel setTextAlignment:NSTextAlignmentCenter];
         [pickerLabel setBackgroundColor:[UIColor whiteColor]];
         [pickerLabel setFont:[UIFont boldSystemFontOfSize:16]];
-        pickerLabel.textColor = SXColor333333;
+        pickerLabel.textColor = SXColor2B3852;
     }
     pickerLabel.text = [self pickerView:pickerView titleForRow:row forComponent:component];
     return pickerLabel;

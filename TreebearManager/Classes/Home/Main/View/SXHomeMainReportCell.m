@@ -48,7 +48,7 @@
     
     [self.mobileImageView roundViewWithRadius:35.0f borderColor:SXColorWhite borderWidth:10.f];
     
-    self.mobileNameL.textColor = SXColor333333;
+    self.mobileNameL.textColor = SXColor2B3852;
     self.reportBtn.userInteractionEnabled = NO;
     [self.reportBtn setTitleColor:SXColorBlue forState:UIControlStateNormal];
     [self.reportBtn roundViewWithRadius:15.0f borderColor:SXColorBlue borderWidth:1.0f];

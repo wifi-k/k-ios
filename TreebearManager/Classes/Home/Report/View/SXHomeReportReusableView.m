@@ -64,8 +64,8 @@
     self.timeL.font = SXFontBold18;
     self.appL.font = SXFontBold18;
     
-    self.timeL.textColor = SXColor333333;
-    self.appL.textColor = SXColor333333;
+    self.timeL.textColor = SXColor2B3852;
+    self.appL.textColor = SXColor2B3852;
     
     self.chartBgView.backgroundColor = [UIColor whiteColor];
     self.chartBgView.layer.cornerRadius = 5;

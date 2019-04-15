@@ -72,13 +72,13 @@
     self.sixthBgView.backgroundColor = SXColorWhite;
     self.seventhBgView.backgroundColor = SXColorWhite;
     
-    self.firstTitleL.textColor = SXColor333333;
-    self.secondTitleL.textColor = SXColor333333;
-    self.thirdTitleL.textColor = SXColor333333;
-    self.fourthTitleL.textColor = SXColor333333;
-    self.fifthTitleL.textColor = SXColor333333;
-    self.sixthTitleL.textColor = SXColor333333;
-    self.seventhTitleL.textColor = SXColor333333;
+    self.firstTitleL.textColor = SXColor2B3852;
+    self.secondTitleL.textColor = SXColor2B3852;
+    self.thirdTitleL.textColor = SXColor2B3852;
+    self.fourthTitleL.textColor = SXColor2B3852;
+    self.fifthTitleL.textColor = SXColor2B3852;
+    self.sixthTitleL.textColor = SXColor2B3852;
+    self.seventhTitleL.textColor = SXColor2B3852;
     
     self.addressBeginTextField.backgroundColor = SXColorF6F7FB;
     self.addressEndTextField.backgroundColor = SXColorF6F7FB;

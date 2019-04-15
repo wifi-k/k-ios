@@ -35,12 +35,12 @@
     self.backgroundColor = SXColorWhite;
     
     self.titleL.font = SXFontBold18;
-    self.titleL.textColor = SXColor333333;
+    self.titleL.textColor = SXColor2B3852;
     
     self.bottomLineView.backgroundColor = SXColorDivideLine;
     self.bottomLineView.height = 0.5f;
     
-    [self.optionBtn setTitleColor:SXColor666666 forState:UIControlStateNormal];
+    [self.optionBtn setTitleColor:SXColor2B3852 forState:UIControlStateNormal];
 }
 
 #pragma mark -setter-

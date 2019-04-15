@@ -39,9 +39,18 @@
 #pragma mark -初始化UI-
 - (void)setUpUI{
     
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     //设置背样式
     self.contentView.backgroundColor = SXColorWhite;
-    self.contentBgView.backgroundColor = SXColorClear;
+//    self.contentBgView.backgroundColor = SXColorClear;
+    
+    self.contentBgView.backgroundColor = [UIColor whiteColor];
+    self.contentBgView.layer.cornerRadius = 5;
+    self.contentBgView.layer.shadowColor = UIColor.lightGrayColor.CGColor;
+    self.contentBgView.layer.shadowOffset = CGSizeMake(3, 3);
+    self.contentBgView.layer.shadowOpacity = 0.3;
+    self.contentBgView.layer.shadowRadius = 5;
     
     self.timeL.textColor = SXColor7383A2;
     

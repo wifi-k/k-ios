@@ -42,7 +42,7 @@
     UILabel *titleL = [[UILabel alloc] init];
     titleL.font = SXFont15;
     titleL.textAlignment = NSTextAlignmentLeft;
-    titleL.textColor = SXColor666666;
+    titleL.textColor = SXColor2B3852;
     [self.contentView addSubview:titleL];
     self.titleL = titleL;
 }

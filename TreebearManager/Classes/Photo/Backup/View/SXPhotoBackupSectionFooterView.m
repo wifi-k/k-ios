@@ -39,14 +39,14 @@
     
     self.backgroundColor = SXColorWhite;
     
-    self.photoCountL.textColor = SXColor666666;
-    self.speedL.textColor = SXColor666666;
+    self.photoCountL.textColor = SXColor2B3852;
+    self.speedL.textColor = SXColor2B3852;
     
     self.devideLineView.backgroundColor = SXColorDivideLine;
     self.devideLineView.height = 0.5;
     
-    self.diskL.textColor = SXColor333333;
-    self.diskCountL.textColor = SXColor999999;
+    self.diskL.textColor = SXColor2B3852;
+    self.diskCountL.textColor = SXColor7383A2;
     
     self.progressView.tintColor = SXColorBlue;
     self.progressView.trackTintColor = [UIColor hex:@"EEEEEE"];

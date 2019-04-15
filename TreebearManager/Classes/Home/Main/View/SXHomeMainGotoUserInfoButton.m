@@ -37,9 +37,9 @@
 //    [super setHighlighted:highlighted];
 //
 //    if (highlighted) {
-//        [self borderColor:SXColor666666 borderWidth:1.0f];
+//        [self borderColor:SXColor2B3852 borderWidth:1.0f];
 //    } else{
-//        [self borderColor:SXColor999999 borderWidth:1.0f];
+//        [self borderColor:SXColor7383A2 borderWidth:1.0f];
 //    }
 //}
 

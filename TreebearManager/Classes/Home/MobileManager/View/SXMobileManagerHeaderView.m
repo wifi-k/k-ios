@@ -43,7 +43,7 @@
     self.topBgView.backgroundColor = SXColorWhite;
     
     self.titleL.font = SXFontBold18;
-    self.titleL.textColor = SXColor333333;
+    self.titleL.textColor = SXColor2B3852;
     
     CGFloat itemX = 0;
     CGFloat itemY = 0;

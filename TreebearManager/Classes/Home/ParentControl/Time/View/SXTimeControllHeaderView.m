@@ -33,7 +33,7 @@
     
     self.backgroundColor = SXColorWhite;
     
-    self.titleL.textColor = SXColor999999;
+    self.titleL.textColor = SXColor7383A2;
 }
 
 @end

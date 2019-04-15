@@ -62,6 +62,7 @@
 #define SXColor7383A2  [UIColor hex:@"7383A2"]//注释文字
 #define SXColorB6C0CB  [UIColor hex:@"B6C0CB"]//日期等等
 #define SXColorEBEEF2  [UIColor hex:@"EBEEF2"]//分割线
+#define SXColorF7F7F7  [UIColor hex:@"F7F7F7"]//浅背景
 #define SXColorFFFFFF  [UIColor hex:@"FFFFFF"]//背景色
 
 //按钮状态颜色

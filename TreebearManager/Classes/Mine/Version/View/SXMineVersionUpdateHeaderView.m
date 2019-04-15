@@ -46,11 +46,11 @@
     
     self.backgroundColor = SXColorWhite;
     
-    self.currentVersionTitleL.textColor = SXColor333333;
-    self.lastestVersionTitleL.textColor = SXColor333333;
+    self.currentVersionTitleL.textColor = SXColor2B3852;
+    self.lastestVersionTitleL.textColor = SXColor2B3852;
     
-    self.currentVersionL.textColor = SXColor999999;
-    self.lastestVersionL.textColor = SXColor999999;
+    self.currentVersionL.textColor = SXColor7383A2;
+    self.lastestVersionL.textColor = SXColor7383A2;
     
     self.firstBgView.backgroundColor = SXColorWhite;
     self.secondBgView.backgroundColor = SXColorWhite;
@@ -62,7 +62,7 @@
     self.bottomLineView2.height = 0.1;
     
     self.updateBtn.backgroundColor = SXColorWhite;
-    [self.updateBtn setTitleColor:SXColor999999 forState:UIControlStateNormal];
+    [self.updateBtn setTitleColor:SXColor7383A2 forState:UIControlStateNormal];
     [self.updateBtn roundViewWithRadius:22.5f borderColor:SXColorDivideLine borderWidth: 1.0f];
 }
 

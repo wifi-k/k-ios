@@ -41,7 +41,7 @@ static NSString *SXHealtyControlCellID = @"SXHealtyControlCellID";
     //设置背景色
     self.backgroundColor = SXColorWhite;
     
-    self.timeL.textColor = SXColor333333;
+    self.timeL.textColor = SXColor2B3852;
     self.bottomLineView.backgroundColor = SXColorDivideLine;
     self.bottomLineView.height = 0.5f;
 }
