@@ -13,18 +13,18 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SXAddXiaoKiHeaderView">
-            <rect key="frame" x="0.0" y="0.0" width="368" height="416"/>
+            <rect key="frame" x="0.0" y="0.0" width="281" height="408"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsa-10-ugA">
-                    <rect key="frame" x="15" y="321" width="338" height="45"/>
+                    <rect key="frame" x="15" y="313" width="251" height="45"/>
                     <state key="normal" title="配置网络" backgroundImage="img_button_bg"/>
                     <connections>
                         <action selector="clickConfirmBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="gq1-yQ-3Uq"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您已连接wifi名称为&quot;xiaok-0001&quot;的设备，点击立即绑定设备" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6i-kl-J7N">
-                    <rect key="frame" x="15" y="187.5" width="338" height="41"/>
+                    <rect key="frame" x="15" y="133.5" width="251" height="61"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -32,7 +32,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="r6i-kl-J7N" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="2PE-EX-rHE"/>
+                <constraint firstItem="r6i-kl-J7N" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-40" id="2PE-EX-rHE"/>
                 <constraint firstItem="r6i-kl-J7N" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="86H-T6-QWM"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="gsa-10-ugA" secondAttribute="bottom" constant="50" id="IPy-7T-fIp"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="r6i-kl-J7N" secondAttribute="trailing" constant="15" id="apA-Tn-ByW"/>
@@ -48,7 +48,7 @@
                 <outlet property="confirmBtn" destination="gsa-10-ugA" id="kb3-UW-e53"/>
                 <outlet property="tipsL" destination="r6i-kl-J7N" id="RRv-y6-bHl"/>
             </connections>
-            <point key="canvasLocation" x="132.80000000000001" y="24.287856071964018"/>
+            <point key="canvasLocation" x="63.200000000000003" y="20.689655172413794"/>
         </view>
     </objects>
     <resources>

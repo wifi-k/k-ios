@@ -71,7 +71,6 @@
     self.view.backgroundColor = SXColorWhite;
     
     self.navigationItem.title = @"设置";
-//    self.navigationItem.title = @"选择上网方式";
     
     //4.添加底部视图
     UIView *headerBgView = [[UIView alloc] init];

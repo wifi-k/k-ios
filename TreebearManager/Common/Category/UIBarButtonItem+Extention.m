@@ -23,6 +23,7 @@
     // btn
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(0, 0, 30, 30);
+    btn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 30-12);
     btn.contentMode = UIViewContentModeCenter;
     [btn setImage:image forState:UIControlStateNormal];
     [btn setImage:highImage forState:UIControlStateHighlighted];
