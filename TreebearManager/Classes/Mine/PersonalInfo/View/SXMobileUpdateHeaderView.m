@@ -74,6 +74,9 @@
     
     self.codeTextField.tintColor = SXColorBlue2;
     self.mobileTextField.tintColor = SXColorBlue2;
+    
+    [self.codeTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.mobileTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
 }
 
 #pragma mark -Event-

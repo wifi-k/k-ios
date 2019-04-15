@@ -108,6 +108,20 @@
     
     //默认选中
     self.switchOnBtn.selected = YES;
+    
+    [self.dnsTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.dns2TextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.maskTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.addressBeginTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.addressEndTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.addressTermTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    
+    self.dnsTextField.tintColor = SXColorBlue2;
+    self.dns2TextField.tintColor = SXColorBlue2;
+    self.maskTextField.tintColor = SXColorBlue2;
+    self.addressBeginTextField.tintColor = SXColorBlue2;
+    self.addressEndTextField.tintColor = SXColorBlue2;
+    self.addressTermTextField.tintColor = SXColorBlue2;
 }
 
 #pragma mark -点击事件-

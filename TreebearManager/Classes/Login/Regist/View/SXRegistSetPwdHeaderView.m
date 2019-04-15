@@ -63,6 +63,9 @@
     
     self.pwdTextField.tintColor = SXColorBlue2;
     self.pwd2TextField.tintColor = SXColorBlue2;
+    
+    [self.pwdTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.pwd2TextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
 }
 
 #pragma mark -按钮点击事件-

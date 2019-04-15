@@ -110,6 +110,16 @@
     [self.saveBtn roundViewWithRadius:6.0f];
     
     [self.macTextField becomeFirstResponder];
+    
+    [self.macTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.dnsTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.ipTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.maskTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    
+    self.macTextField.tintColor = SXColorBlue2;
+    self.dnsTextField.tintColor = SXColorBlue2;
+    self.ipTextField.tintColor = SXColorBlue2;
+    self.maskTextField.tintColor = SXColorBlue2;
 }
 
 #pragma mark -点击保存-

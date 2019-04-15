@@ -60,6 +60,12 @@
     
     //成为第一响应
     [self.nameTextField becomeFirstResponder];
+    
+    [self.nameTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.pwdTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    
+    self.nameTextField.tintColor = SXColorBlue2;
+    self.pwdTextField.tintColor = SXColorBlue2;
 }
 
 #pragma mark -点击事件-

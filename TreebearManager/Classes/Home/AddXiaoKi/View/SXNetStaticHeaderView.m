@@ -144,6 +144,12 @@
     self.firstNDSTextField.tintColor = SXColorBlue2;
     self.secondDNSTextField.tintColor = SXColorBlue2;
     
+    [self.IPAddressTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.maskCodeTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.gatewayTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.firstNDSTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.secondDNSTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    
     //设置默认值
     self.param.ip = @"";
     self.param.netmask = @"";

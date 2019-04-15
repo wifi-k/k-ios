@@ -92,6 +92,8 @@ const CGFloat SXInputAlertViewHeightRatio = 0.216; //高度系统
     leftImageV.contentMode = UIViewContentModeCenter;
     self.textField.leftView = leftImageV;
     self.textField.leftViewMode = UITextFieldViewModeAlways;
+    [self.textField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+
     
     //底部视图
     UIView *bottomView = [[UIView alloc] init];

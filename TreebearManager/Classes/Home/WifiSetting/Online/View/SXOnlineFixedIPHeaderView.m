@@ -89,6 +89,18 @@
     self.fifthBgView.backgroundColor = SXColorWhite;
     
     [self.saveBtn roundViewWithRadius:6.0f];
+    
+    [self.ipTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.netmaskTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.gatewayTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.dnsTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.dns2TextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    
+    self.ipTextField.tintColor = SXColorBlue2;
+    self.netmaskTextField.tintColor = SXColorBlue2;
+    self.gatewayTextField.tintColor = SXColorBlue2;
+    self.dnsTextField.tintColor = SXColorBlue2;
+    self.dns2TextField.tintColor = SXColorBlue2;
 }
 
 - (void)setUpData{

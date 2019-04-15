@@ -48,6 +48,8 @@
     [self.nickTextField becomeFirstResponder];
     
     self.nickTextField.tintColor = SXColorBlue2;
+    
+    [self.nickTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
 }
 
 - (void)setUpData{

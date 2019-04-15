@@ -77,6 +77,9 @@
     
     self.phoneTextField.tintColor = SXColorBlue2;
     self.pwdTextField.tintColor = SXColorBlue2;
+    
+    [self.phoneTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.pwdTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
 }
 
 #pragma mark -按钮点击事件-

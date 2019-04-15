@@ -106,6 +106,18 @@
     
     [self.disconnectedBtn roundViewWithRadius:6.0f];
     [self.connectedBtn roundViewWithRadius:6.0f];
+    
+    [self.broadbandTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.bandPwdTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.ipTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.dnsTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.dns2TextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    
+    self.broadbandTextField.tintColor = SXColorBlue2;
+    self.bandPwdTextField.tintColor = SXColorBlue2;
+    self.ipTextField.tintColor = SXColorBlue2;
+    self.dnsTextField.tintColor = SXColorBlue2;
+    self.dns2TextField.tintColor = SXColorBlue2;
 }
 
 - (IBAction)clickDisconnectedBtn:(UIButton *)sender {
