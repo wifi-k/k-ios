@@ -9,6 +9,8 @@
 #import "SXUpdateVersionHeaderView.h"
 
 @interface SXUpdateVersionHeaderView ()
+@property (weak, nonatomic) IBOutlet UILabel *naviTitleL;
+
 @property (weak, nonatomic) IBOutlet UILabel *ssidTitleL;
 @property (weak, nonatomic) IBOutlet UILabel *currentVersionTitleL;
 @property (weak, nonatomic) IBOutlet UILabel *latestVersionTitleL;
@@ -43,17 +45,19 @@
     
     self.backgroundColor = SXColorWhite;
     
-    self.ssidTitleL.textColor = SXColor999999;
-    self.currentVersionTitleL.textColor = SXColor999999;
-    self.latestVersionTitleL.textColor = SXColor999999;
+    self.naviTitleL.font = SXFontBold24;
     
-    self.ssidL.textColor = SXColor666666;
-    self.currentVersionL.textColor = SXColor666666;
-    self.latestVersionL.textColor = SXColor666666;
+    self.ssidTitleL.textColor = SXColorB6C0CB;
+    self.currentVersionTitleL.textColor = SXColorB6C0CB;
+    self.latestVersionTitleL.textColor = SXColorB6C0CB;
+    
+    self.ssidL.textColor = SXColor7383A2;
+    self.currentVersionL.textColor = SXColor7383A2;
+    self.latestVersionL.textColor = SXColor7383A2;
     
     [self.statusBtn roundViewWithRadius:4.0f];
     
-    [self.updateBtn roundViewWithRadius:6.0f];
+    [self.updateBtn roundViewWithRadius:22.5f borderColor:SXColor4A5A78 borderWidth:1.0f];
 }
 
 #pragma mark -setter-
@@ -61,8 +65,8 @@
     _model = model;
     
     self.ssidTitleL.text = model.nodeId;
-    self.currentVersionL.text = model.version;
-    self.latestVersionL.text = model.version;
+    self.currentVersionL.text = model.version.description;
+    self.latestVersionL.text = model.version.description;
 }
 
 #pragma mark -点击事件-

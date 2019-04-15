@@ -17,36 +17,36 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小K云管家" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0h-hs-bjd">
-                    <rect key="frame" x="15" y="30" width="85" height="21.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <rect key="frame" x="15" y="30" width="112.5" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="序列号：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fQ-F9-JPn">
-                    <rect key="frame" x="15" y="71.5" width="61.5" height="18"/>
+                    <rect key="frame" x="15" y="79" width="61.5" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前固件版本：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2u-l4-4MI">
-                    <rect key="frame" x="15" y="109.5" width="107.5" height="18"/>
+                    <rect key="frame" x="15" y="117" width="107.5" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最新固件版本：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJa-x0-60h">
-                    <rect key="frame" x="15" y="147.5" width="107.5" height="18"/>
+                    <rect key="frame" x="15" y="155" width="107.5" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AV7-6i-ZO1">
-                    <rect key="frame" x="285" y="65.5" width="60" height="30"/>
+                    <rect key="frame" x="285" y="73" width="60" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="rw8-Jp-seU"/>
                         <constraint firstAttribute="height" constant="30" id="w0m-Ex-RJv"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal" title="状态" backgroundImage="img_button_bg_small"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4RD-FF-siX">
@@ -54,25 +54,28 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="mHI-uI-ltk"/>
                     </constraints>
-                    <state key="normal" title="立即升级" backgroundImage="img_button_bg"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="立即升级">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                     <connections>
                         <action selector="clickUpdateBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="LCm-ea-HkZ"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kJG58824542802" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXm-Ch-UBb">
-                    <rect key="frame" x="81.5" y="71.5" width="128" height="18"/>
+                    <rect key="frame" x="81.5" y="79" width="128" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YII-uj-ci8">
-                    <rect key="frame" x="127.5" y="109.5" width="42" height="18"/>
+                    <rect key="frame" x="127.5" y="117" width="42" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vm0-ZG-FLE">
-                    <rect key="frame" x="127.5" y="147.5" width="42" height="18"/>
+                    <rect key="frame" x="127.5" y="155" width="42" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -109,6 +112,7 @@
                 <outlet property="currentVersionTitleL" destination="E2u-l4-4MI" id="YgZ-fT-sxm"/>
                 <outlet property="latestVersionL" destination="Vm0-ZG-FLE" id="k3I-im-YuR"/>
                 <outlet property="latestVersionTitleL" destination="XJa-x0-60h" id="fZd-UZ-Gai"/>
+                <outlet property="naviTitleL" destination="g0h-hs-bjd" id="hMK-3Z-Z9c"/>
                 <outlet property="ssidL" destination="sXm-Ch-UBb" id="3S2-18-tmC"/>
                 <outlet property="ssidTitleL" destination="3fQ-F9-JPn" id="RPU-ZQ-kJi"/>
                 <outlet property="statusBtn" destination="AV7-6i-ZO1" id="gUj-Km-AW8"/>
@@ -118,7 +122,6 @@
         </view>
     </objects>
     <resources>
-        <image name="img_button_bg" width="375" height="45"/>
         <image name="img_button_bg_small" width="140" height="45"/>
     </resources>
 </document>

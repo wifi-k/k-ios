@@ -9,8 +9,8 @@
 #import "SXHomeXiaoKiCell.h"
 
 @interface SXHomeXiaoKiCell ()
-
 @property (weak, nonatomic) IBOutlet UILabel *deviceNameL;
+@property (weak, nonatomic) IBOutlet UILabel *ssidTitleL;
 @property (weak, nonatomic) IBOutlet UILabel *ssidL;
 @property (weak, nonatomic) IBOutlet UIButton *statusBtn;
 
@@ -20,8 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *updateNameBtn;
 @property (weak, nonatomic) IBOutlet UIButton *untyingXiaoKiBtn;
 @property (weak, nonatomic) IBOutlet UIButton *upgradeVersionBtn;
-
-
 @end
 
 @implementation SXHomeXiaoKiCell
@@ -50,15 +48,23 @@ static NSString *SXHomeXiaoKiCellID = @"SXHomeXiaoKiCellID";
     //设置背景色
     self.backgroundColor = SXColorWhite;
     
+    self.deviceNameL.font = SXFontBold17;
+    self.ssidTitleL.textColor = SXColor7383A2;
+    self.ssidL.textColor = SXColor7383A2;
+    
     [self.statusBtn roundViewWithRadius:4.0f];
     
     self.bottomLineView.backgroundColor = SXColorDivideLine;
     self.bottomLineView.height = 0.5f;
     self.bottomBgView.backgroundColor = SXColorWhite;
     
-    [self.updateNameBtn roundViewWithRadius:4.0f borderColor:SXColor333333 borderWidth:1.0f];
-    [self.untyingXiaoKiBtn roundViewWithRadius:4.0f borderColor:SXColor333333 borderWidth:1.0f];
-    [self.upgradeVersionBtn roundViewWithRadius:4.0f borderColor:SXColor333333 borderWidth:1.0f];
+    [self.updateNameBtn roundViewWithRadius:4.0f borderColor:SXColor4A5A78 borderWidth:1.0f];
+    [self.untyingXiaoKiBtn roundViewWithRadius:4.0f borderColor:SXColor4A5A78 borderWidth:1.0f];
+    [self.upgradeVersionBtn roundViewWithRadius:4.0f borderColor:SXColor4A5A78 borderWidth:1.0f];
+    
+    [self.updateNameBtn setTitleColor:SXColor4A5A78 forState:UIControlStateNormal];
+    [self.untyingXiaoKiBtn setTitleColor:SXColor4A5A78 forState:UIControlStateNormal];
+    [self.upgradeVersionBtn setTitleColor:SXColor4A5A78 forState:UIControlStateNormal];
 }
 
 #pragma mark -setter-
