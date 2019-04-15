@@ -39,6 +39,7 @@ static NSString *SXMineListCellID = @"SXMineListCellID";
 - (void)setUpUI{
     
     self.bottomLineView.backgroundColor = SXColorDivideLine;
+    self.iconImageView.contentMode = UIViewContentModeCenter;
 }
 
 - (void)setModel:(SXMineUserInfoModel *)model{

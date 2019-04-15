@@ -147,7 +147,7 @@
     if (self.childViewControllers.count) { //不是根控制器
         
         viewController.hidesBottomBarWhenPushed = YES;
-        UIBarButtonItem *left = [UIBarButtonItem barButtonItemWithImage:[UIImage imageNamed:@"arrow_left"] highImage:[UIImage imageNamed:@"arrow_left"] target:self action:@selector(popToPre) forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem *left = [UIBarButtonItem naviButtonItemWithImage:[UIImage imageNamed:@"arrow_left"] highImage:[UIImage imageNamed:@"arrow_left"] target:self action:@selector(popToPre) forControlEvents:UIControlEventTouchUpInside];
         // 设置导航条的按钮
         viewController.navigationItem.leftBarButtonItem = left;
         

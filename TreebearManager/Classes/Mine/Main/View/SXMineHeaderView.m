@@ -37,7 +37,7 @@
     
     self.backgroundColor = SXColor2E2E2E;
     
-    self.nameL.font = SXFontBold16;
+    self.nameL.font = SXFontBold22;
     self.mobileL.textColor = SXColorWhite;
     
     //1.1添加点击手势
@@ -51,7 +51,13 @@
 #pragma mark -setData-
 - (void)setUpData{
     SXMineUserInfoModel *userInfo = SXPersonInfoModel.sharedSXPersonInfoModel.result.user;
-    self.nameL.text = userInfo.name;
+    NSString *nameStr = @"";
+    if ([NSString isNotEmpty:userInfo.mobile] && userInfo.mobile.length > 4) {
+        NSRange range = NSMakeRange(userInfo.mobile.length-4, 4);
+        NSString *subMobile = [userInfo.mobile substringWithRange:range];
+        nameStr = [NSString isEmpty:userInfo.name] ? [NSString stringWithFormat:@"用户%@",subMobile] : userInfo.name;
+    }
+    self.nameL.text = nameStr;
     self.mobileL.text = userInfo.mobile;
     NSString *avatar = userInfo.avatar;
     NSURL *avatarUrl = [NSURL URLWithString:avatar];

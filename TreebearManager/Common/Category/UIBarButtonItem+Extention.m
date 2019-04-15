@@ -23,6 +23,18 @@
     // btn
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(0, 0, 30, 30);
+    btn.contentMode = UIViewContentModeCenter;
+    [btn setImage:image forState:UIControlStateNormal];
+    [btn setImage:highImage forState:UIControlStateHighlighted];
+    [btn setEnlargeEdgeWithTop:10.0 right:10.0 bottom:10.0 left:10.0];
+    [btn addTarget:target action:action forControlEvents:controlEvents];
+    return  [[UIBarButtonItem alloc] initWithCustomView:btn];
+}
+
++ (UIBarButtonItem *)naviButtonItemWithImage:(UIImage *)image highImage:(UIImage *)highImage target:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents{
+    // btn
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, 30, 30);
     btn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 30-12);
     btn.contentMode = UIViewContentModeCenter;
     [btn setImage:image forState:UIControlStateNormal];
