@@ -11,6 +11,7 @@
 #import "SXNetStaticController.h"
 #import "SXNetOptionCell.h"
 #import "SXNetOptionFooterView.h"
+#import "SXNetOptionHeaderView.h"
 #import "SXAddXiaokiNetTool.h"
 #import "SXMineNetTool.h"
 #import "SXNotificationCenterTool.h"
@@ -19,6 +20,9 @@
 @interface SXNetOptionController ()
 ///模型数组
 @property (nonatomic, strong) NSMutableArray *dataArray;
+
+///底部视图
+@property (nonatomic, weak) SXNetOptionHeaderView *headerView;
 ///底部视图
 @property (nonatomic, weak) SXNetOptionFooterView *footerView;
 @end
@@ -66,7 +70,20 @@
 - (void)setUpUI{
     self.view.backgroundColor = SXColorWhite;
     
-    self.navigationItem.title = @"选择上网方式";
+    self.navigationItem.title = @"设置";
+//    self.navigationItem.title = @"选择上网方式";
+    
+    //4.添加底部视图
+    UIView *headerBgView = [[UIView alloc] init];
+    headerBgView.backgroundColor = SXColorWhite;
+    headerBgView.height = 100;
+    self.tableView.tableHeaderView = headerBgView;
+    
+    SXNetOptionHeaderView *headerView = [SXNetOptionHeaderView headerView];
+    headerView.frame = self.tableView.tableHeaderView.bounds;
+    headerView.title = @"选择上网方式";
+    [self.tableView.tableHeaderView addSubview:headerView];
+    self.headerView = headerView;
     
     //4.添加底部视图
     UIView *footerBgView = [[UIView alloc] init];

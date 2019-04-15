@@ -113,6 +113,10 @@
 //导航item文字大小
 #define SXFontNavItemTitle SXFont(15)
 //字体大小（带字号）
+#define SXFont25 SXFont(25)
+#define SXFont24 SXFont(24)
+#define SXFont23 SXFont(23)
+#define SXFont22 SXFont(22)
 #define SXFont21 SXFont(21)
 #define SXFont20 SXFont(20)
 #define SXFont19 SXFont(19)

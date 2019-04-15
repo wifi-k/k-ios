@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsa-10-ugA">
-                    <rect key="frame" x="15" y="341" width="338" height="45"/>
+                    <rect key="frame" x="15" y="321" width="338" height="45"/>
                     <state key="normal" title="配置网络" backgroundImage="img_button_bg"/>
                     <connections>
                         <action selector="clickConfirmBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="gq1-yQ-3Uq"/>
@@ -34,7 +34,7 @@
             <constraints>
                 <constraint firstItem="r6i-kl-J7N" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="2PE-EX-rHE"/>
                 <constraint firstItem="r6i-kl-J7N" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="86H-T6-QWM"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="gsa-10-ugA" secondAttribute="bottom" constant="30" id="IPy-7T-fIp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="gsa-10-ugA" secondAttribute="bottom" constant="50" id="IPy-7T-fIp"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="r6i-kl-J7N" secondAttribute="trailing" constant="15" id="apA-Tn-ByW"/>
                 <constraint firstItem="r6i-kl-J7N" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="mKx-DJ-qhp"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gsa-10-ugA" secondAttribute="trailing" constant="15" id="pDF-xP-w7q"/>

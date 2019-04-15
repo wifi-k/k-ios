@@ -284,6 +284,8 @@
 		09C9092C22603D8C00BFF67C /* SXPhotoChooseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C9092B22603D8C00BFF67C /* SXPhotoChooseController.m */; };
 		09C9092F226064C700BFF67C /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C9092E226064C700BFF67C /* NSDate+Extension.m */; };
 		09C909332260723300BFF67C /* LMJScrollTextView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C909312260723300BFF67C /* LMJScrollTextView2.m */; };
+		09D293F02264349300325798 /* SXNetOptionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D293EF2264349300325798 /* SXNetOptionHeaderView.m */; };
+		09D293F22264349F00325798 /* SXNetOptionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D293F12264349F00325798 /* SXNetOptionHeaderView.xib */; };
 		09D5F5E2222678C000EA681A /* SXHomeMainSectionHeaderView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */; };
 		09D5F5EF222689CE00EA681A /* SXHomeMainSectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D5F5EE222689CE00EA681A /* SXHomeMainSectionFooterView.m */; };
 		09D5F5F1222689E300EA681A /* SXHomeMainSectionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D5F5F0222689E300EA681A /* SXHomeMainSectionFooterView.xib */; };
@@ -944,6 +946,9 @@
 		09C9092E226064C700BFF67C /* NSDate+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
 		09C909312260723300BFF67C /* LMJScrollTextView2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJScrollTextView2.m; sourceTree = "<group>"; };
 		09C909322260723300BFF67C /* LMJScrollTextView2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJScrollTextView2.h; sourceTree = "<group>"; };
+		09D293EE2264349300325798 /* SXNetOptionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXNetOptionHeaderView.h; sourceTree = "<group>"; };
+		09D293EF2264349300325798 /* SXNetOptionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXNetOptionHeaderView.m; sourceTree = "<group>"; };
+		09D293F12264349F00325798 /* SXNetOptionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXNetOptionHeaderView.xib; sourceTree = "<group>"; };
 		09D5F5E0222678C000EA681A /* SXHomeMainSectionHeaderView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionHeaderView2.h; sourceTree = "<group>"; };
 		09D5F5E1222678C000EA681A /* SXHomeMainSectionHeaderView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainSectionHeaderView2.m; sourceTree = "<group>"; };
 		09D5F5ED222689CE00EA681A /* SXHomeMainSectionFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainSectionFooterView.h; sourceTree = "<group>"; };
@@ -2650,6 +2655,9 @@
 				09D5F67E222D23C900EA681A /* SXNetOptionCell.h */,
 				09D5F67F222D23C900EA681A /* SXNetOptionCell.m */,
 				09D5F680222D23C900EA681A /* SXNetOptionCell.xib */,
+				09D293EE2264349300325798 /* SXNetOptionHeaderView.h */,
+				09D293EF2264349300325798 /* SXNetOptionHeaderView.m */,
+				09D293F12264349F00325798 /* SXNetOptionHeaderView.xib */,
 				09D5F683222D247200EA681A /* SXNetOptionFooterView.h */,
 				09D5F684222D247200EA681A /* SXNetOptionFooterView.m */,
 				09D5F686222D24B700EA681A /* SXNetOptionFooterView.xib */,
@@ -3901,6 +3909,7 @@
 				098BA30A221AB1C200F58639 /* SXCodeLoginHeaderView.xib in Resources */,
 				093C12DF225348EA005682C8 /* SXTimeControllHeaderView.xib in Resources */,
 				093C12E722534D5C005682C8 /* SXForbiddenAppHeaderView.xib in Resources */,
+				09D293F22264349F00325798 /* SXNetOptionHeaderView.xib in Resources */,
 				0900F527222D514E00250155 /* SXNetStaticHeaderView.xib in Resources */,
 				09D5F6332229298500EA681A /* SXForbiddenAppCell.xib in Resources */,
 				B3AF2FF821FB0180001E4E67 /* SXLoginMainHeaderView.xib in Resources */,
@@ -4009,6 +4018,7 @@
 				0900F514222D31BD00250155 /* SXNetOptionModel.m in Sources */,
 				09EF2FAE225B266E00C2C17C /* SXPhotoBackupController.m in Sources */,
 				B3AF2FEA21FAFF10001E4E67 /* SXLoginMainController.m in Sources */,
+				09D293F02264349300325798 /* SXNetOptionHeaderView.m in Sources */,
 				092D6CE92200625700538AC8 /* Foundation+Log.m in Sources */,
 				B3AF301521FB0A92001E4E67 /* SXBaseSectionHeaderCollectionView.m in Sources */,
 				09D5F6082227ECB700EA681A /* SXDatePickerView.m in Sources */,
