@@ -18,8 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 ///点击更新按钮回调
 @property (nonatomic, copy) void (^clickUpdateIPBtnBlock)(void);
 
-///点击高级选项回调
-//@property (nonatomic, copy) void (^clickAdvancedBgViewBlock)(void);
+///节点信息结果模型
 @property (nonatomic, strong) SXXiaoKNodeResult *result;
 
 @property (nonatomic, assign) NSInteger netStatus;

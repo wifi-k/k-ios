@@ -14,6 +14,8 @@
 #import "SXNetOptionFooterView.h"
 #import "SXAddXiaokiNetTool.h"
 #import "SXMineNetTool.h"
+#import "SXNotificationCenterTool.h"
+#import "SXRootTool.h"
 
 @interface SXNetOptionController ()
 ///模型数组
@@ -115,9 +117,9 @@
     [MBProgressHUD showWhiteLoadingToView:SXKeyWindow];
     [SXAddXiaokiNetTool dynamicSettingWithDataWithParams:param.mj_keyValues Success:^{
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [MBProgressHUD showSuccessWithMessage:@"动态校验成功" toView:SXKeyWindow];
-        });
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [MBProgressHUD showSuccessWithMessage:@"动态校验成功" toView:SXKeyWindow];
+//        });
         [weakSelf networkStatusData];
     } failure:^(NSError * _Nonnull error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
@@ -168,6 +170,13 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             //提示
             [MBProgressHUD showSuccessWithMessage:@"绑定成功!" toView:SXKeyWindow];
+            
+            //切换根控
+            [SXRootTool changeToMainHomeVC];
+            //通知绑定成功
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [SXNotificationCenterTool postNotificationBindXiaoKiSuccess];
+            });
         });
     } failure:^(NSError *error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];

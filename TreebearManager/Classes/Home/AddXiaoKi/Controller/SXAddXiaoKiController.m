@@ -7,6 +7,7 @@
 //
 
 #import "SXAddXiaoKiController.h"
+#import "SXNetOptionController.h"
 #import "SXAddXiaoKiHeaderView.h"
 #import "SXSingleAlertView.h"
 #import "SXTitleAlertView.h"
@@ -141,16 +142,20 @@
         return;
     }
     
+    //跳转下一个页面
+    SXNetOptionController *netVC = [[SXNetOptionController alloc] init];
+    [self.navigationController pushViewController:netVC animated:YES];
+    
     //提示
-    [MBProgressHUD showSuccessWithMessage:@"绑定成功!" toView:SXKeyWindow];
+//    [MBProgressHUD showSuccessWithMessage:@"绑定成功!" toView:SXKeyWindow];
     
     //切换根控
-    [SXRootTool changeToMainHomeVC];
+//    [SXRootTool changeToMainHomeVC];
     
     //通知绑定成功
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [SXNotificationCenterTool postNotificationBindXiaoKiSuccess];
-    });
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [SXNotificationCenterTool postNotificationBindXiaoKiSuccess];
+//    });
 }
 
 #pragma mark -视图弹窗-

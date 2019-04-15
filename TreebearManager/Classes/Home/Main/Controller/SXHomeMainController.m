@@ -18,7 +18,7 @@
 #import "SXMobileDetailController.h"
 #import "SXHomeReportDetailController.h"
 #import "SXXiaoKiEquipmentOptionController.h"
-#import "SXNetOptionController.h"
+#import "SXDynamicController.h"
 #import "SXHomeMainHeaderView.h"
 #import "SXHomeMainSectionHeaderView.h"
 #import "SXHomeMainSectionFooterView.h"
@@ -142,7 +142,7 @@
 
 - (void)bindXiaoKiSuccess{
     //跳转下一个页面
-    SXNetOptionController *netVC = [[SXNetOptionController alloc] init];
+    SXDynamicController *netVC = [[SXDynamicController alloc] init];
     [self.navigationController pushViewController:netVC animated:YES];
 }
 

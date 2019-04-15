@@ -28,9 +28,20 @@
 
 @interface SXWifiSettingController ()
 @property (nonatomic, weak) SXWifiSettingHeaderView *headerView;//头部视图
+
+///节点信息结果模型
+@property (nonatomic, strong) SXXiaoKNodeResult *result;
 @end
 
 @implementation SXWifiSettingController
+
+#pragma mark -getter-
+- (SXXiaoKNodeResult *)result{
+    if (_result == nil) {
+        _result = [[SXXiaoKNodeResult alloc] init];
+    }
+    return _result;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -84,11 +95,11 @@
             SXDynamicParam *param = [SXDynamicParam param];
             param.ssid0 = [XKGetWifiNetTool getWifiSSID];
             param.ssid = text;
-            param.passwd = @"123456";
+            param.passwd = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.passwd;
             [weakSelf setNetDynamicData:param];
         } else {
             SXXiaoKiParam *param = [SXXiaoKiParam param];
-            param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
+            param.nodeId = @"";
             param.freq = @0;
             param.ssid = text;
             [weakSelf userNodeSsidSetDataWitiParam:param];
@@ -109,12 +120,12 @@
         if ([weakSelf isNearWifi]) {
             SXDynamicParam *param = [SXDynamicParam param];
             param.ssid0 = [XKGetWifiNetTool getWifiSSID];
-            param.ssid = @"123456";
+            param.ssid = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.name;
             param.passwd = text;
             [weakSelf setNetDynamicData:param];
         } else {
             SXXiaoKiParam *param = [SXXiaoKiParam param];
-            param.nodeId = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId;
+            param.nodeId = @"";
             param.freq = @0;
             param.passwd = text.md5String;
             [weakSelf userNodeSsidSetDataWitiParam:param];
@@ -126,6 +137,9 @@
 #warning mark -测试数据-
 #pragma mark -判断是否使用近网通信-
 - (BOOL)isNearWifi{
+    if ([NSString isEmpty:self.result.modelId]) {
+        return NO;
+    }
     NSString *nearNodeId = [SXXiaoKInfoModel sharedSXXiaoKInfoModel].modelId;
     NSString *farNodeId = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel.nodeId;
     return [nearNodeId isEqualToString:farNodeId];
@@ -212,8 +226,10 @@
 
 #pragma mark -获取节点数据-
 - (void)getNodeData{
+    WS(weakSelf);
     [SXAddXiaokiNetTool getNodeWithDataWithSuccess:^(SXXiaoKNodeResult * _Nonnull result) {
         DLog(@"获取节点");
+        weakSelf.result = result;
         //更新wan信息
         SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
         [shareInfo setDataWithResult:result];

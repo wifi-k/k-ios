@@ -11,6 +11,8 @@
 #import "SXNetStaticHeaderView.h"
 #import "SXAddXiaokiNetTool.h"
 #import "SXMineNetTool.h"
+#import "SXNotificationCenterTool.h"
+#import "SXRootTool.h"
 
 @interface SXNetStaticController ()
 ///头部视图
@@ -100,7 +102,12 @@
     //更新wan信息
     SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
     [SXMineNetTool userNodeBindParams:shareInfo.modelId Success:^{
-        DLog(@"绑定成功!");
+        //切换根控
+        [SXRootTool changeToMainHomeVC];
+        //通知绑定成功
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [SXNotificationCenterTool postNotificationBindXiaoKiSuccess];
+        });
     } failure:^(NSError *error) {
         DLog("error:%@",error.userInfo);
     }];
