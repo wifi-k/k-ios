@@ -98,7 +98,7 @@
     NSString *wifiSSID = [XKGetWifiNetTool getWifiSSID];
     DLog(@"wifi:%@",wifiSSID);
     if (SXNetReachablityTool.status == SXNetworkStatusWifi) {
-        self.titleL.text = [NSString stringWithFormat:@"您已连接wifi名称为'%@'的设备，点击立即绑定设备",wifiSSID];
+        self.titleL.text = [NSString stringWithFormat:@"您已连接wifi名称为'%@'的设备，前往配置网络",wifiSSID];
         [self hideSubviews:NO];
         //重新连接之后，更新节点信息
         [self getNodeData];
@@ -154,7 +154,7 @@
     
     if (!isContainsAlert) {
         
-        SXTitleAlertView *netAlertView = [SXTitleAlertView alertWithTitle:@"连网提示" content:@"请立即连接wifi名称为'xiaoki-xxxx',然后再绑定设备" confirmStr:@"确定" cancelStr:@"取消"];
+        SXTitleAlertView *netAlertView = [SXTitleAlertView alertWithTitle:@"连网提示" content:@"请立即连接wifi名称为'xiaok-xxxx'并配置网络" confirmStr:@"确定" cancelStr:@"取消"];
         netAlertView.confirmButtonBlock = ^{
             [SXRootTool jumpToSystemWIFI];
         };
