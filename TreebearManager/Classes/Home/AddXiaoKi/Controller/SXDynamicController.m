@@ -8,6 +8,7 @@
 
 #import "SXDynamicController.h"
 #import "SXDynamicHeaderView.h"
+#import "SXNetOptionHeaderView.h"
 #import "SXTitleAlertView.h"
 #import "SXAddXiaokiNetTool.h"
 #import "NSString+Hash.h"
@@ -16,6 +17,9 @@
 @class SXAddXiaoKiController;
 
 @interface SXDynamicController ()
+///头部视图
+@property (nonatomic, weak) SXNetOptionHeaderView *navigationView;
+
 ///头部视图
 @property (nonatomic, weak) SXDynamicHeaderView *headerView;
 @end
@@ -32,7 +36,11 @@
 - (void)setUpUI{
     self.view.backgroundColor = SXColorWhite;
     
-    self.navigationItem.title = @"设置WiFi";
+    //4.添加底部视图
+    SXNetOptionHeaderView *navigationView = [SXNetOptionHeaderView headerView];
+    navigationView.title = @"设置WiFi";
+    [self.view addSubview:navigationView];
+    self.navigationView = navigationView;
     
     WS(weakSelf);
     SXDynamicHeaderView *headerView = [SXDynamicHeaderView headerView];
@@ -46,7 +54,14 @@
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     
-    self.headerView.frame = self.view.bounds;
+    self.navigationView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 80);
+    
+    [self.headerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.navigationView.mas_bottom);
+        make.right.mas_equalTo(self.view.mas_right);
+        make.bottom.mas_equalTo(self.view.mas_bottom);
+    }];
 }
 
 #pragma mark -网络信息设置-

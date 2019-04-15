@@ -8,6 +8,7 @@
 
 #import "SXNetBroadbandController.h"
 #import "SXNetBroadbandHeaderView.h"
+#import "SXNetOptionHeaderView.h"
 #import "SXAddXiaokiNetTool.h"
 #import "NSString+Hash.h"
 #import "SXMineNetTool.h"
@@ -15,6 +16,9 @@
 #import "SXRootTool.h"
 
 @interface SXNetBroadbandController ()
+///头部视图
+@property (nonatomic, weak) SXNetOptionHeaderView *navigationView;
+
 ///头部视图
 @property (nonatomic, weak) SXNetBroadbandHeaderView *headerView;
 @end
@@ -31,7 +35,11 @@
 - (void)setUpUI{
     self.view.backgroundColor = SXColorWhite;
     
-    self.navigationItem.title = @"宽带拨号上网";
+    //4.添加底部视图
+    SXNetOptionHeaderView *navigationView = [SXNetOptionHeaderView headerView];
+    navigationView.title = @"宽带拨号上网";
+    [self.view addSubview:navigationView];
+    self.navigationView = navigationView;
     
     WS(weakSelf);
     SXNetBroadbandHeaderView *headerView = [SXNetBroadbandHeaderView headerView];
@@ -45,7 +53,14 @@
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     
-    self.headerView.frame = self.view.bounds;
+    self.navigationView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 80);
+    
+    [self.headerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.navigationView.mas_bottom);
+        make.right.mas_equalTo(self.view.mas_right);
+        make.bottom.mas_equalTo(self.view.mas_bottom);
+    }];
 }
 
 #pragma mark -跳转动态设置页面-

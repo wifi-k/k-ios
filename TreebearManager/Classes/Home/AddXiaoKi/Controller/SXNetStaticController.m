@@ -8,12 +8,16 @@
 
 #import "SXNetStaticController.h"
 #import "SXNetStaticHeaderView.h"
+#import "SXNetOptionHeaderView.h"
 #import "SXAddXiaokiNetTool.h"
 #import "SXMineNetTool.h"
 #import "SXNotificationCenterTool.h"
 #import "SXRootTool.h"
 
 @interface SXNetStaticController ()
+///头部视图
+//@property (nonatomic, weak) SXNetOptionHeaderView *navigationView;
+
 ///头部视图
 @property (nonatomic, weak) SXNetStaticHeaderView *headerView;
 @end
@@ -30,7 +34,19 @@
 - (void)setUpUI{
     self.view.backgroundColor = SXColorWhite;
     
-    self.navigationItem.title = @"静态IP上网";
+//    self.navigationItem.title = @"静态IP上网";
+    
+    //4.添加底部视图
+//    UIView *headerBgView = [[UIView alloc] init];
+//    headerBgView.backgroundColor = SXColorWhite;
+//    headerBgView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 80);
+//    self.tableView.tableHeaderView = headerBgView;
+//
+//    SXNetOptionHeaderView *navigationView = [SXNetOptionHeaderView headerView];
+//    navigationView.frame = self.tableView.tableHeaderView.bounds;
+//    navigationView.title = @"静态IP上网";
+//    [self.tableView.tableHeaderView addSubview:navigationView];
+//    self.navigationView = navigationView;
     
     WS(weakSelf);
     SXNetStaticHeaderView *headerView = [SXNetStaticHeaderView headerView];

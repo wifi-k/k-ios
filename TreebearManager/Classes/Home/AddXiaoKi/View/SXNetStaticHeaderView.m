@@ -68,8 +68,8 @@
     self.backgroundColor = SXColorWhite;
     
     self.titleL.text = @"静态IP上网";
-    self.titleL.textColor = SXColor333333;
-    self.titleL.font = SXFontBold18;
+    self.titleL.textColor = SXColor2B3852;
+    self.titleL.font = SXFontBold21;
     
     self.ipTitleL.textColor = SXColor999999;
     self.maskCodeTitleL.textColor = SXColor999999;
@@ -131,7 +131,7 @@
     self.fifthLineView.hidden = YES;
     
     [self.confirmBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
-    [self.confirmBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
+    [self.confirmBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateDisabled];
     [self.confirmBtn roundViewWithRadius:6.0f];
     self.confirmBtn.enabled = NO;
     

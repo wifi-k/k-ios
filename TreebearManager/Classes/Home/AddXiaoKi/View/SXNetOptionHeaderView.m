@@ -31,7 +31,8 @@
 - (void)setUpUI{
     
     self.backgroundColor = SXColorWhite;
-    self.titleL.font = SXFont21;
+    self.titleL.textColor = SXColor2B3852;
+    self.titleL.font = SXFontBold21;
 }
 
 - (void)setTitle:(NSString *)title{

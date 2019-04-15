@@ -53,7 +53,7 @@
     self.secondLineView.height = 0.5;
     
     [self.confirmBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateNormal];
-    [self.confirmBtn setBackgroundColor:SXColorBtnHighlight forState:UIControlStateDisabled];
+    [self.confirmBtn setBackgroundImage:[UIImage imageNamed:@"img_button_bg"] forState:UIControlStateDisabled];
     [self.confirmBtn roundViewWithRadius:6.0f];
     
     self.confirmBtn.enabled = NO;
@@ -87,7 +87,7 @@
 
 - (IBAction)endNameTextField:(UITextField *)sender {
     DLog(@"endNameTextField:%@",sender.text);
-    self.firstLineView.backgroundColor = UIColor.lightGrayColor;
+    self.firstLineView.backgroundColor = SXColorDivideLine;
     self.firstLineView.height = 0.5;
 }
 
@@ -101,7 +101,7 @@
 
 - (IBAction)endPwdTextField:(UITextField *)sender {
     DLog(@"endPwdTextField:%@",sender.text);
-    self.secondLineView.backgroundColor = UIColor.lightGrayColor;
+    self.secondLineView.backgroundColor = SXColorDivideLine;
     self.secondLineView.height = 0.5;
 }
 

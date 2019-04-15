@@ -75,7 +75,7 @@
     //4.添加底部视图
     UIView *headerBgView = [[UIView alloc] init];
     headerBgView.backgroundColor = SXColorWhite;
-    headerBgView.height = 100;
+    headerBgView.height = 80;
     self.tableView.tableHeaderView = headerBgView;
     
     SXNetOptionHeaderView *headerView = [SXNetOptionHeaderView headerView];
