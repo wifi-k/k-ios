@@ -47,7 +47,7 @@
         bar.barTintColor = SXColorWhite;
         //设置导航条文字颜色和大小
         NSMutableDictionary *barAttr = [NSMutableDictionary dictionary];
-        barAttr[NSForegroundColorAttributeName] = UIColor.blackColor;
+        barAttr[NSForegroundColorAttributeName] = SXColor2B3852;
         //barAttr[NSFontAttributeName] = [UIFont systemFontOfSize:17.0];
         barAttr[NSFontAttributeName] = [UIFont boldSystemFontOfSize:17.0];
         [bar setTitleTextAttributes:barAttr];
@@ -127,7 +127,7 @@
         //            viewController.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
         //            //设置导航条文字颜色和大小
         //            NSMutableDictionary *barAttr = [NSMutableDictionary dictionary];
-        //            barAttr[NSForegroundColorAttributeName] = [UIColor blackColor];
+        //            barAttr[NSForegroundColorAttributeName] = SXColor2B3852;
         //            barAttr[NSFontAttributeName] = [UIFont systemFontOfSize:20.0];
         //            [viewController.navigationController.navigationBar setTitleTextAttributes:barAttr];
         //        }else{

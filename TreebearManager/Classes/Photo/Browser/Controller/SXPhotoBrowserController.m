@@ -48,7 +48,7 @@
     
     //设置导航条文字颜色和大小
     NSMutableDictionary *barAttr = [NSMutableDictionary dictionary];
-    barAttr[NSForegroundColorAttributeName] = UIColor.blackColor;
+    barAttr[NSForegroundColorAttributeName] = SXColor2B3852;
     barAttr[NSFontAttributeName] = [UIFont boldSystemFontOfSize:17.0];
     [self.navigationController.navigationBar setTitleTextAttributes:barAttr];
     

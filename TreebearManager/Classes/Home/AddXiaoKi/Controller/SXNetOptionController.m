@@ -75,7 +75,7 @@
     //4.添加底部视图
     UIView *headerBgView = [[UIView alloc] init];
     headerBgView.backgroundColor = SXColorWhite;
-    headerBgView.height = 80;
+    headerBgView.height = 60;
     self.tableView.tableHeaderView = headerBgView;
     
     SXNetOptionHeaderView *headerView = [SXNetOptionHeaderView headerView];
@@ -132,9 +132,6 @@
     [MBProgressHUD showWhiteLoadingToView:SXKeyWindow];
     [SXAddXiaokiNetTool dynamicSettingWithDataWithParams:param.mj_keyValues Success:^{
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            [MBProgressHUD showSuccessWithMessage:@"动态校验成功" toView:SXKeyWindow];
-//        });
         [weakSelf networkStatusData];
     } failure:^(NSError * _Nonnull error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
@@ -192,6 +189,10 @@
         });
     } failure:^(NSError *error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSString *message = [error.userInfo objectForKey:@"msg"];
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        });
     }];
 }
 

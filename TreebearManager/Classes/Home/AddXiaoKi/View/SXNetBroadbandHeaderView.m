@@ -60,6 +60,13 @@
     
     //成为第一响应
     [self.broadAccountTextField becomeFirstResponder];
+    
+    self.broadAccountTextField.tintColor = SXColorBlue2;
+    self.broadPwdTextField.tintColor = SXColorBlue2;
+    
+    [self.broadAccountTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+    [self.broadPwdTextField setValue:SXColorB6C0CB forKeyPath:@"_placeholderLabel.textColor"];
+//    [self.broadPwdTextField setValue:[UIFont boldSystemFontOfSize:16] forKeyPath:@"_placeholderLabel.font"];
 }
 
 #pragma mark -按钮点击事件-

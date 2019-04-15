@@ -71,18 +71,18 @@
     self.titleL.textColor = SXColor2B3852;
     self.titleL.font = SXFontBold21;
     
-    self.ipTitleL.textColor = SXColor999999;
-    self.maskCodeTitleL.textColor = SXColor999999;
-    self.gatewayTitleL.textColor = SXColor999999;
-    self.firstDNSTitleL.textColor = SXColor999999;
-    self.secondDNSTitleL.textColor = SXColor999999;
+    self.ipTitleL.textColor = SXColor7383A2;
+    self.maskCodeTitleL.textColor = SXColor7383A2;
+    self.gatewayTitleL.textColor = SXColor7383A2;
+    self.firstDNSTitleL.textColor = SXColor7383A2;
+    self.secondDNSTitleL.textColor = SXColor7383A2;
     
     self.IPAddressTextField.backgroundColor = SXColorF6F7FB;
     self.maskCodeTextField.backgroundColor = SXColorF6F7FB;
     self.gatewayTextField.backgroundColor = SXColorF6F7FB;
     self.firstNDSTextField.backgroundColor = SXColorF6F7FB;
     self.secondDNSTextField.backgroundColor = SXColorF6F7FB;
-    
+ 
     //1.填补视图
     UIImageView *leftImageV1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 24)];
     leftImageV1.contentMode = UIViewContentModeCenter;
@@ -137,6 +137,12 @@
     
     //成为第一响应
     [self.IPAddressTextField becomeFirstResponder];
+    
+    self.IPAddressTextField.tintColor = SXColorBlue2;
+    self.maskCodeTextField.tintColor = SXColorBlue2;
+    self.gatewayTextField.tintColor = SXColorBlue2;
+    self.firstNDSTextField.tintColor = SXColorBlue2;
+    self.secondDNSTextField.tintColor = SXColorBlue2;
     
     //设置默认值
     self.param.ip = @"";

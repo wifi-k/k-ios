@@ -40,7 +40,7 @@ static NSString *SXNetOptionCellID = @"SXNetOptionCellID";
     
     self.bottomLineView.backgroundColor = SXColorDivideLine;
     
-    self.titleL.textColor = SXColor666666;
+    self.titleL.textColor = SXColor4A5A78;
 }
 
 #pragma mark -setter-
