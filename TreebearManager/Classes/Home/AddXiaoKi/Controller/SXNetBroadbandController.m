@@ -7,7 +7,6 @@
 //
 
 #import "SXNetBroadbandController.h"
-#import "SXDynamicController.h"
 #import "SXNetBroadbandHeaderView.h"
 #import "SXAddXiaokiNetTool.h"
 #import "NSString+Hash.h"
@@ -73,9 +72,6 @@
     [SXAddXiaokiNetTool networkStatusWithDataSuccess:^{
         [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
         DLog(@"网络状态正常");
-        //页面跳转
-        SXDynamicController *dynamicVC = [[SXDynamicController alloc] init];
-        [weakSelf.navigationController pushViewController:dynamicVC animated:YES];
         //获取节点信息
         [weakSelf userNodeBindData];
     } failure:^(NSError * _Nonnull error) {

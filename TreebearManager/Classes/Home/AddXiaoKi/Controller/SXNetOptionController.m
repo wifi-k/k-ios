@@ -9,7 +9,6 @@
 #import "SXNetOptionController.h"
 #import "SXNetBroadbandController.h"
 #import "SXNetStaticController.h"
-#import "SXDynamicController.h"
 #import "SXNetOptionCell.h"
 #import "SXNetOptionFooterView.h"
 #import "SXAddXiaokiNetTool.h"
@@ -137,9 +136,6 @@
     [SXAddXiaokiNetTool networkStatusWithDataSuccess:^{
         [weakSelf.footerView setBtnEnabled:YES];
         DLog(@"网络状态正常");
-        //页面跳转
-        SXDynamicController *broadVC = [[SXDynamicController alloc] init];
-        [weakSelf.navigationController pushViewController:broadVC animated:YES];
         //获取节点信息
         [weakSelf userNodeBindData];
     } failure:^(NSError * _Nonnull error) {
