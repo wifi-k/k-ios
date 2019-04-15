@@ -41,12 +41,12 @@
 }
 
 #pragma mark -setter-
-- (void)setAsset:(PHAsset *)asset{
+- (void)setAsset:(SXAsset *)asset{
     _asset = asset;
     
     WS(weakSelf);
     PHImageManager *imageManager = [PHImageManager defaultManager];
-    [imageManager requestImageForAsset:asset targetSize:CGSizeMake(100, 100) contentMode:PHImageContentModeDefault options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+    [imageManager requestImageForAsset:asset.asset targetSize:CGSizeMake(100, 100) contentMode:PHImageContentModeDefault options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
         weakSelf.photoImageView.image = result;
     }];
 }

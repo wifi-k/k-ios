@@ -86,7 +86,7 @@
         return 0;
     } else {
         SXPhotoBackupCollectionCell *cell = [SXPhotoBackupCollectionCell cellWithCollectionView:collectionView atIndexPath:indexPath];
-        PHAsset *asset = self.dataArray[indexPath.item];
+        SXAsset *asset = self.dataArray[indexPath.item];
         cell.asset = asset;
         return cell;
     }
