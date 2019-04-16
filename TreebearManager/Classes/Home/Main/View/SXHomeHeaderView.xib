@@ -23,13 +23,13 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小K云管家" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEZ-md-J3f">
-                    <rect key="frame" x="135" y="35" width="85" height="21"/>
+                    <rect key="frame" x="135" y="55" width="85" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIp-om-REx">
-                    <rect key="frame" x="157.5" y="86" width="40" height="40"/>
+                    <rect key="frame" x="157.5" y="106" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="6wf-lj-uA8"/>
                         <constraint firstAttribute="width" constant="40" id="dG6-qi-BMj"/>
@@ -106,7 +106,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="绑定小K云管家" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cto-R2-vHh">
-                    <rect key="frame" x="103.5" y="151" width="148" height="26.5"/>
+                    <rect key="frame" x="103.5" y="171" width="148" height="26.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -118,7 +118,6 @@
                 <constraint firstItem="9Wa-ky-4pp" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="3KO-xS-Xqt"/>
                 <constraint firstItem="QEZ-md-J3f" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="6Wp-bS-gpu"/>
                 <constraint firstItem="RDD-o3-ppr" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Adl-Xe-56L"/>
-                <constraint firstItem="QEZ-md-J3f" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15" id="EQN-x2-u9j"/>
                 <constraint firstItem="cto-R2-vHh" firstAttribute="top" secondItem="uIp-om-REx" secondAttribute="bottom" constant="25" id="EeN-pZ-wJD"/>
                 <constraint firstItem="4ER-QV-Qz5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="HVV-eE-6Nh"/>
                 <constraint firstItem="2xs-Nk-c3k" firstAttribute="bottom" secondItem="RDD-o3-ppr" secondAttribute="bottom" constant="100" id="IZ0-N4-cmj"/>
@@ -129,6 +128,7 @@
                 <constraint firstItem="cto-R2-vHh" firstAttribute="centerX" secondItem="uIp-om-REx" secondAttribute="centerX" id="ZcS-VR-haN"/>
                 <constraint firstItem="4ER-QV-Qz5" firstAttribute="top" secondItem="2xs-Nk-c3k" secondAttribute="bottom" constant="30" id="f3Z-Mu-1aZ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="2xs-Nk-c3k" secondAttribute="trailing" constant="20" id="lhS-hW-fpm"/>
+                <constraint firstItem="QEZ-md-J3f" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="55" id="p7s-bv-lgL"/>
                 <constraint firstItem="9Wa-ky-4pp" firstAttribute="top" secondItem="4ER-QV-Qz5" secondAttribute="bottom" constant="40" id="r48-uo-yQ0"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>

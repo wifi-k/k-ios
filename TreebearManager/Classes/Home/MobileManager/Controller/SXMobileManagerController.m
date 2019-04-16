@@ -114,7 +114,9 @@
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             NSString *message = [error.userInfo objectForKey:@"msg"];
-            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+            if ([NSString isNotEmpty:message]) {
+                [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+            }
         });
     }];
 }
@@ -142,7 +144,9 @@
         [weakSelf endFooterRefresh];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             NSString *message = [error.userInfo objectForKey:@"msg"];
-            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+            if ([NSString isNotEmpty:message]) {
+                [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+            }
         });
     }];
 }
@@ -165,7 +169,9 @@
     } failure:^(NSError * _Nonnull error) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             NSString *message = [error.userInfo objectForKey:@"msg"];
-            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+            if ([NSString isNotEmpty:message]) {
+                [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+            }
         });
     }];
 }

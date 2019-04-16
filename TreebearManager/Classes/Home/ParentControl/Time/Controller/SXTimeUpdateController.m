@@ -145,7 +145,9 @@
         });
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
-        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        if ([NSString isNotEmpty:message]) {
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        }
     }];
 }
 

@@ -154,7 +154,9 @@
     } failure:^(NSError *error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         NSString *message = [error.userInfo objectForKey:@"msg"];
-        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        if ([NSString isNotEmpty:message]) {
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        }
     }];
 }
 
@@ -164,9 +166,10 @@
         DLog(@"token:%@",token);
         SXPersonInfoModel.sharedSXPersonInfoModel.qnToken = token;
     } failure:^(NSError *error) {
-        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         NSString *message = [error.userInfo objectForKey:@"msg"];
-        [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        if ([NSString isNotEmpty:message]) {
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        }
     }];
 }
 
@@ -192,7 +195,9 @@
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             NSString *message = [error.userInfo objectForKey:@"msg"];
-            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+            if ([NSString isNotEmpty:message]) {
+                [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+            }
         });
     }];
 }
@@ -221,13 +226,13 @@
         SXXiaoKiController *xiaokVC = [[SXXiaoKiController alloc] init];
         [self.navigationController pushViewController:xiaokVC animated:YES];
     } else if(indexPath.row == 1){
-        SXMineChildController *childVC = [[SXMineChildController alloc] init];
-        [self.navigationController pushViewController:childVC animated:YES];
-    } else if(indexPath.row == 2){
         [self alertUpdateNameView];
-    } else {
+    } else if(indexPath.row == 2){
         [SXRootTool changeToHomeVC];
         DLog(@"Ohters");
+    } else {
+//        SXMineChildController *childVC = [[SXMineChildController alloc] init];
+//        [self.navigationController pushViewController:childVC animated:YES];
     }
 }
 

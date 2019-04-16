@@ -15,6 +15,8 @@
 #import "SXFamilyMemberNetTool.h"
 
 @interface SXHomeController ()
+///列表视图
+//@property (nonatomic, weak) UITableView *tableView;
 ///头部视图
 @property (nonatomic, weak) SXHomeHeaderView *headerView;
     
@@ -48,6 +50,18 @@
     
     self.navigationItem.title = @"首页";
     
+    //1.创建tableView
+//    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+//    tableView.delegate = self;
+//    tableView.dataSource = self;
+//    tableView.backgroundColor = SXColorBgViewGray;
+//    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    tableView.showsVerticalScrollIndicator = YES;
+//    tableView.showsHorizontalScrollIndicator = NO;
+//    [self.view addSubview:tableView];
+//    self.tableView = tableView;
+    self.tableView.bounces = NO;
+    
     WS(weakSelf);
     SXHomeHeaderView *headerView = [SXHomeHeaderView headerView];
     headerView.clickBindingBtnBlock = ^{
@@ -59,15 +73,28 @@
     headerView.clickProductBtnBlock = ^{
         DLog(@"点击产品页面...");
     };
-    [self.view addSubview:headerView];
+    self.tableView.contentInset = UIEdgeInsetsMake(-20-iPhoneX_top, 0, 0, 0);
+    self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
 }
- 
+
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     
-    self.headerView.frame = self.view.bounds;
+    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 650);
 }
+
+//- (void)viewWillLayoutSubviews{
+//    [super viewWillLayoutSubviews];
+//
+//    self.tableView.frame = SXKeyWindow.bounds;
+//}
+
+//- (void)viewDidLayoutSubviews{
+//    [super viewDidLayoutSubviews];
+//
+//    self.headerView.frame = self.view.bounds;
+//}
 
 #pragma mark -页面跳转-
 - (void)addXiaoKiVC{
