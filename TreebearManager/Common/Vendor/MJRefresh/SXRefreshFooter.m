@@ -31,7 +31,6 @@
             
             UILabel *titleL = [[UILabel alloc]initWithFrame:self.noMoreDataView.bounds];
             titleL.textAlignment = NSTextAlignmentCenter;
-//            titleL.text = @"我是有底线的";
             titleL.text = @"没有更多数据";
             titleL.font = SXFont(13);
             titleL.textColor = UIColor.grayColor;
@@ -40,10 +39,12 @@
             UIView *leftLine = [[UIView alloc]init];
             leftLine.backgroundColor = SXColorGray4;
             [self.noMoreDataView addSubview:leftLine];
+            leftLine.hidden= YES;
             
             UIView *rightLine = [[UIView alloc]init];
             rightLine.backgroundColor = SXColorGray4;
             [self.noMoreDataView addSubview:rightLine];
+            rightLine.hidden= YES;
             
             [leftLine mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.left.equalTo(self.mas_left).offset(15);

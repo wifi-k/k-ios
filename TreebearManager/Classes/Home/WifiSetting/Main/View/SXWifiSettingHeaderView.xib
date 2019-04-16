@@ -48,13 +48,13 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置WiFi名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nld-Wy-MXK">
-                            <rect key="frame" x="68" y="17.5" width="242" height="17"/>
+                            <rect key="frame" x="68" y="20.5" width="242" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前WiFi名称:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8d-eo-iLx">
-                            <rect key="frame" x="68" y="48" width="242" height="14.5"/>
+                            <rect key="frame" x="68" y="45" width="242" height="14.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -62,7 +62,7 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="Nld-Wy-MXK" firstAttribute="top" secondItem="Uv6-qL-yM9" secondAttribute="top" id="0vJ-JS-Xxp"/>
+                        <constraint firstItem="Nld-Wy-MXK" firstAttribute="top" secondItem="Uv6-qL-yM9" secondAttribute="top" constant="3" id="0vJ-JS-Xxp"/>
                         <constraint firstItem="rO6-Qs-k4L" firstAttribute="centerY" secondItem="C2m-cL-m08" secondAttribute="centerY" id="C8J-BV-qEP"/>
                         <constraint firstItem="rO6-Qs-k4L" firstAttribute="leading" secondItem="k8d-eo-iLx" secondAttribute="trailing" constant="10" id="GjJ-k1-vtq"/>
                         <constraint firstItem="k8d-eo-iLx" firstAttribute="leading" secondItem="Uv6-qL-yM9" secondAttribute="trailing" constant="8" id="JJE-UM-Sxa"/>
@@ -71,7 +71,7 @@
                         <constraint firstItem="Uv6-qL-yM9" firstAttribute="centerY" secondItem="C2m-cL-m08" secondAttribute="centerY" id="c9a-0P-bpA"/>
                         <constraint firstAttribute="trailing" secondItem="rO6-Qs-k4L" secondAttribute="trailing" constant="15" id="hJs-LF-PJf"/>
                         <constraint firstItem="Uv6-qL-yM9" firstAttribute="leading" secondItem="C2m-cL-m08" secondAttribute="leading" constant="15" id="iRF-Pj-Sun"/>
-                        <constraint firstItem="k8d-eo-iLx" firstAttribute="bottom" secondItem="Uv6-qL-yM9" secondAttribute="bottom" id="icx-Uo-b87"/>
+                        <constraint firstItem="k8d-eo-iLx" firstAttribute="bottom" secondItem="Uv6-qL-yM9" secondAttribute="bottom" constant="-3" id="icx-Uo-b87"/>
                         <constraint firstItem="Nld-Wy-MXK" firstAttribute="leading" secondItem="Uv6-qL-yM9" secondAttribute="trailing" constant="8" id="uJb-OS-VBw"/>
                     </constraints>
                 </view>
@@ -101,13 +101,13 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置WiFi密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWF-cF-6KP">
-                            <rect key="frame" x="70" y="17.5" width="242" height="17"/>
+                            <rect key="frame" x="70" y="20.5" width="242" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未设置密码（WiFi容易被蹭）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6E-QX-xrx">
-                            <rect key="frame" x="70" y="48" width="240" height="14.5"/>
+                            <rect key="frame" x="70" y="45" width="240" height="14.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -115,7 +115,7 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="SWF-cF-6KP" firstAttribute="top" secondItem="vKn-Lb-Djs" secondAttribute="top" id="3Ep-r7-Bdq"/>
+                        <constraint firstItem="SWF-cF-6KP" firstAttribute="top" secondItem="vKn-Lb-Djs" secondAttribute="top" constant="3" id="3Ep-r7-Bdq"/>
                         <constraint firstAttribute="trailing" secondItem="ze9-ym-gtD" secondAttribute="trailing" constant="15" id="7uq-i0-DQn"/>
                         <constraint firstItem="vKn-Lb-Djs" firstAttribute="leading" secondItem="wJP-c4-C7S" secondAttribute="leading" constant="15" id="8bO-Ke-y53"/>
                         <constraint firstAttribute="height" constant="80" id="LeJ-lZ-72B"/>
@@ -125,7 +125,7 @@
                         <constraint firstItem="SWF-cF-6KP" firstAttribute="leading" secondItem="vKn-Lb-Djs" secondAttribute="trailing" constant="10" id="otK-iN-YPh"/>
                         <constraint firstItem="ze9-ym-gtD" firstAttribute="centerY" secondItem="wJP-c4-C7S" secondAttribute="centerY" id="phK-yJ-vVj"/>
                         <constraint firstItem="vKn-Lb-Djs" firstAttribute="centerY" secondItem="wJP-c4-C7S" secondAttribute="centerY" id="s2X-BJ-Pqx"/>
-                        <constraint firstItem="F6E-QX-xrx" firstAttribute="bottom" secondItem="vKn-Lb-Djs" secondAttribute="bottom" id="sre-7q-l5Y"/>
+                        <constraint firstItem="F6E-QX-xrx" firstAttribute="bottom" secondItem="vKn-Lb-Djs" secondAttribute="bottom" constant="-3" id="sre-7q-l5Y"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="高级设置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAa-6R-b3F">
@@ -138,10 +138,10 @@
                     <rect key="frame" x="15" y="306" width="375" height="300"/>
                     <subviews>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N15-t8-XVB" customClass="SXWifiSettingButton">
-                            <rect key="frame" x="125" y="0.0" width="125" height="100"/>
+                            <rect key="frame" x="94" y="0.0" width="93.5" height="100"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="100" id="eeS-ag-Rh0"/>
+                                <constraint firstAttribute="height" constant="100" id="cuZ-6U-Gas"/>
                             </constraints>
                             <state key="normal" title="上网设置" image="img_advanced_surf">
                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -151,10 +151,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDa-Cs-Oxo" customClass="SXWifiSettingButton">
-                            <rect key="frame" x="250" y="0.0" width="125" height="100"/>
+                            <rect key="frame" x="187.5" y="0.0" width="94" height="100"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="100" id="jWo-mJ-Vtt"/>
+                                <constraint firstAttribute="height" constant="100" id="8Gk-nG-5oK"/>
                             </constraints>
                             <state key="normal" title="重启路由器" image="img_advanced_restart">
                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -164,10 +164,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJm-uk-wAj" customClass="SXWifiSettingButton">
-                            <rect key="frame" x="0.0" y="0.0" width="125" height="100"/>
+                            <rect key="frame" x="0.0" y="0.0" width="94" height="100"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="100" id="JZ9-z3-Bxc"/>
+                                <constraint firstAttribute="height" constant="100" id="IJg-bK-HOy"/>
                             </constraints>
                             <state key="normal" title="防蹭网" image="img_advanced_prevent">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -177,10 +177,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLk-Li-4Zi" customClass="SXWifiSettingButton">
-                            <rect key="frame" x="0.0" y="100" width="125" height="100"/>
+                            <rect key="frame" x="281.5" y="0.0" width="93.5" height="100"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="100" id="EVD-5P-mSM"/>
+                                <constraint firstAttribute="height" constant="100" id="oaY-Mn-Flh"/>
                             </constraints>
                             <state key="normal" title="恢复出厂设置" image="img_advanced_restore">
                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -192,21 +192,21 @@
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="aLk-Li-4Zi" firstAttribute="top" secondItem="hJm-uk-wAj" secondAttribute="bottom" id="4II-JV-1Hs"/>
-                        <constraint firstAttribute="trailing" secondItem="hDa-Cs-Oxo" secondAttribute="trailing" id="4mP-FY-TYV"/>
-                        <constraint firstItem="aLk-Li-4Zi" firstAttribute="leading" secondItem="8TP-uV-sG0" secondAttribute="leading" id="5tl-fX-4to"/>
-                        <constraint firstItem="N15-t8-XVB" firstAttribute="leading" secondItem="hJm-uk-wAj" secondAttribute="trailing" id="AhJ-uo-ZkO"/>
-                        <constraint firstItem="N15-t8-XVB" firstAttribute="width" secondItem="hJm-uk-wAj" secondAttribute="width" id="Bie-02-af1"/>
-                        <constraint firstItem="hDa-Cs-Oxo" firstAttribute="top" secondItem="8TP-uV-sG0" secondAttribute="top" id="E30-Yh-1Ap"/>
-                        <constraint firstItem="hJm-uk-wAj" firstAttribute="leading" secondItem="8TP-uV-sG0" secondAttribute="leading" id="Id6-Jt-1eL"/>
+                        <constraint firstItem="N15-t8-XVB" firstAttribute="top" secondItem="8TP-uV-sG0" secondAttribute="top" id="4fn-ar-u0b"/>
+                        <constraint firstItem="aLk-Li-4Zi" firstAttribute="top" secondItem="8TP-uV-sG0" secondAttribute="top" id="74G-M1-2Zs"/>
+                        <constraint firstItem="N15-t8-XVB" firstAttribute="leading" secondItem="hJm-uk-wAj" secondAttribute="trailing" id="C0N-3n-dtR"/>
+                        <constraint firstItem="aLk-Li-4Zi" firstAttribute="leading" secondItem="hDa-Cs-Oxo" secondAttribute="trailing" id="DrK-RC-fn7"/>
                         <constraint firstAttribute="height" constant="300" id="Pf9-6L-tV5"/>
-                        <constraint firstItem="hJm-uk-wAj" firstAttribute="leading" secondItem="8TP-uV-sG0" secondAttribute="leading" id="QEq-Pd-jTZ"/>
-                        <constraint firstAttribute="trailing" secondItem="hDa-Cs-Oxo" secondAttribute="trailing" id="hp4-aQ-xWe"/>
-                        <constraint firstItem="aLk-Li-4Zi" firstAttribute="width" secondItem="hJm-uk-wAj" secondAttribute="width" id="igu-LY-XfL"/>
-                        <constraint firstItem="hDa-Cs-Oxo" firstAttribute="leading" secondItem="N15-t8-XVB" secondAttribute="trailing" id="p8R-5C-dot"/>
-                        <constraint firstItem="N15-t8-XVB" firstAttribute="top" secondItem="8TP-uV-sG0" secondAttribute="top" id="t83-Q0-iUh"/>
-                        <constraint firstItem="hDa-Cs-Oxo" firstAttribute="width" secondItem="hJm-uk-wAj" secondAttribute="width" id="zrT-K0-2NM"/>
-                        <constraint firstItem="hJm-uk-wAj" firstAttribute="top" secondItem="8TP-uV-sG0" secondAttribute="top" id="zrl-Xo-LWC"/>
+                        <constraint firstItem="N15-t8-XVB" firstAttribute="width" secondItem="hJm-uk-wAj" secondAttribute="width" id="R2B-mP-xB3"/>
+                        <constraint firstItem="hJm-uk-wAj" firstAttribute="leading" secondItem="8TP-uV-sG0" secondAttribute="leading" id="SlU-aU-evB"/>
+                        <constraint firstItem="hDa-Cs-Oxo" firstAttribute="width" secondItem="hJm-uk-wAj" secondAttribute="width" id="VP3-mf-14a"/>
+                        <constraint firstAttribute="trailing" secondItem="aLk-Li-4Zi" secondAttribute="trailing" id="Yoe-Xp-grt"/>
+                        <constraint firstItem="hJm-uk-wAj" firstAttribute="top" secondItem="8TP-uV-sG0" secondAttribute="top" id="ZoA-CG-w4o"/>
+                        <constraint firstAttribute="trailing" secondItem="aLk-Li-4Zi" secondAttribute="trailing" id="dVf-WG-jcd"/>
+                        <constraint firstItem="aLk-Li-4Zi" firstAttribute="width" secondItem="hJm-uk-wAj" secondAttribute="width" id="eex-3U-rsc"/>
+                        <constraint firstItem="hJm-uk-wAj" firstAttribute="leading" secondItem="8TP-uV-sG0" secondAttribute="leading" id="mU2-VH-mxy"/>
+                        <constraint firstItem="hDa-Cs-Oxo" firstAttribute="top" secondItem="8TP-uV-sG0" secondAttribute="top" id="pY1-lO-tfI"/>
+                        <constraint firstItem="hDa-Cs-Oxo" firstAttribute="leading" secondItem="N15-t8-XVB" secondAttribute="trailing" id="xZK-LX-chu"/>
                     </constraints>
                 </view>
             </subviews>

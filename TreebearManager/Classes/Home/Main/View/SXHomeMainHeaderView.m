@@ -76,16 +76,18 @@
     self.noticeBgView.backgroundColor = [UIColor colorWithColor:SXColorF1F5FF alpha:0.5];
     [self.noticeBgView roundViewWithRadius:8.0f];
     self.messageL.textColor = SXColor7383A2;
+    self.messageL.text = @"";
     
     LMJScrollTextView2 *scrollTextView = [[LMJScrollTextView2 alloc] init];
     scrollTextView.delegate = self;
-    scrollTextView.backgroundColor = [UIColor whiteColor];
-    scrollTextView.textColor = [UIColor grayColor];
-    scrollTextView.textFont = [UIFont systemFontOfSize:13.0f];
-    [self.noticeBgView addSubview:scrollTextView];
+    scrollTextView.backgroundColor = [UIColor clearColor];
+    scrollTextView.textColor = SXColor7383A2;
+    scrollTextView.textFont = [UIFont systemFontOfSize:12.0f];
+    scrollTextView.frame = self.messageL.bounds;
+    [self.messageL addSubview:scrollTextView];
     self.scrollTextView = scrollTextView;
-    self.scrollTextView.hidden = YES;
-    [self.scrollTextView startScrollBottomToTopWithSpace];
+    [self.scrollTextView startScrollBottomToTopWithNoSpace];
+    self.scrollTextView.textDataArr = @[@"测试数据001",@"测试数据002",@"测试数据sdfghgfdsadfgf003",@"sdfghgfdsadf测试数据gf005",@"sdfghgf测试数据dsadfgf006"];
     
     self.bottomBgView.backgroundColor = SXColorWhite;
     
