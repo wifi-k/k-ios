@@ -38,7 +38,7 @@
     
     //4.添加底部视图
     SXNetOptionHeaderView *navigationView = [SXNetOptionHeaderView headerView];
-    navigationView.title = @"设置WiFi";
+    navigationView.title = @"设置WiFi名称密码";
     [self.view addSubview:navigationView];
     self.navigationView = navigationView;
     

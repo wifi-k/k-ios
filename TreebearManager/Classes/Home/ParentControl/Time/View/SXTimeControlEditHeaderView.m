@@ -56,7 +56,7 @@
 #pragma mark -初始化UI-
 - (void)setUpUI{
     
-    self.backgroundColor = SXColorBgViewGray;
+    self.backgroundColor = SXColorWhite;
     
     self.firstBgView.backgroundColor = SXColorWhite;
     self.secondBgView.backgroundColor = SXColorWhite;

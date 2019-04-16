@@ -32,7 +32,7 @@
     
     self.backgroundColor = SXColorWhite;
     self.titleL.textColor = SXColor2B3852;
-    self.titleL.font = SXFontBold21;
+    self.titleL.font = SXFontBold17;
 }
 
 - (void)setTitle:(NSString *)title{

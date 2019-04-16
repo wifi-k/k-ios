@@ -90,7 +90,7 @@
     
     self.tableView.frame = self.view.bounds;
     
-    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 177);
+    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 210);
 }
 
 - (void)rightButtonAction:(UIButton *)button{

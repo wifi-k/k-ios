@@ -360,7 +360,7 @@
             self.isEditing = NO;
             for (NSArray *sectionArr in self.assetArray) {
                 for (SXAsset *asset in sectionArr) {
-                    asset.isShow = YES;
+                    asset.isShow = NO;
                 }
             }
             [self.collectionView reloadData];

@@ -24,7 +24,7 @@
     
     //创建tableView
     self.tableView.frame = self.view.bounds;
-    self.tableView.backgroundColor = SXColorBgViewGray;
+    self.tableView.backgroundColor = SXColorWhite;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.showsHorizontalScrollIndicator = NO;

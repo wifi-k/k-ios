@@ -49,6 +49,8 @@
     
     UIBarButtonItem *right = [UIBarButtonItem barButtonItemWithTitle:@"添加" target:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = right;
+    
+    self.tableView.backgroundColor = SXColorWhite;
 }
 
 - (void)rightButtonAction:(UIButton *)btn{

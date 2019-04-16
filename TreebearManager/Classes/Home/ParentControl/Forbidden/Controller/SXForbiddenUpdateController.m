@@ -30,7 +30,7 @@
 
 #pragma mark -初始化UI-
 - (void)setUpUI{
-    self.view.backgroundColor = SXColorBgViewGray;
+    self.view.backgroundColor = SXColorWhite;
     
     BOOL isAdd = (self.model == nil? YES:NO);
     if (isAdd) {

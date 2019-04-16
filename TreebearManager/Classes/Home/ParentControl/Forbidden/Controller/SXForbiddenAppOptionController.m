@@ -41,7 +41,7 @@
 #pragma mark -初始化UI-
 - (void)setUpUI{
     
-    self.view.backgroundColor = SXColorBgViewGray;
+    self.view.backgroundColor = SXColorWhite;
     
     self.navigationItem.title = @"选择禁用的APP";
     

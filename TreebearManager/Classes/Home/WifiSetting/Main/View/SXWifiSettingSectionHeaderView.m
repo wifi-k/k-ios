@@ -28,7 +28,7 @@
     if (self) {
         
         //1.设置白色背景
-        self.contentView.backgroundColor = SXColorBgViewGray;
+        self.contentView.backgroundColor = SXColorWhite;
         
         //2.初始化UI
         [self setUpUI];

@@ -9,6 +9,7 @@
 #import "SXParentControlHeaderView.h"
 
 @interface SXParentControlHeaderView ()
+@property (weak, nonatomic) IBOutlet UIImageView *topImageView;
 
 @end
 
@@ -31,6 +32,8 @@
 - (void)setUpUI{
     
     self.backgroundColor = SXColorWhite;
+    
+    self.topImageView.contentMode = UIViewContentModeCenter;
 }
 
 #pragma mark -点击事件-
