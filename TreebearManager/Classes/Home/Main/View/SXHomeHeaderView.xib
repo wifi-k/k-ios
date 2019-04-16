@@ -144,6 +144,7 @@
                 <outlet property="productL" destination="4ER-QV-Qz5" id="z9Z-q7-KnG"/>
                 <outlet property="titleL" destination="QEZ-md-J3f" id="Vgq-hg-hMa"/>
                 <outlet property="topImageV" destination="RDD-o3-ppr" id="m6T-YV-tIG"/>
+                <outlet property="topMargin" destination="p7s-bv-lgL" id="qCw-6r-RFh"/>
             </connections>
             <point key="canvasLocation" x="116" y="117.84107946026987"/>
         </view>

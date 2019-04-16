@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleL;
 @property (weak, nonatomic) IBOutlet UIImageView *topImageV;
 @property (weak, nonatomic) IBOutlet UILabel *bindingDeviceL;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topMargin;
 
 @property (weak, nonatomic) IBOutlet UILabel *addFamilyCodeL;
 @property (weak, nonatomic) IBOutlet UILabel *addContentL;
@@ -64,6 +65,12 @@
     self.addContentL.textColor = SXColor2B3852;
     self.addFamilyCodeL.font = SXFontBold20;
     self.addFamilyCodeL.textColor = SXColor2B3852;
+    
+    if (IPHONE_X) {
+        self.topMargin.constant = 55.0f;
+    } else {
+        self.topMargin.constant = 55.0f - 20;
+    }
 }
 
 #pragma mark -事件监听-
