@@ -149,7 +149,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100;
+    return 110;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -158,9 +158,6 @@
     SXTimeControlModel *model = self.dataArray[indexPath.row];
     model.row = @(indexPath.row);
     cell.model = model;
-//    cell.clickEditBtnBlock = ^(SXTimeControlModel * _Nonnull model) {
-//        [weakSelf jumpToUpdateVC:model];
-//    };
     cell.clickDeleteBtnBlock = ^(SXTimeControlModel * _Nonnull model) {
         [weakSelf alertDeleteAlertView:model];
     };

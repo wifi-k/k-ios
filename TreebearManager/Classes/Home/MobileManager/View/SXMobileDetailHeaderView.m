@@ -105,7 +105,6 @@
     self.bottomBgView.layer.shadowRadius = 5;
     self.bottomBgView.hidden = YES;
     
-    
     //缩放
     //    self.switchBtn.transform = CGAffineTransformMakeScale( 0.8, 0.8);
     self.careSwitchBtn.onTintColor = SXColorBlue2;

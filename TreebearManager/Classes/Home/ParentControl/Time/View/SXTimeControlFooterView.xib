@@ -17,13 +17,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VV4-7D-chp">
-                    <rect key="frame" x="96" y="58.5" width="180" height="45"/>
+                    <rect key="frame" x="76" y="46" width="220" height="70"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="45" id="VbR-om-2pw"/>
-                        <constraint firstAttribute="width" constant="180" id="p0h-uI-t6U"/>
+                        <constraint firstAttribute="height" constant="70" id="VbR-om-2pw"/>
+                        <constraint firstAttribute="width" constant="220" id="p0h-uI-t6U"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <state key="normal" title="+ 新增上网时间控制" backgroundImage="img_button_bg"/>
+                    <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                    <state key="normal" title="+ 新增上网时间控制" backgroundImage="img_button_corner_bg"/>
                     <connections>
                         <action selector="clickAddBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="KSH-Hl-faw"/>
                     </connections>
@@ -45,6 +46,6 @@
         </view>
     </objects>
     <resources>
-        <image name="img_button_bg" width="375" height="45"/>
+        <image name="img_button_corner_bg" width="222" height="64"/>
     </resources>
 </document>

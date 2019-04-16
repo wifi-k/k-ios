@@ -20,23 +20,23 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UWo-4i-xFa">
-                        <rect key="frame" x="10" y="2" width="328" height="85.5"/>
+                        <rect key="frame" x="10" y="2" width="328" height="75.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_forbidden_scheme1" translatesAutoresizingMaskIntoConstraints="NO" id="Dbd-og-RI4">
-                                <rect key="frame" x="5" y="23" width="40" height="40"/>
+                                <rect key="frame" x="5" y="18" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="0T5-fW-OzS"/>
                                     <constraint firstAttribute="height" constant="40" id="iYl-tD-Yji"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="禁用方案" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlK-Og-4a0">
-                                <rect key="frame" x="50" y="32" width="73.5" height="21.5"/>
+                                <rect key="frame" x="50" y="27" width="73.5" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBf-bF-sk4">
-                                <rect key="frame" x="293" y="28" width="30" height="30"/>
+                                <rect key="frame" x="293" y="23" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="hVk-b6-Da9"/>
                                     <constraint firstAttribute="height" constant="30" id="mtC-AY-ZT4"/>
@@ -50,7 +50,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXE-n5-oIR">
-                                <rect key="frame" x="258" y="28" width="30" height="30"/>
+                                <rect key="frame" x="258" y="23" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="geJ-Yh-GvM"/>
                                     <constraint firstAttribute="height" constant="30" id="p9A-zg-3Om"/>
@@ -81,7 +81,7 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="UWo-4i-xFa" secondAttribute="trailing" constant="10" id="IyB-3y-G3y"/>
                     <constraint firstItem="UWo-4i-xFa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="OQf-3D-Zfl"/>
-                    <constraint firstAttribute="bottom" secondItem="UWo-4i-xFa" secondAttribute="bottom" constant="8" id="P0S-Bs-SFK"/>
+                    <constraint firstAttribute="bottom" secondItem="UWo-4i-xFa" secondAttribute="bottom" constant="18" id="P0S-Bs-SFK"/>
                     <constraint firstItem="UWo-4i-xFa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="XTp-a8-ksk"/>
                 </constraints>
             </tableViewCellContentView>

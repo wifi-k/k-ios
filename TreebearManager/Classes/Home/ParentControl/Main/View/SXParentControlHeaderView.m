@@ -11,6 +11,9 @@
 @interface SXParentControlHeaderView ()
 @property (weak, nonatomic) IBOutlet UIImageView *topImageView;
 
+
+@property (weak, nonatomic) IBOutlet UILabel *titleL;
+
 @end
 
 @implementation SXParentControlHeaderView
@@ -33,7 +36,9 @@
     
     self.backgroundColor = SXColorWhite;
     
-    self.topImageView.contentMode = UIViewContentModeCenter;
+    self.titleL.font = SXFontBold18;
+    
+//    self.topImageView.contentMode = UIViewContentModeCenter;
 }
 
 #pragma mark -点击事件-

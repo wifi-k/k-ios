@@ -13,26 +13,26 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SXHealtyControlHeaderView">
-            <rect key="frame" x="0.0" y="0.0" width="361" height="210"/>
+            <rect key="frame" x="0.0" y="0.0" width="361" height="250"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_health_mode" translatesAutoresizingMaskIntoConstraints="NO" id="juD-IG-fvq">
-                    <rect key="frame" x="0.0" y="0.0" width="361" height="150"/>
+                    <rect key="frame" x="0.0" y="0.0" width="361" height="160"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="150" id="4p6-gf-Vu5"/>
+                        <constraint firstAttribute="height" constant="160" id="4p6-gf-Vu5"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AcY-Bs-LtH">
-                    <rect key="frame" x="0.0" y="150" width="361" height="60"/>
+                    <rect key="frame" x="0.0" y="160" width="361" height="90"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="健康模式" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bU8-hG-Sl2">
-                            <rect key="frame" x="15" y="18" width="82" height="24"/>
+                            <rect key="frame" x="15" y="33" width="82" height="24"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1qJ-YQ-KrP">
-                            <rect key="frame" x="297" y="14.5" width="51" height="31"/>
+                            <rect key="frame" x="297" y="29.5" width="51" height="31"/>
                             <connections>
                                 <action selector="clickSwitchBtn:" destination="iN0-l3-epB" eventType="valueChanged" id="DNX-Qy-hyb"/>
                             </connections>
@@ -44,7 +44,7 @@
                         <constraint firstItem="bU8-hG-Sl2" firstAttribute="leading" secondItem="AcY-Bs-LtH" secondAttribute="leading" constant="15" id="4rV-gn-D7A"/>
                         <constraint firstAttribute="trailing" secondItem="1qJ-YQ-KrP" secondAttribute="trailing" constant="15" id="jBJ-oq-7Fi"/>
                         <constraint firstItem="bU8-hG-Sl2" firstAttribute="centerY" secondItem="AcY-Bs-LtH" secondAttribute="centerY" id="prf-R8-XLw"/>
-                        <constraint firstAttribute="height" constant="60" id="uTQ-uG-g0v"/>
+                        <constraint firstAttribute="height" constant="90" id="uTQ-uG-g0v"/>
                     </constraints>
                 </view>
             </subviews>
@@ -67,7 +67,7 @@
                 <outlet property="switchBtn" destination="1qJ-YQ-KrP" id="KMD-MG-5bT"/>
                 <outlet property="topImageView" destination="juD-IG-fvq" id="saz-TO-LzZ"/>
             </connections>
-            <point key="canvasLocation" x="40.799999999999997" y="-143.02848575712144"/>
+            <point key="canvasLocation" x="40.799999999999997" y="-125.4872563718141"/>
         </view>
     </objects>
     <resources>

@@ -42,9 +42,10 @@
     
     self.backgroundColor = SXColorWhite;
     
-    self.topImageView.contentMode = UIViewContentModeCenter;
+//    self.topImageView.contentMode = UIViewContentModeCenter;
     
     self.healthTitleL.textColor = SXColor2B3852;
+    self.healthTitleL.font = SXFontBold20;
     self.timeL.textColor = SXColor2B3852;
     self.bottomLineView.backgroundColor = SXColorDivideLine;
     

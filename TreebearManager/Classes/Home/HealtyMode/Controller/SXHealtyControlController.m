@@ -63,11 +63,12 @@
     //4.添加底部视图
     UIView *footerBgView = [[UIView alloc] init];
     footerBgView.backgroundColor = SXColorWhite;
-    footerBgView.height = 100;
+    footerBgView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 100);
     self.tableView.tableFooterView = footerBgView;
     
     WS(weakSelf);
     SXHealtyControlFooterView *footerView = [SXHealtyControlFooterView footerView];
+    footerView.frame = footerBgView.bounds;
     footerView.clickAddTimeBlock = ^{
         [weakSelf jumpToTimeVC:nil];
     };
@@ -88,9 +89,11 @@
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     
+    
+    
     self.tableView.frame = self.view.bounds;
     
-    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 210);
+    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 250);
 }
 
 - (void)rightButtonAction:(UIButton *)button{
@@ -190,7 +193,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 60.0f;
+    return 70.0f;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

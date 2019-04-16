@@ -31,8 +31,6 @@
 - (void)setUpUI{
     
     self.backgroundColor = SXColorWhite;
-    
-    [self.addBtn roundViewWithRadius:22.5f];
 }
 
 - (IBAction)clickAddBtn:(UIButton *)sender {
