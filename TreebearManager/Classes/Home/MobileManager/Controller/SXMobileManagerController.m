@@ -61,7 +61,7 @@
     
     self.tableView.frame = self.view.bounds;
     
-    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 210);
+    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 170);
 }
 
 #pragma mark -下拉动画-
