@@ -59,6 +59,9 @@ static NSString *SXMobileManagerCellID = @"SXMobileManagerCellID";
     self.statusBtn.layer.shadowOffset = CGSizeMake(0, 2);
     self.statusBtn.layer.shadowOpacity = 0.3;
     self.statusBtn.layer.shadowRadius = 2;
+    
+    //多行文字限制宽度
+    self.mobileNameL.preferredMaxLayoutWidth = 150;
 }
 
 #pragma mark -setter-

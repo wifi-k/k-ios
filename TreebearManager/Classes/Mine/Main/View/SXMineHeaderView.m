@@ -46,6 +46,9 @@
     [self.mobileL addGestureRecognizer:tap];
     
     [self.iconBtn roundViewWithRadius:30.0f borderColor:SXColorWhite borderWidth:1.0f];
+    
+    self.nameL.text = @"";
+    self.mobileL.text = @"";
 }
 
 #pragma mark -setData-

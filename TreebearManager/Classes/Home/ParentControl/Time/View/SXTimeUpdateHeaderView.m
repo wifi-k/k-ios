@@ -14,9 +14,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *contentL;
 @property (weak, nonatomic) IBOutlet UIView *firstBgView;
 
+@property (weak, nonatomic) IBOutlet UILabel *allowTimeL;
 @property (weak, nonatomic) IBOutlet UILabel *timeContentL;
 @property (weak, nonatomic) IBOutlet UIView *secondBgView;
 
+@property (weak, nonatomic) IBOutlet UILabel *controlMobileL;
 @property (weak, nonatomic) IBOutlet UILabel *deviceContentL;
 @property (weak, nonatomic) IBOutlet UIView *thirdBgView;
 @end
@@ -45,6 +47,11 @@
     self.firstBgView.backgroundColor = SXColorWhite;
     self.secondBgView.backgroundColor = SXColorWhite;
     self.thirdBgView.backgroundColor = SXColorWhite;
+    
+    self.contentL.textColor = SXColor7383A2;
+    self.schemeL.textColor = SXColor2B3852;
+    self.allowTimeL.textColor = SXColor2B3852;
+    self.controlMobileL.textColor = SXColor2B3852;
     
     self.firstBgView.backgroundColor = [UIColor whiteColor];
     self.firstBgView.layer.cornerRadius = 5;

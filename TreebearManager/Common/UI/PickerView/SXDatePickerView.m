@@ -8,7 +8,8 @@
 
 #import "SXDatePickerView.h"
 
-const CGFloat SXDatePickerViewHeight = 350;
+#define SXDatePickerViewHeight (315+iPhoneX_Add_Bottom)
+#define SXDatePickerBottomHeight (65+iPhoneX_Add_Bottom)
 
 @interface SXDatePickerView ()<UIPickerViewDataSource,UIPickerViewDelegate>
 @property (nonatomic, weak) UIView *bgView;//背景视图
@@ -128,32 +129,34 @@ const CGFloat SXDatePickerViewHeight = 350;
     //5.取消按钮
     UIButton *cancleButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [cancleButton setTitle:@"取消" forState:UIControlStateNormal];
-    [cancleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [cancleButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
-    [cancleButton setBackgroundColor:SXColorGray7];
+    [cancleButton setTitleColor:SXColor4A5A78 forState:UIControlStateNormal];
+    [cancleButton setTitleColor:SXColor4A5A78 forState:UIControlStateHighlighted];
+    [cancleButton setBackgroundColor:SXColorF2F2F2];
     //[cancleButton setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
     [cancleButton.titleLabel setFont:[UIFont systemFontOfSize:15]];
     [cancleButton.titleLabel setFont:[UIFont systemFontOfSize:15]];
     [cancleButton addTarget:self action:@selector(cancleButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     [self.bottomBgView addSubview:cancleButton];
     self.cancleButton = cancleButton;
+    [self.cancleButton roundViewWithRadius:4.0f];
     
     //6.完成按钮
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [confirmButton setTitle:@"确定" forState:UIControlStateNormal];
     [confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     //[confirmButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
-    [confirmButton setBackgroundImage:[UIImage imageNamed:@"img_button_bg_small"] forState:UIControlStateNormal];
     //[confirmButton setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
+    [confirmButton setBackgroundImage:[UIImage imageNamed:@"img_button_bg_small"] forState:UIControlStateNormal];
     [confirmButton.titleLabel setFont:[UIFont systemFontOfSize:15]];
     [confirmButton addTarget:self action:@selector(confirmButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     [self.bottomBgView addSubview:confirmButton];
     self.confirmButton = confirmButton;
+    [self.confirmButton roundViewWithRadius:4.0f];
     
     //7.选择日期
     UILabel *titleL = [[UILabel alloc] init];
     titleL.textColor = SXColor2B3852;
-    titleL.font = SXFontBold16;
+    titleL.font = SXFontBold18;
     titleL.text = @"选择时间";
     [self.topBgView addSubview:titleL];
     self.titleL = titleL;
@@ -184,7 +187,7 @@ const CGFloat SXDatePickerViewHeight = 350;
         make.left.mas_equalTo(self.contentBgView);
         make.bottom.mas_equalTo(self.contentBgView.mas_bottom);
         make.right.mas_equalTo(self.contentBgView.mas_right);
-        make.height.mas_equalTo(100);
+        make.height.mas_equalTo(SXDatePickerBottomHeight);
     }];
     
     [self.datePicker mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -197,17 +200,17 @@ const CGFloat SXDatePickerViewHeight = 350;
     //----//----//----//----//----//----
     
     [self.cancleButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.bottomBgView);
-        make.top.mas_equalTo(self.bottomBgView);
-        make.width.mas_equalTo(SCREEN_WIDTH/2 - 0.1);
-        make.bottom.mas_equalTo(self.bottomBgView.mas_bottom);
+        make.left.mas_equalTo(self.bottomBgView).mas_offset(10);
+        make.top.mas_equalTo(self.bottomBgView).mas_offset(10);
+        make.width.mas_equalTo(SCREEN_WIDTH/2 - 15);
+        make.height.mas_equalTo(45);
     }];
     
     [self.confirmButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self.bottomBgView.mas_right);
-        make.top.mas_equalTo(self.bottomBgView);
-        make.width.mas_equalTo(SCREEN_WIDTH/2 - 0.1);
-        make.bottom.mas_equalTo(self.bottomBgView.mas_bottom);
+        make.right.mas_equalTo(self.bottomBgView.mas_right).mas_offset(-10);
+        make.top.mas_equalTo(self.bottomBgView).mas_offset(10);
+        make.width.mas_equalTo(SCREEN_WIDTH/2 - 15);
+        make.height.mas_equalTo(45);
     }];
     
     [self.titleL mas_makeConstraints:^(MASConstraintMaker *make) {

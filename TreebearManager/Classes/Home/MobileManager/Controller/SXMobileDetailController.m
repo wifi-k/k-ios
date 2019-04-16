@@ -54,9 +54,11 @@
     headerView.clickCenterFirstBgViewBlock = ^{
         [weakSelf jumpToMobileInfoVC];
     };
-    self.tableView.contentInset = UIEdgeInsetsMake(-22-iPhoneX_top, 0, 0, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(-20-iPhoneX_top, 0, 0, 0);
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
+    self.tableView.bounces = NO;
+    self.tableView.backgroundColor = SXColorWhite;
 }
 
 //- (void)viewWillLayoutSubviews{

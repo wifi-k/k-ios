@@ -10,8 +10,10 @@
 
 @interface SXTimeControlEditHeaderView ()
 @property (weak, nonatomic) IBOutlet UILabel *beginTimeL;
+@property (weak, nonatomic) IBOutlet UILabel *beginTimeRightL;
 @property (weak, nonatomic) IBOutlet UIView *firstBgView;
 
+@property (weak, nonatomic) IBOutlet UILabel *endTimeRightL;
 @property (weak, nonatomic) IBOutlet UILabel *endTimeL;
 @property (weak, nonatomic) IBOutlet UIView *secondBgView;
 
@@ -95,6 +97,7 @@
         btn.tag = i;
         btn.frame = CGRectMake(btnX, btnY, btnW, btnH);
         NSString *title = self.dataArray[i];
+        btn.titleLabel.font = SXFont14;
         [btn setTitle:title forState:UIControlStateNormal];
         [btn setTitleColor:SXColor7383A2 forState:UIControlStateNormal];
         [btn setTitleColor:SXColorWhite forState:UIControlStateSelected];
@@ -109,11 +112,16 @@
     }
     self.weekBgView.backgroundColor = SXColorClear;
     
-    self.recycleBtn.titleLabel.font = SXFontBold18;
+    self.beginTimeRightL.textColor = SXColor2B3852;
+    self.endTimeRightL.textColor = SXColor2B3852;
+    
+    self.recycleBtn.titleLabel.font = SXFontBold20;
     [self.recycleBtn setTitleColor:SXColor2B3852 forState:UIControlStateNormal];
     
-    self.beginTimeL.font = SXFontBold18;
-    self.endTimeL.font = SXFontBold18;
+    self.beginTimeL.textColor = SXColor2B3852;
+    self.endTimeL.textColor = SXColor2B3852;
+    self.beginTimeL.font = SXFontBold24;
+    self.endTimeL.font = SXFontBold24;
     
     //默认值
     self.endTimeStr = @"00:00";

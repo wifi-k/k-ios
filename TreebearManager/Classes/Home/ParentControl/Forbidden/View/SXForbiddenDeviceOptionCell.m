@@ -45,6 +45,9 @@ static NSString *SXDeviceControlCellID = @"SXDeviceControlCellID";
     
     self.bottomLineView.backgroundColor = SXColorDivideLine;
     
+    self.deviceNameL.textColor = SXColor2B3852;
+    self.timeL.textColor = SXColor7383A2;
+    
     //缩放
     //    self.switchBtn.transform = CGAffineTransformMakeScale( 0.8, 0.8);
     self.switchBtn.onTintColor = SXColorBlue2;
