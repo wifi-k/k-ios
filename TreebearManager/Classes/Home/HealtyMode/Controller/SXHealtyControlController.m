@@ -20,7 +20,7 @@
 ///头部视图
 @property (nonatomic, weak) SXHealtyControlHeaderView *headerView;
 ///底部视图
-@property (nonatomic, weak) SXHealtyControlFooterView *footerView;
+@property (nonatomic, weak) UIView *footerBgView;
 
 ///数据源
 @property (nonatomic, strong) SXHealtyControlResult *result;
@@ -63,8 +63,8 @@
     //4.添加底部视图
     UIView *footerBgView = [[UIView alloc] init];
     footerBgView.backgroundColor = SXColorWhite;
-    footerBgView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 100);
-    self.tableView.tableFooterView = footerBgView;
+    [self.view addSubview:footerBgView];
+    self.footerBgView = footerBgView;
     
     WS(weakSelf);
     SXHealtyControlFooterView *footerView = [SXHealtyControlFooterView footerView];
@@ -72,7 +72,7 @@
     footerView.clickAddTimeBlock = ^{
         [weakSelf jumpToTimeVC:nil];
     };
-    [self.tableView.tableFooterView addSubview:footerView];
+    [footerBgView addSubview:footerView];
     
     SXHealtyControlHeaderView *headerView = [SXHealtyControlHeaderView headerView];
     headerView.clickSwitchBtnBlock = ^(BOOL isOn) {
@@ -80,7 +80,7 @@
     };
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
-    self.tableView.contentInset = UIEdgeInsetsMake(10, 0, 0, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(10, 0, 100, 0);
     
     UIBarButtonItem *right = [UIBarButtonItem barButtonItemWithTitle:@"保存" target:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = right;
@@ -89,9 +89,12 @@
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     
-    
-    
-    self.tableView.frame = self.view.bounds;
+    [self.footerBgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view);
+        make.right.mas_equalTo(self.view.mas_right);
+        make.bottom.mas_equalTo(self.view.mas_bottom);
+        make.height.mas_equalTo(100);
+    }];
     
     self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 250);
 }

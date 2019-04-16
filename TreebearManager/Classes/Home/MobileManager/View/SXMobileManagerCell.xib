@@ -30,13 +30,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上线时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztm-td-BRU">
-                                <rect key="frame" x="80" y="67.5" width="62" height="18"/>
+                                <rect key="frame" x="80" y="60.5" width="62" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设备名称" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szd-As-xvb">
-                                <rect key="frame" x="80" y="25.5" width="69.5" height="20.5"/>
+                                <rect key="frame" x="80" y="32.5" width="69.5" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20.5" id="yjv-c9-AEK"/>
                                 </constraints>
@@ -57,7 +57,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9j-yV-tAq">
-                                <rect key="frame" x="159.5" y="24.5" width="40" height="22"/>
+                                <rect key="frame" x="159.5" y="31.5" width="40" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="L2u-Ma-MWT"/>
                                     <constraint firstAttribute="width" constant="40" id="vzD-C5-lvN"/>
@@ -74,8 +74,8 @@
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lwX-n9-x0D" firstAttribute="centerY" secondItem="IOh-me-gwf" secondAttribute="centerY" id="0e3-MZ-NjC"/>
-                            <constraint firstItem="Szd-As-xvb" firstAttribute="top" secondItem="lwX-n9-x0D" secondAttribute="top" id="6UV-es-dnO"/>
-                            <constraint firstItem="ztm-td-BRU" firstAttribute="bottom" secondItem="lwX-n9-x0D" secondAttribute="bottom" id="BgG-ji-WPQ"/>
+                            <constraint firstItem="Szd-As-xvb" firstAttribute="top" secondItem="lwX-n9-x0D" secondAttribute="top" constant="7" id="6UV-es-dnO"/>
+                            <constraint firstItem="ztm-td-BRU" firstAttribute="bottom" secondItem="lwX-n9-x0D" secondAttribute="bottom" constant="-7" id="BgG-ji-WPQ"/>
                             <constraint firstItem="Szd-As-xvb" firstAttribute="leading" secondItem="lwX-n9-x0D" secondAttribute="trailing" constant="10" id="EAo-QY-XdX"/>
                             <constraint firstItem="q9j-yV-tAq" firstAttribute="leading" secondItem="Szd-As-xvb" secondAttribute="trailing" constant="10" id="MeV-V2-Xj7"/>
                             <constraint firstItem="ztl-ig-7Gs" firstAttribute="centerY" secondItem="IOh-me-gwf" secondAttribute="centerY" id="R4b-ep-1bY"/>

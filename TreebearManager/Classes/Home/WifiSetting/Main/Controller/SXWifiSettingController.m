@@ -329,7 +329,9 @@
     [SXWifiSettingNetTool nodeResetWithDataSuccess:^{
         [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
         DLog(@"恢复出厂设置OK!");
-        [MBProgressHUD showMessage:@"恢复出厂设置OK!" toView:weakSelf.view];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [MBProgressHUD showMessage:@"恢复出厂设置OK!" toView:weakSelf.view];
+        });
     } failure:^(NSError * _Nonnull error) {
         [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
         NSString *message = [error.userInfo objectForKey:@"msg"];

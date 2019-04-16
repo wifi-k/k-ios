@@ -43,13 +43,19 @@ static NSString *SXFamilyMemberCellID = @"SXFamilyMemberCellID";
     self.backgroundColor = SXColorWhite;
     
     self.bottomLineView.backgroundColor = SXColorDivideLine;
+    
+    self.nickNameL.textColor = SXColor2B3852;
+    self.mobileL.textColor = SXColor7383A2;
+    
+    [self.iconImageView roundViewWithRadius:25.0f];
 }
 
 #pragma mark -setter-
 - (void)setModel:(SXFamilyMemberModel *)model{
     _model = model;
     
-    self.nickNameL.text = [NSString stringWithFormat:@"昵称：%@",model.userName];
+    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:model.userAvatar] placeholderImage:[UIImage imageNamed:@"mine_xioaki_default2"] options:SDWebImageRetryFailed];
+    self.nickNameL.text = model.userName;
     self.mobileL.text = [NSString stringWithFormat:@"手机号：%@",model.userMobile];
     if (model.role.integerValue == 0) {//超级管理员
         [self.deleteBtn setImage:[UIImage imageNamed:@"home_manager_super2"] forState:UIControlStateNormal];

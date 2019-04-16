@@ -23,14 +23,14 @@
                         <rect key="frame" x="10" y="2" width="299" height="101.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_forbidden_scheme1" translatesAutoresizingMaskIntoConstraints="NO" id="O1b-3V-2Uq">
-                                <rect key="frame" x="5" y="31" width="40" height="40"/>
+                                <rect key="frame" x="5" y="24" width="54" height="54"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="0Ey-Ng-0zD"/>
-                                    <constraint firstAttribute="width" constant="40" id="uDr-om-zcf"/>
+                                    <constraint firstAttribute="height" constant="54" id="0Ey-Ng-0zD"/>
+                                    <constraint firstAttribute="width" constant="54" id="uDr-om-zcf"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="禁用方案" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYD-1x-KYL">
-                                <rect key="frame" x="50" y="40" width="73.5" height="21.5"/>
+                                <rect key="frame" x="64" y="40" width="73.5" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>

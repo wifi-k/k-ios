@@ -20,20 +20,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_mobile_icon" translatesAutoresizingMaskIntoConstraints="NO" id="r6W-US-xOr">
-                        <rect key="frame" x="15" y="21" width="50" height="50"/>
+                        <rect key="frame" x="15" y="19" width="54" height="54"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="50" id="CTM-HP-ALZ"/>
-                            <constraint firstAttribute="height" constant="50" id="aQI-ZR-KaX"/>
+                            <constraint firstAttribute="width" constant="54" id="CTM-HP-ALZ"/>
+                            <constraint firstAttribute="height" constant="54" id="aQI-ZR-KaX"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设备" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkh-WJ-v1P">
-                        <rect key="frame" x="75" y="21" width="35" height="20"/>
+                        <rect key="frame" x="79" y="19" width="35" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="状态-时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cms-0x-F6q">
-                        <rect key="frame" x="75" y="54" width="64" height="17"/>
+                        <rect key="frame" x="79" y="56" width="64" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
