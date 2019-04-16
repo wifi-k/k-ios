@@ -50,17 +50,8 @@
     
     self.navigationItem.title = @"首页";
     
-    //1.创建tableView
-//    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-//    tableView.delegate = self;
-//    tableView.dataSource = self;
-//    tableView.backgroundColor = SXColorBgViewGray;
-//    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//    tableView.showsVerticalScrollIndicator = YES;
-//    tableView.showsHorizontalScrollIndicator = NO;
-//    [self.view addSubview:tableView];
-//    self.tableView = tableView;
     self.tableView.bounces = NO;
+    self.tableView.backgroundColor = SXColorWhite;
     
     WS(weakSelf);
     SXHomeHeaderView *headerView = [SXHomeHeaderView headerView];
