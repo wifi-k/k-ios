@@ -362,13 +362,14 @@
         detailLabel.numberOfLines = 0;
         detailLabel.font = [UIFont systemFontOfSize:14.0f];
         NSString *str = arr[i];
-        CGSize textSize = [str boundingRectWithSize:CGSizeMake(200, 100) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16.0]} context:nil].size;;
-        [detailLabel setFrame:CGRectMake((_xMargin)*i-_xMargin*0.7-textSize.width/2+btnW/2, height *(1 - percent)-30 , textSize.width, textSize.height)];
+        CGSize textSize = [str boundingRectWithSize:CGSizeMake(200, 100) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16.0]} context:nil].size;
+        CGFloat textWidth = (textSize.width < 20 ? 20:textSize.width);
+        [detailLabel setFrame:CGRectMake((_xMargin)*i-_xMargin*0.7-textSize.width/2+btnW/2, height *(1 - percent)-30 , textWidth, textSize.height)];
         detailLabel.text = str;
         //detailLabel.backgroundColor = [UIColor colorWithRed:0.94f green:0.64f blue:0.27f alpha:1.00f];
         detailLabel.backgroundColor = [UIColor colorWithRed:54/255.0 green:210/255.0 blue:243/255.0 alpha:1.00f];
         detailLabel.textAlignment = NSTextAlignmentCenter;
-        detailLabel.layer.cornerRadius =5;
+        detailLabel.layer.cornerRadius = 5;
         detailLabel.layer.masksToBounds = YES;
         detailLabel.textColor = [UIColor whiteColor];
         if (i == arr.count - 1) {

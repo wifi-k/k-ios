@@ -15,6 +15,10 @@
 #import <UMSocialCore/UMSocialCore.h>
 
 @interface SXFamilyMemberController ()
+///底部视图
+@property (nonatomic, weak) UIView *footerBgView;
+
+///数据源
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @end
 
@@ -37,12 +41,6 @@
     [self userNodeFamilyListData];
 }
 
-- (void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
-    
-    self.tableView.frame = self.view.bounds;
-}
-
 #pragma mark -初始化UI-
 - (void)setUpUI{
     self.view.backgroundColor = SXColorWhite;
@@ -50,20 +48,47 @@
     self.navigationItem.title = @"家庭成员";
     
     //4.添加底部视图
-    UIView *footerBgView = [[UIView alloc] init];
-    footerBgView.backgroundColor = SXColorWhite;
-    footerBgView.height = 120;
-    self.tableView.tableFooterView = footerBgView;
+//    UIView *footerBgView = [[UIView alloc] init];
+//    footerBgView.backgroundColor = SXColorWhite;
+//    footerBgView.height = 120;
+//    self.tableView.tableFooterView = footerBgView;
     
     //2.添加底部视图
+//    WS(weakSelf);
+//    SXFamilyMemberFooterView *footerView = [SXFamilyMemberFooterView
+//                                            footerView];
+//    footerView.clickAddMemberBlock = ^{
+//        [weakSelf alertUpdateNameView];
+//    };
+//    [self.tableView.tableFooterView addSubview:footerView];
+//    footerView.frame = self.tableView.tableFooterView.bounds;
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 100, 0);
+    
+    //4.添加底部视图
+    UIView *footerBgView = [[UIView alloc] init];
+    footerBgView.backgroundColor = SXColorWhite;
+    [self.view addSubview:footerBgView];
+    self.footerBgView = footerBgView;
+    
     WS(weakSelf);
-    SXFamilyMemberFooterView *footerView = [SXFamilyMemberFooterView
-                                            footerView];
+    SXFamilyMemberFooterView *footerView = [SXFamilyMemberFooterView footerView];
+    footerView.frame = footerBgView.bounds;
     footerView.clickAddMemberBlock = ^{
         [weakSelf alertUpdateNameView];
     };
-    [self.tableView.tableFooterView addSubview:footerView];
-    footerView.frame = self.tableView.tableFooterView.bounds;
+    [footerBgView addSubview:footerView];
+}
+
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    [self.footerBgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view);
+        make.right.mas_equalTo(self.view.mas_right);
+        make.bottom.mas_equalTo(self.view.mas_bottom);
+        make.height.mas_equalTo(100);
+    }];
 }
 
 #pragma mark -视图弹窗-

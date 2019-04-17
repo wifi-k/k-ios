@@ -17,6 +17,9 @@
 #import "SXParentControlNetTool.h"
 
 @interface SXTimeControlController ()
+///底部视图
+@property (nonatomic, weak) UIView *footerBgView;
+
 ///模型数组
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @end
@@ -56,27 +59,47 @@
     SXTimeControllHeaderView *headerV = [SXTimeControllHeaderView headerView];
     [self.tableView.tableHeaderView addSubview:headerV];
     headerV.frame = self.tableView.tableHeaderView.bounds;
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 100, 0);
+    
+    //4.添加底部视图
+//    UIView *footerBgView = [[UIView alloc] init];
+//    footerBgView.backgroundColor = SXColorWhite;
+//    footerBgView.height = 120;
+//    self.tableView.tableFooterView = footerBgView;
+    
+//    WS(weakSelf);
+//    SXTimeControlFooterView *footerView = [SXTimeControlFooterView
+//                                            footerView];
+//    footerView.clickAddTimeControlBlock = ^{
+//        [weakSelf jumpToUpdateVC:nil];
+//    };
+//    [self.tableView.tableFooterView addSubview:footerView];
+//    footerView.frame = self.tableView.tableFooterView.bounds;
     
     //4.添加底部视图
     UIView *footerBgView = [[UIView alloc] init];
     footerBgView.backgroundColor = SXColorWhite;
-    footerBgView.height = 120;
-    self.tableView.tableFooterView = footerBgView;
+    [self.view addSubview:footerBgView];
+    self.footerBgView = footerBgView;
     
     WS(weakSelf);
-    SXTimeControlFooterView *footerView = [SXTimeControlFooterView
-                                            footerView];
+    SXTimeControlFooterView *footerView = [SXTimeControlFooterView footerView];
+    footerView.frame = footerBgView.bounds;
     footerView.clickAddTimeControlBlock = ^{
         [weakSelf jumpToUpdateVC:nil];
     };
-    [self.tableView.tableFooterView addSubview:footerView];
-    footerView.frame = self.tableView.tableFooterView.bounds;
+    [footerBgView addSubview:footerView];
 }
 
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     
-    self.tableView.frame = self.view.bounds;
+    [self.footerBgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view);
+        make.right.mas_equalTo(self.view.mas_right);
+        make.bottom.mas_equalTo(self.view.mas_bottom);
+        make.height.mas_equalTo(100);
+    }];
 }
 
 #pragma mark -页面跳转-
