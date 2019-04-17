@@ -417,12 +417,13 @@
         leftLabel.text = _dataArrOfX[i];
         leftLabel.textAlignment = NSTextAlignmentCenter;
         if (i == _dataArrOfX.count-1) {
-            leftLabel.textColor = [UIColor colorWithRed:0.98f green:0.31f blue:0.29f alpha:1.00f];
+//            leftLabel.textColor = [UIColor colorWithRed:0.98f green:0.31f blue:0.29f alpha:1.00f];
+            leftLabel.textColor = [UIColor colorWithRed:0.61f green:0.61f blue:0.61f alpha:1.00f];
         }
         [_curveView addSubview:leftLabel];
         
         if (_style == ChatViewStyleMatrixCurve || _style == ChatViewStyleMatrixBroken) {
-            UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(leftLabel.center.x - 0.5, 0, 1, _lineView.bounds.size.height)];
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(leftLabel.center.x - 0.5, 0, 1, _lineView.bounds.size.height)];
             label.backgroundColor = [UIColor colorWithRed:241/255.0 green:241/255.0 blue:241/255.0 alpha:1];
             [_curveView addSubview:label];
             [_curveView sendSubviewToBack:label];
@@ -442,10 +443,12 @@
     
     for (int i = 0; i<self.dataArrOfX.count; i++) {
         UILabel *label = [self viewWithTag:1000+i];
-        label.textColor = [UIColor colorWithRed:0.29f green:0.29f blue:0.29f alpha:1.00f];
+//        label.textColor = [UIColor colorWithRed:0.29f green:0.29f blue:0.29f alpha:1.00f];
+        label.textColor = [UIColor colorWithRed:0.61f green:0.61f blue:0.61f alpha:1.00f];
     }
     UILabel *label = [self viewWithTag:1000+sender.tag-1];
-    label.textColor = [UIColor colorWithRed:0.98f green:0.31f blue:0.29f alpha:1.00f];
+    label.textColor = [UIColor colorWithRed:0.61f green:0.61f blue:0.61f alpha:1.00f];
+    //    label.textColor = [UIColor colorWithRed:0.98f green:0.31f blue:0.29f alpha:1.00f];
     //label.textColor = [UIColor colorWithRed:54/255.0 green:210/255.0 blue:243/255.0 alpha:1.00f];
     [self showDetailLabel:sender];
     

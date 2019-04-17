@@ -135,10 +135,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8TP-uV-sG0">
-                    <rect key="frame" x="15" y="306" width="375" height="300"/>
+                    <rect key="frame" x="-10" y="306" width="425" height="300"/>
                     <subviews>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N15-t8-XVB" customClass="SXWifiSettingButton">
-                            <rect key="frame" x="94" y="0.0" width="93.5" height="100"/>
+                            <rect key="frame" x="106.5" y="0.0" width="106" height="100"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="cuZ-6U-Gas"/>
@@ -151,7 +151,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDa-Cs-Oxo" customClass="SXWifiSettingButton">
-                            <rect key="frame" x="187.5" y="0.0" width="94" height="100"/>
+                            <rect key="frame" x="212.5" y="0.0" width="106.5" height="100"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="8Gk-nG-5oK"/>
@@ -164,7 +164,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJm-uk-wAj" customClass="SXWifiSettingButton">
-                            <rect key="frame" x="0.0" y="0.0" width="94" height="100"/>
+                            <rect key="frame" x="0.0" y="0.0" width="106.5" height="100"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="IJg-bK-HOy"/>
@@ -177,7 +177,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLk-Li-4Zi" customClass="SXWifiSettingButton">
-                            <rect key="frame" x="281.5" y="0.0" width="93.5" height="100"/>
+                            <rect key="frame" x="319" y="0.0" width="106" height="100"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="oaY-Mn-Flh"/>
@@ -215,11 +215,11 @@
                 <constraint firstItem="hAa-6R-b3F" firstAttribute="top" secondItem="wJP-c4-C7S" secondAttribute="bottom" constant="30" id="01q-2G-9bX"/>
                 <constraint firstItem="0iU-2k-5HR" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="1BT-wF-hEb"/>
                 <constraint firstItem="wJP-c4-C7S" firstAttribute="top" secondItem="C2m-cL-m08" secondAttribute="bottom" id="37Q-jY-H5J"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8TP-uV-sG0" secondAttribute="trailing" constant="15" id="3EK-SH-bB8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8TP-uV-sG0" secondAttribute="trailing" constant="-10" id="3EK-SH-bB8"/>
                 <constraint firstItem="C2m-cL-m08" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="9F5-uB-Dox"/>
                 <constraint firstItem="hAa-6R-b3F" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="9QF-ag-1fb"/>
                 <constraint firstItem="0iU-2k-5HR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="Iws-wf-OB0"/>
-                <constraint firstItem="8TP-uV-sG0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="MvL-FE-a8x"/>
+                <constraint firstItem="8TP-uV-sG0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="-10" id="MvL-FE-a8x"/>
                 <constraint firstItem="8TP-uV-sG0" firstAttribute="top" secondItem="hAa-6R-b3F" secondAttribute="bottom" constant="10" id="ZCG-VZ-2BO"/>
                 <constraint firstItem="wJP-c4-C7S" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bw6-2B-72s"/>
                 <constraint firstItem="C2m-cL-m08" firstAttribute="top" secondItem="0iU-2k-5HR" secondAttribute="bottom" constant="8" id="dOl-U6-4SK"/>

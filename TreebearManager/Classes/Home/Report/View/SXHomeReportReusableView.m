@@ -95,22 +95,22 @@
     
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    /*
-     随机数据源
-     随机样式
-     随机颜色
-     */
-    
-    NSMutableArray *array = [NSMutableArray array];
-    for (int i = 0; i < 20; i ++) {
-        NSInteger num = arc4random() % 3000;
-        [array addObject:[NSString stringWithFormat:@"%ld",(long)num]];
-    }
-    
-    self.lineChart.dataSource = [array copy];
-    self.lineChart.style = arc4random() % 4;
-    self.lineChart.lineColor = [UIColor colorWithRed:arc4random() % 255 /255.f green:arc4random() % 255 /255.f blue:arc4random() % 255 /255.f alpha:1];
-}
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    /*
+//     随机数据源
+//     随机样式
+//     随机颜色
+//     */
+//
+//    NSMutableArray *array = [NSMutableArray array];
+//    for (int i = 0; i < 20; i ++) {
+//        NSInteger num = arc4random() % 3000;
+//        [array addObject:[NSString stringWithFormat:@"%ld",(long)num]];
+//    }
+//
+//    self.lineChart.dataSource = [array copy];
+//    self.lineChart.style = arc4random() % 4;
+//    self.lineChart.lineColor = [UIColor colorWithRed:arc4random() % 255 /255.f green:arc4random() % 255 /255.f blue:arc4random() % 255 /255.f alpha:1];
+//}
 
 @end

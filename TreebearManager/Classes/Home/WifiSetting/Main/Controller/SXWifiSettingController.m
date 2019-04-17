@@ -95,11 +95,11 @@
             SXDynamicParam *param = [SXDynamicParam param];
             param.ssid0 = [XKGetWifiNetTool getWifiSSID];
             param.ssid = text;
-            param.passwd = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.passwd;
+            //param.passwd = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.passwd;
             [weakSelf setNetDynamicData:param];
         } else {
             SXXiaoKiParam *param = [SXXiaoKiParam param];
-            param.nodeId = @"";
+            param.nodeId = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel.nodeId;
             param.freq = @0;
             param.ssid = text;
             [weakSelf userNodeSsidSetDataWitiParam:param];
@@ -120,12 +120,12 @@
         if ([weakSelf isNearWifi]) {
             SXDynamicParam *param = [SXDynamicParam param];
             param.ssid0 = [XKGetWifiNetTool getWifiSSID];
-            param.ssid = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.name;
+            //param.ssid = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.name;
             param.passwd = text;
             [weakSelf setNetDynamicData:param];
         } else {
             SXXiaoKiParam *param = [SXXiaoKiParam param];
-            param.nodeId = @"";
+            param.nodeId = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel.nodeId;
             param.freq = @0;
             param.passwd = text.md5String;
             [weakSelf userNodeSsidSetDataWitiParam:param];
@@ -134,7 +134,6 @@
     [pwdAlertV alert];
 }
 
-#warning mark -测试数据-
 #pragma mark -判断是否使用近网通信-
 - (BOOL)isNearWifi{
     if ([NSString isEmpty:self.result.modelId]) {
@@ -233,6 +232,8 @@
         //更新wan信息
         SXXiaoKInfoModel *shareInfo = [SXXiaoKInfoModel sharedSXXiaoKInfoModel];
         [shareInfo setDataWithResult:result];
+        //更改文案
+        [weakSelf.headerView setUpData];
     } failure:^(NSError * _Nonnull error) {
         if (error.code != 0) {
             DLog(@"token失效");
@@ -247,11 +248,23 @@
         [MBProgressHUD showWarningWithMessage:@"没有获取到设备，请检查您的WiFi连接" toView:SXKeyWindow];
         return;
     }
+    WS(weakSelf);
     [MBProgressHUD showWhiteLoadingToView:SXKeyWindow];
     [SXMineNetTool userNodeWifiListParams:nodeId Success:^(NSArray *array) {
         [MBProgressHUD hideHUDForView:SXKeyWindow];
         //赋值
         DLog(@"array:%@",array);
+        
+        if (!array.count) return;
+        
+        for (SXHomeXiaoKiSSIDModel *ssidModel in array) {
+            if ([ssidModel.nodeId isEqualToString:nodeId]) {
+                SXXiaoKInfoModel.sharedSXXiaoKInfoModel.name = ssidModel.ssid;
+                [weakSelf.headerView setUpData];
+                break;
+            }
+        }
+        
     } failure:^(NSError *error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow];
         NSString *message = [error.userInfo objectForKey:@"msg"];

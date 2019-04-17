@@ -69,12 +69,16 @@
     self.firstBgView.backgroundColor = SXColorWhite;
     self.secondBgView.backgroundColor = SXColorWhite;
     self.thirdBgView.backgroundColor = SXColorWhite;
+    
+    self.nameTipsL.text = @"当前WiFi名称:";
 }
 
 - (void)setUpData{
-    NSString *nameStr = [XKGetWifiNetTool getWifiSSID];
-//    NSString *nameStr = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.name;
-    self.nameTipsL.text = [NSString stringWithFormat:@"当前WiFi名称:%@",nameStr];
+    //NSString *nameStr = [XKGetWifiNetTool getWifiSSID];
+    if ([NSString isNotEmpty:SXXiaoKInfoModel.sharedSXXiaoKInfoModel.name]) {
+        NSString *name = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.name;
+        self.nameTipsL.text = [NSString stringWithFormat:@"当前WiFi名称:%@",name];
+    }
 }
 
 #pragma mark -点击事件-
@@ -89,7 +93,6 @@
         self.clickWifiPasswordBlock();
     }
 }
-
 
 - (IBAction)clickAdvancedBtn:(SXWifiSettingButton *)sender {
     if (self.clickAdvancedBtnBlock) {
