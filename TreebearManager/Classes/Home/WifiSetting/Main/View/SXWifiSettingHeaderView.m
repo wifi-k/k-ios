@@ -10,6 +10,7 @@
 #import "SXWifiSettingHeaderView.h"
 #import "SXWifiSettingButton.h"
 #import "SXXiaoKInfoModel.h"
+#import "XKGetWifiNetTool.h"
 
 @interface SXWifiSettingHeaderView ()
 @property (weak, nonatomic) IBOutlet UILabel *titleL;
@@ -71,7 +72,9 @@
 }
 
 - (void)setUpData{
-    self.nameTipsL.text = [NSString stringWithFormat:@"当前WiFi名称:%@",SXXiaoKInfoModel.sharedSXXiaoKInfoModel.name];
+    NSString *nameStr = [XKGetWifiNetTool getWifiSSID];
+//    NSString *nameStr = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.name;
+    self.nameTipsL.text = [NSString stringWithFormat:@"当前WiFi名称:%@",nameStr];
 }
 
 #pragma mark -点击事件-

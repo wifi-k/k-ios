@@ -339,11 +339,13 @@
         }
         
         if (_pointImage == nil) {
-            _pointImage = [UIImage imageNamed:@"circle"];
+//            _pointImage = [UIImage imageNamed:@"circle"];
+            _pointImage = [UIImage imageNamed:@""];
         }
         
         if (_selectedPointImage == nil) {
-            _selectedPointImage = [UIImage imageNamed:@"point"];
+//            _selectedPointImage = [UIImage imageNamed:@"point"];
+            _selectedPointImage = [UIImage imageNamed:@"circle"];
         }
         
         [btn setBackgroundImage:_pointImage forState:UIControlStateNormal];
@@ -389,8 +391,8 @@
     for (int i = 0;i< _dataArrOfY.count ;i++ ) {
         
         UILabel *leftLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, i*(_yMargin)+40-_yMargin/2, _leftTitleW, _yMargin)];
-        leftLabel.font = [UIFont systemFontOfSize:10.0f];
-        leftLabel.textColor =[UIColor colorWithRed:0.61f green:0.61f blue:0.61f alpha:1.00f];
+        leftLabel.font = [UIFont systemFontOfSize:8.0f];
+        leftLabel.textColor = [UIColor colorWithRed:0.61f green:0.61f blue:0.61f alpha:1.00f];
         leftLabel.textAlignment = NSTextAlignmentRight;
         leftLabel.text = leftArr[i];
         [self addSubview:leftLabel];
@@ -407,10 +409,11 @@
     
     for (int i = 0;i< _dataArrOfX.count ;i++ ) {
         
-        UILabel *leftLabel = [[UILabel alloc]initWithFrame:CGRectMake(5+_xMargin/2+i*_xMargin-_xMargin*0.7, (_countY - 1)*_yMargin + 10, _xMargin, 20)];
-        leftLabel.font = [UIFont systemFontOfSize:12.0f];
+        UILabel *leftLabel = [[UILabel alloc] initWithFrame:CGRectMake(5+_xMargin/2+i*_xMargin-_xMargin*0.7, (_countY - 1)*_yMargin + 10, _xMargin, 20)];
+        leftLabel.font = [UIFont systemFontOfSize:8.0f];
         leftLabel.tag = 1000+i;
-        leftLabel.textColor = [UIColor colorWithRed:0.29f green:0.29f blue:0.29f alpha:1.00f];
+//        leftLabel.textColor = [UIColor colorWithRed:0.29f green:0.29f blue:0.29f alpha:1.00f];
+        leftLabel.textColor = [UIColor colorWithRed:0.61f green:0.61f blue:0.61f alpha:1.00f];
         leftLabel.text = _dataArrOfX[i];
         leftLabel.textAlignment = NSTextAlignmentCenter;
         if (i == _dataArrOfX.count-1) {

@@ -68,7 +68,7 @@
     collectV.delegate = self;
     collectV.showsVerticalScrollIndicator = YES;
     collectV.showsHorizontalScrollIndicator = NO;
-    collectV.backgroundColor = SXColorGray7;
+    collectV.backgroundColor = SXColorWhite;
     collectV.alwaysBounceVertical = YES;
     [self.view addSubview:collectV];
     self.collectionView = collectV;

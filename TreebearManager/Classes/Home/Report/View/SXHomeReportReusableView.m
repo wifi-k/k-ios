@@ -76,9 +76,10 @@
     
     //2.添加图表
     ORChartView *lineChart = [[ORChartView alloc] initWithFrame:CGRectMake(10, 10, SCREEN_WIDTH - 60, 200) dataSource:@[@"6",@"10", @"12",@"10",@"8",@"4",@"20"] countFoyY:7];
-    lineChart.titleForX = @"日期/日";
-    lineChart.titleForY = @"时长/小时";
-    lineChart.lineColor = SXColorBlue;
+//    lineChart.titleForX = @"日期/日";
+//    lineChart.titleForY = @"时长/小时";
+    lineChart.lineColor = SXColorBlue2;
+    lineChart.maskColors = @[SXColorBlue2,SXColorWhite];
     lineChart.style = ChatViewStyleSingleCurve;
     [lineChart pointDidTapedCompletion:^(NSString *value, NSInteger index) {
         NSLog(@"....%@....%ld", value, (long)index);

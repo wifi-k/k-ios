@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-static NSString *const SXHomeReportCollectionCellID = @"SXHomeReportCollectionCellID";
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXHomeReportCollectionCell : UICollectionViewCell

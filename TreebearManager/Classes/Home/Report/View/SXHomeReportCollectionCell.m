@@ -9,7 +9,8 @@
 #import "SXHomeReportCollectionCell.h"
 
 @interface SXHomeReportCollectionCell ()
-
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameL;
 @end
 
 @implementation SXHomeReportCollectionCell
@@ -29,7 +30,15 @@
 
 - (void)setUpUI{
     
-    self.contentView.backgroundColor = SXColorBlue;
+    self.contentView.backgroundColor = SXColorWhite;
+    
+    self.nameL.textColor = SXColor2B3852;
+}
+
+#pragma mark -setter-
+- (void)setUpData{
+    self.nameL.text = @"";
+    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"img_login_icon"] options:SDWebImageRetryFailed];
 }
 
 @end

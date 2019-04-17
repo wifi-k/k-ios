@@ -23,9 +23,9 @@
         //位置
         [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -1)];
         //Normal
-        [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:11]} forState:UIControlStateNormal];
+        [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:11],NSForegroundColorAttributeName:SXColor4A5B78} forState:UIControlStateNormal];
         //Selected
-        [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:11]} forState:UIControlStateSelected];
+        [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:11],NSForegroundColorAttributeName:SXColorBlue2} forState:UIControlStateSelected];
     }
 }
 
@@ -35,6 +35,7 @@
     //1.创建tabBar
     self.tabBar.tintColor = SXColorBlue2;
     self.tabBar.barTintColor = SXColorWhite;
+//    self.tabBar.unselectedItemTintColor = SXColor4A5B78;
     
     //2.添加子控制器
     [self setUpChildViewController];
@@ -54,10 +55,10 @@
     [self setUpChildController:homeVC image:[UIImage imageNamed:@"tab_home_normal"] selectImage:[UIImage imageWithOriginalName:@"tab_home_selected"] title:@"首页"];
     
     SXPhotoController *memberVC = [[SXPhotoController alloc] init];
-    [self setUpChildController:memberVC image:[UIImage imageNamed:@"tab_photo_normal"] selectImage:[UIImage imageWithOriginalName:@"tab_photo_selected"] title:@"相册"];
+    [self setUpChildController:memberVC image:[UIImage imageNamed:@"tab_mine_normal"] selectImage:[UIImage imageWithOriginalName:@"tab_mine_selected"] title:@"相册"];
     
     SXMineController *mineVC = [[SXMineController alloc] init];
-    [self setUpChildController:mineVC image:[UIImage imageNamed:@"tab_mine_normal"] selectImage:[UIImage imageWithOriginalName:@"tab_mine_selected"] title:@"我的"];
+    [self setUpChildController:mineVC image:[UIImage imageNamed:@"tab_photo_normal"] selectImage:[UIImage imageWithOriginalName:@"tab_photo_selected"] title:@"我的"];
 }
 
 - (void)setUpChildController:(UIViewController *)vc image:(UIImage *)image selectImage:(UIImage *)selectImage title:(NSString *)title{

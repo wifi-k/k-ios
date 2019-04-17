@@ -91,9 +91,10 @@
 #define SXColorClear UIColor.clearColor       // 透明色
 #define SXColorF1F5FF UIColorFromRGB(0xF1F5FF)// 浅浅浅
 #define SXColorCCCCC UIColorFromRGB(0xCCCCCC) // 深灰色
+#define SXColor4A5B78 UIColorFromRGB(0x4A5B78) // 深灰色
 #define SXColorWhite UIColorFromRGB(0xffffff) // 白色
 #define SXColorBlue UIColorFromRGB(0x1AD0CE) // 主题蓝色
-#define SXColorBlue2 UIColorFromRGB(0x26DCBC) // 中等蓝色
+#define SXColorBlue2 UIColorFromRGB(0x47D5ED) // 中等蓝色
 #define SXColorBlueLight UIColorFromRGB(0x37EDA3) // 浅蓝色(辅色)
 #define SXColor333333 UIColorFromRGB(0x333333) // 用于标题 重要文字等_黑色
 #define SXColor666666 UIColorFromRGB(0x666666) // 用于小标题 正文等_半度灰

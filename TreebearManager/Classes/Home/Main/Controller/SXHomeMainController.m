@@ -34,6 +34,7 @@
 #import "SXMineNetTool.h"
 #import "SXWifiSettingNetTool.h"
 #import "SXHomeReportNetTool.h"
+#import "SXFamilyMemberNetTool.h"
 #import "NSString+Hash.h"
 #import <UMSocialCore/UMSocialCore.h>
 
@@ -75,7 +76,7 @@
     [self loginWithData];
     //获取节点数据
     [self getNodeData];
-    //选中家庭成员
+    //选中家庭成员列表
     [self userNodeListallData];
 }
     
@@ -307,8 +308,8 @@
         if (!hasSelected) {
             SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel = result.page.firstObject;
             [weakSelf.headerView setUpData];
+            [weakSelf userNodeSelectData];//接口选中几点
         }
-        
         //获取手机设备列表
         [weakSelf userNodeDeviceListData];
         //获取设备一周上网时长
@@ -385,6 +386,22 @@
                 [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
             }
         });
+    }];
+}
+
+#pragma mark -用户选定节点-
+- (void)userNodeSelectData{
+    SXXiaoKiParam *param = [SXXiaoKiParam param];
+    SXHomeXiaoKiModel *model = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel;
+    param.nodeId = model.nodeId;
+    [SXFamilyMemberNetTool userNodeSelectDataWithParams:param.mj_keyValues Success:^{
+        NSString *equipName = [NSString stringWithFormat:@"已为您切换设备:%@",model.name];
+        [MBProgressHUD showSuccessWithMessage:equipName toView:SXKeyWindow];
+    } failure:^(NSError *error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        if ([NSString isNotEmpty:message]) {
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        }
     }];
 }
     
