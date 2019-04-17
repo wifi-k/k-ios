@@ -51,7 +51,7 @@
     
     //缩放
 //    self.switchBtn.transform = CGAffineTransformMakeScale( 0.8, 0.8);
-    self.switchBtn.onTintColor = SXColorBlue2;
+    self.switchBtn.onTintColor = SXColor37EDA3;
 }
 
 #pragma mark -setter-

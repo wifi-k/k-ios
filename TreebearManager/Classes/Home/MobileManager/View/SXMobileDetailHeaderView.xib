@@ -402,6 +402,7 @@
             <connections>
                 <outlet property="backBtn" destination="Wpb-Sl-Ic3" id="m0C-mS-0IE"/>
                 <outlet property="blackSwitchBtn" destination="gre-nz-WGU" id="45r-yC-zLF"/>
+                <outlet property="blackTipsL" destination="x6C-Jd-cKQ" id="uUX-re-ZVA"/>
                 <outlet property="blacklistTitleL" destination="34g-8l-dYG" id="5Ip-dQ-rYW"/>
                 <outlet property="bottomBgView" destination="Wak-SY-S5A" id="kMt-3Q-jCU"/>
                 <outlet property="bottomFirstBgView" destination="Pi2-UV-o4K" id="apf-4K-HJX"/>

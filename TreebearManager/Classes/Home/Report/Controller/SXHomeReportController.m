@@ -54,6 +54,8 @@
     self.view.backgroundColor = SXColorWhite;
     
     self.navigationItem.title = @"周报";
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
 }
 
 - (void)viewDidLayoutSubviews{

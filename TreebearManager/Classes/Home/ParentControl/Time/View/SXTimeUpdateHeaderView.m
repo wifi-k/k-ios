@@ -7,6 +7,7 @@
 //
 
 #import "SXTimeUpdateHeaderView.h"
+#import "UILabel+Extension.h"
 
 @interface SXTimeUpdateHeaderView ()
 @property (weak, nonatomic) IBOutlet UILabel *schemeL;
@@ -52,6 +53,8 @@
     self.schemeL.textColor = SXColor2B3852;
     self.allowTimeL.textColor = SXColor2B3852;
     self.controlMobileL.textColor = SXColor2B3852;
+    
+    [self.contentL setText:@"先选择控制的时间，然后选择控制的设备，则该设备只有在允许上网的时间才能访问网络" lineSpacing:8.0f];
     
     self.firstBgView.backgroundColor = [UIColor whiteColor];
     self.firstBgView.layer.cornerRadius = 5;

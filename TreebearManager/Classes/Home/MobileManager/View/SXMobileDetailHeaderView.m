@@ -34,6 +34,7 @@
 
 @property (weak, nonatomic) IBOutlet UISwitch *blackSwitchBtn;
 @property (weak, nonatomic) IBOutlet UILabel *blacklistTitleL;
+@property (weak, nonatomic) IBOutlet UILabel *blackTipsL;
 @property (weak, nonatomic) IBOutlet UIView *centerFourthBgView;
 @property (weak, nonatomic) IBOutlet UIView *centerBgView;
 
@@ -80,6 +81,8 @@
     self.naviTitleL.font = SXFontBold18;
     self.topBgView.backgroundColor = SXColorWhite;
     
+    self.blackTipsL.textColor = SXColor2B3852;
+    
     self.nameL.font = SXFontBold20;
     
     self.bottomLineView1.height = 0.5;
@@ -121,10 +124,10 @@
     
     //缩放
     //    self.switchBtn.transform = CGAffineTransformMakeScale( 0.8, 0.8);
-    self.careSwitchBtn.onTintColor = SXColorBlue2;
-    self.remindSwitchBtn.onTintColor = SXColorBlue2;
-    self.blackSwitchBtn.onTintColor = SXColorBlue2;
-    self.limitSwitchBtn.onTintColor = SXColorBlue2;
+    self.careSwitchBtn.onTintColor = SXColor37EDA3;
+    self.remindSwitchBtn.onTintColor = SXColor37EDA3;
+    self.blackSwitchBtn.onTintColor = SXColor37EDA3;
+    self.limitSwitchBtn.onTintColor = SXColor37EDA3;
     
     self.upSlider.tintColor = SXColorBlue2;
     self.downSlider.tintColor = SXColorBlue2;

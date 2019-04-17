@@ -191,6 +191,7 @@
 		095540C9221FEB91005A5485 /* SXHomeMainSettingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540C8221FEB91005A5485 /* SXHomeMainSettingButton.m */; };
 		095540CF221FEF5D005A5485 /* SXHomeMainGotoUserInfoButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540CE221FEF5D005A5485 /* SXHomeMainGotoUserInfoButton.m */; };
 		095540D222200EB6005A5485 /* SXHomeMainMemberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540D122200EB6005A5485 /* SXHomeMainMemberButton.m */; };
+		095982B922670CED00308E90 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 095982B822670CED00308E90 /* UILabel+Extension.m */; };
 		098BA2E7221654E900F58639 /* SXLoginRegistAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2E6221654E900F58639 /* SXLoginRegistAlertView.m */; };
 		098BA2ED221660A400F58639 /* SXFamilyCodeSuccessAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2EC221660A400F58639 /* SXFamilyCodeSuccessAlertView.m */; };
 		098BA2F0221660BD00F58639 /* SXFamilyCodeFailureAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2EF221660BD00F58639 /* SXFamilyCodeFailureAlertView.m */; };
@@ -778,6 +779,8 @@
 		095540CE221FEF5D005A5485 /* SXHomeMainGotoUserInfoButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainGotoUserInfoButton.m; sourceTree = "<group>"; };
 		095540D022200EB6005A5485 /* SXHomeMainMemberButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainMemberButton.h; sourceTree = "<group>"; };
 		095540D122200EB6005A5485 /* SXHomeMainMemberButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainMemberButton.m; sourceTree = "<group>"; };
+		095982B722670CED00308E90 /* UILabel+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
+		095982B822670CED00308E90 /* UILabel+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
 		098BA2E5221654E900F58639 /* SXLoginRegistAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXLoginRegistAlertView.h; sourceTree = "<group>"; };
 		098BA2E6221654E900F58639 /* SXLoginRegistAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXLoginRegistAlertView.m; sourceTree = "<group>"; };
 		098BA2EB221660A400F58639 /* SXFamilyCodeSuccessAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXFamilyCodeSuccessAlertView.h; sourceTree = "<group>"; };
@@ -3176,6 +3179,8 @@
 				09C8CE53224B7D1F00C03F43 /* NSDictionary+Extension.m */,
 				09C9092D226064C700BFF67C /* NSDate+Extension.h */,
 				09C9092E226064C700BFF67C /* NSDate+Extension.m */,
+				095982B722670CED00308E90 /* UILabel+Extension.h */,
+				095982B822670CED00308E90 /* UILabel+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -4331,6 +4336,7 @@
 				B3AF2FED21FAFF24001E4E67 /* SXLoginController.m in Sources */,
 				0900F517222D4F2700250155 /* SXNetBroadbandController.m in Sources */,
 				09D5F6012227E3DF00EA681A /* SXPhotoNetTool.m in Sources */,
+				095982B922670CED00308E90 /* UILabel+Extension.m in Sources */,
 				091BC47A2240EEC100FEBFD1 /* SXWarningAlertView.m in Sources */,
 				B348F97521F6EB070000F194 /* SXMineController.m in Sources */,
 				09EEC0D5223A2B2600F519E4 /* SXMineAddChildController.m in Sources */,

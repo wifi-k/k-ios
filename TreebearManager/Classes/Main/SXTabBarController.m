@@ -52,13 +52,13 @@
 - (void)setUpChildViewController{
     
     SXHomeController *homeVC = [[SXHomeController alloc] init];
-    [self setUpChildController:homeVC image:[UIImage imageNamed:@"tab_home_normal"] selectImage:[UIImage imageWithOriginalName:@"tab_home_selected"] title:@"首页"];
+    [self setUpChildController:homeVC image:[UIImage imageWithOriginalName:@"tab_home_normal"] selectImage:[UIImage imageWithOriginalName:@"tab_home_selected"] title:@"首页"];
     
     SXPhotoController *memberVC = [[SXPhotoController alloc] init];
-    [self setUpChildController:memberVC image:[UIImage imageNamed:@"tab_mine_normal"] selectImage:[UIImage imageWithOriginalName:@"tab_mine_selected"] title:@"相册"];
+    [self setUpChildController:memberVC image:[UIImage imageWithOriginalName:@"tab_mine_normal"] selectImage:[UIImage imageWithOriginalName:@"tab_mine_selected"] title:@"相册"];
     
     SXMineController *mineVC = [[SXMineController alloc] init];
-    [self setUpChildController:mineVC image:[UIImage imageNamed:@"tab_photo_normal"] selectImage:[UIImage imageWithOriginalName:@"tab_photo_selected"] title:@"我的"];
+    [self setUpChildController:mineVC image:[UIImage imageWithOriginalName:@"tab_photo_normal"] selectImage:[UIImage imageWithOriginalName:@"tab_photo_selected"] title:@"我的"];
 }
 
 - (void)setUpChildController:(UIViewController *)vc image:(UIImage *)image selectImage:(UIImage *)selectImage title:(NSString *)title{
@@ -90,7 +90,7 @@
     //创建首页
     homeVC.tabBarItem.title = @"首页";
     homeVC.tabBarItem.badgeValue = nil;
-    homeVC.tabBarItem.image = [UIImage imageNamed:@"tab_home_normal"];
+    homeVC.tabBarItem.image = [UIImage imageWithOriginalName:@"tab_home_normal"];
     homeVC.tabBarItem.selectedImage = [UIImage imageWithOriginalName:@"tab_home_selected"];
     SXNavigationController *navi = [[SXNavigationController alloc] initWithRootViewController:homeVC];
     

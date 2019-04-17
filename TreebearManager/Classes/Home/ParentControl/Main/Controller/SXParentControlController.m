@@ -33,7 +33,8 @@
     WS(weakSelf);
     SXParentControlHeaderView *headerView = [SXParentControlHeaderView headerView];
     headerView.clickForbiddenAppBlock = ^{
-        [weakSelf jumpToForbiddenAppVC];
+//        [weakSelf jumpToForbiddenAppVC];
+        [MBProgressHUD showMessage:@"此功能正在开发中..." toView:weakSelf.view];
     };
     headerView.clickTimeControlBlock = ^{
         [weakSelf jumpToTimeControlVC];

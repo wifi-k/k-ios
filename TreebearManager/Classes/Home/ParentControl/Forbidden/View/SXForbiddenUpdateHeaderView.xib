@@ -44,6 +44,7 @@
                                 <constraint firstAttribute="height" constant="30" id="D85-j5-hZO"/>
                                 <constraint firstAttribute="width" constant="100" id="xNx-So-GYf"/>
                             </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="修改名称">
                                 <color key="titleColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
