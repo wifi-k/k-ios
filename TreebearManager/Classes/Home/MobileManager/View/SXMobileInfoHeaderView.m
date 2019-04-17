@@ -56,9 +56,9 @@
     self.bottomLineView3.backgroundColor = SXColorDivideLine;
     self.bottomLineView4.backgroundColor = SXColorDivideLine;
     
-    self.bottomLineView2.height = 0.5f;
-    self.bottomLineView3.height = 0.5f;
-    self.bottomLineView4.height = 0.5f;
+    self.bottomLineView2.height = 0.0f;
+    self.bottomLineView3.height = 0.0f;
+    self.bottomLineView4.height = 0.0f;
     
     self.vendorTitleL.textColor = SXColor2B3852;
     self.macTitleL.textColor = SXColor2B3852;

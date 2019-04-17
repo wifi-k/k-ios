@@ -27,8 +27,7 @@
     
     self.navigationItem.title = @"设备信息";
     
-    
-//    WS(weakSelf);
+    //1.头部视图
     SXMobileInfoHeaderView *headerView = [SXMobileInfoHeaderView headerView];
     headerView.model = self.model;
     [self.view addSubview:headerView];

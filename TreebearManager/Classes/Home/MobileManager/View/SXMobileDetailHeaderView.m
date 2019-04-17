@@ -51,6 +51,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *downL;
 @property (weak, nonatomic) IBOutlet UIView *bottomThirdBgView;
 @property (weak, nonatomic) IBOutlet UIView *bottomBgView;
+
+@property (weak, nonatomic) IBOutlet UIView *bottomLineView1;
+@property (weak, nonatomic) IBOutlet UIView *bottomLineView2;
+@property (weak, nonatomic) IBOutlet UIView *bottomLineView3;
 @end
 
 @implementation SXMobileDetailHeaderView
@@ -75,6 +79,16 @@
     
     self.naviTitleL.font = SXFontBold18;
     self.topBgView.backgroundColor = SXColorWhite;
+    
+    self.nameL.font = SXFontBold20;
+    
+    self.bottomLineView1.height = 0.5;
+    self.bottomLineView2.height = 0.5;
+    self.bottomLineView3.height = 0.5;
+    
+    self.bottomLineView1.backgroundColor = SXColorDivideLine;
+    self.bottomLineView2.backgroundColor = SXColorDivideLine;
+    self.bottomLineView3.backgroundColor = SXColorDivideLine;
     
     self.mobileInfoTitleL.textColor = SXColor2B3852;
     self.childCareTitleL.textColor = SXColor2B3852;
