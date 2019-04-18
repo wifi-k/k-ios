@@ -114,22 +114,22 @@
     }];
 }
 
-+ (void)userNodeListParams:(NSDictionary *)params Success:(void (^)(SXHomeXiaoKiResult *result))success failure:(void (^)(NSError *error))failure{
-    [SXNetRequestTool POST:user_node_list parameters:params success:^(id response) {
-        
-        if (![response isKindOfClass:NSDictionary.class]) return;
-
-        SXHomeXiaoKiResult *result = [SXHomeXiaoKiResult mj_objectWithKeyValues:response];
-        
-        if (success){
-            success(result);
-        }
-    } failure:^(NSError *error) {
-        if (failure) {
-            failure(error);
-        }
-    }];
-}
+//+ (void)userNodeListParams:(NSDictionary *)params Success:(void (^)(SXHomeXiaoKiResult *result))success failure:(void (^)(NSError *error))failure{
+//    [SXNetRequestTool POST:user_node_list parameters:params success:^(id response) {
+//        
+//        if (![response isKindOfClass:NSDictionary.class]) return;
+//
+//        SXHomeXiaoKiResult *result = [SXHomeXiaoKiResult mj_objectWithKeyValues:response];
+//        
+//        if (success){
+//            success(result);
+//        }
+//    } failure:^(NSError *error) {
+//        if (failure) {
+//            failure(error);
+//        }
+//    }];
+//}
 
 + (void)userNodeBindParams:(NSString *)nodeId Success:(void (^)(void))success failure:(void (^)(NSError *error))failure{
     

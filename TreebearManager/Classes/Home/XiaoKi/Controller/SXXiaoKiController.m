@@ -89,7 +89,7 @@
     param.pageNo = @(self.pageIndex);
     param.pageSize = @10;
     [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
-    [SXMineNetTool userNodeListParams:param.mj_keyValues Success:^(SXHomeXiaoKiResult *result) {
+    [SXMineNetTool userNodeListallParams:param.mj_keyValues Success:^(SXHomeXiaoKiResult *result) {
         [weakSelf endHeaderRefresh];
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         //数据初始化
@@ -116,7 +116,7 @@
     SXXiaoKiParam *param = [SXXiaoKiParam param];
     param.pageNo = @(++self.pageIndex);
     param.pageSize = @10;
-    [SXMineNetTool userNodeListParams:param.mj_keyValues Success:^(SXHomeXiaoKiResult *result) {
+    [SXMineNetTool userNodeListallParams:param.mj_keyValues Success:^(SXHomeXiaoKiResult *result) {
         [weakSelf endFooterRefresh];
         //数据初始化//刷新UI
         if (result.page.count) {

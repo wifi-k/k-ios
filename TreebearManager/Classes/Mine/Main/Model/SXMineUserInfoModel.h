@@ -43,7 +43,7 @@
  */
 @property (nonatomic, copy) NSNumber *authStatus;
 /**
- * role 用户角色
+ * role 用户角色 0管理员 其他成员
  */
 @property (nonatomic, copy) NSNumber *role;
 /**

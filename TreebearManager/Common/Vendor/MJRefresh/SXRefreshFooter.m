@@ -35,6 +35,7 @@
             titleL.font = SXFont(13);
             titleL.textColor = UIColor.grayColor;
             [self.noMoreDataView addSubview:titleL];
+            titleL.hidden = YES;
             
             UIView *leftLine = [[UIView alloc]init];
             leftLine.backgroundColor = SXColorGray4;

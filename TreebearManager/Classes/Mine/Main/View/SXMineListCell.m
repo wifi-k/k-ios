@@ -32,6 +32,8 @@ static NSString *SXMineListCellID = @"SXMineListCellID";
     //设置背样式
     self.contentView.backgroundColor = SXColorWhite;
     
+    self.nameL.textColor = SXColor2B3852;
+    
     [self setUpUI];
 }
 

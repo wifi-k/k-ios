@@ -28,6 +28,7 @@
                         <constraint firstAttribute="height" constant="45" id="vND-5K-6iy"/>
                     </constraints>
                     <state key="normal" title="立即绑定" backgroundImage="img_button_bg"/>
+                    <state key="disabled" backgroundImage="img_button_bg"/>
                     <connections>
                         <action selector="clickBindBtn:" destination="-1" eventType="touchUpInside" id="4sc-tg-pjj"/>
                     </connections>

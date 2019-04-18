@@ -71,7 +71,9 @@
     
     self.titleL.textColor = SXColor2B3852;
     
+    [self.bindBtn setTitleColor:SXColorTextDisabled forState:UIControlStateDisabled];
     [self.bindBtn roundViewWithRadius:6.0f];
+    self.bindBtn.enabled = NO;
 }
 
 #pragma mark -是否隐藏-
@@ -83,11 +85,14 @@
 #pragma mark -获取节点数据-
 - (void)getNodeData{
     WS(weakSelf);
+    self.bindBtn.enabled = NO;
     [SXAddXiaokiNetTool getNodeWithDataWithSuccess:^(SXXiaoKNodeResult * _Nonnull result) {
         DLog(@"获取节点:%@",result.modelId);
+        weakSelf.bindBtn.enabled = YES;
         //更新wan信息
         weakSelf.currentResult = result;
     } failure:^(NSError * _Nonnull error) {
+        weakSelf.bindBtn.enabled = YES;
         NSString *message = [error.userInfo objectForKey:@"msg"];
         if ([NSString isNotEmpty:message]) {
             [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
@@ -138,6 +143,9 @@
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             NSString *message = [error.userInfo objectForKey:@"msg"];
+            if (error.code == 8) {
+                message = @"设备已经被绑定!";
+            }
             if ([NSString isNotEmpty:message]) {
                 [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
             }

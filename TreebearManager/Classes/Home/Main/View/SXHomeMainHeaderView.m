@@ -122,6 +122,21 @@
         make.centerX.mas_equalTo(self.managerBtn).mas_offset(25);
         make.centerY.mas_equalTo(self.managerBtn).mas_offset(-20);
     }];
+    
+    SXMineUserInfoModel *userInfo = SXPersonInfoModel.sharedSXPersonInfoModel.result.user;
+    if (userInfo.role.integerValue == 0) {//管理员
+        managerL.text = @"管理员";
+    } else {
+        managerL.text = @"成员";
+    }
+    
+    NSString *nameStr = @"";
+    if ([NSString isNotEmpty:userInfo.mobile] && userInfo.mobile.length > 4) {
+        NSRange range = NSMakeRange(userInfo.mobile.length-4, 4);
+        NSString *subMobile = [userInfo.mobile substringWithRange:range];
+        nameStr = [NSString isEmpty:userInfo.name] ? [NSString stringWithFormat:@"用户%@",subMobile] : userInfo.name;
+    }
+    [self.managerBtn setTitle:nameStr forState:UIControlStateNormal];
 }
 
 - (void)setUpData{
