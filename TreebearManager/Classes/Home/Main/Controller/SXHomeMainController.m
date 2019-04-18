@@ -46,6 +46,8 @@
 @property (nonatomic, strong) NSMutableArray *mobileArray;
 ///周报数据
 @property (nonatomic, strong) NSMutableArray *reportArray;
+///是否第一次打开页面
+@property (nonatomic, assign) BOOL isFirstVisible;
 @end
 
 @implementation SXHomeMainController
@@ -65,6 +67,21 @@
     return _reportArray;
 }
 
+#pragma mark -controller recycle-
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    //第一次打开主页默认不执行，从第二次开始刷新
+    if (self.isFirstVisible) {
+        //选中家庭成员列表
+        [self userNodeListallData];
+        //用户消息列表
+        [self userMessageListData];
+    } else {
+        self.isFirstVisible = YES;
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -78,6 +95,8 @@
     [self getNodeData];
     //选中家庭成员列表
     [self userNodeListallData];
+    //用户消息列表
+    [self userMessageListData];
 }
     
 - (void)setUpUI{
@@ -297,7 +316,7 @@
         if (!hasSelected) {
             SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel = result.page.firstObject;
             [weakSelf.headerView setUpData];
-            [weakSelf userNodeSelectData];//接口选中几点
+            [weakSelf userNodeSelectData];//接口选中第一个
         }
         //获取手机设备列表
         [weakSelf userNodeDeviceListData];
@@ -380,8 +399,13 @@
     [SXMessageNetTool userMessageListParams:param.mj_keyValues Success:^(SXHomeMessageResult *result) {
         //数据初始化
         NSArray *titles = [NSMutableArray arrayWithArray:result.page];
-        //刷新UI
-        [weakSelf.headerView setUpMsgArray:titles];
+        
+        if (titles.count) {
+            //获取content数组
+            NSArray *contents = [titles valueForKey:@"content"];
+            //刷新UI
+            [weakSelf.headerView setUpMsgArray:contents];
+        }
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         DLog(@"message:%@",message);

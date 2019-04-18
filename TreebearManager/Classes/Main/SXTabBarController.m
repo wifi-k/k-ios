@@ -26,6 +26,11 @@
         [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:11],NSForegroundColorAttributeName:SXColor4A5B78} forState:UIControlStateNormal];
         //Selected
         [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:11],NSForegroundColorAttributeName:SXColorBlue2} forState:UIControlStateSelected];
+        
+        //修改TabBar顶部分割线的颜色
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, -0.5, SCREEN_WIDTH, 0.5)];
+        view.backgroundColor = [UIColor colorWithColor:SXColorDivideLine alpha:0.5f];
+        [[UITabBar appearance] insertSubview:view atIndex:0];
     }
 }
 
@@ -35,7 +40,11 @@
     //1.创建tabBar
     self.tabBar.tintColor = SXColorBlue2;
     self.tabBar.barTintColor = SXColorWhite;
-//    self.tabBar.unselectedItemTintColor = SXColor4A5B78;
+    //self.tabBar.unselectedItemTintColor = SXColor4A5B78;
+    
+    //2.去掉顶部边线
+//    [self.tabBar setBackgroundImage:[UIImage new]];
+//    [self.tabBar setShadowImage:[UIImage new]];
     
     //2.添加子控制器
     [self setUpChildViewController];
