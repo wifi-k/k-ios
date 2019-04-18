@@ -57,10 +57,10 @@ static NSString *SXNetWallCellID = @"SXNetWallCellID";
     self.nameL.text = ([NSString isEmpty:model.note] ? model.name : model.note);
     switch (model.status.integerValue) {
         case 0:
-            self.statusL.text = [NSString stringWithFormat:@"离线时间:%@",model.offTime];
+            self.statusL.text = [NSString stringWithFormat:@"离线时间:%@",[NSString stringWithTimestamp22:model.offTime]];
             break;
         case 1:
-            self.statusL.text = [NSString stringWithFormat:@"上线时间:%@",model.onTime];
+            self.statusL.text = [NSString stringWithFormat:@"上线时间:%@",[NSString stringWithTimestamp22:model.onTime]];
             break;
         default:
             self.statusL.text = [NSString stringWithFormat:@"上线时间:%@",@"未知"];

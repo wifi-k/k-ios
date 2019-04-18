@@ -60,10 +60,10 @@ static NSString *SXDeviceControlCellID = @"SXDeviceControlCellID";
     self.deviceNameL.text = model.name;
     switch (model.status.integerValue) {
         case 0:
-            self.timeL.text = [NSString stringWithFormat:@"离线时间:%@",model.offTime];
+            self.timeL.text = [NSString stringWithFormat:@"离线时间:%@",[NSString stringWithTimestamp22:model.offTime]];
             break;
         case 1:
-            self.timeL.text = [NSString stringWithFormat:@"上线时间:%@",model.onTime];
+            self.timeL.text = [NSString stringWithFormat:@"上线时间:%@",[NSString stringWithTimestamp22:model.onTime]];
             break;
         default:
             self.timeL.text = [NSString stringWithFormat:@"上线时间:%@",@"未知"];
