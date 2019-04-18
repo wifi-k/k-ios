@@ -192,6 +192,8 @@
 		095540CF221FEF5D005A5485 /* SXHomeMainGotoUserInfoButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540CE221FEF5D005A5485 /* SXHomeMainGotoUserInfoButton.m */; };
 		095540D222200EB6005A5485 /* SXHomeMainMemberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 095540D122200EB6005A5485 /* SXHomeMainMemberButton.m */; };
 		095982B922670CED00308E90 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 095982B822670CED00308E90 /* UILabel+Extension.m */; };
+		095982BD226809D800308E90 /* SXHomeMainFirstSectionTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 095982BB226809D800308E90 /* SXHomeMainFirstSectionTableCell.m */; };
+		095982BE226809D800308E90 /* SXHomeMainFirstSectionTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 095982BC226809D800308E90 /* SXHomeMainFirstSectionTableCell.xib */; };
 		098BA2E7221654E900F58639 /* SXLoginRegistAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2E6221654E900F58639 /* SXLoginRegistAlertView.m */; };
 		098BA2ED221660A400F58639 /* SXFamilyCodeSuccessAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2EC221660A400F58639 /* SXFamilyCodeSuccessAlertView.m */; };
 		098BA2F0221660BD00F58639 /* SXFamilyCodeFailureAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098BA2EF221660BD00F58639 /* SXFamilyCodeFailureAlertView.m */; };
@@ -781,6 +783,9 @@
 		095540D122200EB6005A5485 /* SXHomeMainMemberButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainMemberButton.m; sourceTree = "<group>"; };
 		095982B722670CED00308E90 /* UILabel+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
 		095982B822670CED00308E90 /* UILabel+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
+		095982BA226809D800308E90 /* SXHomeMainFirstSectionTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXHomeMainFirstSectionTableCell.h; sourceTree = "<group>"; };
+		095982BB226809D800308E90 /* SXHomeMainFirstSectionTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXHomeMainFirstSectionTableCell.m; sourceTree = "<group>"; };
+		095982BC226809D800308E90 /* SXHomeMainFirstSectionTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXHomeMainFirstSectionTableCell.xib; sourceTree = "<group>"; };
 		098BA2E5221654E900F58639 /* SXLoginRegistAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXLoginRegistAlertView.h; sourceTree = "<group>"; };
 		098BA2E6221654E900F58639 /* SXLoginRegistAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXLoginRegistAlertView.m; sourceTree = "<group>"; };
 		098BA2EB221660A400F58639 /* SXFamilyCodeSuccessAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXFamilyCodeSuccessAlertView.h; sourceTree = "<group>"; };
@@ -3430,6 +3435,9 @@
 				098BA2EC221660A400F58639 /* SXFamilyCodeSuccessAlertView.m */,
 				098BA2EE221660BD00F58639 /* SXFamilyCodeFailureAlertView.h */,
 				098BA2EF221660BD00F58639 /* SXFamilyCodeFailureAlertView.m */,
+				095982BA226809D800308E90 /* SXHomeMainFirstSectionTableCell.h */,
+				095982BB226809D800308E90 /* SXHomeMainFirstSectionTableCell.m */,
+				095982BC226809D800308E90 /* SXHomeMainFirstSectionTableCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3914,6 +3922,7 @@
 				098BA30A221AB1C200F58639 /* SXCodeLoginHeaderView.xib in Resources */,
 				093C12DF225348EA005682C8 /* SXTimeControllHeaderView.xib in Resources */,
 				093C12E722534D5C005682C8 /* SXForbiddenAppHeaderView.xib in Resources */,
+				095982BE226809D800308E90 /* SXHomeMainFirstSectionTableCell.xib in Resources */,
 				09D293F22264349F00325798 /* SXNetOptionHeaderView.xib in Resources */,
 				0900F527222D514E00250155 /* SXNetStaticHeaderView.xib in Resources */,
 				09D5F6332229298500EA681A /* SXForbiddenAppCell.xib in Resources */,
@@ -4275,6 +4284,7 @@
 				09D5F665222B96B000EA681A /* SXHomeManagerHeaderView.m in Sources */,
 				091BC4D82242207100FEBFD1 /* PYAssetManager.m in Sources */,
 				091BC4E122433D9300FEBFD1 /* SXMineUserInfoParam.m in Sources */,
+				095982BD226809D800308E90 /* SXHomeMainFirstSectionTableCell.m in Sources */,
 				091BC4E8224482B900FEBFD1 /* SXUpdatePwdConfirmController.m in Sources */,
 				091BC4CD2242207100FEBFD1 /* PYImageBrowserCollectionViewCell.m in Sources */,
 				098BA2FF221A559200F58639 /* SXMineListCell.m in Sources */,

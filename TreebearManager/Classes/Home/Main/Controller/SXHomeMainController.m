@@ -24,8 +24,8 @@
 #import "SXHomeMainSectionFooterView.h"
 #import "SXHomeMainSectionEmptyFooterView.h"
 #import "SXHomeMainSectionHeaderView2.h"
+#import "SXHomeMainFirstSectionTableCell.h"
 #import "SXHomeMainReportCell.h"
-#import "SXHomeNetworkingDeviceCell.h"
 #import "SXInputAlertView.h"
 #import "SXRootTool.h"
 #import "SXNotificationCenterTool.h"
@@ -208,17 +208,6 @@
     }
 }
 
-#pragma mark -弹窗视图-
-- (void)alertRemarkNameView:(SXMobileManagerModel *)model{
-    WS(weakSelf);
-    SXInputAlertView *nameAlertView = [SXInputAlertView alertWithTitle:@"备注名称" placeholder:@"请输入名称" confirmStr:@"确定" cancelStr:@"取消"];
-    nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
-        DLog(@"text:%@",text);
-        [weakSelf userDodeDeviceSetData:model note:text];
-    };
-    [nameAlertView alert];
-}
-
 #pragma mark -分享微信-
 - (void)shareWebPageToPlatform{
     NSString *inviteCode = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel.inviteCode;
@@ -343,29 +332,6 @@
     }];
 }
 
-#pragma mark -修改设备信息数据接口-
-- (void)userDodeDeviceSetData:(SXMobileManagerModel *)model note:(NSString *)note{
-    WS(weakSelf);
-    SXMobilePageParam *param = [SXMobilePageParam param];
-    param.nodeId = model.nodeId;
-    param.mac = model.mac;
-    param.isBlock = model.isBlock;
-    param.note = note;
-    [SXWifiSettingNetTool userDodeDeviceSetDataWithParams:param.mj_keyValues success:^{
-        [MBProgressHUD showSuccessWithMessage:@"修改成功!" toView:SXKeyWindow];
-        model.note = note;//如果修改成功，直接模型赋值
-        model.name = note;
-        [weakSelf.tableView reloadData];
-    } failure:^(NSError * _Nonnull error) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            NSString *message = [error.userInfo objectForKey:@"msg"];
-            if ([NSString isNotEmpty:message]) {
-                [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
-            }
-        });
-    }];
-}
-
 #pragma mark -获取设备一周上网时长-
 - (void)userNodeDeviceWeekListData{
     WS(weakSelf);
@@ -413,7 +379,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        NSInteger count = (self.mobileArray.count > 3 ? 3:self.mobileArray.count);
+//        NSInteger count = (self.mobileArray.count > 3 ? 3:self.mobileArray.count);
+//        return count;
+        NSInteger count = (self.mobileArray.count > 0 ? 1:0);
         return count;
     } else if (section == 1){
         NSInteger count = (self.reportArray.count > 3 ? 3:self.reportArray.count);
@@ -425,13 +393,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *tempCell = nil;
     if (indexPath.section == 0) {
-        WS(weakSelf);
-        SXHomeNetworkingDeviceCell *cell = [SXHomeNetworkingDeviceCell cellWithTableView:tableView];
-        SXMobileManagerModel *model = self.mobileArray[indexPath.row];
-        cell.model = model;
-        cell.clickRemarkBtnBlock = ^(SXMobileManagerModel * _Nonnull model) {
-            [weakSelf alertRemarkNameView:model];
-        };
+        SXHomeMainFirstSectionTableCell *cell = [SXHomeMainFirstSectionTableCell cellWithTableView:tableView];
+        cell.mobileArray = self.mobileArray;
         tempCell = cell;
     } else if(indexPath.section == 1){
         SXHomeMainReportCell *cell = [SXHomeMainReportCell cellWithTableView:tableView];
@@ -446,7 +409,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        return 100.0f;
+        NSInteger count = (self.mobileArray.count > 3 ? 3:self.mobileArray.count);
+        return count * 100.0f + 100.0f;
     }
     return 200.0f;
 }
@@ -477,7 +441,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     if (section == 0) {
         if (self.mobileArray.count) {
-            return 80.0f;
+            return 0.01f;
         } else {
             return 220.0f;
         }
@@ -496,12 +460,7 @@
     WS(weakSelf);
     if (section == 0) {
         if (self.mobileArray.count) {
-            SXHomeMainSectionFooterView *footerView = [SXHomeMainSectionFooterView footerView];
-            footerView.clickMoreBtnBlock = ^{
-                SXMobileManagerController *mobileManagerVC = [[SXMobileManagerController alloc] init];
-                [weakSelf.navigationController pushViewController:mobileManagerVC animated:YES];
-            };
-            return footerView;
+            return [[UIView alloc] initWithFrame:CGRectZero];
         } else {
             SXHomeMainSectionEmptyFooterView *footerView = [SXHomeMainSectionEmptyFooterView footerViewWithImageName:@"img_empty_mobile" title:@"暂无设备" subTitle:@"请绑定设备进行设置"];
             return footerView;
@@ -526,10 +485,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 0) {
-        SXMobileDetailController *detailVC = [[SXMobileDetailController alloc] init];
-        SXMobileManagerModel *model = self.mobileArray[indexPath.row];
-        detailVC.model = model;
-        [self.navigationController pushViewController:detailVC animated:YES];
+//        SXMobileDetailController *detailVC = [[SXMobileDetailController alloc] init];
+//        SXMobileManagerModel *model = self.mobileArray[indexPath.row];
+//        detailVC.model = model;
+//        [self.navigationController pushViewController:detailVC animated:YES];
     } else if(indexPath.section == 1){
         SXHomeReportDetailController *detailVC = [[SXHomeReportDetailController alloc] init];
         SXHomeReportModel *model = self.reportArray[indexPath.row];
