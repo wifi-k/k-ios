@@ -131,9 +131,7 @@
                 //分享结果消息
                 UMSocialLogInfo(@"response message is %@",resp.message);
                 //第三方原始返回的数据
-                UMSocialLogInfo(@"response originalResponse data is %@",resp.originalResponse);
-                
-                [MBProgressHUD showMessageToWindow:@"分享成功!"];
+                UMSocialLogInfo(@"response originalResponse data is %@",resp.originalResponse);                
             }else{
                 UMSocialLogInfo(@"response data is %@",data);
             }

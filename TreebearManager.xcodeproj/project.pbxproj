@@ -275,6 +275,7 @@
 		09B9B88422326967000868D5 /* SXDHCPServerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B9B88322326967000868D5 /* SXDHCPServerHeaderView.m */; };
 		09B9B88622326974000868D5 /* SXDHCPServerHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B9B88522326974000868D5 /* SXDHCPServerHeaderView.xib */; };
 		09C5A51B226855A000742833 /* SXPhotoOptionPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5A51A226855A000742833 /* SXPhotoOptionPickerView.m */; };
+		09C5A51E22686C8400742833 /* SXPhotoOptionPickerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5A51D22686C8400742833 /* SXPhotoOptionPickerButton.m */; };
 		09C8CE362248F84000C03F43 /* SXMineUserInfoResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE352248F84000C03F43 /* SXMineUserInfoResult.m */; };
 		09C8CE3A224903E600C03F43 /* SXFamilyMemberNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE39224903E600C03F43 /* SXFamilyMemberNetTool.m */; };
 		09C8CE3E2249BADA00C03F43 /* SXFamilyMemberParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE3D2249BADA00C03F43 /* SXFamilyMemberParam.m */; };
@@ -931,6 +932,8 @@
 		09B9B88522326974000868D5 /* SXDHCPServerHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXDHCPServerHeaderView.xib; sourceTree = "<group>"; };
 		09C5A519226855A000742833 /* SXPhotoOptionPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPhotoOptionPickerView.h; sourceTree = "<group>"; };
 		09C5A51A226855A000742833 /* SXPhotoOptionPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoOptionPickerView.m; sourceTree = "<group>"; };
+		09C5A51C22686C8400742833 /* SXPhotoOptionPickerButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPhotoOptionPickerButton.h; sourceTree = "<group>"; };
+		09C5A51D22686C8400742833 /* SXPhotoOptionPickerButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoOptionPickerButton.m; sourceTree = "<group>"; };
 		09C8CE342248F84000C03F43 /* SXMineUserInfoResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMineUserInfoResult.h; sourceTree = "<group>"; };
 		09C8CE352248F84000C03F43 /* SXMineUserInfoResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMineUserInfoResult.m; sourceTree = "<group>"; };
 		09C8CE38224903E600C03F43 /* SXFamilyMemberNetTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXFamilyMemberNetTool.h; sourceTree = "<group>"; };
@@ -1694,6 +1697,8 @@
 				0936B735223A037D00E68C4C /* SXMobileUpdateHeaderView.xib */,
 				09C5A519226855A000742833 /* SXPhotoOptionPickerView.h */,
 				09C5A51A226855A000742833 /* SXPhotoOptionPickerView.m */,
+				09C5A51C22686C8400742833 /* SXPhotoOptionPickerButton.h */,
+				09C5A51D22686C8400742833 /* SXPhotoOptionPickerButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4306,6 +4311,7 @@
 				09462B282238F6170063F67E /* SXMineVersionUpdateController.m in Sources */,
 				09D5F66E222BC2B900EA681A /* SXAddXiaoKiHeaderView.m in Sources */,
 				B3AF301221FB0A5D001E4E67 /* SXBaseCollectionViewCell.m in Sources */,
+				09C5A51E22686C8400742833 /* SXPhotoOptionPickerButton.m in Sources */,
 				09B9B7DE2230BE2F000868D5 /* SXHomeReportController.m in Sources */,
 				095540CF221FEF5D005A5485 /* SXHomeMainGotoUserInfoButton.m in Sources */,
 				09EF2FB8225B501500C2C17C /* SXPhotoBrowserCell.m in Sources */,

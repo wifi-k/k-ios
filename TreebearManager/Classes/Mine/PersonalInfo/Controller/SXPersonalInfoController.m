@@ -12,6 +12,7 @@
 #import "SXForgetConfirmController.h"
 #import "SXUpdatePwdConfirmController.h"
 #import "SXPersonalInfoHeaderView.h"
+#import "SXPhotoOptionPickerView.h"
 #import "SXAlertControllerTool.h"
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <QiniuSDK.h>
@@ -117,17 +118,27 @@
 
 #pragma mark -Event-
 - (void)clickIconBgView{
+//    WS(weakSelf);
+//    [SXAlertControllerTool actionSheetWithTitle:@"提示" message:nil confirm:^(UIAlertAction * _Nonnull action) {
+//        DLog(@"action:%@",action.title);
+//        if ([action.title isEqualToString:@"拍照"]) {
+//            [weakSelf selectImageFromCamera];
+//        } else if([action.title isEqualToString:@"从相册选择"]){
+//            [weakSelf selectImageFromAlbum];
+//        }
+//    } cancel:^(UIAlertAction * _Nonnull action) {
+//        DLog(@"action:%@",action.title);
+//    }];
     WS(weakSelf);
-    [SXAlertControllerTool actionSheetWithTitle:@"提示" message:nil confirm:^(UIAlertAction * _Nonnull action) {
-        DLog(@"action:%@",action.title);
-        if ([action.title isEqualToString:@"拍照"]) {
+    SXPhotoOptionPickerView *pickerView = [SXPhotoOptionPickerView pickerView];
+    pickerView.confirmBtnBlock = ^(NSInteger tag) {
+        if (tag == 0) {
             [weakSelf selectImageFromCamera];
-        } else if([action.title isEqualToString:@"从相册选择"]){
+        } else if (tag == 1){
             [weakSelf selectImageFromAlbum];
         }
-    } cancel:^(UIAlertAction * _Nonnull action) {
-        DLog(@"action:%@",action.title);
-    }];
+    };
+    [pickerView showPickerView];
 }
 
 - (void)jumpToNickNameVC{
