@@ -83,11 +83,11 @@
             break;
         case 1:
             [self.statusBtn setTitle:@"在线" forState:UIControlStateNormal];
-            self.timeL.text = [NSString stringWithFormat:@"在线时间:%@",[NSString stringWithTimestamp2:model.onTime]];
+            self.timeL.text = [NSString stringWithFormat:@"上线时间:%@",[NSString stringWithTimestamp2:model.onTime]];
             break;
         default:
             [self.statusBtn setTitle:@"状态" forState:UIControlStateNormal];
-            self.timeL.text = [NSString stringWithFormat:@"在线时间:%@",@"未知"];
+            self.timeL.text = [NSString stringWithFormat:@"上线时间:%@",@"未知"];
             break;
     }
 }

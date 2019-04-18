@@ -59,10 +59,12 @@
             [weakSelf changeRootVC];
         });
     } failure:^(NSError * _Nonnull error) {
-        NSString *message = [error.userInfo objectForKey:@"msg"];
-        if ([NSString isNotEmpty:message]) {
-            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
-        }
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSString *message = [error.userInfo objectForKey:@"msg"];
+            if ([NSString isNotEmpty:message]) {
+                [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+            }
+        });
     }];
 }
 

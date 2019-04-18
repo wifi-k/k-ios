@@ -20,7 +20,7 @@
 @property (nonatomic, copy) NSString *macVendor;
 ///主机名
 @property (nonatomic, copy) NSString *name;
-///最近在线时间戳
+///最近上线时间戳
 @property (nonatomic, copy) NSString *onTime;
 ///最近离线时间戳
 @property (nonatomic, copy) NSString *offTime;

@@ -8,6 +8,7 @@
 //
 
 #import "SXNetRequestTool.h"
+#import "SXRootTool.h"
 
 #ifdef DEBUG
 #define API_HOST @"http://test.user.famwifi.com/api" //主测试环境
@@ -57,6 +58,7 @@ static NSString * const kResultCode = @"code";
         }
     } failure:^(NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            [self isExpiredWithCode:error.code];
             if (failure) {
                 failure(error);
             }
@@ -96,6 +98,7 @@ static NSString * const kResultCode = @"code";
         }
     } failure:^(NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            [self isExpiredWithCode:error.code];
             if (failure) {
                 failure(error);
             }
@@ -136,6 +139,7 @@ static NSString * const kResultCode = @"code";
         }
     } failure:^(NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            [self isExpiredWithCode:error.code];
             if (failure) {
                 failure(error);
             }
@@ -176,6 +180,7 @@ static NSString * const kResultCode = @"code";
         }
     } failure:^(NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            [self isExpiredWithCode:error.code];
             if (failure) {
                 failure(error);
             }
@@ -185,7 +190,28 @@ static NSString * const kResultCode = @"code";
 
 #pragma mark -验证状态码-
 + (BOOL)validateWithStr:(NSString *)str{
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self isExpiredWithCode:str.integerValue];
+    });
+    
     return [str isEqualToString:@"0"];
+}
+
++ (void)isExpiredWithCode:(NSInteger)code{
+    if (code == 1 || code == 2) {
+        Class vcClass = NSClassFromString(@"SXLoginController");
+        if ([SXRootTool.topViewController isKindOfClass:vcClass]) {
+            DLog(@"已经退出!请重新登录!");
+            return;
+        }
+        //token过期提示
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [MBProgressHUD showMessage:@"您需要重新登录!" toView:SXKeyWindow];
+//        });
+        //切换根控
+        [SXRootTool chooseRootWithLoginVC:SXDelegateWindow];
+    }
 }
 
 @end

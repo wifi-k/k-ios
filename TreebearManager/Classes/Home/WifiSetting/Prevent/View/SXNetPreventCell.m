@@ -60,10 +60,10 @@ static NSString *SXNetWallCellID = @"SXNetWallCellID";
             self.statusL.text = [NSString stringWithFormat:@"离线时间:%@",model.offTime];
             break;
         case 1:
-            self.statusL.text = [NSString stringWithFormat:@"在线时间:%@",model.onTime];
+            self.statusL.text = [NSString stringWithFormat:@"上线时间:%@",model.onTime];
             break;
         default:
-            self.statusL.text = [NSString stringWithFormat:@"在线时间:%@",@"未知"];
+            self.statusL.text = [NSString stringWithFormat:@"上线时间:%@",@"未知"];
             break;
     }
     self.switchBtn.on = model.isBlock.boolValue;
