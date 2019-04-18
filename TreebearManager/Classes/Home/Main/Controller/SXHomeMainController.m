@@ -379,8 +379,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-//        NSInteger count = (self.mobileArray.count > 3 ? 3:self.mobileArray.count);
-//        return count;
         NSInteger count = (self.mobileArray.count > 0 ? 1:0);
         return count;
     } else if (section == 1){
