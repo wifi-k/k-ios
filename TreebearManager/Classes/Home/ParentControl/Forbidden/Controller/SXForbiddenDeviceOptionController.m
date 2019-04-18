@@ -53,7 +53,7 @@
 }
 
 - (void)rightButtonAction:(UIButton *)button{
-    [MBProgressHUD showMessage:@"保存成功!" toView:self.view];
+    
     NSMutableArray *selectedArr = [NSMutableArray array];
     NSInteger count = 0;
     for (SXMobileManagerModel *model in self.dataArray) {
@@ -64,6 +64,13 @@
             }
         }
     }
+    
+    if (!selectedArr.count) {
+        [MBProgressHUD showWarningWithMessage:@"至少开启一个设备!" toView:SXKeyWindow];
+        return;
+    }
+    
+    [MBProgressHUD showMessage:@"保存成功!" toView:self.view];
     
     //回调出去
     if (self.selectForbiddenOptionBlock) {

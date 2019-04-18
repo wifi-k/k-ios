@@ -136,9 +136,11 @@
     [SXParentControlNetTool userNodeDeviceAllowSetParams:param.mj_keyValues Success:^{
         [MBProgressHUD showSuccessWithMessage:@"设置成功!" toView:SXKeyWindow];
         
-        if (weakSelf.selectTimeControlOptionBlock) {
-            weakSelf.selectTimeControlOptionBlock(weakSelf.model);
-        }
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if (weakSelf.selectTimeControlOptionBlock) {
+                weakSelf.selectTimeControlOptionBlock(weakSelf.model);
+            }
+        });
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [weakSelf.navigationController popViewControllerAnimated:YES];
