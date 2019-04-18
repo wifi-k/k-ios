@@ -154,6 +154,7 @@
 - (void)addNotification{
     [SXNotificationCenterTool addObserverBindXiaoKiSuccess:self selector:@selector(bindXiaoKiSuccess)];
     [SXNotificationCenterTool addObserverDeviceUpdateRemarkSuccess:self selector:@selector(deviceUpdateRemarkSuccess)];
+    [SXNotificationCenterTool addObserverUdpateNickNameSuccess:self selector:@selector(udpateUserInfoSuccess)];
 }
 
 - (void)dealloc{
@@ -165,12 +166,16 @@
     [self userNodeDeviceWeekListData];
 }
 
-#pragma mark -页面跳转-
 - (void)bindXiaoKiSuccess{
     SXDynamicController *netVC = [[SXDynamicController alloc] init];
     [self.navigationController pushViewController:netVC animated:YES];
 }
 
+- (void)udpateUserInfoSuccess{
+    [self.headerView setUpData];
+}
+
+#pragma mark -页面跳转-
 - (void)jumpToManagerVC{
     SXFamilyMemberController *managerVC = [[SXFamilyMemberController alloc] init];
     [self.navigationController pushViewController:managerVC animated:YES];

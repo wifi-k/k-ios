@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet SXHomeMainMemberButton *managerBtn;
 @property (weak, nonatomic) IBOutlet SXHomeMainMemberButton *inviteMemberBtn;
 @property (weak, nonatomic) IBOutlet UIView *topBgView;
+@property (weak, nonatomic) UILabel *managerL;
 
 @property (weak, nonatomic) IBOutlet UIImageView *messageImageView;
 @property (weak, nonatomic) IBOutlet UILabel *messageL;
@@ -117,7 +118,8 @@
     managerL.text = @"管理员";
     [managerL roundViewWithRadius:10.0f];
     [self.managerBtn addSubview:managerL];
-    [managerL mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.managerL = managerL;
+    [self.managerL mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(40, 20));
         make.centerX.mas_equalTo(self.managerBtn).mas_offset(25);
         make.centerY.mas_equalTo(self.managerBtn).mas_offset(-20);
@@ -159,6 +161,22 @@
             [self.statusBtn setTitle:@"状态" forState:UIControlStateNormal];
             break;
     }
+    
+    SXMineUserInfoModel *userInfo = SXPersonInfoModel.sharedSXPersonInfoModel.result.user;
+    if (userInfo.role.integerValue == 0) {//管理员
+        self.managerL.text = @"管理员";
+    } else {
+        self.managerL.text = @"管理员";
+        //self.managerL.text = @"成员";
+    }
+    
+    NSString *nameStr = @"";
+    if ([NSString isNotEmpty:userInfo.mobile] && userInfo.mobile.length > 4) {
+        NSRange range = NSMakeRange(userInfo.mobile.length-4, 4);
+        NSString *subMobile = [userInfo.mobile substringWithRange:range];
+        nameStr = [NSString isEmpty:userInfo.name] ? [NSString stringWithFormat:@"用户%@",subMobile] : userInfo.name;
+    }
+    [self.managerBtn setTitle:nameStr forState:UIControlStateNormal];
 }
 
 #pragma mark -事件监听-

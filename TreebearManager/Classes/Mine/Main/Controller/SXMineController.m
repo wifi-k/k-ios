@@ -122,6 +122,9 @@
 
 - (void)udpateUserInfoSuccess{
     [self.headerView setUpData];
+    
+    //通过接口更新用户信息
+    [self userInfoGetextData];
 }
 
 #pragma mark -点击事件-
