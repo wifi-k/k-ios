@@ -48,7 +48,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="120" id="Mn5-EU-fyV"/>
                             </constraints>
-                            <state key="normal" title="上网时间" image="img_control_time">
+                            <state key="normal" title="上网时间控制" image="img_control_time">
                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>

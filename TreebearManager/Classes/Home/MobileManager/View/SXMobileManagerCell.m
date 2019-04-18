@@ -61,7 +61,13 @@ static NSString *SXMobileManagerCellID = @"SXMobileManagerCellID";
     self.statusBtn.layer.shadowRadius = 2;
     
     //多行文字限制宽度
-    self.mobileNameL.preferredMaxLayoutWidth = 150;
+    if (SCREEN_WIDTH > 400) {
+        self.mobileNameL.preferredMaxLayoutWidth = 210;
+    } else if (SCREEN_WIDTH > 370){
+        self.mobileNameL.preferredMaxLayoutWidth = 140;
+    } else {
+        self.mobileNameL.preferredMaxLayoutWidth = 100;
+    }
 }
 
 #pragma mark -setter-

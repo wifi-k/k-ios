@@ -67,7 +67,13 @@
     self.statusBtn.layer.shadowRadius = 2;
     
     //多行文字限制宽度
-    self.mobileNameL.preferredMaxLayoutWidth = 150;
+    if (SCREEN_WIDTH > 400) {
+        self.mobileNameL.preferredMaxLayoutWidth = 200;
+    } else if (SCREEN_WIDTH > 370){
+        self.mobileNameL.preferredMaxLayoutWidth = 130;
+    } else {
+        self.mobileNameL.preferredMaxLayoutWidth = 90;
+    }
 }
 
 #pragma mark -setter-
