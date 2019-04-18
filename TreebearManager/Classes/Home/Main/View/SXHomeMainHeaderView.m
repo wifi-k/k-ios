@@ -166,8 +166,8 @@
     if (userInfo.role.integerValue == 0) {//管理员
         self.managerL.text = @"管理员";
     } else {
-        self.managerL.text = @"管理员";
-        //self.managerL.text = @"成员";
+//        self.managerL.text = @"管理员";
+        self.managerL.text = @"成员";
     }
     
     NSString *nameStr = @"";

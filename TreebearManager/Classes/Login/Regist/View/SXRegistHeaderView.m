@@ -9,6 +9,7 @@
 #import "SXRegistHeaderView.h"
 #import "SXLoginCertifyCodeButton.h"
 #import "SXLoginNetTool.h"
+#import "SXUserDefaultsTool.h"
 
 @interface SXRegistHeaderView ()
 @property (weak, nonatomic) IBOutlet UILabel *titleL;
@@ -111,6 +112,9 @@
     SXLoginParam *param = [SXLoginParam param];
     param.mobile = mobile;
     param.vcode = vcode;
+    param.devType = @1;
+    param.devToken = SXUserDefaultsTool.deviceToken;
+    param.devOs = DEVICE_MODEL;
     [SXLoginNetTool registUserInfoDataWithParams:param.mj_keyValues Success:^{
         [MBProgressHUD showMessageToWindow:@"请继续完成密码设置!"];
         
