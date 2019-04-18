@@ -87,7 +87,7 @@
     [self.messageL addSubview:scrollTextView];
     self.scrollTextView = scrollTextView;
     [self.scrollTextView startScrollBottomToTopWithNoSpace];
-    self.scrollTextView.textDataArr = @[@"测试数据001",@"测试数据002",@"测试数据sdfghgfdsadfgf003",@"sdfghgfdsadf测试数据gf005",@"sdfghgf测试数据dsadfgf006"];
+    self.scrollTextView.textDataArr = @[@"测试数据001"];
     
     self.bottomBgView.backgroundColor = SXColorWhite;
     

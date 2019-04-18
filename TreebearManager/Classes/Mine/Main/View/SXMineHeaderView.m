@@ -40,10 +40,12 @@
     self.nameL.font = SXFontBold22;
     self.mobileL.textColor = SXColorWhite;
     
+    self.iconBtn.userInteractionEnabled = NO;
+    
     //1.1添加点击手势
     self.mobileL.userInteractionEnabled = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickMobile)];
-    [self.mobileL addGestureRecognizer:tap];
+    [self addGestureRecognizer:tap];
     
     [self.iconBtn roundViewWithRadius:30.0f borderColor:SXColorWhite borderWidth:1.0f];
     
@@ -78,11 +80,11 @@
 //    if (self.clickIconBtnBlock) {
 //        self.clickIconBtnBlock();
 //    }
-    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:9 delegate:self];
-    [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
-        DLog(@"photos->assets:",photos,assets);
-    }];
-    [[SXRootTool topViewController] presentViewController:imagePickerVc animated:YES completion:nil];
+//    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:9 delegate:self];
+//    [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
+//        DLog(@"photos->assets:",photos,assets);
+//    }];
+//    [[SXRootTool topViewController] presentViewController:imagePickerVc animated:YES completion:nil];
 }
 
 @end

@@ -67,8 +67,8 @@
     self.thirdBgView.layer.shadowOpacity = 0.5;
     self.thirdBgView.layer.shadowRadius = 3;
     
-    [self.updateNameBtn setTitleColor:SXColorSystemBlue forState:UIControlStateNormal];
-    [self.updateNameBtn roundViewWithRadius:15.0f borderColor:SXColorSystemBlue borderWidth:1.0f];
+    [self.updateNameBtn setTitleColor:SXColorBlue2 forState:UIControlStateNormal];
+    [self.updateNameBtn roundViewWithRadius:15.0f borderColor:SXColorBlue2 borderWidth:1.0f];
     
     //添加事件
     UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickForbiddenAppControl:)];

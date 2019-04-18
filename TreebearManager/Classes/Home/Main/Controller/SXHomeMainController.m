@@ -15,7 +15,6 @@
 #import "SXFamilyMemberController.h"
 #import "SXMobileManagerController.h"
 #import "SXHomeReportController.h"
-#import "SXMobileDetailController.h"
 #import "SXHomeReportDetailController.h"
 #import "SXXiaoKiEquipmentOptionController.h"
 #import "SXDynamicController.h"
@@ -35,6 +34,7 @@
 #import "SXWifiSettingNetTool.h"
 #import "SXHomeReportNetTool.h"
 #import "SXFamilyMemberNetTool.h"
+#import "SXMessageNetTool.h"
 #import "NSString+Hash.h"
 #import <UMSocialCore/UMSocialCore.h>
 
@@ -368,6 +368,23 @@
         if ([NSString isNotEmpty:message]) {
             [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
         }
+    }];
+}
+
+#pragma mark -查询用户消息列表-
+- (void)userMessageListData{
+    WS(weakSelf);
+    SXHomeMessagePageParam *param = [SXHomeMessagePageParam param];
+    param.pageNo = @1;
+    param.pageSize = @10;
+    [SXMessageNetTool userMessageListParams:param.mj_keyValues Success:^(SXHomeMessageResult *result) {
+        //数据初始化
+        NSArray *titles = [NSMutableArray arrayWithArray:result.page];
+        //刷新UI
+        [weakSelf.headerView setUpMsgArray:titles];
+    } failure:^(NSError *error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        DLog(@"message:%@",message);
     }];
 }
     

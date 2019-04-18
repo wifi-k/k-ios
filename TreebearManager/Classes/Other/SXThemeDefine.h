@@ -105,7 +105,6 @@
 #define SXColorOrange UIColorFromRGB(0xff9900) // 辅色(橙色)
 #define SXColorPlaceholder UIColorFromRGB(0xc9c9cf) // 用于表单 输入框等提示文字
 #define SXColorRed   UIColorFromRGB(0xe64340) // 红色
-#define SXColorSystemBlue   UIColorFromRGB(0x038CFF) // 系统蓝
 
 #pragma mark -字体大小-
 //文本字体大小
