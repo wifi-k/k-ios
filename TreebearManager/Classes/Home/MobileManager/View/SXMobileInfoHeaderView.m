@@ -67,6 +67,11 @@
     self.vendorL.textColor = SXColor7383A2;
     self.macL.textColor = SXColor7383A2;
     self.ipL.textColor = SXColor7383A2;
+    
+    //默认设置
+    self.vendorL.text = @"";
+    self.macL.text = @"";
+    self.ipL.text = @"";
 }
 
 #pragma mark -setter-
@@ -75,7 +80,6 @@
     
     self.vendorL.text = model.macVendor;
     self.macL.text = model.mac;
-    self.ipL.text = model.mac;
 }
 
 @end

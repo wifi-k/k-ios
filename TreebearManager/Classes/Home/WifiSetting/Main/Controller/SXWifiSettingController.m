@@ -98,11 +98,12 @@
             //param.passwd = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.passwd;
             [weakSelf setNetDynamicData:param];
         } else {
-            SXXiaoKiParam *param = [SXXiaoKiParam param];
-            param.nodeId = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel.nodeId;
-            param.freq = @0;
-            param.ssid = text;
-            [weakSelf userNodeSsidSetDataWitiParam:param];
+            [MBProgressHUD showWarningWithMessage:@"请先连接您的小K设备!" toView:SXKeyWindow];
+//            SXXiaoKiParam *param = [SXXiaoKiParam param];
+//            param.nodeId = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel.nodeId;
+//            param.freq = @0;
+//            param.ssid = text;
+//            [weakSelf userNodeSsidSetDataWitiParam:param];
         }
     };
     [nameAlertView alert];
@@ -124,11 +125,12 @@
             param.passwd = text;
             [weakSelf setNetDynamicData:param];
         } else {
-            SXXiaoKiParam *param = [SXXiaoKiParam param];
-            param.nodeId = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel.nodeId;
-            param.freq = @0;
-            param.passwd = text.md5String;
-            [weakSelf userNodeSsidSetDataWitiParam:param];
+            [MBProgressHUD showWarningWithMessage:@"请先连接您的小K设备!" toView:SXKeyWindow];
+//            SXXiaoKiParam *param = [SXXiaoKiParam param];
+//            param.nodeId = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel.nodeId;
+//            param.freq = @0;
+//            param.passwd = text.md5String;
+//            [weakSelf userNodeSsidSetDataWitiParam:param];
         }
     };
     [pwdAlertV alert];
@@ -323,15 +325,22 @@
     WS(weakSelf);
     [MBProgressHUD showWhiteLoadingWithMessage:@"重启中..." toView:self.view];
     [SXWifiSettingNetTool nodeRestartWithDataSuccess:^{
-        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
         DLog(@"重启节点OK!");
-        [MBProgressHUD showMessage:@"重启节点OK!" toView:weakSelf.view];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(120.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [MBProgressHUD showMessage:@"重启节点OK!" toView:weakSelf.view];
+                [weakSelf alertOnNetAlertView];
+            });
+        });
     } failure:^(NSError * _Nonnull error) {
         [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
-        NSString *message = [error.userInfo objectForKey:@"msg"];
-        if ([NSString isNotEmpty:message]) {
-            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
-        }
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSString *message = [error.userInfo objectForKey:@"msg"];
+            if ([NSString isNotEmpty:message]) {
+                [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+            }
+        });
     }];
 }
 
@@ -340,17 +349,22 @@
     WS(weakSelf);
     [MBProgressHUD showWhiteLoadingWithMessage:@"恢复中..." toView:self.view];
     [SXWifiSettingNetTool nodeResetWithDataSuccess:^{
-        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
         DLog(@"恢复出厂设置OK!");
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [MBProgressHUD showMessage:@"恢复出厂设置OK!" toView:weakSelf.view];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(120.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [MBProgressHUD showMessage:@"恢复出厂设置OK!" toView:weakSelf.view];
+                [weakSelf alertOnNetAlertView];
+            });
         });
     } failure:^(NSError * _Nonnull error) {
         [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
-        NSString *message = [error.userInfo objectForKey:@"msg"];
-        if ([NSString isNotEmpty:message]) {
-            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
-        }
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSString *message = [error.userInfo objectForKey:@"msg"];
+            if ([NSString isNotEmpty:message]) {
+                [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+            }
+        });
     }];
 }
 
