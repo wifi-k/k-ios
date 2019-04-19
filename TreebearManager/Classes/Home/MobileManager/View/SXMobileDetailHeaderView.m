@@ -149,7 +149,7 @@
         default:
             break;
     }
-    self.blackSwitchBtn.on = !model.isBlock.boolValue;
+    self.blackSwitchBtn.on = model.isBlock.boolValue;
     self.careSwitchBtn.on = model.isRecord.boolValue;
     self.remindSwitchBtn.on = model.isOnline.boolValue;
 }

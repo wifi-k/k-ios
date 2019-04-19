@@ -112,7 +112,7 @@
 }
 
 - (void)changeConfirmBtnEnabled{
-    self.confirmBtn.enabled = self.nameTextField.text.trim.length || self.pwdTextField.text.trim.length;
+    self.confirmBtn.enabled = self.nameTextField.text.trim.length;
 }
 
 @end
