@@ -26,18 +26,6 @@
                                 <constraint firstAttribute="width" constant="54" id="dJl-Jx-SeC"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="禁用APP方案" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8K-kZ-pus">
-                            <rect key="frame" x="74" y="25" width="118.5" height="24"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="先选择控制的时间，然后选择控制的设备，则该设备只有在允许上网的时间才能访问网络" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAz-zu-mz4">
-                            <rect key="frame" x="10" y="74" width="295" height="56"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAJ-J0-FD0">
                             <rect key="frame" x="230" y="22" width="75" height="30"/>
                             <constraints>
@@ -52,6 +40,18 @@
                                 <action selector="updateNameBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Mn2-Oj-w8U"/>
                             </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="禁用APP方案" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8K-kZ-pus">
+                            <rect key="frame" x="74" y="25" width="146" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="先选择控制的时间，然后选择控制的设备，则该设备只有在允许上网的时间才能访问网络" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAz-zu-mz4">
+                            <rect key="frame" x="10" y="74" width="295" height="56"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -63,6 +63,7 @@
                         <constraint firstItem="WAz-zu-mz4" firstAttribute="top" secondItem="wTr-tG-bft" secondAttribute="bottom" constant="10" id="RfA-cX-o3u"/>
                         <constraint firstItem="WAz-zu-mz4" firstAttribute="leading" secondItem="tlx-7t-cda" secondAttribute="leading" constant="10" id="VAd-fK-HQb"/>
                         <constraint firstAttribute="bottom" secondItem="WAz-zu-mz4" secondAttribute="bottom" constant="10" id="Wch-d3-zre"/>
+                        <constraint firstItem="jAJ-J0-FD0" firstAttribute="leading" secondItem="r8K-kZ-pus" secondAttribute="trailing" constant="10" id="aOs-0L-tSl"/>
                         <constraint firstItem="jAJ-J0-FD0" firstAttribute="centerY" secondItem="wTr-tG-bft" secondAttribute="centerY" id="eFb-qx-flc"/>
                         <constraint firstItem="r8K-kZ-pus" firstAttribute="leading" secondItem="wTr-tG-bft" secondAttribute="trailing" constant="10" id="psT-m6-5Mv"/>
                         <constraint firstItem="wTr-tG-bft" firstAttribute="top" secondItem="tlx-7t-cda" secondAttribute="top" constant="10" id="vlD-Uj-46i"/>
@@ -79,7 +80,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="允许上网时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J65-j3-KRI">
-                            <rect key="frame" x="74" y="28" width="122.5" height="24"/>
+                            <rect key="frame" x="74" y="28" width="164" height="24"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -110,6 +111,7 @@
                         <constraint firstItem="pNq-1N-zqI" firstAttribute="centerY" secondItem="wRD-gH-FCj" secondAttribute="centerY" id="piH-kt-3Mq"/>
                         <constraint firstItem="dCV-0y-fvH" firstAttribute="centerY" secondItem="wRD-gH-FCj" secondAttribute="centerY" id="qex-3q-uMI"/>
                         <constraint firstItem="dCV-0y-fvH" firstAttribute="leading" secondItem="1pX-fi-JQy" secondAttribute="trailing" constant="5" id="u73-df-xqv"/>
+                        <constraint firstItem="dCV-0y-fvH" firstAttribute="leading" secondItem="J65-j3-KRI" secondAttribute="trailing" constant="60" id="uO8-kO-07x"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMb-gx-7k4">
@@ -123,7 +125,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="控制的设备" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGd-H8-nbd">
-                            <rect key="frame" x="74" y="28" width="102" height="24"/>
+                            <rect key="frame" x="74" y="28" width="164" height="24"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -145,6 +147,7 @@
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <gestureRecognizers/>
                     <constraints>
+                        <constraint firstItem="TG8-WE-yyw" firstAttribute="leading" secondItem="WGd-H8-nbd" secondAttribute="trailing" constant="60" id="5HM-3G-0BC"/>
                         <constraint firstItem="6jK-K2-5gJ" firstAttribute="leading" secondItem="cMb-gx-7k4" secondAttribute="leading" constant="10" id="Aie-v8-NG2"/>
                         <constraint firstItem="NDR-PT-ASf" firstAttribute="centerY" secondItem="cMb-gx-7k4" secondAttribute="centerY" id="Ana-2v-bmh"/>
                         <constraint firstAttribute="trailing" secondItem="TG8-WE-yyw" secondAttribute="trailing" constant="10" id="NlJ-NQ-f1B"/>

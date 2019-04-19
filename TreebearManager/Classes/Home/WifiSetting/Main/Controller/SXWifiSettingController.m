@@ -323,23 +323,24 @@
 #pragma mark -重启节点设置-
 - (void)nodeRestartWithData{
     WS(weakSelf);
-    [MBProgressHUD showWhiteLoadingWithMessage:@"重启中..." toView:self.view];
+    [MBProgressHUD showWhiteLoadingWithMessage:@"重启中..." toView:SXKeyWindow];
     [SXWifiSettingNetTool nodeRestartWithDataSuccess:^{
         DLog(@"重启节点OK!");
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(120.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+            [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [MBProgressHUD showMessage:@"重启节点OK!" toView:weakSelf.view];
                 [weakSelf alertOnNetAlertView];
             });
         });
     } failure:^(NSError * _Nonnull error) {
-        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            NSString *message = [error.userInfo objectForKey:@"msg"];
-            if ([NSString isNotEmpty:message]) {
-                [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
-            }
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(120.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+            [weakSelf alertOnNetAlertView];
+//            NSString *message = [error.userInfo objectForKey:@"msg"];
+//            if ([NSString isNotEmpty:message]) {
+//                [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+//            }
         });
     }];
 }
@@ -347,23 +348,25 @@
 #pragma mark -恢复出厂设置-
 - (void)nodeResetWithData{
     WS(weakSelf);
-    [MBProgressHUD showWhiteLoadingWithMessage:@"恢复中..." toView:self.view];
+    [MBProgressHUD showWhiteLoadingWithMessage:@"恢复中..." toView:SXKeyWindow];
     [SXWifiSettingNetTool nodeResetWithDataSuccess:^{
         DLog(@"恢复出厂设置OK!");
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(120.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+            
+            [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [MBProgressHUD showMessage:@"恢复出厂设置OK!" toView:weakSelf.view];
                 [weakSelf alertOnNetAlertView];
             });
         });
     } failure:^(NSError * _Nonnull error) {
-        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            NSString *message = [error.userInfo objectForKey:@"msg"];
-            if ([NSString isNotEmpty:message]) {
-                [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
-            }
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(120.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+            [weakSelf alertOnNetAlertView];
+//            NSString *message = [error.userInfo objectForKey:@"msg"];
+//            if ([NSString isNotEmpty:message]) {
+//                [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+//            }
         });
     }];
 }

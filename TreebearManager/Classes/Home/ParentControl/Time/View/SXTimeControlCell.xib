@@ -29,12 +29,6 @@
                                     <constraint firstAttribute="height" constant="54" id="iYl-tD-Yji"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="禁用方案" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlK-Og-4a0">
-                                <rect key="frame" x="64" y="27" width="73.5" height="21.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBf-bF-sk4">
                                 <rect key="frame" x="293" y="23" width="30" height="30"/>
                                 <constraints>
@@ -63,10 +57,17 @@
                                     <action selector="clickEditBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="iIc-QR-ocQ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="禁用方案" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlK-Og-4a0">
+                                <rect key="frame" x="64" y="27" width="184" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="AlK-Og-4a0" firstAttribute="leading" secondItem="Dbd-og-RI4" secondAttribute="trailing" constant="5" id="5gT-Ol-Kdn"/>
+                            <constraint firstItem="fXE-n5-oIR" firstAttribute="leading" secondItem="AlK-Og-4a0" secondAttribute="trailing" constant="10" id="HCT-Pg-a1b"/>
                             <constraint firstItem="vBf-bF-sk4" firstAttribute="leading" secondItem="fXE-n5-oIR" secondAttribute="trailing" constant="5" id="If6-8d-YFb"/>
                             <constraint firstItem="fXE-n5-oIR" firstAttribute="centerY" secondItem="vBf-bF-sk4" secondAttribute="centerY" id="JKf-zB-swW"/>
                             <constraint firstItem="vBf-bF-sk4" firstAttribute="centerY" secondItem="UWo-4i-xFa" secondAttribute="centerY" id="Oqf-C6-Vwh"/>
