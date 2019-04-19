@@ -49,7 +49,10 @@
     [self setUpUI];
     
     //2.个人用户信息
-    [self userInfoGetextData];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self userInfoGetextData];
+    });
 }
 
 - (void)setUpUI{

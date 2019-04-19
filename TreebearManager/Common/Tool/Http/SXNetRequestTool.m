@@ -9,6 +9,7 @@
 
 #import "SXNetRequestTool.h"
 #import "SXRootTool.h"
+#import "SXNetReachablityTool.h"
 
 #ifdef DEBUG
 #define API_HOST @"http://test.user.famwifi.com/api" //主测试环境
@@ -30,6 +31,8 @@ static NSString * const kResultCode = @"code";
  parameters:(id)parameters
     success:(void (^)(id response))success
     failure:(void (^)(NSError *error))failure{
+    
+    [self netWorkAbilityStatus];
     
     NSString *requestPath = [NSString stringWithFormat:@"%@/%@",API_HOST,path];
     
@@ -70,6 +73,8 @@ static NSString * const kResultCode = @"code";
   parameters:(id)parameters
      success:(void (^)(id response))success
      failure:(void (^)(NSError *error))failure{
+    
+    [self netWorkAbilityStatus];
     
     NSString *requestPath = [NSString stringWithFormat:@"%@/%@",API_HOST,path];
     
@@ -112,6 +117,8 @@ static NSString * const kResultCode = @"code";
        success:(void (^)(id response))success
        failure:(void (^)(NSError *error))failure{
     
+    [self netWorkAbilityStatus];
+    
     NSString *requestPath = [NSString stringWithFormat:@"%@/%@",API_HOST,path];
     
     DLog(@"requestPath->:%@",requestPath);
@@ -152,6 +159,8 @@ static NSString * const kResultCode = @"code";
         photos:(NSArray<SXUploadParam *> *)photos
        success:(void (^)(id response))success
        failure:(void (^)(NSError *error))failure{
+    
+    [self netWorkAbilityStatus];
     
     NSString *requestPath = [NSString stringWithFormat:@"%@/%@",API_HOST,path];
     
@@ -210,7 +219,15 @@ static NSString * const kResultCode = @"code";
 //            [MBProgressHUD showMessage:@"您需要重新登录!" toView:SXKeyWindow];
 //        });
         //切换根控
-        [SXRootTool chooseRootWithLoginVC:SXDelegateWindow];
+        [SXRootTool chooseRootWithMainLoginVC:SXDelegateWindow];
+    }
+}
+
++ (void)netWorkAbilityStatus{
+    if (![SXNetReachablityTool netWorkAbility]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD showMessage:@"请检查您的手机网络状况!" toView:SXKeyWindow];
+        });
     }
 }
 
