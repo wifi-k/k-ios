@@ -66,6 +66,11 @@
     UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickEndTimeControl:)];
     [self.secondBgView addGestureRecognizer:tap2];
     
+    self.beginTimeL.textColor = SXColor2B3852;
+    self.endTimeL.textColor = SXColor2B3852;
+    self.beginTimeL.font = SXFontBold24;
+    self.endTimeL.font = SXFontBold24;
+    
     //默认值
     self.startTimeStr = @"00:00";
     self.endTimeStr = @"00:00";

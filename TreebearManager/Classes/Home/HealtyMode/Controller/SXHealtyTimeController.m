@@ -30,9 +30,9 @@
     
     BOOL isAdd = (self.model == nil? YES:NO);
     if (isAdd) {
-        self.navigationItem.title = @"新增";
+        self.navigationItem.title = @"新增时间";
     } else{
-        self.navigationItem.title = @"编辑";
+        self.navigationItem.title = @"编辑时间";
     }
     
     WS(weakSelf);

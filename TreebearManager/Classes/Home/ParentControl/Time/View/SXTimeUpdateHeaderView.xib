@@ -70,7 +70,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wRD-gH-FCj">
-                    <rect key="frame" x="15" y="180" width="315" height="80"/>
+                    <rect key="frame" x="15" y="200" width="315" height="80"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_time_edit2" translatesAutoresizingMaskIntoConstraints="NO" id="pNq-1N-zqI">
                             <rect key="frame" x="10" y="13" width="54" height="54"/>
@@ -115,7 +115,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMb-gx-7k4">
-                    <rect key="frame" x="15" y="280" width="315" height="80"/>
+                    <rect key="frame" x="15" y="320" width="315" height="80"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_time_edit3" translatesAutoresizingMaskIntoConstraints="NO" id="6jK-K2-5gJ">
                             <rect key="frame" x="10" y="13" width="54" height="54"/>
@@ -166,11 +166,11 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wRD-gH-FCj" secondAttribute="trailing" constant="15" id="Pml-2O-bRB"/>
                 <constraint firstItem="wRD-gH-FCj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="Qaz-hi-AZW"/>
                 <constraint firstItem="cMb-gx-7k4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="edt-C7-S5H"/>
-                <constraint firstItem="cMb-gx-7k4" firstAttribute="top" secondItem="wRD-gH-FCj" secondAttribute="bottom" constant="20" id="obb-5J-zK6"/>
+                <constraint firstItem="cMb-gx-7k4" firstAttribute="top" secondItem="wRD-gH-FCj" secondAttribute="bottom" constant="40" id="obb-5J-zK6"/>
                 <constraint firstItem="tlx-7t-cda" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="q94-bM-Izg"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cMb-gx-7k4" secondAttribute="trailing" constant="15" id="sQe-CQ-69W"/>
                 <constraint firstItem="tlx-7t-cda" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="sgZ-aT-2WJ"/>
-                <constraint firstItem="wRD-gH-FCj" firstAttribute="top" secondItem="tlx-7t-cda" secondAttribute="bottom" constant="20" id="vad-58-JWa"/>
+                <constraint firstItem="wRD-gH-FCj" firstAttribute="top" secondItem="tlx-7t-cda" secondAttribute="bottom" constant="40" id="vad-58-JWa"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>

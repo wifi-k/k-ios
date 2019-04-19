@@ -117,7 +117,7 @@
     
     UILabel *l1 = [[UILabel alloc] init];
     l1.textAlignment = NSTextAlignmentCenter;
-    l1.text = @"1000";
+    l1.text = @"0";
     l1.textColor = SXColorWhite;
     l1.font = SXFontBold18;
     [imageV1 addSubview:l1];
@@ -130,7 +130,7 @@
     
     UILabel *l11 = [[UILabel alloc] init];
     l11.textAlignment = NSTextAlignmentCenter;
-    l11.text = @"上网限速";
+    l11.text = @"当前在线(台)";
     l11.textColor = SXColorWhite;
     l11.font = SXFont16;
     [imageV1 addSubview:l11];
@@ -143,7 +143,7 @@
     
     UILabel *l2 = [[UILabel alloc] init];
     l2.textAlignment = NSTextAlignmentCenter;
-    l2.text = @"1000";
+    l2.text = @"0";
     l2.textColor = SXColorWhite;
     l2.font = SXFontBold18;
     [imageV2 addSubview:l2];
@@ -156,7 +156,7 @@
     
     UILabel *l22 = [[UILabel alloc] init];
     l22.textAlignment = NSTextAlignmentCenter;
-    l22.text = @"上网限速";
+    l22.text = @"上行网速(K)";
     l22.textColor = SXColorWhite;
     l22.font = SXFont16;
     [imageV2 addSubview:l22];
@@ -169,7 +169,7 @@
     
     UILabel *l3 = [[UILabel alloc] init];
     l3.textAlignment = NSTextAlignmentCenter;
-    l3.text = @"1000";
+    l3.text = @"0";
     l3.textColor = SXColorWhite;
     l3.font = SXFontBold18;
     [imageV3 addSubview:l3];
@@ -182,7 +182,7 @@
     
     UILabel *l33 = [[UILabel alloc] init];
     l33.textAlignment = NSTextAlignmentCenter;
-    l33.text = @"上网限速";
+    l33.text = @"下行网速(K)";
     l33.textColor = SXColorWhite;
     l33.font = SXFont16;
     [imageV3 addSubview:l33];
@@ -192,6 +192,13 @@
         make.right.mas_equalTo(imageV3).mas_offset(-5);
         make.centerY.mas_equalTo(imageV3).mas_offset(12);
     }];
+    
+    self.l1.font = SXFontBold31;
+    self.l11.font = SXFont13;
+    self.l2.font = SXFontBold31;
+    self.l22.font = SXFont13;
+    self.l3.font = SXFontBold31;
+    self.l33.font = SXFont13;
 }
 
 #pragma mark -setter-
@@ -199,11 +206,11 @@
     _title = title;
     
     self.l1.text = title;
-    self.l11.text = title;
-    self.l2.text = title;
-    self.l22.text = title;
-    self.l3.text = title;
-    self.l33.text = title;
+//    self.l11.text = title;
+//    self.l2.text = title;
+//    self.l22.text = title;
+//    self.l3.text = title;
+//    self.l33.text = title;
 }
 
 @end

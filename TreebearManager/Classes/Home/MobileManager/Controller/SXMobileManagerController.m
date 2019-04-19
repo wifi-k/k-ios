@@ -109,6 +109,8 @@
         if (weakSelf.dataArray.count >= result.total.integerValue) {
             [weakSelf showNoMoreDataFooterView];
         }
+        
+        weakSelf.headerView.title = result.total.description;
     } failure:^(NSError * _Nonnull error) {
         [weakSelf endHeaderRefresh];
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];

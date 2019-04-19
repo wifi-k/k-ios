@@ -40,7 +40,7 @@
 }
 
 - (void)jumpToImagePickerVC{
-    [MBProgressHUD showMessage:@"更新啊" toView:self.view];
+//    [MBProgressHUD showMessage:@"更新啊" toView:self.view];
 }
 
 @end

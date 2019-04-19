@@ -279,7 +279,7 @@
         return [NSString stringWithFormat:@"%@时",self.hourStr];
     } else if (component == 1) {
         self.minuteStr = [self.minuteArray objectAtIndex:row];
-        return [NSString stringWithFormat:@"%@时",self.minuteStr];
+        return [NSString stringWithFormat:@"%@分",self.minuteStr];
     } else {
         return nil;
     }

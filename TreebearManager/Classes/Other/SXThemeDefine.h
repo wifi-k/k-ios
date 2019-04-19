@@ -149,5 +149,6 @@
 #define SXFontBold23 SXFontBold(23)
 #define SXFontBold24 SXFontBold(24)
 #define SXFontBold25 SXFontBold(25)
+#define SXFontBold31 SXFontBold(31)
 
 #endif /* SXThemeDefine_h */
