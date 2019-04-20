@@ -58,6 +58,10 @@
     WS(weakSelf);
     SXXiaoKiAddBindController *addVC = [[SXXiaoKiAddBindController alloc] init];
     addVC.addBindSuccessBlock = ^{
+        if (weakSelf.dataArray.count == 0) {
+            [SXRootTool changeToMainHomeVC];
+        }
+        
         [weakSelf userNodeListData];
     };
     [self.navigationController pushViewController:addVC animated:YES];
