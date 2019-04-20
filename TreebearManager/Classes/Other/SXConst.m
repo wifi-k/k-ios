@@ -41,7 +41,7 @@ NSString *const user_node_wifi_set = @"user/node/wifi/set";
 NSString *const user_node_bind = @"user/node/bind";
 
 NSString *const user_node_unbind = @"user/node/unbind";
-//NSString *const user_node_list = @"user/node/list";
+NSString *const user_mobile_verify = @"user/mobile/verify";
 NSString *const user_node_info_set = @"user/node/info/set";
 NSString *const user_info_getext = @"user/info/getext";
 NSString *const user_node_family_join = @"user/node/family/join";

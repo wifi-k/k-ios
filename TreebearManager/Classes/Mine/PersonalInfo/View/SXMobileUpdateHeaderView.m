@@ -9,7 +9,6 @@
 #import "SXMobileUpdateHeaderView.h"
 #import "SXLoginCertifyCodeButton.h"
 #import "SXLoginNetTool.h"
-#import "SXLoginParam.h"
 
 @interface SXMobileUpdateHeaderView ()
 @property (weak, nonatomic) IBOutlet SXLoginCertifyCodeButton *codeBtn;
@@ -22,8 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIView *bottomLineView2;
 @property (weak, nonatomic) IBOutlet UIView *secondBgView;
 
-///参数
-@property (nonatomic, strong) SXLoginParam *param;
 @property (copy, nonatomic) NSString *vcode;//网络验证码
 @end
 
@@ -117,7 +114,7 @@
     
     //通知回调
     if (self.clickConfirmBtnBlock) {
-        self.clickConfirmBtnBlock(self.param.mobile);
+        self.clickConfirmBtnBlock(self.param);
     }
 }
 

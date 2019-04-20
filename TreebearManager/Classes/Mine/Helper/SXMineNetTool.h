@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SXLoginParam.h"
 #import "SXMineUserInfoParam.h"
 #import "SXXiaoKiParam.h"
 #import "SXMineUserInfoModel.h"
@@ -34,8 +35,8 @@
 ///设置节点ssid信息
 + (void)userNodeWifiSetParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
-///节点信息查询 
-//+ (void)userNodeListParams:(NSDictionary *)params Success:(void (^)(SXHomeXiaoKiResult *result))success failure:(void (^)(NSError *error))failure;
+///用户修改手机号
++ (void)userMobileVerifyParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;
 
 ///节点绑定
 + (void)userNodeBindParams:(NSString *)nodeId Success:(void (^)(void))success failure:(void (^)(NSError *error))failure;

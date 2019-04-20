@@ -9,6 +9,7 @@
 #import "SXMobileUpdateController.h"
 #import "SXMobileUpdateHeaderView.h"
 #import "SXNotificationCenterTool.h"
+#import "SXMineNetTool.h"
 
 @interface SXMobileUpdateController ()
 @property (nonatomic, weak) SXMobileUpdateHeaderView *headerView;//头部视图
@@ -31,8 +32,8 @@
     //2.头部视图
     WS(weakSelf);
     SXMobileUpdateHeaderView *headerView = [SXMobileUpdateHeaderView headerView];
-    headerView.clickConfirmBtnBlock = ^(NSString *mobile) {
-        [weakSelf updateMobileData:mobile];
+    headerView.clickConfirmBtnBlock = ^(SXLoginParam *param) {
+        [weakSelf updateMobileData:param];
     };
     [self.view addSubview:headerView];
     self.headerView = headerView;
@@ -45,15 +46,26 @@
 }
 
 #pragma mark -Event-
-- (void)updateMobileData:(NSString *)mobile{
-    //赋值
-    SXPersonInfoModel.sharedSXPersonInfoModel.result.user.mobile = mobile;
-    
-    [SXNotificationCenterTool postNotificationUpdateMobileSuccess];
-    
-    [MBProgressHUD showSuccessWithMessage:@"更换手机号成功!" toView:SXKeyWindow];
-    
-    [self.navigationController popViewControllerAnimated:YES];
+#pragma mark -修改手机号-
+- (void)updateMobileData:(SXLoginParam *)param{
+    WS(weakSelf);
+    [SXMineNetTool userMobileVerifyParams:param.mj_keyValues Success:^{
+        //赋值
+        SXPersonInfoModel.sharedSXPersonInfoModel.result.user.mobile = param.mobile;
+        
+        [SXNotificationCenterTool postNotificationUpdateMobileSuccess];
+        
+        [MBProgressHUD showSuccessWithMessage:@"更换手机号成功!" toView:SXKeyWindow];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        });
+    } failure:^(NSError *error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        if ([NSString isNotEmpty:message]) {
+            [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+        }
+    }];
 }
 
 @end

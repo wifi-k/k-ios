@@ -43,7 +43,7 @@ extern NSString *const user_node_wifi_set;
 extern NSString *const user_node_bind;
 
 extern NSString *const user_node_unbind;
-//extern NSString *const user_node_list;
+extern NSString *const user_mobile_verify;
 extern NSString *const user_node_info_set;
 extern NSString *const user_info_getext;
 extern NSString *const user_node_family_join;
