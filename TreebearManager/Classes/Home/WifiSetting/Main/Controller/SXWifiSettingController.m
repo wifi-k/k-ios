@@ -121,7 +121,6 @@
         if ([weakSelf isNearWifi]) {
             SXDynamicParam *param = [SXDynamicParam param];
             param.ssid0 = [XKGetWifiNetTool getWifiSSID];
-            //param.ssid = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.name;
             param.passwd = text;
             [weakSelf setNetDynamicData:param];
         } else {
@@ -261,7 +260,6 @@
         
         for (SXHomeXiaoKiSSIDModel *ssidModel in array) {
             if ([ssidModel.nodeId isEqualToString:nodeId]) {
-                SXXiaoKInfoModel.sharedSXXiaoKInfoModel.name = ssidModel.ssid;
                 [weakSelf.headerView setUpData];
                 break;
             }
@@ -287,8 +285,7 @@
     [MBProgressHUD showWhiteLoadingToView:SXKeyWindow];
     [SXMineNetTool userNodeWifiSetParams:param.mj_keyValues Success:^{
         [MBProgressHUD hideHUDForView:SXKeyWindow];
-        //赋值
-        SXXiaoKInfoModel.sharedSXXiaoKInfoModel.name = param.ssid;
+        //赋值;
         [weakSelf.headerView setUpData];
         //设置成功
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

@@ -74,9 +74,8 @@
 }
 
 - (void)setUpData{
-    //NSString *nameStr = [XKGetWifiNetTool getWifiSSID];
-    if ([NSString isNotEmpty:SXXiaoKInfoModel.sharedSXXiaoKInfoModel.name]) {
-        NSString *name = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.name;
+    if ([NSString isNotEmpty:SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId]) {
+        NSString *name = [XKGetWifiNetTool getWifiSSID];
         self.nameTipsL.text = [NSString stringWithFormat:@"当前WiFi名称:%@",name];
     }
 }
