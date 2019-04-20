@@ -27,13 +27,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设备" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkh-WJ-v1P">
-                        <rect key="frame" x="79" y="19" width="35" height="20"/>
+                        <rect key="frame" x="79" y="19" width="192" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="状态-时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cms-0x-F6q">
-                        <rect key="frame" x="79" y="56" width="64" height="17"/>
+                        <rect key="frame" x="79" y="56" width="192" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -53,6 +53,7 @@
                     </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="kW7-Re-4WG" firstAttribute="leading" secondItem="cms-0x-F6q" secondAttribute="trailing" constant="10" id="7Iq-F6-kbe"/>
                     <constraint firstItem="HQQ-qf-yWW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="EQr-cC-2H2"/>
                     <constraint firstItem="r6W-US-xOr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="MPn-oi-AEK"/>
                     <constraint firstItem="cms-0x-F6q" firstAttribute="bottom" secondItem="r6W-US-xOr" secondAttribute="bottom" id="NtG-Kf-MRt"/>
@@ -61,6 +62,7 @@
                     <constraint firstAttribute="trailing" secondItem="HQQ-qf-yWW" secondAttribute="trailing" id="dLd-J8-GiL"/>
                     <constraint firstItem="r6W-US-xOr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ebN-Cq-OTJ"/>
                     <constraint firstItem="kW7-Re-4WG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="h4P-Kk-7EA"/>
+                    <constraint firstItem="kW7-Re-4WG" firstAttribute="leading" secondItem="qkh-WJ-v1P" secondAttribute="trailing" constant="10" id="hwB-pD-5QZ"/>
                     <constraint firstAttribute="bottom" secondItem="HQQ-qf-yWW" secondAttribute="bottom" id="juj-hb-6Ri"/>
                     <constraint firstItem="qkh-WJ-v1P" firstAttribute="leading" secondItem="r6W-US-xOr" secondAttribute="trailing" constant="10" id="sgE-Ga-lSk"/>
                     <constraint firstAttribute="trailing" secondItem="kW7-Re-4WG" secondAttribute="trailing" constant="15" id="zYz-yF-Dr3"/>

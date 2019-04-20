@@ -164,6 +164,11 @@
 
 #pragma mark -页面跳转-
 - (void)jumpToTimeVC:(SXHealtyControlTimeModel *)model{
+    if (self.timers.count >= 5) {
+        [MBProgressHUD showWarningWithMessage:@"您添加的时间段已达上限!" toView:self.view];
+        return;
+    }
+    
     WS(weakSelf);
     SXHealtyTimeController *timeVC = [[SXHealtyTimeController alloc] init];
     BOOL isAdd = (model == nil? YES:NO);
@@ -191,6 +196,11 @@
     cell.model = timeModel;
     cell.clickEditBtnBlock = ^(SXHealtyControlTimeModel * _Nonnull model) {
         [weakSelf jumpToTimeVC:model];
+    };
+    cell.clickDeleteBtnBlock = ^(SXHealtyControlTimeModel * _Nonnull model) {
+        DLog(@"删除");
+        [weakSelf.timers removeObjectAtIndex:indexPath.row];
+        [weakSelf.tableView reloadData];
     };
     return cell;
 }

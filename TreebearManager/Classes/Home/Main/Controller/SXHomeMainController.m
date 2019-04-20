@@ -390,7 +390,8 @@
     param.nodeId = model.nodeId;
     [SXFamilyMemberNetTool userNodeSelectDataWithParams:param.mj_keyValues Success:^{
         NSString *equipName = [NSString stringWithFormat:@"已为您切换设备:%@",model.name];
-        [MBProgressHUD showSuccessWithMessage:equipName toView:SXKeyWindow];
+        //[MBProgressHUD showSuccessWithMessage:equipName toView:SXKeyWindow];
+        DLog(@"equipName:%@",equipName);
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         if ([NSString isNotEmpty:message]) {

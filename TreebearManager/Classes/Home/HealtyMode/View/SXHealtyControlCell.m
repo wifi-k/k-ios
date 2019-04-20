@@ -38,6 +38,8 @@ static NSString *SXHealtyControlCellID = @"SXHealtyControlCellID";
 #pragma mark -初始化UI-
 - (void)setUpUI{
     
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     //设置背景色
     self.backgroundColor = SXColorWhite;
     
@@ -60,5 +62,10 @@ static NSString *SXHealtyControlCellID = @"SXHealtyControlCellID";
     }
 }
 
+- (IBAction)clickDeleteBtn:(UIButton *)sender {
+    if (self.clickDeleteBtnBlock) {
+        self.clickDeleteBtnBlock(self.model);
+    }
+}
 
 @end

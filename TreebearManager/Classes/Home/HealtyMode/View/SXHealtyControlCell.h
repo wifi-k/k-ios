@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///点击编辑按钮回调
 @property (nonatomic, copy) void (^clickEditBtnBlock)(SXHealtyControlTimeModel *model);
+///点击删除按钮回调
+@property (nonatomic, copy) void (^clickDeleteBtnBlock)(SXHealtyControlTimeModel *model);
 
 @end
 
