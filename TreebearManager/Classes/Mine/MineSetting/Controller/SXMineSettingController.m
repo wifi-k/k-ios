@@ -58,7 +58,7 @@
 
 - (void)alertLogoutTips{
     WS(weakSelf);
-    SXTitleAlertView *alertVC = [SXTitleAlertView alertWithTitle:@"退出登录" content:@"确认退出小K云管家吗" confirmStr:@"确定" cancelStr:@"取消"];
+    SXTitleAlertView *alertVC = [SXTitleAlertView alertWithTitle:@"退出登录" content:@"确认退出小K云管家吗?" confirmStr:@"确定" cancelStr:@"取消"];
     alertVC.confirmButtonBlock = ^{
         [weakSelf logoutData];
     };

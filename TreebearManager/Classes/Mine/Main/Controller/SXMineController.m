@@ -179,7 +179,7 @@
 #pragma mark -视图弹窗-
 - (void)alertUpdateNameView{
     WS(weakSelf);
-    SXCodeInputAlertView *nameAlertView = [SXCodeInputAlertView alertWithTitle:@"提示" placeholder:@"请输家庭码" confirmStr:@"确定" cancelStr:@"取消"];
+    SXCodeInputAlertView *nameAlertView = [SXCodeInputAlertView alertWithTitle:@"输入家庭码加入家庭" placeholder:@"请输家庭码" confirmStr:@"确定" cancelStr:@"取消"];
     nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
         DLog(@"text:%@",text);
         [weakSelf userNodeFamilyJoin:text];
