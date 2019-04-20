@@ -10,6 +10,7 @@
 #import "SXMineAboutUsController.h"
 #import "SXMineVersionUpdateController.h"
 #import "SXMineSettingHeaderView.h"
+#import "SXTitleAlertView.h"
 #import "SXRootTool.h"
 #import "SXMineNetTool.h"
 
@@ -43,7 +44,7 @@
         [weakSelf.navigationController pushViewController:updateVC animated:YES];
     };
     headerView.clickLogoutBtnBlock = ^{
-        [weakSelf logoutData];
+        [weakSelf alertLogoutTips];
     };
     [self.view addSubview:headerView];
     self.headerView = headerView;
@@ -53,6 +54,15 @@
     [super viewDidLayoutSubviews];
     
     self.headerView.frame = self.view.bounds;
+}
+
+- (void)alertLogoutTips{
+    WS(weakSelf);
+    SXTitleAlertView *alertVC = [SXTitleAlertView alertWithTitle:@"退出登录" content:@"确认退出小K云管家吗" confirmStr:@"确定" cancelStr:@"取消"];
+    alertVC.confirmButtonBlock = ^{
+        [weakSelf logoutData];
+    };
+    [alertVC alert];
 }
 
 #pragma mark -退出登录-
