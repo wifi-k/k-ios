@@ -404,7 +404,7 @@
     WS(weakSelf);
     SXHomeMessagePageParam *param = [SXHomeMessagePageParam param];
     param.pageNo = @1;
-    param.pageSize = @10;
+    param.pageSize = @3;
     [SXMessageNetTool userMessageListParams:param.mj_keyValues Success:^(SXHomeMessageResult *result) {
         //数据初始化
         NSArray *titles = [NSMutableArray arrayWithArray:result.page];

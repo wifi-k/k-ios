@@ -187,7 +187,8 @@
     param.nodeId = self.model.nodeId;
     param.mac = self.model.mac;
     param.note = self.model.note;
-    param.isRecord = @(sender.isOn);
+    NSNumber *isRecord = (sender.isOn? @1:@0);
+    param.isRecord = isRecord;
     WS(weakSelf);
     [SXWifiSettingNetTool userDodeDeviceSetDataWithParams:param.mj_keyValues success:^{
         [MBProgressHUD showSuccessWithMessage:@"修改成功!" toView:SXKeyWindow];
@@ -208,7 +209,8 @@
     param.nodeId = self.model.nodeId;
     param.mac = self.model.mac;
     param.note = self.model.note;
-    param.isOnline = @(sender.isOn);
+    NSNumber *isOnline = (sender.isOn? @1:@0);
+    param.isOnline = isOnline;
     WS(weakSelf);
     [SXWifiSettingNetTool userDodeDeviceSetDataWithParams:param.mj_keyValues success:^{
         [MBProgressHUD showSuccessWithMessage:@"修改成功!" toView:SXKeyWindow];
@@ -229,7 +231,8 @@
     param.nodeId = self.model.nodeId;
     param.mac = self.model.mac;
     param.note = self.model.note;
-    param.isBlock = @(!sender.isOn);
+    NSNumber *isBlock = (sender.isOn? @1:@0);
+    param.isBlock = isBlock;
     WS(weakSelf);
     [SXWifiSettingNetTool userDodeDeviceSetDataWithParams:param.mj_keyValues success:^{
         [MBProgressHUD showSuccessWithMessage:@"修改成功!" toView:SXKeyWindow];
