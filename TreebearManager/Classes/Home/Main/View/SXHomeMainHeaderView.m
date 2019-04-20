@@ -100,6 +100,14 @@
     [self.statusBtn roundViewWithRadius:10.0f borderColor:SXColorWhite borderWidth:0.5f];
     [self.statusBtn setTitle:@"状态" forState:UIControlStateNormal];
     
+    //多行文字限制宽度
+    if (SCREEN_WIDTH > 400) {
+        self.nameL.preferredMaxLayoutWidth = 210;
+    } else if (SCREEN_WIDTH > 370){
+        self.nameL.preferredMaxLayoutWidth = 140;
+    } else {
+        self.nameL.preferredMaxLayoutWidth = 100;
+    }
     //开启交互
     self.nameL.userInteractionEnabled = YES;
     //添加手势

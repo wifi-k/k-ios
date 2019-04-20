@@ -101,6 +101,12 @@
 
 #pragma mark -点击事件-
 - (IBAction)clickConfirmBtn:(UIButton *)sender {
+    
+    if ([self.model.startTime compare:self.model.endTime options:NSNumericSearch] == NSOrderedDescending) {
+        [MBProgressHUD showWarningWithMessage:@"结束时间不能小于开始时间!" toView:SXKeyWindow];
+        return;
+    }
+    
     if (self.clickConfirmBtnBlock) {
         self.clickConfirmBtnBlock(self.model);
     }

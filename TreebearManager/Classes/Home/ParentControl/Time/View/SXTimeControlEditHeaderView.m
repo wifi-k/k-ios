@@ -190,6 +190,11 @@
 #pragma mark -点击事件-
 - (IBAction)clickConfirmBtn:(UIButton *)sender {
     
+    if ([self.beginTimeL.text compare:self.endTimeL.text options:NSNumericSearch] == NSOrderedDescending) {
+        [MBProgressHUD showWarningWithMessage:@"结束时间不能小于开始时间!" toView:SXKeyWindow];
+        return;
+    }
+
     BOOL hasSelected = NO;
     for (UIButton *subBtn in self.weekBgView.subviews) {
         if (subBtn.isSelected) {
