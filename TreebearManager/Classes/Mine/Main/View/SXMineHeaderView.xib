@@ -16,18 +16,6 @@
             <rect key="frame" x="0.0" y="0.0" width="391" height="120"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXU-Yf-Q6f">
-                    <rect key="frame" x="15" y="20" width="7.5" height="26.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEB-ad-uyL">
-                    <rect key="frame" x="15" y="61.5" width="5" height="17"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wE2-3v-ulJ">
                     <rect key="frame" x="316" y="20" width="60" height="60"/>
                     <constraints>
@@ -39,6 +27,18 @@
                         <action selector="clickIconBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="vx9-bM-14q"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXU-Yf-Q6f">
+                    <rect key="frame" x="15" y="20" width="291" height="26.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEB-ad-uyL">
+                    <rect key="frame" x="15" y="61.5" width="5" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="N9U-k2-5su">
                     <rect key="frame" x="25" y="64.5" width="5" height="11"/>
                     <constraints>
@@ -50,6 +50,7 @@
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="sEB-ad-uyL" firstAttribute="top" secondItem="VXU-Yf-Q6f" secondAttribute="bottom" constant="15" id="PWD-NF-qZ0"/>
+                <constraint firstItem="wE2-3v-ulJ" firstAttribute="leading" secondItem="VXU-Yf-Q6f" secondAttribute="trailing" constant="10" id="Phk-qq-G0q"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wE2-3v-ulJ" secondAttribute="trailing" constant="15" id="UbB-xv-6lL"/>
                 <constraint firstItem="VXU-Yf-Q6f" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="eLD-9J-WWf"/>
                 <constraint firstItem="wE2-3v-ulJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="ele-Fe-fLF"/>

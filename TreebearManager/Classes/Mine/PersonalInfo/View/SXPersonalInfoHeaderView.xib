@@ -78,7 +78,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KiKi" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69N-hz-NfC">
-                            <rect key="frame" x="300" y="20" width="28" height="20"/>
+                            <rect key="frame" x="70" y="20" width="258" height="20"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -97,6 +97,7 @@
                         <constraint firstAttribute="height" constant="60" id="33M-bG-Wyz"/>
                         <constraint firstItem="69N-hz-NfC" firstAttribute="centerY" secondItem="Dm2-n4-tlP" secondAttribute="centerY" id="Bvf-po-7Ei"/>
                         <constraint firstItem="fHP-Ev-TC5" firstAttribute="centerY" secondItem="Dm2-n4-tlP" secondAttribute="centerY" id="DNZ-wO-N8K"/>
+                        <constraint firstItem="69N-hz-NfC" firstAttribute="leading" secondItem="Dm2-n4-tlP" secondAttribute="leading" constant="70" id="PL0-RV-1NX"/>
                         <constraint firstItem="Vut-KF-dc6" firstAttribute="leading" secondItem="Dm2-n4-tlP" secondAttribute="leading" constant="15" id="QjP-Co-TJJ"/>
                         <constraint firstItem="fHP-Ev-TC5" firstAttribute="leading" secondItem="Dm2-n4-tlP" secondAttribute="leading" constant="15" id="T0B-iS-5ZH"/>
                         <constraint firstItem="2uV-75-rzN" firstAttribute="leading" secondItem="69N-hz-NfC" secondAttribute="trailing" constant="5" id="VEm-Pb-1qX"/>

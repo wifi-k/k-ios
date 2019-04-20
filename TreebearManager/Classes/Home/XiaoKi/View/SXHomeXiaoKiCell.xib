@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设备名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAl-J0-dN0">
-                        <rect key="frame" x="15" y="15" width="70" height="21"/>
+                        <rect key="frame" x="15" y="15" width="299" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -125,6 +125,7 @@
                     <constraint firstItem="tAl-J0-dN0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="aY5-mO-mn0"/>
                     <constraint firstItem="3VX-Oa-9Y5" firstAttribute="centerY" secondItem="8fq-mm-R3Q" secondAttribute="centerY" id="cq9-td-6sJ"/>
                     <constraint firstItem="1d4-hM-hTh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="e3G-nk-8Kt"/>
+                    <constraint firstAttribute="trailing" secondItem="tAl-J0-dN0" secondAttribute="trailing" constant="10" id="jsK-w6-QSV"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
