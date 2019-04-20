@@ -14,8 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
     
 + (instancetype)headerViewWithTableView:(UITableView *)tableView;
 
-- (void)setUpData:(NSArray *)devices;
-    
+- (void)totalOnLineCount:(NSInteger)count;
+
 @end
 
 NS_ASSUME_NONNULL_END

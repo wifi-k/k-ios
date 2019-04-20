@@ -202,15 +202,10 @@
 }
 
 #pragma mark -setter-
-- (void)setTitle:(NSString *)title{
-    _title = title;
+- (void)setTotal:(NSInteger)total{
+    _total = total;
     
-    self.l1.text = title;
-//    self.l11.text = title;
-//    self.l2.text = title;
-//    self.l22.text = title;
-//    self.l3.text = title;
-//    self.l33.text = title;
+    self.l1.text = [NSString stringWithFormat:@"%ld",total];
 }
 
 @end

@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *mac;
 ///备注名
 @property (nonatomic, copy) NSString *note;
+///0-离线 or 1-在线
+@property (nonatomic, copy) NSNumber *status;
 ///0-allow or 1-block
 @property (nonatomic, copy) NSNumber *isBlock;
 ///0-不开启 or 1-开启时间记录, 比如儿童关爱

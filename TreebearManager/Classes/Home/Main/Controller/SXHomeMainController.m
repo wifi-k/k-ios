@@ -48,6 +48,8 @@
 @property (nonatomic, strong) NSMutableArray *reportArray;
 ///是否第一次打开页面
 @property (nonatomic, assign) BOOL isFirstVisible;
+///在线数量
+@property (nonatomic, assign) NSInteger total;
 @end
 
 @implementation SXHomeMainController
@@ -343,7 +345,9 @@
     param.nodeId = model.nodeId;
     param.pageNo = @1;
     param.pageSize = @10;
+    param.status = @1;//查询在线状态的设备
     [SXWifiSettingNetTool userNodeDeviceListDataWithParams:param.mj_keyValues success:^(SXMobileManagerResult * _Nonnull result) {
+        weakSelf.total = result.total.integerValue;//在线数量
         weakSelf.mobileArray = [NSMutableArray arrayWithArray:result.page];
         [weakSelf.tableView reloadData];
     } failure:^(NSError * _Nonnull error) {
@@ -438,6 +442,7 @@
     UITableViewCell *tempCell = nil;
     if (indexPath.section == 0) {
         SXHomeMainFirstSectionTableCell *cell = [SXHomeMainFirstSectionTableCell cellWithTableView:tableView];
+        cell.total = self.total;
         cell.mobileArray = self.mobileArray;
         tempCell = cell;
     } else if(indexPath.section == 1){
@@ -473,7 +478,7 @@
     UIView *sectionHeaderV = nil;
     if (section == 0) {
         SXHomeMainSectionHeaderView *headerView = [SXHomeMainSectionHeaderView headerViewWithTableView:tableView];
-        [headerView setUpData:self.mobileArray];
+        [headerView totalOnLineCount:self.total];
         sectionHeaderV = headerView;
     } else {
         SXHomeMainSectionHeaderView2 *headerView = [SXHomeMainSectionHeaderView2 headerViewWithTableView:tableView];

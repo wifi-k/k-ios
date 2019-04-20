@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///手机数据
 @property (nonatomic, strong) NSMutableArray *mobileArray;
+///在线数量
+@property (nonatomic, assign) NSInteger total;
 
 @end
 

@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)headerView;
 
-@property (nonatomic, copy) NSString *title;
+@property (nonatomic, assign) NSInteger total;
 
 @end
 

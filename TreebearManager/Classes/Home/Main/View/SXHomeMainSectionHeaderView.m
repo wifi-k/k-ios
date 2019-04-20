@@ -49,7 +49,7 @@
     self.contentL = contentL;
     
     self.titleL.text = @"连网设备";
-    self.contentL.text = @"当前在线2台";
+    self.contentL.text = @"当前在线0台";
 }
 
 - (void)layoutSubviews{
@@ -66,14 +66,9 @@
     }];
 }
 
-- (void)setUpData:(NSArray *)devices{
-    NSInteger count = 0;
-    for (SXMobileManagerModel *model in devices) {
-        if (model.status.boolValue) {
-            ++ count;
-        }
-    }
-    self.contentL.text = [NSString stringWithFormat:@"当前在线%ld台",count];
+//赋值在线数量
+- (void)totalOnLineCount:(NSInteger)count{
+    self.contentL.text = [NSString stringWithFormat:@"当前在线%ld台/上行网速0K/下行网速0K",count];
 }
     
 @end

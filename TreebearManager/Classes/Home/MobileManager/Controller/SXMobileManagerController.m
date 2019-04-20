@@ -109,8 +109,8 @@
         if (weakSelf.dataArray.count >= result.total.integerValue) {
             [weakSelf showNoMoreDataFooterView];
         }
-        
-        weakSelf.headerView.title = result.total.description;
+        //赋值在线台数
+        weakSelf.headerView.total = weakSelf.total;
     } failure:^(NSError * _Nonnull error) {
         [weakSelf endHeaderRefresh];
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];

@@ -132,6 +132,7 @@
         SXHomeMainSectionFooterView *footerView = [SXHomeMainSectionFooterView footerView];
         footerView.clickMoreBtnBlock = ^{
             SXMobileManagerController *mobileManagerVC = [[SXMobileManagerController alloc] init];
+            mobileManagerVC.total = self.total;
             [SXRootTool pushToVC:mobileManagerVC];
         };
         return footerView;
