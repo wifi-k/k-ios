@@ -77,8 +77,8 @@ const CGFloat SXFamilyCodeFailureAlertViewHeightRatio = 0.206; //高度系统
     UILabel *titleL = [[UILabel alloc] init];
     titleL.numberOfLines = 2;
     titleL.textAlignment = NSTextAlignmentCenter;
-    titleL.font = SXFontBold18;
-    titleL.textColor = [UIColor blackColor];
+    titleL.font = [UIFont fontWithName:@"PingFangSC-Regular" size:20];
+    titleL.textColor = SXColor2B3852;
     [self.bgImageView addSubview:titleL];
     self.titleL = titleL;
     

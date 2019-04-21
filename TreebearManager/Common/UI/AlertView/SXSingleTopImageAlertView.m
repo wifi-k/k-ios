@@ -1,44 +1,42 @@
 //
-//  SXFamilyCodeSuccessAlertView.m
+//  SXSingleTopImageAlertView.m
 //  TreebearManager
 //
-//  Created by bear on 2019/2/15.
+//  Created by bear on 2019/4/21.
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXFamilyCodeSuccessAlertView.h"
+#import "SXSingleTopImageAlertView.h"
 
-const CGFloat SXFamilyCodeSuccessAlertViewWidthRatio = 0.655;  //宽度系数
-const CGFloat SXFamilyCodeSuccessAlertViewHeightRatio = 0.206; //高度系统
+const CGFloat SXSingleTopImageAlertViewWidthRatio = 0.655;  //宽度系数
+const CGFloat SXSingleTopImageAlertViewHeightRatio = 0.206; //高度系统
 
-@interface SXFamilyCodeSuccessAlertView ()
+@interface SXSingleTopImageAlertView ()
+
 @property (nonatomic, weak) UIView *bgView;
-@property (nonatomic, weak) UIImageView *bgImageView;
-@property (nonatomic, weak) UIImageView *topImageView;//头部ImagView
+@property (nonatomic, weak) UIImageView *contentBgView;
+@property (nonatomic, weak) UIImageView *topImageView;
 @property (nonatomic, weak) UILabel *titleL;//标题
 @property (nonatomic, weak) UILabel *contentL;//内容
 @property (nonatomic, weak) UIView *bottomView;//底部视图
 @property (nonatomic, weak) UIButton *confirmButton;//确认按钮
 
-@property (nonatomic, copy) NSString *topImageName;//头部ImageName
+@property (nonatomic, copy) NSString *imageName;//标题
 @property (nonatomic, copy) NSString *title;//标题
 @property (nonatomic, copy) NSString *content;//内容
 @property (nonatomic, copy) NSString *confirmStr;//确认按钮
+
 @end
 
-@implementation SXFamilyCodeSuccessAlertView
+@implementation SXSingleTopImageAlertView
 
-+ (instancetype)alertWithTopImageName:(NSString *)imageName title:(NSString *)title content:(NSString *)content confirmStr:(NSString *)confirmStr{
-    SXFamilyCodeSuccessAlertView *alert = [[self alloc] initWithFrame:UIApplication.sharedApplication.delegate.window.bounds];
-    alert.topImageName = imageName;
++ (instancetype)alertWithTopImageName:(NSString *)imageName Title:(NSString *)title content:(NSString *)content confirmStr:(NSString *)confirmStr{
+    SXSingleTopImageAlertView *alert = [[self alloc] initWithFrame:SXDelegateWindow.bounds];
+    alert.imageName = imageName;
     alert.title = title;
     alert.content = content;
     alert.confirmStr = confirmStr;
     return alert;
-}
-
-- (void)alert{
-    [UIApplication.sharedApplication.delegate.window addSubview:self];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame{
@@ -49,11 +47,20 @@ const CGFloat SXFamilyCodeSuccessAlertViewHeightRatio = 0.206; //高度系统
     return self;
 }
 
+- (void)alert{
+    [SXDelegateWindow addSubview:self];
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.bgView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+    }];
+}
+
+#pragma mark -初始化UI-
 - (void)setUpUI{
     
     //半透明遮盖视图（满屏）
     UIView *bgView = [[UIView alloc] initWithFrame:UIApplication.sharedApplication.delegate.window.bounds];
-    bgView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+    bgView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.0];
     bgView.alpha = 0;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bgViewTapped)];
     [bgView addGestureRecognizer:tap];
@@ -64,47 +71,46 @@ const CGFloat SXFamilyCodeSuccessAlertViewHeightRatio = 0.206; //高度系统
     UIImageView *bgImageView = [[UIImageView alloc] init];
     bgImageView.backgroundColor = [UIColor whiteColor];
     [bgImageView setUserInteractionEnabled:YES];
-    [bgImageView roundViewWithRadius:6];
+    [bgImageView roundViewWithRadius:10];
     [self addSubview:bgImageView];
-    self.bgImageView = bgImageView;
+    self.contentBgView = bgImageView;
     
-    //头部视图ImageView
+    //头部icon
     UIImageView *topImageView = [[UIImageView alloc] init];
-    [self.bgImageView addSubview:topImageView];
+    [self.contentBgView addSubview:topImageView];
     self.topImageView = topImageView;
     
     //标题
     UILabel *titleL = [[UILabel alloc] init];
-    titleL.numberOfLines = 2;
     titleL.textAlignment = NSTextAlignmentCenter;
     titleL.font = [UIFont fontWithName:@"PingFangSC-Regular" size:20];
     titleL.textColor = SXColor2B3852;
-    [self.bgImageView addSubview:titleL];
+    [self.contentBgView addSubview:titleL];
     self.titleL = titleL;
     
     //内容
     UILabel *contentL = [[UILabel alloc] init];
     contentL.numberOfLines = 2;
     contentL.textAlignment = NSTextAlignmentCenter;
-    contentL.font = SXFont16;
-    contentL.textColor = [UIColor grayColor];
-    [self.bgImageView addSubview:contentL];
+    contentL.textColor = SXColor7383A2;
+    contentL.font = SXFont14;
+    [self.contentBgView addSubview:contentL];
     self.contentL = contentL;
     
     //底部视图
     UIView *bottomView = [[UIView alloc] init];
     bottomView.backgroundColor = [UIColor lightGrayColor];
-    [self.bgImageView addSubview:bottomView];
+    [self.contentBgView addSubview:bottomView];
     self.bottomView = bottomView;
     
     //确定按钮
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [confirmButton setTitle:@"确定" forState:UIControlStateNormal];
     [confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [confirmButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
-    [confirmButton setBackgroundColor:SXColorBlue];
-    [confirmButton setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
-    [confirmButton.titleLabel setFont:SXFontBold16];
+    //[confirmButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+    [confirmButton setBackgroundImage:[UIImage imageNamed:@"img_button_bg_small"] forState:UIControlStateNormal];
+    //[confirmButton setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
+    [confirmButton.titleLabel setFont:[UIFont systemFontOfSize:15]];
     [confirmButton addTarget:self action:@selector(confirmButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     [self.bottomView addSubview:confirmButton];
     self.confirmButton = confirmButton;
@@ -118,46 +124,46 @@ const CGFloat SXFamilyCodeSuccessAlertViewHeightRatio = 0.206; //高度系统
     [super layoutSubviews];
     
     //内容宽高
-    //    CGFloat contentW = [UIScreen mainScreen].bounds.size.width * SXFamilyCodeSuccessAlertViewWidthRatio;
-    //    CGFloat contentH = [UIScreen mainScreen].bounds.size.height * SXFamilyCodeSuccessAlertViewHeightRatio;
-    CGFloat contentW = [UIScreen mainScreen].bounds.size.width - 30 * 2;
-    CGFloat contentH = 230;
+    //    CGFloat contentW = [UIScreen mainScreen].bounds.size.width * SXSingleTopImageAlertViewWidthRatio;
+    //    CGFloat contentH = [UIScreen mainScreen].bounds.size.height * SXSingleTopImageAlertViewHeightRatio;
     
-    [self.bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+    CGFloat contentW = [UIScreen mainScreen].bounds.size.width - 30 * 2;
+    CGFloat contentH = 240;
+    
+    [self.contentBgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(contentW, contentH));
         make.center.mas_equalTo(self);
     }];
     
     [self.topImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(60, 60));
-        make.top.mas_equalTo(self.bgImageView.mas_top).mas_offset(30);
-        make.centerX.mas_equalTo(self.bgImageView);
+        make.size.mas_equalTo(CGSizeMake(65, 65));
+        make.top.mas_equalTo(self.contentBgView.mas_top).mas_offset(30);
+        make.centerX.mas_equalTo(self.contentBgView);
     }];
     
     [self.titleL mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.topImageView.mas_bottom).mas_offset(30);
-        make.left.mas_equalTo(self.bgImageView).mas_offset(20);
-        make.right.mas_equalTo(self.bgImageView.mas_right).mas_offset(-20);
+        make.top.mas_equalTo(self.topImageView.mas_bottom).mas_offset(18);
+        make.left.mas_equalTo(self.contentBgView).mas_offset(20);
+        make.right.mas_equalTo(self.contentBgView.mas_right).mas_offset(-20);
     }];
     
     [self.contentL mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.titleL.mas_bottom).mas_offset(25);
-        make.left.mas_equalTo(self.bgImageView).mas_offset(20);
-        make.right.mas_equalTo(self.bgImageView.mas_right).mas_offset(-20);
+        make.top.mas_equalTo(self.titleL.mas_bottom).mas_offset(5);
+        make.left.mas_equalTo(self.contentBgView).mas_offset(20);
+        make.right.mas_equalTo(self.contentBgView.mas_right).mas_offset(-20);
     }];
     
     [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.bgImageView);
-        make.bottom.mas_equalTo(self.bgImageView.mas_bottom);
-        make.right.mas_equalTo(self.bgImageView);
+        make.left.mas_equalTo(self.contentBgView);
+        make.bottom.mas_equalTo(self.contentBgView.mas_bottom);
+        make.right.mas_equalTo(self.contentBgView);
         make.height.mas_equalTo(45);
     }];
     
     [self.confirmButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.bottomView);
         make.right.mas_equalTo(self.bottomView.mas_right);
         make.bottom.mas_equalTo(self.bottomView.mas_bottom);
-        make.height.mas_equalTo(45);
+        make.size.mas_equalTo(CGSizeMake(contentW, 45));
     }];
 }
 
@@ -187,10 +193,10 @@ const CGFloat SXFamilyCodeSuccessAlertViewHeightRatio = 0.206; //高度系统
     }];
 }
 
-- (void)setTopImageName:(NSString *)topImageName{
-    _topImageName = topImageName;
-    
-    self.topImageView.image = [UIImage imageNamed:topImageName];
+#pragma mark -setter-
+- (void)setImageName:(NSString *)imageName{
+    _imageName = imageName;
+    self.topImageView.image = [UIImage imageNamed:imageName];
 }
 
 - (void)setTitle:(NSString *)title{

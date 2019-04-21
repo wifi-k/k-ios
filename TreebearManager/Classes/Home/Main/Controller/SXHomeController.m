@@ -9,10 +9,12 @@
 #import "SXHomeController.h"
 #import "SXFamilyMemberController.h"
 #import "SXAddXiaoKiController.h"
-#import "SXRootTool.h"
 #import "SXHomeHeaderView.h"
 #import "SXCodeInputAlertView.h"
+#import "SXWarningAlertView.h"
+#import "SXSingleTopImageAlertView.h"
 #import "SXFamilyMemberNetTool.h"
+#import "SXRootTool.h"
 
 @interface SXHomeController ()
 ///列表视图
@@ -105,22 +107,44 @@
 }
 
 - (void)userNodeFamilyJoin:(NSString *)text{
-    [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
-    SXFamilyMemberParam *param = [SXFamilyMemberParam param];
-    param.inviteCode = text;
-    [SXFamilyMemberNetTool userNodeFamilyJoinDataWithParams:param.mj_keyValues Success:^{
-        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
-        [MBProgressHUD showSuccessWithMessage:@"添加成功!" toView:SXKeyWindow];
-        [SXRootTool changeToMainHomeVC];
-    } failure:^(NSError *error) {
-        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            NSString *message = [error.userInfo objectForKey:@"msg"];
-            if ([NSString isNotEmpty:message]) {
-                [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
-            }
-        });
-    }];
+//    [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
+//    SXFamilyMemberParam *param = [SXFamilyMemberParam param];
+//    param.inviteCode = text;
+//    [SXFamilyMemberNetTool userNodeFamilyJoinDataWithParams:param.mj_keyValues Success:^{
+//        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+//        [MBProgressHUD showSuccessWithMessage:@"添加成功!" toView:SXKeyWindow];
+//        [SXRootTool changeToMainHomeVC];
+//    } failure:^(NSError *error) {
+//        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            NSString *message = [error.userInfo objectForKey:@"msg"];
+//            if ([NSString isNotEmpty:message]) {
+//                [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
+//            }
+//        });
+//    }];
+    
+    [self alertSuccessTips];
+}
+
+- (void)alertSuccessTips{
+    
+    SXSingleTopImageAlertView *netAlertView = [SXSingleTopImageAlertView alertWithTopImageName:@"home_familycode_failure" Title:@"家庭码错误" content:@"请输入正确的家庭码" confirmStr:@"再次输入"];
+    netAlertView.confirmButtonBlock = ^{
+        DLog(@"确定...");
+    };
+    [netAlertView alert];
+}
+
+- (void)alertFailureTips{
+    SXWarningAlertView *netAlertView = [SXWarningAlertView alertWithTitle:@"请确认是否重启" content:@"路由器重启预计需要几分钟时间，重启过程中，所有已连设备会断开连接" confirmStr:@"确定" cancelStr:@"取消"];
+    netAlertView.confirmButtonBlock = ^{
+        
+    };
+    netAlertView.cancelButtonBlock = ^{
+        
+    };
+    [netAlertView alert];
 }
 
 @end

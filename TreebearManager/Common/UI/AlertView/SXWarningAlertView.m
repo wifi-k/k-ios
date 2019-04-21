@@ -84,7 +84,7 @@ const CGFloat SXWarningAlertViewHeightRatio = 0.206; //高度系统
     UILabel *titleL = [[UILabel alloc] init];
     titleL.textAlignment = NSTextAlignmentCenter;
     titleL.font = SXFontBold18;
-    titleL.textColor = [UIColor blackColor];
+    titleL.textColor = SXColor2B3852;
     [self.contentBgView addSubview:titleL];
     self.titleL = titleL;
     

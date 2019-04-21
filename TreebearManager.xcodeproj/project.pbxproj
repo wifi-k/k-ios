@@ -276,6 +276,7 @@
 		09B9B88622326974000868D5 /* SXDHCPServerHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B9B88522326974000868D5 /* SXDHCPServerHeaderView.xib */; };
 		09C5A51B226855A000742833 /* SXPhotoOptionPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5A51A226855A000742833 /* SXPhotoOptionPickerView.m */; };
 		09C5A51E22686C8400742833 /* SXPhotoOptionPickerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5A51D22686C8400742833 /* SXPhotoOptionPickerButton.m */; };
+		09C5A521226C55FF00742833 /* SXSingleTopImageAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5A520226C55FF00742833 /* SXSingleTopImageAlertView.m */; };
 		09C8CE362248F84000C03F43 /* SXMineUserInfoResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE352248F84000C03F43 /* SXMineUserInfoResult.m */; };
 		09C8CE3A224903E600C03F43 /* SXFamilyMemberNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE39224903E600C03F43 /* SXFamilyMemberNetTool.m */; };
 		09C8CE3E2249BADA00C03F43 /* SXFamilyMemberParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE3D2249BADA00C03F43 /* SXFamilyMemberParam.m */; };
@@ -934,6 +935,8 @@
 		09C5A51A226855A000742833 /* SXPhotoOptionPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoOptionPickerView.m; sourceTree = "<group>"; };
 		09C5A51C22686C8400742833 /* SXPhotoOptionPickerButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPhotoOptionPickerButton.h; sourceTree = "<group>"; };
 		09C5A51D22686C8400742833 /* SXPhotoOptionPickerButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoOptionPickerButton.m; sourceTree = "<group>"; };
+		09C5A51F226C55FF00742833 /* SXSingleTopImageAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXSingleTopImageAlertView.h; sourceTree = "<group>"; };
+		09C5A520226C55FF00742833 /* SXSingleTopImageAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXSingleTopImageAlertView.m; sourceTree = "<group>"; };
 		09C8CE342248F84000C03F43 /* SXMineUserInfoResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMineUserInfoResult.h; sourceTree = "<group>"; };
 		09C8CE352248F84000C03F43 /* SXMineUserInfoResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMineUserInfoResult.m; sourceTree = "<group>"; };
 		09C8CE38224903E600C03F43 /* SXFamilyMemberNetTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXFamilyMemberNetTool.h; sourceTree = "<group>"; };
@@ -1352,6 +1355,8 @@
 			children = (
 				09B9B7B3222FAE0C000868D5 /* SXSingleAlertView.h */,
 				09B9B7B4222FAE0C000868D5 /* SXSingleAlertView.m */,
+				09C5A51F226C55FF00742833 /* SXSingleTopImageAlertView.h */,
+				09C5A520226C55FF00742833 /* SXSingleTopImageAlertView.m */,
 				091187342215689E00938D9F /* SXTitleAlertView.h */,
 				091187352215689E00938D9F /* SXTitleAlertView.m */,
 				091BC4782240EEC100FEBFD1 /* SXWarningAlertView.h */,
@@ -4231,6 +4236,7 @@
 				09B9B8622231528E000868D5 /* SXTimeUpdateController.m in Sources */,
 				09D5F626222925C200EA681A /* SXForbiddenAppController.m in Sources */,
 				09B9B84722310BCA000868D5 /* SXFrequencyOptionController.m in Sources */,
+				09C5A521226C55FF00742833 /* SXSingleTopImageAlertView.m in Sources */,
 				093C13242256008C005682C8 /* SXHomeMainReportCell.m in Sources */,
 				092D6D3722041C4900538AC8 /* SXHomeHeaderView.m in Sources */,
 				098BA2FB2216B54100F58639 /* SXPhotoSectionHeaderView.m in Sources */,

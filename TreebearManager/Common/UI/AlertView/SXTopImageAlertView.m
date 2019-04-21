@@ -84,8 +84,8 @@ const CGFloat SXTopImageAlertViewHeightRatio = 0.206; //高度系统
     //标题
     UILabel *titleL = [[UILabel alloc] init];
     titleL.textAlignment = NSTextAlignmentCenter;
-    titleL.font = SXFontBold18;
-    titleL.textColor = [UIColor blackColor];
+    titleL.font = [UIFont fontWithName:@"PingFangSC-Regular" size:20];
+    titleL.textColor = SXColor2B3852;
     [self.contentBgView addSubview:titleL];
     self.titleL = titleL;
     
@@ -246,6 +246,5 @@ const CGFloat SXTopImageAlertViewHeightRatio = 0.206; //高度系统
         [self.cancleButton setTitle:cancelStr forState:UIControlStateNormal];
     }
 }
-
 
 @end
