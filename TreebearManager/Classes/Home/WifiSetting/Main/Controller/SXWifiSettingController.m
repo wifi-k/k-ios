@@ -267,7 +267,9 @@
 #pragma mark -获取节点数据-
 - (void)getNodeData{
     WS(weakSelf);
+    [MBProgressHUD showGrayLoadingToView:self.view];
     [SXAddXiaokiNetTool getNodeWithDataWithSuccess:^(SXXiaoKNodeResult * _Nonnull result) {
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
         DLog(@"获取节点");
         weakSelf.result = result;
         //更新wan信息
@@ -276,6 +278,7 @@
         //更改文案
         [weakSelf.headerView setUpData];
     } failure:^(NSError * _Nonnull error) {
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
         if (error.code != 0) {
             DLog(@"token失效");
         }
