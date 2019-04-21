@@ -13,6 +13,7 @@
 #import "SXCodeInputAlertView.h"
 #import "SXWarningAlertView.h"
 #import "SXSingleTopImageAlertView.h"
+#import "SXSingleTopImageAlertView2.h"
 #import "SXFamilyMemberNetTool.h"
 #import "SXRootTool.h"
 
@@ -129,21 +130,19 @@
 
 - (void)alertSuccessTips{
     
-    SXSingleTopImageAlertView *netAlertView = [SXSingleTopImageAlertView alertWithTopImageName:@"home_familycode_failure" Title:@"家庭码错误" content:@"请输入正确的家庭码" confirmStr:@"再次输入"];
+    WS(weakSelf);
+    SXSingleTopImageAlertView2 *netAlertView = [SXSingleTopImageAlertView2 alertWithTopImageName:@"home_familycode_failure" Title:@"家庭码错误" content:@"请输入正确的家庭码" confirmStr:@"再次输入"];
     netAlertView.confirmButtonBlock = ^{
         DLog(@"确定...");
+        
+        [weakSelf alertFailureTips];
     };
     [netAlertView alert];
 }
 
 - (void)alertFailureTips{
-    SXWarningAlertView *netAlertView = [SXWarningAlertView alertWithTitle:@"请确认是否重启" content:@"路由器重启预计需要几分钟时间，重启过程中，所有已连设备会断开连接" confirmStr:@"确定" cancelStr:@"取消"];
-    netAlertView.confirmButtonBlock = ^{
-        
-    };
-    netAlertView.cancelButtonBlock = ^{
-        
-    };
+
+    SXSingleTopImageAlertView *netAlertView = [SXSingleTopImageAlertView alertWithTopImageName:@"home_familycode_success" Title:@"家庭码正确" confirmStr:@"确定"];
     [netAlertView alert];
 }
 

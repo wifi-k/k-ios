@@ -1,5 +1,5 @@
 //
-//  SXSingleTopImageAlertView.h
+//  SXSingleTopImageAlertView2.h
 //  TreebearManager
 //
 //  Created by bear on 2019/4/21.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SXSingleTopImageAlertView : UIView
+@interface SXSingleTopImageAlertView2 : UIView
 
 //设置遮罩蒙板响应事件是否关闭
 @property (nonatomic, assign) BOOL closeUserInteractionEnabled;
@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) void(^confirmButtonBlock)(void);
 
 //初始化
-+ (instancetype)alertWithTopImageName:(NSString *)imageName Title:(NSString *)title confirmStr:(NSString *)confirmStr;
++ (instancetype)alertWithTopImageName:(NSString *)imageName Title:(NSString *)title content:(NSString *)content confirmStr:(NSString *)confirmStr;
 
 //弹窗
 - (void)alert;

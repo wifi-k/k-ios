@@ -277,6 +277,7 @@
 		09C5A51B226855A000742833 /* SXPhotoOptionPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5A51A226855A000742833 /* SXPhotoOptionPickerView.m */; };
 		09C5A51E22686C8400742833 /* SXPhotoOptionPickerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5A51D22686C8400742833 /* SXPhotoOptionPickerButton.m */; };
 		09C5A521226C55FF00742833 /* SXSingleTopImageAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5A520226C55FF00742833 /* SXSingleTopImageAlertView.m */; };
+		09C5A524226C5C4D00742833 /* SXSingleTopImageAlertView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5A523226C5C4D00742833 /* SXSingleTopImageAlertView2.m */; };
 		09C8CE362248F84000C03F43 /* SXMineUserInfoResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE352248F84000C03F43 /* SXMineUserInfoResult.m */; };
 		09C8CE3A224903E600C03F43 /* SXFamilyMemberNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE39224903E600C03F43 /* SXFamilyMemberNetTool.m */; };
 		09C8CE3E2249BADA00C03F43 /* SXFamilyMemberParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE3D2249BADA00C03F43 /* SXFamilyMemberParam.m */; };
@@ -937,6 +938,8 @@
 		09C5A51D22686C8400742833 /* SXPhotoOptionPickerButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoOptionPickerButton.m; sourceTree = "<group>"; };
 		09C5A51F226C55FF00742833 /* SXSingleTopImageAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXSingleTopImageAlertView.h; sourceTree = "<group>"; };
 		09C5A520226C55FF00742833 /* SXSingleTopImageAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXSingleTopImageAlertView.m; sourceTree = "<group>"; };
+		09C5A522226C5C4D00742833 /* SXSingleTopImageAlertView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXSingleTopImageAlertView2.h; sourceTree = "<group>"; };
+		09C5A523226C5C4D00742833 /* SXSingleTopImageAlertView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXSingleTopImageAlertView2.m; sourceTree = "<group>"; };
 		09C8CE342248F84000C03F43 /* SXMineUserInfoResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMineUserInfoResult.h; sourceTree = "<group>"; };
 		09C8CE352248F84000C03F43 /* SXMineUserInfoResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMineUserInfoResult.m; sourceTree = "<group>"; };
 		09C8CE38224903E600C03F43 /* SXFamilyMemberNetTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXFamilyMemberNetTool.h; sourceTree = "<group>"; };
@@ -1357,6 +1360,8 @@
 				09B9B7B4222FAE0C000868D5 /* SXSingleAlertView.m */,
 				09C5A51F226C55FF00742833 /* SXSingleTopImageAlertView.h */,
 				09C5A520226C55FF00742833 /* SXSingleTopImageAlertView.m */,
+				09C5A522226C5C4D00742833 /* SXSingleTopImageAlertView2.h */,
+				09C5A523226C5C4D00742833 /* SXSingleTopImageAlertView2.m */,
 				091187342215689E00938D9F /* SXTitleAlertView.h */,
 				091187352215689E00938D9F /* SXTitleAlertView.m */,
 				091BC4782240EEC100FEBFD1 /* SXWarningAlertView.h */,
@@ -4180,6 +4185,7 @@
 				09118703221522BF00938D9F /* GACSocketModel.m in Sources */,
 				091BC4C42242207100FEBFD1 /* PYAssetListView.m in Sources */,
 				091BC4D02242207100FEBFD1 /* PYImageBrowserScrollView.m in Sources */,
+				09C5A524226C5C4D00742833 /* SXSingleTopImageAlertView2.m in Sources */,
 				091BC4D32242207100FEBFD1 /* PYAblumManagerCommon.m in Sources */,
 				092D6D152202E35000538AC8 /* SXCodeLoginController.m in Sources */,
 				092D6CFB2200731300538AC8 /* SXNotificationCenterTool.m in Sources */,

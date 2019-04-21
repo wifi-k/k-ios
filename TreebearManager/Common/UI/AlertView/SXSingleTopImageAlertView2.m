@@ -1,36 +1,38 @@
 //
-//  SXSingleTopImageAlertView.m
+//  SXSingleTopImageAlertView2.m
 //  TreebearManager
 //
 //  Created by bear on 2019/4/21.
 //  Copyright © 2019 treebear. All rights reserved.
 //
 
-#import "SXSingleTopImageAlertView.h"
+#import "SXSingleTopImageAlertView2.h"
 
-const CGFloat SXSingleTopImageAlertViewWidthRatio = 0.655;  //宽度系数
-const CGFloat SXSingleTopImageAlertViewHeightRatio = 0.206; //高度系统
+const CGFloat SXSingleTopImageAlertView2WidthRatio = 0.655;  //宽度系数
+const CGFloat SXSingleTopImageAlertView2HeightRatio = 0.206; //高度系统
 
-@interface SXSingleTopImageAlertView ()
-
+@interface SXSingleTopImageAlertView2 ()
 @property (nonatomic, weak) UIView *bgView;
 @property (nonatomic, weak) UIImageView *contentBgView;
 @property (nonatomic, weak) UIImageView *topImageView;
 @property (nonatomic, weak) UILabel *titleL;//标题
+@property (nonatomic, weak) UILabel *contentL;//内容
 @property (nonatomic, weak) UIView *bottomView;//底部视图
 @property (nonatomic, weak) UIButton *confirmButton;//确认按钮
 
 @property (nonatomic, copy) NSString *imageName;//标题
 @property (nonatomic, copy) NSString *title;//标题
+@property (nonatomic, copy) NSString *content;//内容
 @property (nonatomic, copy) NSString *confirmStr;//确认按钮
 @end
 
-@implementation SXSingleTopImageAlertView
+@implementation SXSingleTopImageAlertView2
 
-+ (instancetype)alertWithTopImageName:(NSString *)imageName Title:(NSString *)title confirmStr:(NSString *)confirmStr{
-    SXSingleTopImageAlertView *alert = [[self alloc] initWithFrame:SXDelegateWindow.bounds];
++ (instancetype)alertWithTopImageName:(NSString *)imageName Title:(NSString *)title content:(NSString *)content confirmStr:(NSString *)confirmStr{
+    SXSingleTopImageAlertView2 *alert = [[self alloc] initWithFrame:SXDelegateWindow.bounds];
     alert.imageName = imageName;
     alert.title = title;
+    alert.content = content;
     alert.confirmStr = confirmStr;
     return alert;
 }
@@ -84,6 +86,15 @@ const CGFloat SXSingleTopImageAlertViewHeightRatio = 0.206; //高度系统
     [self.contentBgView addSubview:titleL];
     self.titleL = titleL;
     
+    //内容
+    UILabel *contentL = [[UILabel alloc] init];
+    contentL.numberOfLines = 2;
+    contentL.textAlignment = NSTextAlignmentCenter;
+    contentL.textColor = SXColor7383A2;
+    contentL.font = SXFont14;
+    [self.contentBgView addSubview:contentL];
+    self.contentL = contentL;
+    
     //底部视图
     UIView *bottomView = [[UIView alloc] init];
     bottomView.backgroundColor = [UIColor lightGrayColor];
@@ -115,7 +126,7 @@ const CGFloat SXSingleTopImageAlertViewHeightRatio = 0.206; //高度系统
     //    CGFloat contentH = [UIScreen mainScreen].bounds.size.height * SXSingleTopImageAlertViewHeightRatio;
     
     CGFloat contentW = [UIScreen mainScreen].bounds.size.width - 30 * 2;
-    CGFloat contentH = 220;
+    CGFloat contentH = 240;
     
     [self.contentBgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(contentW, contentH));
@@ -130,6 +141,12 @@ const CGFloat SXSingleTopImageAlertViewHeightRatio = 0.206; //高度系统
     
     [self.titleL mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.topImageView.mas_bottom).mas_offset(18);
+        make.left.mas_equalTo(self.contentBgView).mas_offset(20);
+        make.right.mas_equalTo(self.contentBgView.mas_right).mas_offset(-20);
+    }];
+    
+    [self.contentL mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.titleL.mas_bottom).mas_offset(5);
         make.left.mas_equalTo(self.contentBgView).mas_offset(20);
         make.right.mas_equalTo(self.contentBgView.mas_right).mas_offset(-20);
     }];
@@ -183,6 +200,11 @@ const CGFloat SXSingleTopImageAlertViewHeightRatio = 0.206; //高度系统
 - (void)setTitle:(NSString *)title{
     _title = title;
     self.titleL.text = title;
+}
+
+- (void)setContent:(NSString *)content{
+    _content = content;
+    self.contentL.text = content;
 }
 
 - (void)setConfirmStr:(NSString *)confirmStr{
