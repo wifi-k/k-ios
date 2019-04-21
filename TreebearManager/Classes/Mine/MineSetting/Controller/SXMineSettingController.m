@@ -72,7 +72,7 @@
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         [MBProgressHUD showMessage:@"已退出!" toView:SXKeyWindow];
         //切换根控
-        [SXRootTool chooseRootWithLoginVC:SXDelegateWindow];
+        [SXRootTool chooseRootWithMainLoginVC:SXDelegateWindow];
     } failure:^(NSError *error) {
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

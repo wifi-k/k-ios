@@ -53,6 +53,9 @@
     
     //获取wifi列表
     [self userNodeWifiListData];
+    
+    //添加通知
+    [self addNotification];
 }
 
 - (void)setUpUI{
@@ -83,6 +86,19 @@
     self.tableView.frame = self.view.bounds;
     
     self.headerView.frame = self.view.bounds;
+}
+
+- (void)addNotification{
+    // app从后台进入前台都会调用这个方法
+    [SXNotificationCenter addObserver:self selector:@selector(applicationBecomeActive) name:UIApplicationWillEnterForegroundNotification object:nil];
+}
+
+- (void)dealloc{
+    [SXNotificationCenter removeObserver:self];
+}
+
+- (void)applicationBecomeActive{
+    [self getNodeData];
 }
 
 #pragma mark -视图弹窗-
