@@ -68,9 +68,19 @@
     WS(weakSelf);
     SXWifiSettingHeaderView *headerView = [SXWifiSettingHeaderView headerView];
     headerView.clickWifiNameBlock = ^{
+        if (![weakSelf isNearWifi]) {
+            [MBProgressHUD showWarningWithMessage:@"请先连接您的小K设备!" toView:SXKeyWindow];
+            return;
+        }
+        
         [weakSelf alertUpdateNameView];
     };
     headerView.clickWifiPasswordBlock = ^{
+        if (![weakSelf isNearWifi]) {
+            [MBProgressHUD showWarningWithMessage:@"请先连接您的小K设备!" toView:SXKeyWindow];
+            return;
+        }
+        
         [weakSelf alertUpdatePwdView];
     };
     headerView.clickAdvancedBtnBlock = ^(NSInteger tag) {
@@ -134,6 +144,10 @@
             [MBProgressHUD showWarningWithMessage:@"密码长度不得低于8位!" toView:SXKeyWindow];
             return;
         }
+        if (text.length > 20) {
+            [MBProgressHUD showWarningWithMessage:@"密码长度不得大于20位!" toView:SXKeyWindow];
+            return;
+        }
         if ([weakSelf isNearWifi]) {
             SXDynamicParam *param = [SXDynamicParam param];
             param.ssid0 = [XKGetWifiNetTool getWifiSSID];
@@ -156,9 +170,10 @@
     if ([NSString isEmpty:self.result.modelId]) {
         return NO;
     }
-    NSString *nearNodeId = [SXXiaoKInfoModel sharedSXXiaoKInfoModel].modelId;
-    NSString *farNodeId = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel.nodeId;
-    return [nearNodeId isEqualToString:farNodeId];
+    return YES;
+//    NSString *nearNodeId = [SXXiaoKInfoModel sharedSXXiaoKInfoModel].modelId;
+//    NSString *farNodeId = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel.nodeId;
+//    return [nearNodeId isEqualToString:farNodeId];
 }
 
 #pragma mark -页面跳转-
@@ -180,6 +195,10 @@
         }
             break;
         case 2:{
+            if (![self isNearWifi]) {
+                [MBProgressHUD showWarningWithMessage:@"请先连接您的小K设备!" toView:SXKeyWindow];
+                return;
+            }
             
             SXWarningAlertView *netAlertView = [SXWarningAlertView alertWithTitle:@"请确认是否重启" content:@"路由器重启预计需要几分钟时间，重启过程中，所有已连设备会断开连接" confirmStr:@"确定" cancelStr:@"取消"];
             netAlertView.confirmButtonBlock = ^{
@@ -192,6 +211,11 @@
         }
             break;
         case 3:{
+            if (![self isNearWifi]) {
+                [MBProgressHUD showWarningWithMessage:@"请先连接您的小K设备!" toView:SXKeyWindow];
+                return;
+            }
+            
             SXWarningAlertView *netAlertView = [SXWarningAlertView alertWithTitle:@"请确认是否恢复出厂设置" content:@"路由器的所有配置将恢复至出厂时的默认状态" confirmStr:@"确定" cancelStr:@"取消"];
             netAlertView.confirmButtonBlock = ^{
                 [weakSelf nodeResetWithData];

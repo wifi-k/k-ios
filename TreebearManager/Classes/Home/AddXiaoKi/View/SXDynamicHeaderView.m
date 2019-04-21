@@ -77,6 +77,16 @@
 - (IBAction)clickConfirmBtn:(UIButton *)sender {
     [self endEditing:YES];
     
+    if (self.param.passwd.length < 8) {
+        [MBProgressHUD showWarningWithMessage:@"密码长度不得低于8位!" toView:SXKeyWindow];
+        return;
+    }
+    
+    if (self.param.passwd.length > 20) {
+        [MBProgressHUD showWarningWithMessage:@"密码长度不得大于20位!" toView:SXKeyWindow];
+        return;
+    }
+    
     if (self.clickConfirmBtnBlock) {
         self.clickConfirmBtnBlock();
     }

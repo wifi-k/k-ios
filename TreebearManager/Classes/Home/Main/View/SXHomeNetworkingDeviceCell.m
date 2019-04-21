@@ -68,7 +68,7 @@
     
     //多行文字限制宽度
     if (SCREEN_WIDTH > 400) {
-        self.mobileNameL.preferredMaxLayoutWidth = 200;
+        self.mobileNameL.preferredMaxLayoutWidth = 170;
     } else if (SCREEN_WIDTH > 370){
         self.mobileNameL.preferredMaxLayoutWidth = 130;
     } else {
