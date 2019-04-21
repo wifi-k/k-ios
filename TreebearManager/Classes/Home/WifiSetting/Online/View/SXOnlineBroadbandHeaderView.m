@@ -118,6 +118,10 @@
     self.ipTextField.tintColor = SXColorBlue2;
     self.dnsTextField.tintColor = SXColorBlue2;
     self.dns2TextField.tintColor = SXColorBlue2;
+    
+    //1.宽带信息赋值
+    self.broadbandTextField.text = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.name;
+    self.bandPwdTextField.text = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.passwd;
 }
 
 - (IBAction)clickDisconnectedBtn:(UIButton *)sender {
