@@ -94,10 +94,8 @@ const CGFloat SXSingleTopImageAlertViewHeightRatio = 0.206; //高度系统
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [confirmButton setTitle:@"确定" forState:UIControlStateNormal];
     [confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    //[confirmButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
     [confirmButton setBackgroundImage:[UIImage imageNamed:@"img_button_bg_small"] forState:UIControlStateNormal];
-    //[confirmButton setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
-    [confirmButton.titleLabel setFont:[UIFont systemFontOfSize:15]];
+    [confirmButton.titleLabel setFont:[UIFont systemFontOfSize:14]];
     [confirmButton addTarget:self action:@selector(confirmButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     [self.bottomView addSubview:confirmButton];
     self.confirmButton = confirmButton;

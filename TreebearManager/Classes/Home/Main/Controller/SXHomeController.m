@@ -108,41 +108,42 @@
 }
 
 - (void)userNodeFamilyJoin:(NSString *)text{
-//    [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
-//    SXFamilyMemberParam *param = [SXFamilyMemberParam param];
-//    param.inviteCode = text;
-//    [SXFamilyMemberNetTool userNodeFamilyJoinDataWithParams:param.mj_keyValues Success:^{
-//        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+    WS(weakSelf);
+    [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
+    SXFamilyMemberParam *param = [SXFamilyMemberParam param];
+    param.inviteCode = text;
+    [SXFamilyMemberNetTool userNodeFamilyJoinDataWithParams:param.mj_keyValues Success:^{
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        [weakSelf alertSuccessTips];
 //        [MBProgressHUD showSuccessWithMessage:@"添加成功!" toView:SXKeyWindow];
 //        [SXRootTool changeToMainHomeVC];
-//    } failure:^(NSError *error) {
-//        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    } failure:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //            NSString *message = [error.userInfo objectForKey:@"msg"];
 //            if ([NSString isNotEmpty:message]) {
 //                [MBProgressHUD showFailWithMessage:message toView:SXKeyWindow];
 //            }
-//        });
-//    }];
-    
-    [self alertSuccessTips];
+            [weakSelf alertFailureTips];
+        });
+    }];
 }
 
+#pragma mark -弹窗提示-
 - (void)alertSuccessTips{
-    
-    WS(weakSelf);
-    SXSingleTopImageAlertView2 *netAlertView = [SXSingleTopImageAlertView2 alertWithTopImageName:@"home_familycode_failure" Title:@"家庭码错误" content:@"请输入正确的家庭码" confirmStr:@"再次输入"];
+    SXSingleTopImageAlertView *netAlertView = [SXSingleTopImageAlertView alertWithTopImageName:@"home_familycode_success" Title:@"家庭码正确" confirmStr:@"确定"];
     netAlertView.confirmButtonBlock = ^{
-        DLog(@"确定...");
-        
-        [weakSelf alertFailureTips];
+        [SXRootTool changeToMainHomeVC];
     };
     [netAlertView alert];
 }
 
 - (void)alertFailureTips{
-
-    SXSingleTopImageAlertView *netAlertView = [SXSingleTopImageAlertView alertWithTopImageName:@"home_familycode_success" Title:@"家庭码正确" confirmStr:@"确定"];
+    WS(weakSelf);
+    SXSingleTopImageAlertView2 *netAlertView = [SXSingleTopImageAlertView2 alertWithTopImageName:@"home_familycode_failure" Title:@"家庭码错误" content:@"请输入正确的家庭码" confirmStr:@"再次输入"];
+    netAlertView.confirmButtonBlock = ^{
+        [weakSelf alertUpdateNameView];
+    };
     [netAlertView alert];
 }
 
