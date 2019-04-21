@@ -186,8 +186,8 @@
         }
             break;
         case 1:{
-            if ([NSString isEmpty:SXXiaoKInfoModel.sharedSXXiaoKInfoModel.modelId]) {
-                [MBProgressHUD showWarningWithMessage:@"请检查您的WiFi连接" toView:SXKeyWindow];
+            if (![self isNearWifi]) {
+                [MBProgressHUD showWarningWithMessage:@"请先连接您的小K设备!" toView:SXKeyWindow];
                 return;
             }
             SXOnlineController *advancedVC = [[SXOnlineController alloc] init];
@@ -267,7 +267,7 @@
 #pragma mark -获取节点数据-
 - (void)getNodeData{
     WS(weakSelf);
-    [MBProgressHUD showGrayLoadingToView:self.view];
+    [MBProgressHUD showWhiteLoadingWithMessage:@"正在尝试获取您的设备信息,请稍等!" toView:self.view];
     [SXAddXiaokiNetTool getNodeWithDataWithSuccess:^(SXXiaoKNodeResult * _Nonnull result) {
         [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
         DLog(@"获取节点");
@@ -282,7 +282,11 @@
         if (error.code != 0) {
             DLog(@"token失效");
         }
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [MBProgressHUD showFailWithMessage:@"没有获取到信息，请检查您的WiFi连接!" toView:weakSelf.view];
+        });
     }];
+    
 }
 
 #pragma mark -WiFi列表数据接口-
