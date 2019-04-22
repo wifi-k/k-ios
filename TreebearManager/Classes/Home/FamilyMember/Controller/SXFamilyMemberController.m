@@ -113,10 +113,10 @@
     //创建分享消息对象
     UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
     //创建网页内容对象
-    NSString *thumbURL =  @"https://mobile.umeng.com/images/pic/home/social/img-1.png";
-    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"邀请家庭成员" descr:descStr thumImage:thumbURL];
+    NSString *thumbURL = [NSString stringWithFormat:@"%@/h5/inviteCode.html?inviteCode=%@",API_HOST_H5,inviteCode];
+    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"邀请家庭成员" descr:descStr thumImage:@"img_xiaok_icon"];
     //设置网页地址
-    shareObject.webpageUrl = RedirectURL;
+    shareObject.webpageUrl = thumbURL;
     //分享消息对象设置分享内容对象
     messageObject.shareObject = shareObject;
     

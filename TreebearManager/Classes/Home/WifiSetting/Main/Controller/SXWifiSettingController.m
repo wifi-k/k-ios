@@ -283,7 +283,7 @@
             DLog(@"token失效");
         }
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [MBProgressHUD showFailWithMessage:@"没有获取到信息，请检查您的WiFi连接!" toView:weakSelf.view];
+            [MBProgressHUD showFailWithMessage:@"没有获取到信息，请检查您的WiFi连接!" toView:SXKeyWindow];
         });
     }];
     

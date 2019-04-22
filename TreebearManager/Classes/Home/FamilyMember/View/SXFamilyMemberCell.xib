@@ -27,13 +27,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFh-ra-HMu">
-                        <rect key="frame" x="75" y="31" width="35" height="20.5"/>
+                        <rect key="frame" x="75" y="31" width="216" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08u-4V-ORI">
-                        <rect key="frame" x="75" y="64" width="43" height="17"/>
+                        <rect key="frame" x="75" y="64" width="216" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -61,8 +61,10 @@
                     </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="MQH-mH-VCQ" firstAttribute="leading" secondItem="08u-4V-ORI" secondAttribute="trailing" constant="5" id="26B-ao-FIR"/>
                     <constraint firstAttribute="trailing" secondItem="jDo-3f-eOD" secondAttribute="trailing" id="5XY-5i-Zvq"/>
                     <constraint firstItem="cFh-ra-HMu" firstAttribute="leading" secondItem="m1k-HZ-2Or" secondAttribute="trailing" constant="10" id="IGG-lJ-eiL"/>
+                    <constraint firstItem="MQH-mH-VCQ" firstAttribute="leading" secondItem="cFh-ra-HMu" secondAttribute="trailing" constant="5" id="MN1-66-TIc"/>
                     <constraint firstItem="cFh-ra-HMu" firstAttribute="top" secondItem="m1k-HZ-2Or" secondAttribute="top" id="RKU-Ml-SPf"/>
                     <constraint firstItem="m1k-HZ-2Or" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="SFG-XI-bia"/>
                     <constraint firstAttribute="trailing" secondItem="MQH-mH-VCQ" secondAttribute="trailing" constant="15" id="X3C-4r-fIb"/>

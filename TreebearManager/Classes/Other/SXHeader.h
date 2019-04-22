@@ -102,4 +102,10 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 
 #define RedirectURL @"https://www.treebear.cn"
 
+#ifdef DEBUG
+#define API_HOST_H5 @"http://test.user.famwifi.com" //主测试环境
+#else
+#define API_HOST_H5 @"http://test.user.famwifi.com" //主线上环境
+#endif
+
 #endif /* SXHeader_h */
