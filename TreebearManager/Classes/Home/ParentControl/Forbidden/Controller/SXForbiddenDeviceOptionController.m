@@ -57,7 +57,7 @@
     NSMutableArray *selectedArr = [NSMutableArray array];
     NSInteger count = 0;
     for (SXMobileManagerModel *model in self.dataArray) {
-        if (!model.isBlock.boolValue) {
+        if (model.isBlock.boolValue) {
             ++ count;
             if ([NSString isNotEmpty:model.mac]) {
                 [selectedArr addObject:model.mac];

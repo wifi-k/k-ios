@@ -69,12 +69,12 @@ static NSString *SXDeviceControlCellID = @"SXDeviceControlCellID";
             self.timeL.text = [NSString stringWithFormat:@"上线时间:%@",@"未知"];
             break;
     }
-    self.switchBtn.on = !model.isBlock.boolValue;
+    self.switchBtn.on = model.isBlock.boolValue;
 }
 
 #pragma mark -Event-
 - (IBAction)clickSwitchBtn:(UISwitch *)sender {
-    NSNumber *isBlock = (sender.isOn?@0:@1);
+    NSNumber *isBlock = (sender.isOn?@1:@0);
     self.model.isBlock = isBlock;
 }
 
