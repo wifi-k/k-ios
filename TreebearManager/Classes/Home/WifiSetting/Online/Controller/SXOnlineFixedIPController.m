@@ -52,9 +52,10 @@
     param.netmask = self.headerView.param.netmask;
     param.gateway = self.headerView.param.gateway;
     param.dns1 = self.headerView.param.dns1;
-    param.dns2 = self.headerView.param.dns2;
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:param.mj_keyValues];
+    dict[@"dns2"] = @"";
     [MBProgressHUD showWhiteLoadingWithMessage:nil toView:SXKeyWindow];
-    [SXAddXiaokiNetTool staticSettingWithDataWithParams:param.mj_keyValues Success:^{
+    [SXAddXiaokiNetTool staticSettingWithDataWithParams:dict Success:^{
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [MBProgressHUD showSuccessWithMessage:@"固定IP地址设置成功" toView:SXKeyWindow];

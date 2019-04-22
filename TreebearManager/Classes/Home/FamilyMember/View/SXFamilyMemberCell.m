@@ -63,6 +63,7 @@ static NSString *SXFamilyMemberCellID = @"SXFamilyMemberCellID";
     } else {//普通
         [self.deleteBtn setImage:[UIImage imageNamed:@"home_manager_delete"] forState:UIControlStateNormal];
         self.deleteBtn.enabled = YES;
+        self.deleteBtn.hidden = !model.isShow;
     }
 }
 

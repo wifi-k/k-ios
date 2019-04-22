@@ -47,6 +47,8 @@
 @property (nonatomic, strong) NSMutableArray *mobileArray;
 ///周报数据
 @property (nonatomic, strong) NSMutableArray *reportArray;
+///家庭管理员|成员模型
+@property (nonatomic, strong) SXFamilyMemberModel *memberModel;
 ///是否第一次打开页面
 @property (nonatomic, assign) BOOL isFirstVisible;
 ///在线数量
@@ -181,6 +183,8 @@
 #pragma mark -页面跳转-
 - (void)jumpToManagerVC{
     SXFamilyMemberController *managerVC = [[SXFamilyMemberController alloc] init];
+    BOOL isShow = (self.memberModel.role.integerValue==0 ? YES:NO);
+    managerVC.isShow = isShow;
     [self.navigationController pushViewController:managerVC animated:YES];
 }
 
@@ -299,6 +303,7 @@
         for (SXFamilyMemberModel *memberModel in array) {
             if ([memberModel.userId isEqualToString:user.modelId]) {
                 weakSelf.headerView.memberModel = memberModel;//模型赋值
+                weakSelf.memberModel = memberModel;
                 break;
             }
         }

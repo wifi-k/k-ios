@@ -196,6 +196,7 @@
     WS(weakSelf);
     SXFamilyMemberCell *cell = [SXFamilyMemberCell cellWithTableView:tableView];
     SXFamilyMemberModel *model = self.dataArray[indexPath.row];
+    model.isShow = self.isShow;
     cell.model = model;
     cell.clickDeleteBtnBlock = ^(SXFamilyMemberModel *model) {
         [weakSelf alertDeleteAlertView:model];

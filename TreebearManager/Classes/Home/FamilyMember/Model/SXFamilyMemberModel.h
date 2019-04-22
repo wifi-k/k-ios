@@ -27,6 +27,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///role role定义0-超级管理员
 @property (nonatomic, copy) NSNumber *role;
 
+///时候显示删除按钮
+@property (nonatomic, assign) BOOL isShow;
+
 @end
 
 NS_ASSUME_NONNULL_END
