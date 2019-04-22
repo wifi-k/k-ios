@@ -151,7 +151,7 @@
 
 + (void)setSessionManager:(AFHTTPSessionManager *)manager{
     //设置超时时间
-    manager.requestSerializer.timeoutInterval = 60;
+    manager.requestSerializer.timeoutInterval = 30;
     
     //请求的序列化
     manager.requestSerializer = [AFJSONRequestSerializer serializer];

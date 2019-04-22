@@ -225,7 +225,7 @@
         }
             break;
         case 2:{
-            [MBProgressHUD showWarningWithMessage:@"暂无周报，请添加儿童关爱!" toView:SXKeyWindow];
+            [MBProgressHUD showMessage:@"暂无周报，请添加儿童关爱!" toView:SXKeyWindow];
 //            SXHomeReportController *reportVC = [[SXHomeReportController alloc] init];
 //            [self.navigationController pushViewController:reportVC animated:YES];
         }
