@@ -88,10 +88,11 @@
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 
-#define SXColorClear UIColor.clearColor       // 透明色
-#define SXColorF1F5FF UIColorFromRGB(0xF1F5FF)// 浅浅浅
-#define SXColorCCCCC UIColorFromRGB(0xCCCCCC) // 深灰色
-#define SXColor4A5B78 UIColorFromRGB(0x4A5B78) // 深灰色
+#define SXColorClear UIColor.clearColor         // 透明色
+#define SXColorF1F5FF UIColorFromRGB(0xF1F5FF)  // 浅浅浅
+#define SXColorCCCCC UIColorFromRGB(0xCCCCCC)   // 深灰色
+#define SXColor4A5B78 UIColorFromRGB(0x4A5B78)  // 深灰色
+#define SXColorBlack UIColor.blackColor        // 纯黑色
 #define SXColorWhite UIColorFromRGB(0xffffff) // 白色
 #define SXColorBlue UIColorFromRGB(0x1AD0CE) // 主题蓝色
 #define SXColorBlue2 UIColorFromRGB(0x47D5ED) // 中等蓝色

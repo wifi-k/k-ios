@@ -8,6 +8,10 @@
 
 #import "SXPhotoBrowserBottomView.h"
 
+@interface SXPhotoBrowserBottomView ()
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
+@end
+
 @implementation SXPhotoBrowserBottomView
 
 + (instancetype)bottomView{
@@ -27,7 +31,7 @@
 - (void)setUpUI{
     
 //    self.backgroundColor = SXColorWhite;
-
+    self.bottomView.backgroundColor = SXColorBlack;
 }
 
 - (IBAction)clickOptionBtn:(UIButton *)sender {

@@ -62,9 +62,9 @@
     }];
     
     if (asset.isChecked) {
-        self.checkImageView.image = [UIImage imageNamed:@"home_netoption_check"];
+        self.checkImageView.image = [UIImage imageNamed:@"img_photo_checked"];
     } else {
-        self.checkImageView.image = [UIImage imageNamed:@"home_netoption_uncheck"];
+        self.checkImageView.image = [UIImage imageNamed:@"img_photo_unchecked"];
     }
     
     self.checkImageView.hidden = !asset.isShow;

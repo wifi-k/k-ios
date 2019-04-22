@@ -73,18 +73,19 @@
     WS(weakSelf);
     SXPhotoBrowserBottomView *bottomView = [SXPhotoBrowserBottomView bottomView];
     bottomView.clickOptionBtnBlock = ^(NSInteger tag) {
+        DLog(@"tag:%ld",tag);
         switch (tag) {
             case 0:
-                DLog(@"tag:%ld",tag);
                 break;
             case 1:{
-                NSArray *indexPaths = [weakSelf.collectionView indexPathsForVisibleItems];
-//                [weakSelf.collectionView deleteItemsAtIndexPaths:indexPaths];
-                [weakSelf collectionView:weakSelf.collectionView didSelectItemAtIndexPath:indexPaths[0]];
+//                NSArray *indexPaths = [weakSelf.collectionView indexPathsForVisibleItems];
+////                [weakSelf.collectionView deleteItemsAtIndexPaths:indexPaths];
+//                [weakSelf collectionView:weakSelf.collectionView didSelectItemAtIndexPath:indexPaths[0]];
             }
                 break;
             case 2:
-                DLog(@"tag:%ld",tag);
+                break;
+            case 3:
                 break;
             default:
                 break;

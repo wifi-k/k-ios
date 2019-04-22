@@ -278,6 +278,7 @@
 		09C5A51E22686C8400742833 /* SXPhotoOptionPickerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5A51D22686C8400742833 /* SXPhotoOptionPickerButton.m */; };
 		09C5A521226C55FF00742833 /* SXSingleTopImageAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5A520226C55FF00742833 /* SXSingleTopImageAlertView.m */; };
 		09C5A524226C5C4D00742833 /* SXSingleTopImageAlertView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5A523226C5C4D00742833 /* SXSingleTopImageAlertView2.m */; };
+		09C5A527226DC12300742833 /* SXPhotoBrowserCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5A526226DC12200742833 /* SXPhotoBrowserCustomButton.m */; };
 		09C8CE362248F84000C03F43 /* SXMineUserInfoResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE352248F84000C03F43 /* SXMineUserInfoResult.m */; };
 		09C8CE3A224903E600C03F43 /* SXFamilyMemberNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE39224903E600C03F43 /* SXFamilyMemberNetTool.m */; };
 		09C8CE3E2249BADA00C03F43 /* SXFamilyMemberParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C8CE3D2249BADA00C03F43 /* SXFamilyMemberParam.m */; };
@@ -940,6 +941,8 @@
 		09C5A520226C55FF00742833 /* SXSingleTopImageAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXSingleTopImageAlertView.m; sourceTree = "<group>"; };
 		09C5A522226C5C4D00742833 /* SXSingleTopImageAlertView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXSingleTopImageAlertView2.h; sourceTree = "<group>"; };
 		09C5A523226C5C4D00742833 /* SXSingleTopImageAlertView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXSingleTopImageAlertView2.m; sourceTree = "<group>"; };
+		09C5A525226DC12200742833 /* SXPhotoBrowserCustomButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXPhotoBrowserCustomButton.h; sourceTree = "<group>"; };
+		09C5A526226DC12200742833 /* SXPhotoBrowserCustomButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXPhotoBrowserCustomButton.m; sourceTree = "<group>"; };
 		09C8CE342248F84000C03F43 /* SXMineUserInfoResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXMineUserInfoResult.h; sourceTree = "<group>"; };
 		09C8CE352248F84000C03F43 /* SXMineUserInfoResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXMineUserInfoResult.m; sourceTree = "<group>"; };
 		09C8CE38224903E600C03F43 /* SXFamilyMemberNetTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXFamilyMemberNetTool.h; sourceTree = "<group>"; };
@@ -2763,6 +2766,8 @@
 				09EF2FBA225B6F0F00C2C17C /* SXPhotoBrowserBottomView.h */,
 				09EF2FBB225B6F0F00C2C17C /* SXPhotoBrowserBottomView.m */,
 				09EF2FBD225B6F1900C2C17C /* SXPhotoBrowserBottomView.xib */,
+				09C5A525226DC12200742833 /* SXPhotoBrowserCustomButton.h */,
+				09C5A526226DC12200742833 /* SXPhotoBrowserCustomButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4198,6 +4203,7 @@
 				09C9092C22603D8C00BFF67C /* SXPhotoChooseController.m in Sources */,
 				09C909332260723300BFF67C /* LMJScrollTextView2.m in Sources */,
 				B348F98821F713A80000F194 /* main.m in Sources */,
+				09C5A527226DC12300742833 /* SXPhotoBrowserCustomButton.m in Sources */,
 				093C12F52254A660005682C8 /* UIButton+EnlargeTouchArea.m in Sources */,
 				09D5F625222925C200EA681A /* SXParentControlHeaderView.m in Sources */,
 				092D6D0B2202D76000538AC8 /* SXRegistHeaderView.m in Sources */,

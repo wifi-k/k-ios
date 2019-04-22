@@ -16,59 +16,102 @@
             <rect key="frame" x="0.0" y="0.0" width="398" height="88"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIi-Bu-S6f">
-                    <rect key="frame" x="20" y="0.0" width="106" height="88"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <state key="normal" title="分享">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="clickOptionBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="hvH-x2-fFv"/>
-                    </connections>
-                </button>
-                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iI7-SH-LDF">
-                    <rect key="frame" x="146" y="0.0" width="106" height="88"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <state key="normal" title="删除">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="clickOptionBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="g0L-Jy-ERd"/>
-                    </connections>
-                </button>
-                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itV-L7-4R3">
-                    <rect key="frame" x="272" y="0.0" width="106" height="88"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <state key="normal" title="备份">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="clickOptionBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="SUy-RM-uEi"/>
-                    </connections>
-                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZt-2J-QCs">
+                    <rect key="frame" x="0.0" y="0.0" width="398" height="88"/>
+                    <subviews>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iI7-SH-LDF" customClass="SXPhotoBrowserCustomButton">
+                            <rect key="frame" x="99.5" y="0.0" width="99.5" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="vtX-Wi-G86"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="删除" image="img_delete_white">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="clickOptionBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="g0L-Jy-ERd"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itV-L7-4R3" customClass="SXPhotoBrowserCustomButton">
+                            <rect key="frame" x="199" y="0.0" width="99.5" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="t50-U4-mpP"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="备份" image="img_backup_white">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="clickOptionBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="SUy-RM-uEi"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcp-od-Eb7" customClass="SXPhotoBrowserCustomButton">
+                            <rect key="frame" x="298.5" y="0.0" width="99.5" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="FPR-OA-bMS"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="下载" image="img_download_white">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="clickOptionBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="PMp-4B-sRM"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIi-Bu-S6f" customClass="SXPhotoBrowserCustomButton">
+                            <rect key="frame" x="0.0" y="0.0" width="99.5" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="anM-wY-ZZN"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="分享" image="img_share_white">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="clickOptionBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="hvH-x2-fFv"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="iI7-SH-LDF" firstAttribute="top" secondItem="EZt-2J-QCs" secondAttribute="top" id="1yj-v0-AAf"/>
+                        <constraint firstAttribute="trailing" secondItem="kcp-od-Eb7" secondAttribute="trailing" id="EMZ-ce-uKZ"/>
+                        <constraint firstItem="kcp-od-Eb7" firstAttribute="leading" secondItem="itV-L7-4R3" secondAttribute="trailing" id="FaH-Cl-Z1N"/>
+                        <constraint firstItem="itV-L7-4R3" firstAttribute="top" secondItem="EZt-2J-QCs" secondAttribute="top" id="I2E-qY-wDM"/>
+                        <constraint firstItem="nIi-Bu-S6f" firstAttribute="top" secondItem="EZt-2J-QCs" secondAttribute="top" id="MiS-XH-48x"/>
+                        <constraint firstItem="nIi-Bu-S6f" firstAttribute="leading" secondItem="EZt-2J-QCs" secondAttribute="leading" id="NHb-Cf-UQA"/>
+                        <constraint firstItem="nIi-Bu-S6f" firstAttribute="leading" secondItem="EZt-2J-QCs" secondAttribute="leading" id="NHd-rz-u5P"/>
+                        <constraint firstItem="iI7-SH-LDF" firstAttribute="leading" secondItem="nIi-Bu-S6f" secondAttribute="trailing" id="Ng9-fA-rpZ"/>
+                        <constraint firstAttribute="trailing" secondItem="kcp-od-Eb7" secondAttribute="trailing" id="Oa6-D3-rsr"/>
+                        <constraint firstItem="itV-L7-4R3" firstAttribute="leading" secondItem="iI7-SH-LDF" secondAttribute="trailing" id="b2s-vF-5ck"/>
+                        <constraint firstItem="itV-L7-4R3" firstAttribute="width" secondItem="nIi-Bu-S6f" secondAttribute="width" id="gFn-57-nUV"/>
+                        <constraint firstItem="kcp-od-Eb7" firstAttribute="top" secondItem="EZt-2J-QCs" secondAttribute="top" id="lsW-5u-0KI"/>
+                        <constraint firstItem="iI7-SH-LDF" firstAttribute="width" secondItem="nIi-Bu-S6f" secondAttribute="width" id="oPC-iI-wYd"/>
+                        <constraint firstItem="kcp-od-Eb7" firstAttribute="width" secondItem="nIi-Bu-S6f" secondAttribute="width" id="uos-NH-JO1"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="iI7-SH-LDF" firstAttribute="leading" secondItem="nIi-Bu-S6f" secondAttribute="trailing" constant="20" id="6RC-Rb-tlR"/>
-                <constraint firstItem="itV-L7-4R3" firstAttribute="width" secondItem="nIi-Bu-S6f" secondAttribute="width" id="9eJ-eo-QeK"/>
-                <constraint firstAttribute="bottom" secondItem="nIi-Bu-S6f" secondAttribute="bottom" id="CHr-c8-uPi"/>
-                <constraint firstAttribute="bottom" secondItem="itV-L7-4R3" secondAttribute="bottom" id="HP0-vC-9aG"/>
-                <constraint firstItem="iI7-SH-LDF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="M1X-dZ-IGI"/>
-                <constraint firstItem="nIi-Bu-S6f" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="isa-td-YdV"/>
-                <constraint firstItem="itV-L7-4R3" firstAttribute="leading" secondItem="iI7-SH-LDF" secondAttribute="trailing" constant="20" id="mi9-Dg-cWI"/>
-                <constraint firstAttribute="bottom" secondItem="iI7-SH-LDF" secondAttribute="bottom" id="qTP-Ur-Ake"/>
-                <constraint firstItem="nIi-Bu-S6f" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="spS-4t-Ue6"/>
-                <constraint firstItem="iI7-SH-LDF" firstAttribute="width" secondItem="nIi-Bu-S6f" secondAttribute="width" id="tRW-Bc-MjA"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="itV-L7-4R3" secondAttribute="trailing" constant="20" id="wmk-TM-mo7"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="itV-L7-4R3" secondAttribute="trailing" constant="20" id="xsS-ri-Jud"/>
-                <constraint firstItem="itV-L7-4R3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zLu-UR-J3m"/>
-                <constraint firstItem="nIi-Bu-S6f" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="zjJ-8l-WOO"/>
+                <constraint firstItem="EZt-2J-QCs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5sc-k3-ux2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EZt-2J-QCs" secondAttribute="trailing" id="K32-3z-1Bx"/>
+                <constraint firstItem="EZt-2J-QCs" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="XrA-9w-w8e"/>
+                <constraint firstAttribute="bottom" secondItem="EZt-2J-QCs" secondAttribute="bottom" id="xg0-cS-hFu"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="120.28985507246378" y="-132.58928571428572"/>
+            <connections>
+                <outlet property="bottomView" destination="EZt-2J-QCs" id="gfI-ML-zMX"/>
+            </connections>
+            <point key="canvasLocation" x="121.73913043478262" y="-137.27678571428569"/>
         </view>
     </objects>
+    <resources>
+        <image name="img_backup_white" width="19" height="17"/>
+        <image name="img_delete_white" width="18" height="18"/>
+        <image name="img_download_white" width="22" height="18"/>
+        <image name="img_share_white" width="17" height="16"/>
+    </resources>
 </document>
