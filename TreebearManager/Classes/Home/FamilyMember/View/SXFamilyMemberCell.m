@@ -55,7 +55,15 @@ static NSString *SXFamilyMemberCellID = @"SXFamilyMemberCellID";
     _model = model;
     
     [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:model.userAvatar] placeholderImage:[UIImage imageNamed:@"mine_xioaki_default2"] options:SDWebImageRetryFailed];
-    self.nickNameL.text = model.userName;
+    
+    NSString *nameStr = @"";
+    if ([NSString isNotEmpty:model.userMobile] && model.userMobile.length > 4) {
+        NSRange range = NSMakeRange(model.userMobile.length-4, 4);
+        NSString *subMobile = [model.userMobile substringWithRange:range];
+        nameStr = [NSString isEmpty:model.userName] ? [NSString stringWithFormat:@"用户%@",subMobile] : model.userName;
+    }
+    self.nickNameL.text = nameStr;
+
     self.mobileL.text = [NSString stringWithFormat:@"手机号：%@",model.userMobile];
     if (model.role.integerValue == 0) {//超级管理员
         [self.deleteBtn setImage:[UIImage imageNamed:@"home_manager_super2"] forState:UIControlStateNormal];
