@@ -85,11 +85,11 @@
     switch (model.status.integerValue) {
         case 0:
             [self.statusBtn setTitle:@"离线" forState:UIControlStateNormal];
-            self.timeL.text = [NSString stringWithFormat:@"离线时间:%@",[NSString stringWithTimestamp2:model.offTime]];
+            self.timeL.text = [NSString stringWithFormat:@"离线时间:%@",[NSString stringWithTimestamp22:model.offTime]];
             break;
         case 1:
             [self.statusBtn setTitle:@"在线" forState:UIControlStateNormal];
-            self.timeL.text = [NSString stringWithFormat:@"上线时间:%@",[NSString stringWithTimestamp2:model.onTime]];
+            self.timeL.text = [NSString stringWithFormat:@"上线时间:%@",[NSString stringWithTimestamp22:model.onTime]];
             break;
         default:
             [self.statusBtn setTitle:@"状态" forState:UIControlStateNormal];

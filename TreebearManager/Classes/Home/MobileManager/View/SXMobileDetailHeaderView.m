@@ -141,10 +141,10 @@
     self.nameL.text = ([NSString isEmpty:model.note] ? model.name : model.note);
     switch (model.status.integerValue) {
         case 0://离线
-            self.statusL.text = [NSString stringWithFormat:@"%@ 离线",[NSString stringWithTimestamp2:model.offTime]];
+            self.statusL.text = [NSString stringWithFormat:@"%@ 离线",[NSString stringWithTimestamp22:model.offTime]];
             break;
         case 1://在线
-            self.statusL.text = [NSString stringWithFormat:@"%@ 在线",[NSString stringWithTimestamp2:model.onTime]];
+            self.statusL.text = [NSString stringWithFormat:@"%@ 在线",[NSString stringWithTimestamp22:model.onTime]];
             break;
         default:
             break;
@@ -164,6 +164,7 @@
 - (void)clickCenterFirstBgView{
     if (self.clickCenterFirstBgViewBlock) {
         self.clickCenterFirstBgViewBlock();
+        
     }
 }
 
