@@ -218,6 +218,15 @@
     }];
 }
 
+//自动滚动某一位置
+- (void)scrollToHourRow:(NSInteger)hourRow minuteRow:(NSInteger)minuteRow{
+    [self.datePicker selectRow:hourRow inComponent:0 animated:YES];
+    [self pickerView:self.datePicker didSelectRow:hourRow inComponent:0];
+    
+    [self.datePicker selectRow:minuteRow inComponent:1 animated:YES];
+    [self pickerView:self.datePicker didSelectRow:minuteRow inComponent:1];
+}
+
 #pragma mark -点击事件-
 //点击遮罩
 - (void)clickBgView{

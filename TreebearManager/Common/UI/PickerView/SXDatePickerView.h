@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 //展示
 - (void)showPickerView;
 
+- (void)scrollToHourRow:(NSInteger)hourRow minuteRow:(NSInteger)minuteRow;
+
 @end
 
 NS_ASSUME_NONNULL_END
