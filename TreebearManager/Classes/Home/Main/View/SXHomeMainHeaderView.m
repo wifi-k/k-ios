@@ -132,19 +132,24 @@
         make.centerX.mas_equalTo(self.managerBtn).mas_offset(25);
         make.centerY.mas_equalTo(self.managerBtn).mas_offset(-20);
     }];
+}
+
+#pragma mark -setter-
+- (void)setMemberModel:(SXFamilyMemberModel *)memberModel{
+    _memberModel = memberModel;
     
-    SXMineUserInfoModel *userInfo = SXPersonInfoModel.sharedSXPersonInfoModel.result.user;
-    if (userInfo.role.integerValue == 0) {//管理员
-        managerL.text = @"管理员";
+    
+    if (memberModel.role.integerValue == 0) {//管理员
+        self.managerL.text = @"管理员";
     } else {
-        managerL.text = @"成员";
+        self.managerL.text = @"成员";
     }
     
     NSString *nameStr = @"";
-    if ([NSString isNotEmpty:userInfo.mobile] && userInfo.mobile.length > 4) {
-        NSRange range = NSMakeRange(userInfo.mobile.length-4, 4);
-        NSString *subMobile = [userInfo.mobile substringWithRange:range];
-        nameStr = [NSString isEmpty:userInfo.name] ? [NSString stringWithFormat:@"用户%@",subMobile] : userInfo.name;
+    if ([NSString isNotEmpty:memberModel.userMobile] && memberModel.userMobile.length > 4) {
+        NSRange range = NSMakeRange(memberModel.userMobile.length-4, 4);
+        NSString *subMobile = [memberModel.userMobile substringWithRange:range];
+        nameStr = [NSString isEmpty:memberModel.userName] ? [NSString stringWithFormat:@"用户%@",subMobile] : memberModel.userName;
     }
     [self.managerBtn setTitle:nameStr forState:UIControlStateNormal];
 }
@@ -169,22 +174,6 @@
             [self.statusBtn setTitle:@"状态" forState:UIControlStateNormal];
             break;
     }
-    
-    SXMineUserInfoModel *userInfo = SXPersonInfoModel.sharedSXPersonInfoModel.result.user;
-    if (userInfo.role.integerValue == 0) {//管理员
-        self.managerL.text = @"管理员";
-    } else {
-//        self.managerL.text = @"管理员";
-        self.managerL.text = @"成员";
-    }
-    
-    NSString *nameStr = @"";
-    if ([NSString isNotEmpty:userInfo.mobile] && userInfo.mobile.length > 4) {
-        NSRange range = NSMakeRange(userInfo.mobile.length-4, 4);
-        NSString *subMobile = [userInfo.mobile substringWithRange:range];
-        nameStr = [NSString isEmpty:userInfo.name] ? [NSString stringWithFormat:@"用户%@",subMobile] : userInfo.name;
-    }
-    [self.managerBtn setTitle:nameStr forState:UIControlStateNormal];
 }
 
 #pragma mark -事件监听-

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXFamilyMemberModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setUpData;
 
 - (void)setUpMsgArray:(NSArray *)msgArray;
+
+///家庭管理员|成员模型
+@property (nonatomic, strong) SXFamilyMemberModel *memberModel;
 
 ///点击管理员按钮回调
 @property (nonatomic, copy) void (^clickMangerBtnBlock)(void);

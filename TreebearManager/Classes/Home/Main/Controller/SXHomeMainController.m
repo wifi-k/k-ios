@@ -26,9 +26,10 @@
 #import "SXHomeMainFirstSectionTableCell.h"
 #import "SXHomeMainReportCell.h"
 #import "SXInputAlertView.h"
+#import "SXXiaoKiOptionResult.h"
+#import "SXPersonInfoModel.h"
 #import "SXRootTool.h"
 #import "SXNotificationCenterTool.h"
-#import "SXXiaoKiOptionResult.h"
 #import "SXAddXiaokiNetTool.h"
 #import "SXMineNetTool.h"
 #import "SXWifiSettingNetTool.h"
@@ -285,6 +286,28 @@
     }];
 }
 
+#pragma mark -家庭成员列表接口-
+- (void)userNodeFamilyListData{
+    WS(weakSelf);
+    SXFamilyMemberParam *param = [SXFamilyMemberParam param];
+    SXHomeXiaoKiModel *model = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel;
+    param.nodeId = model.nodeId;
+    [SXFamilyMemberNetTool userNodeFamilyListDataWithParams:param.mj_keyValues Success:^(NSArray *array) {
+        DLog(@"array:%@",array);
+        //刷新家庭成员列表展示
+        SXMineUserInfoModel *user = SXPersonInfoModel.sharedSXPersonInfoModel.result.user;
+        for (SXFamilyMemberModel *memberModel in array) {
+            if ([memberModel.userId isEqualToString:user.modelId]) {
+                weakSelf.headerView.memberModel = memberModel;//模型赋值
+                break;
+            }
+        }
+    } failure:^(NSError *error) {
+        NSString *message = [error.userInfo objectForKey:@"msg"];
+        DLog(@"message:%@",message);
+    }];
+}
+
 #pragma mark -登录设备-
 - (void)loginWithData{
     //1.尝试登录
@@ -326,6 +349,8 @@
             [weakSelf.headerView setUpData];
             [weakSelf userNodeSelectData];//接口选中第一个
         }
+        //加成成员列表
+        [weakSelf userNodeFamilyListData];
         //获取手机设备列表
         [weakSelf userNodeDeviceListData];
         //获取设备一周上网时长
