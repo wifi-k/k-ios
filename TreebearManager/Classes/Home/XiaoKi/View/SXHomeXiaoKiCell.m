@@ -74,7 +74,7 @@ static NSString *SXHomeXiaoKiCellID = @"SXHomeXiaoKiCellID";
 - (void)setModel:(SXHomeXiaoKiModel *)model{
     _model = model;
     
-    self.deviceNameL.text = [NSString stringWithFormat:@"名称:%@",model.name];
+    self.deviceNameL.text = [NSString stringWithFormat:@"%@",model.name];
     self.ssidL.text = model.nodeId;
     switch (model.status.integerValue) {
         case 0:

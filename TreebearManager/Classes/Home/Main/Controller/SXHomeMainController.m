@@ -220,8 +220,9 @@
         }
             break;
         case 2:{
-            SXHomeReportController *reportVC = [[SXHomeReportController alloc] init];
-            [self.navigationController pushViewController:reportVC animated:YES];
+            [MBProgressHUD showWarningWithMessage:@"此功能开发中..." toView:SXKeyWindow];
+//            SXHomeReportController *reportVC = [[SXHomeReportController alloc] init];
+//            [self.navigationController pushViewController:reportVC animated:YES];
         }
             break;
         case 3:{
