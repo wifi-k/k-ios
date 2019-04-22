@@ -14,5 +14,7 @@ SingletonInterface(XKUserMember)
 
 ///用户token
 @property (nonatomic, copy) NSString *token;
+///是否管理员角色
+@property (nonatomic, assign) BOOL isManager;
 
 @end

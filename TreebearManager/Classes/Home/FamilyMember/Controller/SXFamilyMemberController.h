@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SXFamilyMemberController : SXBaseCustomTableViewPlainController
 ///家庭管理员|成员模型 判断标志
-@property (nonatomic, assign) BOOL isShow;
+@property (nonatomic, assign) BOOL isManager;
 
 @end
 

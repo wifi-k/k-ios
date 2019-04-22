@@ -72,8 +72,6 @@
     param.pageNo = @(self.pageIndex);
     param.pageSize = @10;
     [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
-//    SXMineNetTool userNodeListallParams
-//    SXMineNetTool userNodeListParams
     [SXMineNetTool userNodeListallParams:param.mj_keyValues Success:^(SXHomeXiaoKiResult *result) {
         [weakSelf endHeaderRefresh];
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];

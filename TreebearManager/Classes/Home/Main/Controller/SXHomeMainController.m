@@ -27,6 +27,7 @@
 #import "SXHomeMainReportCell.h"
 #import "SXInputAlertView.h"
 #import "SXXiaoKiOptionResult.h"
+#import "XKUserMember.h"
 #import "SXPersonInfoModel.h"
 #import "SXRootTool.h"
 #import "SXNotificationCenterTool.h"
@@ -183,8 +184,8 @@
 #pragma mark -页面跳转-
 - (void)jumpToManagerVC{
     SXFamilyMemberController *managerVC = [[SXFamilyMemberController alloc] init];
-    BOOL isShow = (self.memberModel.role.integerValue==0 ? YES:NO);
-    managerVC.isShow = isShow;
+    BOOL isManager = (self.memberModel.role.integerValue==0 ? YES:NO);
+    managerVC.isManager = isManager;
     [self.navigationController pushViewController:managerVC animated:YES];
 }
 
@@ -304,6 +305,8 @@
             if ([memberModel.userId isEqualToString:user.modelId]) {
                 weakSelf.headerView.memberModel = memberModel;//模型赋值
                 weakSelf.memberModel = memberModel;
+                BOOL isManager = (memberModel.role.integerValue==0 ? YES:NO);
+                XKUserMember.sharedXKUserMember.isManager = isManager;
                 break;
             }
         }

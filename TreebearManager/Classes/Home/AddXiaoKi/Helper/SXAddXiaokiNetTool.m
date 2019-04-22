@@ -15,7 +15,6 @@
 
 + (void)loginWithPasswdDataWithParams:(NSDictionary *)params Success:(void (^)(void))success failure:(void (^)(NSError *error))failure{
     
-    WS(weakSelf);
     [XKNetRequestTool POST:app_login parameters:params success:^(id response) {
         
         if (![response isKindOfClass:NSDictionary.class]) return;

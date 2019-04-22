@@ -12,6 +12,7 @@
 #import "SXHomeXiaoKiCell.h"
 #import "SXInputAlertView.h"
 #import "SXTitleAlertView.h"
+#import "XKUserMember.h"
 #import "SXMineNetTool.h"
 #import "SXRootTool.h"
 
@@ -231,6 +232,11 @@
         [weakSelf alertUpdateNameView:model];
     };
     cell.clickUnbindBtnBlock = ^(SXHomeXiaoKiModel * _Nonnull model) {
+        BOOL isManager = XKUserMember.sharedXKUserMember.isManager;
+        if (!isManager) {
+            [MBProgressHUD showWarningWithMessage:@"家庭成员无解绑权限!" toView:SXKeyWindow];
+            return;
+        }
         [weakSelf alertUnbindWithModel:model];
     };
     cell.clickUpdateVersionBtnBlock = ^(SXHomeXiaoKiModel * _Nonnull model) {
