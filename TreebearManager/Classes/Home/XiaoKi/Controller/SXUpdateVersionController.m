@@ -34,6 +34,11 @@
     SXUpdateVersionHeaderView *headerView = [SXUpdateVersionHeaderView headerView];
     headerView.model = self.model;
     headerView.clickUpdateBtnBlock = ^{
+        if ([NSString isEmpty:weakSelf.model.firmwareUpgrade]) {
+            [MBProgressHUD showWarningWithMessage:@"您的固件版本已经是最新!" toView:SXKeyWindow];
+            return;
+        }
+        
         [weakSelf userNodeFirmwareUpgrade];
     };
     [self.view addSubview:headerView];
@@ -53,7 +58,8 @@
         [MBProgressHUD showWarningWithMessage:@"没有获取到节点，请检查系统网络设置!" toView:SXKeyWindow];
         return;
     }
-    [MBProgressHUD showGrayLoadingToView:SXKeyWindow];
+    
+    [MBProgressHUD showWhiteLoadingWithMessage:@"升级中..." toView:SXKeyWindow];
     [SXMineNetTool userNodeFirmwareUpgradeParams:self.model.nodeId Success:^{
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

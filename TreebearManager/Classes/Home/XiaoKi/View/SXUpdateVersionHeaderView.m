@@ -68,7 +68,11 @@
     self.naviTitleL.text = model.name;
     self.ssidL.text = model.nodeId;
     self.currentVersionL.text = model.firmware;
-    self.latestVersionL.text = model.firmwareUpgrade.description;
+    if ([NSString isEmpty:model.firmwareUpgrade]) {
+        self.latestVersionL.text = model.firmware;
+    } else {
+        self.latestVersionL.text = model.firmwareUpgrade;
+    }
     
     switch (model.status.integerValue) {
         case 0:
