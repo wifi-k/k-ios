@@ -137,7 +137,7 @@
 
 - (void)alertUpdatePwdView{
     WS(weakSelf);
-    SXWifiSettingAlertView *pwdAlertV = [SXWifiSettingAlertView alertWithTitle:@"设置WiFi名称" placeholder:@"请输入新的密码" confirmStr:@"确定" cancelStr:@"取消"];
+    SXWifiSettingAlertView *pwdAlertV = [SXWifiSettingAlertView alertWithTitle:@"设置WiFi密码" placeholder:@"请输入新的密码" confirmStr:@"确定" cancelStr:@"取消"];
     pwdAlertV.confirmButtonBlock = ^(NSString * _Nonnull text) {
         DLog(@"text:%@",text);
         if (text.length < 8) {

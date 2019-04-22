@@ -100,6 +100,12 @@
 }
 
 - (void)rightButtonAction:(UIButton *)button{
+    
+    if (!self.timers.count) {
+        [MBProgressHUD showWarningWithMessage:@"您没有添加时间段!" toView:SXKeyWindow];
+        return;
+    }
+    
     [self userNodeRssiTimerSetData];
 }
 
