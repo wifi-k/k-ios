@@ -338,28 +338,31 @@
     param.pageNo = @1;
     param.pageSize = @10;
     [SXMineNetTool userNodeListallParams:param.mj_keyValues Success:^(SXHomeXiaoKiResult *result) {
-        if (!result.page.count) return;
-        BOOL hasSelected = NO;
-        for (SXHomeXiaoKiModel *model in result.page) {
-            if (model.isSelect.boolValue) {
-                SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel = model;
-                [weakSelf.headerView setUpData];
-                hasSelected = YES;
-                break;
+        if (!result.page.count){//列表为空
+            [SXRootTool changeToHomeVC];
+        } else {//有
+            BOOL hasSelected = NO;
+            for (SXHomeXiaoKiModel *model in result.page) {
+                if (model.isSelect.boolValue) {
+                    SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel = model;
+                    [weakSelf.headerView setUpData];
+                    hasSelected = YES;
+                    break;
+                }
             }
+            //如果第一分页没有选中，默认选中第一个
+            if (!hasSelected) {
+                SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel = result.page.firstObject;
+                [weakSelf.headerView setUpData];
+                [weakSelf userNodeSelectData];//接口选中第一个
+            }
+            //加成成员列表
+            [weakSelf userNodeFamilyListData];
+            //获取手机设备列表
+            [weakSelf userNodeDeviceListData];
+            //获取设备一周上网时长
+            [weakSelf userNodeDeviceWeekListData];
         }
-        //如果第一分页没有选中，默认选中第一个
-        if (!hasSelected) {
-            SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel = result.page.firstObject;
-            [weakSelf.headerView setUpData];
-            [weakSelf userNodeSelectData];//接口选中第一个
-        }
-        //加成成员列表
-        [weakSelf userNodeFamilyListData];
-        //获取手机设备列表
-        [weakSelf userNodeDeviceListData];
-        //获取设备一周上网时长
-        [weakSelf userNodeDeviceWeekListData];
     } failure:^(NSError *error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         if ([NSString isNotEmpty:message]) {
