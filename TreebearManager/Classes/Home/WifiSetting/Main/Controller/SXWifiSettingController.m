@@ -122,7 +122,7 @@
             param.ssid0 = [XKGetWifiNetTool getWifiSSID];
             param.ssid = text;
             //param.passwd = SXXiaoKInfoModel.sharedSXXiaoKInfoModel.passwd;
-            [weakSelf setNetDynamicData:param];
+            [weakSelf setNetDynamicData:param.mj_keyValues];
         } else {
             [MBProgressHUD showWarningWithMessage:@"请先连接您的小K设备!" toView:SXKeyWindow];
 //            SXXiaoKiParam *param = [SXXiaoKiParam param];
@@ -152,7 +152,9 @@
             SXDynamicParam *param = [SXDynamicParam param];
             param.ssid0 = [XKGetWifiNetTool getWifiSSID];
             param.passwd = text;
-            [weakSelf setNetDynamicData:param];
+            NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:param.mj_keyValues];
+            dict[@"ssid"] = @"";
+            [weakSelf setNetDynamicData:dict];
         } else {
             [MBProgressHUD showWarningWithMessage:@"请先连接您的小K设备!" toView:SXKeyWindow];
 //            SXXiaoKiParam *param = [SXXiaoKiParam param];
@@ -348,9 +350,9 @@
 }
 
 #pragma mark -网络信息设置-
-- (void)setNetDynamicData:(SXDynamicParam *)param{
+- (void)setNetDynamicData:(NSDictionary *)params{
     WS(weakSelf);
-    [SXAddXiaokiNetTool ssidSettingWithDataWithParams:param.mj_keyValues Success:^{
+    [SXAddXiaokiNetTool ssidSettingWithDataWithParams:params Success:^{
         //1.指示器
         [MBProgressHUD showSuccessWithMessage:@"WiFi设置成功!" toView:weakSelf.view];
         //2.WiFi名称已经更改，前往系统设置重新连接

@@ -66,7 +66,9 @@ static CGFloat marginY = 1.0f;
     
     self.navigationItem.title = @"照片库";
     
-    UIBarButtonItem *right = [UIBarButtonItem barButtonItemWithTitle:@"备份" target:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+//    img_photo_backup
+    
+    UIBarButtonItem *right = [UIBarButtonItem barButtonItemWithImage:[UIImage imageNamed:@"img_photo_backup"] highImage:[UIImage imageNamed:@"img_photo_backup"] target:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = right;
     
     //流水布局
