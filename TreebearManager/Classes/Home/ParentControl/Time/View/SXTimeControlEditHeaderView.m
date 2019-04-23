@@ -218,13 +218,13 @@
 
 - (void)clickBeginTimeControl:(UITapGestureRecognizer *)sender {
     if (self.clickBeginTimeControlBlock) {
-        self.clickBeginTimeControlBlock();
+        self.clickBeginTimeControlBlock(self.beginTimeStr);
     }
 }
 
 - (void)clickEndTimeControl:(UITapGestureRecognizer *)sender {
     if (self.clickEndTimeControlBlock) {
-        self.clickEndTimeControlBlock();
+        self.clickEndTimeControlBlock(self.endTimeStr);
     }
 }
 

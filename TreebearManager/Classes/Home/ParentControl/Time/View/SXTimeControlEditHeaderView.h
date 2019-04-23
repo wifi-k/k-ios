@@ -20,9 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) SXTimeControlModel *model;
 
 ///点击开始时间回调
-@property (nonatomic, copy) void (^clickBeginTimeControlBlock)(void);
+@property (nonatomic, copy) void (^clickBeginTimeControlBlock)(NSString *text);
 ///点击结束时间回调
-@property (nonatomic, copy) void (^clickEndTimeControlBlock)(void);
+@property (nonatomic, copy) void (^clickEndTimeControlBlock)(NSString *text);
 ///点击确定按钮回调
 @property (nonatomic, copy) void (^clickConfirmBtnBlock)(SXTimeControlParam *param);
 

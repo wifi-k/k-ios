@@ -114,13 +114,13 @@
 
 - (void)clickBeginTimeControl:(UITapGestureRecognizer *)sender {
     if (self.clickBeginTimeControlBlock) {
-        self.clickBeginTimeControlBlock();
+        self.clickBeginTimeControlBlock(self.beginTimeL.text);
     }
 }
 
 - (void)clickEndTimeControl:(UITapGestureRecognizer *)sender {
     if (self.clickEndTimeControlBlock) {
-        self.clickEndTimeControlBlock();
+        self.clickEndTimeControlBlock(self.endTimeL.text);
     }
 }
 

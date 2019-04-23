@@ -46,19 +46,31 @@
     } else {
         headerView.model = self.model;
     }
-    headerView.clickBeginTimeControlBlock = ^{
+    headerView.clickBeginTimeControlBlock = ^(NSString * _Nonnull text) {
         SXDatePickerView *pickerView = [SXDatePickerView pickerView];
         pickerView.confirmBtnBlock = ^(NSString * _Nonnull timeStr) {
             weakSelf.headerView.startTimeStr = timeStr;
         };
         [pickerView showPickerView];
+        if ([NSString isNotEmpty:text]) {
+            NSArray *times = [text componentsSeparatedByString:@":"];
+            NSString *startStr = [times firstObject];
+            NSString *endStr = [times lastObject];
+            [pickerView scrollToHourRow:startStr.integerValue minuteRow:endStr.integerValue];
+        }
     };
-    headerView.clickEndTimeControlBlock = ^{
+    headerView.clickEndTimeControlBlock = ^(NSString * _Nonnull text) {
         SXDatePickerView *pickerView = [SXDatePickerView pickerView];
         pickerView.confirmBtnBlock = ^(NSString * _Nonnull timeStr) {
             weakSelf.headerView.endTimeStr = timeStr;
         };
         [pickerView showPickerView];
+        if ([NSString isNotEmpty:text]) {
+            NSArray *times = [text componentsSeparatedByString:@":"];
+            NSString *startStr = [times firstObject];
+            NSString *endStr = [times lastObject];
+            [pickerView scrollToHourRow:startStr.integerValue minuteRow:endStr.integerValue];
+        }
     };
     headerView.clickConfirmBtnBlock = ^(SXHealtyControlTimeModel * _Nonnull model) {
         DLog(@"%@-%@",model.startTime,model.endTime);

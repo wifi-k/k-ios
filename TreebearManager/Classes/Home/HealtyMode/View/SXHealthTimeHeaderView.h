@@ -21,9 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///点击确定按钮回调
 @property (nonatomic, copy) void (^clickConfirmBtnBlock)(SXHealtyControlTimeModel *model);
 ///点击开始时间回调
-@property (nonatomic, copy) void (^clickBeginTimeControlBlock)(void);
+@property (nonatomic, copy) void (^clickBeginTimeControlBlock)(NSString *text);
 ///点击结束时间回调
-@property (nonatomic, copy) void (^clickEndTimeControlBlock)(void);
+@property (nonatomic, copy) void (^clickEndTimeControlBlock)(NSString *text);
 
 ///开始时间
 @property (nonatomic, copy) NSString *startTimeStr;

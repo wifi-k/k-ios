@@ -27,19 +27,31 @@
     WS(weakSelf);
     SXTimeControlEditHeaderView *headerView = [SXTimeControlEditHeaderView headerView];
     headerView.model = self.model;
-    headerView.clickBeginTimeControlBlock = ^{
+    headerView.clickBeginTimeControlBlock = ^(NSString * _Nonnull text) {
         SXDatePickerView *pickerView = [SXDatePickerView pickerView];
         pickerView.confirmBtnBlock = ^(NSString * _Nonnull timeStr) {
             weakSelf.headerView.beginTimeStr = timeStr;
         };
         [pickerView showPickerView];
+        if ([NSString isNotEmpty:text]) {
+            NSArray *times = [text componentsSeparatedByString:@":"];
+            NSString *startStr = [times firstObject];
+            NSString *endStr = [times lastObject];
+            [pickerView scrollToHourRow:startStr.integerValue minuteRow:endStr.integerValue];
+        }
     };
-    headerView.clickEndTimeControlBlock = ^{
+    headerView.clickEndTimeControlBlock = ^(NSString * _Nonnull text) {
         SXDatePickerView *pickerView = [SXDatePickerView pickerView];
         pickerView.confirmBtnBlock = ^(NSString * _Nonnull timeStr) {
             weakSelf.headerView.endTimeStr = timeStr;
         };
         [pickerView showPickerView];
+        if ([NSString isNotEmpty:text]) {
+            NSArray *times = [text componentsSeparatedByString:@":"];
+            NSString *startStr = [times firstObject];
+            NSString *endStr = [times lastObject];
+            [pickerView scrollToHourRow:startStr.integerValue minuteRow:endStr.integerValue];
+        }
     };
     headerView.clickConfirmBtnBlock = ^(SXTimeControlParam * _Nonnull param) {
         DLog(@"点击确定...");
