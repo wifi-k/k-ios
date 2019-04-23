@@ -13,6 +13,8 @@
 #import "SXPhotoBackupCollectionCell.h"
 
 #define COL 3
+static CGFloat marginX = 1.0f;
+static CGFloat marginY = 1.0f;
 
 @interface SXPhotoBackupController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic, weak) UICollectionView *collectionView;
@@ -38,14 +40,15 @@
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     layout.sectionHeadersPinToVisibleBounds = YES;//头视图悬浮
-    float collectionWidth = (SCREEN_WIDTH - (COL+1) * 1)/COL;
-    layout.itemSize = CGSizeMake(collectionWidth, collectionWidth);
     
     //设置每一行之间的间距
     //    CGFloat inset = (SCREEN_WIDTH - COL * layout.itemSize.width) / (COL + 1);
     //    layout.sectionInset = UIEdgeInsetsMake(inset, 0, inset, 0);
-    layout.minimumLineSpacing = 2;
-    layout.minimumInteritemSpacing = 2;
+    float itemWidth = (SCREEN_WIDTH - (COL+1) * marginX)/COL;
+    layout.itemSize = CGSizeMake(itemWidth, itemWidth);//设置单元格大小
+    layout.minimumLineSpacing = marginY*2; //最小行间距(默认为10)
+    layout.minimumInteritemSpacing = marginX; //最小item间距（默认为10）
+    layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);//设置senction的内边距
     
     //创建collectionView
     UICollectionView *collectV = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];

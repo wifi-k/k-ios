@@ -7,8 +7,14 @@
 //
 
 #import "SXPhotoBrowserBottomView.h"
+#import "SXPhotoBrowserCustomButton.h"
 
 @interface SXPhotoBrowserBottomView ()
+@property (weak, nonatomic) IBOutlet SXPhotoBrowserCustomButton *shareBtn;
+@property (weak, nonatomic) IBOutlet SXPhotoBrowserCustomButton *deleteBtn;
+@property (weak, nonatomic) IBOutlet SXPhotoBrowserCustomButton *backupBtn;
+@property (weak, nonatomic) IBOutlet SXPhotoBrowserCustomButton *downloadBtn;
+
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @end
 
@@ -30,8 +36,17 @@
 
 - (void)setUpUI{
     
-//    self.backgroundColor = SXColorWhite;
     self.bottomView.backgroundColor = SXColorBlack;
+    
+    [self.shareBtn setTitleColor:SXColorWhite forState:UIControlStateNormal];
+    [self.deleteBtn setTitleColor:SXColorWhite forState:UIControlStateNormal];
+    [self.backupBtn setTitleColor:SXColorWhite forState:UIControlStateNormal];
+    [self.downloadBtn setTitleColor:SXColorWhite forState:UIControlStateNormal];
+    
+    [self.shareBtn setTitleColor:SXColorWhite forState:UIControlStateHighlighted];
+    [self.deleteBtn setTitleColor:SXColorWhite forState:UIControlStateHighlighted];
+    [self.backupBtn setTitleColor:SXColorWhite forState:UIControlStateHighlighted];
+    [self.downloadBtn setTitleColor:SXColorWhite forState:UIControlStateHighlighted];
 }
 
 - (IBAction)clickOptionBtn:(UIButton *)sender {

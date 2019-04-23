@@ -19,14 +19,24 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efd-4O-TNA">
                     <rect key="frame" x="0.0" y="0.0" width="403" height="98"/>
                     <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aiy-cg-cml" customClass="SXPhotoBrowserCustomButton">
+                            <rect key="frame" x="0.0" y="0.0" width="101" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="VWO-un-O29"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <state key="normal" title="分享" image="img_share_black">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Yx-AU-YGz" customClass="SXPhotoBrowserCustomButton">
                             <rect key="frame" x="101" y="0.0" width="100.5" height="70"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="70" id="JKq-Kk-Y49"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <state key="normal" title="删除" image="img_delete_white">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <state key="normal" title="删除" image="img_delete_black">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                         </button>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ir-Qq-pMs" customClass="SXPhotoBrowserCustomButton">
@@ -34,9 +44,9 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="70" id="Pln-3J-e4d"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <state key="normal" title="备份" image="img_backup_white">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <state key="normal" title="备份" image="img_backup_black">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                         </button>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Oz-Md-LdM" customClass="SXPhotoBrowserCustomButton">
@@ -44,19 +54,9 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="70" id="iZX-7C-kfn"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <state key="normal" title="下载" image="img_download_white">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aiy-cg-cml" customClass="SXPhotoBrowserCustomButton">
-                            <rect key="frame" x="0.0" y="0.0" width="101" height="70"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="70" id="VWO-un-O29"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <state key="normal" title="分享" image="img_share_white">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <state key="normal" title="下载" image="img_download_black">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                         </button>
                     </subviews>
@@ -90,13 +90,20 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="backupBtn" destination="3Ir-Qq-pMs" id="dsh-yv-h3c"/>
+                <outlet property="bottomBgView" destination="Efd-4O-TNA" id="OGH-oF-Q8A"/>
+                <outlet property="deleteBtn" destination="7Yx-AU-YGz" id="NCL-r2-9l9"/>
+                <outlet property="downloadBtn" destination="1Oz-Md-LdM" id="Zha-Sa-ldA"/>
+                <outlet property="shareBtn" destination="Aiy-cg-cml" id="4aC-Ff-cc0"/>
+            </connections>
             <point key="canvasLocation" x="123.91304347826087" y="-161.38392857142856"/>
         </view>
     </objects>
     <resources>
-        <image name="img_backup_white" width="19" height="17"/>
-        <image name="img_delete_white" width="18" height="18"/>
-        <image name="img_download_white" width="22" height="18"/>
-        <image name="img_share_white" width="17" height="16"/>
+        <image name="img_backup_black" width="19" height="17"/>
+        <image name="img_delete_black" width="18" height="18"/>
+        <image name="img_download_black" width="22" height="18"/>
+        <image name="img_share_black" width="17" height="16"/>
     </resources>
 </document>

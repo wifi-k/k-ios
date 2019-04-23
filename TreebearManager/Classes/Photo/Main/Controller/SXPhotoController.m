@@ -25,6 +25,7 @@ static CGFloat marginY = 1.0f;
 
 @interface SXPhotoController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic, weak) SXPhotoTopView *topView;
+@property (nonatomic, weak) SXPhotoBottomView *bottomView;
 @property (nonatomic, weak) UICollectionView *collectionView;
 
 ///数据源
@@ -66,8 +67,6 @@ static CGFloat marginY = 1.0f;
     
     self.navigationItem.title = @"照片库";
     
-//    img_photo_backup
-    
     UIBarButtonItem *right = [UIBarButtonItem barButtonItemWithImage:[UIImage imageNamed:@"img_photo_backup"] highImage:[UIImage imageNamed:@"img_photo_backup"] target:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = right;
     
@@ -77,11 +76,7 @@ static CGFloat marginY = 1.0f;
     layout.sectionHeadersPinToVisibleBounds = YES;//头视图悬浮
     float itemWidth = (SCREEN_WIDTH - (COL+1) * marginX)/COL;
     layout.itemSize = CGSizeMake(itemWidth, itemWidth);//设置单元格大小
-    layout.minimumLineSpacing = marginY*2; //最小行间距(默认为10)
-    layout.minimumInteritemSpacing = marginX; //最小item间距（默认为10）
-    layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);//设置senction的内边距
     
-    //创建collectionView
     UICollectionView *collectV = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
     collectV.dataSource = self;
     collectV.delegate = self;
@@ -99,6 +94,7 @@ static CGFloat marginY = 1.0f;
         DLog(@"关闭...");
         weakSelf.isEditing = NO;
         [weakSelf.tabBarController.tabBar setHidden:NO];
+        weakSelf.bottomView.hidden = YES;
         weakSelf.topView.hidden = YES;
         
         for (NSArray *sectionArr in weakSelf.assetArray) {
@@ -117,11 +113,16 @@ static CGFloat marginY = 1.0f;
     //4.底部视图
     SXPhotoBottomView *bottomView = [SXPhotoBottomView bottomView];
     [self.view addSubview:bottomView];
-    [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.bottomView = bottomView;
+    self.bottomView.hidden = YES;
+    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.view);
         make.bottom.mas_equalTo(self.view.mas_bottom);
-        make.size.mas_equalTo(self.tabBarController.tabBar.bounds.size);
+        make.width.mas_equalTo(self.tabBarController.tabBar.bounds.size.width);
+        make.height.mas_equalTo(self.tabBarController.tabBar.bounds.size.height + 50 + iPhoneX_Add_Bottom);
     }];
+    
+    self.collectionView.contentInset = UIEdgeInsetsMake(0, 0, 50, 0);
 }
 
 - (void)viewDidLayoutSubviews{
@@ -284,6 +285,7 @@ static CGFloat marginY = 1.0f;
         [weakSelf.collectionView reloadData];
         
         [weakSelf.tabBarController.tabBar setHidden:YES];
+        weakSelf.bottomView.hidden = NO;
         weakSelf.topView.hidden = NO;
     };
     return cell;
@@ -366,6 +368,7 @@ static CGFloat marginY = 1.0f;
             });
             
             [self.tabBarController.tabBar setHidden:NO];
+            self.bottomView.hidden = YES;
             self.topView.hidden = YES;
         } else {
             //选中张数
