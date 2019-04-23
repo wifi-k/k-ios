@@ -24,7 +24,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="70" id="anM-wY-ZZN"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <state key="normal" title="分享" image="img_share_white">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -37,7 +37,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="70" id="vtX-Wi-G86"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <state key="normal" title="删除" image="img_delete_white">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -50,7 +50,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="70" id="t50-U4-mpP"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <state key="normal" title="备份" image="img_backup_white">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -63,7 +63,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="70" id="FPR-OA-bMS"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
                             <state key="normal" title="下载" image="img_download_white">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>

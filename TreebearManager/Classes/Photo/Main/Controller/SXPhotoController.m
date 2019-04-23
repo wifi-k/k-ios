@@ -119,7 +119,7 @@ static CGFloat marginY = 1.0f;
         make.left.mas_equalTo(self.view);
         make.bottom.mas_equalTo(self.view.mas_bottom);
         make.width.mas_equalTo(self.tabBarController.tabBar.bounds.size.width);
-        make.height.mas_equalTo(self.tabBarController.tabBar.bounds.size.height + 50 + iPhoneX_Add_Bottom);
+        make.height.mas_equalTo(self.tabBarController.tabBar.bounds.size.height + 50);
     }];
     
     self.collectionView.contentInset = UIEdgeInsetsMake(0, 0, 50, 0);

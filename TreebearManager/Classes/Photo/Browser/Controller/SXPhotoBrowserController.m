@@ -136,7 +136,7 @@
         make.left.mas_equalTo(self.view);
         make.right.mas_equalTo(self.view.mas_right);
         make.bottom.mas_equalTo(self.view.mas_bottom).mas_offset(-iPhoneX_Add_Bottom);
-        make.height.mas_equalTo(50);
+        make.height.mas_equalTo(100);
     }];
     
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {

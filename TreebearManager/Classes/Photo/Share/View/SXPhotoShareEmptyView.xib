@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SXPhotoShareEmptyView">
+            <rect key="frame" x="0.0" y="0.0" width="353" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_share_empty" translatesAutoresizingMaskIntoConstraints="NO" id="6Wg-IA-m0w">
+                    <rect key="frame" x="168.5" y="246" width="16" height="16"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您好没有家庭共享相册" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aoo-aE-a5L">
+                    <rect key="frame" x="10" y="295" width="333" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="快来创建一个家庭共享相册吧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLI-EX-KRp">
+                    <rect key="frame" x="10" y="326" width="333" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="zLI-EX-KRp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="9dt-1H-fw3"/>
+                <constraint firstItem="6Wg-IA-m0w" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-30" id="AIL-s2-l1A"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Aoo-aE-a5L" secondAttribute="trailing" constant="10" id="JfV-0D-tKj"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zLI-EX-KRp" secondAttribute="trailing" constant="10" id="bMm-jd-g6R"/>
+                <constraint firstItem="zLI-EX-KRp" firstAttribute="top" secondItem="Aoo-aE-a5L" secondAttribute="bottom" constant="10" id="bZj-Fr-9e6"/>
+                <constraint firstItem="6Wg-IA-m0w" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="csL-Rb-oo2"/>
+                <constraint firstItem="Aoo-aE-a5L" firstAttribute="top" secondItem="6Wg-IA-m0w" secondAttribute="bottom" constant="33" id="d1n-Og-6Ys"/>
+                <constraint firstItem="Aoo-aE-a5L" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="ngG-cy-jrP"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="contentL1" destination="Aoo-aE-a5L" id="zKo-U9-5Cu"/>
+                <outlet property="contentL2" destination="zLI-EX-KRp" id="VFY-ht-uhV"/>
+            </connections>
+            <point key="canvasLocation" x="87.681159420289859" y="30.803571428571427"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="img_share_empty" width="197" height="176"/>
+    </resources>
+</document>

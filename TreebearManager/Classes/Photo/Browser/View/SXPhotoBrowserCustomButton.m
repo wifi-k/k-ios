@@ -24,8 +24,11 @@
 }
 
 - (void)setUpUI{
+//    self.titleLabel.contentMode = NSTextAlignmentCenter;
+//    self.titleLabel.font = SXFont10;
+//    self.imageView.contentMode = UIViewContentModeCenter;
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.font = SXFont10;
-    self.titleLabel.contentMode = NSTextAlignmentCenter;
     self.imageView.contentMode = UIViewContentModeCenter;
 }
 
