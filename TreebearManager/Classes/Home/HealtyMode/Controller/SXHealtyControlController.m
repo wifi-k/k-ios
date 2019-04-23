@@ -207,6 +207,10 @@
         DLog(@"删除");
         [weakSelf.timers removeObjectAtIndex:indexPath.row];
         [weakSelf.tableView reloadData];
+        
+        if (weakSelf.timers.count == 0) {
+            weakSelf.headerView.op = @0;
+        }
     };
     return cell;
 }
@@ -240,6 +244,10 @@
         [self.timers removeObjectAtIndex:indexPath.row];
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         DLog(@"self.timers:%ld",self.timers.count);
+        
+        if (self.timers.count == 0) {
+            self.headerView.op = @0;
+        }
     }
 }
 
