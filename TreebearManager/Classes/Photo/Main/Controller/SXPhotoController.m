@@ -76,6 +76,9 @@ static CGFloat marginY = 1.0f;
     layout.sectionHeadersPinToVisibleBounds = YES;//头视图悬浮
     float itemWidth = (SCREEN_WIDTH - (COL+1) * marginX)/COL;
     layout.itemSize = CGSizeMake(itemWidth, itemWidth);//设置单元格大小
+    layout.minimumLineSpacing = marginY*2; //最小行间距(默认为10)
+    layout.minimumInteritemSpacing = marginX; //最小item间距（默认为10）
+    layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);//设置senction的内边距
     
     UICollectionView *collectV = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
     collectV.dataSource = self;
