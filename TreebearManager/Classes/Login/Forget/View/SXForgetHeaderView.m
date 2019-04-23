@@ -93,6 +93,10 @@
         [weakSelf.codeTextField becomeFirstResponder];
         //赋值验证码
         weakSelf.vcode = code;
+        //60S之后清空
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(60.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            weakSelf.vcode = @"";
+        });
     } failure:^(NSError * _Nonnull error) {
         NSString *message = [error.userInfo objectForKey:@"msg"];
         if ([NSString isNotEmpty:message]) {
