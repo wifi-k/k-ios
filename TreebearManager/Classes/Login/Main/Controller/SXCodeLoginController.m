@@ -73,7 +73,7 @@
     [SXLoginNetTool loginWithVCodeDataWithParams:param.mj_keyValues Success:^{
         [weakSelf changeRootVC];
     } failure:^(NSError * _Nonnull error) {
-        if (error.code == 10) {//该手机号未注册，请立即注册
+        if (error.code == 4) {//该手机号未注册，请立即注册
             [weakSelf.view endEditing:YES];
             [weakSelf alertRegistView];
         } else{
