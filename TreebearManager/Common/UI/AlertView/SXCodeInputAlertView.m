@@ -189,9 +189,11 @@ const CGFloat SXCodeInputAlertViewHeightRatio = 0.216; //高度系统
         return;
     }
     
-    if (self.confirmButtonBlock) {
-        self.confirmButtonBlock(input);
-    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (self.confirmButtonBlock) {
+            self.confirmButtonBlock(input);
+        }
+    });
     
     [self performSelector:@selector(removeSelf) withObject:nil afterDelay:0.12];
 }

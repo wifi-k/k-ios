@@ -7,6 +7,7 @@
 //
 
 #import "SXPhotoShareController.h"
+#import "SXPhotoShareRecordController.h"
 #import "SXCodeInputAlertView.h"
 #import "SXPhotoShareEmptyView.h"
 
@@ -44,13 +45,19 @@
 
 #pragma mark -Event-
 - (void)rightButtonAction:(UIButton *)btn{
-    
+    WS(weakSelf);
     SXCodeInputAlertView *nameAlertView = [SXCodeInputAlertView alertWithTitle:@"新建共享相册" placeholder:@"请输入相册名称" confirmStr:@"确定" cancelStr:@"取消"];
     nameAlertView.confirmButtonBlock = ^(NSString * _Nonnull text) {
         DLog(@"text:%@",text);
-        
+        [weakSelf jumpToRecordVC:text];
     };
     [nameAlertView alert];
+}
+
+#pragma mark -页面跳转-
+- (void)jumpToRecordVC:(NSString *)text{
+    SXPhotoShareRecordController *recordVC = [[SXPhotoShareRecordController alloc] init];
+    [self.navigationController pushViewController:recordVC animated:YES];
 }
 
 @end
