@@ -33,23 +33,23 @@
 - (NSMutableArray *)dataArray{
     if (_dataArray == nil) {
         _dataArray = [NSMutableArray array];
+        SXNetOptionModel *model2 = [[SXNetOptionModel alloc] init];
+        model2.title = @"动态IP上网";
+        model2.selected = @(YES);
+        model2.row= @(0);
+        [_dataArray addObject:model2];
+        
         SXNetOptionModel *model0 = [[SXNetOptionModel alloc] init];
         model0.title = @"宽带拨号上网";
-        model0.selected = @(YES);
-        model0.row= @(0);
+        model0.selected = @(NO);
+        model0.row= @(1);
         [_dataArray addObject:model0];
         
         SXNetOptionModel *model1 = [[SXNetOptionModel alloc] init];
         model1.title = @"静态IP上网";
         model1.selected = @(NO);
-        model1.row= @(1);
+        model1.row= @(2);
         [_dataArray addObject:model1];
-        
-        SXNetOptionModel *model2 = [[SXNetOptionModel alloc] init];
-        model2.title = @"动态IP上网";
-        model2.selected = @(NO);
-        model2.row= @(2);
-        [_dataArray addObject:model2];
     }
     return _dataArray;
 }
@@ -107,17 +107,17 @@
 - (void)jumpToNetVC:(SXNetOptionModel *)model{
     switch (model.row.integerValue) {
         case 0:{
+            [self dynamicSettingData];
+        }
+            break;
+        case 1:{
             SXNetBroadbandController *broadVC = [[SXNetBroadbandController alloc] init];
             [self.navigationController pushViewController:broadVC animated:YES];
         }
             break;
-        case 1:{
+        case 2:{
             SXNetStaticController *broadVC = [[SXNetStaticController alloc] init];
             [self.navigationController pushViewController:broadVC animated:YES];
-        }
-            break;
-        case 2:{
-            [self dynamicSettingData];
         }
             break;
         default:
@@ -141,7 +141,6 @@
         }
     }];
 }
-
 
 #pragma mark -查询网络状态-
 - (void)networkStatusData{
