@@ -182,15 +182,19 @@ const CGFloat SXWifiSettingAlertViewHeightRatio = 0.216; //高度系统
 
 #pragma mark -按钮点击事件-
 - (void)confirmButtonTapped{
+    self.confirmButton.enabled = NO;
+    
     NSString *input = self.textField.text.filterSpace;
     if ([NSString isEmpty:input]) {
         [MBProgressHUD showMessageToWindow:@"文本输入不能为空!"];
         return;
     }
     
-    if (self.confirmButtonBlock) {
-        self.confirmButtonBlock(input);
-    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (self.confirmButtonBlock) {
+            self.confirmButtonBlock(input);
+        }
+    });
     
     [self performSelector:@selector(removeSelf) withObject:nil afterDelay:0.12];
 }

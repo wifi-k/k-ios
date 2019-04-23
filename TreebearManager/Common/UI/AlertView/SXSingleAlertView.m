@@ -153,9 +153,13 @@ const CGFloat SXSingleAlertViewHeightRatio = 0.206; //高度系统
 
 #pragma mark -按钮点击事件-
 - (void)confirmButtonTapped{
-    if (self.confirmButtonBlock) {
-        self.confirmButtonBlock();
-    }
+    self.confirmButton.enabled = NO;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (self.confirmButtonBlock) {
+            self.confirmButtonBlock();
+        }
+    });
     
     [self performSelector:@selector(removeSelf) withObject:nil afterDelay:0.12];
 }
