@@ -18,7 +18,7 @@ const CGFloat SXCodeInputAlertViewHeightRatio = 0.216; //高度系统
 @property (nonatomic, weak) UITextField *textField;//文本输入框
 @property (nonatomic, weak) UIView *bottomView;//底部视图
 @property (nonatomic, weak) UIButton *confirmButton;//确认按钮
-@property (nonatomic, weak) UIButton *cancleButton;//取消按钮
+@property (nonatomic, weak) UIButton *cancelButton;//取消按钮
 
 @property (nonatomic, copy) NSString *title;//标题
 @property (nonatomic, copy) NSString *placeholder;//占位符
@@ -113,16 +113,16 @@ const CGFloat SXCodeInputAlertViewHeightRatio = 0.216; //高度系统
     self.confirmButton = confirmButton;
     
     //取消按钮
-    UIButton *cancleButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [cancleButton setTitle:@"取消" forState:UIControlStateNormal];
-    [cancleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [cancleButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
-    [cancleButton setBackgroundColor:SXColorGray7];
+    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
+    [cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [cancelButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+    [cancelButton setBackgroundColor:SXColorGray7];
     //[cancleButton setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
-    [cancleButton.titleLabel setFont:[UIFont systemFontOfSize:15]];
-    [cancleButton addTarget:self action:@selector(cancleButtonTapped) forControlEvents:UIControlEventTouchUpInside];
-    [self.bottomView addSubview:cancleButton];
-    self.cancleButton = cancleButton;
+    [cancelButton.titleLabel setFont:[UIFont systemFontOfSize:15]];
+    [cancelButton addTarget:self action:@selector(cancleButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    [self.bottomView addSubview:cancelButton];
+    self.cancelButton = cancelButton;
     
     self.bgView.alpha = 1;
     
@@ -168,7 +168,7 @@ const CGFloat SXCodeInputAlertViewHeightRatio = 0.216; //高度系统
         make.height.mas_equalTo(45);
     }];
     
-    [self.cancleButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.bottomView);
         make.bottom.mas_equalTo(self.bottomView.mas_bottom);
         make.size.mas_equalTo(CGSizeMake(contentW/2 - 0.1, 45));
@@ -183,6 +183,7 @@ const CGFloat SXCodeInputAlertViewHeightRatio = 0.216; //高度系统
 
 #pragma mark -按钮点击事件-
 - (void)confirmButtonTapped{
+    self.confirmButton.enabled = NO;
     NSString *input = self.textField.text.filterSpace;
     if ([NSString isEmpty:input]) {
         [MBProgressHUD showMessageToWindow:self.placeholder];
@@ -204,7 +205,7 @@ const CGFloat SXCodeInputAlertViewHeightRatio = 0.216; //高度系统
 }
 
 - (void)cancleButtonTapped{
-    
+    self.cancelButton.enabled = NO;
     [self performSelector:@selector(removeSelf) withObject:nil afterDelay:0.12];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (self.cancelButtonBlock) {
@@ -241,7 +242,7 @@ const CGFloat SXCodeInputAlertViewHeightRatio = 0.216; //高度系统
 - (void)setCancelStr:(NSString *)cancelStr{
     _cancelStr = cancelStr;
     if (cancelStr) {
-        [self.cancleButton setTitle:cancelStr forState:UIControlStateNormal];
+        [self.cancelButton setTitle:cancelStr forState:UIControlStateNormal];
     }
 }
 
