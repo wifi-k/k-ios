@@ -34,6 +34,10 @@
     
     self.backgroundColor = SXColorWhite;
     
+    self.managerBtn.backgroundColor = SXColorClear;
+    self.addBtn.backgroundColor = SXColorClear;
+    self.removeBtn.backgroundColor = SXColorClear;
+    
     [self.managerBtn roundViewWithRadius:35.0/2];
     [self.addBtn roundViewWithRadius:35.0/2];
     [self.removeBtn roundViewWithRadius:35.0/2];
