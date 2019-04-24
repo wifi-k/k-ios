@@ -9,7 +9,9 @@
 #import "SXPhotoShareRecordHeaderView.h"
 
 @interface SXPhotoShareRecordHeaderView ()
-
+@property (weak, nonatomic) IBOutlet UIButton *managerBtn;
+@property (weak, nonatomic) IBOutlet UIButton *addBtn;
+@property (weak, nonatomic) IBOutlet UIButton *removeBtn;
 @end
 
 @implementation SXPhotoShareRecordHeaderView
@@ -31,6 +33,10 @@
 - (void)setUpUI{
     
     self.backgroundColor = SXColorWhite;
+    
+    [self.managerBtn roundViewWithRadius:35.0/2];
+    [self.addBtn roundViewWithRadius:35.0/2];
+    [self.removeBtn roundViewWithRadius:35.0/2];
 }
 
 @end

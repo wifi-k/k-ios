@@ -196,7 +196,8 @@ static CGFloat marginY = 1.0f;
     WS(weakSelf);
     __block NSMutableArray *sectionArr;
     [assetsFetchResults enumerateObjectsUsingBlock:^(PHAsset  * _Nonnull asset, NSUInteger idx, BOOL * _Nonnull stop) {
-        DLog(@"asset:%@",asset);
+//        NSString *uuid = [asset valueForKey:@"uuid"];
+//        DLog(@"uuid:%@",uuid);
         //类型转换
         SXAsset *asset0 = [[SXAsset alloc] init];
         asset0.asset = asset;
