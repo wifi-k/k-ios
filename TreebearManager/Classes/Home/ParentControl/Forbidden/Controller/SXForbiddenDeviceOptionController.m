@@ -8,7 +8,6 @@
 
 #import "SXForbiddenDeviceOptionController.h"
 #import "SXForbiddenDeviceOptionCell.h"
-#import "SXXiaoKiOptionResult.h"
 #import "SXWifiSettingNetTool.h"
 
 @interface SXForbiddenDeviceOptionController ()
@@ -96,8 +95,7 @@
 - (void)userNodeDeviceListData{
     WS(weakSelf);
     SXMobilePageParam *param = [SXMobilePageParam param];
-    SXHomeXiaoKiModel *model = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel;
-    param.nodeId = model.nodeId;
+    param.nodeId = self.model.nodeId;
     self.pageIndex = 1;
     param.pageNo = @(self.pageIndex);
     param.pageSize = @10;
@@ -106,6 +104,14 @@
         [weakSelf endHeaderRefresh];
         [MBProgressHUD hideHUDForView:SXKeyWindow animated:YES];
         
+        for (NSString *macStr in weakSelf.model.mac) {
+            for (SXMobileManagerModel *managerModel in result.page) {
+                if ([macStr isEqualToString:managerModel.mac]) {
+                    managerModel.isBlock = @1;
+                    break;
+                }
+            }
+        }
         //数据初始化
         weakSelf.dataArray = [NSMutableArray arrayWithArray:result.page];
         //刷新UI
@@ -130,14 +136,22 @@
 - (void)userNodeDeviceListMoreData{
     WS(weakSelf);
     SXMobilePageParam *param = [SXMobilePageParam param];
-    SXHomeXiaoKiModel *model = SXXiaoKiOptionResult.sharedSXXiaoKiOptionResult.selectedModel;
-    param.nodeId = model.nodeId;
+    param.nodeId = self.model.nodeId;
     param.pageNo = @(++self.pageIndex);
     param.pageSize = @10;
     [SXWifiSettingNetTool userNodeDeviceListDataWithParams:param.mj_keyValues success:^(SXMobileManagerResult * _Nonnull result) {
         [weakSelf endFooterRefresh];
         //数据初始化//刷新UI
         if (result.page.count) {
+            for (NSString *macStr in weakSelf.model.mac) {
+                for (SXMobileManagerModel *managerModel in result.page) {
+                    if ([macStr isEqualToString:managerModel.mac]) {
+                        managerModel.isBlock = @1;
+                        break;
+                    }
+                }
+            }
+            
             [weakSelf.dataArray addObjectsFromArray:result.page];
             [weakSelf.tableView reloadData];
         } else {

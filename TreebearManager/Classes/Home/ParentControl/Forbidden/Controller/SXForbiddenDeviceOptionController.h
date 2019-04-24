@@ -7,10 +7,14 @@
 //
 
 #import "SXBaseCustomTablePlainRrfreshController.h"
+#import "SXTimeControlModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SXForbiddenDeviceOptionController : SXBaseCustomTablePlainRrfreshController
+
+///时间控制模型
+@property (nonatomic, strong) SXTimeControlModel *model;
 
 ///点击回调
 @property (nonatomic, copy) void (^selectForbiddenOptionBlock)(NSArray *selectedList);

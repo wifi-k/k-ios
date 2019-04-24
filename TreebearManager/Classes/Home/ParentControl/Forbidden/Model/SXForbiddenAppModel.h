@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 ///周几
 @property (nonatomic, copy) NSString *wt;
 ///mac列表,json字符串列表
-@property (nonatomic, copy) NSString *mac;
+@property (nonatomic, copy) NSArray *mac;
 ///开关
 @property (nonatomic, copy) NSString *op;
 
