@@ -121,7 +121,6 @@
     [cancleButton setTitleColor:SXColor2B3852 forState:UIControlStateNormal];
     [cancleButton setTitleColor:SXColor2B3852 forState:UIControlStateHighlighted];
     [cancleButton setBackgroundColor:SXColorWhite];
-    //[cancleButton setBackgroundColor:SXColorBtnHighlight forState:UIControlStateHighlighted];
     [cancleButton.titleLabel setFont:[UIFont systemFontOfSize:17]];
     [cancleButton.titleLabel setFont:[UIFont systemFontOfSize:17]];
     [cancleButton addTarget:self action:@selector(cancleButtonTapped) forControlEvents:UIControlEventTouchUpInside];
@@ -192,12 +191,6 @@
 
 - (void)cancleButtonTapped{
     [self hidePickerView];
-//    [self performSelector:@selector(removeSelf) withObject:nil afterDelay:0.1];
-}
-
-#pragma mark -点击完成按钮-
-- (void)confirmButtonTapped{
-    
 }
 
 @end
