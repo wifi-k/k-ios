@@ -10,15 +10,30 @@
 #import "SXPhotoShareRecordController.h"
 #import "SXCodeInputAlertView.h"
 #import "SXPhotoShareEmptyView.h"
+#import "SXPhotoShareCell.h"
 
 @interface SXPhotoShareController ()
-
 ///空视图
 @property (nonatomic, weak) SXPhotoShareEmptyView *emptyView;
 
+///数据源
+@property (nonatomic, strong) NSMutableArray *dataArray;
 @end
 
 @implementation SXPhotoShareController
+
+#pragma mark -getter-
+- (NSMutableArray *)dataArray{
+    if (_dataArray == nil) {
+        _dataArray = [NSMutableArray array];
+        [_dataArray addObject:@"title1"];
+        [_dataArray addObject:@"title2"];
+        [_dataArray addObject:@"title3"];
+        [_dataArray addObject:@"title4"];
+        [_dataArray addObject:@"title5"];
+    }
+    return _dataArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -58,6 +73,27 @@
 - (void)jumpToRecordVC:(NSString *)text{
     SXPhotoShareRecordController *recordVC = [[SXPhotoShareRecordController alloc] init];
     [self.navigationController pushViewController:recordVC animated:YES];
+}
+
+#pragma mark -UITableViewDelegate/UITableViewDataSource-
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    self.emptyView.hidden = self.dataArray.count;
+    return self.dataArray.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 230;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    SXPhotoShareCell *cell = [SXPhotoShareCell cellWithTableView:tableView];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    [self jumpToRecordVC:@""];
 }
 
 @end
