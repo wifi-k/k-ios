@@ -20,20 +20,34 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时光匆匆" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXk-qA-Hwe">
-                        <rect key="frame" x="15" y="20" width="90" height="27"/>
+                        <rect key="frame" x="15" y="20" width="90" height="29.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kiki创建于今天 共11张照片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0f1-IB-d0f">
-                        <rect key="frame" x="15" y="57" width="145.5" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Kiki创建于今天 共11张照片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0f1-IB-d0f">
+                        <rect key="frame" x="15" y="59.5" width="145.5" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ixh-8u-yuk">
-                        <rect key="frame" x="15" y="87" width="293" height="122.5"/>
+                        <rect key="frame" x="15" y="89.5" width="293" height="120"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_top_card" translatesAutoresizingMaskIntoConstraints="NO" id="9J8-GQ-PSn">
+                                <rect key="frame" x="0.0" y="0.0" width="293" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="JSb-79-uSl"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="9J8-GQ-PSn" secondAttribute="trailing" id="2zQ-iC-CcB"/>
+                            <constraint firstItem="9J8-GQ-PSn" firstAttribute="leading" secondItem="Ixh-8u-yuk" secondAttribute="leading" id="6IJ-yC-k7i"/>
+                            <constraint firstItem="9J8-GQ-PSn" firstAttribute="top" secondItem="Ixh-8u-yuk" secondAttribute="top" id="90N-kN-ebV"/>
+                            <constraint firstAttribute="bottom" secondItem="9J8-GQ-PSn" secondAttribute="bottom" id="Wv5-pu-JVP"/>
+                        </constraints>
                     </view>
                 </subviews>
                 <constraints>
@@ -48,7 +62,15 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="bottomBgView" destination="Ixh-8u-yuk" id="a6y-u4-fx4"/>
+                <outlet property="contentL" destination="0f1-IB-d0f" id="fYP-bX-MQF"/>
+                <outlet property="nameL" destination="eXk-qA-Hwe" id="8tJ-Xz-r6r"/>
+            </connections>
             <point key="canvasLocation" x="132.60869565217394" y="162.38839285714286"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="home_top_card" width="347" height="166"/>
+    </resources>
 </document>

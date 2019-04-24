@@ -2432,9 +2432,9 @@
 		09C5A531226F088000742833 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				09C5A534226F088000742833 /* SXPhotoShareEmptyView.h */,
 				09C5A532226F088000742833 /* SXPhotoShareEmptyView.m */,
 				09C5A533226F088000742833 /* SXPhotoShareEmptyView.xib */,
-				09C5A534226F088000742833 /* SXPhotoShareEmptyView.h */,
 				09C582DC227084E50044D309 /* SXPhotoShareCell.h */,
 				09C582DD227084E50044D309 /* SXPhotoShareCell.m */,
 				09C582DE227084E50044D309 /* SXPhotoShareCell.xib */,

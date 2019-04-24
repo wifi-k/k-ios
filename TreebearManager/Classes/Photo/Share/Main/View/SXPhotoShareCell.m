@@ -8,6 +8,12 @@
 
 #import "SXPhotoShareCell.h"
 
+@interface SXPhotoShareCell ()
+@property (weak, nonatomic) IBOutlet UILabel *nameL;
+@property (weak, nonatomic) IBOutlet UILabel *contentL;
+@property (weak, nonatomic) IBOutlet UIView *bottomBgView;
+@end
+
 @implementation SXPhotoShareCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableView{
@@ -32,6 +38,8 @@
     self.backgroundColor = SXColorWhite;
     
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    [self.bottomBgView roundViewWithRadius:8.0f];
 }
 
 @end
