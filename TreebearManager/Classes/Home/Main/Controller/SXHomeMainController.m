@@ -549,7 +549,7 @@
         if (self.mobileArray.count) {
             return [[UIView alloc] initWithFrame:CGRectZero];
         } else {
-            SXHomeMainSectionEmptyFooterView *footerView = [SXHomeMainSectionEmptyFooterView footerViewWithImageName:@"img_empty_mobile" title:@"暂无设备" subTitle:@"请绑定设备进行设置"];
+            SXHomeMainSectionEmptyFooterView *footerView = [SXHomeMainSectionEmptyFooterView footerViewWithImageName:@"img_empty_mobile" title:@"暂无设备" subTitle:@""];
             return footerView;
         }
     } else if (section == 1){

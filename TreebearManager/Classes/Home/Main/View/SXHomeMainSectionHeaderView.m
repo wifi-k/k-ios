@@ -68,7 +68,7 @@
 
 //赋值在线数量
 - (void)totalOnLineCount:(NSInteger)count{
-    self.contentL.text = [NSString stringWithFormat:@"当前在线%ld台/上行网速0K/下行网速0K",count];
+    self.contentL.text = [NSString stringWithFormat:@"当前在线%ld台/上行网速-K/下行网速-K",count];
 }
     
 @end

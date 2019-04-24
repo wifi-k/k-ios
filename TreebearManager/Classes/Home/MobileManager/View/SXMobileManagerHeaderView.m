@@ -117,7 +117,7 @@
     
     UILabel *l1 = [[UILabel alloc] init];
     l1.textAlignment = NSTextAlignmentCenter;
-    l1.text = @"0";
+    l1.text = @"-";
     l1.textColor = SXColorWhite;
     l1.font = SXFontBold18;
     [imageV1 addSubview:l1];
@@ -143,7 +143,7 @@
     
     UILabel *l2 = [[UILabel alloc] init];
     l2.textAlignment = NSTextAlignmentCenter;
-    l2.text = @"0";
+    l2.text = @"-";
     l2.textColor = SXColorWhite;
     l2.font = SXFontBold18;
     [imageV2 addSubview:l2];
@@ -169,7 +169,7 @@
     
     UILabel *l3 = [[UILabel alloc] init];
     l3.textAlignment = NSTextAlignmentCenter;
-    l3.text = @"0";
+    l3.text = @"-";
     l3.textColor = SXColorWhite;
     l3.font = SXFontBold18;
     [imageV3 addSubview:l3];
